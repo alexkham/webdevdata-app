@@ -1,10 +1,10 @@
-
-import styles from './page.module.css'
+import MethodExplorer from "./components/method-explorer/MethodExplorer";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <h3>Welcome to Webdevdata</h3>
-    </main>
+    <>
+   
+    <MethodExplorer></MethodExplorer>
+    </>
   )
 }

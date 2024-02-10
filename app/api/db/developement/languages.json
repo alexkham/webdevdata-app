@@ -1,0 +1,34 @@
+ [
+   {"Javascript":[
+    {"arrays":[
+        "action","return type","is mutating"
+    ]},
+    {"strings":[
+      "action","return type"
+
+    ]},
+    {"sets":[
+      "action","return type"
+
+    ]},
+    {"numbers":[
+      "action","return type"
+
+    ]},
+    {"maps":[
+      "action","return type"
+
+    ]}
+   ]},
+   {"Python":[
+
+   ]},
+   {"C":[
+
+   ]}
+   
+   
+
+]
+
+

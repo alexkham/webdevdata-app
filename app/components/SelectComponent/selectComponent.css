@@ -1,0 +1,58 @@
+/* Create a CSS file (e.g., SelectComponent.css) and include it in your component */
+
+/* SelectComponent.css */
+
+/* For label element */
+.select-container{
+
+  margin-bottom: -20px;
+   
+}
+.label {
+    display: block;
+    margin-bottom: 0.5rem; /* Equivalent to "mb-2" in tailwind */
+    font-weight: 500; /* Equivalent to "font-medium" */
+    color: #333; /* Equivalent to "text-gray-900" */
+    background: none;
+  }
+  
+  /* For select element */
+  .select {
+    display: block;
+    width: 100%;
+    padding: 0.5rem; /* Equivalent to "p-2" */
+    margin-bottom: 1.5rem; /* Equivalent to "mb-6" */
+    font-size: 0.875rem; /* Equivalent to "text-sm" */
+    color: #333; /* Equivalent to "text-gray-900" */
+    border: 1px solid #2196F3; /* Equivalent to "border-blue-300" */
+    border-radius: 0.25rem; /* Equivalent to "rounded-lg" */
+    /* background-color: #f7f7f7; */
+     /* Equivalent to "bg-gray-50" */
+    outline: none;
+  }
+  
+  .select:focus {
+    border-color: #2196F3; /* Equivalent to "focus:border-blue-500" */
+  }
+  
+  /* Dark mode styling */
+  .dark .select {
+    background-color: #0C274D; /* Equivalent to "dark:bg-blue-600" */
+    border-color: #0C274D; /* Equivalent to "dark:border-blue-600" */
+    color: #fff; /* Equivalent to "dark:text-white" */
+  }
+  
+  .dark .select::placeholder {
+    color: #8C8C8C; /* Equivalent to "dark:placeholder-gray-400" */
+  }
+  
+  .dark .select:focus {
+    border-color: #2196F3; /* Equivalent to "dark:focus:border-blue-500" */
+  }
+  
+  /* For option elements */
+  .select option {
+    /* Define styling for option elements here */
+  }
+  
+  

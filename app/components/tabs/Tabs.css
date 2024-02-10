@@ -1,0 +1,51 @@
+body {
+    margin: 50px;
+  }
+  
+  .tabs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 400px;
+    font-family: sans-serif;
+  }
+  
+  .tabs__label {
+    padding: 10px 16px;
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+    min-width: 100px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+  
+  .tabs__radio {
+    display: none;
+  }
+  
+  .tabs__content {
+    order: 1;
+    width: 100%;
+    border-bottom: 3px solid #dddddd;
+    line-height: 1.5;
+    font-size: 0.9em;
+    display: none;
+    border:solid black 0.5px;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .tabs__radio:checked + .tabs__label {
+    font-weight: bold;
+    color: white;
+    border-bottom: 0.5px solid white;
+    background-color: rgb(43, 107, 226);
+    margin: 2px;
+    border: solid black 0.5px;
+  }
+  
+  .tabs__radio:checked + .tabs__label + .tabs__content {
+    display: initial;
+  }
+  

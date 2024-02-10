@@ -1,0 +1,109 @@
+table {
+    table-layout: auto;
+  }
+
+.my-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align:start;
+    border-radius: 3px;
+    padding-right: 20px !important;
+  }
+.my-table tr {
+    min-height: 50px; /* Adjust as needed */
+  }
+  
+  .my-table th,
+  .my-table td {
+    padding: 8px;
+    border: 1px solid #3d3a3a;
+    min-width: 100px; /* Adjust the min-width as needed */
+    max-width: 300px; /* Adjust the max-width as needed */
+    overflow: hidden;
+    /* text-overflow: ellipsis;
+    white-space: nowrap; */
+    word-wrap: break-word;      /* Break long words and wrap onto the next line */
+    overflow-wrap: break-word; 
+    padding-right: 20px !important;
+    box-sizing: border-box;
+    
+    
+  }
+  
+  .my-table thead {
+    background-color:#a56afe; 
+  }
+  
+  .my-table tbody tr:nth-child(odd) {
+    background-color: #e5e5e5;
+    /* background-color: #3b82f6; */
+    font-weight: bolder;
+  }
+  
+  .my-table tbody tr:nth-child(even) {
+    background-color: #fff;
+    font-weight: 200;
+  }
+  
+  .my-table th {
+    font-weight: bold;
+  }
+  
+  .my-table td {
+    color: #333;
+    min-height: 100px;  /* Set the desired minimum height */
+    vertical-align: middle;
+    padding: 10px;  
+    word-wrap: break-word;      /* Break long words and wrap onto the next line */
+    overflow-wrap: break-word;  
+    padding-right: 10px !important; 
+    box-sizing: border-box;
+
+  }
+  
+
+  .my-table tbody tr:hover {
+    background-color: #eaeaea; /* or any other color of your choice */
+  }
+
+  /* MyComponent.css */
+.my-input {
+    min-width: 180px; /* Set a minimal width, adjust the value as needed */
+    width: 3rem;
+    max-width: 450px;
+    background-color: #f3f4f6;
+    border: 1px solid #3b82f6;
+    color: #333;
+    font-size: 0.875rem;
+    border-radius: 0.375rem;
+    padding: 0.625rem 1.25rem;
+    outline: none;
+    transition: border 0.2s;
+    margin:5px
+  }
+  
+  
+  .my-input:hover {
+    border: 1.5px solid #3b82f6;
+  }
+
+  label{
+    font-weight: bold;
+    font-size: 1rem;
+    background-color:white;
+    margin:15px
+  }
+  
+
+  
+  /*#0b5cff;*/
+
+  table tbody tr td {
+    padding-right: 20px !important;
+    box-sizing: border-box;
+    
+  }
+
+  .outer-container{
+    margin: 10px;
+  }

@@ -1,0 +1,18 @@
+.accordion__input {
+    display: none; /* Hide the checkboxes */
+  }
+  
+  .accordion__content {
+    display: none; /* Initially hide all content */
+  }
+  
+  .accordion__input:checked + .accordion__label + .accordion__content {
+    display: block; /* Display content when checkbox is checked */
+  }
+  
+  .accordion__label {
+    /* Styling for labels */
+    cursor: pointer;
+    /* Add more styles as needed */
+  }
+  
