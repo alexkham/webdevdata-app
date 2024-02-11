@@ -18,3 +18,8 @@
 .select-container{
     margin: 10px;
 }
+.items{
+    font-weight: bolder;
+    font-size: larger;
+    text-align: start;
+}

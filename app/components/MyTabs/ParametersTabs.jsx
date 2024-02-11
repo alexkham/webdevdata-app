@@ -1,0 +1,53 @@
+'use client'
+import React, { useState } from 'react';
+import './Tabs.css'; 
+import { TextFormatter,capitalizeWords } from '@/utils/functions';
+
+
+function ParametersTabs({ tabs }) {
+  const [activeTab, setActiveTab] = useState(0);
+  
+  if (!tabs || tabs.length === 0) {
+    return <h2>Function takes no parameters</h2>;  // Or return some fallback UI
+  }
+ const result=tabs[activeTab].description.split('.')
+  return (
+
+    <div className="tabs">
+      
+     
+      <ul className="tab-links">
+        {tabs.map((tab, index) => (
+          <li
+            key={index}
+            className={activeTab === index ? 'active' : ''}
+            onClick={() => setActiveTab(index)}
+          >
+            {capitalizeWords(tab.parameter)}
+          </li>
+        ))}
+      </ul>
+
+      <div className="tab-content">
+        {tabs.map((tab, index) => (
+          <div
+            key={index}
+            id={`tab-${index}`}
+            className={`tab ${activeTab === index ? 'active' : ''}`}
+          >
+            
+           <div className='title-container'> {capitalizeWords(tab.parameter)}</div>
+            {result.map((sentense,index)=>{
+                return <p key={index}>{capitalizeWords(sentense) }.</p>
+            })}
+           
+          </div>
+        ))}
+      </div>
+
+    </div>
+        
+  );
+}
+
+export default ParametersTabs;

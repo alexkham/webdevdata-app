@@ -19,9 +19,12 @@ function MethodExplorer() {
     const languagesNames = languages.map(item => Object.keys(item)[0]);
 
     const handleLanguageChange = (e) => {
+
         const newLanguage = e.target.value;
         setLanguage(newLanguage);
+        
         setObjType('');
+        setObjects([])
         setSearchTerm('')
         setFilteredData([]);
         setClassification('')
@@ -68,7 +71,7 @@ function MethodExplorer() {
     useEffect(() => {
         const fetchData = async () => {
             if (language && objType) {
-                const response = await fetch(`http://localhost:3001/api/${language.toLowerCase()}_${objType.toLowerCase()}_Data`);
+                const response = await fetch(`/api/${language.toLowerCase()}_${objType.toLowerCase()}_Data`);
                 if (response.ok) {
                     const data = await response.json();
                     setData(data);
@@ -102,7 +105,12 @@ function MethodExplorer() {
 
     return (
         <div className='outer-container'>
-            <h2>Methods Explorer</h2>
+            <span>{}</span>
+            <span>{}</span>
+            <span>{classificationsArray}</span>
+            <span>{classification}</span>
+            <span>{searchTerm}</span>
+            <h3>Methods Explorer</h3>
            
             <SelectComponent2
                 label={'Programming Language'}
@@ -145,7 +153,7 @@ function MethodExplorer() {
             </div>
 
             {/* {data && language && objType&& <DynamicAccordion data={data} />} */}
-            {filteredData && <DynamicAccordion data={filteredData} />}
+            {filteredData && <><span className='items'>{filteredData.length+' items'}</span><DynamicAccordion data={filteredData} /></>}
         </div>
     );
 }

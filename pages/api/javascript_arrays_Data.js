@@ -403,7 +403,7 @@ export default function handler(req, res) {
                 },
                 {
                     "parameter": "thisValue",
-                    "description": "Optional. Defaultundefined.A value passed to the function as itsthisvalue."
+                    "description": "Optional. Default -undefined.A value passed to the function as it's this value."
                 }
             ],
             "description": "Returns the value of the last element in the provided array that satisfies the provided testing function.",
