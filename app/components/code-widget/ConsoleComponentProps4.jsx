@@ -10,34 +10,63 @@ const ConsoleComponentProps4 = ({ code }) => {
         }
     }, [code]);
 
+    // const executeCode = () => {
+    //     let capturedOutput = '';
+    //     const originalConsoleLog = console.log;
+
+    //     console.log = (...args) => {
+    //         capturedOutput += args.join(' ') + '\n';
+    //         originalConsoleLog(...args);
+    //     };
+
+    //     try {
+    //         // Execute the code
+    //         const result = eval(code);
+
+    //         // If there's no console.log output, use the eval result
+    //         if (capturedOutput === '') {
+    //             capturedOutput = result !== undefined ? result.toString() : '';
+    //         }
+    //     } catch (err) {
+    //         capturedOutput = `Error: ${err.message}`;
+    //     } finally {
+    //         console.log = originalConsoleLog;  // Restore the original console.log
+    //     }
+
+    //     // Update the history only if there's captured output
+    //     if (capturedOutput) {
+    //         setHistory(history => [...history, { input: code, result: capturedOutput }]);
+    //     }
+    // };
+
+
     const executeCode = () => {
         let capturedOutput = '';
         const originalConsoleLog = console.log;
-
+    
         console.log = (...args) => {
-            capturedOutput += args.join(' ') + '\n';
-            originalConsoleLog(...args);
+            capturedOutput += args.map(arg => typeof arg === 'object' ? JSON.stringify(arg, null, 2) : arg).join(' ') + '\n';
+            originalConsoleLog.apply(console, args);
         };
-
+    
         try {
-            // Execute the code
-            const result = eval(code);
-
-            // If there's no console.log output, use the eval result
-            if (capturedOutput === '') {
-                capturedOutput = result !== undefined ? result.toString() : '';
+            // Directly evaluate the code string
+            let result = eval(code); // Here, 'code' should be the JavaScript code string
+    
+            if (result !== undefined && capturedOutput.trim() === '') {
+                capturedOutput += typeof result === 'object' ? JSON.stringify(result, null, 2) : result.toString();
             }
         } catch (err) {
             capturedOutput = `Error: ${err.message}`;
         } finally {
-            console.log = originalConsoleLog;  // Restore the original console.log
+            console.log = originalConsoleLog;
         }
-
-        // Update the history only if there's captured output
-        if (capturedOutput) {
-            setHistory(history => [...history, { input: code, result: capturedOutput }]);
+    
+        if (capturedOutput.trim()) {
+            setHistory(history => [...history, {input: code, result: capturedOutput}]);
         }
     };
+    
 
     return (
         <div className="console">

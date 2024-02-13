@@ -71,6 +71,14 @@
     display: block;
   }
   
+.link {
+  text-decoration: none; 
+  color:blue;
+  font-weight: bolder;
+  
+}
+
+
 
   /* --------------------------------------------- */
 

@@ -3,26 +3,45 @@ pre {
     white-space: pre-wrap;
     font-family: monospace;
     font-size: 1.2em;
-    overflow: hidden;
-    width: 600px;
-    height: 300px;
+    overflow:visible;
+    width: 500px;
+    height: 50px;
     background-color: black;
     color: aliceblue;
     border-radius: 15px;
-    padding: 20px;
+    padding: 50px;
+    margin-top: 20px;
+    position: relative;
+    margin-bottom: 60px;
 }
-
 /* Add other styles as needed */
 .container{
     display: flex;
     flex-direction: column; 
-    align-items: center; 
-    justify-content:top;
+    align-items: flex-end; 
+    justify-content:center; 
+    position: relative;
+    
+    height: 50px;
+    width: 100px;
+    margin-top: 10px;
+    margin-left: 250px;
+    
+    /* align-self: center;
+     */
 }
+
+.btn-container {
+    position: absolute;
+    top: 0; /* Adjust if you want some margin from the top */
+    right: 0; /* Adjust if you want some margin from the right */
+    margin-top: 10px;
+}
+
 
 .container div{
    
-    width: 600px;
+    width: 100px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -30,9 +49,11 @@ pre {
 }
 
 .container div>button{
-    align-self: flex-end;
-    margin-bottom: -8px;
+    
+    margin-bottom: 12px;
     margin-right: 10px;
+    min-height: 30px;
+    font-size:small;
 }
 
 .visible {
@@ -43,18 +64,37 @@ pre {
     
 }
 
+.btn-container button{
+    min-width: 100px;
+}
+
 .btn-container button:hover{
     background: fixed;
     background-color: aliceblue;
     color: black;
+   
+   
 }
 .console-output-log{
-    background-color: black;
-    color: aliceblue;
+    background-color: #e6e6e6;
+    color: black;
+    font-size: large;
     padding: 30px;
     min-height: 100px;
     min-width: 400px;
     border-radius: 10px;
+    border: solid black 0.5px;
+}
+
+.run-btn{
+    padding: 10px;
+    min-width: 100px;
+    background-color: blue;
+    border-radius: 5px;
+    border: none;
+    color: aliceblue;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
    
    

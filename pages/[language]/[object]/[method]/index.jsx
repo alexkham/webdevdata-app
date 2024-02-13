@@ -1,15 +1,22 @@
 // pages/[language]/[object]/[method].js
 
+import CodeTabs from '@/app/components/MyTabs/CodeTabs';
 import ParametersTabs from '@/app/components/MyTabs/ParametersTabs';
 import DynamicAccordion from '@/app/components/accordion/DynamicAccordion';
 import { useRouter } from 'next/router';
+import 'prismjs/themes/prism-tomorrow.css'; // Example theme
+import 'prismjs/components/prism-python';
+
+import path from 'path';
+import ConsoleComponentProps5 from '@/app/components/code-widget/ConsoleComponentProps5';
+
 
 
 export default function MethodPage({ data }) {
   const router = useRouter();
   const { language, object, method } = router.query;
   const dataArray=[data]
-
+  
   // Render data or loading state
   if (router.isFallback) {
     return <div>Loading...</div>;
@@ -17,16 +24,34 @@ export default function MethodPage({ data }) {
 
   return (
     <div>
-      <span>{data.function}</span>
-      <span>{data['return_type']}</span>
-      
+            
       <div className='outer-container'>
-      <DynamicAccordion data={dataArray}></DynamicAccordion>
+      <DynamicAccordion data={dataArray} ></DynamicAccordion>
       <ParametersTabs tabs={data.parameters}></ParametersTabs>
+      <CodeTabs 
+      tabs={data.use_cases}
+      className={"language-js"}></CodeTabs>
+     
+
       </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      {/* <ConsoleComponentProps5 code={data.use_cases['code']}></ConsoleComponentProps5> */}
       {/* <h1>{data.function}</h1>
       <p>{data.description}</p> */}
       {/* Render more data as needed */}
+      {/* <br></br>
+      <br></br>
+      <ConsoleComponentProps5 code={"const elements = [4,'Fire', 'Air', 'Water'];const joined = elements.join();"}></ConsoleComponentProps5>
+      <ConsoleComponentProps5 code={"console.log('Hello')"}></ConsoleComponentProps5>
+      <ConsoleComponentProps5 code={"2+6"}></ConsoleComponentProps5>
+      <ConsoleComponentProps5 code={`console.log(${data.use_cases.code})`}></ConsoleComponentProps5>
+      <ConsoleComponentProps5 code={`const elements = [1,'Fire', 'Air', 'Water']; const joined = elements.join();console.log(joined)`}></ConsoleComponentProps5>
+      <ConsoleComponentProps5 code={`const elements = [1,'Fire', 'Air', 'Water']; const joined = elements.join();`}></ConsoleComponentProps5> */}
     </div>
   );
 }
@@ -47,18 +72,36 @@ export async function getStaticPaths() {
 //   return { props: { data } };
 // }
 
+// export async function getStaticProps({ params }) {
+  
+//   const data = await fetchData(params.language, params.object, params.method);
+//   if (!data || Object.keys(data).length === 0) {
+//     // Handle the case where no data is returned
+//     return {
+//       notFound: true, // This will render the 404 page
+//     };
+//   }
+//   return { props: { data } };
+// }
+
 export async function getStaticProps({ params }) {
-  const data = await fetchData(params.language, params.object, params.method);
-  if (!data || Object.keys(data).length === 0) {
-    // Handle the case where no data is returned
-    return {
-      notFound: true, // This will render the 404 page
-    };
-  }
-  return { props: { data } };
+  // Dynamically import 'fs' inside getStaticProps
+  const fs = require('fs');
+
+  // Construct the file path
+  //const filePath = path.join(process.cwd(),  `../../../../app/api/db/development/${params.language}/${params.object}_methods.json`);
+  const filePath = path.join(process.cwd(), 'app', 'api', 'db', 'developement', `${params.language}`, `${params.object}_methods.json`);
+
+  // Read and parse the JSON file
+  const jsonData = fs.readFileSync(filePath, 'utf8');
+  const data = JSON.parse(jsonData);
+
+  // Filter or find the method in the data
+  const methodDetails = data.find(m => m.function.toLowerCase().split('(')[0] === `${params.method.toLowerCase()}`);
+  
+  // Return the found data or an empty object
+  return { props: { data: methodDetails || {} } };
 }
-
-
 // async function fetchData(language, object) {
 //   // Implement actual data fetching logic based on the parameters
   

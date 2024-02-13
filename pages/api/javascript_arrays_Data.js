@@ -290,7 +290,7 @@ export default function handler(req, res) {
                 {
                     "#": 1,
                     "title": "Filtering an array for specific criteria",
-                    "code": "const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];\nconst longWords = words.filter(word => word.length > 6);"
+                    "code": "const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];\nconst longWords = words.filter(word => word.length > 6);\nconsole.log(longWords);"
                 }
             ],
             "action": "Iteration and Callback Execution",
@@ -778,7 +778,42 @@ export default function handler(req, res) {
                 {
                     "#": 1,
                     "title": "Joining array elements into a string",
-                    "code": "const elements = ['Fire', 'Air', 'Water'];\nconst joined = elements.join();"
+                    "code": "const elements = [1,'Fire', 'Air', 'Water'];\nconst joined = elements.join('_');\nconsole.log(joined);"
+                },
+                {
+                    "#": 1,
+                    "title": "Joining array elements into a string",
+                    "code": "const elements = [2,'Air','Fire', 'Water'];\nconst joined = elements.join('-');\nconsole.log(joined);"
+                },
+                {
+                    "#": 1,
+                    "title": "Joining array elements into a string",
+                    "code": "const elements = [3,'Fire', 'Air', 'Water'];\nconst joined = elements.join('+');\nconsole.log(joined);"
+                },
+                {
+                    "#": 1,
+                    "title": "Joining array elements into a string",
+                    "code": "const elements = [4,'Fire', 'Air', 'Water'];\nconst joined = elements.join();\nconsole.log(joined);"
+                },
+                {
+                    "#": 1,
+                    "title": "Joining array elements into a string",
+                    "code": "const elements = [5,'Fire', 'Air', 'Water'];\nconst joined = elements.join();\nconsole.log(joined);"
+                },
+                {
+                    "#": 1,
+                    "title": "Joining array elements into a string",
+                    "code": "const elements = [6,'Fire', 'Air', 'Water'];\nconst joined = elements.join();\nconsole.log(joined);"
+                },
+                {
+                    "#": 1,
+                    "title": "Joining array elements into a string",
+                    "code": "const elements = [7,'Fire', 'Air', 'Water'];\nconst joined = elements.join();\nconsole.log(joined);"
+                },
+                {
+                    "#": 1,
+                    "title": "Joining array elements into a string",
+                    "code": "const elements = [8,'Fire', 'Air', 'Water'];\nconst joined = elements.join();\nconsole.log(joined);"
                 }
             ],
             "action": "General Utilities",

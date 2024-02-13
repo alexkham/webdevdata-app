@@ -7,7 +7,8 @@ import DynamicAccordion from '../accordion/DynamicAccordion';
 import './MethodExplorer.css'
 
 function MethodExplorer() {
-    const [language, setLanguage] = useState('');
+    const languagesNames = languages.map(item => Object.keys(item)[0]);
+    const [language, setLanguage] = useState(languagesNames[0]);
     const [objType, setObjType] = useState('');
     const [objects, setObjects] = useState([]);
     const [classificationsArray, setClassificationsArray] = useState([]);
@@ -15,20 +16,19 @@ function MethodExplorer() {
     const [data, setData] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredData, setFilteredData] = useState([]);
+    const [link,setLink]=useState('');
 
-    const languagesNames = languages.map(item => Object.keys(item)[0]);
+    
+
+    
 
     const handleLanguageChange = (e) => {
 
         const newLanguage = e.target.value;
+        if(!newLanguage.startsWith('Select')){
         setLanguage(newLanguage);
         
-        setObjType('');
-        setObjects([])
-        setSearchTerm('')
-        setFilteredData([]);
-        setClassification('')
-        setClassificationsArray([])
+        }
     };
 
     const handleObjChange = (e) => {
@@ -75,6 +75,7 @@ function MethodExplorer() {
                 if (response.ok) {
                     const data = await response.json();
                     setData(data);
+                    setLink(`/${language.toLowerCase()}/${objType.toLowerCase()}/`)
                 } else {
                     console.error("Failed to fetch data");
                 }
@@ -98,18 +99,23 @@ function MethodExplorer() {
                 return compareValue === searchTerm.toLowerCase();
             });
             setFilteredData(filtered);
+            
         } else {
             setFilteredData(data || []);
         }
     }, [classification, searchTerm, data]);
 
+
+    
+    
+
     return (
         <div className='outer-container'>
-            <span>{}</span>
-            <span>{}</span>
-            <span>{classificationsArray}</span>
-            <span>{classification}</span>
-            <span>{searchTerm}</span>
+            <span>{language}</span>
+            {/* <span>{}</span> */}
+            {/* <span>{classificationsArray}</span> */}
+            {/* <span>{classification}</span> */}
+            {/* <span>{searchTerm}</span> */}
             <h3>Methods Explorer</h3>
            
             <SelectComponent2
@@ -153,7 +159,10 @@ function MethodExplorer() {
             </div>
 
             {/* {data && language && objType&& <DynamicAccordion data={data} />} */}
-            {filteredData && <><span className='items'>{filteredData.length+' items'}</span><DynamicAccordion data={filteredData} /></>}
+            {filteredData && filteredData.length>0 && <><span className='items'>{filteredData.length+' items'}</span>
+            <DynamicAccordion
+             data={filteredData} 
+             link={link}/></>}
         </div>
     );
 }

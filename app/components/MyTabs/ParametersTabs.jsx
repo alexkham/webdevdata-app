@@ -8,12 +8,13 @@ function ParametersTabs({ tabs }) {
   const [activeTab, setActiveTab] = useState(0);
   
   if (!tabs || tabs.length === 0) {
-    return <h2>Function takes no parameters</h2>;  // Or return some fallback UI
+    return <h3>Takes no Parameters</h3>;  // Or return some fallback UI
   }
  const result=tabs[activeTab].description.split('.')
   return (
 
     <div className="tabs">
+      <h3>Parameters</h3>
       
      
       <ul className="tab-links">

@@ -119,7 +119,7 @@
             {
                 "#": 1,
                 "title": "Checking if a string ends with a specific substring",
-                "code": "const message = 'Hello World';\nconst endsWithWorld = message.endsWith('World'); // true"
+                "code": "const message = 'Hello World';\nconst endsWithWorld = message.endsWith('World'); // true\nconsole.log(endsWithWorld)"
             }
         ]
     },
