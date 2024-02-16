@@ -85,25 +85,33 @@ import CodeWidget from '../code-widget/CodeWidget';
 import ConsoleComponentProps5 from '../code-widget/ConsoleComponentProps5';
 import ConsoleComponentProps4 from '../code-widget/ConsoleComponentProps4';
 import ConsoleComponentProps6 from '../code-widget/ConsoleComponentProps6';
+import { renderTextWithLineBreaks } from '@/utils/functions';
 
 function CodeTabs({ tabs }) {
     const [activeTab, setActiveTab] = useState(0);
     const [codeString, setCodeString] = useState('');
   
-    // Update codeString when activeTab changes
+    const handleTabClick = (index, e) => {
+      setActiveTab(index);
+      // Scroll the clicked tab to the top of the viewport
+      e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
     useEffect(() => {
-      const code = tabs[activeTab].code;
-      console.log(code)
-      setCodeString(code);
-    }, [activeTab, tabs]); // Ensures codeString updates when activeTab or tabs change
-  
+        // Check if tabs[activeTab] is defined before accessing its properties
+        if (tabs[activeTab] && tabs[activeTab].code) {
+          const code = tabs[activeTab].code;
+          console.log(code);
+          setCodeString(code);
+        }
+      }, [activeTab, tabs]); // Ensures the effect reruns when activeTab or tabs change
+      
     return (
-      <>
-       <h3>Code Examples</h3>
+     codeString && <>
+        <h3>Code Examples</h3>
         <div className="code-tabs">
           <ul className="code-tab-links">
             {tabs.map((tab, index) => (
-              <li key={index} className={activeTab === index ? 'active' : ''} onClick={() => setActiveTab(index)}>
+              <li key={index} className={activeTab === index ? 'active' : ''} onClick={(e) => handleTabClick(index,e)}>
                 {tab.title}
               </li>
             ))}
@@ -112,15 +120,13 @@ function CodeTabs({ tabs }) {
           <div className="code-tab-content">
             {tabs.map((tab, index) => (
               <div key={index} id={`tab-${index}`} className={`code-tab ${activeTab === index ? 'active' : ''}`}>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
+                
+                
                 <div className='code-container'>
-                    <div>
+                    
                 <CodeWidget message={tabs[activeTab].code} />
-                </div>
-                <div className='code-explanation' style={{minHeight:'200px',minWidth:'400px'}}>Explanation</div>
+                
+                <div className='code-explanation' >{renderTextWithLineBreaks(tabs[activeTab].explanation)}</div>
                 </div>
               </div>
             ))}
@@ -131,7 +137,7 @@ function CodeTabs({ tabs }) {
           <ConsoleComponentProps5 code={codeString}></ConsoleComponentProps5>
           </div>
         </div>
-        
+
       </>
     );
   }

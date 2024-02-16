@@ -40,18 +40,7 @@ export default function MethodPage({ data }) {
       <br></br>
       <br></br>
       <br></br>
-      {/* <ConsoleComponentProps5 code={data.use_cases['code']}></ConsoleComponentProps5> */}
-      {/* <h1>{data.function}</h1>
-      <p>{data.description}</p> */}
-      {/* Render more data as needed */}
-      {/* <br></br>
-      <br></br>
-      <ConsoleComponentProps5 code={"const elements = [4,'Fire', 'Air', 'Water'];const joined = elements.join();"}></ConsoleComponentProps5>
-      <ConsoleComponentProps5 code={"console.log('Hello')"}></ConsoleComponentProps5>
-      <ConsoleComponentProps5 code={"2+6"}></ConsoleComponentProps5>
-      <ConsoleComponentProps5 code={`console.log(${data.use_cases.code})`}></ConsoleComponentProps5>
-      <ConsoleComponentProps5 code={`const elements = [1,'Fire', 'Air', 'Water']; const joined = elements.join();console.log(joined)`}></ConsoleComponentProps5>
-      <ConsoleComponentProps5 code={`const elements = [1,'Fire', 'Air', 'Water']; const joined = elements.join();`}></ConsoleComponentProps5> */}
+      
     </div>
   );
 }

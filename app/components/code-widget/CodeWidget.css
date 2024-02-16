@@ -2,17 +2,18 @@ pre {
     display: inline-block;
     white-space: pre-wrap;
     font-family: monospace;
-    font-size: 1.2em;
+    font-size: 0.9rem;
     overflow:visible;
-    width: 500px;
+    width: 550px;
     height: 50px;
     background-color: black;
     color: aliceblue;
     border-radius: 15px;
     padding: 50px;
-    margin-top: 20px;
+   
     position: relative;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
+    max-height: 400px;
 }
 /* Add other styles as needed */
 .container{
@@ -24,7 +25,7 @@ pre {
     
     height: 50px;
     width: 100px;
-    margin-top: 10px;
+    
     margin-left: 250px;
     
     /* align-self: center;
@@ -80,7 +81,7 @@ pre {
     color: black;
     font-size: large;
     padding: 30px;
-    min-height: 100px;
+    min-height: 60px;
     min-width: 400px;
     border-radius: 10px;
     border: solid black 0.5px;

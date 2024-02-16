@@ -18,11 +18,36 @@
         "return_type": "Set object",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Creating a Set from an array",
-                "code": "const mySet = new Set([1, 2, 3, 4, 5]);"
+              "#": 1,
+              "title": "Creating an empty set",
+              "code": "const mySet = new Set();\nconsole.log(mySet);",
+              "explanation": "Demonstrates initializing an empty set. This example shows the basic usage of `new Set()` without any arguments, resulting in a set ready to store unique values."
+            },
+            {
+              "#": 2,
+              "title": "Initializing a set with an array",
+              "code": "const arrayWithDuplicates = [1, 2, 2, 3, 4, 4, 5];\nconst mySet = new Set(arrayWithDuplicates);\nconsole.log(mySet);",
+              "explanation": "Shows how to initialize a set with an array of values. The `Set` constructor removes duplicate values from the array, illustrating the set's characteristic of storing only unique elements."
+            },
+            {
+              "#": 3,
+              "title": "Creating a set from a string",
+              "code": "const myString = 'hello';\nconst stringSet = new Set(myString);\nconsole.log(stringSet);",
+              "explanation": "Illustrates creating a set from the individual characters of a string. This highlights how `new Set()` can be used with iterable objects, such as strings, to produce a set of unique characters."
+            },
+            {
+              "#": 4,
+              "title": "Combining multiple iterables",
+              "code": "const numbers = [1, 2, 3];\nconst letters = 'abc';\nconst combinedSet = new Set([...numbers, ...letters]);\nconsole.log(combinedSet);",
+              "explanation": "Demonstrates combining arrays and other iterable objects into a single set using spread syntax. This example showcases the flexibility of `new Set()` in combining multiple sources of data into a unified collection of unique values."
+            },
+            {
+              "#": 5,
+              "title": "Set with various data types",
+              "code": "const mixedValues = new Set(['text', 100, { key: 'value' }, true, ['array']]);\nconsole.log(mixedValues);",
+              "explanation": "Shows initializing a set with a mixture of different data types, including a string, number, object, boolean, and array. This use case emphasizes the `Set` object's capability to store a wide range of data types, maintaining uniqueness across them."
             }
-        ]
+          ]
     },
     {
         "function": "add()",
@@ -43,11 +68,37 @@
         "return_type": "Set object",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Adding an element to the Set",
-                "code": "mySet.add('hello');"
+              "#": 1,
+              "title": "Adding a unique element",
+              "code": "const mySet = new Set();\nmySet.add('Hello');\nconsole.log(mySet);",
+              "explanation": "Illustrates adding a unique element to a set, showcasing the basic functionality of the `add()` method."
+            },
+            {
+              "#": 2,
+              "title": "Attempting to add a duplicate element",
+              "code": "const mySet = new Set();\nmySet.add('World');\nmySet.add('World');\nconsole.log(mySet);",
+              "explanation": "Shows that adding a duplicate element does not change the set, highlighting the uniqueness constraint."
+            },
+            {
+              "#": 3,
+              "title": "Adding an element without specifying arguments",
+              "code": "const mySet = new Set();\nmySet.add();\nconsole.log(mySet);",
+              "explanation": "Demonstrates that calling `add()` without arguments adds `undefined` to the set."
+            },
+            
+            {
+              "#": 5,
+              "title": "Chaining add() method calls",
+              "code": "const mySet = new Set();\nmySet.add('apple').add('banana').add('orange');\nconsole.log(mySet);",
+              "explanation": "Utilizes method chaining to add multiple elements sequentially to a set."
+            },
+            {
+              "#": 6,
+              "title": "Adding multiple elements using a loop",
+              "code": "const mySet = new Set();\nconst fruits = ['apple', 'banana', 'orange'];\nfruits.forEach(fruit => mySet.add(fruit));\nconsole.log(mySet);",
+              "explanation": "Employs a loop to add multiple elements from an iterable, efficiently populating the set."
             }
-        ]
+          ]
     },
     {
         "function": "delete()",
@@ -68,11 +119,24 @@
         "return_type": "Boolean",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Deleting an element from the Set",
-                "code": "mySet.delete('hello');"
-            }
-        ]
+              "#": 1,
+              "title": "Deleting an existing element",
+              "code": "const colors = new Set(['red', 'green', 'blue']);\nconst isDeleted = colors.delete('green');\nconsole.log(isDeleted); // true\nconsole.log(colors); // Set {'red', 'blue'}",
+              "explanation": "Demonstrates successfully deleting the 'green' element from the set. The `delete()` method returns `true`, indicating the specified element was found and removed."
+            },
+            {
+              "#": 2,
+              "title": "Attempting to delete a non-existent element",
+              "code": "const numbers = new Set([1, 2, 3]);\nconst isDeleted = numbers.delete(4);\nconsole.log(isDeleted); // false\nconsole.log(numbers); // Set {1, 2, 3}",
+              "explanation": "Shows the attempt to delete an element ('4') that does not exist in the set. The `delete()` method returns `false`, indicating the element was not found and hence not removed."
+            },
+            {
+                "#": 3,
+                "title": "Deleting multiple specific elements",
+                "code": "const fruits = new Set(['apple', 'banana', 'orange', 'grape', 'melon']);\nconst toDelete = ['banana', 'melon'];\ntoDelete.forEach(fruit => fruits.delete(fruit));\nconsole.log(fruits); // Set {'apple', 'orange', 'grape'}",
+                "explanation": "Iterates over an array of elements to be deleted, calling `delete()` for each one. This demonstrates how to remove multiple specific elements from a set by using the `delete()` method within a loop or an iterable method like `forEach()`, effectively handling the task of deleting several items."
+              }
+          ]
     },
     {
         "function": "has()",
@@ -93,11 +157,30 @@
         "return_type": "Boolean",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Checking for the presence of an element in the Set",
-                "code": "mySet.has(1);"
-            }
-        ]
+              "#": 1,
+              "title": "Checking for the existence of an element",
+              "code": "const books = new Set(['The Great Gatsby', 'War and Peace', '1984']);\nconst hasWarAndPeace = books.has('War and Peace');\nconsole.log(hasWarAndPeace); // true",
+              "explanation": "Demonstrates using `has()` to verify if 'War and Peace' is present in the set of books. This example highlights `has()` as an efficient way to check for the presence of an item within a set, useful for conditionally performing actions based on set membership."
+            },
+            {
+              "#": 2,
+              "title": "Checking for a non-existent element",
+              "code": "const numbers = new Set([1, 2, 3, 4, 5]);\nconst hasNumberTen = numbers.has(10);\nconsole.log(hasNumberTen); // false",
+              "explanation": "Shows using `has()` to check for an element ('10') that is not in the set. This illustrates `has()`'s utility in confirming the absence of an item, which can be particularly useful in scenarios where the presence of an element would affect the flow of logic or operations."
+            },
+            {
+                "#": 3,
+                "title": "Using has() in conditional logic",
+                "code": "const permissions = new Set(['read', 'write']);\nif (permissions.has('delete')) {\n  console.log('User has delete permissions');\n} else {\n  console.log('User lacks delete permissions');\n}",
+                "explanation": "Utilizes `has()` within an if statement to check for 'delete' permission in a set of permissions. This example demonstrates how `has()` can be effectively used in conditional logic to branch program execution based on set membership."
+              },
+              {
+                "#": 4,
+                "title": "Dynamically checking set contents",
+                "code": "const attendees = new Set(['Alice', 'Bob', 'Charlie']);\nconst checkAttendee = name => attendees.has(name) ? `${name} is attending.` : `${name} is not attending.`;\nconsole.log(checkAttendee('Alice'));\nconsole.log(checkAttendee('Dana'));",
+                "explanation": "Shows a dynamic use of `has()` to check if specific individuals are in the list of attendees. This use case illustrates `has()`'s application in more dynamic scenarios, such as user input validation or dynamically checking for the presence of elements."
+              }
+          ]
     },
     {
         "function": "clear()",
@@ -113,11 +196,18 @@
         "return_type": "Undefined",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Clearing all elements from the Set",
-                "code": "mySet.clear();"
+              "#": 1,
+              "title": "Clearing all elements from a set",
+              "code": "const colors = new Set(['red', 'green', 'blue']);\ncolors.clear();\nconsole.log(colors); // Set {}",
+              "explanation": "Demonstrates using `clear()` to remove all elements from a set of colors. This example highlights `clear()`'s functionality for resetting a set to its empty state, useful for scenarios where you need to efficiently discard all current members of a set."
+            },
+            {
+              "#": 2,
+              "title": "Using clear() in application state management",
+              "code": "const selectedItems = new Set(['item1', 'item2', 'item3']);\n// Some operations that modify the set\nselectedItems.clear();\n// Ready to collect new selections\nconsole.log(selectedItems); // Set {}",
+              "explanation": "Illustrates a practical use of `clear()` in application state management, such as clearing a selection of items. This use case shows how `clear()` can be instrumental in workflows requiring the frequent resetting of collected items or states."
             }
-        ]
+          ]
     },
     {
         "function": "forEach()",
@@ -145,7 +235,19 @@
                 "#": 1,
                 "title": "Executing a function for each element in the Set",
                 "code": "mySet.forEach(function(value) { console.log(value); });"
-            }
+            },
+            {
+                "#": 2,
+                "title": "Iterating over set elements",
+                "code": "const numbers = new Set([1, 2, 3, 4, 5]);\nnumbers.forEach(number => console.log(number * 2));",
+                "explanation": "Demonstrates iterating over each element in a set of numbers and logging twice the value of each number. This use case shows how `forEach()` can be used to execute a function for each element in a set, useful for data manipulation or analysis."
+              },
+              {
+                "#": 3,
+                "title": "Using additional forEach parameters",
+                "code": "const letters = new Set(['a', 'b', 'c']);\nletters.forEach((value, sameValue, set) => console.log(value, sameValue, set.size));",
+                "explanation": "Illustrates using `forEach()` with its all three parameters: the current element's value, the same value again (since sets don't have keys), and the set being iterated over. This example highlights how to access each element and the original set within the callback function, demonstrating the method's flexibility and the information available to the developer within the iteration."
+              }
         ]
     },
     {
@@ -162,11 +264,18 @@
         "return_type": "Iterator",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Iterating through values of the Set",
-                "code": "const iterator = mySet.values();"
+              "#": 1,
+              "title": "Iterating over set values",
+              "code": "const mySet = new Set(['apple', 'banana', 'orange']);\nconst iterator = mySet.values();\n\nfor (let value of iterator) {\n  console.log(value);\n}",
+              "explanation": "Creates an iterator over the set's values and uses a `for...of` loop to iterate through each one. This example demonstrates how to access and iterate over a set's elements using the `values()` method, providing a straightforward way to process each element in a set."
+            },
+            {
+              "#": 2,
+              "title": "Converting set values to an array",
+              "code": "const mySet = new Set([1, 2, 3]);\nconst valuesArray = Array.from(mySet.values());\nconsole.log(valuesArray);",
+              "explanation": "Utilizes `Array.from()` to create an array from the set's values iterator. This approach shows how `values()` can be combined with `Array.from()` to convert a set's elements into an array, facilitating operations that are more conveniently performed on arrays, such as using array methods for data manipulation."
             }
-        ]
+          ]
     },
     {
         "function": "keys()",
@@ -182,11 +291,18 @@
         "return_type": "Iterator",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Iterating through keys (values) of the Set",
-                "code": "const keyIterator = mySet.keys();"
+              "#": 1,
+              "title": "Iterating over set keys",
+              "code": "const mySet = new Set(['apple', 'banana', 'cherry']);\nconst iterator = mySet.keys();\n\nfor (let key of iterator) {\n  console.log(key);\n}",
+              "explanation": "Demonstrates iterating over a set using the `keys()` method, which, in the context of a `Set`, returns an iterator for the set's values. This example shows how to access and iterate over a set's elements as if they were keys, reflecting the `Set` object's nature of treating each value as a unique key."
+            },
+            {
+              "#": 2,
+              "title": "Keys and values are identical in a set",
+              "code": "const mySet = new Set(['1', '2', '3']);\nconst keysArray = Array.from(mySet.keys());\nconst valuesArray = Array.from(mySet.values());\nconsole.log(keysArray, valuesArray);",
+              "explanation": "Compares the arrays created from the set's keys and values, highlighting that they are identical. This example underscores the characteristic of `Set` objects where each element is both a unique value and its own key, and thus `keys()` and `values()` produce the same output."
             }
-        ]
+          ]
     },
     {
         "function": "entries()",
@@ -202,11 +318,18 @@
         "return_type": "Iterator",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Iterating through entries of the Set",
-                "code": "const entries = mySet.entries();"
+              "#": 1,
+              "title": "Iterating over set entries",
+              "code": "const mySet = new Set(['apple', 'banana', 'cherry']);\nconst iterator = mySet.entries();\n\nfor (let entry of iterator) {\n  console.log(`Value: ${entry[0]}, Key (same as value): ${entry[1]}`);\n}",
+              "explanation": "Creates an iterator for the set's entries and uses a for loop to iterate through each. This example demonstrates accessing each element's value through the `entries()` method, highlighting how each set element's entry is represented as `[value, value]`, reflecting the unique nature of set elements."
+            },
+            {
+              "#": 2,
+              "title": "Converting set entries to an array",
+              "code": "const mySet = new Set([1, 2, 3]);\nconst entriesArray = Array.from(mySet.entries());\nconsole.log(entriesArray);",
+              "explanation": "Uses `Array.from()` to create an array from the set's entries iterator. This showcases how `entries()` can facilitate the conversion of a set's elements into an array of `[value, value]` pairs, useful for situations where the data needs to be manipulated or examined as an array of entries."
             }
-        ]
+          ]
     },
     {
         "function": "size",
@@ -222,10 +345,23 @@
         "return_type": "Number",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Getting the size of the Set",
-                "code": "console.log(mySet.size);"
+              "#": 1,
+              "title": "Determining the number of set elements",
+              "code": "const mySet = new Set(['apple', 'banana', 'cherry']);\nconsole.log(mySet.size);",
+              "explanation": "Shows how to retrieve the count of elements in a set using the `size` property. This example illustrates the `size` property's basic usage for quickly assessing the number of unique items stored within a set."
+            },
+            {
+              "#": 2,
+              "title": "Comparing sizes before and after addition",
+              "code": "const numbers = new Set([1, 2, 3]);\nconsole.log('Initial size:', numbers.size);\nnumbers.add(4);\nconsole.log('Size after adding an element:', numbers.size);",
+              "explanation": "Demonstrates the change in the size of a set before and after adding a new element. This use case highlights the dynamic nature of sets and how the `size` property reflects changes as elements are added or removed."
+            },
+            {
+              "#": 3,
+              "title": "Checking size after deleting an element",
+              "code": "const items = new Set(['item1', 'item2', 'item3']);\nitems.delete('item2');\nconsole.log(items.size);",
+              "explanation": "Illustrates the decrease in size of a set after using the `delete()` method to remove an element. This example emphasizes how the `size` property is immediately updated to reflect the current number of elements in the set, showcasing the property's usefulness in tracking the size of the set as it is modified."
             }
-        ]
+          ]
     }
 ]

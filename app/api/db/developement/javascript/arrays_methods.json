@@ -24,11 +24,36 @@
         ],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Accessing an element by index",
-                "code": "const numbers = [10, 20, 30];\nconst secondElement = numbers.at(1); // 20"
+              "#": 1,
+              "title": "First element",
+              "code": "const array = ['a', 'b', 'c', 'd'];\nconst first = array.at(0);\nconsole.log(first);",
+              "explanation": "Accesses the first element. Outputs 'a'."
+            },
+            {
+              "#": 2,
+              "title": "Last element",
+              "code": "const array = ['a', 'b', 'c', 'd'];\nconst last = array.at(-1);\nconsole.log(last);",
+              "explanation": "Accesses the last element using negative index. Outputs 'd'."
+            },
+            {
+              "#": 3,
+              "title": "Positive index",
+              "code": "const array = ['a', 'b', 'c', 'd'];\nconst item = array.at(2);\nconsole.log(item);",
+              "explanation": "Accesses item at positive index 2. Outputs 'c'."
+            },
+            {
+              "#": 4,
+              "title": "Negative index",
+              "code": "const array = ['a', 'b', 'c', 'd'];\nconst item = array.at(-2);\nconsole.log(item);",
+              "explanation": "Accesses item at negative index -2 (second to last). Outputs 'c'."
+            },
+            {
+              "#": 5,
+              "title": "With No Arguments",
+              "code": "const array = ['a', 'b', 'c', 'd'];\nconst defaultItem = array.at();\nconsole.log(defaultItem);",
+              "explanation": "Accesses the first element by default when no argument is passed. Outputs 'a'."
             }
-        ],
+          ],
         "action": "Element Access",
         "is_mutating": false,
         "return_type": "single element"
@@ -58,11 +83,36 @@
         ],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Combining multiple arrays",
-                "code": "const array1 = [1, 2, 3];\nconst array2 = [4, 5, 6];\nconst combinedArray = array1.concat(array2);"
+              "#": 1,
+              "title": "Concatenate arrays",
+              "code": "const first = ['a', 'b'];\nconst second = ['c', 'd'];\nconst combined = first.concat(second);\nconsole.log(combined);",
+              "explanation": "Combines two arrays into one.Outputs ['a', 'b', 'c', 'd']."
+            },
+            {
+              "#": 2,
+              "title": "Add elements",
+              "code": "const numbers = [1, 2];\nconst moreNumbers = numbers.concat(3, 4);\nconsole.log(moreNumbers);",
+              "explanation": "Adds elements to an array. Outputs [1, 2, 3, 4]."
+            },
+            {
+              "#": 3,
+              "title": "Different types",
+              "code": "const mixedTypes = ['text', 1];\nconst withObjects = mixedTypes.concat({a: 'object'}, ['array']);\nconsole.log(withObjects);",
+              "explanation": "Combines arrays and objects. Outputs ['text', 1, {a: 'object'}, 'array']."
+            },
+            {
+              "#": 4,
+              "title": "Nested arrays",
+              "code": "const nested = [1, 2];\nconst moreNested = nested.concat([3, [4, 5]]);\nconsole.log(moreNested);",
+              "explanation": "Shows nested arrays remain nested. Outputs [1, 2, 3, [4, 5]]."
+            },
+            {
+              "#": 5,
+              "title": "Non-mutating",
+              "code": "const original = ['original'];\nconst addition = ['added'];\nconst result = original.concat(addition);\nconsole.log(result);\nconsole.log(original);",
+              "explanation": "Demonstrates original array is not changed. Outputs combined array, then original array."
             }
-        ],
+          ],
         "action": "Array Manipulation",
         "is_mutating": false,
         "return_type": "array"
@@ -122,11 +172,36 @@
         ],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Copying part of an array within itself",
-                "code": "const array = [1, 2, 3, 4, 5];\narray.copyWithin(0, 3, 4);"
+              "#": 1,
+              "title": "Basic copy",
+              "code": "const array = ['a', 'b', 'c', 'd', 'e'];\nconst result = array.copyWithin(0, 3, 4);\nconsole.log(result);",
+              "explanation": "This example demonstrates copying a single element from one position to another within the same array. It takes the element at index 3 ('d') and copies it to the start (index 0), shifting the rest of the elements rightward but within the bounds of the specified target and start indices."
+            },
+            {
+              "#": 2,
+              "title": "Negative target",
+              "code": "const array = ['a', 'b', 'c', 'd', 'e'];\nconst result = array.copyWithin(-2, 0, 2);\nconsole.log(result);",
+              "explanation": "Here, the method uses a negative target index, effectively counting from the end of the array. It copies the first two elements into the positions starting from the second-to-last, demonstrating how negative indices adjust the copy destination backwards."
+            },
+            {
+              "#": 3,
+              "title": "Negative start",
+              "code": "const array = ['a', 'b', 'c', 'd', 'e'];\nconst result = array.copyWithin(1, -2);\nconsole.log(result);",
+              "explanation": "This case shows copying elements using a negative start index, which also counts from the end. It moves the last two elements ('d', 'e') forward into the array starting at index 1, illustrating how negative start indices select the source range from the end."
+            },
+            {
+              "#": 4,
+              "title": "Full copy",
+              "code": "const array = ['a', 'b', 'c', 'd', 'e'];\nconst result = array.copyWithin(0);\nconsole.log(result);",
+              "explanation": "By not specifying start and end parameters, the entire array is theoretically copied from index 0 into itself. This results in no visible change because every element is copied to its current position, highlighting a default behavior when parameters are omitted."
+            },
+            {
+              "#": 5,
+              "title": "Without end param",
+              "code": "const array = ['a', 'b', 'c', 'd', 'e'];\nconst result = array.copyWithin(2, 0);\nconsole.log(result);",
+              "explanation": "This demonstrates copying elements from the start of the array into a specified position (index 2) without defining an end point. The method copies as many elements as fit from the start into the target position, showcasing the method's behavior when the end parameter is omitted, effectively treating the end of the array as the limit."
             }
-        ],
+          ],
         "action": "Array Manipulation",
         "is_mutating": true,
         "return_type": "array"
@@ -144,11 +219,24 @@
         "arguments": [],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Iterating over key/value pairs",
-                "code": "const array = ['a', 'b', 'c'];\nconst iterator = array.entries();"
+              "#": 1,
+              "title": "Iterate entries",
+              "code": "const fruits = ['Apple', 'Banana', 'Cherry'];\nconst iterator = fruits.entries();\nfor (let entry of iterator) {\n  console.log(entry);\n}",
+              "explanation": "This example demonstrates iterating over an array with `.entries()`, which returns an iterator that produces an array of [index, value] pairs for each element. It's useful for scenarios where both the element and its index are needed, such as in loops that require access to array indexes."
+            },
+            {
+              "#": 2,
+              "title": "Access specific entry",
+              "code": "const names = ['Alice', 'Bob', 'Charlie'];\nconst iterator = names.entries();\nconsole.log(iterator.next().value);\nconsole.log(iterator.next().value);",
+              "explanation": "Here, `.entries()` is used to create an iterator, and `.next().value` is called to access the next entry in the sequence. This method allows for sequential access to entries, which can be particularly useful when you need to process or skip specific elements based on their order in the array."
+            },
+            {
+              "#": 3,
+              "title": "Convert to array",
+              "code": "const numbers = [10, 20, 30];\nconst iterator = numbers.entries();\nconst arrayOfEntries = Array.from(iterator);\nconsole.log(arrayOfEntries);",
+              "explanation": "Converts the iterator returned by `.entries()` into an array using `Array.from()`. This transformation is beneficial when you need a static array representation of an array's entries for operations like filtering, mapping, or reducing that require array methods not available on iterators."
             }
-        ],
+          ],
         "action": "Iteration and Callback Execution",
         "is_mutating": false,
         "return_type": "Array Iterator"
@@ -194,11 +282,54 @@
         ],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Testing all elements in an array",
-                "code": "const array = [1, 30, 39, 29];\nconst isBelowThreshold = currentValue => currentValue < 40;\nconst allBelowThreshold = array.every(isBelowThreshold);"
-            }
-        ],
+              "#": 1,
+              "title": "All elements match condition",
+              "code": "const ages = [32, 33, 18, 40];\nconst allAdults = ages.every(age => age >= 18);\nconsole.log(allAdults);",
+              "explanation": "This example checks if every element in the array satisfies the condition of being 18 or older. The `.every()` method tests each array element against the provided function, returning true if all elements pass the test, indicating all individuals are adults."
+            },
+            {
+              "#": 2,
+              "title": "Some elements don't match",
+              "code": "const numbers = [1, 30, 39, 29, 10, 13];\nconst allAbove20 = numbers.every(num => num > 20);\nconsole.log(allAbove20);",
+              "explanation": "Demonstrates using `.every()` to determine if all array elements are greater than 20. It highlights how `.every()` returns false when at least one element fails the test, in this case, indicating not all numbers are above 20."
+            },
+            {
+              "#": 3,
+              "title": "Empty array",
+              "code": "const empty = [];\nconst result = empty.every(value => value > 10);\nconsole.log(result);",
+              "explanation": "Shows `.every()` applied to an empty array. Interestingly, `.every()` returns true for empty arrays because there are no elements that fail the test. This behavior is based on the logical principle of vacuous truth, where a statement that makes a claim about all elements of an empty set is considered true."
+            },
+            {
+              "#": 4,
+              "title": "Check objects property",
+              "code": "const products = [\n  { name: 'Phone', inStock: true },\n  { name: 'Laptop', inStock: true },\n  { name: 'Tablet', inStock: false }\n];\nconst allInStock = products.every(product => product.inStock);\nconsole.log(allInStock);",
+              "explanation": "This use case extends `.every()` to arrays of objects, checking a specific property (`inStock`) of each object. It illustrates how `.every()` can be effectively used to ensure every item in a collection meets a particular criteria, such as being in stock, showcasing its versatility beyond simple arrays."
+            },
+            {
+                "#": 5,
+                "title": "Basic          use",
+                "code": "const isEven = num => num % 2 === 0;\nconst numbers = [2, 4, 6, 8];\nconst allEven = numbers.every(isEven);\nconsole.log(allEven);",
+                "explanation": "Checks if every number in an array is even using a simple callback. This demonstrates the most common use of `.every()`, applying a single-parameter function to test each array element."
+              },
+              {
+                "#": 6,
+                "title": "Using index",
+                "code": "const hasValidIndices = (value, index) => index < 3;\nconst array = [0, 1, 2, 3];\nconst validIndex = array.every(hasValidIndices);\nconsole.log(validIndex);",
+                "explanation": "Incorporates the current index in the condition, demonstrating how the second parameter of the callback (the current index) can be used to apply additional logic in the test, like ensuring elements are in specific positions."
+              },
+              {
+                "#": 7,
+                "title": "Using array parameter",
+                "code": "const array = [1, 2, 3];\nconst isPartOfArray = (element, index, arr) => arr.includes(element);\nconst result = array.every(isPartOfArray);\nconsole.log(result);",
+                "explanation": "Utilizes the third callback parameter to check if the current element exists in the array, illustrating how the entire array being processed can be referenced within the callback function for more complex conditions."
+              },
+              {
+                "#": 8,
+                "title": "With thisArg",
+                "code": "const checker = {\n  threshold: 5,\n  isBelowThreshold(value) {\n    return value < this.threshold;\n  }\n};\nconst values = [1, 2, 3];\nconst allBelow = values.every(checker.isBelowThreshold, checker);\nconsole.log(allBelow);",
+                "explanation": "Shows how to use the `thisArg` parameter to provide a `this` context to the callback function, enabling object methods to be used as callbacks with their corresponding objects as the context."
+              }
+          ],
         "action": "Iteration and Callback Execution",
         "is_mutating": false,
         "return_type": "boolean"
@@ -236,11 +367,36 @@
         ],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Filling an array with a static value",
-                "code": "const array = [1, 2, 3, 4, 5];\narray.fill(0, 2, 4);"
+              "#": 1,
+              "title": "Basic fill",
+              "code": "const array = [1, 2, 3, 4];\nconst filled = array.fill(0);\nconsole.log(filled);",
+              "explanation": "Fills the entire array with '0'. This basic usage of `.fill()` demonstrates replacing every element in an array with a single static value, without specifying start or end parameters, thus applying the fill across the entire array."
+            },
+            {
+              "#": 2,
+              "title": "Fill with start index",
+              "code": "const array = [1, 2, 3, 4];\nconst filled = array.fill('a', 2);\nconsole.log(filled);",
+              "explanation": "Starts filling with 'a' from index 2. By specifying the start index, this example shows how to begin filling the array from a position other than the start, leaving initial elements unchanged."
+            },
+            {
+              "#": 3,
+              "title": "Fill with start and end index",
+              "code": "const array = ['a', 'b', 'c', 'd'];\nconst filled = array.fill('X', 1, 3);\nconsole.log(filled);",
+              "explanation": "Fills array with 'X' from index 1 up to, but not including, index 3. This illustrates using both start and end parameters to fill a specific subsection of the array, demonstrating the method's precision in modifying array content."
+            },
+            {
+              "#": 4,
+              "title": "Negative indices",
+              "code": "const array = [1, 2, 3, 4, 5];\nconst filled = array.fill('v', -3, -1);\nconsole.log(filled);",
+              "explanation": "Utilizes negative indices to fill 'v' from the third-to-last element to the second-to-last. Negative indices count back from the end, allowing flexible specification of the fill range relative to the array's end."
+            },
+            {
+              "#": 5,
+              "title": "Fill and chain",
+              "code": "const array = new Array(4).fill(0).fill(1, 1, 3);\nconsole.log(array);",
+              "explanation": "Demonstrates chaining `.fill()` operations by first filling an array with '0's, then partially refilling it with '1's from index 1 to 3. This showcases how `.fill()` can be used in sequence for complex array initialization and modification."
             }
-        ],
+          ],
         "action": "Array Manipulation",
         "is_mutating": true,
         "return_type": "array"
@@ -286,11 +442,36 @@
         ],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Filtering an array for specific criteria",
-                "code": "const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];\nconst longWords = words.filter(word => word.length > 6);\nconsole.log(longWords);"
+              "#": 1,
+              "title": "Filter by value",
+              "code": "const numbers = [1, 2, 3, 4, 5];\nconst evens = numbers.filter(number => number % 2 === 0);\nconsole.log(evens);",
+              "explanation": "Filters an array to include only even numbers. This demonstrates the basic usage of `.filter()` by applying a condition to each element. The callback function checks if an element is even, and if so, `.filter()` includes it in the new array."
+            },
+            {
+              "#": 2,
+              "title": "Filter with index",
+              "code": "const numbers = [1, 2, 3, 4, 5];\nconst firstHalf = numbers.filter((number, index) => index < numbers.length / 2);\nconsole.log(firstHalf);",
+              "explanation": "Uses the index parameter to filter elements that are in the first half of the array. This showcases how `.filter()` can leverage both the element's value and its index within the array to determine whether it should be included in the resulting array."
+            },
+            {
+              "#": 3,
+              "title": "Filter using array",
+              "code": "const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];\nconst longWords = words.filter((word, index, arr) => word.length > 6 && arr.indexOf(word) === index);\nconsole.log(longWords);",
+              "explanation": "Filters the array to include words longer than 6 letters, also ensuring no duplicates by checking the element's index in the array. This illustrates using the entire array within the callback for conditions that go beyond the element's value or index."
+            },
+            {
+              "#": 4,
+              "title": "Filter and map",
+              "code": "const products = [\n  { name: 'Chair', price: 100 },\n  { name: 'Desk', price: 200 },\n  { name: 'Lamp', price: 50 }\n];\nconst filteredProducts = products.filter(product => product.price >= 100).map(product => product.name);\nconsole.log(filteredProducts);",
+              "explanation": "Demonstrates chaining `.filter()` with `.map()` to first select products with a price of at least 100, then map the filtered array to an array of product names. This highlights the composability of array methods for complex data processing tasks."
+            },
+            {
+              "#": 5,
+              "title": "Empty result",
+              "code": "const numbers = [1, 2, 3, 4, 5];\nconst noMatch = numbers.filter(number => number > 10);\nconsole.log(noMatch);",
+              "explanation": "Shows `.filter()` resulting in an empty array when no elements meet the condition, in this case, searching for numbers greater than 10. It illustrates that `.filter()` can return an empty array if no elements pass the test, which is useful for conditions that may not always be met."
             }
-        ],
+          ],
         "action": "Iteration and Callback Execution",
         "is_mutating": false,
         "return_type": "array"
@@ -328,11 +509,37 @@
         ],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Finding an element in the array",
-                "code": "const array1 = [5, 12, 8, 130, 44];\nconst found = array1.find(element => element > 10);"
-            }
-        ],
+              "#": 1,
+              "title": "First matching element",
+              "code": "const array = [5, 12, 8, 130, 44];\nconst found = array.find(element => element > 10);\nconsole.log(found);",
+              "explanation": "This example demonstrates `.find()` by searching for the first element that is greater than 10 in the array. It emphasizes that `.find()` returns the first matching element that satisfies the provided testing function, in this case, '12', showcasing its utility for quickly locating specific values in an array."
+            },
+            {
+              "#": 2,
+              "title": "Find object by property",
+              "code": "const inventory = [\n  {name: 'apples', quantity: 2},\n  {name: 'bananas', quantity: 0},\n  {name: 'cherries', quantity: 5}\n];\nconst result = inventory.find(({name}) => name === 'cherries');\nconsole.log(result);",
+              "explanation": "Searches for an object in an array by matching one of its properties, demonstrating how `.find()` can be effectively utilized with arrays of objects to locate an item based on a property value, such as finding an object where the `name` property equals 'cherries'."
+            },
+            {
+              "#": 3,
+              "title": "Combine index and value",
+              "code": "const numbers = [4, 6, 8, 12];\nconst found = numbers.find((element, index) => index === 2 && element % 2 === 0);\nconsole.log(found);",
+              "explanation": "This use case combines the element's index and value in the condition to find an element. It highlights the method's flexibility by finding an element at a specific index that also meets a value condition, demonstrating a more complex search criterion within an array."
+            },
+            {
+              "#": 4,
+              "title": "External value as context",
+              "code": "const numbers = [10, 20, 30, 40];\nconst threshold = 25;\nconst found = numbers.find(function(element) { return element > this; }, threshold);\nconsole.log(found);",
+              "explanation": "Utilizes an external value as `this` in the callback function, showing how `.find()` can incorporate external values into the search criteria by using the `thisArg` parameter. This enables searching for the first element greater than a dynamically specified threshold."
+            },
+            {
+                "#": 5,
+                "title": "Search with no match",
+                "code": "const numbers = [1, 5, 10, 15];\nconst found = numbers.find(element => element > 20);\nconsole.log(found !== undefined ? found : 'No match found');",
+                "explanation": "This example illustrates handling a search with no matching elements by checking the result of `.find()`. If `.find()` returns `undefined`, indicating no elements passed the test, it explicitly outputs 'No match found'. This approach ensures that the absence of a match results in a clear and informative response, rather than simply logging `undefined`."
+              }
+              
+          ],
         "action": "Element Access",
         "is_mutating": false,
         "return_type": "single element"
@@ -378,11 +585,30 @@
         ],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Finding the index of an element",
-                "code": "const array1 = [5, 12, 8, 130, 44];\nconst isLargeNumber = (element) => element > 13;\nconst index = array1.findIndex(isLargeNumber);"
+              "#": 1,
+              "title": "Find index by condition",
+              "code": "const numbers = [5, 12, 8, 130, 44];\nconst index = numbers.findIndex(element => element > 13);\nconsole.log(index !== -1 ? `Index: ${index}` : 'No match found');",
+              "explanation": "Searches for the index of the first element greater than 13. This example demonstrates `.findIndex()` by applying a condition to locate an element's position, emphasizing that it returns the index of the first matching element, or `-1` if no such element exists."
+            },
+            {
+              "#": 2,
+              "title": "Find index in objects",
+              "code": "const inventory = [\n  {name: 'apples', quantity: 2},\n  {name: 'bananas', quantity: 0},\n  {name: 'cherries', quantity: 5}\n];\nconst index = inventory.findIndex(({name}) => name === 'cherries');\nconsole.log(index !== -1 ? `Index: ${index}` : 'No match found');",
+              "explanation": "Locates an object in an array by one of its properties, demonstrating how `.findIndex()` can be used with arrays of objects to find the index of an item based on a property value, such as locating the index of an object where the `name` property equals 'cherries'."
+            },
+            {
+              "#": 3,
+              "title": "Using additional parameters",
+              "code": "const numbers = [4, 6, 8, 12];\nconst index = numbers.findIndex((element, index, arr) => arr[index] % 2 === 0 && index === 2);\nconsole.log(index !== -1 ? `Index: ${index}` : 'No match found');",
+              "explanation": "Combines element value and index in the condition to find a specific index, highlighting `.findIndex()`'s ability to utilize both the element's value and its index to satisfy a complex condition, in this case, finding the index of an even number at a specific position."
+            },
+            {
+              "#": 4,
+              "title": "Search with no match",
+              "code": "const numbers = [1, 5, 10, 15];\nconst index = numbers.findIndex(element => element > 20);\nconsole.log(index !== -1 ? `Index: ${index}` : 'No match found');",
+              "explanation": "Illustrates handling a search where no elements satisfy the condition, resulting in `.findIndex()` returning `-1`. This example shows how to check for this case and provide a clear message ('No match found'), effectively managing scenarios where a search criterion is not met by any array elements."
             }
-        ],
+          ],
         "action": "Element Access",
         "is_mutating": false,
         "return_type": "index or position"
@@ -420,11 +646,30 @@
         ],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Finding the last matching element in an array",
-                "code": "const array1 = [5, 12, 8, 130, 44];\nconst found = array1.findLast(element => element > 10);"
+              "#": 1,
+              "title": "Last matching element",
+              "code": "const numbers = [5, 12, 18, 130, 44];\nconst found = numbers.findLast(element => element > 10);\nconsole.log(found !== undefined ? found : 'No match found');",
+              "explanation": "Searches for the last element greater than 10, demonstrating how `findLast()` efficiently locates the last matching element in an array based on a specified condition. This method is particularly useful when the most recent or last occurrence of a condition being true is of interest."
+            },
+            {
+              "#": 2,
+              "title": "Last in objects",
+              "code": "const inventory = [\n  {name: 'apples', quantity: 2},\n  {name: 'bananas', quantity: 0},\n  {name: 'cherries', quantity: 5},\n  {name: 'bananas', quantity: 3}\n];\nconst result = inventory.findLast(({name}) => name === 'bananas');\nconsole.log(result !== undefined ? `Found: ${result.name}, Quantity: ${result.quantity}` : 'No match found');",
+              "explanation": "Finds the last object in an array matching a property ('bananas'), illustrating `findLast()`'s utility in arrays of objects for locating the most recent item matching the criteria. This is useful in scenarios where multiple objects might meet the condition but the last occurrence is preferred."
+            },
+            {
+              "#": 3,
+              "title": "Conditional search",
+              "code": "const numbers = [4, 16, 9, 25, 36, 49];\nconst found = numbers.findLast(number => Math.sqrt(number) % 2 === 0);\nconsole.log(found !== undefined ? `Square root is even: ${found}` : 'No match found');",
+              "explanation": "Searches for the last number whose square root is an even number. This showcases `findLast()` in evaluating more complex conditions, useful for mathematical computations or when the condition involves processing each element's value."
+            },
+            {
+              "#": 4,
+              "title": "Search with no match",
+              "code": "const names = ['Alice', 'Bob', 'Charlie', 'Diana'];\nconst found = names.findLast(name => name.startsWith('Z'));\nconsole.log(found !== undefined ? found : 'No match found');",
+              "explanation": "Demonstrates `findLast()` when no elements satisfy the testing function, resulting in `undefined`. This example emphasizes how to handle and display cases where the search criteria are not met by any elements in the array, ensuring clarity in the absence of a match."
             }
-        ],
+          ],
         "action": "Element Access",
         "is_mutating": false,
         "return_type": "single element"
@@ -470,11 +715,30 @@
         ],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Finding the last index of a matching element",
-                "code": "const array1 = [5, 12, 8, 130, 44];\nconst isLargeNumber = (element) => element > 13;\nconst lastIndex = array1.findLastIndex(isLargeNumber);\nconsole.log(lastIndex);"
+              "#": 1,
+              "title": "Last matching index",
+              "code": "const numbers = [5, 12, 18, 130, 44];\nconst index = numbers.findLastIndex(element => element > 10);\nconsole.log(index !== -1 ? `Last Index: ${index}` : 'No match found');",
+              "explanation": "Searches for the index of the last element greater than 10, showcasing how `findLastIndex()` can be used to find the position of the last occurrence of a condition being true in an array. This method is particularly useful for arrays where the latest (last added or occurring) element that meets a condition is of interest."
+            },
+            {
+              "#": 2,
+              "title": "Last index in objects",
+              "code": "const inventory = [\n  {name: 'apples', quantity: 2},\n  {name: 'bananas', quantity: 0},\n  {name: 'cherries', quantity: 5},\n  {name: 'bananas', quantity: 3}\n];\nconst index = inventory.findLastIndex(({name}) => name === 'bananas');\nconsole.log(index !== -1 ? `Last 'bananas' Index: ${index}` : 'No match found');",
+              "explanation": "Locates the index of the last object in an array matching a specific property, illustrating `findLastIndex()`'s utility in working with arrays of objects. This example is useful for scenarios where you need to find the most recent (or last added) item that matches a condition based on object properties."
+            },
+            {
+              "#": 3,
+              "title": "Conditional search for index",
+              "code": "const numbers = [4, 16, 9, 25, 36, 49];\nconst index = numbers.findLastIndex(number => Math.sqrt(number) % 2 === 0);\nconsole.log(index !== -1 ? `Index with even square root: ${index}` : 'No match found');",
+              "explanation": "Demonstrates searching for the last index where the number's square root is even, showcasing `findLastIndex()` for evaluating conditions that involve computations or processing of each element's value. This example is useful for mathematical or condition-based searches where the most recent element meeting a complex condition is sought."
+            },
+            {
+              "#": 4,
+              "title": "No matching index",
+              "code": "const names = ['Alice', 'Bob', 'Charlie', 'Diana'];\nconst index = names.findLastIndex(name => name.startsWith('Z'));\nconsole.log(index !== -1 ? `Last Index: ${index}` : 'No match found');",
+              "explanation": "Illustrates using `findLastIndex()` when no elements satisfy the testing function, resulting in `-1`. This example is crucial for scenarios where it's necessary to validate the presence of an element that meets certain criteria, and it clearly communicates when no such element exists."
             }
-        ],
+          ],
         "action": "Element Access",
         "is_mutating": false,
         "return_type": "index or position"
@@ -504,11 +768,36 @@
         ],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Flattening nested arrays",
-                "code": "const array1 = [1, 2, [3, 4]];\nconst flatArray = array1.flat();"
+              "#": 1,
+              "title": "Default flatten",
+              "code": "const array = [1, 2, [3, 4]];\nconst flatArray = array.flat();\nconsole.log(flatArray);",
+              "explanation": "Demonstrates the default behavior of `.flat()` without specifying a depth, effectively flattening the array one level deep. It transforms an array containing nested arrays into a single-level array, merging the elements of the sub-array with the top-level elements."
+            },
+            {
+              "#": 2,
+              "title": "Specified depth",
+              "code": "const array = [1, 2, [3, [4, 5]]];\nconst flatArray = array.flat(2);\nconsole.log(flatArray);",
+              "explanation": "Shows `.flat()` with a depth of 2, allowing it to flatten nested arrays up to two levels deep. This example illustrates how specifying the depth parameter can control the extent of flattening, accommodating more complex nested structures."
+            },
+            {
+              "#": 3,
+              "title": "Complete flattening",
+              "code": "const array = [1, [2, [3, [4, [5]]]]];\nconst flatArray = array.flat(Infinity);\nconsole.log(flatArray);",
+              "explanation": "Uses the `Infinity` parameter to completely flatten an array regardless of how deeply nested the arrays are. This approach is useful for complex nested arrays where the depth might not be known beforehand or is variable."
+            },
+            {
+              "#": 4,
+              "title": "Remove empty slots",
+              "code": "const array = [1, 2, , 4, [5, , 7]];\nconst flatArray = array.flat();\nconsole.log(flatArray);",
+              "explanation": "Illustrates `.flat()`'s ability to remove empty slots from arrays. When flattening, any empty slots in the array (holes) are removed, leading to a clean array without undefined or empty positions, which is particularly useful for cleaning up data."
+            },
+            {
+              "#": 5,
+              "title": "No change on flat array",
+              "code": "const array = [1, 2, 3, 4, 5];\nconst flatArray = array.flat();\nconsole.log(flatArray);",
+              "explanation": "Shows that applying `.flat()` to an already flat array does not change the array. This example confirms that `.flat()` is safe to use on any array, as it does not affect arrays that do not contain nested structures, ensuring consistency in data processing workflows."
             }
-        ],
+          ],
         "action": "Array Manipulation",
         "is_mutating": false,
         "return_type": "array"
@@ -550,11 +839,36 @@
         ],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Mapping and flattening an array",
-                "code": "const array1 = [[1], [2], [3], [4]];\nconst flatMapArray = array1.flatMap(x => [x * 2]);"
+              "#": 1,
+              "title": "Simple map and flatten",
+              "code": "const array = [1, 2, 3, 4];\nconst flatMapResult = array.flatMap(x => [x, x * 2]);\nconsole.log(flatMapResult);",
+              "explanation": "Demonstrates a basic use of flatMap() by mapping each element to an array containing the element and its double, then flattening the result. This approach is handy for when each element in the source array needs to be transformed into multiple elements in the resulting array."
+            },
+            {
+              "#": 2,
+              "title": "Flatten arrays of arrays",
+              "code": "const array = [[1, 2], [3, 4], [5, 6]];\nconst flatMapResult = array.flatMap(x => x);\nconsole.log(flatMapResult);",
+              "explanation": "Shows how flatMap() can be used to flatten an array of arrays without any additional transformation. This is essentially a shorthand for mapping each array to itself and then flattening the result, useful for when you have a simple structure to flatten."
+            },
+            {
+              "#": 3,
+              "title": "Map to multiple elements",
+              "code": "const sentences = ['This is a sentence.', 'This is another.'];\nconst flatMapResult = sentences.flatMap(sentence => sentence.split(' '));\nconsole.log(flatMapResult);",
+              "explanation": "Illustrates mapping each string to an array of words (using split()) and then flattening the arrays into a single array of words. This example highlights flatMap()'s efficiency in breaking down and flattening complex data structures like texts into individual components."
+            },
+            {
+              "#": 4,
+              "title": "Remove empty values",
+              "code": "const array = ['Today', '', 'is', '', 'sunny'];\nconst flatMapResult = array.flatMap(x => x ? [x] : []);\nconsole.log(flatMapResult);",
+              "explanation": "Uses flatMap() to filter out empty strings by mapping non-empty strings to arrays containing the string itself and empty strings to empty arrays. The flattening step removes the empty arrays, effectively filtering the original array for non-empty values."
+            },
+            {
+              "#": 5,
+              "title": "Complex transformation",
+              "code": "const array = [1, 2, 3];\nconst flatMapResult = array.flatMap(x => [x, Math.pow(x, 2), Math.pow(x, 3)]);\nconsole.log(flatMapResult);",
+              "explanation": "This example shows flatMap() being used for more complex transformations, mapping each number to an array containing the number, its square, and its cube, then flattening the result. It demonstrates flatMap()'s power in performing multi-step transformations in a concise manner."
             }
-        ],
+          ],
         "action": "Array Manipulation",
         "is_mutating": false,
         "return_type": "array"
@@ -592,11 +906,36 @@
         ],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Iterating over array elements",
-                "code": "const array1 = ['a', 'b', 'c'];\narray1.forEach(element => console.log(element));"
+              "#": 1,
+              "title": "Basic iteration",
+              "code": "const array = ['a', 'b', 'c', 'd'];\narray.forEach(element => console.log(element));",
+              "explanation": "Demonstrates a basic use of forEach() by logging each element in the array. This example is straightforward and shows how forEach() can be used to execute a function for every element in an array, ideal for operations that require accessing each element individually without transforming the array."
+            },
+            {
+              "#": 2,
+              "title": "Iteration with index",
+              "code": "const names = ['Alice', 'Bob', 'Charlie', 'Diana'];\nnames.forEach((name, index) => console.log(`${index}: ${name}`));",
+              "explanation": "Shows forEach() being used to access both the current element and its index. This approach is useful for cases where the position of the element within the array is relevant to the operation being performed, such as logging elements with their corresponding indexes."
+            },
+            {
+              "#": 3,
+              "title": "Updating external state",
+              "code": "const numbers = [1, 2, 3, 4];\nlet sum = 0;\nnumbers.forEach(number => sum += number);\nconsole.log(`Total: ${sum}`);",
+              "explanation": "Illustrates using forEach() to update an external state, in this case, calculating the sum of array elements. This example highlights how forEach() can be used for operations that aggregate information from an array or otherwise modify external variables based on array contents."
+            },
+            {
+              "#": 4,
+              "title": "Applying actions to DOM elements",
+              "code": "/* Assume we have multiple <div> elements with the class 'update-me' */\nconst divs = document.querySelectorAll('.update-me');\ndivs.forEach(div => div.textContent = 'Updated');",
+              "explanation": "Demonstrates forEach() used in a web context to update DOM elements. By selecting elements with querySelectorAll() and then using forEach(), each selected DOM element can be modified, showcasing forEach()'s utility beyond simple arrays and in manipulating web page content."
+            },
+            {
+              "#": 5,
+              "title": "Complex logic",
+              "code": "const products = [\n  { name: 'Product 1', price: 100 },\n  { name: 'Product 2', price: 200 },\n  { name: 'Product 3', price: 300 }\n];\nproducts.forEach(product => {\n  if (product.price > 150) {\n    console.log(`${product.name} is expensive`);\n  } else {\n    console.log(`${product.name} is affordable`);\n  }\n});",
+              "explanation": "Uses forEach() to apply complex logic to each element in an array of objects, categorizing products as 'expensive' or 'affordable' based on their price. This illustrates how forEach() can accommodate multifaceted operations and conditionals, making it versatile for a range of tasks."
             }
-        ],
+          ],
         "action": "Iteration and Callback Execution",
         "is_mutating": false,
         "return_type": "undefined"
@@ -634,11 +973,36 @@
         ],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Creating an array from a string",
-                "code": "const string = '12345';\nconst arrayFromString = Array.from(string);"
+              "#": 1,
+              "title": "Convert string to array",
+              "code": "const string = 'hello';\nconst arrayFromString = Array.from(string);\nconsole.log(arrayFromString);",
+              "explanation": "Converts a string into an array of characters. This highlights the capability to work with array-like objects, transforming the string into an array."
+            },
+            {
+              "#": 2,
+              "title": "Create array from Set",
+              "code": "const set = new Set(['a', 'b', 'c']);\nconst arrayFromSet = Array.from(set);\nconsole.log(arrayFromSet);",
+              "explanation": "Converts a Set into an array, facilitating operations that require array methods on data initially stored in a Set."
+            },
+            {
+              "#": 3,
+              "title": "Using map function",
+              "code": "const range = { start: 0, end: 4 };\nconst arrayFromRange = Array.from({ length: range.end - range.start }, (v, i) => i + range.start);\nconsole.log(arrayFromRange);",
+              "explanation": "Generates an array from a range object using a map function, illustrating the versatility in array creation and element transformation."
+            },
+            {
+              "#": 4,
+              "title": "Arguments object to array",
+              "code": "function convertArgumentsToArray() {\n  return Array.from(arguments);\n}\nconsole.log(convertArgumentsToArray(1, 2, 3));",
+              "explanation": "Converts the arguments object into a true array, enabling the application of array methods to function arguments."
+            },
+            {
+              "#": 5,
+              "title": "Generate sequence",
+              "code": "const sequence = Array.from({ length: 5 }, (_, index) => index + 1);\nconsole.log(sequence);",
+              "explanation": "Creates a sequence of numbers by providing an object with a length property and a map function, demonstrating a concise way to initialize arrays with specific content."
             }
-        ],
+          ],
         "action": "Array Manipulation",
         "is_mutating": false,
         "return_type": "array"
@@ -672,11 +1036,36 @@
         ],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Checking if an array includes a certain value",
-                "code": "const array1 = [1, 2, 3];\nconst includesTwo = array1.includes(2);"
+              "#": 1,
+              "title": "Check presence of an element",
+              "code": "const fruits = ['apple', 'banana', 'mango', 'orange'];\nconst hasMango = fruits.includes('mango');\nconsole.log(hasMango);",
+              "explanation": "Determines if the array contains 'mango'. This basic use case demonstrates includes() for verifying the presence of a specific item in an array, useful for simple membership testing."
+            },
+            {
+              "#": 2,
+              "title": "Search from index",
+              "code": "const numbers = [1, 2, 3, 4, 5];\nconst hasFour = numbers.includes(4, 2);\nconsole.log(hasFour);",
+              "explanation": "Checks for '4' starting from index 2. This shows how includes() can start the search from a given index, offering flexibility in searching subsets of an array."
+            },
+            {
+              "#": 3,
+              "title": "Negative index search",
+              "code": "const pets = ['dog', 'cat', 'bird', 'fish'];\nconst hasBird = pets.includes('bird', -2);\nconsole.log(hasBird);",
+              "explanation": "Uses a negative index to start the search from the end. This example illustrates includes()'s ability to accept negative indices, allowing searches to begin from the array's end, moving backwards."
+            },
+            {
+              "#": 4,
+              "title": "Check absence",
+              "code": "const tools = ['hammer', 'screwdriver', 'wrench'];\nconst hasSaw = tools.includes('saw');\nconsole.log(hasSaw);",
+              "explanation": "Verifies that 'saw' is not in the array. This use case is crucial for confirming the absence of an item, demonstrating includes()'s role in conditional logic and decision making based on the presence or absence of elements."
+            },
+            {
+              "#": 5,
+              "title": "Case-sensitive search",
+              "code": "const letters = ['A', 'B', 'C'];\nconst hasLowerCaseA = letters.includes('a');\nconsole.log(hasLowerCaseA);",
+              "explanation": "Confirms includes() is case-sensitive by searching for 'a'. This highlights an important characteristic of includes()—its case sensitivity, which is vital to remember when working with string elements."
             }
-        ],
+          ],
         "action": "Iteration and Callback Execution",
         "is_mutating": false,
         "return_type": "boolean"
@@ -706,11 +1095,36 @@
         ],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Finding the index of an element",
-                "code": "const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];\nconst index = beasts.indexOf('bison');"
+              "#": 1,
+              "title": "Find element index",
+              "code": "const fruits = ['apple', 'banana', 'mango', 'orange'];\nconst mangoIndex = fruits.indexOf('mango');\nconsole.log(mangoIndex);",
+              "explanation": "Determines the index of 'mango' in the array. This use case demonstrates indexOf() for finding the position of a specific item, which is useful for identifying the location of elements within an array."
+            },
+            {
+              "#": 2,
+              "title": "Start search from position",
+              "code": "const numbers = [1, 2, 3, 4, 2];\nconst indexAfterThree = numbers.indexOf(2, 3);\nconsole.log(indexAfterThree);",
+              "explanation": "Searches for '2' starting from index 3. This shows how indexOf() can begin the search from a specified index, allowing for targeted searches within a section of the array."
+            },
+            {
+              "#": 3,
+              "title": "Check for absence",
+              "code": "const tools = ['hammer', 'screwdriver', 'wrench'];\nconst sawIndex = tools.indexOf('saw');\nconsole.log(sawIndex);",
+              "explanation": "Verifies that 'saw' is not in the array by returning `-1`. This use case is essential for determining the absence of an item, showcasing indexOf()'s utility in conditionally handling cases where an element is not found."
+            },
+            {
+              "#": 4,
+              "title": "Find first duplicate",
+              "code": "const letters = ['a', 'b', 'c', 'a', 'b', 'c'];\nconst firstDuplicateIndex = letters.indexOf('a', letters.indexOf('a') + 1);\nconsole.log(firstDuplicateIndex);",
+              "explanation": "Locates the index of the first duplicate of 'a'. By using indexOf() to find the first occurrence and then starting a second search just after that position, this approach helps identify duplicates within the array."
+            },
+            {
+              "#": 5,
+              "title": "Case-sensitive search",
+              "code": "const mix = ['a', 'B', 'c', 'A', 'b', 'C'];\nconst lowercaseAIndex = mix.indexOf('a');\nconsole.log(lowercaseAIndex);",
+              "explanation": "Confirms indexOf() is case-sensitive by finding the index of lowercase 'a'. This highlights an important aspect of indexOf()—its sensitivity to case, which is crucial for string searches in arrays."
             }
-        ],
+          ],
         "action": "Element Access",
         "is_mutating": false,
         "return_type": "index or position"
@@ -740,11 +1154,36 @@
         ],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Checking if a variable is an array",
-                "code": "const array = [1, 2, 3];\nconst isArray = Array.isArray(array);"
+              "#": 1,
+              "title": "Check array",
+              "code": "const fruits = ['apple', 'banana', 'mango'];\nconst isArray = Array.isArray(fruits);\nconsole.log(isArray);",
+              "explanation": "Verifies if `fruits` is an array. This basic use case demonstrates Array.isArray() for confirming the array status of a variable, ensuring that array-specific operations are safe to perform."
+            },
+            {
+              "#": 2,
+              "title": "Check non-array",
+              "code": "const number = 123;\nconst isArray = Array.isArray(number);\nconsole.log(isArray);",
+              "explanation": "Determines that a number is not an array. This example shows Array.isArray()'s ability to distinguish between arrays and other JavaScript data types, which is crucial for type-checking and preventing type-related errors."
+            },
+            {
+              "#": 3,
+              "title": "Check array-like object",
+              "code": "const obj = {0: 'apple', 1: 'banana', length: 2};\nconst isArray = Array.isArray(obj);\nconsole.log(isArray);",
+              "explanation": "Evaluates an object with array-like properties and confirms it's not an array. Despite having properties similar to an array, Array.isArray() correctly identifies that it's an object, showcasing the method's accuracy in type assessment."
+            },
+            {
+              "#": 4,
+              "title": "Check function",
+              "code": "const func = function() {};\nconst isArray = Array.isArray(func);\nconsole.log(isArray);",
+              "explanation": "Confirms that a function is not an array. This highlights Array.isArray()'s role in differentiating between arrays and functions, aiding in the robust handling of function arguments or callbacks that may or may not be arrays."
+            },
+            {
+              "#": 5,
+              "title": "Check nested array",
+              "code": "const nestedArray = [[1, 2], [3, 4]];\nconst isArray = Array.isArray(nestedArray);\nconsole.log(isArray);",
+              "explanation": "Identifies a nested array as an array. This use case underscores Array.isArray()'s utility in confirming arrays at any level of nesting, which is beneficial for working with complex data structures."
             }
-        ],
+          ],
         "action": "General Utilities",
         "is_mutating": false,
         "return_type": "boolean"
@@ -772,48 +1211,40 @@
                 "default": "','"
             }
         ],
-        "use_cases": [
-            {
+        
+            "use_cases": [
+              {
                 "#": 1,
-                "title": "Joining array elements into a string",
-                "code": "const elements = [1,'Fire', 'Air', 'Water'];\nconst joined = elements.join('_');\nconsole.log(joined);"
-            },
-            {
-                "#": 1,
-                "title": "Joining array elements into a string",
-                "code": "const elements = [2,'Air','Fire', 'Water'];\nconst joined = elements.join('-');\nconsole.log(joined);"
-            },
-            {
-                "#": 1,
-                "title": "Joining array elements into a string",
-                "code": "const elements = [3,'Fire', 'Air', 'Water'];\nconst joined = elements.join('+');\nconsole.log(joined);"
-            },
-            {
-                "#": 1,
-                "title": "Joining array elements into a string",
-                "code": "const elements = [4,'Fire', 'Air', 'Water'];\nconst joined = elements.join();\nconsole.log(joined);"
-            },
-            {
-                "#": 1,
-                "title": "Joining array elements into a string",
-                "code": "const elements = [5,'Fire', 'Air', 'Water'];\nconst joined = elements.join();\nconsole.log(joined);"
-            },
-            {
-                "#": 1,
-                "title": "Joining array elements into a string",
-                "code": "const elements = [6,'Fire', 'Air', 'Water'];\nconst joined = elements.join();\nconsole.log(joined);"
-            },
-            {
-                "#": 1,
-                "title": "Joining array elements into a string",
-                "code": "const elements = [7,'Fire', 'Air', 'Water'];\nconst joined = elements.join();\nconsole.log(joined);"
-            },
-            {
-                "#": 1,
-                "title": "Joining array elements into a string",
-                "code": "const elements = [8,'Fire', 'Air', 'Water'];\nconst joined = elements.join();\nconsole.log(joined);"
-            }
-        ],
+                "title": "Join with underscore",
+                "code": "const elements = ['Earth', 'Fire', 'Air', 'Water'];\nconst joined = elements.join('_');\nconsole.log(joined);",
+                "explanation": "This code joins array elements into a single string, using an underscore as the separator between elements. The result is 'Earth_Fire_Air_Water'."
+              },
+              {
+                "#": 2,
+                "title": "Default join",
+                "code": "const fruits = ['Apple', 'Banana', 'Cherry'];\nconst joined = fruits.join();\nconsole.log(joined);",
+                "explanation": "This code joins array elements into a single string without specifying a separator. By default, commas are used, resulting in 'Apple,Banana,Cherry'."
+              },
+              {
+                "#": 3,
+                "title": "Join with  empty separator",
+                "code": "const letters = ['J', 'S'];\nconst joined = letters.join('');\nconsole.log(joined);",
+                "explanation": "This example demonstrates joining array elements with an empty string as the separator, effectively concatenating them into 'JS'."
+              },
+              {
+                "#": 4,
+                "title": "Array with a single element",
+                "code": "const singleton = ['OnlyOne'];\nconst joined = singleton.join('-');\nconsole.log(joined);",
+                "explanation": "This code shows that joining an array with a single element simply returns that element, unaffected by the specified separator, resulting in 'OnlyOne'."
+              },
+              {
+                "#": 5,
+                "title": "Non-mutating nature of join",
+                "code": "const originalArray = ['Start', 'Middle', 'End'];\nconst joined = originalArray.join(' -> ');\nconsole.log(joined);\nconsole.log(originalArray);",
+                "explanation": "This example illustrates that the `.join()` method does not mutate the original array. After joining, the original array remains unchanged, demonstrated by logging it after the joined string."
+              }
+            ]          
+          ,
         "action": "General Utilities",
         "is_mutating": false,
         "return_type": "string"
@@ -831,11 +1262,36 @@
         "arguments": [],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Iterating over array keys",
-                "code": "const array = ['a', 'b', 'c'];\nconst iterator = array.keys();\nfor (let key of iterator) {\n  console.log(key);\n}"
+              "#": 1,
+              "title": "Iterate array over keys",
+              "code": "const fruits = ['Apple', 'Banana', 'Mango'];\nconst keys = fruits.keys();\nfor (let key of keys) {\n  console.log(key);\n}",
+              "explanation": "Demonstrates iterating over the keys (indices) of an array using keys(). This basic use case shows how to access each index of an array, useful for scenarios where you need to work with the position of elements."
+            },
+            {
+              "#": 2,
+              "title": "Combine keys with elements",
+              "code": "const names = ['Alice', 'Bob', 'Charlie'];\nconst keys = names.keys();\nfor (let key of keys) {\n  console.log(`${key}: ${names[key]}`);\n}",
+              "explanation": "Shows combining keys (indices) with their corresponding array elements. This approach is beneficial for operations that require both the element and its index, such as when generating a list with numbered items."
+            },
+            {
+              "#": 3,
+              "title": "Convert keys to array",
+              "code": "const numbers = [10, 20, 30, 40];\nconst keysArray = Array.from(numbers.keys());\nconsole.log(keysArray);",
+              "explanation": "Converts the keys of an array into a standalone array using Array.from(). This is useful for creating an array of indices, which can then be used for mapping, filtering, or other array operations."
+            },
+            {
+              "#": 4,
+              "title": "Empty array keys",
+              "code": "const empty = [];\nconst keys = empty.keys();\nconsole.log([...keys]);",
+              "explanation": "Illustrates that keys() works with empty arrays by generating an empty iterator. This highlights keys()'s consistency in behavior, regardless of the array's content, ensuring predictable results in edge cases."
+            },
+            {
+              "#": 5,
+              "title": "Sparse array keys",
+              "code": "const sparse = [1, , 3];\nconst keys = sparse.keys();\nfor (let key of keys) {\n  console.log(key);\n}",
+              "explanation": "Demonstrates keys() with a sparse array, showing that it iterates over all possible keys, including those that correspond to 'holes' in sparse arrays. This use case is valuable for understanding and handling sparse arrays' unique characteristics."
             }
-        ],
+          ],
         "action": "General Utilities",
         "is_mutating": false,
         "return_type": "Array Iterator"
@@ -865,11 +1321,36 @@
         ],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Finding the last occurrence of an element",
-                "code": "const animals = ['Dodo', 'Tiger', 'Penguin', 'Dodo'];\nconst index = animals.lastIndexOf('Dodo');"
+              "#": 1,
+              "title": "Find last occurrence of element",
+              "code": "const numbers = [1, 2, 3, 4, 2, 5];\nconst lastIndex = numbers.lastIndexOf(2);\nconsole.log(lastIndex);",
+              "explanation": "Determines the last index of '2' in the array. This use case demonstrates lastIndexOf() for finding the position of the last occurrence of a specific item, which is useful for identifying the most recent position of duplicate elements within an array."
+            },
+            {
+              "#": 2,
+              "title": "Start search from position",
+              "code": "const fruits = ['apple', 'banana', 'mango', 'banana', 'orange'];\nconst lastIndex = fruits.lastIndexOf('banana', 2);\nconsole.log(lastIndex);",
+              "explanation": "Searches for 'banana' starting backwards from index 2. This shows how lastIndexOf() can begin the search from a specified index, allowing for targeted searches within a specific section of the array."
+            },
+            {
+              "#": 3,
+              "title": "Check for absence",
+              "code": "const tools = ['hammer', 'screwdriver', 'wrench'];\nconst lastIndex = tools.lastIndexOf('saw');\nconsole.log(lastIndex);",
+              "explanation": "Verifies that 'saw' is not in the array by returning `-1`. This use case is essential for determining the absence of an item, showcasing lastIndexOf()'s utility in conditionally handling cases where an element is not found."
+            },
+            {
+              "#": 4,
+              "title": "Negative index search",
+              "code": "const letters = ['a', 'b', 'c', 'a', 'b', 'c'];\nconst lastIndex = letters.lastIndexOf('b', -3);\nconsole.log(lastIndex);",
+              "explanation": "Uses a negative index to specify the search start position, effectively searching backwards from the end. This example illustrates lastIndexOf()'s ability to accept negative indices, facilitating reverse searches from specific points in the array."
+            },
+            {
+              "#": 5,
+              "title": "Case-sensitive search",
+              "code": "const mix = ['A', 'b', 'C', 'a', 'B', 'c'];\nconst lastIndex = mix.lastIndexOf('B');\nconsole.log(lastIndex);",
+              "explanation": "Confirms lastIndexOf() is case-sensitive by finding the last index of uppercase 'B'. This highlights an important characteristic of lastIndexOf()—its case sensitivity, which is vital to remember when working with string elements."
             }
-        ],
+          ],
         "action": "Element Access",
         "is_mutating": false,
         "return_type": "index or position"
@@ -887,11 +1368,36 @@
         "arguments": [],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Determining the size of an array",
-                "code": "const fruits = ['Apple', 'Banana', 'Cherry'];\nconst length = fruits.length;\nconsole.log(length);"
+              "#": 1,
+              "title": "Retrieve array length",
+              "code": "const fruits = ['Apple', 'Banana', 'Mango'];\nconsole.log(fruits.length);",
+              "explanation": "Gets the number of elements in the array. This basic use case demonstrates how to access the length property to determine the size of an array, which is fundamental for iterating over arrays and managing array data."
+            },
+            {
+              "#": 2,
+              "title": "Truncate array",
+              "code": "const numbers = [1, 2, 3, 4, 5];\nnumbers.length = 3;\nconsole.log(numbers);",
+              "explanation": "Shortens the array to the first three elements by setting its length. This illustrates how adjusting the length property can effectively truncate the array, removing elements beyond the new length."
+            },
+            {
+              "#": 3,
+              "title": "Clear array",
+              "code": "const letters = ['a', 'b', 'c', 'd'];\nletters.length = 0;\nconsole.log(letters);",
+              "explanation": "Empties the array by setting its length to 0. This use case shows a quick and effective way to clear an array, demonstrating the length property's role in managing array content."
+            },
+            {
+              "#": 4,
+              "title": "Determine if array is empty",
+              "code": "const items = [];\nconsole.log(items.length === 0);",
+              "explanation": "Checks if the array is empty by comparing its length to 0. This approach is useful for conditionally performing operations based on whether an array contains any elements."
+            },
+            {
+              "#": 5,
+              "title": "Extend array",
+              "code": "const buffer = [1, 2, 3];\nbuffer.length = 5;\nconsole.log(buffer);",
+              "explanation": "Increases the array's length without adding specific elements, leading to empty slots. This highlights how setting a length larger than the current number of elements creates undefined slots at the new indices, which can be useful for reserving space in an array."
             }
-        ],
+          ],
         "action": "General Utilities",
         "is_mutating": false,
         "return_type": "number"
@@ -933,11 +1439,36 @@
         ],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Creating a new array with doubled values",
-                "code": "const numbers = [1, 4, 9];\nconst doubles = numbers.map(num => num * 2);"
+              "#": 1,
+              "title": "Double values",
+              "code": "const numbers = [1, 2, 3, 4];\nconst doubled = numbers.map(number => number * 2);\nconsole.log(doubled);",
+              "explanation": "Transforms each number in the array by doubling its value. This use case demonstrates map()'s basic functionality for applying a simple mathematical operation to each element, illustrating how to efficiently perform element-wise transformations."
+            },
+            {
+              "#": 2,
+              "title": "Extract property values",
+              "code": "const users = [\n  { id: 1, name: 'Alice' },\n  { id: 2, name: 'Bob' },\n  { id: 3, name: 'Charlie' }\n];\nconst names = users.map(user => user.name);\nconsole.log(names);",
+              "explanation": "Extracts the 'name' property from each object in an array. This shows map()'s ability to access and transform data stored in objects, making it particularly useful for working with arrays of objects and extracting specific information."
+            },
+            {
+              "#": 3,
+              "title": "Add array index to value",
+              "code": "const fruits = ['apple', 'banana', 'cherry'];\nconst indexedFruits = fruits.map((fruit, index) => `${index + 1}: ${fruit}`);\nconsole.log(indexedFruits);",
+              "explanation": "Combines each element with its index to create a numbered list. This example highlights map()'s capacity to use both the element and its index in the callback function, offering a way to enrich data with additional context."
+            },
+            {
+              "#": 4,
+              "title": "Conditional transformation",
+              "code": "const amounts = [150, 200, 175, 50];\nconst discounts = amounts.map(amount => amount > 100 ? amount * 0.9 : amount);\nconsole.log(discounts);",
+              "explanation": "Applies a discount to amounts over 100, leaving others unchanged. This illustrates using map() for conditional transformations, where elements are modified based on specific criteria, showcasing the method's flexibility for more complex data processing tasks."
+            },
+            {
+              "#": 5,
+              "title": "Parse strings to integers",
+              "code": "const stringNumbers = ['1', '2', '3', '4'];\nconst integers = stringNumbers.map(Number);\nconsole.log(integers);",
+              "explanation": "Converts each string in the array to an integer. This use case demonstrates map()'s utility in type conversion, here using the Number constructor as the map function to convert an array of string representations of numbers into actual numbers."
             }
-        ],
+          ],
         "action": "Iteration and Callback Execution",
         "is_mutating": false,
         "return_type": "array"
@@ -955,11 +1486,36 @@
         "arguments": [],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Creating an array from given arguments",
-                "code": "const array = Array.of(1, 2, 3);"
+              "#": 1,
+              "title": "Create array with single element",
+              "code": "const singleElementArray = Array.of(10);\nconsole.log(singleElementArray);",
+              "explanation": "Generates an array containing a single numeric element. Unlike the Array constructor, which creates an array of empty slots when given a single numeric argument, of method interprets the argument as an array element, creating a one-element array."
+            },
+            {
+              "#": 2,
+              "title": "Create array with multiple elements",
+              "code": "const multipleElementsArray = Array.of(1, 'two', 3, 'four');\nconsole.log(multipleElementsArray);",
+              "explanation": "Creates an array with both numeric and string elements. This demonstrates of method's flexibility in handling multiple arguments of varying types, assembling them into a single array."
+            },
+            {
+              "#": 3,
+              "title": "Create array from array-like object",
+              "code": "const arrayLike = {0: 'first', 1: 'second', length: 2};\nconst trueArray = Array.of(arrayLike);\nconsole.log(trueArray);",
+              "explanation": "Converts an array-like object into an array containing that object as its element. This shows that of method can encapsulate array-like objects within a true array, unlike methods designed to convert array-like objects directly."
+            },
+            {
+              "#": 4,
+              "title": "Create array with undefined",
+              "code": "const arrayWithUndefined = Array.of(undefined);\nconsole.log(arrayWithUndefined);",
+              "explanation": "Generates an array containing a single `undefined` element. This highlights of method's capability to explicitly include `undefined` or any other value as an array element, useful for initializing arrays with placeholder values."
+            },
+            {
+              "#": 5,
+              "title": "Empty array creation",
+              "code": "const emptyArray = Array.of();\nconsole.log(emptyArray);",
+              "explanation": "Creates an empty array. of method without arguments produces an empty array, showcasing its straightforward use for array initialization without predefined elements."
             }
-        ],
+          ],
         "action": "General Utilities",
         "is_mutating": false,
         "return_type": "array"
@@ -977,37 +1533,41 @@
         "arguments": [],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Removing the last element of an array",
-                "code": "const fruits = ['Apple', 'Banana', 'Mango'];\nconst last = fruits.pop();"
+              "#": 1,
+              "title": "Remove last element",
+              "code": "const fruits = ['Apple', 'Banana', 'Mango'];\nconst removedFruit = fruits.pop();\nconsole.log(removedFruit);\nconsole.log(fruits);",
+              "explanation": "Removes the last element ('Mango') from the array and logs it. This basic use case demonstrates pop method for modifying an array by removing its last element, showing how it affects the array's length and content."
+            },
+            {
+              "#": 2,
+              "title": "Empty array",
+              "code": "const emptyArray = [];\nconst result = emptyArray.pop();\nconsole.log(result);\nconsole.log(emptyArray);",
+              "explanation": "Attempts to remove an element from an empty array, resulting in undefined. This highlights pop method's behavior when called on an empty array, indicating that it safely handles such cases without throwing an error."
+            },
+            {
+              "#": 3,
+              "title": "Sequential removal",
+              "code": "const stack = ['first', 'second', 'third'];\nwhile(stack.length > 0) {\n  console.log(stack.pop());\n}",
+              "explanation": "Demonstrates sequential removal of elements from an array, simulating a stack data structure. This use case shows how pop method can be utilized in a loop to process and remove elements one by one until the array is empty."
+            },
+            {
+              "#": 4,
+              "title": "Capture removed elements",
+              "code": "const numbers = [1, 2, 3, 4, 5];\nconst removedNumbers = [];\nremovedNumbers.push(numbers.pop(), numbers.pop());\nconsole.log(removedNumbers);\nconsole.log(numbers);",
+              "explanation": "Removes the last two elements from the original array and captures them in a new array. This illustrates how pop method can be combined with other array methods like push to manage and track removed elements."
+            },
+            {
+              "#": 5,
+              "title": "Effect on array length",
+              "code": "const items = ['item1', 'item2', 'item3'];\nitems.pop();\nconsole.log(items.length);",
+              "explanation": "Shows the direct impact of pop method on the array's length by removing an element and then logging the new length. This underscores pop's effect on the array, reducing its length by one with each call."
             }
-        ],
+          ],
         "action": "Array Manipulation",
         "is_mutating": true,
         "return_type": "single element"
     },
-    {
-        "function": "prototype",
-        "link": "https://www.w3schools.com/jsref/jsref_prototype_array.asp",
-        "parameters": [],
-        "description": "Allows you to add new properties and methods to the Array() object.",
-        "signature": "Array.prototype.name = value;",
-        "return": {
-            "type": "object",
-            "value": "Undefined"
-        },
-        "arguments": [],
-        "use_cases": [
-            {
-                "#": 1,
-                "title": "Extending Array prototype",
-                "code": "Array.prototype.first = function() { return this[0]; };\nconst myArray = [1, 2, 3];\nconst firstElement = myArray.first();"
-            }
-        ],
-        "action": "Meta and Prototypical Methods",
-        "is_mutating": false,
-        "return_type": "object"
-    },
+    
     {
         "function": "push()",
         "link": "https://www.w3schools.com/jsref/jsref_push.asp",
@@ -1033,11 +1593,36 @@
         ],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Adding elements to an array",
-                "code": "const animals = ['pigs', 'goats', 'sheep'];\nconst count = animals.push('cows');"
+              "#": 1,
+              "title": "Add single element",
+              "code": "const fruits = ['Apple', 'Banana'];\nconst newLength = fruits.push('Mango');\nconsole.log(fruits);\nconsole.log(`New length: ${newLength}`);",
+              "explanation": "Adds 'Mango' to the end of the fruits array and logs the updated array along with its new length. This basic use case demonstrates push method for appending a single element to an array, illustrating how it affects the array's length and content."
+            },
+            {
+              "#": 2,
+              "title": "Add multiple elements",
+              "code": "const numbers = [1, 2, 3];\nnumbers.push(4, 5);\nconsole.log(numbers);",
+              "explanation": "Appends multiple elements (4 and 5) to the numbers array in a single operation. This shows push method's capability to add several elements at once, enhancing its utility for building or extending arrays efficiently."
+            },
+            {
+              "#": 3,
+              "title": "Combining arrays",
+              "code": "const part1 = ['a', 'b', 'c'];\nconst part2 = ['d', 'e', 'f'];\npart1.push(...part2);\nconsole.log(part1);",
+              "explanation": "Uses the spread operator to append all elements of part2 to part1. This illustrates an advanced use of push method combined with the spread syntax for merging arrays, showcasing a practical approach to array concatenation."
+            },
+            {
+              "#": 4,
+              "title": "Dynamic element addition",
+              "code": "const stack = [];\nstack.push('first');\nstack.push('second');\nconsole.log(stack);",
+              "explanation": "Dynamically adds elements to an initially empty stack array. This use case highlights push method's role in data structure manipulation, particularly in stack-like structures where elements are added and removed in a last-in, first-out manner."
+            },
+            {
+              "#": 5,
+              "title": "Return value usage",
+              "code": "const collection = ['item1', 'item2'];\nconst lengthAfterPush = collection.push('item3');\nconsole.log(`Collection now has ${lengthAfterPush} items.`);",
+              "explanation": "Demonstrates the use of push method's return value, which is the new length of the array after the element is added. This feature can be useful for tracking the size of the array or for chaining operations that depend on the array's length."
             }
-        ],
+          ],
         "action": "Array Manipulation",
         "is_mutating": true,
         "return_type": "number"
@@ -1087,11 +1672,36 @@
         ],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Summing all elements of an array",
-                "code": "const array1 = [1, 2, 3, 4];\nconst initialValue = 0;\nconst sum = array1.reduce((accumulator, currentValue) => accumulator + currentValue, initialValue);"
+              "#": 1,
+              "title": "Sum of numbers",
+              "code": "const numbers = [1, 2, 3, 4];\nconst sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);\nconsole.log(sum);",
+              "explanation": "Calculates the sum of all numbers in an array. This demonstrates reduce's basic functionality for aggregating array values, using an initial accumulator value of 0 to ensure numerical addition."
+            },
+            {
+              "#": 2,
+              "title": "Flatten an array",
+              "code": "const nestedArray = [[1, 2], [3, 4], [5, 6]];\nconst flatArray = nestedArray.reduce((accumulator, currentValue) => accumulator.concat(currentValue), []);\nconsole.log(flatArray);",
+              "explanation": "Flattens a nested array into a single-level array. This use case shows reduce's ability to transform array structures, using concat to merge sub-arrays with the accumulator."
+            },
+            {
+              "#": 3,
+              "title": "Counting occurrences",
+              "code": "const fruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];\nconst count = fruits.reduce((accumulator, fruit) => {\n  accumulator[fruit] = (accumulator[fruit] || 0) + 1;\n  return accumulator;\n}, {});\nconsole.log(count);",
+              "explanation": "Counts the occurrences of each fruit in an array. This illustrates reduce's utility for creating a frequency map, initializing the accumulator as an empty object and incrementing counts for each encountered fruit."
+            },
+            {
+              "#": 4,
+              "title": "Find max value",
+              "code": "const numbers = [5, 17, 2, 8, 10];\nconst max = numbers.reduce((accumulator, number) => Math.max(accumulator, number), numbers[0]);\nconsole.log(max);",
+              "explanation": "Determines the maximum value in an array of numbers. By comparing the current value with the accumulator in each iteration, reduce can be used to find the largest number, showcasing a non-summative use of reduce."
+            },
+            {
+              "#": 5,
+              "title": "Grouping by property",
+              "code": "const people = [\n  { name: 'Alice', age: 21 },\n  { name: 'Max', age: 20 },\n  { name: 'Jane', age: 20 }\n];\nconst groupedByAge = people.reduce((accumulator, person) => {\n  const age = person.age;\n  if (!accumulator[age]) {\n    accumulator[age] = [];\n  }\n  accumulator[age].push(person);\n  return accumulator;\n}, {});\nconsole.log(groupedByAge);",
+              "explanation": "Groups people by age in an object. This advanced use case demonstrates reduce's capability to organize data based on a shared property, initializing the accumulator as an empty object and dynamically creating arrays for each age group."
             }
-        ],
+          ],
         "action": "Iteration and Callback Execution",
         "is_mutating": false,
         "return_type": "single value"
@@ -1134,11 +1744,36 @@
         "arguments": [],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Using reduceRight to flatten an array",
-                "code": "const flattened = [[0, 1], [2, 3], [4, 5]].reduceRight((accumulator, currentValue) => accumulator.concat(currentValue), []);"
+              "#": 1,
+              "title": "Concatenate strings in reverse",
+              "code": "const words = ['world', 'hello'];\nconst greeting = words.reduceRight((acc, word) => `${acc} ${word}`);\nconsole.log(greeting);",
+              "explanation": "Concatenates strings from the array in reverse order. This use case demonstrates reduceRight's ability to process array elements from right to left, creating a greeting message by appending 'hello' before 'world'."
+            },
+            {
+              "#": 2,
+              "title": "Reverse array elements",
+              "code": "const numbers = [1, 2, 3, 4];\nconst reversed = numbers.reduceRight((acc, num) => [...acc, num], []);\nconsole.log(reversed);",
+              "explanation": "Reverses the order of elements in an array. By accumulating elements in reverse and using an initial empty array, reduceRight effectively reverses the array's contents, showcasing an alternative to the reverse() method."
+            },
+            {
+              "#": 3,
+              "title": "Perform operations in reverse order",
+              "code": "const operations = [(x) => x * 2, (x) => x + 1, (x) => x - 5];\nconst result = operations.reduceRight((acc, operation) => operation(acc), 5);\nconsole.log(result);",
+              "explanation": "Applies functions to an initial value in reverse order. Starting with subtracting 5, then adding 1, and finally doubling, this example highlights reduceRight's utility in scenarios where the sequence of operations matters."
+            },
+            {
+              "#": 4,
+              "title": "Combine objects",
+              "code": "const objects = [{ x: 1 }, { y: 2 }, { z: 3 }];\nconst combined = objects.reduceRight((acc, obj) => ({...acc, ...obj}), {});\nconsole.log(combined);",
+              "explanation": "Merges objects from an array into a single object in reverse order. This illustrates how reduceRight can be used for object composition, prioritizing properties from objects later in the array when properties overlap."
+            },
+            {
+              "#": 5,
+              "title": "Compute from right",
+              "code": "const values = [2, 3, 5];\nconst powered = values.reduceRight((acc, num) => Math.pow(num, acc));\nconsole.log(powered);",
+              "explanation": "Calculates a right-to-left power computation. The operation treats the array's last element as the base and the second-to-last as its exponent, then recursively applies this pattern, demonstrating reduceRight's effectiveness for right-associative operations."
             }
-        ],
+          ],
         "action": "Iteration and Callback Execution",
         "is_mutating": false,
         "return_type": "single value"
@@ -1156,11 +1791,36 @@
         "arguments": [],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Reversing the elements of an array",
-                "code": "const array1 = ['one', 'two', 'three'];\nconst reversed = array1.reverse();"
+              "#": 1,
+              "title": "Reverse array elements",
+              "code": "const numbers = [1, 2, 3, 4, 5];\nconst reversedNumbers = numbers.reverse();\nconsole.log(reversedNumbers);",
+              "explanation": "Inverts the order of numeric elements in an array. This basic use case demonstrates reverse method for straightforwardly reversing the sequence of elements, illustrating the method's direct impact on the array's arrangement."
+            },
+            {
+              "#": 2,
+              "title": "String reversal",
+              "code": "const greeting = 'hello';\nconst reversedGreeting = greeting.split('').reverse().join('');\nconsole.log(reversedGreeting);",
+              "explanation": "Achieves string reversal by first splitting the string into an array of characters, reversing the array, and then joining the characters back into a string. This showcases reverse's utility in contexts beyond simple array manipulation, such as string processing."
+            },
+            {
+              "#": 3,
+              "title": "Reverse array of objects",
+              "code": "const items = [\n  { id: 1, name: 'Item 1' },\n  { id: 2, name: 'Item 2' },\n  { id: 3, name: 'Item 3' }\n];\nconst reversedItems = items.reverse();\nconsole.log(reversedItems);",
+              "explanation": "Inverts the order of objects within an array. This use case extends reverse method's application to arrays containing complex data structures, such as objects, affecting their order within the array."
+            },
+            {
+              "#": 4,
+              "title": "Nested array reversal",
+              "code": "const matrix = [\n  [1, 2],\n  [3, 4],\n  [5, 6]\n];\nconst reversedMatrix = matrix.reverse();\nconsole.log(reversedMatrix);",
+              "explanation": "Applies reverse to an array containing nested arrays. This illustrates how reverse can be utilized on multi-dimensional arrays, reversing the top-level array's order without altering the order of nested arrays."
+            },
+            {
+              "#": 5,
+              "title": "Chain reverse with other methods",
+              "code": "const words = ['the', 'quick', 'brown', 'fox'];\nconst sentence = words.reverse().join(' ') + '.';\nconsole.log(sentence);",
+              "explanation": "Demonstrates chaining reverse with join to form a reversed sentence from an array of words. This example highlights reverse's compatibility with other array methods, enabling complex transformations through method chaining."
             }
-        ],
+          ],
         "action": "Array Manipulation",
         "is_mutating": true,
         "return_type": "array"
@@ -1178,11 +1838,36 @@
         "arguments": [],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Removing the first element from an array",
-                "code": "const array1 = [1, 2, 3];\nconst firstElement = array1.shift();"
+              "#": 1,
+              "title": "Remove first element",
+              "code": "const fruits = ['Apple', 'Banana', 'Mango'];\nconst removedFruit = fruits.shift();\nconsole.log(removedFruit);\nconsole.log(fruits);",
+              "explanation": "Removes the first element ('Apple') from the array and logs it. This basic use case demonstrates shift method for modifying an array by removing its first element, showing how it affects the array's length and content."
+            },
+            {
+              "#": 2,
+              "title": "Empty array",
+              "code": "const emptyArray = [];\nconst result = emptyArray.shift();\nconsole.log(result);\nconsole.log(emptyArray);",
+              "explanation": "Attempts to remove an element from an empty array, resulting in undefined. This highlights shift method's behavior when called on an empty array, indicating that it safely handles such cases without throwing an error."
+            },
+            {
+              "#": 3,
+              "title": "Sequential removal",
+              "code": "const queue = ['first', 'second', 'third'];\nwhile(queue.length > 0) {\n  console.log(queue.shift());\n}",
+              "explanation": "Demonstrates sequential removal of elements from an array, simulating a queue data structure. This use case shows how shift method can be utilized in a loop to process and remove elements one by one until the array is empty, mimicking first-in, first-out (FIFO) behavior."
+            },
+            {
+              "#": 4,
+              "title": "Capture removed elements",
+              "code": "const numbers = [1, 2, 3, 4, 5];\nconst removedNumbers = [];\nremovedNumbers.push(numbers.shift(), numbers.shift());\nconsole.log(removedNumbers);\nconsole.log(numbers);",
+              "explanation": "Removes the first two elements from the original array and captures them in a new array. This illustrates how shift method can be combined with other array methods like push to manage and track removed elements."
+            },
+            {
+              "#": 5,
+              "title": "Effect on array length",
+              "code": "const items = ['item1', 'item2', 'item3'];\nitems.shift();\nconsole.log(items.length);",
+              "explanation": "Shows the direct impact of shift method on the array's length by removing an element and then logging the new length. This underscores shift's effect on the array, reducing its length by one with each call."
             }
-        ],
+          ],
         "action": "Array Manipulation",
         "is_mutating": true,
         "return_type": "single element"
@@ -1207,7 +1892,38 @@
             "value": "A new array containing the selected elements"
         },
         "arguments": [],
-        "use_cases": [],
+        "use_cases": [
+            {
+              "#": 1,
+              "title": "Extract portion of array",
+              "code": "const fruits = ['Apple', 'Banana', 'Mango', 'Orange', 'Pineapple'];\nconst citrus = fruits.slice(2, 4);\nconsole.log(citrus);",
+              "explanation": "Extracts a portion of the fruits array from index 2 to 4, excluding index 4. This basic use case demonstrates slice method for creating a new array containing selected elements, showcasing how to efficiently extract segments without altering the original array."
+            },
+            {
+              "#": 2,
+              "title": "Slice to end of array",
+              "code": "const numbers = [1, 2, 3, 4, 5];\nconst fromThird = numbers.slice(2);\nconsole.log(fromThird);",
+              "explanation": "Creates a new array starting from index 2 to the end of the numbers array. This shows slice method's capability to extract till the end of the array when the end parameter is omitted, useful for dividing arrays into parts based on certain conditions."
+            },
+            {
+              "#": 3,
+              "title": "Using negative indices",
+              "code": "const letters = ['a', 'b', 'c', 'd', 'e'];\nconst lastTwo = letters.slice(-2);\nconsole.log(lastTwo);",
+              "explanation": "Extracts the last two elements of the array using negative indices. This illustrates slice method's flexibility in handling negative indices to specify positions from the end of the array, allowing for intuitive backward selections."
+            },
+            {
+              "#": 4,
+              "title": "Copy entire array",
+              "code": "const original = ['copy', 'this', 'array'];\nconst copied = original.slice();\nconsole.log(copied);",
+              "explanation": "Creates a copy of the entire array. This use case highlights slice method's utility in making a full shallow copy of an array, ensuring the original array remains unmodified while enabling operations on the copied array."
+            },
+            {
+              "#": 5,
+              "title": "Create sub-arrays",
+              "code": "const data = [1, 2, 3, 4, 5, 6];\nconst chunkSize = 2;\nconst chunks = Array.from({ length: Math.ceil(data.length / chunkSize) }, (_, i) => data.slice(i * chunkSize, i * chunkSize + chunkSize));\nconsole.log(chunks);",
+              "explanation": "Divides an array into chunks of a specified size. By using slice in combination with Array.from, this advanced use case demonstrates creating sub-arrays of a defined length, useful for pagination or processing data in smaller segments."
+            }
+          ],
         "action": "Array Manipulation",
         "is_mutating": false,
         "return_type": "array"
@@ -1240,7 +1956,38 @@
             "value": "True if the callback function returns a truthy value for any array element; otherwise, false"
         },
         "arguments": [],
-        "use_cases": [],
+        "use_cases": [
+            {
+              "#": 1,
+              "title": "Check for any even numbers",
+              "code": "const numbers = [1, 3, 5, 8, 11];\nconst hasEven = numbers.some(num => num % 2 === 0);\nconsole.log(hasEven);",
+              "explanation": "Determines if the array contains any even numbers. This basic use case demonstrates some method for performing conditional checks on array elements, useful for quickly identifying if any elements meet a specific criterion."
+            },
+            {
+              "#": 2,
+              "title": "Find objects with property",
+              "code": "const products = [\n  { name: 'Phone', price: 999 },\n  { name: 'Laptop', price: 1999 },\n  { name: 'Tablet', price: undefined }\n];\nconst hasUndefinedPrice = products.some(product => product.price === undefined);\nconsole.log(hasUndefinedPrice);",
+              "explanation": "Checks if any products have an undefined price. This illustrates some method's ability to handle arrays of objects, verifying the presence of specific properties or property values among the objects."
+            },
+            {
+              "#": 3,
+              "title": "Validate array content",
+              "code": "const words = ['react', 'angular', 'vue'];\nconst hasVue = words.some(word => word === 'vue');\nconsole.log(hasVue);",
+              "explanation": "Confirms the presence of 'vue' in a list of words. This use case highlights some method's utility in validating the content of arrays, ensuring that specific values exist within the array data."
+            },
+            {
+              "#": 4,
+              "title": "Check for minimum length",
+              "code": "const strings = ['hello', 'world', 'a', 'b', 'c'];\nconst hasShortString = strings.some(str => str.length < 2);\nconsole.log(hasShortString);",
+              "explanation": "Verifies if any strings in the array are shorter than two characters. This demonstrates how some method can be used to enforce minimum criteria on array elements, such as length constraints in this case."
+            },
+            {
+              "#": 5,
+              "title": "Using some with complex conditions",
+              "code": "const matrix = [[1, 2], [3, 4], [5, 6, 7]];\nconst hasRowWithMoreThanTwoItems = matrix.some(row => row.length > 2);\nconsole.log(hasRowWithMoreThanTwoItems);",
+              "explanation": "Determines if any sub-arrays (rows) contain more than two items. This advanced use case shows some method's effectiveness in working with nested arrays or 'matrices', applying conditions to sub-array structures."
+            }
+          ],
         "action": "Iteration and Callback Execution",
         "is_mutating": false,
         "return_type": "boolean"
@@ -1263,11 +2010,36 @@
         "arguments": [],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Sorting numbers in an array",
-                "code": "const numbers = [4, 2, 5, 1, 3];\nnumbers.sort((a, b) => a - b);"
+              "#": 1,
+              "title": "Alphabetical sorting",
+              "code": "const fruits = ['Banana', 'Orange', 'Apple', 'Mango'];\nfruits.sort();\nconsole.log(fruits);",
+              "explanation": "Sorts the array of strings in ascending alphabetical order. This basic use case demonstrates sort method for arranging words or names, showcasing the default behavior when no compare function is provided."
+            },
+            {
+              "#": 2,
+              "title": "Numeric sorting",
+              "code": "const numbers = [40, 100, 1, 5, 25];\nnumbers.sort((a, b) => a - b);\nconsole.log(numbers);",
+              "explanation": "Sorts the array of numbers in ascending order by providing a compare function. This example highlights sort method's flexibility to correctly order numeric values, overcoming the default string-based comparison."
+            },
+            {
+              "#": 3,
+              "title": "Descending order",
+              "code": "const numbers = [40, 100, 1, 5, 25];\nnumbers.sort((a, b) => b - a);\nconsole.log(numbers);",
+              "explanation": "Arranges the numbers in descending order using a compare function. By reversing the order of subtraction in the compare function, this illustrates how sort can be adapted to reverse the sort order."
+            },
+            {
+              "#": 4,
+              "title": "Sorting objects by property",
+              "code": "const items = [\n  { name: 'Keyboard', price: 25 },\n  { name: 'Mouse', price: 15 },\n  { name: 'Monitor', price: 100 }\n];\nitems.sort((a, b) => a.price - b.price);\nconsole.log(items);",
+              "explanation": "Sorts an array of objects by the `price` property in ascending order. This advanced use case shows sort method's application in organizing complex data structures based on specific criteria, essential for data processing and display."
+            },
+            {
+              "#": 5,
+              "title": "Case-insensitive string sorting",
+              "code": "const mixCase = ['banana', 'Orange', 'apple', 'Mango'];\nmixCase.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));\nconsole.log(mixCase);",
+              "explanation": "Sorts strings in a case-insensitive manner. By converting strings to lower case for comparison, this approach ensures alphabetical ordering is not affected by character case, demonstrating sort method's versatility for user-friendly string sorting."
             }
-        ],
+          ],
         "action": "Sorting and Ordering",
         "is_mutating": true,
         "return_type": "array"
@@ -1298,11 +2070,36 @@
         "arguments": [],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Removing elements from an array",
-                "code": "const months = ['Jan', 'March', 'April', 'June'];\nmonths.splice(1, 0, 'Feb');"
+              "#": 1,
+              "title": "Remove elements",
+              "code": "const fruits = ['Apple', 'Banana', 'Mango', 'Orange', 'Pineapple'];\nconst removedFruits = fruits.splice(2, 2);\nconsole.log(removedFruits);\nconsole.log(fruits);",
+              "explanation": "Removes two elements starting from index 2 ('Mango' and 'Orange') and logs the removed elements. This use case demonstrates splice method for deleting elements from an array, showing how it directly modifies the original array and returns the removed elements."
+            },
+            {
+              "#": 2,
+              "title": "Insert elements",
+              "code": "const numbers = [1, 2, 4, 5];\nnumbers.splice(2, 0, 3);\nconsole.log(numbers);",
+              "explanation": "Inserts '3' at index 2 without removing any elements. This shows splice method's capability to add elements to an array at a specific position, effectively altering the array's length and contents."
+            },
+            {
+              "#": 3,
+              "title": "Replace elements",
+              "code": "const names = ['Alice', 'Bob', 'Charlie', 'Diana'];\nnames.splice(1, 2, 'Eve', 'Frank');\nconsole.log(names);",
+              "explanation": "Replaces two elements starting from index 1 ('Bob' and 'Charlie') with 'Eve' and 'Frank'. This illustrates splice method's ability to perform element replacement within an array, showcasing a mix of deletion and insertion."
+            },
+            {
+              "#": 4,
+              "title": "Remove last element",
+              "code": "const items = ['item1', 'item2', 'item3'];\nconst lastItem = items.splice(-1);\nconsole.log(lastItem);\nconsole.log(items);",
+              "explanation": "Removes the last element of the array using a negative start index. This use case highlights splice method's flexibility in handling negative indices, allowing for easy manipulation of elements from the end of the array."
+            },
+            {
+              "#": 5,
+              "title": "Empty array",
+              "code": "const array = ['a', 'b', 'c', 'd'];\narray.splice(0);\nconsole.log(array);",
+              "explanation": "Empties the entire array by removing all elements starting from index 0. This demonstrates splice method's ability to clear an array when no delete count is specified, effectively modifying the array to an empty state."
             }
-        ],
+          ],
         "action": "Array Manipulation",
         "is_mutating": true,
         "return_type": "array"
@@ -1320,11 +2117,36 @@
         "arguments": [],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Converting an array to a string",
-                "code": "const array1 = [1, 2, 'a', '1a'];\narray1.toString();"
+              "#": 1,
+              "title": "Convert array to string",
+              "code": "const fruits = ['Apple', 'Banana', 'Mango'];\nconst fruitsString = fruits.toString();\nconsole.log(fruitsString);",
+              "explanation": "Converts an array of fruit names into a comma-separated string. This basic use case demonstrates toString method for straightforward array-to-string conversion, showcasing how elements are joined without specifying a separator."
+            },
+            {
+              "#": 2,
+              "title": "Numeric array to string",
+              "code": "const numbers = [1, 2, 3, 4, 5];\nconst numbersString = numbers.toString();\nconsole.log(numbersString);",
+              "explanation": "Transforms an array of numbers into a string. This illustrates toString method's ability to handle numeric arrays, converting each number to a string and concatenating them with commas."
+            },
+            {
+              "#": 3,
+              "title": "Nested array to string",
+              "code": "const nestedArray = [1, ['two', 3], ['four', 5]];\nconst nestedString = nestedArray.toString();\nconsole.log(nestedString);",
+              "explanation": "Converts a nested array into a flat, comma-separated string. This example shows toString method's handling of nested arrays, flattening the structure and converting all elements to a single string."
+            },
+            {
+              "#": 4,
+              "title": "Array with various types to string",
+              "code": "const mixedArray = ['text', 10, true, ['nested', 42]];\nconst mixedString = mixedArray.toString();\nconsole.log(mixedString);",
+              "explanation": "Demonstrates conversion of an array containing various data types, including another array, to a string. This highlights toString method's versatility in dealing with mixed data types and nested structures."
+            },
+            {
+              "#": 5,
+              "title": "Empty array to string",
+              "code": "const emptyArray = [];\nconst emptyString = emptyArray.toString();\nconsole.log(`Empty array to string: '${emptyString}'`);",
+              "explanation": "Converts an empty array to an empty string. This use case underlines toString method's behavior when applied to an empty array, resulting in an empty string, useful for ensuring consistent string output."
             }
-        ],
+          ],
         "action": "General Utilities",
         "is_mutating": false,
         "return_type": "string"
@@ -1347,11 +2169,36 @@
         "arguments": [],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Adding elements to the beginning of an array",
-                "code": "const array1 = [1, 2, 3];\narray1.unshift(4, 5);"
+              "#": 1,
+              "title": "Add single element",
+              "code": "const fruits = ['Banana', 'Mango', 'Orange'];\nconst newLength = fruits.unshift('Apple');\nconsole.log(fruits);\nconsole.log(`New length: ${newLength}`);",
+              "explanation": "Adds 'Apple' to the beginning of the fruits array and logs the updated array along with its new length. This basic use case demonstrates unshift method for prepending a single element to an array, illustrating how it affects the array's length and content."
+            },
+            {
+              "#": 2,
+              "title": "Add multiple elements",
+              "code": "const numbers = [3, 4, 5];\nnumbers.unshift(1, 2);\nconsole.log(numbers);",
+              "explanation": "Prepends multiple elements (1 and 2) to the numbers array in a single operation. This shows unshift method's capability to add several elements at once to the start of an array, enhancing its utility for building or extending arrays efficiently."
+            },
+            {
+              "#": 3,
+              "title": "Dynamic element addition",
+              "code": "const stack = ['third', 'fourth'];\nstack.unshift('first', 'second');\nconsole.log(stack);",
+              "explanation": "Dynamically adds elements to the beginning of an initially partial stack array. This use case highlights unshift method's role in data structure manipulation, particularly in stack-like structures where elements need to be added in a specific order."
+            },
+            {
+              "#": 4,
+              "title": "Combine with other methods",
+              "code": "const queue = ['third', 'fourth'];\nqueue.unshift('first');\nqueue.push('fifth');\nconsole.log(queue);",
+              "explanation": "Combines unshift and push to add elements both at the beginning and the end of the queue array. This illustrates how unshift can be used in conjunction with push for complex array manipulations, simulating queue-like behavior."
+            },
+            {
+              "#": 5,
+              "title": "Return value usage",
+              "code": "const collection = ['item2', 'item3'];\nconst lengthAfterUnshift = collection.unshift('item1');\nconsole.log(`Collection now has ${lengthAfterUnshift} items.`);",
+              "explanation": "Demonstrates the use of unshift method's return value, which is the new length of the array after the element is added. This feature can be useful for tracking the size of the array or for chaining operations that depend on the array's length."
             }
-        ],
+          ],
         "action": "Array Manipulation",
         "is_mutating": true,
         "return_type": "number"
@@ -1369,38 +2216,39 @@
         "arguments": [],
         "use_cases": [
             {
-                "#": 1,
-                "title": "Getting the primitive value of an array",
-                "code": "const array1 = [1, 2, 3];\narray1.valueOf();"
+              "#": 1,
+              "title": "Direct use on array",
+              "code": "const numbers = [1, 2, 3, 4, 5];\nconst value = numbers.valueOf();\nconsole.log(value);",
+              "explanation": "Demonstrates the direct application of valueOf() on an array, returning the array itself. This basic use case illustrates that valueOf() for arrays simply returns the array, showing its default behavior."
+            },
+            {
+              "#": 2,
+              "title": "Comparing array references",
+              "code": "const array1 = ['hello', 'world'];\nconst array2 = array1;\nconsole.log(array1.valueOf() === array2.valueOf());",
+              "explanation": "Compares two array references using valueOf(). Since array2 is a reference to array1, valueOf() returns the same array for both, and the comparison is true. This highlights how valueOf() can be involved in reference comparisons."
+            },
+            {
+              "#": 3,
+              "title": "Using valueOf in expressions",
+              "code": "const array = [1, 2, 3];\nconst result = array.valueOf() === array;\nconsole.log(result);",
+              "explanation": "Checks if the valueOf() of an array equals the array itself. This use case underscores that an array's valueOf() method returns the array, thus equaling itself in expressions where a primitive value might be coerced."
+            },
+            {
+              "#": 4,
+              "title": "Coercion in mathematical expressions",
+              "code": "const numbers = [5];\nconst sum = numbers.valueOf()[0] + 10;\nconsole.log(sum);",
+              "explanation": "Illustrates extracting a numeric value from an array and using it in a mathematical expression. Even though valueOf() returns the array itself, accessing an index directly allows for arithmetic operations, demonstrating indirect use cases of valueOf()."
+            },
+            {
+              "#": 5,
+              "title": "Interaction with other object methods",
+              "code": "const array = ['JavaScript'];\nconsole.log(array.toString() === array.valueOf().toString());",
+              "explanation": "Compares the results of toString() and valueOf().toString() on an array. Since valueOf() for an array returns the array itself, and toString() converts the array to a string, this confirms that both methods lead to the same string representation for simple arrays."
             }
-        ],
+          ],
         "action": "General Utilities",
         "is_mutating": false,
         "return_type": "array"
-    },
-    {
-        "function": "with()",
-        "link": "https://www.w3schools.com/jsref/jsref_array_with.asp",
-        "parameters": [
-            {
-                "parameter": "index",
-                "description": "Required.The index (position) of the item to change.A negative index counts from the end of the array."
-            },
-            {
-                "parameter": "value",
-                "description": "Required.The new value."
-            }
-        ],
-        "description": "This method does not exist in standard JavaScript and might be a mistake or related to a specific library or framework.",
-        "signature": "N/A",
-        "return": {
-            "type": "N/A",
-            "value": "N/A"
-        },
-        "arguments": [],
-        "use_cases": [],
-        "action": "Miscellaneous or Unclassified",
-        "is_mutating": false,
-        "return_type": "undefined"
     }
+    
 ]

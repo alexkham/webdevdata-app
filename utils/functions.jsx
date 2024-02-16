@@ -1,3 +1,6 @@
+import React from 'react'
+
+
 
 export function getSVGIcon(svgContent) {
     return (
@@ -32,3 +35,15 @@ export function getSVGIcon(svgContent) {
     return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
   };
   
+
+  // Split explanation into sentences and render with line breaks
+  export const renderTextWithLineBreaks = (text) => {
+    if(text){
+    const sentences = text.match(/[^.!?]+[.!?]*/g) || [];
+    return sentences.map((sentence, index) => (
+        <React.Fragment key={index}>
+            {sentence.trim()}
+            <br />
+        </React.Fragment>
+    ));}
+};

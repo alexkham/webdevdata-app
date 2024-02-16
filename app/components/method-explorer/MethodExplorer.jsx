@@ -8,7 +8,7 @@ import './MethodExplorer.css'
 
 function MethodExplorer() {
     const languagesNames = languages.map(item => Object.keys(item)[0]);
-    const [language, setLanguage] = useState(languagesNames[0]);
+    const [language, setLanguage] = useState('Javascript');
     const [objType, setObjType] = useState('');
     const [objects, setObjects] = useState([]);
     const [classificationsArray, setClassificationsArray] = useState([]);
@@ -111,13 +111,13 @@ function MethodExplorer() {
 
     return (
         <div className='outer-container'>
-            <span>{language}</span>
+            {/* <span>{language}</span> */}
             {/* <span>{}</span> */}
             {/* <span>{classificationsArray}</span> */}
             {/* <span>{classification}</span> */}
             {/* <span>{searchTerm}</span> */}
-            <h3>Methods Explorer</h3>
-           
+            
+           <div className='initial-select-container'>
             <SelectComponent2
                 label={'Programming Language'}
                 options={languagesNames}
@@ -133,6 +133,7 @@ function MethodExplorer() {
                     label={'Data Type '}
                     handleChange={handleObjChange}
                     lookup={' Object Type'} />}
+                    </div>
             
              <div className='menu-container'>
             {objType && !(objType.startsWith('Select')) && classificationsArray.map((classification, index) => {

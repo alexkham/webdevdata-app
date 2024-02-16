@@ -18,11 +18,36 @@
         "return_type": "String",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Accessing a specific character",
-                "code": "const message = 'Hello';\nconst char = message.charAt(0); // 'H'"
+              "#": 1,
+              "title": "Accessing a specific character",
+              "code": "const sentence = 'Hello, World!';\nconst index = 4;\nconsole.log(`The character at index ${index} is '${sentence.charAt(index)}'`);",
+              "explanation": "Retrieves the character at index 4 ('o') from the sentence. This demonstrates how to use charAt() to access a specific character in a string based on its index."
+            },
+            {
+              "#": 2,
+              "title": "Handling out-of-range index",
+              "code": "const word = 'JavaScript';\nconst outOfRangeCharacter = word.charAt(100);\nconsole.log(outOfRangeCharacter === '');",
+              "explanation": "Attempts to access a character at an index that exceeds the string's length, resulting in an empty string. This highlights charAt()'s behavior when the specified index is out of range."
+            },
+            {
+              "#": 3,
+              "title": "Default to first character",
+              "code": "const name = 'OpenAI';\nconst firstCharacter = name.charAt();\nconsole.log(`The first character is '${firstCharacter}'`);",
+              "explanation": "Accesses the first character of the string by not specifying an index, which defaults to 0. This illustrates that charAt() will return the first character if the index parameter is omitted or undefined."
+            },
+            {
+              "#": 4,
+              "title": "Using charAt in a loop",
+              "code": "const message = 'Loop through this!';\nfor (let i = 0; i < message.length; i++) {\n  console.log(message.charAt(i));\n}",
+              "explanation": "Loops through each character of the string, printing one character at a time. This use case shows how charAt() can be effectively used within a loop to process or examine each character of a string individually."
+            },
+            {
+              "#": 5,
+              "title": "Comparing charAt with direct access",
+              "code": "const greeting = 'Hi there!';\nconst charAtFifth = greeting.charAt(5);\nconst directAccessFifth = greeting[5];\nconsole.log(`Using charAt(): ${charAtFifth}, using direct access: ${directAccessFifth}`);",
+              "explanation": "Compares accessing a character using charAt() with direct bracket notation. Both methods retrieve the character at the specified index, but charAt() provides a safer approach by returning an empty string for out-of-range indexes, unlike direct access which returns undefined."
             }
-        ]
+          ]
     },
     {
         "function": "charCodeAt()",
@@ -43,11 +68,36 @@
         "return_type": "Number",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Getting Unicode value of character",
-                "code": "const message = 'Hello';\nconst code = message.charCodeAt(1); // 101"
+              "#": 1,
+              "title": "Get character code",
+              "code": "const sentence = 'Hello, World!';\nconst index = 7;\nconsole.log(`The character code at index ${index} is ${sentence.charCodeAt(index)}`);",
+              "explanation": "Retrieves the Unicode character code (UTF-16) of the character at index 7 ('W') from the sentence. This demonstrates how to use charCodeAt() to access the character code at a specific position in a string."
+            },
+            {
+              "#": 2,
+              "title": "Handling out-of-range index",
+              "code": "const word = 'JavaScript';\nconst outOfRangeCharCode = word.charCodeAt(100);\nconsole.log(outOfRangeCharCode);",
+              "explanation": "Attempts to access the character code at an index that exceeds the string's length, resulting in NaN. This highlights charCodeAt()'s behavior when the specified index is out of the valid range."
+            },
+            {
+              "#": 3,
+              "title": "Comparing characters",
+              "code": "const letters = 'abc';\nconst charCodeA = letters.charCodeAt(0);\nconst charCodeB = letters.charCodeAt(1);\nconsole.log(`'a' < 'b': ${charCodeA < charCodeB}`);",
+              "explanation": "Compares the character codes of 'a' and 'b' to determine their lexicographical order. This use case shows how charCodeAt() can be used for comparing characters based on their Unicode values."
+            },
+            {
+              "#": 4,
+              "title": "Detecting character type",
+              "code": "const char = '9';\nconst charCode = char.charCodeAt(0);\nconst isDigit = charCode >= 48 && charCode <= 57;\nconsole.log(`Is '${char}' a digit? ${isDigit}`);",
+              "explanation": "Uses charCodeAt() to check if a character is a digit by comparing its character code with the Unicode ranges for digit characters ('0'-'9'). This illustrates charCodeAt()'s utility in type detection and validation of character data."
+            },
+            {
+              "#": 5,
+              "title": "Encoding a string",
+              "code": "const message = 'Encode this!';\nconst encodedMessage = Array.from(message).map(char => char.charCodeAt(0)).join(' ');\nconsole.log(encodedMessage);",
+              "explanation": "Encodes a string into a sequence of Unicode values. By mapping each character to its charCodeAt() value and joining them, this example demonstrates a simple way to encode textual data for processing or transmission."
             }
-        ]
+          ]
     },
     {
         "function": "concat()",
@@ -68,11 +118,36 @@
         "return_type": "String",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Concatenating multiple strings",
-                "code": "const greeting = 'Hello';\nconst space = ' ';\nconst world = 'World';\nconst message = greeting.concat(space, world); // 'Hello World'"
+              "#": 1,
+              "title": "Concatenating strings",
+              "code": "const greeting = 'Hello';\nconst target = 'World';\nconst message = greeting.concat(' ', target, '!');\nconsole.log(message);",
+              "explanation": "Combines several strings into one. This use case demonstrates the concat method for strings, showcasing how to join multiple string values into a single string, including adding spaces or punctuation."
+            },
+            {
+              "#": 2,
+              "title": "Concatenating with variables",
+              "code": "const firstName = 'John';\nconst lastName = 'Doe';\nconst fullName = firstName.concat(' ', lastName);\nconsole.log(fullName);",
+              "explanation": "Creates a full name from two variables. This illustrates using concat to combine string variables, useful for assembling structured text data from individual components."
+            },
+            {
+              "#": 3,
+              "title": "Combining strings and numbers",
+              "code": "const base = 'Your total is: ';\nconst total = 100;\nconst currency = ' USD';\nconst message = base.concat(total, currency);\nconsole.log(message);",
+              "explanation": "Joins a string with numeric data and additional text. This example shows concat's ability to work with mixed data types by implicitly converting numbers to strings, facilitating the creation of messages that include dynamic numeric values."
+            },
+            {
+              "#": 4,
+              "title": "Using concat in a loop",
+              "code": "let sentence = 'Results:';\nconst results = [1, 2, 3, 4, 5];\nfor (const result of results) {\n  sentence = sentence.concat(' ', result);\n}\nconsole.log(sentence);",
+              "explanation": "Accumulates elements of an array into a single string. By iterating over an array and concatenating each element to a base string, this demonstrates how concat can be effectively used in loops for building up a string from array elements."
+            },
+            {
+              "#": 5,
+              "title": "Concatenating with empty strings",
+              "code": "const prefix = 'Mr.';\nconst name = 'Smith';\nconst formalGreeting = prefix.concat(' ', name);\nconsole.log(formalGreeting);",
+              "explanation": "Shows concat's behavior when used with empty strings or spaces as separators. This use case is useful for understanding how to insert spaces or other separators between strings to maintain readability and structure in the concatenated result."
             }
-        ]
+          ]
     },
     {
         "function": "constructor",
@@ -88,11 +163,24 @@
         "return_type": "Function",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Accessing the constructor of a string object",
-                "code": "const message = 'Hello';\nconst constructorName = message.constructor.name; // 'String'"
+              "#": 1,
+              "title": "Identifying string type",
+              "code": "const greeting = 'Hello, world!';\nconsole.log(greeting.constructor === String);",
+              "explanation": "Checks if the variable `greeting` is an instance of `String`. This use case demonstrates how to use the `constructor` property to verify the type of an object, confirming that `greeting` is indeed a string."
+            },
+            {
+              "#": 2,
+              "title": "Creating a new string instance",
+              "code": "const originalString = 'Test string';\nconst newString = new originalString.constructor('Another string');\nconsole.log(newString);",
+              "explanation": "Uses the `constructor` of `originalString` to create a new `String` instance. This illustrates how the `constructor` property can dynamically instantiate new objects of the same type as the existing object, facilitating the creation of new strings."
+            },
+            {
+              "#": 3,
+              "title": "Comparing constructors",
+              "code": "const text = 'Sample text';\nconsole.log(text.constructor === String);",
+              "explanation": "Compares the `constructor` property of a string object to the `String` global constructor. This confirms that `text` is constructed by the `String` function, highlighting how the `constructor` property can be utilized to distinguish string objects."
             }
-        ]
+          ]
     },
     {
         "function": "endsWith()",
@@ -117,11 +205,36 @@
         "return_type": "Boolean",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Checking if a string ends with a specific substring",
-                "code": "const message = 'Hello World';\nconst endsWithWorld = message.endsWith('World'); // true\nconsole.log(endsWithWorld)"
+              "#": 1,
+              "title": "Check string suffix",
+              "code": "const fileName = 'report.pdf';\nconst isPDF = fileName.endsWith('.pdf');\nconsole.log(isPDF);",
+              "explanation": "Determines if the file name ends with the '.pdf' extension. This use case demonstrates endsWith method to verify file types or extensions, showcasing a straightforward approach to string suffix checking."
+            },
+            {
+              "#": 2,
+              "title": "Case-sensitive check",
+              "code": "const greeting = 'Hello World';\nconst endsWithWorld = greeting.endsWith('world');\nconsole.log(endsWithWorld);",
+              "explanation": "Checks if the greeting ends with 'world' using a case-sensitive comparison. This illustrates endsWith method's sensitivity to case, emphasizing the importance of matching case in string comparisons."
+            },
+            {
+              "#": 3,
+              "title": "Using length parameter",
+              "code": "const message = 'Searching in substring';\nconst endsWithSub = message.endsWith('substring', 19);\nconsole.log(endsWithSub);",
+              "explanation": "Searches if 'message' ends with 'substring' considering only the first 19 characters. This shows how endsWith can be constrained to a substring by specifying a length, useful for checking ends within a specific context of the string."
+            },
+            {
+              "#": 4,
+              "title": "Negative length parameter",
+              "code": "const note = 'This note is private';\nconst endsWithNegative = note.endsWith('private', -1);\nconsole.log(endsWithNegative);",
+              "explanation": "Attempts to use a negative length, which is treated as 0, thus always returning false. This underscores the behavior of endsWith when provided with invalid length parameters, highlighting edge cases in string checking."
+            },
+            {
+              "#": 5,
+              "title": "Checking endings in an array of strings",
+              "code": "const files = ['report.pdf', 'image.png', 'document.docx'];\nconst allPDF = files.every(file => file.endsWith('.pdf'));\nconsole.log(allPDF);",
+              "explanation": "Verifies if every file name in an array ends with '.pdf'. By using endsWith in conjunction with Array.prototype.every, this example demonstrates how to collectively check multiple strings for a specific suffix."
             }
-        ]
+          ]
     },
     {
         "function": "fromCharCode()",
@@ -142,18 +255,43 @@
         "return_type": "String",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Creating a string from Unicode values",
-                "code": "const charString = String.fromCharCode(72, 101, 108, 108, 111); // 'Hello'"
+              "#": 1,
+              "title": "Creating characters from codes",
+              "code": "const charCodeA = 65;\nconst charCodeB = 66;\nconst resultString = String.fromCharCode(charCodeA, charCodeB);\nconsole.log(resultString);",
+              "explanation": "Converts character codes 65 ('A') and 66 ('B') into their corresponding characters, forming the string 'AB'. This demonstrates how to use fromCharCode() to translate UTF-16 code units into human-readable characters."
+            },
+            {
+              "#": 2,
+              "title": "Generating a string from an array of codes",
+              "code": "const codesArray = [72, 101, 108, 108, 111];\nconst helloString = String.fromCharCode.apply(null, codesArray);\nconsole.log(helloString);",
+              "explanation": "Creates the string 'Hello' from an array of character codes. By applying fromCharCode() with an array of codes, this illustrates a method for constructing strings from arrays containing multiple character codes."
+            },
+            {
+              "#": 3,
+              "title": "Special characters and symbols",
+              "code": "const heartCode = 9829;\nconst heartString = String.fromCharCode(heartCode);\nconsole.log(heartString);",
+              "explanation": "Generates a string containing the heart symbol ('♥') from its character code (9829). This example shows fromCharCode()'s ability to create strings with special characters and symbols based on their UTF-16 code units."
+            },
+            {
+              "#": 4,
+              "title": "Combining letters and numbers",
+              "code": "const mixedCodes = [48, 49, 50, 65, 66, 67];\nconst mixedString = String.fromCharCode.apply(null, mixedCodes);\nconsole.log(mixedString);",
+              "explanation": "Forms a string '012ABC' by combining the codes for digits and letters. This use case highlights fromCharCode()'s versatility in handling both numeric and alphabetic characters within the same string."
+            },
+            {
+              "#": 5,
+              "title": "Decoding message",
+              "code": "const secretMessage = [83, 101, 99, 114, 101, 116];\nconst decodedMessage = String.fromCharCode(...secretMessage);\nconsole.log(decodedMessage);",
+              "explanation": "Decodes an array of character codes into the string 'Secret'. Utilizing the spread operator (...), this demonstrates a modern approach to converting a sequence of character codes into a readable string."
             }
-        ]
+          ]
     },
     {
         "function": "includes()",
         "description": "Checks whether a string contains the specified string/characters.",
         "parameters": [
             {
-                "parameter": "searchvalue",
+                "parameter": "search value",
                 "description": "Required. The string to search for."
             },
             {
@@ -171,11 +309,36 @@
         "return_type": "Boolean",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Checking if a string contains a specific substring",
-                "code": "const message = 'Hello World';\nconst includesHello = message.includes('Hello'); // true"
+              "#": 1,
+              "title": "Check substring presence",
+              "code": "const sentence = 'The quick brown fox jumps over the lazy dog.';\nconst hasFox = sentence.includes('fox');\nconsole.log(hasFox);",
+              "explanation": "Determines if the sentence contains the substring 'fox'. This use case demonstrates the includes method for performing substring searches within a string, showcasing a straightforward approach to checking for the presence of specific text segments."
+            },
+            {
+              "#": 2,
+              "title": "Case-sensitive search",
+              "code": "const greeting = 'Hello World';\nconst includesLowerCase = greeting.includes('hello');\nconsole.log(includesLowerCase);",
+              "explanation": "Searches for 'hello' in a case-sensitive manner, resulting in false. This illustrates includes method's sensitivity to case, emphasizing the need for matching the case of the substring for a successful search."
+            },
+            {
+              "#": 3,
+              "title": "Using position parameter",
+              "code": "const message = 'Finding Nemo in the ocean';\nconst includesNemo = message.includes('Nemo', 5);\nconsole.log(includesNemo);",
+              "explanation": "Searches for 'Nemo' starting from index 5. This shows how includes can be constrained to start searching from a specified position, useful for narrowing down the search area within a large string."
+            },
+            {
+              "#": 4,
+              "title": "Substring not found",
+              "code": "const note = 'This note is important';\nconst includesUrgent = note.includes('urgent');\nconsole.log(includesUrgent);",
+              "explanation": "Attempts to find 'urgent' within the note, which is not present, thus returning false. This use case highlights includes method's return of false when the specified substring cannot be found within the target string."
+            },
+            {
+              "#": 5,
+              "title": "Checking for empty string",
+              "code": "const emptyCheck = 'Any string';\nconst includesEmpty = emptyCheck.includes('');\nconsole.log(includesEmpty);",
+              "explanation": "Confirms that an empty string ('') is considered to be found in any string, returning true. This underscores an edge case where includes method always finds an empty string within another string, demonstrating its default behavior for such searches."
             }
-        ]
+          ]
     },
     {
         "function": "indexOf()",
@@ -201,10 +364,41 @@
         "use_cases": [
             {
                 "#": 1,
-                "title": "Finding the index of a substring",
-                "code": "const message = 'Hello World';\nconst index = message.indexOf('World'); // 6"
+                "title": "Basic search",
+                "code": "const phrase = 'Hello, world!';\nconst index = phrase.indexOf('world');\nconsole.log(index);",
+                "explanation": "Searches for the substring 'world' within the phrase, returning its starting index. This demonstrates the basic use of indexOf() to locate a substring within a string."
+              },
+            {
+              "#": 2,
+              "title": "Find first occurrence of a substring",
+              "code": "const text = 'Hello, world. Welcome to the universe.';\nconst index = text.indexOf('world');\nconsole.log(index);",
+              "explanation": "Searches for the substring 'world' within the text and returns its first occurrence index. This demonstrates indexOf's ability to locate a specific substring in a string, providing the starting index where the substring is found."
+            },
+            {
+              "#": 3,
+              "title": "Substring not found",
+              "code": "const message = 'Searching for a missing word';\nconst missingIndex = message.indexOf('absent');\nconsole.log(missingIndex);",
+              "explanation": "Attempts to find 'absent' in the message. Since the substring does not exist, indexOf returns -1, indicating the substring was not found. This highlights indexOf's return value for searches that do not match any part of the string."
+            },
+            {
+              "#": 4,
+              "title": "Case-sensitive search",
+              "code": "const sampleText = 'JavaScript is fun';\nconst caseSensitiveIndex = sampleText.indexOf('javascript');\nconsole.log(caseSensitiveIndex);",
+              "explanation": "Looks for 'javascript' in a case-sensitive manner within 'JavaScript is fun', resulting in -1 since the cases do not match. This illustrates indexOf's case sensitivity in searching for substrings."
+            },
+            {
+              "#": 5,
+              "title": "Using start position parameter",
+              "code": "const repeatedWords = 'Repeat, repeat, repeat';\nconst startIndex = repeatedWords.indexOf('repeat', 10);\nconsole.log(startIndex);",
+              "explanation": "Searches for 'repeat' starting from index 10, locating the third occurrence. This shows how the startIndex parameter can be used to skip initial occurrences and find subsequent matches in the string."
+            },
+            {
+              "#": 6,
+              "title": "Finding a single character",
+              "code": "const alphabet = 'abcdefghijklmnopqrstuvwxyz';\nconst letterIndex = alphabet.indexOf('j');\nconsole.log(letterIndex);",
+              "explanation": "Locates the index of the character 'j' within the alphabet string. This simple use case demonstrates indexOf's utility for finding the position of individual characters within a string."
             }
-        ]
+          ]
     },
     {
         "function": "lastIndexOf()",
@@ -229,11 +423,24 @@
         "return_type": "Number",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Finding the last index of a substring",
-                "code": "const message = 'Hello World, World';\nconst lastIndex = message.lastIndexOf('World'); // 13"
+              "#": 1,
+              "title": "Basic search for the last occurrence",
+              "code": "const text = 'Hello, world! World, hello!';\nconst index = text.lastIndexOf('world');\nconsole.log(index);",
+              "explanation": "Searches for the last occurrence of 'world' within the text, ignoring case sensitivity, and returns its starting index. This illustrates the basic use of lastIndexOf() to find the position of a substring, showing how it searches from the end of the string towards the beginning."
+            },
+            {
+              "#": 2,
+              "title": "Search with start index",
+              "code": "const greetings = 'hello, world! hello, universe!';\nconst startIndex = greetings.lastIndexOf('hello', 15);\nconsole.log(startIndex);",
+              "explanation": "Begins searching for 'hello' backwards from index 15, finding the first occurrence. This example shows how lastIndexOf() works with an optional start index to limit the search to a specific part of the string."
+            },
+            {
+              "#": 3,
+              "title": "Substring not found",
+              "code": "const message = 'JavaScript is fun';\nconst notFoundIndex = message.lastIndexOf('Python');\nconsole.log(notFoundIndex);",
+              "explanation": "Attempts to find 'Python' within the message. Since the substring is not present, lastIndexOf() returns -1, indicating the substring was not found in the string."
             }
-        ]
+          ]
     },
     {
         "function": "length",
@@ -249,11 +456,36 @@
         "return_type": "Number",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Getting the length of a string",
-                "code": "const message = 'Hello';\nconst length = message.length; // 5"
+              "#": 1,
+              "title": "Determine string length",
+              "code": "const greeting = 'Hello, world!';\nconst length = greeting.length;\nconsole.log(length);",
+              "explanation": "Calculates the length of the greeting string, including punctuation and spaces. This basic use case demonstrates how to access the length property to determine the number of characters in a string."
+            },
+            {
+              "#": 2,
+              "title": "Empty string length",
+              "code": "const emptyString = '';\nconst length = emptyString.length;\nconsole.log(length);",
+              "explanation": "Checks the length of an empty string, which is 0. This illustrates the length property's behavior with an empty string, showing that it accurately reflects the absence of characters."
+            },
+            {
+              "#": 3,
+              "title": "Length with special characters",
+              "code": "const specialChars = 'ñáéíóú';\nconst length = specialChars.length;\nconsole.log(length);",
+              "explanation": "Counts the number of characters in a string containing special characters. This use case highlights that the length property counts each character, including those outside the standard ASCII range, as a single character."
+            },
+            {
+              "#": 4,
+              "title": "Length of a string with whitespace",
+              "code": "const stringWithSpaces = '   ';\nconst length = stringWithSpaces.length;\nconsole.log(length);",
+              "explanation": "Determines the length of a string comprised only of whitespace characters. This example shows that spaces are counted as characters when calculating a string's length."
+            },
+            {
+              "#": 5,
+              "title": "Comparing lengths of two strings",
+              "code": "const string1 = 'Hello';\nconst string2 = 'Goodbye';\nconst areEqualLength = string1.length === string2.length;\nconsole.log(areEqualLength);",
+              "explanation": "Compares the lengths of two different strings to check if they are the same. This demonstrates using the length property for comparison purposes, useful in scenarios where string length equality might be a criterion."
             }
-        ]
+          ]
     },
     {
         "function": "localeCompare()",
@@ -274,11 +506,36 @@
         "return_type": "Number",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Comparing two strings in the current locale",
-                "code": "const a = 'r\u00e9serv\u00e9';\nconst b = 'reserve';\nconst comparison = a.localeCompare(b); // Positive or negative value based on locale"
+              "#": 1,
+              "title": "Basic alphabetical comparison",
+              "code": "const string1 = 'apple';\nconst string2 = 'banana';\nconst comparison = string1.localeCompare(string2);\nconsole.log(comparison);",
+              "explanation": "Compares two strings alphabetically in the current locale. Since 'apple' comes before 'banana', the method returns a negative value, indicating that string1 precedes string2 in sort order."
+            },
+            {
+              "#": 2,
+              "title": "Case-sensitive comparison",
+              "code": "const string1 = 'a';\nconst string2 = 'A';\nconst comparison = string1.localeCompare(string2, undefined, { sensitivity: 'case' });\nconsole.log(comparison);",
+              "explanation": "Performs a case-sensitive comparison between two strings that differ only in case. Depending on the locale, this may return a positive or negative value, but with the 'case' sensitivity option, it treats the strings as distinct."
+            },
+            {
+              "#": 3,
+              "title": "Comparing with accents",
+              "code": "const string1 = 'é';\nconst string2 = 'e';\nconst comparison = string1.localeCompare(string2, 'en', { sensitivity: 'accent' });\nconsole.log(comparison);",
+              "explanation": "Compares two strings where one has an accent and the other does not, using a specific locale ('en') and accent sensitivity. The method returns a non-zero value, indicating the strings are considered different with respect to their accents."
+            },
+            {
+              "#": 4,
+              "title": "Numerical string comparison",
+              "code": "const string1 = '2';\nconst string2 = '10';\nconst comparison = string1.localeCompare(string2, undefined, { numeric: true });\nconsole.log(comparison);",
+              "explanation": "Compares two numeric strings according to their numeric values when the 'numeric' option is true. '2' is considered greater than '10' in numeric comparison, so the method returns a positive value."
+            },
+            {
+              "#": 5,
+              "title": "Same strings comparison",
+              "code": "const string1 = 'hello';\nconst string2 = 'hello';\nconst comparison = string1.localeCompare(string2);\nconsole.log(comparison);",
+              "explanation": "Compares two identical strings. Since the strings are the same, the method returns 0, indicating no difference in sort order between string1 and string2."
             }
-        ]
+          ]
     },
     {
         "function": "match()",
@@ -299,32 +556,38 @@
         "return_type": "Array",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Matching a string against a regular expression",
-                "code": "const message = 'Hello World';\nconst matches = message.match(/[A-Z]/g); // ['H', 'W']"
-            }
-        ]
-    },
-    {
-        "function": "prototype",
-        "description": "Allows the addition of properties and methods to an object.",
-        "parameters": [],
-        "signature": "String.prototype.propertyName",
-        "return": {
-            "type": "Various",
-            "value": "Depends on the property or method being accessed or added."
-        },
-        "action": "Meta-Functions",
-        "link": "https://www.w3schools.com/jsref/jsref_prototype_string.asp",
-        "return_type": "Various",
-        "use_cases": [
+              "#": 1,
+              "title": "Finding a word",
+              "code": "const text = 'The quick brown fox jumps over the lazy dog.';\nconst found = text.match(/quick/);\nconsole.log(found[0]);",
+              "explanation": "Searches for the word 'quick' within the text using a regular expression. This illustrates how match() can be used to find specific words or patterns in a string, returning an array containing the matched word."
+            },
             {
-                "#": 1,
-                "title": "Adding a method to the String prototype",
-                "code": "String.prototype.sayHello = function() { return 'Hello ' + this; };\nconst name = 'World';\nconst greeting = name.sayHello(); // 'Hello World'"
+              "#": 2,
+              "title": "Extracting all digits",
+              "code": "const data = 'Room 101, Tel: 12345';\nconst digits = data.match(/\\d+/g);\nconsole.log(digits);",
+              "explanation": "Uses a regular expression to find all sequences of digits in the string, demonstrating match()'s capability to extract all matches with the global ('g') flag, resulting in an array of all digit sequences found."
+            },
+            {
+              "#": 3,
+              "title": "Capturing groups",
+              "code": "const info = 'Name: John Doe, Age: 30';\nconst regex = /Name: (\\w+ \\w+), Age: (\\d+)/;\nconst match = info.match(regex);\nconsole.log(`Name: ${match[1]}, Age: ${match[2]}`);",
+              "explanation": "Illustrates the use of capturing groups in a regular expression to extract the name and age from a string. match() returns an array where the first element is the full matched string, and subsequent elements are the values captured by the groups."
+            },
+            {
+              "#": 4,
+              "title": "No match found",
+              "code": "const sentence = 'No numbers here';\nconst result = sentence.match(/\\d+/);\nconsole.log(result);",
+              "explanation": "Attempts to find digits in a string that contains none. This example shows that match() returns null when no matches are found, highlighting the need to check the result before accessing array elements."
+            },
+            {
+              "#": 5,
+              "title": "Matching with flags",
+              "code": "const multilineText = 'First line\\nSecond Line\\nThird Line';\nconst matches = multilineText.match(/^S.+e$/gm);\nconsole.log(matches);",
+              "explanation": "Searches for lines starting with 'S' and ending with 'e' in a multiline string using both global ('g') and multiline ('m') flags. This demonstrates match()'s ability to work with multiline strings and specific pattern flags to refine search criteria."
             }
-        ]
+          ]
     },
+    
     {
         "function": "repeat()",
         "description": "Returns a new string with a specified number of copies of an existing string.",
@@ -344,11 +607,36 @@
         "return_type": "String",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Repeating a string a number of times",
-                "code": "const echo = 'echo '; \nconst echoes = echo.repeat(3); // 'echo echo echo '"
+              "#": 1,
+              "title": "Repeating a string multiple times",
+              "code": "const chorus = 'na '; \nconst song = chorus.repeat(5); \nconsole.log(song);",
+              "explanation": "Creates a new string by repeating 'na ' five times, illustrating how repeat() can be used to duplicate a string fragment multiple times, useful for generating patterns or repeated content."
+            },
+            {
+              "#": 2,
+              "title": "Zero times repetition",
+              "code": "const word = 'hello'; \nconst silent = word.repeat(0); \nconsole.log(`Silent: '${silent}'`);",
+              "explanation": "Demonstrates that calling repeat() with 0 returns an empty string. This is useful for cases where the repetition amount might be dynamically determined, ensuring that no error occurs when the repeat count is zero."
+            },
+            {
+              "#": 3,
+              "title": "Creating a separator line",
+              "code": "const separator = '-'.repeat(10); \nconsole.log(separator);",
+              "explanation": "Uses repeat() to create a string consisting of ten dashes, showcasing a practical use for generating simple text-based separators or dividers in console output or UI components."
+            },
+            {
+              "#": 4,
+              "title": "Formatting console output",
+              "code": "const title = 'Title'; \nconst paddedTitle = title.repeat(1) + ' '.repeat(20 - title.length); \nconsole.log(paddedTitle);",
+              "explanation": "Pads a title string to a fixed length by appending spaces, demonstrating repeat()'s utility in text formatting, particularly for aligning or padding strings in console output or text-based UIs."
+            },
+            {
+              "#": 5,
+              "title": "Building a simple ASCII art",
+              "code": "const step = ' '.repeat(2) + '*\\n'; \nconst stairs = step.repeat(5); \nconsole.log(stairs);",
+              "explanation": "Generates a simple ASCII art representation of stairs by repeating a pattern of spaces followed by an asterisk and a newline. This example highlights repeat()'s application in creative contexts, such as generating ASCII art or text-based designs."
             }
-        ]
+          ]
     },
     {
         "function": "replace()",
@@ -373,11 +661,36 @@
         "return_type": "String",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Replacing part of a string",
-                "code": "const message = 'Hello World';\nconst newMessage = message.replace('World', 'Mars'); // 'Hello Mars'"
+              "#": 1,
+              "title": "Replacing a substring",
+              "code": "const sentence = 'The quick brown fox jumps over the lazy dog.';\nconst newSentence = sentence.replace('fox', 'cat');\nconsole.log(newSentence);",
+              "explanation": "Substitutes 'fox' with 'cat' in the given sentence. This demonstrates how replace() can be used to change specific substrings within a string, showcasing a basic text replacement operation."
+            },
+            {
+              "#": 2,
+              "title": "Global replacement with RegExp",
+              "code": "const story = 'The dog chased the cat. The cat climbed a tree.';\nconst newStory = story.replace(/cat/g, 'squirrel');\nconsole.log(newStory);",
+              "explanation": "Uses a regular expression with the global flag ('g') to replace all occurrences of 'cat' with 'squirrel'. This illustrates replace()'s ability to perform global replacements across the entire string, not just the first match."
+            },
+            {
+              "#": 3,
+              "title": "Case-insensitive replacement",
+              "code": "const feedback = 'This product is Excellent.';\nconst modifiedFeedback = feedback.replace(/excellent/i, 'good');\nconsole.log(modifiedFeedback);",
+              "explanation": "Performs a case-insensitive replacement, turning 'Excellent' into 'good'. By using the case-insensitive flag ('i') in the regular expression, this example demonstrates how to match and replace strings regardless of their case."
+            },
+            {
+              "#": 4,
+              "title": "Replacing with a function",
+              "code": "const text = 'He is 30 years old.';\nconst anonymizedText = text.replace(/\\d+/, match => '*'.repeat(match.length));\nconsole.log(anonymizedText);",
+              "explanation": "Replaces the first sequence of digits with asterisks, with the number of asterisks equal to the length of the matched digits. This use of a replacement function allows for dynamic replacements based on the content of the match."
+            },
+            {
+              "#": 5,
+              "title": "Swapping words",
+              "code": "const greeting = 'world Hello';\nconst correctOrder = greeting.replace(/(\\w+) (\\w+)/, '$2 $1');\nconsole.log(correctOrder);",
+              "explanation": "Swaps the order of two words using capturing groups and references in the replacement string. This showcases replace()'s capability to reorganize text segments dynamically using pattern matching and replacement references."
             }
-        ]
+          ]
     },
     {
         "function": "replaceAll()",
@@ -402,11 +715,36 @@
         "return_type": "String",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Replacing all instances of a substring",
-                "code": "const message = 'Hello World World';\nconst newMessage = message.replaceAll('World', 'Mars'); // 'Hello Mars Mars'"
+              "#": 1,
+              "title": "Global string replacement",
+              "code": "const paragraph = 'The dog chased the cat. Later, the dog caught the cat.';\nconst newParagraph = paragraph.replaceAll('dog', 'fox');\nconsole.log(newParagraph);",
+              "explanation": "Replaces all occurrences of 'dog' with 'fox' in the paragraph. This demonstrates how replaceAll() can be used to perform a global replacement without needing a regular expression with a global flag."
+            },
+            {
+              "#": 2,
+              "title": "Case-sensitive replacement",
+              "code": "const feedback = 'Good, good, and good!';\nconst updatedFeedback = feedback.replaceAll('good', 'great');\nconsole.log(updatedFeedback);",
+              "explanation": "Attempts to replace 'good' with 'great', but due to case sensitivity, no changes are made. This highlights replaceAll()'s case-sensitive nature and the importance of matching cases for successful replacements."
+            },
+            {
+              "#": 3,
+              "title": "Using regular expression without global flag",
+              "code": "const story = 'He was brave, very brave.';\ntry {\n  const newStory = story.replaceAll(/brave/, 'bold');\n  console.log(newStory);\n} catch(e) {\n  console.log('Error: replaceAll with RegExp requires a global flag.');\n}",
+              "explanation": "Attempts to use replaceAll() with a regular expression without the global ('g') flag, resulting in an error. This example is intended to show that replaceAll() with a regular expression requires the 'g' flag for it to work."
+            },
+            {
+              "#": 4,
+              "title": "Replacing special characters",
+              "code": "const path = 'C:\\\\Documents\\\\Newsletters\\\\Summer2021.pdf';\nconst webPath = path.replaceAll('\\\\', '/');\nconsole.log(webPath);",
+              "explanation": "Converts Windows-style file path separators to web-friendly forward slashes. This use case demonstrates replaceAll()'s utility in modifying strings containing special characters or patterns that require global replacement."
+            },
+            {
+              "#": 5,
+              "title": "Dynamically generated replacement string",
+              "code": "const censor = 'Spoiler: The hero wins the duel.';\nconst censored = censor.replaceAll('Spoiler:', '[CENSORED]');\nconsole.log(censored);",
+              "explanation": "Replaces a specific keyword ('Spoiler:') with a '[CENSORED]' tag throughout the text. This illustrates how replaceAll() can be used to dynamically alter or redact parts of a string based on content-specific criteria."
             }
-        ]
+          ]
     },
     {
         "function": "search()",
@@ -427,11 +765,36 @@
         "return_type": "Number",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Searching within a string using a RegExp",
-                "code": "const message = 'Hello World';\nconst index = message.search('World'); // 6"
+              "#": 1,
+              "title": "Basic search with literal string",
+              "code": "const text = 'Find the needle in the haystack.';\nconst index = text.search('needle');\nconsole.log(index);",
+              "explanation": "Searches for the term 'needle' within the text and returns its starting index. This demonstrates how search() can be used with a simple string argument to locate the position of a substring within a larger string."
+            },
+            {
+              "#": 2,
+              "title": "Search with regular expression",
+              "code": "const data = 'The price is $100.';\nconst priceIndex = data.search(/\\$\\d+/);\nconsole.log(priceIndex);",
+              "explanation": "Uses a regular expression to find the position of a price pattern within the string. This example illustrates search()'s capability to work with regular expressions for more complex pattern matching."
+            },
+            {
+              "#": 3,
+              "title": "Case-insensitive search",
+              "code": "const sentence = 'JavaScript is fun.';\nconst caseInsensitiveIndex = sentence.search(/javascript/i);\nconsole.log(caseInsensitiveIndex);",
+              "explanation": "Performs a case-insensitive search for 'JavaScript' using a regular expression with the 'i' flag. This showcases how search() can be adapted to ignore case differences in pattern matching."
+            },
+            {
+              "#": 4,
+              "title": "Search for a non-existing pattern",
+              "code": "const message = 'There are no numbers here.';\nconst result = message.search(/\\d+/);\nconsole.log(result);",
+              "explanation": "Attempts to locate a numeric pattern in a text devoid of numbers, resulting in -1. This indicates that search() returns -1 when the specified pattern cannot be found, useful for conditional checks in string processing."
+            },
+            {
+              "#": 5,
+              "title": "Finding special characters",
+              "code": "const note = 'Special characters: %, &, *.';\nconst specialCharIndex = note.search(/[\\%&\\*]/);\nconsole.log(specialCharIndex);",
+              "explanation": "Searches for the first occurrence of several special characters using a character set in a regular expression. This example highlights search()'s utility in identifying specific characters within a string, demonstrating its effectiveness with character classes."
             }
-        ]
+          ]
     },
     {
         "function": "slice()",
@@ -456,11 +819,36 @@
         "return_type": "String",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Extracting a section of a string",
-                "code": "const message = 'Hello World';\nconst slice = message.slice(0, 5); // 'Hello'"
+              "#": 1,
+              "title": "Extracting a substring",
+              "code": "const sentence = 'The quick brown fox jumps over the lazy dog.';\nconst subSentence = sentence.slice(4, 9);\nconsole.log(subSentence);",
+              "explanation": "Extracts the substring 'quick' from the sentence. This use case demonstrates slice() for selecting a specific portion of a string based on start and end indices, showcasing its basic utility in substring extraction."
+            },
+            {
+              "#": 2,
+              "title": "Using negative indices",
+              "code": "const text = 'Mozilla Firefox';\nconst browser = text.slice(-7);\nconsole.log(browser);",
+              "explanation": "Extracts 'Firefox' from the text using a negative start index. This illustrates slice()'s ability to handle negative indices, counting from the end of the string to easily extract substrings without calculating their exact positions."
+            },
+            {
+              "#": 3,
+              "title": "Omitting end index",
+              "code": "const fullPath = '/home/user/documents/report.txt';\nconst fileName = fullPath.slice(20);\nconsole.log(fileName);",
+              "explanation": "Retrieves the file name 'report.txt' by specifying only the start index. This example shows how omitting the end index in slice() will extract the substring from the start position to the end of the string."
+            },
+            {
+              "#": 4,
+              "title": "Extracting entire string",
+              "code": "const originalString = 'Copy this string.';\nconst copiedString = originalString.slice();\nconsole.log(copiedString);",
+              "explanation": "Creates a copy of the entire string by not specifying start or end indices. This demonstrates slice()'s flexibility, allowing for the entire string to be copied when no indices are provided."
+            },
+            {
+              "#": 5,
+              "title": "Handling out-of-range indices",
+              "code": "const message = 'Short string';\nconst result = message.slice(5, 50);\nconsole.log(result);",
+              "explanation": "Attempts to slice the string from index 5 to an out-of-range end index, returning 'string'. This highlights slice()'s behavior when the end index exceeds the string's length, effectively treating it as the string's end."
             }
-        ]
+          ]
     },
     {
         "function": "split()",
@@ -485,11 +873,36 @@
         "return_type": "Array",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Splitting a string into an array of substrings",
-                "code": "const fruits = 'Apple, Banana, Cherry';\nconst fruitArray = fruits.split(', '); // ['Apple', 'Banana', 'Cherry']"
+              "#": 1,
+              "title": "Splitting a sentence into words",
+              "code": "const sentence = 'The quick brown fox jumps over the lazy dog.';\nconst words = sentence.split(' ');\nconsole.log(words);",
+              "explanation": "Divides a sentence into an array of words using a space (' ') as the delimiter. This illustrates split()'s basic usage for breaking down strings into manageable parts, ideal for text processing and analysis."
+            },
+            {
+              "#": 2,
+              "title": "Using a limit parameter",
+              "code": "const data = '1,2,3,4,5,6';\nconst limitedNumbers = data.split(',', 3);\nconsole.log(limitedNumbers);",
+              "explanation": "Splits the string into an array of the first three elements based on the comma delimiter, demonstrating how the limit parameter controls the number of split elements returned."
+            },
+            {
+              "#": 3,
+              "title": "Splitting with regular expression",
+              "code": "const complexString = 'Word1, Word2; Word3 Word4. Word5';\nconst splitWords = complexString.split(/[ ,;\\.]+/);\nconsole.log(splitWords);",
+              "explanation": "Uses a regular expression as the delimiter to split the string by multiple types of punctuation and spaces. This showcases split()'s flexibility in handling complex string patterns, making it powerful for parsing varied text formats."
+            },
+            {
+              "#": 4,
+              "title": "Empty string as delimiter",
+              "code": "const word = 'hello';\nconst characters = word.split('');\nconsole.log(characters);",
+              "explanation": "Breaks down a word into its individual characters by using an empty string ('') as the delimiter. This example highlights split()'s ability to dissect strings into arrays of single characters, useful for character-level operations."
+            },
+            {
+              "#": 5,
+              "title": "No delimiter specified",
+              "code": "const greeting = 'Hello, world!';\nconst array = greeting.split();\nconsole.log(array);",
+              "explanation": "Without specifying a delimiter, split() returns an array containing the original string as its sole element. This demonstrates split()'s default behavior when no delimiter is provided, effectively not splitting the string."
             }
-        ]
+          ]
     },
     {
         "function": "startsWith()",
@@ -514,11 +927,36 @@
         "return_type": "Boolean",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Checking if a string starts with a specified substring",
-                "code": "const message = 'Hello World';\nconst starts = message.startsWith('Hello'); // true"
+              "#": 1,
+              "title": "Checking string prefix",
+              "code": "const sentence = 'The quick brown fox jumps over the lazy dog.';\nconst startsWithThe = sentence.startsWith('The');\nconsole.log(startsWithThe);",
+              "explanation": "Determines if the sentence starts with the word 'The'. This basic use case demonstrates startsWith()'s functionality for checking if a string begins with a specified substring, showcasing its utility in conditional logic based on string content."
+            },
+            {
+              "#": 2,
+              "title": "Case-sensitive comparison",
+              "code": "const greeting = 'Hello, world!';\nconst startsWithLowerCase = greeting.startsWith('hello');\nconsole.log(startsWithLowerCase);",
+              "explanation": "Checks if 'greeting' starts with 'hello', which it does not due to case sensitivity. This highlights startsWith()'s case-sensitive behavior, emphasizing the need for case matching in successful substring comparisons."
+            },
+            {
+              "#": 3,
+              "title": "Using position parameter",
+              "code": "const text = 'Unexpected event';\nconst startsWithEvent = text.startsWith('event', 11);\nconsole.log(startsWithEvent);",
+              "explanation": "Searches if 'text' starts with 'event' at position 11. By specifying a start position, this example shows how startsWith() can check for the presence of a substring starting from a specific point within the string."
+            },
+            {
+              "#": 4,
+              "title": "Substring not found at start",
+              "code": "const message = 'No prefix match here.';\nconst startsWithPrefix = message.startsWith('prefix');\nconsole.log(startsWithPrefix);",
+              "explanation": "Attempts to find 'prefix' at the start of the message. Since the substring does not match the beginning of the string, startsWith() returns false, demonstrating its strict requirement for matching at the specified starting position."
+            },
+            {
+              "#": 5,
+              "title": "Negative position parameter",
+              "code": "const note = 'This is a note.';\nconst startsWithNegative = note.startsWith('This', -1);\nconsole.log(startsWithNegative);",
+              "explanation": "Tries to use a negative start position, which JavaScript treats as 0. This indicates that startsWith(), when given a negative position, defaults to starting the search from the beginning of the string."
             }
-        ]
+          ]
     },
     {
         "function": "substr()",
@@ -543,11 +981,36 @@
         "return_type": "String",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Extracting a substring by start index and length",
-                "code": "const message = 'Hello World';\nconst substr = message.substr(6, 5); // 'World'"
+              "#": 1,
+              "title": "Extracting a substring",
+              "code": "const text = 'Mozilla Firefox';\nconst result = text.substr(7, 7);\nconsole.log(result);",
+              "explanation": "Extracts 'Firefox' from the string using substr(), starting at index 7 and spanning 7 characters. This demonstrates substr()'s basic usage for extracting a substring from a specific position."
+            },
+            {
+              "#": 2,
+              "title": "Using a negative start index",
+              "code": "const sentence = 'Hello, world!';\nconst endPhrase = sentence.substr(-6, 5);\nconsole.log(endPhrase);",
+              "explanation": "Extracts 'world' by specifying a negative start index, counting back from the end of the string. This illustrates how substr() handles negative indices to start the extraction from the end."
+            },
+            {
+              "#": 3,
+              "title": "Omitting length parameter",
+              "code": "const greeting = 'Hello, world!';\nconst fromHello = greeting.substr(7);\nconsole.log(fromHello);",
+              "explanation": "Retrieves the substring starting from index 7 to the end of the string, as the length parameter is omitted. This shows substr()'s behavior when only the start index is provided, extracting the rest of the string from that point."
+            },
+            {
+              "#": 4,
+              "title": "Extracting entire string with positive index",
+              "code": "const originalString = 'JavaScript';\nconst wholeString = originalString.substr(0);\nconsole.log(wholeString);",
+              "explanation": "Copies the entire string by starting at index 0 without specifying the length. This demonstrates how to use substr() to make a full copy of the string when starting from the beginning."
+            },
+            {
+              "#": 5,
+              "title": "Handling out-of-range start index",
+              "code": "const message = 'Short message';\nconst result = message.substr(50, 10);\nconsole.log(result);",
+              "explanation": "Attempts to extract a substring starting well beyond the string's length, resulting in an empty string. This highlights substr()'s return value when the start index exceeds the string's length."
             }
-        ]
+          ]
     },
     {
         "function": "substring()",
@@ -572,11 +1035,36 @@
         "return_type": "String",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Extracting a substring between two indices",
-                "code": "const message = 'Hello World';\nconst substring = message.substring(0, 5); // 'Hello'"
+              "#": 1,
+              "title": "Extracting a substring",
+              "code": "const text = 'Mozilla Firefox';\nconst result = text.substring(7, 14);\nconsole.log(result);",
+              "explanation": "Extracts 'Firefox' from the string by specifying the start index (7) and the end index (14). This demonstrates substring()'s basic usage for extracting a specific portion of a string based on index positions."
+            },
+            {
+              "#": 2,
+              "title": "Using indices in reverse order",
+              "code": "const sentence = 'Hello, world!';\nconst reversed = sentence.substring(13, 7);\nconsole.log(reversed);",
+              "explanation": "Retrieves the substring 'world' even when the start and end indices are provided in reverse order. This illustrates substring()'s ability to interpret the lower index as the start and the higher as the end, regardless of their order in arguments."
+            },
+            {
+              "#": 3,
+              "title": "Omitting the end index",
+              "code": "const fullPath = '/home/user/documents/report.txt';\nconst directoryPath = fullPath.substring(0, 20);\nconsole.log(directoryPath);",
+              "explanation": "Extracts a directory path from a full file path by specifying only the start index, omitting the end index. This shows substring()'s behavior when the end index is omitted, extracting the substring from the start index to the end of the string."
+            },
+            {
+              "#": 4,
+              "title": "Negative start index",
+              "code": "const example = 'Mozilla Firefox';\nconst result = example.substring(-3);\nconsole.log(result);",
+              "explanation": "Treats a negative start index as 0, resulting in the entire string being returned. This demonstrates how substring() handles negative indices, providing a forgiving mechanism for string extraction."
+            },
+            {
+              "#": 5,
+              "title": "Extracting from start to a specific character",
+              "code": "const email = 'user@example.com';\nconst username = email.substring(0, email.indexOf('@'));\nconsole.log(username);",
+              "explanation": "Retrieves the username from an email address by extracting the substring from the start to the character '@'. This use case highlights substring()'s utility in parsing and extracting specific data from a string based on dynamic conditions."
             }
-        ]
+          ]
     },
     {
         "function": "toLocaleLowerCase()",
@@ -592,11 +1080,36 @@
         "return_type": "String",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Converting a string to lowercase based on locale",
-                "code": "const message = '\u0130stanbul';\nconst lower = message.toLocaleLowerCase('tr-TR'); // 'istanbul'"
+              "#": 1,
+              "title": "Basic conversion to lowercase",
+              "code": "const text = 'LOREM IPSUM dolor SIT Amet.';\nconst lowerCaseText = text.toLocaleLowerCase();\nconsole.log(lowerCaseText);",
+              "explanation": "Converts the entire string to lowercase according to the host's current locale. This demonstrates toLocaleLowerCase()'s basic usage for making strings uniformly lowercase, useful for case-insensitive comparisons or text normalization."
+            },
+            {
+              "#": 2,
+              "title": "Locale-specific case conversion",
+              "code": "const germanText = 'Straße';\nconst lowerCaseGerman = germanText.toLocaleLowerCase('de-DE');\nconsole.log(lowerCaseGerman);",
+              "explanation": "Applies locale-specific rules for the German language to convert 'Straße' to lowercase. This highlights toLocaleLowerCase()'s ability to handle language-specific casing rules, such as the 'ß' character in German."
+            },
+            {
+              "#": 3,
+              "title": "Comparison without locale",
+              "code": "const name = 'İstanbul';\nconst lowerCaseName = name.toLocaleLowerCase('tr-TR');\nconsole.log(lowerCaseName);",
+              "explanation": "Converts 'İ' (dotless I) to its lowercase equivalent in Turkish, which respects the locale-specific behavior of the Turkish language, differentiating it from the general conversion behavior seen in languages like English."
+            },
+            {
+              "#": 4,
+              "title": "Handling mixed-language text",
+              "code": "const mixedText = 'English: TEXT, Türkçe: METİN';\nconst lowerCaseMixed = mixedText.toLocaleLowerCase('tr-TR');\nconsole.log(lowerCaseMixed);",
+              "explanation": "Converts a mixed-language string to lowercase using the Turkish locale, demonstrating toLocaleLowerCase()'s effectiveness across different alphabets and language rules within a single operation."
+            },
+            {
+              "#": 5,
+              "title": "Case conversion without affecting numbers",
+              "code": "const alphanumeric = 'ABC123def';\nconst lowerCaseAlphanumeric = alphanumeric.toLocaleLowerCase();\nconsole.log(lowerCaseAlphanumeric);",
+              "explanation": "Converts letters to lowercase without altering the numbers in a string containing both alphabetic and numeric characters. This example shows that toLocaleLowerCase() selectively applies case conversion to letters, leaving non-alphabetic characters unaffected."
             }
-        ]
+          ]
     },
     {
         "function": "toLocaleUpperCase()",
@@ -612,11 +1125,36 @@
         "return_type": "String",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Converting a string to uppercase based on locale",
-                "code": "const message = 'ijs';\nconst upper = message.toLocaleUpperCase('nl-NL'); // 'IJS'"
+              "#": 1,
+              "title": "Basic conversion to uppercase",
+              "code": "const text = 'lorem ipsum Dolor Sit amet.';\nconst upperCaseText = text.toLocaleUpperCase();\nconsole.log(upperCaseText);",
+              "explanation": "Converts the entire string to uppercase according to the host's current locale. This demonstrates toLocaleUpperCase()'s basic usage for making strings uniformly uppercase, useful for formatting or creating visually consistent text output."
+            },
+            {
+              "#": 2,
+              "title": "Locale-specific case conversion",
+              "code": "const turkishText = 'iğdır';\nconst upperCaseTurkish = turkishText.toLocaleUpperCase('tr-TR');\nconsole.log(upperCaseTurkish);",
+              "explanation": "Applies locale-specific rules for the Turkish language to correctly convert 'i' to 'İ' and 'ğ' to 'Ğ'. This highlights toLocaleUpperCase()'s ability to handle language-specific casing rules, particularly for languages where uppercase transformations differ from the default locale."
+            },
+            {
+              "#": 3,
+              "title": "Comparison without locale",
+              "code": "const name = 'istanbul';\nconst upperCaseName = name.toLocaleUpperCase('en-US');\nconsole.log(upperCaseName);",
+              "explanation": "Converts 'istanbul' to uppercase using the English (United States) locale. This illustrates how using a specific locale can affect the conversion result, especially for languages with unique uppercase rules."
+            },
+            {
+              "#": 4,
+              "title": "Handling mixed-language text",
+              "code": "const mixedText = 'English: text, Türkçe: metin';\nconst upperCaseMixed = mixedText.toLocaleUpperCase('tr-TR');\nconsole.log(upperCaseMixed);",
+              "explanation": "Converts a mixed-language string to uppercase using the Turkish locale, demonstrating toLocaleUpperCase()'s effectiveness across different alphabets and language rules within a single operation."
+            },
+            {
+              "#": 5,
+              "title": "Case conversion without affecting numbers",
+              "code": "const alphanumeric = 'abc123DEF';\nconst upperCaseAlphanumeric = alphanumeric.toLocaleUpperCase();\nconsole.log(upperCaseAlphanumeric);",
+              "explanation": "Converts letters to uppercase without altering the numbers in a string containing both alphabetic and numeric characters. This example shows that toLocaleUpperCase() selectively applies case conversion to letters, leaving non-alphabetic characters unaffected."
             }
-        ]
+          ]
     },
     {
         "function": "toLowerCase()",
@@ -632,11 +1170,36 @@
         "return_type": "String",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Converting a string to lowercase",
-                "code": "const message = 'Hello World';\nconst lower = message.toLowerCase(); // 'hello world'"
+              "#": 1,
+              "title": "Basic conversion to lowercase",
+              "code": "const statement = 'ALL CAPS SENTENCE.';\nconst lowerCaseStatement = statement.toLowerCase();\nconsole.log(lowerCaseStatement);",
+              "explanation": "Converts the entire statement to lowercase. This use case illustrates `toLowerCase()`'s basic functionality for transforming all uppercase letters in a string to their lowercase counterparts, useful for normalization or case-insensitive comparisons."
+            },
+            {
+              "#": 2,
+              "title": "No effect on numbers or special characters",
+              "code": "const mixedContent = '123 ABC!@#';\nconst lowerCaseContent = mixedContent.toLowerCase();\nconsole.log(lowerCaseContent);",
+              "explanation": "Demonstrates that `toLowerCase()` affects only alphabetic characters, leaving numbers, spaces, and special characters unchanged. This is useful for case conversion operations where non-alphabetic characters are present."
+            },
+            {
+              "#": 3,
+              "title": "Lowercasing a mixed-case string",
+              "code": "const mixedCase = 'JavaScRipt';\nconst normalized = mixedCase.toLowerCase();\nconsole.log(normalized);",
+              "explanation": "Normalizes a string with mixed uppercase and lowercase letters to all lowercase. This example shows `toLowerCase()`'s utility in standardizing text input, such as user-generated content or programming identifiers."
+            },
+            {
+              "#": 4,
+              "title": "Comparing strings case-insensitively",
+              "code": "const input = 'Email';\nconst stored = 'email';\nconst match = input.toLowerCase() === stored.toLowerCase();\nconsole.log(match);",
+              "explanation": "Uses `toLowerCase()` to compare two strings regardless of their original case, resulting in a case-insensitive comparison. This technique is commonly employed in search and matching algorithms where case variations should not affect the outcome."
+            },
+            {
+              "#": 5,
+              "title": "Effect on international characters",
+              "code": "const internationalText = 'İstanbul';\nconst lowerCaseInternational = internationalText.toLowerCase();\nconsole.log(lowerCaseInternational);",
+              "explanation": "Shows `toLowerCase()` applied to a string containing an international character with a dot ('İ'). Depending on the locale and environment, results may vary, illustrating the method's limitations with non-ASCII characters and the potential need for locale-aware transformations."
             }
-        ]
+          ]
     },
     {
         "function": "toString()",
@@ -652,11 +1215,36 @@
         "return_type": "String",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Converting a String object to a string",
-                "code": "const stringObj = new String('Hello World');\nconst str = stringObj.toString(); // 'Hello World'"
+              "#": 1,
+              "title": "Converting a number to a string",
+              "code": "const number = 123;\nconst numberAsString = number.toString();\nconsole.log(numberAsString);",
+              "explanation": "Demonstrates converting a numeric value to a string using `toString()`. This is a basic usage scenario where `toString()` is applied to a number, highlighting its utility in type conversion for formatting or concatenation purposes."
+            },
+            {
+              "#": 2,
+              "title": "String representation of an array",
+              "code": "const array = [1, 2, 3];\nconst arrayAsString = array.toString();\nconsole.log(arrayAsString);",
+              "explanation": "Converts an array to a comma-separated string representation. This example shows `toString()` being used on an array, illustrating how it can convert complex data structures into readable string formats."
+            },
+            {
+              "#": 3,
+              "title": "Using toString on a boolean",
+              "code": "const booleanValue = true;\nconst booleanAsString = booleanValue.toString();\nconsole.log(booleanAsString);",
+              "explanation": "Transforms a boolean value into its string representation ('true' or 'false'). This demonstrates `toString()`'s versatility across different data types, making it suitable for boolean values' textual representation."
+            },
+            {
+              "#": 4,
+              "title": "Custom object toString override",
+              "code": "const person = {\n  name: 'John',\n  age: 30,\n  toString: function() {\n    return `Name: ${this.name}, Age: ${this.age}`;\n  }\n};\nconst personAsString = person.toString();\nconsole.log(personAsString);",
+              "explanation": "Shows how to override the `toString()` method in a custom object to return a meaningful string representation. This example illustrates enhancing readability and information content of object string representations through custom `toString()` implementations."
+            },
+            {
+              "#": 5,
+              "title": "Converting undefined and null",
+              "code": "const undefinedValue = undefined;\nconst nullValue = null;\nconsole.log(undefinedValue.toString()); // Error\nconsole.log(nullValue.toString()); // Error",
+              "explanation": "Attempts to call `toString()` on `undefined` and `null` values, which leads to a runtime error. This highlights a limitation of `toString()`, as calling it directly on `undefined` or `null` is not allowed and requires careful handling or prior checking."
             }
-        ]
+          ]
     },
     {
         "function": "toUpperCase()",
@@ -672,11 +1260,36 @@
         "return_type": "String",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Converting a string to uppercase",
-                "code": "const message = 'hello world';\nconst upper = message.toUpperCase(); // 'HELLO WORLD'"
+              "#": 1,
+              "title": "Basic conversion to uppercase",
+              "code": "const sentence = 'hello world';\nconst upperSentence = sentence.toUpperCase();\nconsole.log(upperSentence);",
+              "explanation": "Converts the entire sentence to uppercase. This demonstrates `toUpperCase()`'s basic functionality for transforming all lowercase letters in a string to their uppercase counterparts, useful for formatting or creating visually consistent text output."
+            },
+            {
+              "#": 2,
+              "title": "No effect on numbers or special characters",
+              "code": "const mixedContent = 'abc123!@#';\nconst upperContent = mixedContent.toUpperCase();\nconsole.log(upperContent);",
+              "explanation": "Shows that `toUpperCase()` affects only alphabetic characters, leaving numbers, spaces, and special characters unchanged. This is useful for case conversion operations where non-alphabetic characters are present."
+            },
+            {
+              "#": 3,
+              "title": "Uppercasing a mixed-case string",
+              "code": "const mixedCase = 'JavaScRipt';\nconst normalized = mixedCase.toUpperCase();\nconsole.log(normalized);",
+              "explanation": "Normalizes a string with mixed uppercase and lowercase letters to all uppercase. This example shows `toUpperCase()`'s utility in standardizing text input, such as user-generated content or programming identifiers."
+            },
+            {
+              "#": 4,
+              "title": "Comparing strings case-insensitively",
+              "code": "const input = 'Email';\nconst stored = 'EMAIL';\nconst match = input.toUpperCase() === stored.toUpperCase();\nconsole.log(match);",
+              "explanation": "Uses `toUpperCase()` to compare two strings regardless of their original case, resulting in a case-insensitive comparison. This technique is commonly employed in search and matching algorithms where case variations should not affect the outcome."
+            },
+            {
+              "#": 5,
+              "title": "Effect on international characters",
+              "code": "const internationalText = 'i̇stanbul';\nconst upperInternational = internationalText.toUpperCase();\nconsole.log(upperInternational);",
+              "explanation": "Demonstrates `toUpperCase()` applied to a string containing international characters, such as the Turkish dotted 'i' ('i̇'), and its conversion to uppercase. Depending on the environment, this can show how `toUpperCase()` handles locale-specific characters."
             }
-        ]
+          ]
     },
     {
         "function": "trim()",
@@ -692,11 +1305,36 @@
         "return_type": "String",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Trimming whitespace from both ends of a string",
-                "code": "const message = '   Hello World   ';\nconst trimmed = message.trim(); // 'Hello World'"
+              "#": 1,
+              "title": "Removing whitespace from both ends",
+              "code": "const greeting = '   Hello, world!   ';\nconst trimmedGreeting = greeting.trim();\nconsole.log(`'${trimmedGreeting}'`);",
+              "explanation": "Trims leading and trailing whitespace from a string. This use case demonstrates `trim()`'s basic functionality for cleaning up user input or other strings where extra spaces at the beginning or end are undesirable."
+            },
+            {
+              "#": 2,
+              "title": "Trimming does not affect inner spaces",
+              "code": "const sentence = '   JavaScript   is   fun!   ';\nconst trimmedSentence = sentence.trim();\nconsole.log(`'${trimmedSentence}'`);",
+              "explanation": "Shows that `trim()` removes spaces only from the start and end of the string, without altering spaces between words. This is important for maintaining the integrity of the original text while still performing basic cleanup."
+            },
+            {
+              "#": 3,
+              "title": "No change on strings without extra spaces",
+              "code": "const name = 'John Doe';\nconst trimmedName = name.trim();\nconsole.log(`'${trimmedName}'`);",
+              "explanation": "Applies `trim()` to a string that doesn't have leading or trailing whitespace, demonstrating that it leaves such strings unchanged. This illustrates `trim()`'s non-destructive nature when no trimming is necessary."
+            },
+            {
+              "#": 4,
+              "title": "Trimming strings with newline characters",
+              "code": "const multilineText = '\\n\\nFirst line\\nSecond line\\n';\nconst trimmedText = multilineText.trim();\nconsole.log(`'${trimmedText}'`);",
+              "explanation": "Removes newline characters along with spaces from the beginning and end of a multiline string. This highlights `trim()`'s capability to handle various types of whitespace characters, not just spaces."
+            },
+            {
+              "#": 5,
+              "title": "Using trim on an empty string",
+              "code": "const emptyString = '   ';\nconst result = emptyString.trim();\nconsole.log(`'${result}'`);",
+              "explanation": "Demonstrates that applying `trim()` to a string consisting only of spaces results in an empty string. This use case shows `trim()`'s effectiveness in clearing strings that are whitespace only."
             }
-        ]
+          ]
     },
     {
         "function": "trimEnd()",
@@ -712,11 +1350,36 @@
         "return_type": "String",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Trimming whitespace from the end of a string",
-                "code": "const message = 'Hello World   ';\nconst trimmed = message.trimEnd(); // 'Hello World'"
+              "#": 1,
+              "title": "Removing trailing whitespace",
+              "code": "const greeting = 'Hello, world!   ';\nconst trimmedGreeting = greeting.trimEnd();\nconsole.log(`'${trimmedGreeting}'`);",
+              "explanation": "Trims the trailing spaces from the string, leaving the leading and internal spaces unaffected. This demonstrates `trimEnd()`'s functionality for cleaning up strings that have unnecessary whitespace at the end."
+            },
+            {
+              "#": 2,
+              "title": "TrimEnd does not affect leading spaces",
+              "code": "const spacedText = '   Start with space';\nconst trimmedText = spacedText.trimEnd();\nconsole.log(`'${trimmedText}'`);",
+              "explanation": "Shows that `trimEnd()` selectively removes whitespace from the end of a string without altering leading whitespace. This is crucial for scenarios where the integrity of the leading spaces is important."
+            },
+            {
+              "#": 3,
+              "title": "Trimming newline characters at the end",
+              "code": "const multilineString = 'Line 1\\nLine 2\\n';\nconst trimmedString = multilineString.trimEnd();\nconsole.log(trimmedString);",
+              "explanation": "Illustrates `trimEnd()`'s ability to remove trailing newline characters along with spaces, useful for processing text input or data where newline characters at the end are not desired."
+            },
+            {
+              "#": 4,
+              "title": "No change on strings without trailing spaces",
+              "code": "const compactText = 'Text without extra space';\nconst result = compactText.trimEnd();\nconsole.log(`'${result}'`);",
+              "explanation": "Applies `trimEnd()` to a string that has no trailing whitespace, showing that it leaves such strings unchanged. This underlines `trimEnd()`'s non-destructive behavior when there's nothing to trim at the end."
+            },
+            {
+              "#": 5,
+              "title": "Trimming strings with various trailing whitespace",
+              "code": "const mixedWhitespace = 'Some text \\t\\n\\r ';\nconst cleanText = mixedWhitespace.trimEnd();\nconsole.log(`'${cleanText}'`);",
+              "explanation": "Demonstrates removing a mix of trailing spaces, tabs, and newline characters. This use case highlights `trimEnd()`'s versatility in dealing with different types of whitespace characters, ensuring a clean end to the string."
             }
-        ]
+          ]
     },
     {
         "function": "trimStart()",
@@ -732,11 +1395,36 @@
         "return_type": "String",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Trimming whitespace from the start of a string",
-                "code": "const message = '   Hello World';\nconst trimmed = message.trimStart(); // 'Hello World'"
+              "#": 1,
+              "title": "Removing leading whitespace",
+              "code": "const greeting = '   Hello, world!';\nconst trimmedGreeting = greeting.trimStart();\nconsole.log(`'${trimmedGreeting}'`);",
+              "explanation": "Trims the leading spaces from the string, leaving the trailing and internal spaces unaffected. This demonstrates `trimStart()`'s functionality for cleaning up strings that have unnecessary whitespace at the beginning."
+            },
+            {
+              "#": 2,
+              "title": "TrimStart does not affect trailing spaces",
+              "code": "const spacedText = 'End with space   ';\nconst trimmedText = spacedText.trimStart();\nconsole.log(`'${trimmedText}'`);",
+              "explanation": "Shows that `trimStart()` selectively removes whitespace from the start of a string without altering trailing whitespace. This is crucial for scenarios where the integrity of the trailing spaces is important."
+            },
+            {
+              "#": 3,
+              "title": "Trimming newline characters at the start",
+              "code": "const multilineString = '\\nLine 1\\nLine 2';\nconst trimmedString = multilineString.trimStart();\nconsole.log(trimmedString);",
+              "explanation": "Illustrates `trimStart()`'s ability to remove leading newline characters along with spaces, useful for processing text input or data where newline characters at the start are not desired."
+            },
+            {
+              "#": 4,
+              "title": "No change on strings without leading spaces",
+              "code": "const compactText = 'Text without extra space';\nconst result = compactText.trimStart();\nconsole.log(`'${result}'`);",
+              "explanation": "Applies `trimStart()` to a string that has no leading whitespace, showing that it leaves such strings unchanged. This underlines `trimStart()`'s non-destructive behavior when there's nothing to trim at the beginning."
+            },
+            {
+              "#": 5,
+              "title": "Trimming strings with various leading whitespace",
+              "code": "const mixedWhitespace = ' \\t\\n\\r Some text';\nconst cleanText = mixedWhitespace.trimStart();\nconsole.log(`'${cleanText}'`);",
+              "explanation": "Demonstrates removing a mix of leading spaces, tabs, and newline characters. This use case highlights `trimStart()`'s versatility in dealing with different types of whitespace characters, ensuring a clean start to the string."
             }
-        ]
+          ]
     },
     {
         "function": "valueOf()",
@@ -752,10 +1440,35 @@
         "return_type": "String",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Getting the primitive value of a String object",
-                "code": "const stringObj = new String('Hello World');\nconst primitiveValue = stringObj.valueOf(); // 'Hello World'"
+              "#": 1,
+              "title": "Getting primitive value from a String object",
+              "code": "const stringObj = new String('Hello, world!');\nconst primitiveString = stringObj.valueOf();\nconsole.log(primitiveString);",
+              "explanation": "Creates a String object and then uses `valueOf()` to obtain its primitive string value. This example illustrates the basic use of `valueOf()` to convert a String object back into a primitive string for direct manipulation or comparison."
+            },
+            {
+              "#": 2,
+              "title": "Comparison between String object and primitive string",
+              "code": "const stringObj = new String('example');\nconst primitiveString = 'example';\nconst areEqual = stringObj.valueOf() === primitiveString;\nconsole.log(areEqual);",
+              "explanation": "Compares a String object with a primitive string using `valueOf()`. This demonstrates how `valueOf()` is essential for comparing the content of a String object with a primitive string, ensuring accurate comparisons by converting the object to its primitive form."
+            },
+            {
+              "#": 3,
+              "title": "Implicit use of valueOf in concatenation",
+              "code": "const stringObj = new String('Hello');\nconst result = stringObj + ', world!';\nconsole.log(result);",
+              "explanation": "Shows an implicit call to `valueOf()` during string concatenation. JavaScript automatically converts the String object to a primitive string when it is concatenated with another primitive string, demonstrating an implicit use of `valueOf()` in operations."
+            },
+            {
+              "#": 4,
+              "title": "Using valueOf with template literals",
+              "code": "const stringObj = new String('dynamic text');\nconst message = `This is some ${stringObj.valueOf()}`;\nconsole.log(message);",
+              "explanation": "Utilizes `valueOf()` to embed a String object's value within a template literal. This highlights the method's utility in ensuring that the object's primitive value is used in contexts that require string interpolation or embedding."
+            },
+            {
+              "#": 5,
+              "title": "Implicit and explicit valueOf comparison",
+              "code": "const stringObj = new String('test');\nconst implicitConversion = stringObj + '' === 'test';\nconst explicitConversion = stringObj.valueOf() === 'test';\nconsole.log(`Implicit: ${implicitConversion}, Explicit: ${explicitConversion}`);",
+              "explanation": "Compares implicit and explicit uses of `valueOf()` in equating a String object to a primitive string. Both approaches demonstrate how JavaScript handles the conversion of String objects to their primitive counterpart for accurate string comparisons."
             }
-        ]
+          ]
     }
 ]

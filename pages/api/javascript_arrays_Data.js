@@ -28,7 +28,7 @@ export default function handler(req, res) {
                 {
                     "#": 1,
                     "title": "Accessing an element by index",
-                    "code": "const numbers = [10, 20, 30];\nconst secondElement = numbers.at(1); // 20"
+                    "code": "const numbers = [10, 20, 30];\nconst secondElement = numbers.at(1);\nconsole.log(secondElement)"
                 }
             ],
             "action": "Element Access",
@@ -1160,7 +1160,7 @@ export default function handler(req, res) {
                 {
                     "#": 1,
                     "title": "Reversing the elements of an array",
-                    "code": "const array1 = ['one', 'two', 'three'];\nconst reversed = array1.reverse();"
+                    "code": "const array = ['one', 'two', 'three'];\narray.reverse()\nconsole.log(array);"
                 }
             ],
             "action": "Sorting and Ordering",
