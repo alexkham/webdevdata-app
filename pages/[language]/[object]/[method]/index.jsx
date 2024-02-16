@@ -6,9 +6,11 @@ import DynamicAccordion from '@/app/components/accordion/DynamicAccordion';
 import { useRouter } from 'next/router';
 import 'prismjs/themes/prism-tomorrow.css'; // Example theme
 import 'prismjs/components/prism-python';
+import '../../../pages.css'
 
 import path from 'path';
 import ConsoleComponentProps5 from '@/app/components/code-widget/ConsoleComponentProps5';
+import { renderTextWithLineBreaksSeparator } from '@/utils/functions';
 
 
 
@@ -27,6 +29,10 @@ export default function MethodPage({ data }) {
             
       <div className='outer-container'>
       <DynamicAccordion data={dataArray} ></DynamicAccordion>
+      <div className='syntax'>
+        <h3>Syntax</h3>
+      <span>{renderTextWithLineBreaksSeparator(data.signature,';')}</span>
+      </div>
       <ParametersTabs tabs={data.parameters}></ParametersTabs>
       <CodeTabs 
       tabs={data.use_cases}

@@ -37,7 +37,7 @@ function ParametersTabs({ tabs }) {
             className={`tab ${activeTab === index ? 'active' : ''}`}
           >
             
-           <div className='title-container'> {capitalizeWords(tab.parameter)}</div>
+           {/* <div className='title-container'> {capitalizeWords(tab.parameter)}</div> */}
             {result.map((sentense,index)=>{
                 return <p key={index}>{capitalizeWords(sentense) }.</p>
             })}

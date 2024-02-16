@@ -3,10 +3,10 @@ import React, { useState, useEffect } from 'react';
 import './CodeWidget.css'
 
 const ConsoleComponentProps5 = ({ code }) => {
-    const [history, setHistory] = useState([]);
+    const [history, setHistory] = useState(['']);
 
     useEffect(() => {
-        setHistory([]);
+        setHistory(['']);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [code]); // Only re-run the effect if 'code' changes
 
@@ -63,7 +63,8 @@ const ConsoleComponentProps5 = ({ code }) => {
         <>
         <div className="console">
              <button className='run-btn' onClick={executeCode}>Run Code</button>
-              {history&& <label>Output : </label>}
+             <button className='run-btn' style={{backgroundColor:'red'}} onClick={()=>setHistory([''])}>Reset</button>
+              {history && <label>Output : </label>}
             
             <div className="console-history">
                 {history.map((entry, index) => (

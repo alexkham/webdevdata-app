@@ -31,6 +31,7 @@
   height: fit-content;
   padding-top: -30px;
   margin-left: 10px;
+  margin-top: -20px;
   
   
  
@@ -84,7 +85,11 @@
   flex-wrap: wrap; /* Allows tabs to wrap if there's not enough space */
   list-style: none;
   width: 100%;
-  margin-left: 10px;
+  margin-left: 50px;
+  margin-top: -10px;
+  /* border-bottom: solid black 0.5px;
+  border-width: 70%;
+   */
 }
 
 .code-tab-links li {
@@ -158,10 +163,9 @@
 
 .tab-content {
   margin-top: -25px;
-  padding: 50px;
+  padding: 10px;
   border: solid 1px black;
-  width: 300px;
-  height: 200px;
+  height: auto;
   background-color: #e6e6e6;
   width: 100%;
   border-radius: 5px;
@@ -185,6 +189,7 @@
   justify-content: center;
   align-items: center;
   padding-left: 100px;
+  margin-left: 30px;
   
   
 }

@@ -47,3 +47,16 @@ export function getSVGIcon(svgContent) {
         </React.Fragment>
     ));}
 };
+
+export const renderTextWithLineBreaksSeparator = (text, separator) => {
+  if (text) {
+    // Split the text based on the provided separator
+    const parts = text.split(separator);
+    return parts.map((part, index) => (
+      <React.Fragment key={index}>
+        {part.trim()}
+        <br />
+      </React.Fragment>
+    ));
+  }
+};
