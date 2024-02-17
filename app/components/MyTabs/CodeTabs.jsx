@@ -83,7 +83,7 @@ import React, { useEffect, useState } from 'react';
 import './Tabs.css'; 
 import CodeWidget from '../code-widget/CodeWidget';
 import ConsoleComponentProps5 from '../code-widget/ConsoleComponentProps5';
-import ConsoleComponentProps4 from '../code-widget/ConsoleComponentProps4';
+
 import ConsoleComponentProps6 from '../code-widget/ConsoleComponentProps6';
 import { renderTextWithLineBreaks } from '@/utils/functions';
 

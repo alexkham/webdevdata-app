@@ -3,7 +3,7 @@ import Prism from 'prismjs';
 import './CodeWidget.css'; // Your CSS file for additional styling
 import 'prismjs/themes/prism-tomorrow.css'; // Example theme
 import 'prismjs/components/prism-python';
-import ConsoleComponentProps5 from './ConsoleComponentProps5';
+
 //import 'prismjs/themes/prism-dark.css'; 
 
 
@@ -14,16 +14,8 @@ const CodeWidget = ({message,className}) => {
     const [copied, setCopied]=useState(false);
 
     
-//     useEffect(() => {
-//     let i = 0;
-//     let typingTimeout;
-//     setDoneTyping(false);
-//     setCopied(false);
-    
-   
-//     function typeWriter() {
-//         console.log('Message:', message);
-//         if (!message) {
+
+ 
 //             return;  // Skip the typing effect if message is undefined or null
 //         }
     
