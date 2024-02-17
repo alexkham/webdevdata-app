@@ -26,7 +26,7 @@ export default function MethodPage({ data }) {
 
   return (
     <div>
-        <h3>Methods Explorer</h3>    
+            
       <div className='outer-container'>
       <DynamicAccordion data={dataArray} ></DynamicAccordion>
       <div className='syntax'>
