@@ -31,7 +31,7 @@ const CodeWidget5 = ({ message, className }) => {
         }
 
         return () => clearTimeout(typingTimeout);
-    }, [message]);
+    }, [message,executeCode]);
 
     const executeCode = () => {
         const originalConsoleLog = console.log;

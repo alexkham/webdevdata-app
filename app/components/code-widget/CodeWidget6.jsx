@@ -28,7 +28,7 @@ const CodeWidget6 = ({ message, className }) => {
         typeWriter();
 
         return () => clearTimeout(typingTimeout);
-    }, [message]);
+    }, [message,executeCode]);
 
     const executeCode = () => {
         const originalConsoleLog = console.log;

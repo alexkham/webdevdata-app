@@ -8,7 +8,7 @@ const ConsoleComponentProps4 = ({ code }) => {
         if (code && code.trim()) {
             executeCode();
         }
-    }, [code]);
+    }, [code,executeCode]);
 
     // const executeCode = () => {
     //     let capturedOutput = '';
