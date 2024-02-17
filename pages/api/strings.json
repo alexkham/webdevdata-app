@@ -850,7 +850,7 @@
             "optional": true
           }
         ],
-        "signature": "padStart(targetLength);padStart(targetLength, padString);        ",
+        "signature": "str.padStart(targetLength [, padString])",
         "return": {
           "type": "String",
           "value": "A new string that has been padded from the start with the given padString until the targetLength is reached."

@@ -18,12 +18,105 @@
         "return_type": "Map object",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Creating a new Map",
-                "code": "const map = new Map([[1, 'one'], [2, 'two'], [3, 'three']]);"
+              "#": 1,
+              "title": "Creating an empty map",
+              "code": "const emptyMap = new Map();\nconsole.log(emptyMap);",
+              "explanation": "Demonstrates initializing an empty map. This example shows the basic use of `new Map()` without any arguments, resulting in a map ready to store key-value pairs."
+            },
+            {
+              "#": 2,
+              "title": "Initializing a map with default values",
+              "code": "const fruits = new Map([\n  ['apples', 5],\n  ['bananas', 10],\n  ['oranges', 3]\n]);\nconsole.log(fruits);",
+              "explanation": "Shows how to initialize a map with an array of key-value pairs. This approach illustrates how `new Map()` can be used to create a map pre-populated with data, useful for scenarios where initial values are known."
+            },
+            {
+              "#": 3,
+              "title": "Creating a map from an object",
+              "code": "const object = { key1: 'value1', key2: 'value2' };\nconst mapFromObject = new Map(Object.entries(object));\nconsole.log(mapFromObject);",
+              "explanation": "Illustrates converting an object to a map using `Object.entries()` to transform the object into an array of key-value pairs, and then initializing a map with these pairs. This example highlights a method for transitioning from object-based to map-based data structures."
+            },
+            {
+              "#": 4,
+              "title": "Using non-string keys",
+              "code": "const keyObj = {};\nconst keyFunc = function() {};\nconst map = new Map([\n  [keyObj, 'object value'],\n  [keyFunc, 'function value']\n]);\nconsole.log(map);",
+              "explanation": "Demonstrates using objects and functions as keys in a map. Unlike objects, which only use strings and symbols as keys, maps can use any value type as a key, showcasing the flexibility and power of maps for complex data structures."
+            },
+            {
+              "#": 5,
+              "title": "Combining maps",
+              "code": "const firstMap = new Map([['key1', 'value1']]);\nconst secondMap = new Map([['key2', 'value2']]);\nconst combinedMap = new Map([...firstMap, ...secondMap]);\nconsole.log(combinedMap);",
+              "explanation": "Shows how to combine two maps into a new map using spread syntax. This example demonstrates a technique for merging maps, allowing for the aggregation of map-based data from multiple sources into a single map."
             }
-        ]
+          ]
     },
+    {
+        "function": "clear()",
+        "description": "Removes all key-value pairs from a Map object.",
+        "parameters": [],
+        "signature": "map.clear()",
+        "return": {
+          "type": "undefined",
+          "value": "Does not return a value."
+        },
+        "action": "Deletion",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/clear",
+        "return_type": "undefined",
+        "use_cases": [
+          {
+            "#": 1,
+            "title": "Clearing a populated Map",
+            "code": "const map = new Map();\nmap.set('key1', 'value1');\nmap.set('key2', 'value2');\nconsole.log(map.size); // Before: 2\nmap.clear();\nconsole.log(map.size); // After: 0",
+            "explanation": "Demonstrates clearing a Map object containing two key-value pairs. The `size` property is used to show the Map's size before and after calling `clear()`, illustrating the removal of all entries."
+          },
+          {
+            "#": 2,
+            "title": "Clearing an already empty Map",
+            "code": "const map = new Map();\nconsole.log(map.size); // Before: 0\nmap.clear();\nconsole.log(map.size); // After: 0",
+            "explanation": "Shows calling `clear()` on an empty Map. This example highlights that `clear()` safely handles empty maps without causing errors or changes, maintaining the map's size at 0."
+          },
+          {
+            "#": 3,
+            "title": "Effect of clear() on Map iteration",
+            "code": "const map = new Map([[1, 'a'], [2, 'b'], [3, 'c']]);\nmap.clear();\nfor (let [key, value] of map) {\n  console.log(key, value);\n} // No output, as map is empty",
+            "explanation": "Illustrates the effect of `clear()` on iterating over a Map. After clearing, the Map is empty, so a loop intended to iterate over its entries does not execute, demonstrating that `clear()` effectively removes all entries."
+          }
+        ]
+      }      
+    ,
+    {
+        "function": "keys()",
+        "description": "Returns a new Iterator object that contains the keys for each element in the Map object in insertion order.",
+        "parameters": [],
+        "signature": "map.keys()",
+        "return": {
+          "type": "Iterator",
+          "value": "An Iterator object that contains the keys for each element in the Map."
+        },
+        "action": "Retrieval",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/keys",
+        "return_type": "Iterator",
+        "use_cases": [
+          {
+            "#": 1,
+            "title": "Iterating over keys of a Map",
+            "code": "const map = new Map();\nmap.set('a', 1);\nmap.set('b', 2);\nmap.set('c', 3);\nfor (const key of map.keys()) {\n  console.log(key);\n}",
+            "explanation": "This example demonstrates iterating over the keys of a Map object using the `keys()` method. It prints each key in the Map to the console, in the order they were inserted."
+          },
+          {
+            "#": 2,
+            "title": "Converting Map keys to an array",
+            "code": "const map = new Map();\nmap.set('a', 1);\nmap.set('b', 2);\nmap.set('c', 3);\nconst keysArray = Array.from(map.keys());\nconsole.log(keysArray);",
+            "explanation": "Shows how to convert the keys of a Map into an array. The `keys()` method is used in conjunction with `Array.from()` to create an array containing all keys in the Map."
+          },
+          {
+            "#": 3,
+            "title": "Using keys() with spread operator",
+            "code": "const map = new Map();\nmap.set('a', 1);\nmap.set('b', 2);\nmap.set('c', 3);\nconst keysArray = [...map.keys()];\nconsole.log(keysArray);",
+            "explanation": "Illustrates creating an array of Map keys using the spread operator. This example provides a concise way to convert the keys returned by `keys()` into an array format."
+          }
+        ]
+      }      
+    ,
     {
         "function": "set()",
         "description": "Adds or updates an element with a specified key and value to a Map object.",
@@ -47,11 +140,30 @@
         "return_type": "Map object",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Adding or updating an element in the Map",
-                "code": "map.set(4, 'four');"
+              "#": 1,
+              "title": "Adding a new key-value pair",
+              "code": "const map = new Map();\nmap.set('color', 'blue');\nconsole.log(map);",
+              "explanation": "Shows how to add a new key-value pair ('color', 'blue') to a map. This example demonstrates the `set()` method's basic functionality for inserting unique keys into a map and associating them with specific values."
+            },
+            {
+              "#": 2,
+              "title": "Updating an existing key's value",
+              "code": "const userProfiles = new Map();\nuserProfiles.set('userID123', {name: 'John', age: 30});\nuserProfiles.set('userID123', {name: 'John', age: 31});\nconsole.log(userProfiles);",
+              "explanation": "Illustrates updating the value associated with an existing key ('userID123'). Initially, the user's age is set to 30, and then it's updated to 31. This use case highlights how `set()` can modify the value for an existing key, showcasing the method's ability to keep map entries current."
+            },
+            {
+              "#": 3,
+              "title": "Chaining set() method calls",
+              "code": "const settings = new Map();\nsettings.set('brightness', 50).set('contrast', 60).set('mode', 'dark');\nconsole.log(settings);",
+              "explanation": "Demonstrates chaining `set()` method calls to add multiple key-value pairs to a map in a single statement. This example shows a streamlined way to populate a map with various settings, making code more concise and readable."
+            },
+            {
+              "#": 4,
+              "title": "Using objects as keys",
+              "code": "const objectKeyMap = new Map();\nconst keyObj = {};\nobjectKeyMap.set(keyObj, 'objectValue');\nconsole.log(objectKeyMap);",
+              "explanation": "Shows using an object as a key in a map. Unlike other key-value data structures like objects, a `Map` can use objects as keys. This example underscores the flexibility of `Map` in JavaScript, allowing for complex data structures."
             }
-        ]
+          ]
     },
     {
         "function": "get()",
@@ -72,11 +184,24 @@
         "return_type": "Any",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Getting the value for a key in the Map",
-                "code": "map.get(2); // 'two'"
+              "#": 1,
+              "title": "Retrieving an existing key's value",
+              "code": "const fruits = new Map();\nfruits.set('apples', 5);\nconst appleCount = fruits.get('apples');\nconsole.log(`Apples count: ${appleCount}`);",
+              "explanation": "Demonstrates retrieving the value associated with the 'apples' key from a map. This example highlights the `get()` method's basic functionality for accessing the value of a specific key, showing how to effectively retrieve data from a map."
+            },
+            {
+              "#": 2,
+              "title": "Attempting to retrieve a non-existent key",
+              "code": "const books = new Map();\nbooks.set('Moby Dick', 'Herman Melville');\nconst author = books.get('The Great Gatsby');\nconsole.log(`Author: ${author}`);",
+              "explanation": "Shows attempting to retrieve the value for a 'The Great Gatsby' key that does not exist in the map. This use case illustrates that `get()` returns `undefined` for keys not present in the map, demonstrating how to handle potential misses when accessing map data."
+            },
+            {
+              "#": 3,
+              "title": "Using objects as keys",
+              "code": "const objKeyMap = new Map();\nconst keyObj = {id: 1};\nobjKeyMap.set(keyObj, 'Object value');\nconst value = objKeyMap.get(keyObj);\nconsole.log(`Value: ${value}`);",
+              "explanation": "Illustrates using an object as a key and retrieving its associated value. This example underscores the `Map` object's capability to use objects (and other non-string types) as keys, showcasing the flexibility and power of maps for complex data structures."
             }
-        ]
+          ]
     },
     {
         "function": "delete()",
@@ -97,11 +222,24 @@
         "return_type": "Boolean",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Deleting an element from the Map",
-                "code": "map.delete(3); // true"
+              "#": 1,
+              "title": "Removing an existing key-value pair",
+              "code": "const employees = new Map();\nemployees.set('John', 'Manager').set('Jane', 'Developer');\nconst isDeleted = employees.delete('Jane');\nconsole.log(isDeleted); // true\nconsole.log(employees);",
+              "explanation": "Demonstrates deleting an existing key-value pair from a map. The `delete()` method successfully removes the 'Jane' entry and returns `true`, indicating the operation was successful. This example highlights the method's utility in managing map contents by removing specific entries."
+            },
+            {
+              "#": 2,
+              "title": "Attempting to delete a non-existent key",
+              "code": "const products = new Map();\nproducts.set('Book', 10);\nconst result = products.delete('Pen');\nconsole.log(result); // false\nconsole.log(products);",
+              "explanation": "Shows attempting to delete a key ('Pen') that does not exist in the map. The `delete()` method returns `false` in this case, indicating that no deletion occurred because the key was not found. This use case illustrates how to verify the presence and successful removal of an element."
+            },
+            {
+              "#": 3,
+              "title": "Deleting with object keys",
+              "code": "const objectKeysMap = new Map();\nconst keyObj = {item: 'keyObject'};\nobjectKeysMap.set(keyObj, 'value1');\nconst deleteSuccess = objectKeysMap.delete(keyObj);\nconsole.log(deleteSuccess); // true",
+              "explanation": "Illustrates deleting a key-value pair where the key is an object. Due to the unique identity of objects in JavaScript, the `delete()` method can precisely identify and remove the entry with the object key, showcasing `Map`'s ability to handle complex key types beyond primitives."
             }
-        ]
+          ]
     },
     {
         "function": "has()",
@@ -122,11 +260,24 @@
         "return_type": "Boolean",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Checking for a key in the Map",
-                "code": "map.has(1); // true"
+              "#": 1,
+              "title": "Checking for an existing key",
+              "code": "const library = new Map();\nlibrary.set('Moby Dick', 'Herman Melville').set('1984', 'George Orwell');\nconst hasMobyDick = library.has('Moby Dick');\nconsole.log(hasMobyDick); // true",
+              "explanation": "Demonstrates checking if a key ('Moby Dick') exists in the map. This example highlights how `has()` can be used to verify the presence of specific keys within a map, useful for conditional logic based on map contents."
+            },
+            {
+              "#": 2,
+              "title": "Attempting to check a non-existent key",
+              "code": "const users = new Map();\nusers.set('user1', 'John Doe');\nconst exists = users.has('user2');\nconsole.log(exists); // false",
+              "explanation": "Shows using `has()` to check for a key ('user2') that does not exist in the map. This use case illustrates `has()`'s utility in confirming the absence of a key, which can be particularly useful in scenarios requiring key existence validation before proceeding with certain operations."
+            },
+            {
+              "#": 3,
+              "title": "Using has() with object keys",
+              "code": "const settings = new Map();\nconst keyObj = { setting: 'theme' };\nsettings.set(keyObj, 'dark');\nconst hasSetting = settings.has(keyObj);\nconsole.log(hasSetting); // true",
+              "explanation": "Illustrates using `has()` to check for the presence of an object key in the map. Due to the unique identity of object keys, `has()` can accurately determine the presence of entries keyed by objects, showcasing the method's effectiveness with complex key types."
             }
-        ]
+          ]
     },
     {
         "function": "forEach()",
@@ -151,11 +302,24 @@
         "return_type": "Undefined",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Executing a function for each element in the Map",
-                "code": "map.forEach((value, key) => console.log(`${key}: ${value}`));"
+              "#": 1,
+              "title": "Iterating over map entries",
+              "code": "const bookAuthors = new Map();\nbookAuthors.set('1984', 'George Orwell').set('Brave New World', 'Aldous Huxley');\nbookAuthors.forEach((value, key) => console.log(`${key} by ${value}`));",
+              "explanation": "Demonstrates iterating over each entry in a map of books and their authors, logging a statement that includes both the book title (key) and the author (value). This example highlights `forEach()`'s basic usage for accessing and performing operations on each key-value pair in a map."
+            },
+            {
+              "#": 2,
+              "title": "Using all parameters of forEach",
+              "code": "const userRoles = new Map();\nuserRoles.set('John', 'Admin').set('Jane', 'Editor');\nuserRoles.forEach((value, key, map) => {\n  console.log(`${key} is an ${value}`);\n  console.log(`Map size: ${map.size}`);\n});",
+              "explanation": "Illustrates using all three parameters of the `forEach()` callback function: the value, key, and the map itself. This use case demonstrates the method's flexibility, allowing operations that might depend on the entire map's context, such as logging the map's size within the iteration."
+            },
+            {
+              "#": 3,
+              "title": "Modifying map entries during iteration",
+              "code": "const settings = new Map([['brightness', 50], ['volume', 70]]);\nsettings.forEach((value, key, map) => {\n  if (key === 'volume') map.set(key, value + 10);\n});\nconsole.log(settings);",
+              "explanation": "Shows modifying the value of an entry ('volume') during iteration by increasing its value. While `forEach()` is primarily used for executing side effects rather than modifying the map during iteration, this example demonstrates the potential to do so carefully, such as adjusting settings based on certain conditions."
             }
-        ]
+          ]
     },
     {
         "function": "entries()",
@@ -171,11 +335,24 @@
         "return_type": "Iterator",
         "use_cases": [
             {
-                "#": 1,
-                "title": "Iterating through entries of the Map",
-                "code": "for (let [key, value] of map.entries()) console.log(`${key}: ${value}`);"
+              "#": 1,
+              "title": "Iterating over map entries",
+              "code": "const capitals = new Map();\ncapitals.set('USA', 'Washington, D.C.').set('France', 'Paris').set('Japan', 'Tokyo');\nfor (const [country, capital] of capitals.entries()) {\n  console.log(`${country}: ${capital}`);\n}",
+              "explanation": "Demonstrates how to use the `entries()` method to iterate over a map of countries and their capitals. The example highlights iterating through each entry, allowing direct access to both the key and value of each map entry, facilitating operations or logging based on the map's contents."
+            },
+            {
+              "#": 2,
+              "title": "Using entries with forEach",
+              "code": "const products = new Map();\nproducts.set('Apple', 1.99).set('Banana', 0.99).set('Orange', 1.49);\nproducts.entries().forEach(([product, price]) => console.log(`Price of ${product}: $${price}`));",
+              "explanation": "Illustrates leveraging the `entries()` iterator with `forEach` to perform operations on each key-value pair in a map of products and prices. This approach demonstrates an alternative way to process a map's entries, emphasizing the versatility of map iterators in conjunction with array-like iteration methods."
+            },
+            {
+              "#": 3,
+              "title": "Converting entries to an array",
+              "code": "const userInfo = new Map();\nuserInfo.set('name', 'John Doe').set('email', 'john@example.com');\nconst entriesArray = Array.from(userInfo.entries());\nconsole.log(entriesArray);",
+              "explanation": "Shows how to convert a map's entries into an array of `[key, value]` pairs using `Array.from()`. This example showcases a method for extracting map data into a more universally manipulable format, allowing for array operations and easier access to the map's contents."
             }
-        ]
+          ]
     },
     {
         "function": "size",
@@ -189,6 +366,53 @@
         "action": "Property",
         "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/size",
         "return_type": "Number",
-        "use_cases": []
-    }
+        "use_cases": [
+            {
+              "#": 1,
+              "title": "Determining the size of a map",
+              "code": "const inventory = new Map();\ninventory.set('shirts', 10).set('pants', 20).set('hats', 15);\nconsole.log(inventory.size);",
+              "explanation": "Shows how to retrieve the count of entries in a map of inventory items. This example highlights the `size` property's basic usage for quickly assessing the number of items stored within a map."
+            },
+            {
+              "#": 2,
+              "title": "Checking size after adding and removing items",
+              "code": "const library = new Map();\nlibrary.set('Moby Dick', 'Herman Melville');\nconsole.log('Initial size:', library.size);\nlibrary.set('1984', 'George Orwell');\nlibrary.delete('Moby Dick');\nconsole.log('Final size:', library.size);",
+              "explanation": "Demonstrates the dynamic nature of the `size` property, showing its value change as items are added to and removed from the map. This use case illustrates how the `size` property is immediately updated to reflect the current count of entries, useful for tracking changes to the map's composition over time."
+            }
+          ]
+    },
+    {
+        "function": "values()",
+        "description": "Returns a new Iterator object that contains the values for each element in the Map object in insertion order.",
+        "parameters": [],
+        "signature": "map.values()",
+        "return": {
+          "type": "Iterator",
+          "value": "An Iterator object that contains the values for each element in the Map."
+        },
+        "action": "Retrieve Values",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/values",
+        "return_type": "Iterator",
+        "use_cases": [
+          {
+            "#": 1,
+            "title": "Iterating over values of a Map",
+            "code": "const map = new Map();\nmap.set('a', 1);\nmap.set('b', 2);\nmap.set('c', 3);\nfor (const value of map.values()) {\n  console.log(value);\n}",
+            "explanation": "This example demonstrates iterating over the values of a Map object using the `values()` method. It prints each value in the Map to the console, in the order they were inserted."
+          },
+          {
+            "#": 2,
+            "title": "Converting Map values to an array",
+            "code": "const map = new Map();\nmap.set('a', 1);\nmap.set('b', 2);\nmap.set('c', 3);\nconst valuesArray = Array.from(map.values());\nconsole.log(valuesArray);",
+            "explanation": "Shows how to convert the values of a Map into an array. The `values()` method is used in conjunction with `Array.from()` to create an array containing all values in the Map."
+          },
+          {
+            "#": 3,
+            "title": "Using values() with spread operator",
+            "code": "const map = new Map();\nmap.set('a', 1);\nmap.set('b', 2);\nmap.set('c', 3);\nconst valuesArray = [...map.values()];\nconsole.log(valuesArray);",
+            "explanation": "Illustrates creating an array of Map values using the spread operator. This example provides a concise way to convert the values returned by `values()` into an array format."
+          }
+        ]
+      }
+      
 ]

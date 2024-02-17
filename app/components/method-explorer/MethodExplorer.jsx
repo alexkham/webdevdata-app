@@ -40,6 +40,11 @@ function MethodExplorer() {
         setClassificationsArray([])
     };
 
+    const handleReset=()=>{
+        setSearchTerm('');
+        setClassification('')
+    }
+
     const handleSearchSelection = (e, index) => {
         const newSearchTerm = e.target.value;
         const selectedClassification = classificationsArray[index];
@@ -133,6 +138,8 @@ function MethodExplorer() {
                     label={'Data Type '}
                     handleChange={handleObjChange}
                     lookup={' Object Type'} />}
+                    {/* <button className='search-reset-btn' 
+                    onClick={()=>setLanguage('')}>Reset Selection</button> */}
                     </div>
             
              <div className='menu-container'>
@@ -153,10 +160,13 @@ function MethodExplorer() {
                         size={'200px'}
                         lookup={capitalizeWords(classification)}
                         handleChange={(e) => handleSearchSelection(e, index)}
+                        value={searchTerm}
                     />
                     </div>
                 );
             })}
+            {language&&objType&&!(language.startsWith('Select'))&&!(objType.startsWith('Select'))&&<button className='search-reset-btn' 
+            onClick={handleReset}>Reset Selection</button>}
             </div>
 
             {/* {data && language && objType&& <DynamicAccordion data={data} />} */}
