@@ -152,9 +152,9 @@ function MethodExplorer() {
                 const optionsArray = Array.from(uniqueOptions).filter(Boolean); // Convert Set to Array and filter out falsy values
 
                 return (
-                    <div className='select-container'>
+                    <div className='select-container'  key={index}>
                     <SelectComponent2
-                        key={index}
+                       
                         label={'By ' + capitalizeWords(classification)}
                         options={optionsArray}
                         size={'200px'}
