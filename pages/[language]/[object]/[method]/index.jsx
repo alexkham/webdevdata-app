@@ -54,7 +54,7 @@ export default function MethodPage({ data }) {
 export async function getStaticPaths() {
   // Fetch or define your paths based on available data
   const paths = [
-    { params: { language: 'javascript', object: 'array', method: 'push' } },
+    { params: { language: 'javascript', object: 'arrays', method: 'push' } },
     // Add more paths as needed
   ];
 
