@@ -9,6 +9,7 @@ export default function Home() {
       
       <h3>Methods Explorer</h3>
       <h4>Deployed on Amplify</h4>
+      <h5>Version 3 </h5>
      <MethodExplorer></MethodExplorer>
      <br></br>
      <br></br>
