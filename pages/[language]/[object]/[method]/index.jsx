@@ -11,6 +11,7 @@ import '../../../pages.css'
 import path from 'path';
 import ConsoleComponentProps5 from '@/app/components/code-widget/ConsoleComponentProps5';
 import { renderTextWithLineBreaksSeparator } from '@/utils/functions';
+import MyNavbar from '@/app/components/nav-bar/MyNavbar';
 
 
 
@@ -25,14 +26,19 @@ export default function MethodPage({ data }) {
   }
 
   return (
-    <div>            
+    <div className='main'>
+      <MyNavbar></MyNavbar>
+      <br></br>
+      <br></br>
       <div className='outer-container'>
       <DynamicAccordion data={dataArray} ></DynamicAccordion>
       <div className='syntax'>
+        <br></br>
         <h3>Syntax</h3>
-      <span>{renderTextWithLineBreaksSeparator(data.signature,';')}</span>
+      <span >{renderTextWithLineBreaksSeparator(data.signature,';')}</span>
       </div>
       <ParametersTabs tabs={data.parameters}></ParametersTabs>
+      
       <CodeTabs 
       tabs={data.use_cases}
       className={"language-js"}></CodeTabs>

@@ -107,7 +107,7 @@ function CodeTabs({ tabs }) {
       
     return (
      codeString && <>
-        <h3>Code Examples</h3>
+        <h3 style={{marginBottom:'30px'}}>Code Examples</h3>
         <div className="code-tabs">
           <ul className="code-tab-links">
             {tabs.map((tab, index) => (

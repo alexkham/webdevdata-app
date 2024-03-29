@@ -29,9 +29,10 @@
   list-style: none;
   width: 100%;
   height: fit-content;
-  padding-top: -30px;
+  padding-top: 30px;
   margin-left: 10px;
   margin-top: -20px;
+  margin-bottom: 20px;
   
   
  
@@ -54,7 +55,7 @@
   color: white;
   background-color: blue;
   
-  height: 20px;
+  height: 40px;
   min-width: 100px;
   text-align: center;
   margin-bottom: 10px;
@@ -235,7 +236,7 @@
   
  
   width: auto;
-  margin-left: 100px;
+  margin-left: -30px;
   
  
   display: flex;
@@ -251,6 +252,7 @@
   justify-content: space-between;
   gap: 20px;
   padding-left: 200px;
+  margin-top: -50px;
 }
 .code-explanation{
   background-color: white;
@@ -266,7 +268,7 @@
   border-top: solid 2px #ccc; 
   font-size: larger;
   font-weight:400;
-  margin-top: 20px;
+  margin-top: 50px;
   color: #595959;
 }
  
