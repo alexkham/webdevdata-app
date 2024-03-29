@@ -1,0 +1,15 @@
+.grid-generator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .grid-item {
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
+  }
+  
