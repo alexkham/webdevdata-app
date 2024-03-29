@@ -8,6 +8,7 @@ export default function Home() {
     <div className="main-container">
       
       <h3>Methods Explorer</h3>
+      <h4>Deployed on Amplify</h4>
      <MethodExplorer></MethodExplorer>
      <br></br>
      <br></br>
