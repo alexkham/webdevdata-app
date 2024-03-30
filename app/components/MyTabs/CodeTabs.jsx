@@ -91,11 +91,37 @@ function CodeTabs({ tabs }) {
     const [activeTab, setActiveTab] = useState(0);
     const [codeString, setCodeString] = useState('');
   
-    const handleTabClick = (index, e) => {
-      setActiveTab(index);
-      // Scroll the clicked tab to the top of the viewport
-      e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
+  //   const handleTabClick = (index, e) => {
+  //     setActiveTab(index);
+  //     // Scroll the clicked tab to the top of the viewport
+  //     e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  //   //   setTimeout(() => {
+  //   //     window.scrollBy(0, -20); // Scrolls up 20 pixels
+  //   // }, 100);
+  // };
+
+//   const handleTabClick = (index, e) => {
+//     setActiveTab(index);
+//     // Scroll the clicked tab into view
+//     e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+//     // Wait for the smooth scroll to finish then adjust by 20px
+//     // setTimeout(() => {
+//     //     window.scrollBy(0, -20); // Scrolls up 20 pixels
+//     // }, 100); // Adjust timeout as needed based on the duration of the smooth scroll
+// };
+const handleTabClick = (index, e) => {
+  setActiveTab(index);
+
+  const tabTop = e.currentTarget.getBoundingClientRect().top + window.pageYOffset;
+  const offsetPosition = tabTop - 50; // Adjust the tab's position to be 20px from the top
+
+  window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+  });
+};
+
     useEffect(() => {
         // Check if tabs[activeTab] is defined before accessing its properties
         if (tabs[activeTab] && tabs[activeTab].code) {
@@ -107,8 +133,8 @@ function CodeTabs({ tabs }) {
       
     return (
      codeString && <>
-        <h3 style={{marginBottom:'30px'}}>Code Examples</h3>
-        <div className="code-tabs">
+        <h3 style={{marginBottom:'10px'}}>Code Examples</h3>
+        <div  className="code-tabs">
           <ul className="code-tab-links">
             {tabs.map((tab, index) => (
               <li key={index} className={activeTab === index ? 'active' : ''} onClick={(e) => handleTabClick(index,e)}>
@@ -116,22 +142,27 @@ function CodeTabs({ tabs }) {
               </li>
             ))}
           </ul>
+          <br></br>
+          <br></br>          
+          
+         
   
-          <div className="code-tab-content">
+          <div className="code-tab-content" >
             {tabs.map((tab, index) => (
               <div key={index} id={`tab-${index}`} className={`code-tab ${activeTab === index ? 'active' : ''}`}>
-                
-                
-                <div className='code-container'>
+               <div className='code-container' style={{minHeight:'400px'}}>
                     
-                <CodeWidget message={tabs[activeTab].code} />
-                
-                <div className='code-explanation' >{renderTextWithLineBreaks(tabs[activeTab].explanation)}</div>
-                </div>
+                    <CodeWidget message={tabs[activeTab].code} />
+                    
+                    <div className='code-explanation' >{renderTextWithLineBreaks(tabs[activeTab].explanation)}</div>
+                    
+                    </div> 
               </div>
+                 
             ))}
           </div>
-         
+          <br></br>
+          <br></br>
           <div className='console-container'>
            
           <ConsoleComponentProps5 code={codeString}></ConsoleComponentProps5>

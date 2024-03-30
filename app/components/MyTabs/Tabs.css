@@ -20,6 +20,7 @@
   min-width: 500px;
   border-radius: 10px; 
   margin-left: 50px;
+  margin-top: 30px;
     
 }
 
@@ -58,7 +59,7 @@
   height: 40px;
   min-width: 100px;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   
 }
 
@@ -83,11 +84,13 @@
 
 .code-tab-links {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap; /* Allows tabs to wrap if there's not enough space */
   list-style: none;
   width: 100%;
   margin-left: 50px;
   margin-top: -10px;
+  margin-bottom: 30px;
   /* border-bottom: solid black 0.5px;
   border-width: 70%;
    */
@@ -252,13 +255,16 @@
   justify-content: space-between;
   gap: 20px;
   padding-left: 200px;
-  margin-top: -50px;
+  
+  
+  
 }
 .code-explanation{
   background-color: white;
-  align-self: flex-end;
+  align-self: flex-start;
   height: 250px;
   margin-bottom: 10px;
+  margin-top: 50px;
  
   padding: 10px;
   max-width: 400px;
@@ -268,7 +274,7 @@
   border-top: solid 2px #ccc; 
   font-size: larger;
   font-weight:400;
-  margin-top: 50px;
+  
   color: #595959;
 }
  
