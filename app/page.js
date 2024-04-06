@@ -1,9 +1,11 @@
+
 import GridGenerator from "./components/grid-generator/GridGenerator";
 import MethodExplorer from "./components/method-explorer/MethodExplorer";
 
 
 
 export default function Home() {
+ 
   return (
     <div className="main-container">
       
@@ -17,6 +19,9 @@ export default function Home() {
      <br></br>
      <br></br>
      <br></br>
+     <div>
+     
+     </div>
      <br></br>
      {/* <GridGenerator></GridGenerator>
      <br></br> */}

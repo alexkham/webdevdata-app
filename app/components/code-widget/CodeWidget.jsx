@@ -158,7 +158,7 @@ const copyToClipboard = () => {
         <>
         <div className='container' >
         {/* <div><button onClick={copyToClipboard}>Copy</button></div> */}
-        <pre style={{minHeight:'250px',marginBottom:'30px'}}>
+        <pre style={{minHeight:'250px',marginBottom:'10px'}}>
         <div className='btn-container'><button onClick={copyToClipboard} 
         style={{marginRight:'30px',border:'solid white 1px',
         background:'none',borderRadius:'5px',color:'white',padding:'5px'}}
