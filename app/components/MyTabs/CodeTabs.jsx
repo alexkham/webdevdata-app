@@ -152,7 +152,9 @@ const handleTabClick = (index, e) => {
               <div key={index} id={`tab-${index}`} className={`code-tab ${activeTab === index ? 'active' : ''}`}>
                <div className='code-container' style={{minHeight:'400px'}}>
                     
-                    <CodeWidget message={tabs[activeTab].code} />
+                    <CodeWidget 
+                    message={tabs[activeTab].code}
+                    className={"language-js"} />
                     
                     <div className='code-explanation' >{renderTextWithLineBreaks(tabs[activeTab].explanation)}</div>
                     
