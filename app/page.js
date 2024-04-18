@@ -56,7 +56,9 @@ export default function Home() {
      <br></br>
      <br></br>
      <br></br>
+     <div>
      <MarkdownComponent article={markdown} ></MarkdownComponent>
+     </div>
      <br></br>
      <br></br>
     

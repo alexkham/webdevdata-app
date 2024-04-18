@@ -61,13 +61,13 @@ Prime numbers are the building blocks of the integers, fascinating mathematician
 ## Prime Number Theorem
 
 - Describes the asymptotic distribution of primes, showing that primes become less frequent as numbers increase but there are infinitely many.
-- **Formula**: The number of primes less than \(n\) is approximately \(\frac{n}{\ln(n)}\).
+- **Formula**: The number of primes less than \(n\) is approximately $$\(\\frac{n}{\ln(n)}\).$$
 
 ## Special Types of Prime Numbers
 
 - **Mersenne Primes**: Of the form \(2^p - 1\).
-  - *Example*: \(2^3 - 1 = 7\).
-- **Fermat Primes**: Of the form \(2^{2^n} + 1\).
+  - *Example*: $\(2^3 - 1 = 7\).$
+- **Fermat Primes**: Of the form $\(2^{2^n} + 1\).$
   - *Example*: \(2^{2^2} + 1 = 17\).
 - **Twin Primes**: Pairs of primes that are two units apart.
   - *Examples*: (3, 5), (11, 13), (17, 19).
