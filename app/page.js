@@ -2,8 +2,9 @@
 import AceEditorComponent from "./components/ace-editor/AceEditorComponent";
 import GridGenerator from "./components/grid-generator/GridGenerator";
 import MethodExplorer from "./components/method-explorer/MethodExplorer";
-import {code} from './api/db/content/C/first_content'
+import {code,mermaid} from './api/db/content/C/first_content'
 import ScrollUpButton from "./components/scroll-up-button/ScrollUpButton";
+import MermaidDiagram from "./components/mermaid-diagram/MermaidDiagram";
 
 
 
@@ -44,6 +45,13 @@ export default function Home() {
      <br></br>
      <br></br>
      <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <div>
+     <MermaidDiagram chartDefinition={mermaid}></MermaidDiagram>
+     </div>
      <br></br>
      <br></br>
     

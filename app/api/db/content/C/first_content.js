@@ -16,13 +16,13 @@ void reverse(char s[]) {
 
 export const mermaid=`
 flowchart TD
-    Start("Begin the reversal process")
-    Initialize("Initialize i=0, j=length of string minus one, use c for character storage")
-    Check("Check if i is less than j. If yes, continue; if no, end.")
-    Swap("Exchange characters at positions i and j using c")
-    Increment("Move index i forward by one position")
-    Decrement("Move index j backward by one position")
-    End("Reversal is complete when i meets or exceeds j")
+    Start("Start Reversal")
+    Initialize("Initialize i, j, c")
+    Check("Condition: i < j?")
+    Swap("Swap s[i] and s[j]")
+    Increment("Increment i by 1")
+    Decrement("Decrement j by 1")
+    End("End Reversal")
 
     Start --> Initialize
     Initialize --> Check
