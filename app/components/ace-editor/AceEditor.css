@@ -1,0 +1,80 @@
+.ace-container{
+    background-color: black;
+    padding: 20px;
+    
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+    width: 600px;
+    height: 60px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+}
+
+.ace-container button{
+    margin-top: 10px;
+}
+
+.ace-editor{
+    min-width: 600px;
+    min-height: 350px;
+    padding-top: 30px;
+}
+
+.btn-container {
+    position: absolute;
+    top: 0; /* Adjust if you want some margin from the top */
+    right: 0; /* Adjust if you want some margin from the right */
+    margin-top: 10px;
+}
+
+
+.container div{
+   
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+}
+
+.container div>button{
+    
+    margin-bottom: 12px;
+    margin-right: 10px;
+    min-height: 30px;
+    font-size:small;
+}
+
+.visible {
+    visibility: visible;
+}
+.invisible {
+    visibility: hidden;
+    
+}
+
+.btn-container button{
+    min-width: 100px;
+}
+
+.copy-btn:hover{
+    background: fixed;
+    background-color: aliceblue;
+    color: black;
+   
+   
+}
+.copy-btn{
+    background: none;
+    color: azure;
+    border: solid white 0.5px;
+    padding: 5px;
+    min-width: 40px;
+    align-self: flex-end;
+    border-radius: 3px;
+    min-height: 20px;
+    margin-top: 20px;
+}

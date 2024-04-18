@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <MyNavbar></MyNavbar>
         {children}
-        <ScrollUpButton></ScrollUpButton>
+        <ScrollUpButton className={'nav-button'}></ScrollUpButton>
       </body>
     </html>
   )
