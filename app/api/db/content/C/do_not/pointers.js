@@ -1,0 +1,68 @@
+ const pointers=[
+    {
+        "title": "Do Not Dereference Null Pointers",
+        "code": "int *p = NULL;\nint x = *p;  // Undefined behavior",
+        "explanation": "Dereferencing a null pointer leads to undefined behavior, typically resulting in a segmentation fault or crash.",
+        "language": "C",
+        "category": "pointers",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Use Dangling Pointers",
+        "code": "int *p = malloc(sizeof(int));\n*p = 10;\nfree(p);\n*p = 20;  // Dangling pointer usage",
+        "explanation": "A dangling pointer points to memory that has been deallocated or is no longer valid. Using such a pointer can corrupt data or crash the program.",
+        "language": "C",
+        "category": "pointers",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Perform Unchecked Pointer Arithmetic",
+        "code": "int arr[5] = {0, 1, 2, 3, 4};\nint *p = arr;\np += 10;  // Points outside of 'arr'\nint x = *p;  // Undefined behavior",
+        "explanation": "Pointer arithmetic that exceeds the bounds of the array it points to can lead to undefined behavior.",
+        "language": "C",
+        "category": "pointers",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Assume Pointers to Different Types Are Interchangeable",
+        "code": "int x = 1024;\nchar *cp = (char*)&x;\n*cp = 'A';  // May cause data corruption or misinterpretation",
+        "explanation": "Using pointers of one type to manipulate data intended for another type can lead to misinterpretation of the data layout, alignment issues, or crashes.",
+        "language": "C",
+        "category": "pointers",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Forget to Check Return Value from Malloc",
+        "code": "int *p = malloc(100 * sizeof(int));\nif (p == NULL) {\n    fprintf(stderr, \"Memory allocation failed\\n\");\n    exit(EXIT_FAILURE);\n}",
+        "explanation": "If `malloc` fails, it returns `NULL`. Using this pointer without checking can lead to crashes.",
+        "language": "C",
+        "category": "pointers",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Write Beyond the Allocated Memory",
+        "code": "int *p = malloc(5 * sizeof(int));\nfor (int i = 0; i < 10; i++) {  // Incorrect: loop runs beyond allocated memory\n    p[i] = i;\n}\nfree(p);",
+        "explanation": "Writing outside the bounds of allocated memory can corrupt data, cause crashes, or lead to security vulnerabilities.",
+        "language": "C",
+        "category": "pointers",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Mix Dynamic and Static Memory Management",
+        "code": "int arr[10];\nint *p = arr;\nfree(p);  // Incorrect: attempting to free memory not allocated with malloc",
+        "explanation": "Using a combination of `malloc/free` with array declarations or stack memory can confuse ownership and lifetime rules, leading to errors.",
+        "language": "C",
+        "category": "pointers",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Reuse Freed Pointers Without Reinitialization",
+        "code": "int *p = malloc(sizeof(int));\n*p = 5;\nfree(p);\np = malloc(sizeof(int));  // Correct usage: reassign before reuse\n*p = 10;\nfree(p);",
+        "explanation": "After `free()`, a pointer becomes a dangling pointer. Reusing it without proper reinitialization can lead to undefined behavior.",
+        "language": "C",
+        "category": "pointers",
+        "sub_category": ""
+    }
+]
+
+export default pointers;

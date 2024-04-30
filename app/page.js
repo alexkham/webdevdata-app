@@ -6,6 +6,10 @@ import {code,mermaid, markdown} from './api/db/content/C/first_content'
 import ScrollUpButton from "./components/scroll-up-button/ScrollUpButton";
 import MermaidDiagram from "./components/mermaid-diagram/MermaidDiagram";
 import MarkdownComponent from "./components/markdown-component/MarkdownComponent";
+import CodeExample from "./components/code-example/CodeExample";
+import SimpleCodeExample from "./components/code-example/SimpleCodeExample";
+import DynamicAccordionCode from "./components/accordion/DynamicAccordionCode";
+import pointers from './api/db/content/C/do_not/pointers.js'
 
 
 
@@ -20,51 +24,14 @@ export default function Home() {
   // `
  
   return (
-    <div className="main-container">
+    <div className="main-page-container">
       
       <h3>Methods Explorer</h3>
-      <h4>Deployed on Amplify</h4>
-      <h5>Version 4 </h5>
+      {/* <h4>Deployed on Amplify</h4>
+      <h5>Version 4 </h5> */}
      <MethodExplorer></MethodExplorer>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <AceEditorComponent
-        code={code}
-        fontSize={16}
-        mode={'c_cpp'}
-        theme={'terminal'}></AceEditorComponent>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <div>
-     <MermaidDiagram chartDefinition={mermaid}></MermaidDiagram>
-     </div>
-     <br></br>
-     <br></br>
-     <br></br>
-     <div>
-     <MarkdownComponent article={markdown} ></MarkdownComponent>
-     </div>
-     <br></br>
-     <br></br>
-    
-     <br></br>
-     {/* <GridGenerator></GridGenerator>
-     <br></br> */}
+     
+     
     <ScrollUpButton></ScrollUpButton>
     </div>
   )

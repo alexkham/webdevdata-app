@@ -1,0 +1,58 @@
+[
+    {
+        "title": "Do Not Assume Integer Sizes",
+        "code": "int x = 1;\nprintf(\"%lu\", sizeof(x)); // Don't assume output is always 4",
+        "explanation": "The size of integer types (int, long, short) can vary across different platforms. Assuming a specific size can lead to bugs when porting code.",
+        "language": "C",
+        "category": "integers",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Ignore Integer Overflow",
+        "code": "int x = INT_MAX;\nx = x + 1; // Results in overflow, leading to undefined behavior",
+        "explanation": "Integer overflow occurs when an arithmetic operation attempts to create a numeric value that is outside the range that can be represented with a given number of bits. This can lead to unexpected behaviors.",
+        "language": "C",
+        "category": "integers",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Rely on Unsigned Integer Wrapping",
+        "code": "unsigned int x = 0;\nx -= 1; // Wraps around to UINT_MAX, which may be unintended",
+        "explanation": "While unsigned integers wrap around on overflow according to the standard, relying on this behavior for algorithmic logic can make the code less readable and error-prone.",
+        "language": "C",
+        "category": "integers",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Misuse Bitwise Operations on Signed Integers",
+        "code": "int x = -1;\nx = x >> 1; // Implementation-defined behavior, might keep x as -1 on two's complement systems",
+        "explanation": "Bitwise operations on signed integers can lead to unexpected results due to the representation of negative numbers (typically two's complement).",
+        "language": "C",
+        "category": "integers",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Ignore Sign Conversion Issues",
+        "code": "int x = -1;\nunsigned int y = 1;\nif (x < y) {\n    // This is false because x is converted to unsigned, resulting in a large positive number\n}",
+        "explanation": "Implicit conversions between signed and unsigned types can lead to bugs, especially when comparing values.",
+        "language": "C",
+        "category": "integers",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Forget to Validate Input Before Conversions",
+        "code": "char *input = \"1024\";\nint num;\nif (sscanf(input, \"%d\", &num) != 1) {\n    fprintf(stderr, \"Invalid input\\n\");\n    exit(EXIT_FAILURE);\n}",
+        "explanation": "Before converting strings or other types to integers, ensure that the input is valid and within the expected range to avoid undefined behavior or errors.",
+        "language": "C",
+        "category": "integers",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Use Magic Numbers",
+        "code": "if (timeout == 60) { // What does 60 mean?\n    // Better to use: #define TIMEOUT_SECONDS 60\n    // if (timeout == TIMEOUT_SECONDS)\n}",
+        "explanation": "Avoid hard-coding integers in the code. Use named constants or #define directives for better readability and maintainability.",
+        "language": "C",
+        "category": "integers",
+        "sub_category": ""
+    }
+]

@@ -42,7 +42,9 @@ function MethodExplorer() {
 
     const handleReset=()=>{
         setSearchTerm('');
-        setClassification('')
+        setClassification('');
+        setLanguage(language);
+        setObjType('')
     }
 
     const handleSearchSelection = (e, index) => {

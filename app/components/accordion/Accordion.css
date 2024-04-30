@@ -1,11 +1,11 @@
 .accordion {
-    max-width: 800px;
+    max-width: 1200px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     overflow: hidden;
     font-family: "Quicksand", sans-serif;
     background: #200095;
-    width: 60%;
+    width: 80%;
   }
   
   .accordion__label,
@@ -47,9 +47,9 @@
     font-size: 0.85em;
     display: none;
     height: 100%;
-    width:fit-content;
+    width:1700px;
     padding: 20px;
-    width: 100%;
+    
   }
   
   .accordion__input {
