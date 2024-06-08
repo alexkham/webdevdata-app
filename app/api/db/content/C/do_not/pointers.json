@@ -1,4 +1,4 @@
- const pointers=[
+ [
     {
         "title": "Do Not Dereference Null Pointers",
         "code": "int *p = NULL;\nint x = *p;  // Undefined behavior",
@@ -65,4 +65,3 @@
     }
 ]
 
-export default pointers;

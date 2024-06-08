@@ -6,7 +6,7 @@ import { modesMap } from './ModesMap';
 import './AceEditor.css'
 import SelectComponent2 from '../SelectComponent/SelectComponent2';
 
-const AceEditorComponent = ({ code, fontSize, theme, mode, onChange }) => {
+const AceEditorComponent = ({ code, fontSize, theme, mode, onChange,width }) => {
     const [editorTheme, setEditorTheme] = useState('textmate'); // Default theme
     const [editorMode, setEditorMode] = useState('text'); // Default mode
     const [copied, setCopied]=useState(false);
@@ -50,7 +50,7 @@ const AceEditorComponent = ({ code, fontSize, theme, mode, onChange }) => {
 
     return (
         <>
-        <div className='ace-container'>
+        <div className='ace-container' style={{width:`${width}`}}>
         {/* <div className='btn-container'><button onClick={copyToClipboard} 
         style={{marginRight:'30px',border:'solid white 1px',
         background:'none',borderRadius:'5px',color:'white',padding:'5px'}}

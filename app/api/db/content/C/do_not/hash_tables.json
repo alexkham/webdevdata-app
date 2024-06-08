@@ -1,0 +1,51 @@
+[
+    {
+        "title": "Do Not Use Poor Hash Functions",
+        "code": "unsigned int hashFunction(const char *str) {\n    unsigned int hash = 0;\n    while (*str) {\n        hash = hash * 31 + *str;\n        str++;\n    }\n    return hash;\n}",
+        "explanation": "Using a poor hash function can lead to high collision rates, significantly affecting the performance of a hash table. Always strive for a hash function that distributes keys uniformly.",
+        "language": "C",
+        "category": "Hash Tables"
+    },
+    {
+        "title": "Do Not Ignore Collision Resolution",
+        "code": "int index = hashFunction(key) % TABLE_SIZE;\nif (hashTable[index] != NULL) {\n    index = resolveCollision(index, key);\n}",
+        "explanation": "Collisions in hash tables are inevitable. Always implement a robust method to resolve collisions, such as chaining or open addressing.",
+        "language": "C",
+        "category": "Hash Tables"
+    },
+    {
+        "title": "Do Not Forget to Rehash When Resizing",
+        "code": "hashTable = resizeHashTable(hashTable, newSize);\nrehashAllItems(hashTable, oldSize, newSize);",
+        "explanation": "When resizing a hash table, it's crucial to rehash all existing items according to the new table size to maintain proper data distribution.",
+        "language": "C",
+        "category": "Hash Tables"
+    },
+    {
+        "title": "Do Not Neglect to Free Memory in a Hash Table with Chaining",
+        "code": "for (int i = 0; i < TABLE_SIZE; i++) {\n    node *current = hashTable[i];\n    while (current != NULL) {\n        node *temp = current;\n        current = current->next;\n        free(temp);\n    }\n}",
+        "explanation": "When using chaining to handle collisions, ensure to properly free all linked list nodes when clearing the hash table to avoid memory leaks.",
+        "language": "C",
+        "category": "Hash Tables"
+    },
+    {
+        "title": "Do Not Use Fixed Table Sizes Without Considering Load Factor",
+        "code": "if ((float)numElements / TABLE_SIZE > LOAD_FACTOR) {\n    resizeHashTable();\n}",
+        "explanation": "Maintain an appropriate load factor to ensure efficient access times. Too high a load factor increases collision rates, degrading performance.",
+        "language": "C",
+        "category": "Hash Tables"
+    },
+    {
+        "title": "Do Not Ignore Security Implications of User-Controlled Keys",
+        "code": "unsigned int hash = hashFunction(userInput);",
+        "explanation": "If user input directly affects the hash function, consider the implications of hash flooding, where an attacker provides many inputs that hash to the same value, degrading performance.",
+        "language": "C",
+        "category": "Hash Tables"
+    },
+    {
+        "title": "Do Not Overlook the Importance of a Good Load Balancing Strategy",
+        "code": "resizeHashTableIfNeeded();",
+        "explanation": "A good resizing strategy helps maintain optimal performance and minimizes the number of rehash operations needed as items are added or removed.",
+        "language": "C",
+        "category": "Hash Tables"
+    }
+]

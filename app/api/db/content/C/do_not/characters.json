@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Do Not Ignore Character Encoding",
+        "code": "char *str = \"こんにちは\"; // Assuming ASCII encoding\nprintf(\"%s\", str); // Will not handle multibyte characters correctly",
+        "explanation": "Character encoding determines how characters are stored in memory. Ignoring or misinterpreting the encoding (like ASCII, UTF-8) can lead to bugs in processing textual data.",
+        "language": "C",
+        "category": "characters",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Forget Null-Terminating Strings",
+        "code": "char str[4] = {'H', 'e', 'l', 'l'}; // Not null-terminated\nprintf(\"%s\", str); // Undefined behavior",
+        "explanation": "In C, strings are null-terminated; failing to ensure that strings are properly null-terminated can lead to buffer overruns and undefined behavior.",
+        "language": "C",
+        "category": "characters",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Use Single Byte Functions for Multibyte Characters",
+        "code": "char *str = \"こんにちは\"; // Each Japanese character is multibyte\nprintf(\"%lu\", strlen(str)); // Incorrect length due to multibyte characters",
+        "explanation": "Using functions designed for single-byte characters (like strlen, strcpy) on multibyte character strings can cause incorrect calculations and operations.",
+        "language": "C",
+        "category": "characters",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Overlook Case Sensitivity in Character Comparisons",
+        "code": "char a = 'a';\nchar b = 'A';\nif (a == b) {\n    printf(\"Same character\\n\");\n} // This will not print",
+        "explanation": "Characters in C are case-sensitive. Assuming otherwise can lead to logic errors in string processing and comparisons.",
+        "language": "C",
+        "category": "characters",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Perform Character Arithmetic Without Understanding ASCII",
+        "code": "char c = 'A' + 1;\nprintf(\"%c\", c); // Outputs 'B'",
+        "explanation": "Performing arithmetic on characters relies on their ASCII values. Without understanding ASCII, such operations can yield unexpected results.",
+        "language": "C",
+        "category": "characters",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Use Magic Numbers in Character Handling",
+        "code": "if (c == 65) { // Magic number for 'A'\n    printf(\"Character is A\\n\");\n}",
+        "explanation": "Using magic numbers for character values makes the code less readable and maintainable. Use character literals like 'A' instead of their ASCII numeric values.",
+        "language": "C",
+        "category": "characters",
+        "sub_category": ""
+    }
+]

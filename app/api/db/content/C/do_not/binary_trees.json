@@ -1,0 +1,44 @@
+[
+    {
+        "title": "Do Not Ignore Tree Balancing for BSTs",
+        "code": "if (needsBalancing(root)) {\n    root = balanceTree(root);\n}",
+        "explanation": "For binary search trees (BSTs), balancing the tree is crucial for maintaining efficient operations. Neglecting to balance a BST can degrade its performance to O(n) in the worst case.",
+        "language": "C",
+        "category": "Binary Trees"
+    },
+    {
+        "title": "Do Not Forget to Update Parent Links in AVL Trees",
+        "code": "node *rotateRight(node *y) {\n    node *x = y->left;\n    node *T2 = x->right;\n    x->right = y;\n    y->left = T2;\n    if (T2 != NULL) T2->parent = y;\n    y->parent = x;\n    return x;\n}",
+        "explanation": "When performing rotations in AVL trees, it's crucial to update the parent links for all affected nodes to maintain the integrity of the tree structure.",
+        "language": "C",
+        "category": "Binary Trees"
+    },
+    {
+        "title": "Do Not Use Inappropriate Traversal for the Task",
+        "code": "void inorder(node *root) {\n    if (root != NULL) {\n        inorder(root->left);\n        printf(\"%d \", root->data);\n        inorder(root->right);\n    }\n}",
+        "explanation": "Different tree traversals (inorder, preorder, postorder) serve different purposes. Choosing the wrong traversal can lead to inefficient operations or incorrect results for the given task.",
+        "language": "C",
+        "category": "Binary Trees"
+    },
+    {
+        "title": "Do Not Neglect to Check for NULL on Node Deletion",
+        "code": "node *deleteNode(node *root, int key) {\n    if (root == NULL) return root;\n    // deletion logic here\n}",
+        "explanation": "When deleting a node, always check if the node exists (i.e., is not NULL) to avoid dereferencing NULL, which leads to undefined behavior.",
+        "language": "C",
+        "category": "Binary Trees"
+    },
+    {
+        "title": "Do Not Disregard Leaf Nodes in Recursive Functions",
+        "code": "int isFullTree(node *root) {\n    if (root == NULL) return 1;\n    if (root->left == NULL && root->right == NULL) return 1;\n    // recursive checks\n}",
+        "explanation": "In recursive tree functions, ensure that leaf nodes are correctly handled to prevent incorrect computations or infinite recursion.",
+        "language": "C",
+        "category": "Binary Trees"
+    },
+    {
+        "title": "Do Not Assume Binary Trees Are Balanced by Default",
+        "code": "int getHeight(node *root) {\n    if (root == NULL) return 0;\n    return 1 + max(getHeight(root->left), getHeight(root->right));\n}",
+        "explanation": "Binary trees, especially BSTs, can become skewed (e.g., degenerate into a linked list) without explicit balancing. This can severely impact performance.",
+        "language": "C",
+        "category": "Binary Trees"
+    }
+]

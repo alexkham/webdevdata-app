@@ -91,25 +91,7 @@ function CodeTabs({ tabs }) {
     const [activeTab, setActiveTab] = useState(0);
     const [codeString, setCodeString] = useState('');
   
-  //   const handleTabClick = (index, e) => {
-  //     setActiveTab(index);
-  //     // Scroll the clicked tab to the top of the viewport
-  //     e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  //   //   setTimeout(() => {
-  //   //     window.scrollBy(0, -20); // Scrolls up 20 pixels
-  //   // }, 100);
-  // };
-
-//   const handleTabClick = (index, e) => {
-//     setActiveTab(index);
-//     // Scroll the clicked tab into view
-//     e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-//     // Wait for the smooth scroll to finish then adjust by 20px
-//     // setTimeout(() => {
-//     //     window.scrollBy(0, -20); // Scrolls up 20 pixels
-//     // }, 100); // Adjust timeout as needed based on the duration of the smooth scroll
-// };
+ 
 const handleTabClick = (index, e) => {
   setActiveTab(index);
 

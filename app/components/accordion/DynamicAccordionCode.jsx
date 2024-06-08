@@ -48,6 +48,7 @@ const toggleSection = (sectionId) => {
 
   return (
     <>
+    {/* <h2>{data.toString()}</h2> */}
     {/* <span>{data.length} items</span> */}
     <div className="accordion" style={{width:`${width}`}}>
         

@@ -31,6 +31,8 @@ function fixNav(){
     {/* <h1 class="logo"><a href="#">My website</a></h1> */}
     <ul>
       <li><Link href="/">Home</Link></li>
+      <li><Link href="/methods-explorer">Methods Explorer</Link></li>
+      <li><Link href="/python/sequence-slicing">Python Sequence Slicing</Link></li>
       {/* <li><Link href="/tables">Tables</Link></li> */}
       <li onClick={navigateBack} style={{cursor:'pointer'}}><a>GoBack</a></li>
      

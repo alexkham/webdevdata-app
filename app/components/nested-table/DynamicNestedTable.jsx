@@ -3,7 +3,7 @@ import './NestedTable.css'
 
 function DynamicNestedTable({main, rows}) {
   return (
-   <div className='outer-container'>
+  //  <div className='outer-container'>
   <table className="my-table">
   <tbody><tr>
       <td>{main}</td>
@@ -22,7 +22,7 @@ function DynamicNestedTable({main, rows}) {
   </tbody>
   </table>
 
-   </div>
+  //  </div>
   )
 }
 

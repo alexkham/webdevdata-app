@@ -1,0 +1,51 @@
+[
+    {
+        "title": "Do Not Forget to Check if the File Opened Successfully",
+        "code": "FILE *file = fopen(\"example.txt\", \"r\");\nif (file == NULL) {\n    perror(\"Error opening file\");\n    return 1;\n}",
+        "explanation": "Always check the return value of `fopen` to ensure the file was opened successfully. If it returns NULL, handle the error appropriately to prevent undefined behavior.",
+        "language": "C",
+        "category": "File Handling"
+    },
+    {
+        "title": "Do Not Neglect to Close Files",
+        "code": "FILE *file = fopen(\"example.txt\", \"r\");\n// File operations\nfclose(file);",
+        "explanation": "Forgetting to close files can lead to resource leaks, as open file descriptors are a limited resource in an operating system. Always ensure files are closed after operations are completed.",
+        "language": "C",
+        "category": "File Handling"
+    },
+    {
+        "title": "Do Not Use Hard-Coded File Paths",
+        "code": "FILE *file = fopen(\"/path/to/example.txt\", \"r\");",
+        "explanation": "Using hard-coded file paths reduces the portability of your code and can lead to errors if the file structure changes. Use relative paths or configuration options to specify file paths.",
+        "language": "C",
+        "category": "File Handling"
+    },
+    {
+        "title": "Do Not Ignore the Return Value of fread/fwrite",
+        "code": "size_t bytesRead = fread(buffer, 1, bufferSize, file);\nif (bytesRead < bufferSize && ferror(file)) {\n    perror(\"Error reading file\");\n}",
+        "explanation": "Ignoring the return value of `fread` or `fwrite` can lead to undetected errors in reading from or writing to a file. Always check the return value to ensure the expected number of bytes were processed.",
+        "language": "C",
+        "category": "File Handling"
+    },
+    {
+        "title": "Do Not Assume File Structure",
+        "code": "FILE *file = fopen(\"example.txt\", \"r\");\nchar buffer[100];\nif (fgets(buffer, sizeof(buffer), file) != NULL) {\n    printf(\"%s\", buffer);\n}",
+        "explanation": "Assuming a specific file structure without validation can lead to parsing errors and undefined behavior. Always validate the file structure before processing its contents.",
+        "language": "C",
+        "category": "File Handling"
+    },
+    {
+        "title": "Do Not Forget to Handle End-of-File (EOF) Properly",
+        "code": "int ch;\nwhile ((ch = fgetc(file)) != EOF) {\n    putchar(ch);\n}",
+        "explanation": "Reading from a file without checking for EOF can lead to infinite loops or reading invalid data. Always handle EOF properly in file reading loops.",
+        "language": "C",
+        "category": "File Handling"
+    },
+    {
+        "title": "Do Not Use fscanf without Checking for Successful Matches",
+        "code": "int value;\nif (fscanf(file, \"%d\", &value) != 1) {\n    fprintf(stderr, \"Failed to read integer from file\\n\");\n}",
+        "explanation": "Using `fscanf` without checking the return value can lead to using uninitialized variables if the expected data is not present in the file. Always check that the expected number of items were matched.",
+        "language": "C",
+        "category": "File Handling"
+    }
+]

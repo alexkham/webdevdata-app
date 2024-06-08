@@ -1,0 +1,31 @@
+[
+    {
+      "title": "permutations",
+      "fileName": "permutations.js",
+      "code": "// Function to check if two strings are permutations of each other\nint strings_are_permutation(char a[], char b[]) {...}",
+      "mermaid": "flowchart TD; A[Start] --> B{Is it right?}; B -- Yes --> C[OK]; B -- No --> D[Fix it!]; C --> E[Done]; D --> B",
+      "markdown": "The way the code checks if two strings are permutations of each other is based on the principle that two strings are permutations if they have the same character frequencies..."
+    },
+    {
+      "title": "combinations",
+      "fileName": "permutations.js",
+      "code": "// Function to check if two strings are permutations of each other\nint strings_are_permutation(char a[], char b[]) {...}",
+      "mermaid": "flowchart TD; A[Start] --> B{Is it right?}; B -- Yes --> C[OK]; B -- No --> D[Fix it!]; C --> E[Done]; D --> B",
+      "markdown": "The way the code checks if two strings are permutations of each other is based on the principle that two strings are permutations if they have the same character frequencies..."
+    },
+    {
+      "title": "dolly",
+      "fileName": "permutations.js",
+      "code": "hello,dolly\n// Function to check if two strings are permutations of each other\nint strings_are_permutation(char a[], char b[]) {...}",
+      "mermaid": "flowchart TD; A[Start] --> B{Is it right?}; B -- Yes --> C[OK]; B -- No --> D[Fix it!]; C --> E[Done]; D --> B",
+      "markdown": "The way the code checks if two strings are permutations of each other is based on the principle that two strings are permutations if they have the same character frequencies..."
+    },
+    {
+      "title": "hello",
+      "fileName": "permutations.js",
+      "code": "// Function to check if two strings are permutations of each other\nint strings_are_permutation(char a[], char b[]) {...}",
+      "mermaid": "flowchart TD; A[Start] --> B{Is it right?}; B -- Yes --> C[OK]; B -- No --> D[Fix it!]; C --> E[Done]; D --> B",
+      "markdown": "The way the code checks if two strings are permutations of each other is based on the principle that two strings are permutations if they have the same character frequencies..."
+    }
+  ]
+  

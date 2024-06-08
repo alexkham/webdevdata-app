@@ -1,0 +1,225 @@
+.main{
+    margin-bottom: -20px;
+    max-height: 200px;
+    
+}
+.container{
+    /* max-width: 500px; */
+    justify-content: flex-start;
+}
+
+.box {
+    flex-grow: 1;
+    flex-basis: 0;
+     /* Ensures equal distribution */
+    /* Other styles remain the same */
+   
+   /* flex-basis: calc(50% - 20px); */
+   /* white-space: nowrap; */
+   /* padding: 0.5rem 1rem;  */
+   margin: 3px;
+   border: solid 1px gray;
+   background-color: #4f1dd8;
+   color: white;
+   font-weight: 400;
+   /* cursor: pointer; */
+   display: table-cell;
+   border-radius: 5px;
+   max-width: 150px;
+   min-width: 25px;
+   padding: 10px;
+   min-height: 20px;
+   
+   /* flex-grow: 1; */
+   /* flex-basis: 0; */
+    /* Ensures equal distribution */
+   /* Other styles remain the same */
+   /* min-height: 10px;
+   min-width: 10px;
+   max-width: 10px;
+   padding: 5px; */
+  flex-basis: calc(50% - 20px);
+    
+
+}
+
+/* In your MyArrayComponent.css file */
+
+.python-list {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Add this line to center the content */
+  }
+  
+  /* Adjust styles for the output container and other elements if necessary */
+  .python-list .output-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .python-list .slice-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .python-list .input-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .python-list .my-aggregation-input {
+    margin-right: 10px;
+  }
+  
+  .python-list .add-button, 
+  .python-list .reset-button, 
+  .python-list .done-button, 
+  .python-list .delete-button {
+    margin: 5px;
+  }
+  .bracket{
+    margin-bottom: 30px;
+  }
+
+  .list-split-visualizer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .expression {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin: 20px 0;
+  }
+  
+  .index-input {
+    width: 50px;
+    margin: 0 5px;
+    text-align: center;
+    margin-top: 45px;
+  }
+  .index-input-item{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .index-input-item label{
+    margin-bottom: 20px;
+  }
+  .bracket-index{
+    font-size: xxx-large;
+    
+  }
+  .bracket-title{
+    font-size: xx-large;
+  }
+
+  .index-input-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .question-mark {
+    margin-left: 5px;
+    cursor: help;
+    margin-top: -20px;
+  }
+  
+  .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 15px;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+  }
+  
+  .question-mark:hover + .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+  .order{
+    font-size: 30px;
+    margin-left: 150px;
+  }
+  .outer-container{
+    min-height: 500px;
+    max-width: 900px;
+  }
+  .explanation{
+    /* margin-top:50px; */
+    /* text-transform: capitalize; */
+    font-style: normal;
+    font-size: medium;
+    min-width: 900px;
+    max-width: 900px;
+    margin-top: 10px;
+    line-height: 1.5;
+    background-color: lightgray;
+    padding:40px;
+    border-radius: 10px;
+  }
+  .expression{
+    margin-left: 150px;
+    
+  }
+  .python-list{
+    margin-left: 100px;
+  }
+
+  .list-container{
+    display: flex;
+    flex-direction: row;
+    
+  }
+
+  .result{
+    margin-top: 10px;
+    margin-left: 30px;
+    font-size: xx-large;
+  }
+  
+  .select {
+    display: block;
+    width: 50%;
+    min-width: 250px;
+    padding: 0.5rem; /* Equivalent to "p-2" */
+    margin-bottom: 1.5rem; /* Equivalent to "mb-6" */
+    font-size: 0.875rem; /* Equivalent to "text-sm" */
+    color: #333; /* Equivalent to "text-gray-900" */
+    border: 1px solid #2196F3; /* Equivalent to "border-blue-300" */
+    border-radius: 0.25rem; /* Equivalent to "rounded-lg" */
+    background-color: #f7f7f7; /* Equivalent to "bg-gray-50" */
+    outline: none;
+    margin:5px;
+    min-height: 20px;
+  }
+  
+  .select:focus {
+    border-color: #2196F3; /* Equivalent to "focus:border-blue-500" */
+  }
+
+  button{
+    padding: 10px;
+    min-width: 150px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: lightgray;
+  }
+  
+  

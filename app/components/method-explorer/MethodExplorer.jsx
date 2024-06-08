@@ -75,6 +75,44 @@ function MethodExplorer() {
         }
     }, [language, objType]);
 
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         if (language && objType) {
+    //             const response = await fetch(`/api/${language.toLowerCase()}_${objType.toLowerCase()}_Data`);
+    //             if (response.ok) {
+    //                 const data = await response.json();
+    //                 console.log('Data '+data)
+    //                 setData(data);
+    //                 setLink(`/${language.toLowerCase()}/${objType.toLowerCase()}/`)
+    //                 console.log('Link  '+link)
+    //             } else {
+    //                 console.error("Failed to fetch data");
+    //             }
+    //         }
+    //     };
+
+    //     fetchData();
+    // }, [language, objType]);
+
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         if (language && objType) {
+    //             const response = await fetch(`/api/${language.toLowerCase()}_${objType.toLowerCase()}_Data`);
+    //             if (response.ok) {
+    //                 const data = await response.json();
+    //                 setData(data);
+    //                 const newLink = `/${language.toLowerCase()}/${objType.toLowerCase()}/`;
+    //                 console.log('Link:', newLink); // Add this line to debug
+    //                 setLink(newLink);
+    //             } else {
+    //                 console.error("Failed to fetch data");
+    //             }
+    //         }
+    //     };
+    
+    //     fetchData();
+    // }, [language, objType]);
+
     useEffect(() => {
         const fetchData = async () => {
             if (language && objType) {
@@ -82,15 +120,20 @@ function MethodExplorer() {
                 if (response.ok) {
                     const data = await response.json();
                     setData(data);
-                    setLink(`/${language.toLowerCase()}/${objType.toLowerCase()}/`)
+    
+                    // Construct links for each method
+                    const newLink = `/${language.toLowerCase()}/${objType.toLowerCase()}/`;
+                    setLink(newLink);
                 } else {
                     console.error("Failed to fetch data");
                 }
             }
         };
-
+    
         fetchData();
     }, [language, objType]);
+    
+    
 
     useEffect(() => {
         if (classification && searchTerm && data) {

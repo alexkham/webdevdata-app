@@ -3,11 +3,12 @@ table {
   }
 
 .my-table {
-    width: 100%;
+    width: 80%;
     border-collapse: collapse;
     text-align:start;
     border-radius: 3px;
     padding-right: 20px !important;
+   
   }
 .my-table tr {
     min-height: 50px; /* Adjust as needed */

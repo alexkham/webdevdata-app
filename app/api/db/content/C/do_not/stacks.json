@@ -1,0 +1,37 @@
+[
+    {
+        "title": "Do Not Pop from an Empty Stack",
+        "code": "if (isEmpty(stack)) {\n    fprintf(stderr, \"Cannot pop from an empty stack\\n\");\n    return -1;\n}",
+        "explanation": "Popping from an empty stack can lead to undefined behavior. Always check if the stack is empty before popping.",
+        "language": "C",
+        "category": "Stacks"
+    },
+    {
+        "title": "Do Not Overlook Stack Overflow",
+        "code": "if (isFull(stack)) {\n    fprintf(stderr, \"Stack overflow\\n\");\n    return;\n}",
+        "explanation": "Always check for stack overflow when pushing a new element onto the stack to prevent memory corruption.",
+        "language": "C",
+        "category": "Stacks"
+    },
+    {
+        "title": "Do Not Ignore Stack Underflow",
+        "code": "if (isEmpty(stack)) {\n    fprintf(stderr, \"Stack underflow error\\n\");\n}",
+        "explanation": "Trying to pop from an empty stack is an underflow condition; always check the stack's size before popping.",
+        "language": "C",
+        "category": "Stacks"
+    },
+    {
+        "title": "Do Not Use Non-Dynamic Stack Sizes",
+        "code": "int stack[10];\nint top = -1;",
+        "explanation": "Using a fixed-size stack can lead to overflow if not properly managed. Consider dynamic sizing with linked structures or realloc.",
+        "language": "C",
+        "category": "Stacks"
+    },
+    {
+        "title": "Do Not Forget to Initialize Stack Top",
+        "code": "int top;\n// Using top before setting it up properly",
+        "explanation": "The 'top' variable should be initialized properly (usually to -1) to indicate an empty stack. Using it uninitialized can lead to unpredictable behavior.",
+        "language": "C",
+        "category": "Stacks"
+    }
+]

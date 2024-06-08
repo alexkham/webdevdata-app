@@ -1,0 +1,37 @@
+[
+    {
+        "title": "Do Not Lose the Head Pointer",
+        "code": "node *head = createLinkedList();\nhead = head->next; // Risk of losing the reference to the first node",
+        "explanation": "Losing the head pointer in a linked list can lead to memory leaks as you lose access to dynamically allocated memory that can only be freed via the head pointer.",
+        "language": "C",
+        "category": "Linked Lists"
+    },
+    {
+        "title": "Do Not Forget to Update Links When Removing Nodes",
+        "code": "node *temp = head->next;\nhead->next = temp->next;\nfree(temp);",
+        "explanation": "When removing a node from a linked list, ensure to properly update the links of neighboring nodes to maintain the integrity of the list.",
+        "language": "C",
+        "category": "Linked Lists"
+    },
+    {
+        "title": "Do Not Traverse Without Checking for NULL",
+        "code": "while (current != NULL) {\n    printf(\"%d \", current->data);\n    current = current->next;\n}",
+        "explanation": "Always check that the next node is not NULL before accessing it to avoid segmentation faults.",
+        "language": "C",
+        "category": "Linked Lists"
+    },
+    {
+        "title": "Do Not Ignore Memory Leaks on Node Deletion",
+        "code": "while (head != NULL) {\n    node *temp = head;\n    head = head->next;\n    free(temp);\n}",
+        "explanation": "When deleting nodes, always ensure you free the nodes to avoid memory leaks.",
+        "language": "C",
+        "category": "Linked Lists"
+    },
+    {
+        "title": "Do Not Mix Node Types",
+        "code": "typedef struct node {\n    int data;\n    struct node *next;\n} nodeA;\ntypedef struct node {\n    double data;\n    struct node *next;\n} nodeB;",
+        "explanation": "Using different node types within the same list can lead to confusion and data handling errors. Maintain uniform node structures.",
+        "language": "C",
+        "category": "Linked Lists"
+    }
+]

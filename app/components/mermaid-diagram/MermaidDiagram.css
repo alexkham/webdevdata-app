@@ -29,8 +29,8 @@
   .mermaidDiagramContainer svg  {
     transform: scale(1.15); 
     transform-origin: top left; 
-    width: 500px; 
-    height: 400px;
+    width: 300px; 
+    height: 300px;
     margin-left: -30px;
     margin-top: 20px;
    
@@ -61,6 +61,10 @@
   .mermaidDiagramContainer {
     overflow:visible;
     transform-origin: top left;
+  }
+
+  .mermaidDiagramContainer.urgent{
+    color:red;
   }
   
   
