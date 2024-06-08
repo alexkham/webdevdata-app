@@ -573,6 +573,95 @@
 // }
 
 // export default DynamicAccordionExampleCode;
+// 'use client'
+// import React, { useState, useEffect } from 'react';
+// import './AccordionToggle2.css';
+// import './Accordion.css';
+// import '../code-example/CodeExample.css';
+// import AceEditorComponent from '../ace-editor/AceEditorComponent';
+// import MermaidDiagram from '../mermaid-diagram/MermaidDiagram';
+// import MarkdownComponent from '../markdown-component/MarkdownComponent';
+
+// function DynamicAccordionExampleCode({ data, width }) {
+//     const [contents, setContents] = useState(data.map(() => ({ code: '', markdown: '' })));
+//     const [mermaidContents, setMermaidContents] = useState(data.map(() => ''));
+
+//     useEffect(() => {
+//         data.forEach((fileName, index) => {
+//             async function fetchContent() {
+//                 try {
+//                     const module = await import(`../../api/db/content/C/${fileName}`);
+//                     setContents(prev => {
+//                         const updatedContents = [...prev];
+//                         updatedContents[index] = {
+//                             code: module.code,
+//                             markdown: module.markdown
+//                         };
+//                         return updatedContents;
+//                     });
+//                     setMermaidContents(prev => {
+//                         const updatedMermaids = [...prev];
+//                         updatedMermaids[index] = module.mermaid;
+//                         return updatedMermaids;
+//                     });
+//                 } catch (error) {
+//                     console.error(`Failed to load the content file ${fileName}:`, error);
+//                 }
+//             }
+//             fetchContent();
+//         });
+//     }, [data]);
+
+//     const toggleSection = (sectionId) => {
+//         const section = document.getElementById(sectionId);
+//         if (section) {
+//             section.classList.toggle('open');
+//             if (section.classList.contains('open')) {
+//                 section.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+//             }
+//         }
+//     };
+
+//     const preventClose = (event) => {
+//         event.stopPropagation();
+//     };
+
+//     return (
+//         <div className="accordion" style={{ width }}>
+//             {data.map((fileName, index) => {
+//                 const sectionId = `section${index}`;
+//                 return (
+//                     <div key={index} id={sectionId} className="accordion__section" onClick={() => toggleSection(sectionId)}>
+//                         <div className="accordion__label">{fileName}</div>
+//                         <div className="accordion__content" onClick={preventClose}>
+//                             <div className='outer-container'>
+//                                 <div className='upper-row'>
+//                                     <div className='left'>
+//                                         <AceEditorComponent
+//                                             code={contents[index].code}
+//                                             fontSize={12}
+//                                             mode={'python'}
+//                                             theme={'twilight'} />
+//                                     </div>
+//                                     <div className='right'>
+//                                         <MermaidDiagram
+//                                             chartDefinition={mermaidContents[index]} />
+//                                     </div>
+//                                 </div>
+//                                 <div className='markdown'>
+//                                     <MarkdownComponent article={contents[index].markdown} />
+//                                 </div>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 );
+//             })}
+//         </div>
+//     );
+// }
+
+// export default DynamicAccordionExampleCode;
+
 'use client'
 import React, { useState, useEffect } from 'react';
 import './AccordionToggle2.css';
@@ -590,18 +679,18 @@ function DynamicAccordionExampleCode({ data, width }) {
         data.forEach((fileName, index) => {
             async function fetchContent() {
                 try {
-                    const module = await import(`../../api/db/content/C/${fileName}`);
+                    const contentModule = await import(`../../api/db/content/C/${fileName}`);
                     setContents(prev => {
                         const updatedContents = [...prev];
                         updatedContents[index] = {
-                            code: module.code,
-                            markdown: module.markdown
+                            code: contentModule.code,
+                            markdown: contentModule.markdown
                         };
                         return updatedContents;
                     });
                     setMermaidContents(prev => {
                         const updatedMermaids = [...prev];
-                        updatedMermaids[index] = module.mermaid;
+                        updatedMermaids[index] = contentModule.mermaid;
                         return updatedMermaids;
                     });
                 } catch (error) {
