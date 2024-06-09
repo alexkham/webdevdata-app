@@ -116,6 +116,90 @@ To summarize:
 - The stop index is explicitly provided as {{stop}}, indicating the position at which the slicing should stop (exclusive).
 - The step is omitted and defaults to 1, indicating forward movement through the list.
 - The resulting list will be a sublist of the original list, starting from the specified start index and continuing up to, but not including, the element at the specified stop index.`,
-  };
+2212: `Start index {{start}}
+Stop index {{stop}}
+Step {{step}}
+
+The order is defined by the negative step, meaning the slicing will move backward.
+
+Start index {{start}} (inclusive) and stop index {{stop}} (exclusive) are both positive numbers.
+
+Since the step is negative and the start index is less than the stop index, the slicing will result in an empty list.
+It will move left so if we start from {{start}} the index {{stop}} will stay out of the outcoming list so it will result in empty list.
+
+
+To summarize:
+- Order: backward (negative step)
+- Start: {{start}} (inclusive)
+- Stop: {{stop}} (exclusive)
+- Result: Empty list due to invalid slicing conditions.`,
+2332: `Start index {{start}}
+Stop index {{stop}}
+Step {{step}}
+The slicing begins at {{start}} and, since the step is negative, it progresses leftward toward {{stop}}.
+The negative stop index is translated to a positive value as the list length plus {{stop}} (or {{len}} + {{stop}}), and in this specific case, it lies to the left of {{start}}.
+Therefore, the outcome of the slicing will not be empty. It will include elements starting from {{start}} up to, but not including, {{len}} + {{stop}}.`,
+3332: `Start index {{start}}
+Stop index {{stop}}
+Step {{step}}
+The slicing begins at {{start}} and, because the step is negative, it progresses leftward toward {{stop}}.
+Both {{start}} and {{stop}} are negative indices, indicating positions from the end of the list. 
+Since {{stop}} is on the left of {{start}} ({{stop}} is less than {{start}} when counting from the end), the slicing includes elements from the position corresponding to {{start}} down to, but not including, the position just before {{stop}}.
+This translates to elements from  {{start}} to  {{stop}}, not including the element at {{stop}}. 
+The result will include these elements, shown in reverse order due to the negative step.`,
+3312: `Start index {{start}}
+Stop index {{stop}}
+Step {{step}}
+The slicing begins at {{start}} and, because the step is negative, it progresses leftward toward {{stop}}.
+Both {{start}} and {{stop}} are negative indices, indicating positions from the end of the list.
+Since {{stop}} is on the right of {{start}} ({{stop}} is greater than {{start}} when counting from the end), the slicing will not include any elements because the direction of the step conflicts with the order of indices.
+Thus, the result of this slicing operation is an empty list.`,
+3311: `Start index {{start}}
+Stop index {{stop}}
+Step {{step}} (defaults to 1)
+
+The slicing begins at {{start}}, and since the step defaults to 1, it progresses rightward toward {{stop}}.
+Both {{start}} and {{stop}} are negative indices, indicating positions from the end of the list.
+Because {{stop}} is greater than {{start}} (when counting from the end) and the step is positive, the slicing will include elements from the position corresponding to {{start}} up to, but not including, the position just before {{stop}}.
+This translates to elements from list length + {{start}} to list length + {{stop}}, not including the element at {{stop}}. 
+The result will include these elements in their original order.`,
+3211: `Start index {{start}}
+Stop index {{stop}}
+Step {{step}} (defaults to 1)
+
+The slicing begins at {{start}}, which is a negative index, indicating a position from the end of the list, and moves rightward toward {{stop}}, a positive index, indicating a position from the start of the list. Since the step defaults to 1, the slicing progresses forward.
+
+The negative start index translates to a positive position as {{len}} + {{start}}. The slicing includes elements from this translated start position up to, but not including, the stop index {{stop}}.
+
+This configuration results in a subset that spans from the calculated start position to the specified stop index, capturing elements in their original order. The result includes elements from the position corresponding to {{len}} + {{start}} up to, but not including, the position {{stop}}.`,
+2112: `Start index {{start}}
+Stop index {{stop}} (defaults to -1, indicating the beginning of the list)
+Step {{step}} (defaults to -1)
+
+The slicing begins at {{start}}, a positive index, indicating a position from the start of the list, and progresses leftward toward the default stop index of -1 because the step is negative. This default stop index represents the start of the list when the negative step is used, essentially moving backwards from the start index.
+
+Since the step is negative and no stop index is specified, the slicing will include elements from the position corresponding to {{start}} down to . This captures all elements from the specified start position to the beginning of the list in reverse order.
+
+The result will be a sublist that includes elements in reverse order starting from {{start}} and continuing backward to the beginning of the list.`,
+2232: `Start index {{start}}
+Stop index {{stop}}
+Step {{step}} 
+The slicing begins at {{start}}, a positive index, indicating a position from the start of the list, and progresses leftward toward {{stop}}, also a positive index. Since the step is negative, the slicing direction is reversed, moving backward through the list.
+
+Since the start index {{start}} is greater than the stop index {{stop}}, the negative step allows for a valid slice that includes elements from the position corresponding to {{start}} down to, but not including, the position  {{stop}}. This ensures that elements are captured in reverse order from {{start}} to {{stop}}.
+
+The result will include elements in reverse order, starting from {{start}} and ending just before {{stop}}, effectively reversing a portion of the list between these indices.`,
+1212: `Start index {{start}} (defaults to the end of the list)
+Stop index {{stop}}
+Step {{step}} 
+
+With the start index omitted and a negative step, the slicing begins at the default position, which is the end of the list. This positioning allows the slice to progress leftward from the last element toward the specified positive stop index {{stop}}.
+
+Since the start is set to the last element by default (due to the omitted start and negative step), and the stop index {{stop}} is a positive value indicating a position from the start of the list, the slicing operation includes elements moving backward from the end of the list up to, but not including, the position {{stop}}. This sequence captures elements in reverse order from the end up to the specified stop index.
+
+The result will be a sublist that includes elements from the end of the list, reversed up to just before {{stop}}, providing a reversed segment of the list.`,
+
+
+};
   
-  export default explanations;
+export default explanations;

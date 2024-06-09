@@ -103,6 +103,7 @@ const validateIndices = (start, stop, step, length) => {
   const code = parseInt(startCode) * 1000 + parseInt(stopCode) * 100 + combinationCode * 10 + parseInt(stepCode);
 
   setIndexCode(code);
+  console.log(code)
 };
 
 useEffect(() => {
@@ -127,9 +128,13 @@ const getHighlightedIndicesPositive = (len, stepValue) => {
   let startIndex = start === '' ? 0 : parseInt(start, 10);
   let stopIndex = stop === '' ? len : parseInt(stop, 10);
 
-  // Ensure the indices are within the array bounds
-  startIndex = Math.max(0, Math.min(len, startIndex));
-  stopIndex = Math.max(0, Math.min(len, stopIndex));
+//   // Ensure the indices are within the array bounds
+//   startIndex = Math.max(0, Math.min(len, startIndex));
+//   stopIndex = Math.max(0, Math.min(len, stopIndex));
+// Adjust indices that are negative to positive based on the array length
+startIndex = adjustIndex(startIndex, len);
+stopIndex = adjustIndex(stopIndex, len);
+
 
   let indices = [];
   if(stepValue !== 0) {
@@ -168,6 +173,9 @@ const getHighlightedIndicesNegative = (len, stepValue) => {
 const adjustIndex = (index, length) => {
   return index < 0 ? length + index : index;
 };
+
+
+  
 
 
  const resetIndeces=()=>{

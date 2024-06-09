@@ -4,6 +4,7 @@ import './MyArrayComponent.css';
 
 const ExplanationBox = ({ indexCode, start = '', stop = '', step = '', data }) => {
      const stepCode = indexCode % 10;
+     const len=data.length;
 
   let explanation;
   if (stepCode === 0) {
@@ -24,6 +25,8 @@ const ExplanationBox = ({ indexCode, start = '', stop = '', step = '', data }) =
         return startValue;
       case 'stop':
         return stopValue;
+        case 'len':
+            return len;
       case 'step':
         return stepValue;
       case 'dataLength':
