@@ -268,7 +268,25 @@ Since the stop defaults to the start of the list it will always on the left of t
 And with negative step the slicing will always result in non-empty list starting in the middle of the original list and ending at the list start including the very first element.
 The order will be reverse in this case.
 `,
+1332: `Start index {{start}} (defaults to the end of the list)
+Stop index {{stop}}
+Step {{step}} (negative)
 
+With the start index omitted and a negative step, the slicing begins at the end of the list. This is because when the start is omitted and the step is negative, Python slicing starts from the last element. The stop index {{stop}} is a negative number, indicating a position from the end of the list that is more than one position away from the end .
+
+Since the step is negative, the slice will move backward from the last element towards the front of the list. However, the stop index, being negative, specifies a boundary before which the slicing should stop. For example, a stop index of -2 means the slice should include elements up to, but not including, the second last element of the list.
+
+The result of this slicing configuration will be a sublist that captures elements in reverse order, starting from the end of the list and stopping just before the stop index specified. This typically results in a reverse slice of the last few elements of the list, depending on how negative the stop index is.`,
+
+2222: `Start index {{start}}
+Stop index {{stop}}
+Step {{step}} (negative)
+
+In this slicing configuration, the start and stop indices are positive and identical. Typically, when the start and stop indices are the same, no elements would be included in the slice. 
+Despite the negative step, the fact that the start and stop indices are equal means there's no range to move through. In Python, slicing from a start index to the same stop index results in an empty list, regardless of the step's direction. And that is due to the exclusive nature of stop index.
+The negative step does not change this outcome because there are no elements between the identical start and stop indices to traverse in reverse.
+
+Therefore, the result of this slicing configuration is an empty list, as the same start and stop indices with any step direction do not include any elements.`,
 
 };
   
