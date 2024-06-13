@@ -7,10 +7,7 @@ export default function PythonSequenceSlicingPage() {
   return (
     <>
     <MyNavbar></MyNavbar>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
+        
     <div className='outer-container'>
     <ListSplitVisualizer></ListSplitVisualizer>
     </div>

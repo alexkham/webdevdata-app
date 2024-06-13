@@ -26,7 +26,7 @@ const ThingsNotToDoPage = ({ type, content }) => {
       ) : (
         <p>No content available</p>
       )} */}
-
+      
       {content?<DynamicAccordionCode data={content} />
       : <p>No content available</p>}
 
