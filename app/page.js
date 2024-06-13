@@ -63,7 +63,22 @@ export default function Home() {
   return (
     <div className="main-page-container">
       
-     
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     {/* <CodeExample
+     language={'c'}
+     category={'do_not'}
+     fileName={'arrays.json'}></CodeExample> */}
+     <br></br>
+     <br></br>
+     {/* <DynamicAccordionCode
+     data={arrays}></DynamicAccordionCode> */}
+     <br></br>
+     <br></br>
+     <br></br>
     <ScrollUpButton ></ScrollUpButton>
     </div>
   )
