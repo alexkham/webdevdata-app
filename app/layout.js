@@ -3,7 +3,7 @@ import './globals.css'
 import MyNavbar from './components/nav-bar/MyNavbar'
 import ScrollUpButton from './components/scroll-up-button/ScrollUpButton'
 import Footer from './components/footer/Footer'
-import Breadcrumb from './components/breadcrumb/BreadCrumb'
+//import Breadcrumb from './components/breadcrumb/BreadCrumb'
 
 const inter = Inter({ subsets: ['latin'] })
 
