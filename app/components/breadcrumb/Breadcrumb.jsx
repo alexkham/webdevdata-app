@@ -1,6 +1,5 @@
 // // components/Breadcrumb.js
 'use client';
-
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './Breadcrumb.module.css';

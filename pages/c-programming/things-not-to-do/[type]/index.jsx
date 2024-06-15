@@ -5,6 +5,7 @@ import '../../../pages.css';
 import { capitalizeWords } from '@/utils/functions';
 import MyNavbar from '@/app/components/nav-bar/MyNavbar';
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton';
+import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb';
 
 const ThingsNotToDoPage = ({ type, content }) => {
   console.log('Type:', type); // Debugging log
@@ -15,7 +16,9 @@ const ThingsNotToDoPage = ({ type, content }) => {
       <MyNavbar></MyNavbar>
       <br></br>
       <br></br>
-     
+      <br></br>
+      <br></br>
+      <Breadcrumb></Breadcrumb>
       <div className='outer-container'>
       <h1>Things Not To Do With {capitalizeWords(type.replaceAll('_', ' '))} in C Programming </h1>
       <br></br>

@@ -27,6 +27,7 @@ export default function ThingsNotToDo() {
     <div className={styles.container}>
         
       <h1 className={styles.title}>Things Not To Do in C Programming</h1>
+      <br></br>
       <LinkTextGroup items={things} />
       <p className={styles.description}>
         In this section, we cover common pitfalls and mistakes that programmers often encounter when working with C.

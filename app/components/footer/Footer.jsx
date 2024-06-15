@@ -20,6 +20,13 @@ const Footer = () => {
         {/* <li>
           <Link href="/privacy-policy">Privacy Policy</Link>
         </li> */}
+        <li>
+            <Link href="/terms-and-conditions">Terms and Conditions</Link>
+          </li>
+         
+          <li>
+            <Link href="/cookie-policy">Cookie Policy</Link>
+          </li>
       </ul>
       <p className={styles['footer-copy']}>&copy; {year} Webdevdata</p>
     </footer>
