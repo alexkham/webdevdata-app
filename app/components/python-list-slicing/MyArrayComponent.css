@@ -304,6 +304,7 @@
   flex-direction: row;
   align-items: start;
   justify-content: left;
+  margin-left: -100px;
 }
 .slicing-inputs-container{
   display: flex;

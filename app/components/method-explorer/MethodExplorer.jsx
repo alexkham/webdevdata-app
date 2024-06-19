@@ -160,7 +160,7 @@ function MethodExplorer() {
     
 
     return (
-        <div className='outer-container'>
+        <div className='outer-container-methods'>
             {/* <span>{language}</span> */}
             {/* <span>{}</span> */}
             {/* <span>{classificationsArray}</span> */}

@@ -95,7 +95,7 @@ export default function Home() {
      highlightedIndices={highlightedIndices} 
      shouldHighlight={true}></TwoDimArray2> */}
 
-      {/* <TwoDimListSplitVisualizer></TwoDimListSplitVisualizer> */}
+      <TwoDimListSplitVisualizer></TwoDimListSplitVisualizer>
 
      <br></br>
      {/* <VisualizeLambda></VisualizeLambda> */}
