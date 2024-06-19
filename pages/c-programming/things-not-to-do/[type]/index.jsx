@@ -20,7 +20,7 @@ const ThingsNotToDoPage = ({ type, content }) => {
       <br></br>
       <Breadcrumb></Breadcrumb>
       <div className='outer-container'>
-      <h1>Things Not To Do With {capitalizeWords(type.replaceAll('_', ' '))} in C Programming </h1>
+      <h1>Things Not To Do in C With {capitalizeWords(type.replaceAll('_', ' '))} in C Programming </h1>
       <br></br>
       <br></br>
       {/* <pre>{JSON.stringify(content, null, 2)}</pre>

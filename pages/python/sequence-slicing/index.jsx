@@ -12,10 +12,12 @@ export default function PythonSequenceSlicingPage() {
         <br></br>
         <br></br>
         <br></br>
-        <br></br>
+        
         <Breadcrumb></Breadcrumb>
-    <div className='outer-container'>
+        <h1 className='title'>Python Sequence Slicing </h1>
+    {/* <div className='outer-container'> */}
+      
     <ListSplitVisualizer></ListSplitVisualizer>
-    </div>
+    {/* </div> */}
     </>
 )}

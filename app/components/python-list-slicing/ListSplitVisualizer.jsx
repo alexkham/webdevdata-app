@@ -243,10 +243,12 @@ useEffect(() => {
     <div className='outer-container'>
           {/* <div>{customizing?'yes':'no'}</div> */}
           {/* <div>{indexCode}</div> */}
+          <div className='btn-group'>
           <button onClick={toggleCustomizing}>Use Default List</button>
           {!customizing&&<button onClick={handleCustomArray}>Create Custom List</button>}
-          <hr></hr>
-          <br></br>
+          </div>
+         <p>___________________________________________</p>
+         
          
       
       {!customizing ? (

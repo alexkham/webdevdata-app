@@ -1,4 +1,4 @@
-
+'use client'
 import AceEditorComponent from "./components/ace-editor/AceEditorComponent";
 import GridGenerator from "./components/grid-generator/GridGenerator";
 import MethodExplorer from "./components/method-explorer/MethodExplorer";
@@ -19,12 +19,40 @@ import AccordionToggle2 from "./components/accordion/AccordionToggle2";
 import DynamicAccordionExampleCode from "./components/accordion/DynamicAccordionExampleCode";
 import ListSplitVisualizer from "./components/python-list-slicing/ListSplitVisualizer";
 import TreeStructure from "./components/tree-structure/TreeItem";
+import VisualizeLambda from "./components/lambda-visualization/VisualizeLambda";
+import TwoDimArray from "./components/python-list-slicing/TwoDimArray";
+import TwoDimArray2 from "./components/python-list-slicing/TwoDimArray2";
+import TwoDimSlicingInputs from "./components/python-list-slicing/TwoDimSlicingInputs";
 
 
 
 
 
 export default function Home() {
+
+
+
+  const exampleData = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [7, 8, 9],
+    [7, 8, 9],
+    [7, 8, 9],
+    
+    
+  ];
+  
+  const highlightedIndices = ['0-1', '1-1', '2-1'];
+  
+    const startRow = 0;
+    const stopRow = 10;
+    const stepRow = 2;
+    const startCol = 1;
+    const stopCol = 5;
+    const stepCol = 1;
+
+    const dummySetter = () => {};
 
   
  
@@ -51,13 +79,39 @@ export default function Home() {
      <br></br>
      <br></br>
      <br></br>
+     {/* <TwoDimArray  data={exampleData} 
+     highlightedIndices={highlightedIndices} 
+     shouldHighlight={true}></TwoDimArray> */}
      <br></br>
      <br></br>
      <br></br>
      <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     {/* <TwoDimArray2  data={exampleData} 
+     highlightedIndices={highlightedIndices} 
+     shouldHighlight={true}></TwoDimArray2> */}
+
+
+
+     <br></br>
+     {/* <VisualizeLambda></VisualizeLambda> */}
      <br></br>
      <br></br>
      {/* <TreeStructure></TreeStructure> */}
+     <br></br>
+     
+     <br></br>
+     <br></br>
+     <br></br>
+     {/* <TwoDimSlicingInputs
+                startRow={startRow} stopRow={stopRow} stepRow={stepRow}
+                setStartRow={dummySetter} setStopRow={dummySetter} setStepRow={dummySetter}
+                startCol={startCol} stopCol={stopCol} stepCol={stepCol}
+                setStartCol={dummySetter} setStopCol={dummySetter} setStepCol={dummySetter}
+            /> */}
      <br></br>
      <br></br>
      {/* <CollapsibleTree data={pandas}></CollapsibleTree> */}
