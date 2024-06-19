@@ -23,6 +23,7 @@ import VisualizeLambda from "./components/lambda-visualization/VisualizeLambda";
 import TwoDimArray from "./components/python-list-slicing/TwoDimArray";
 import TwoDimArray2 from "./components/python-list-slicing/TwoDimArray2";
 import TwoDimSlicingInputs from "./components/python-list-slicing/TwoDimSlicingInputs";
+import TwoDimListSplitVisualizer from "./components/python-list-slicing/TwoDimSplitVisualizer";
 
 
 
@@ -94,7 +95,7 @@ export default function Home() {
      highlightedIndices={highlightedIndices} 
      shouldHighlight={true}></TwoDimArray2> */}
 
-
+      <TwoDimListSplitVisualizer></TwoDimListSplitVisualizer>
 
      <br></br>
      {/* <VisualizeLambda></VisualizeLambda> */}

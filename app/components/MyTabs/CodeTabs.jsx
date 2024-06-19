@@ -145,8 +145,7 @@ const handleTabClick = (index, e) => {
                  
             ))}
           </div>
-          <br></br>
-          <br></br>
+         
           <div className='console-container'>
            
           <ConsoleComponentProps5 code={codeString}></ConsoleComponentProps5>

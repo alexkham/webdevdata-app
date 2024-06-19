@@ -299,5 +299,21 @@
   justify-content: center;
   align-items: center;
 }
+.array-visualization-container{
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: left;
+}
+.slicing-inputs-container{
+  display: flex;
+  justify-content: left;
+  margin-left: -200px;
+  margin-top: -50px;
+}
+.reset-btn{
+  font-size: small;
+  max-width: 50px;
+}
 
   

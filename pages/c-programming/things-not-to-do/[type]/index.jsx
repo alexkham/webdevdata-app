@@ -19,7 +19,7 @@ const ThingsNotToDoPage = ({ type, content }) => {
       <br></br>
       <br></br>
       <Breadcrumb></Breadcrumb>
-      <div className='outer-container'>
+      <div className='outer-container-page'>
       <h1>Things Not To Do in C With {capitalizeWords(type.replaceAll('_', ' '))} in C Programming </h1>
       <br></br>
       <br></br>

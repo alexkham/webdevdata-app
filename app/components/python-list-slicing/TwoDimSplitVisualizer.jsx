@@ -33,11 +33,8 @@ function TwoDimListSplitVisualizer() {
   };
 
   return (
-    <div className='outer-container'>
-      <div className='btn-group'>
-        <button onClick={handleReset}>Reset to Default 2-D Array</button>
-      </div>
-
+    <div className='outer-container-two-dim'>
+      
       <div className='array-visualization-container'>
         <TwoDimArray2 data={data} highlightedIndices={[]} shouldHighlight={false} />
       </div>
@@ -52,6 +49,10 @@ function TwoDimListSplitVisualizer() {
           stepCol={stepCol} setStepCol={setStepCol}
         />
       </div>
+      <div className='btn-group'>
+        <button onClick={handleReset}>Reset to Default 2-D Array</button>
+      </div>
+
     </div>
   );
 }

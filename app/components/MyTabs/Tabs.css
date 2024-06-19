@@ -193,7 +193,7 @@
   justify-content: center;
   align-items: center;
   padding-left: 100px;
-  margin-left: 30px;
+  margin-left: -70px;
   
   
 }
@@ -254,9 +254,10 @@
   flex-direction: row;
   align-items: center; 
   justify-content: space-between;
-  gap: 20px;
-  padding-left: 200px;
+  gap: 10px;
+  padding-left: 10px;
   margin-top: -100px;
+  margin-bottom: -100px;
   
   
   
@@ -278,6 +279,7 @@
   font-weight:400;
   
   color: #595959;
+  margin-left: -500px;
 }
  
   

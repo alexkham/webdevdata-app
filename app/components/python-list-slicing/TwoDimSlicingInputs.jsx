@@ -649,7 +649,7 @@ function TwoDimSlicingInputs() {
                 <span className='tooltip-text'>Defines the step count for columns (defaults to 1).</span>
             </div>
             <span className='bracket-index'>]</span>
-            <button onClick={resetIndices}>Reset Indices</button>
+            <button className='reset-btn' onClick={resetIndices}>Reset Indices</button>
         </div>
     );
 }

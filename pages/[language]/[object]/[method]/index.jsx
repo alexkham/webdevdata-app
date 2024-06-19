@@ -31,7 +31,9 @@ export default function MethodPage({ data }) {
       
       <br></br>
       <br></br>
-      <div className='outer-container'>
+      <br></br>
+      <br></br>
+      <div className='outer-container-page'>
       <DynamicAccordion data={dataArray} ></DynamicAccordion>
       <div className='syntax'>
         <br></br>
