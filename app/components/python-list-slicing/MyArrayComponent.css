@@ -267,6 +267,7 @@
 .outer-frame{
   display: flex;
   flex-direction: row;
+  justify-content: left;
 }
 
 .python-list {

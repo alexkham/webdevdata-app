@@ -90,9 +90,9 @@ export default function Home() {
      <br></br>
      <br></br>
      <br></br>
-     {/* <TwoDimArray2  data={exampleData} 
+     <TwoDimArray2  data={exampleData} 
      highlightedIndices={highlightedIndices} 
-     shouldHighlight={true}></TwoDimArray2> */}
+     shouldHighlight={true}></TwoDimArray2>
 
 
 
@@ -102,7 +102,10 @@ export default function Home() {
      <br></br>
      {/* <TreeStructure></TreeStructure> */}
      <br></br>
-     
+     <TwoDimArray2
+     highlightedIndices={highlightedIndices} 
+     shouldHighlight={true}
+     ></TwoDimArray2>
      <br></br>
      <br></br>
      <br></br>
