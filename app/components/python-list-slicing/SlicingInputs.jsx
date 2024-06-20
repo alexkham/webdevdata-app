@@ -9,7 +9,7 @@ function SlicingInputs({ start, stop, step, setStart, setStop, setStep }) {
       }
   return (
     <div className='expression'>
-      <span className='bracket-title'>seq </span><span className='bracket-index'>[</span>
+      <span className='bracket-title'>List </span><span className='bracket-index'>[</span>
       <div className='index-input-item'>
         <input
           type="number"

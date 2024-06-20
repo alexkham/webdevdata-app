@@ -65,13 +65,18 @@
 // };
 
 // export default Disclaimer;
+import MyNavbar from '@/app/components/nav-bar/MyNavbar';
 import './pages.css';
 
 const Disclaimer = () => {
   return (
-    <div className="disclaimer">
+    <>
+    <MyNavbar></MyNavbar>
+    <div  style={{ padding: '100px' }}>
+      <div className='title'>
       <h1>LEGAL DISCLAIMER</h1>
       <p>Last updated June 15, 2024</p>
+      </div>
 
       <h2>WEBSITE DISCLAIMER</h2>
       <p>
@@ -115,6 +120,7 @@ const Disclaimer = () => {
         We are a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for us to earn advertising fees by linking to Amazon.com and affiliated websites.
       </p>
     </div>
+    </>
   );
 };
 

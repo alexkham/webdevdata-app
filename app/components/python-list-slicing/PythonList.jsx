@@ -33,7 +33,7 @@ function PythonList({ data, highlightedIndices, shouldHighlight }) {
     alignItems: 'baseline', // Align baseline to lift the brackets
     justifyContent: 'center',
     height: '52px', // Adjusted for the cell height plus padding
-    marginBottom: '30px'
+    marginBottom: '40px'
   };
 
   return (

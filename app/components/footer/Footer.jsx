@@ -17,9 +17,9 @@ const Footer = () => {
         <li>
           <Link href="/disclaimer">Legal Disclaimer</Link>
         </li>
-        {/* <li>
+        <li>
           <Link href="/privacy-policy">Privacy Policy</Link>
-        </li> */}
+        </li>
         <li>
             <Link href="/terms-and-conditions">Terms and Conditions</Link>
           </li>
