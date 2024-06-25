@@ -70,13 +70,13 @@ export default function Home() {
      data={arrays}></DynamicAccordionCode> */}
      <br></br>
      <h1>Welcome to Webdevdata</h1>
-     <TwoDimListSplitVisualizer></TwoDimListSplitVisualizer>
+     {/* <TwoDimListSplitVisualizer></TwoDimListSplitVisualizer> */}
      <br></br>
      <br></br>
      <br></br>
      <br></br>
      <br></br>
-     <FunctionList data={data}></FunctionList>
+     {/* <FunctionList data={data}></FunctionList> */}
      <br></br>
      <br></br>
      <br></br>
@@ -97,7 +97,7 @@ export default function Home() {
      <p>----------------------------------------------------------</p>
      <br></br>
      <br></br>
-     <PythonFunctionsList data={pythonData}></PythonFunctionsList>
+     {/* <PythonFunctionsList data={pythonData}></PythonFunctionsList> */}
      <br></br>
      <br></br>
      <br></br>
