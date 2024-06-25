@@ -24,6 +24,10 @@ import TwoDimArray from "./components/python-list-slicing/TwoDimArray";
 import TwoDimArray2 from "./components/python-list-slicing/TwoDimArray2";
 import TwoDimSlicingInputs from "./components/python-list-slicing/TwoDimSlicingInputs";
 import TwoDimListSplitVisualizer from "./components/python-list-slicing/TwoDimSplitVisualizer";
+import data from './api/db/developement/c/functions.json'
+import FunctionList from "./components/function-list/FunctionList";
+import pythonData from './api/db/developement/python/functions.json'
+import PythonFunctionsList from "./components/function-list/PythonFunctionsList";
 
 
 
@@ -66,11 +70,13 @@ export default function Home() {
      data={arrays}></DynamicAccordionCode> */}
      <br></br>
      <h1>Welcome to Webdevdata</h1>
+     <TwoDimListSplitVisualizer></TwoDimListSplitVisualizer>
      <br></br>
      <br></br>
      <br></br>
      <br></br>
      <br></br>
+     <FunctionList data={data}></FunctionList>
      <br></br>
      <br></br>
      <br></br>
@@ -88,6 +94,11 @@ export default function Home() {
      <br></br>
      <br></br>
      <br></br>
+     <p>----------------------------------------------------------</p>
+     <br></br>
+     <br></br>
+     <PythonFunctionsList data={pythonData}></PythonFunctionsList>
+     <br></br>
      <br></br>
      <br></br>
      <br></br>
@@ -95,7 +106,7 @@ export default function Home() {
      highlightedIndices={highlightedIndices} 
      shouldHighlight={true}></TwoDimArray2> */}
 
-      {/* <TwoDimListSplitVisualizer></TwoDimListSplitVisualizer> */}
+
 
      <br></br>
      {/* <VisualizeLambda></VisualizeLambda> */}

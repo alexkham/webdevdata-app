@@ -1,0 +1,2966 @@
+[
+    {
+        "function_name": "abort",
+        "include_file": "stdlib.h",
+        "return_type": "void",
+        "parameter_types": [],
+        "main_category": "Error Handling and Debugging",
+        "sub_category": "Process Termination",
+        "data_type_manipulated": "none",
+        "description": "Causes abnormal program termination."
+    },
+    {
+        "function_name": "abs",
+        "include_file": "stdlib.h",
+        "return_type": "int",
+        "parameter_types": ["int"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Basic Computation",
+        "data_type_manipulated": "integers",
+        "description": "Computes the absolute value of an integer."
+    },
+    {
+        "function_name": "acos",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the arc cosine of the specified number."
+    },
+    {
+        "function_name": "asctime",
+        "include_file": "time.h",
+        "return_type": "char*",
+        "parameter_types": ["const struct tm*"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Conversion and Calculation",
+        "data_type_manipulated": "strings",
+        "description": "Converts a time structure to a string representation."
+    },
+    {
+        "function_name": "asctime_r",
+        "include_file": "time.h",
+        "return_type": "char*",
+        "parameter_types": ["const struct tm*", "char*"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Conversion and Calculation",
+        "data_type_manipulated": "strings",
+        "description": "Thread-safe version of asctime."
+    },
+    {
+        "function_name": "asin",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the arc sine of the specified number."
+    },
+    {
+        "function_name": "assert",
+        "include_file": "assert.h",
+        "return_type": "void",
+        "parameter_types": ["int"],
+        "main_category": "Error Handling and Debugging",
+        "sub_category": "Program Validation",
+        "data_type_manipulated": "none",
+        "description": "Tests the given condition and causes a program abort if false."
+    },
+    {
+        "function_name": "atan",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the arc tangent of the specified number."
+    },
+    {
+        "function_name": "atan2",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double", "double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the arc tangent of two variables representing the quotient."
+    },
+    {
+        "function_name": "atexit",
+        "include_file": "stdlib.h",
+        "return_type": "int",
+        "parameter_types": ["void (*)()"],
+        "main_category": "Error Handling and Debugging",
+        "sub_category": "Process Termination",
+        "data_type_manipulated": "none",
+        "description": "Registers a function to be called at program termination."
+    },
+    
+    {
+        "function_name": "atof",
+        "include_file": "stdlib.h",
+        "return_type": "double",
+        "parameter_types": ["const char*"],
+        "main_category": "Data Conversion and Formatting",
+        "sub_category": "Type Conversion",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Converts a string to a floating-point number."
+    },
+    {
+        "function_name": "atoi",
+        "include_file": "stdlib.h",
+        "return_type": "int",
+        "parameter_types": ["const char*"],
+        "main_category": "Data Conversion and Formatting",
+        "sub_category": "Type Conversion",
+        "data_type_manipulated": "integers",
+        "description": "Converts a string to an integer."
+    },
+    {
+        "function_name": "atol",
+        "include_file": "stdlib.h",
+        "return_type": "long",
+        "parameter_types": ["const char*"],
+        "main_category": "Data Conversion and Formatting",
+        "sub_category": "Type Conversion",
+        "data_type_manipulated": "integers",
+        "description": "Converts a string to a long integer."
+    },
+    {
+        "function_name": "bsearch",
+        "include_file": "stdlib.h",
+        "return_type": "void*",
+        "parameter_types": ["const void*", "const void*", "size_t", "size_t", "int (*)(const void*, const void*)"],
+        "main_category": "Data Search and Sorting",
+        "sub_category": "Search Algorithms",
+        "data_type_manipulated": "generic pointers",
+        "description": "Performs binary search over an array."
+    },
+    {
+        "function_name": "btowc",
+        "include_file": "wchar.h",
+        "return_type": "wint_t",
+        "parameter_types": ["int"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Conversion",
+        "data_type_manipulated": "wide characters",
+        "description": "Converts a single-byte character to a wide character."
+    },
+    {
+        "function_name": "calloc",
+        "include_file": "stdlib.h",
+        "return_type": "void*",
+        "parameter_types": ["size_t", "size_t"],
+        "main_category": "Memory Management",
+        "sub_category": "Allocation",
+        "data_type_manipulated": "memory",
+        "description": "Allocates memory for an array of elements, initializing them to zero."
+    },
+    {
+        "function_name": "catclose",
+        "include_file": "nl_types.h",
+        "return_type": "int",
+        "parameter_types": ["nl_catd"],
+        "main_category": "System Interaction",
+        "sub_category": "Localization Support",
+        "data_type_manipulated": "catalog descriptors",
+        "description": "Closes a message catalog."
+    },
+    {
+        "function_name": "catgets",
+        "include_file": "nl_types.h",
+        "return_type": "char*",
+        "parameter_types": ["nl_catd", "int", "int", "const char*"],
+        "main_category": "System Interaction",
+        "sub_category": "Localization Support",
+        "data_type_manipulated": "strings",
+        "description": "Reads a string from a message catalog."
+    },
+    {
+        "function_name": "catopen",
+        "include_file": "nl_types.h",
+        "return_type": "nl_catd",
+        "parameter_types": ["const char*", "int"],
+        "main_category": "System Interaction",
+        "sub_category": "Localization Support",
+        "data_type_manipulated": "catalog descriptors",
+        "description": "Opens a message catalog."
+    },
+    {
+        "function_name": "ceil",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the smallest integer value greater than or equal to the argument."
+    },
+
+    {
+        "function_name": "clearerr",
+        "include_file": "stdio.h",
+        "return_type": "void",
+        "parameter_types": ["FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "file streams",
+        "description": "Clears the error and end-of-file indicators for a given stream."
+    },
+    {
+        "function_name": "clock",
+        "include_file": "time.h",
+        "return_type": "clock_t",
+        "parameter_types": [],
+        "main_category": "Time and Date Management",
+        "sub_category": "Time Measurement",
+        "data_type_manipulated": "time",
+        "description": "Returns the processor time consumed by the program."
+    },
+    {
+        "function_name": "cos",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the cosine of the specified angle in radians."
+    },
+    {
+        "function_name": "cosh",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the hyperbolic cosine of the specified number."
+    },
+    {
+        "function_name": "ctime",
+        "include_file": "time.h",
+        "return_type": "char*",
+        "parameter_types": ["const time_t*"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Conversion and Calculation",
+        "data_type_manipulated": "strings",
+        "description": "Converts the calendar time to a local time string."
+    },
+    {
+        "function_name": "ctime64",
+        "include_file": "time.h",
+        "return_type": "char*",
+        "parameter_types": ["const __time64_t*"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Conversion and Calculation",
+        "data_type_manipulated": "strings",
+        "description": "Converts the 64-bit calendar time to a local time string."
+    },
+    {
+        "function_name": "ctime_r",
+        "include_file": "time.h",
+        "return_type": "char*",
+        "parameter_types": ["const time_t*", "char*"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Conversion and Calculation",
+        "data_type_manipulated": "strings",
+        "description": "Thread-safe version of ctime."
+    },
+    {
+        "function_name": "ctime64_r",
+        "include_file": "time.h",
+        "return_type": "char*",
+        "parameter_types": ["const __time64_t*", "char*"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Conversion and Calculation",
+        "data_type_manipulated": "strings",
+        "description": "Thread-safe version of ctime64."
+    },
+    {
+        "function_name": "difftime",
+        "include_file": "time.h",
+        "return_type": "double",
+        "parameter_types": ["time_t", "time_t"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Time Measurement",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Computes the difference in seconds between two times."
+    },
+    {
+        "function_name": "difftime64",
+        "include_file": "time.h",
+        "return_type": "double",
+        "parameter_types": ["__time64_t", "__time64_t"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Time Measurement",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Computes the difference in seconds between two 64-bit times."
+    },
+    
+    {
+        "function_name": "div",
+        "include_file": "stdlib.h",
+        "return_type": "div_t",
+        "parameter_types": ["int", "int"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Basic Computation",
+        "data_type_manipulated": "integers",
+        "description": "Divides two integers and returns both the quotient and remainder."
+    },
+    {
+        "function_name": "erf",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the error function of the specified number."
+    },
+    {
+        "function_name": "erfc",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the complementary error function of the specified number."
+    },
+    {
+        "function_name": "exit",
+        "include_file": "stdlib.h",
+        "return_type": "void",
+        "parameter_types": ["int"],
+        "main_category": "Error Handling and Debugging",
+        "sub_category": "Process Termination",
+        "data_type_manipulated": "none",
+        "description": "Terminates the program and returns control to the host environment."
+    },
+    {
+        "function_name": "exp",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the exponential function e raised to the power of the specified number."
+    },
+    {
+        "function_name": "fabs",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Basic Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the absolute value of a floating-point number."
+    },
+    {
+        "function_name": "fclose",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "File Management",
+        "data_type_manipulated": "file streams",
+        "description": "Closes the file pointed to by the file pointer."
+    },
+    {
+        "function_name": "fdopen5",
+        "include_file": "stdio.h",
+        "return_type": "FILE*",
+        "parameter_types": ["int", "const char*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "file streams",
+        "description": "Associates a file descriptor with an input/output stream."
+    },
+    {
+        "function_name": "feof",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "file streams",
+        "description": "Checks if the end of the file has been reached."
+    },
+    {
+        "function_name": "ferror",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Error Handling",
+        "data_type_manipulated": "file streams",
+        "description": "Checks for an error in file streams."
+    },
+
+
+    {
+        "function_name": "fflush1",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "file streams",
+        "description": "Flushes the output buffer of a file stream."
+    },
+    {
+        "function_name": "fgetc1",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "File Management",
+        "data_type_manipulated": "file streams",
+        "description": "Reads the next character from the specified file stream."
+    },
+    {
+        "function_name": "fgetpos1",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["FILE*", "fpos_t*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "file streams",
+        "description": "Gets the current file position of the stream and stores it in a position indicator."
+    },
+    {
+        "function_name": "fgets1",
+        "include_file": "stdio.h",
+        "return_type": "char*",
+        "parameter_types": ["char*", "int", "FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "File Management",
+        "data_type_manipulated": "strings",
+        "description": "Reads a line from the specified stream and stores it into the string pointed to by str."
+    },
+    {
+        "function_name": "fgetwc6",
+        "include_file": "stdio.h",
+        "return_type": "wint_t",
+        "parameter_types": ["FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "File Management",
+        "data_type_manipulated": "wide characters",
+        "description": "Reads a wide character from the given input stream."
+    },
+    {
+        "function_name": "fgetws6",
+        "include_file": "stdio.h",
+        "return_type": "wchar_t*",
+        "parameter_types": ["wchar_t*", "int", "FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "File Management",
+        "data_type_manipulated": "wide characters",
+        "description": "Reads a line of wide characters from a stream."
+    },
+    {
+        "function_name": "fileno5",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "file descriptors",
+        "description": "Returns the integer file descriptor associated with the file stream."
+    },
+    {
+        "function_name": "floor",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the largest integer value less than or equal to the specified number."
+    },
+    {
+        "function_name": "fmod",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double", "double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the remainder of the division of two floating-point numbers."
+    },
+    {
+        "function_name": "fopen",
+        "include_file": "stdio.h",
+        "return_type": "FILE*",
+        "parameter_types": ["const char*", "const char*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "File Management",
+        "data_type_manipulated": "file streams",
+        "description": "Opens the file named by filename and returns a stream associated with that file."
+    },
+
+        {
+        "function_name": "fprintf",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["FILE*", "const char*", "..."],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "file streams",
+        "description": "Writes formatted output to a stream."
+    },
+    {
+        "function_name": "fputc1",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["int", "FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "File Management",
+        "data_type_manipulated": "file streams",
+        "description": "Writes a character to a file stream."
+    },
+    {
+        "function_name": "fputs1",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["const char*", "FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "File Management",
+        "data_type_manipulated": "strings",
+        "description": "Writes a string to a file stream."
+    },
+    {
+        "function_name": "fputwc6",
+        "include_file": "stdio.h",
+        "return_type": "wint_t",
+        "parameter_types": ["wchar_t", "FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "File Management",
+        "data_type_manipulated": "wide characters",
+        "description": "Writes a wide character to a file stream."
+    },
+    {
+        "function_name": "fputws6",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["const wchar_t*", "FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "File Management",
+        "data_type_manipulated": "wide characters",
+        "description": "Writes a wide-character string to a file stream."
+    },
+    {
+        "function_name": "fread",
+        "include_file": "stdio.h",
+        "return_type": "size_t",
+        "parameter_types": ["void*", "size_t", "size_t", "FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "File Management",
+        "data_type_manipulated": "file streams",
+        "description": "Reads data from the given stream into the array pointed to by ptr."
+    },
+    {
+        "function_name": "free",
+        "include_file": "stdlib.h",
+        "return_type": "void",
+        "parameter_types": ["void*"],
+        "main_category": "Memory Management",
+        "sub_category": "Management",
+        "data_type_manipulated": "memory",
+        "description": "Frees the memory space pointed to by ptr, which must have been returned by a previous call to malloc or calloc."
+    },
+    {
+        "function_name": "freopen",
+        "include_file": "stdio.h",
+        "return_type": "FILE*",
+        "parameter_types": ["const char*", "const char*", "FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "File Management",
+        "data_type_manipulated": "file streams",
+        "description": "Reopens the file stream with a different file or mode."
+    },
+    {
+        "function_name": "frexp",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double", "int*"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Decomposes a floating-point number into its binary significand and an integral exponent for 2."
+    },
+    {
+        "function_name": "fscanf",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["FILE*", "const char*", "..."],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "file streams",
+        "description": "Reads formatted input from a stream."
+    },
+    
+    {
+        "function_name": "fseek1",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["FILE*", "long", "int"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "file streams",
+        "description": "Sets the file position of the stream to the given offset."
+    },
+    {
+        "function_name": "fsetpos1",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["FILE*", "const fpos_t*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "file streams",
+        "description": "Sets the file position of the stream based on the position given by fpos_t."
+    },
+    {
+        "function_name": "ftell1",
+        "include_file": "stdio.h",
+        "return_type": "long",
+        "parameter_types": ["FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "file streams",
+        "description": "Returns the current file position of the stream."
+    },
+    {
+        "function_name": "fwide6",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["FILE*", "int"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Wide Character Support",
+        "data_type_manipulated": "file streams",
+        "description": "Sets the orientation of the stream to wide or narrow."
+    },
+    {
+        "function_name": "fwprintf6",
+        "include_file": "wchar.h",
+        "return_type": "int",
+        "parameter_types": ["FILE*", "const wchar_t*", "..."],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Wide Character Support",
+        "data_type_manipulated": "file streams",
+        "description": "Writes formatted wide character output to a stream."
+    },
+    {
+        "function_name": "fwrite",
+        "include_file": "stdio.h",
+        "return_type": "size_t",
+        "parameter_types": ["const void*", "size_t", "size_t", "FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "File Management",
+        "data_type_manipulated": "file streams",
+        "description": "Writes data from the given array to the stream."
+    },
+    {
+        "function_name": "fwscanf6",
+        "include_file": "wchar.h",
+        "return_type": "int",
+        "parameter_types": ["FILE*", "const wchar_t*", "..."],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Wide Character Support",
+        "data_type_manipulated": "file streams",
+        "description": "Reads formatted wide character input from a stream."
+    },
+    {
+        "function_name": "gamma",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Computes the gamma function of the specified number."
+    },
+    {
+        "function_name": "getc1",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "File Management",
+        "data_type_manipulated": "file streams",
+        "description": "Reads the next character from the specified stream."
+    },
+    {
+        "function_name": "getchar1",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": [],
+        "main_category": "File and I/O Operations",
+        "sub_category": "File Management",
+        "data_type_manipulated": "standard input",
+        "description": "Reads the next character from the standard input stream."
+    },
+
+    {
+        "function_name": "getenv",
+        "include_file": "stdlib.h",
+        "return_type": "char*",
+        "parameter_types": ["const char*"],
+        "main_category": "System Interaction",
+        "sub_category": "Environment Interaction",
+        "data_type_manipulated": "strings",
+        "description": "Retrieves the value of an environment variable."
+    },
+    {
+        "function_name": "gets",
+        "include_file": "stdio.h",
+        "return_type": "char*",
+        "parameter_types": [],
+        "main_category": "Deprecated",
+        "sub_category": "Unsafe Input Functions",
+        "data_type_manipulated": "strings",
+        "description": "Reads a line from stdin into the buffer pointed to by str until a terminating newline or EOF, which it replaces with a null byte."
+    },
+    {
+        "function_name": "getwc6",
+        "include_file": "stdio.h",
+        "return_type": "wint_t",
+        "parameter_types": ["FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Wide Character Support",
+        "data_type_manipulated": "wide characters",
+        "description": "Gets a wide character from the specified stream."
+    },
+    {
+        "function_name": "getwchar6",
+        "include_file": "wchar.h",
+        "return_type": "wint_t",
+        "parameter_types": [],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Wide Character Support",
+        "data_type_manipulated": "wide characters",
+        "description": "Reads the next wide character from the standard input stream."
+    },
+    {
+        "function_name": "gmtime",
+        "include_file": "time.h",
+        "return_type": "struct tm*",
+        "parameter_types": ["const time_t*"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Time Conversion",
+        "data_type_manipulated": "time structures",
+        "description": "Converts the calendar time to broken-down time representation."
+    },
+    {
+        "function_name": "gmtime64",
+        "include_file": "time.h",
+        "return_type": "struct tm*",
+        "parameter_types": ["const __time64_t*"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Time Conversion",
+        "data_type_manipulated": "time structures",
+        "description": "Converts the 64-bit calendar time to broken-down time representation."
+    },
+    {
+        "function_name": "gmtime_r",
+        "include_file": "time.h",
+        "return_type": "struct tm*",
+        "parameter_types": ["const time_t*", "struct tm*"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Time Conversion",
+        "data_type_manipulated": "time structures",
+        "description": "Thread-safe version of gmtime."
+    },
+    {
+        "function_name": "gmtime64_r",
+        "include_file": "time.h",
+        "return_type": "struct tm*",
+        "parameter_types": ["const __time64_t*", "struct tm*"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Time Conversion",
+        "data_type_manipulated": "time structures",
+        "description": "Thread-safe version of gmtime64."
+    },
+    {
+        "function_name": "hypot",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double", "double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the hypotenuse of a right-angled triangle given its legs."
+    },
+    {
+        "function_name": "isalnum",
+        "include_file": "ctype.h",
+        "return_type": "int",
+        "parameter_types": ["int"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Character Classification",
+        "data_type_manipulated": "characters",
+        "description": "Checks whether the character is alphanumeric."
+    },
+
+
+    {
+        "function_name": "isalpha",
+        "include_file": "ctype.h",
+        "return_type": "int",
+        "parameter_types": ["int"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Character Classification",
+        "data_type_manipulated": "characters",
+        "description": "Checks whether the character is alphabetic."
+    },
+    {
+        "function_name": "isascii4",
+        "include_file": "ctype.h",
+        "return_type": "int",
+        "parameter_types": ["int"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Character Classification",
+        "data_type_manipulated": "characters",
+        "description": "Checks whether the character is an ASCII character."
+    },
+    {
+        "function_name": "isblank",
+        "include_file": "ctype.h",
+        "return_type": "int",
+        "parameter_types": ["int"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Character Classification",
+        "data_type_manipulated": "characters",
+        "description": "Checks whether the character is a blank character (space or tab)."
+    },
+    {
+        "function_name": "iscntrl",
+        "include_file": "ctype.h",
+        "return_type": "int",
+        "parameter_types": ["int"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Character Classification",
+        "data_type_manipulated": "characters",
+        "description": "Checks whether the character is a control character."
+    },
+    {
+        "function_name": "isdigit",
+        "include_file": "ctype.h",
+        "return_type": "int",
+        "parameter_types": ["int"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Character Classification",
+        "data_type_manipulated": "characters",
+        "description": "Checks whether the character is a decimal digit."
+    },
+    {
+        "function_name": "isgraph",
+        "include_file": "ctype.h",
+        "return_type": "int",
+        "parameter_types": ["int"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Character Classification",
+        "data_type_manipulated": "characters",
+        "description": "Checks whether the character has a graphical representation."
+    },
+    {
+        "function_name": "islower",
+        "include_file": "ctype.h",
+        "return_type": "int",
+        "parameter_types": ["int"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Character Classification",
+        "data_type_manipulated": "characters",
+        "description": "Checks whether the character is lowercase."
+    },
+    {
+        "function_name": "isprint",
+        "include_file": "ctype.h",
+        "return_type": "int",
+        "parameter_types": ["int"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Character Classification",
+        "data_type_manipulated": "characters",
+        "description": "Checks whether the character is printable, including space."
+    },
+    {
+        "function_name": "ispunct",
+        "include_file": "ctype.h",
+        "return_type": "int",
+        "parameter_types": ["int"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Character Classification",
+        "data_type_manipulated": "characters",
+        "description": "Checks whether the character is a punctuation character."
+    },
+    {
+        "function_name": "isspace",
+        "include_file": "ctype.h",
+        "return_type": "int",
+        "parameter_types": ["int"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Character Classification",
+        "data_type_manipulated": "characters",
+        "description": "Checks whether the character is a white-space character."
+    },
+
+    {
+        "function_name": "isupper",
+        "include_file": "ctype.h",
+        "return_type": "int",
+        "parameter_types": ["int"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Character Classification",
+        "data_type_manipulated": "characters",
+        "description": "Checks whether the character is an uppercase letter."
+    },
+    {
+        "function_name": "iswalnum4",
+        "include_file": "wctype.h",
+        "return_type": "int",
+        "parameter_types": ["wint_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Classification",
+        "data_type_manipulated": "wide characters",
+        "description": "Checks whether the wide character is alphanumeric."
+    },
+    {
+        "function_name": "iswalpha4",
+        "include_file": "wctype.h",
+        "return_type": "int",
+        "parameter_types": ["wint_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Classification",
+        "data_type_manipulated": "wide characters",
+        "description": "Checks whether the wide character is alphabetic."
+    },
+    {
+        "function_name": "iswblank4",
+        "include_file": "wctype.h",
+        "return_type": "int",
+        "parameter_types": ["wint_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Classification",
+        "data_type_manipulated": "wide characters",
+        "description": "Checks whether the wide character is a blank (space or tab)."
+    },
+    {
+        "function_name": "iswcntrl4",
+        "include_file": "wctype.h",
+        "return_type": "int",
+        "parameter_types": ["wint_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Classification",
+        "data_type_manipulated": "wide characters",
+        "description": "Checks whether the wide character is a control character."
+    },
+    {
+        "function_name": "iswctype4",
+        "include_file": "wctype.h",
+        "return_type": "int",
+        "parameter_types": ["wint_t", "wctype_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Classification",
+        "data_type_manipulated": "wide characters",
+        "description": "Checks whether the wide character conforms to the specified type."
+    },
+    {
+        "function_name": "iswdigit4",
+        "include_file": "wctype.h",
+        "return_type": "int",
+        "parameter_types": ["wint_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Classification",
+        "data_type_manipulated": "wide characters",
+        "description": "Checks whether the wide character is a digit."
+    },
+    {
+        "function_name": "iswgraph4",
+        "include_file": "wctype.h",
+        "return_type": "int",
+        "parameter_types": ["wint_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Classification",
+        "data_type_manipulated": "wide characters",
+        "description": "Checks whether the wide character has a graphical representation."
+    },
+    {
+        "function_name": "iswlower4",
+        "include_file": "wctype.h",
+        "return_type": "int",
+        "parameter_types": ["wint_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Classification",
+        "data_type_manipulated": "wide characters",
+        "description": "Checks whether the wide character is lowercase."
+    },
+    {
+        "function_name": "iswprint4",
+        "include_file": "wctype.h",
+        "return_type": "int",
+        "parameter_types": ["wint_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Classification",
+        "data_type_manipulated": "wide characters",
+        "description": "Checks whether the wide character is printable, including space."
+    },
+
+    {
+        "function_name": "iswpunct4",
+        "include_file": "wctype.h",
+        "return_type": "int",
+        "parameter_types": ["wint_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Classification",
+        "data_type_manipulated": "wide characters",
+        "description": "Checks whether the wide character is a punctuation mark."
+    },
+    {
+        "function_name": "iswspace4",
+        "include_file": "wctype.h",
+        "return_type": "int",
+        "parameter_types": ["wint_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Classification",
+        "data_type_manipulated": "wide characters",
+        "description": "Checks whether the wide character is a whitespace character."
+    },
+    {
+        "function_name": "iswupper4",
+        "include_file": "wctype.h",
+        "return_type": "int",
+        "parameter_types": ["wint_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Classification",
+        "data_type_manipulated": "wide characters",
+        "description": "Checks whether the wide character is uppercase."
+    },
+    {
+        "function_name": "iswxdigit4",
+        "include_file": "wctype.h",
+        "return_type": "int",
+        "parameter_types": ["wint_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Classification",
+        "data_type_manipulated": "wide characters",
+        "description": "Checks whether the wide character is a hexadecimal digit."
+    },
+    {
+        "function_name": "isxdigit4",
+        "include_file": "ctype.h",
+        "return_type": "int",
+        "parameter_types": ["int"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Character Classification",
+        "data_type_manipulated": "characters",
+        "description": "Checks whether the character is a hexadecimal digit."
+    },
+    {
+        "function_name": "j0",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Computes the Bessel function of the first kind of order 0."
+    },
+    {
+        "function_name": "j1",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Computes the Bessel function of the first kind of order 1."
+    },
+    {
+        "function_name": "jn",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["int", "double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Computes the Bessel function of the first kind of order n."
+    },
+    {
+        "function_name": "labs",
+        "include_file": "stdlib.h",
+        "return_type": "long",
+        "parameter_types": ["long"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Basic Computation",
+        "data_type_manipulated": "integers",
+        "description": "Computes the absolute value of a long integer."
+    },
+    {
+        "function_name": "ldexp",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double", "int"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Multiplies a floating-point number by an integral power of 2."
+    },
+
+    {
+        "function_name": "ldiv",
+        "include_file": "stdlib.h",
+        "return_type": "ldiv_t",
+        "parameter_types": ["long", "long"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Basic Computation",
+        "data_type_manipulated": "integers",
+        "description": "Divides two long integers and returns the quotient and remainder."
+    },
+    {
+        "function_name": "localeconv",
+        "include_file": "locale.h",
+        "return_type": "struct lconv*",
+        "parameter_types": [],
+        "main_category": "System Interaction",
+        "sub_category": "Localization Support",
+        "data_type_manipulated": "locale settings",
+        "description": "Returns a pointer to the current locale's formatting settings."
+    },
+    {
+        "function_name": "localtime",
+        "include_file": "time.h",
+        "return_type": "struct tm*",
+        "parameter_types": ["const time_t*"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Time Conversion",
+        "data_type_manipulated": "time structures",
+        "description": "Converts calendar time to local time."
+    },
+    {
+        "function_name": "localtime64",
+        "include_file": "time.h",
+        "return_type": "struct tm*",
+        "parameter_types": ["const __time64_t*"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Time Conversion",
+        "data_type_manipulated": "time structures",
+        "description": "Converts 64-bit calendar time to local time."
+    },
+    {
+        "function_name": "localtime_r",
+        "include_file": "time.h",
+        "return_type": "struct tm*",
+        "parameter_types": ["const time_t*", "struct tm*"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Time Conversion",
+        "data_type_manipulated": "time structures",
+        "description": "Thread-safe version of localtime."
+    },
+    {
+        "function_name": "localtime64_r",
+        "include_file": "time.h",
+        "return_type": "struct tm*",
+        "parameter_types": ["const __time64_t*", "struct tm*"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Time Conversion",
+        "data_type_manipulated": "time structures",
+        "description": "Thread-safe version of localtime64."
+    },
+    {
+        "function_name": "log",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the natural logarithm of the specified number."
+    },
+    {
+        "function_name": "log10",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the base-10 logarithm of the specified number."
+    },
+    {
+        "function_name": "longjmp",
+        "include_file": "setjmp.h",
+        "return_type": "void",
+        "parameter_types": ["jmp_buf", "int"],
+        "main_category": "Error Handling and Debugging",
+        "sub_category": "Program Control",
+        "data_type_manipulated": "none",
+        "description": "Restores the environment saved by setjmp with a specified return value."
+    },
+    {
+        "function_name": "malloc",
+        "include_file": "stdlib.h",
+        "return_type": "void*",
+        "parameter_types": ["size_t"],
+        "main_category": "Memory Management",
+        "sub_category": "Allocation",
+        "data_type_manipulated": "memory",
+        "description": "Allocates a specified amount of memory and returns a pointer to it."
+    },
+
+    {
+        "function_name": "mblen",
+        "include_file": "stdlib.h",
+        "return_type": "int",
+        "parameter_types": ["const char*", "size_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Multibyte Character Handling",
+        "data_type_manipulated": "bytes",
+        "description": "Returns the number of bytes in the next multibyte character."
+    },
+    {
+        "function_name": "mbrlen4",
+        "include_file": "wchar.h",
+        "return_type": "size_t",
+        "parameter_types": ["const char*", "size_t", "mbstate_t*"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Multibyte Character Handling",
+        "data_type_manipulated": "bytes",
+        "description": "Determines the number of bytes in a multibyte character, given state."
+    },
+    {
+        "function_name": "mbrtowc4",
+        "include_file": "wchar.h",
+        "return_type": "size_t",
+        "parameter_types": ["wchar_t*", "const char*", "size_t", "mbstate_t*"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Multibyte to Wide Character Conversion",
+        "data_type_manipulated": "wide characters",
+        "description": "Converts a multibyte sequence to a wide character."
+    },
+    {
+        "function_name": "mbsinit4",
+        "include_file": "wchar.h",
+        "return_type": "int",
+        "parameter_types": ["const mbstate_t*"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Multibyte Character Handling",
+        "data_type_manipulated": "state objects",
+        "description": "Checks if the multibyte state object is in the initial state."
+    },
+    {
+        "function_name": "mbsrtowcs4",
+        "include_file": "wchar.h",
+        "return_type": "size_t",
+        "parameter_types": ["wchar_t*", "const char**", "size_t", "mbstate_t*"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Multibyte to Wide Character Conversion",
+        "data_type_manipulated": "wide characters",
+        "description": "Converts a multibyte string to a wide character string."
+    },
+    {
+        "function_name": "mbstowcs",
+        "include_file": "stdlib.h",
+        "return_type": "size_t",
+        "parameter_types": ["wchar_t*", "const char*", "size_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Multibyte to Wide Character Conversion",
+        "data_type_manipulated": "wide characters",
+        "description": "Converts a multibyte string to a wide character string, not dependent on the current locale."
+    },
+    {
+        "function_name": "mbtowc",
+        "include_file": "stdlib.h",
+        "return_type": "int",
+        "parameter_types": ["wchar_t*", "const char*", "size_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Multibyte to Wide Character Conversion",
+        "data_type_manipulated": "wide characters",
+        "description": "Converts a multibyte sequence to a single wide character."
+    },
+    {
+        "function_name": "memchr",
+        "include_file": "string.h",
+        "return_type": "void*",
+        "parameter_types": ["const void*", "int", "size_t"],
+        "main_category": "Memory Management",
+        "sub_category": "Search",
+        "data_type_manipulated": "memory",
+        "description": "Searches for the first occurrence of a character in a block of memory."
+    },
+    {
+        "function_name": "memcmp",
+        "include_file": "string.h",
+        "return_type": "int",
+        "parameter_types": ["const void*", "const void*", "size_t"],
+        "main_category": "Memory Management",
+        "sub_category": "Comparison",
+        "data_type_manipulated": "memory",
+        "description": "Compares two blocks of memory."
+    },
+    {
+        "function_name": "memcpy",
+        "include_file": "string.h",
+        "return_type": "void*",
+        "parameter_types": ["void*", "const void*", "size_t"],
+        "main_category": "Memory Management",
+        "sub_category": "Copying",
+        "data_type_manipulated": "memory",
+        "description": "Copies one block of memory to another."
+    },
+
+    {
+        "function_name": "memmove",
+        "include_file": "string.h",
+        "return_type": "void*",
+        "parameter_types": ["void*", "const void*", "size_t"],
+        "main_category": "Memory Management",
+        "sub_category": "Copying",
+        "data_type_manipulated": "memory",
+        "description": "Copies one block of memory to another, safely handling overlapping memory areas."
+    },
+    {
+        "function_name": "memset",
+        "include_file": "string.h",
+        "return_type": "void*",
+        "parameter_types": ["void*", "int", "size_t"],
+        "main_category": "Memory Management",
+        "sub_category": "Initialization",
+        "data_type_manipulated": "memory",
+        "description": "Fills a block of memory with a specified value."
+    },
+    {
+        "function_name": "mktime",
+        "include_file": "time.h",
+        "return_type": "time_t",
+        "parameter_types": ["struct tm*"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Time Conversion",
+        "data_type_manipulated": "time structures",
+        "description": "Converts a time structure to calendar time."
+    },
+    {
+        "function_name": "mktime64",
+        "include_file": "time.h",
+        "return_type": "time_t",
+        "parameter_types": ["struct tm*"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Time Conversion",
+        "data_type_manipulated": "time structures",
+        "description": "Converts a time structure to 64-bit calendar time."
+    },
+    {
+        "function_name": "modf",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double", "double*"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Breaks a floating-point number into integer and fractional parts."
+    },
+    {
+        "function_name": "nextafter",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double", "double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Returns the next representable value of the first argument in the direction of the second argument."
+    },
+    {
+        "function_name": "nextafterl",
+        "include_file": "math.h",
+        "return_type": "long double",
+        "parameter_types": ["long double", "long double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Returns the next representable long double value of the first argument in the direction of the second argument."
+    },
+    {
+        "function_name": "nexttoward",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double", "long double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Returns the next representable value of the first argument towards the second argument, specified as a long double."
+    },
+    {
+        "function_name": "nexttowardl",
+        "include_file": "math.h",
+        "return_type": "long double",
+        "parameter_types": ["long double", "long double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Returns the next representable long double value of the first argument towards the second argument, specified as a long double."
+    },
+    {
+        "function_name": "nl_langinfo4",
+        "include_file": "langinfo.h",
+        "return_type": "char*",
+        "parameter_types": ["nl_item"],
+        "main_category": "System Interaction",
+        "sub_category": "Localization Support",
+        "data_type_manipulated": "locale information",
+        "description": "Retrieves information about the current locale specified by the item."
+    },
+
+    {
+        "function_name": "perror",
+        "include_file": "stdio.h",
+        "return_type": "void",
+        "parameter_types": ["const char*"],
+        "main_category": "Error Handling and Debugging",
+        "sub_category": "Error Reporting",
+        "data_type_manipulated": "none",
+        "description": "Prints a descriptive error message to stderr based on the current value of the C global variable errno."
+    },
+    {
+        "function_name": "pow",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double", "double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the power of one number raised to another, i.e., base raised to the exponent."
+    },
+    {
+        "function_name": "printf",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["const char*", "..."],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "standard output",
+        "description": "Prints formatted output to the standard output stream."
+    },
+    {
+        "function_name": "putc1",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["int", "FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "File Management",
+        "data_type_manipulated": "file streams",
+        "description": "Writes a character to the specified stream."
+    },
+    {
+        "function_name": "putchar1",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": [],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Standard Output",
+        "data_type_manipulated": "standard output",
+        "description": "Writes a character to the standard output stream."
+    },
+    {
+        "function_name": "putenv",
+        "include_file": "stdlib.h",
+        "return_type": "int",
+        "parameter_types": ["char*"],
+        "main_category": "System Interaction",
+        "sub_category": "Environment Interaction",
+        "data_type_manipulated": "environment variables",
+        "description": "Changes or adds a value to the environment."
+    },
+    {
+        "function_name": "puts",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["const char*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Standard Output",
+        "data_type_manipulated": "standard output",
+        "description": "Writes a string followed by a newline to the standard output stream."
+    },
+    {
+        "function_name": "putwc6",
+        "include_file": "stdio.h",
+        "return_type": "wint_t",
+        "parameter_types": ["wchar_t", "FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Wide Character Support",
+        "data_type_manipulated": "file streams",
+        "description": "Writes a wide character to the specified stream."
+    },
+    {
+        "function_name": "putwchar6",
+        "include_file": "wchar.h",
+        "return_type": "wint_t",
+        "parameter_types": [],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Wide Character Support",
+        "data_type_manipulated": "standard output",
+        "description": "Writes a wide character to the standard output stream."
+    },
+    {
+        "function_name": "qsort",
+        "include_file": "stdlib.h",
+        "return_type": "void",
+        "parameter_types": ["void*", "size_t", "size_t", "int (*)(const void*, const void*)"],
+        "main_category": "Data Search and Sorting",
+        "sub_category": "Sorting Algorithms",
+        "data_type_manipulated": "generic pointers",
+        "description": "Sorts an array of elements using the quicksort algorithm."
+    },
+
+    {
+        "function_name": "quantexpd32",
+        "include_file": "math.h",
+        "return_type": "int",
+        "parameter_types": ["_Decimal32"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Decimal Floating-Point Computation",
+        "data_type_manipulated": "decimal floating-point",
+        "description": "Determines the exponent of a decimal floating-point number (_Decimal32)."
+    },
+    {
+        "function_name": "quantexpd64",
+        "include_file": "math.h",
+        "return_type": "int",
+        "parameter_types": ["_Decimal64"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Decimal Floating-Point Computation",
+        "data_type_manipulated": "decimal floating-point",
+        "description": "Determines the exponent of a decimal floating-point number (_Decimal64)."
+    },
+    {
+        "function_name": "quantexpd128",
+        "include_file": "math.h",
+        "return_type": "int",
+        "parameter_types": ["_Decimal128"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Decimal Floating-Point Computation",
+        "data_type_manipulated": "decimal floating-point",
+        "description": "Determines the exponent of a decimal floating-point number (_Decimal128)."
+    },
+    {
+        "function_name": "quantized32",
+        "include_file": "math.h",
+        "return_type": "_Decimal32",
+        "parameter_types": ["_Decimal32", "_Decimal32"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Decimal Floating-Point Computation",
+        "data_type_manipulated": "decimal floating-point",
+        "description": "Quantizes a decimal floating-point number (_Decimal32) to the same exponent as another."
+    },
+    {
+        "function_name": "quantized64",
+        "include_file": "math.h",
+        "return_type": "_Decimal64",
+        "parameter_types": ["_Decimal64", "_Decimal64"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Decimal Floating-Point Computation",
+        "data_type_manipulated": "decimal floating-point",
+        "description": "Quantizes a decimal floating-point number (_Decimal64) to the same exponent as another."
+    },
+    {
+        "function_name": "quantized128",
+        "include_file": "math.h",
+        "return_type": "_Decimal128",
+        "parameter_types": ["_Decimal128", "_Decimal128"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Decimal Floating-Point Computation",
+        "data_type_manipulated": "decimal floating-point",
+        "description": "Quantizes a decimal floating-point number (_Decimal128) to the same exponent as another."
+    },
+    {
+        "function_name": "samequantumd32",
+        "include_file": "math.h",
+        "return_type": "int",
+        "parameter_types": ["_Decimal32", "_Decimal32"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Decimal Floating-Point Computation",
+        "data_type_manipulated": "decimal floating-point",
+        "description": "Checks if two _Decimal32 numbers have the same quantization (exponent)."
+    },
+    {
+        "function_name": "samequantumd64",
+        "include_file": "math.h",
+        "return_type": "int",
+        "parameter_types": ["_Decimal64", "_Decimal64"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Decimal Floating-Point Computation",
+        "data_type_manipulated": "decimal floating-point",
+        "description": "Checks if two _Decimal64 numbers have the same quantization (exponent)."
+    },
+    {
+        "function_name": "samequantumd128",
+        "include_file": "math.h",
+        "return_type": "int",
+        "parameter_types": ["_Decimal128", "_Decimal128"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Decimal Floating-Point Computation",
+        "data_type_manipulated": "decimal floating-point",
+        "description": "Checks if two _Decimal128 numbers have the same quantization (exponent)."
+    },
+    {
+        "function_name": "raise",
+        "include_file": "signal.h",
+        "return_type": "int",
+        "parameter_types": ["int"],
+        "main_category": "Error Handling and Debugging",
+        "sub_category": "Signal Processing",
+        "data_type_manipulated": "process signals",
+        "description": "Sends a signal to the current process."
+    },
+
+    {
+        "function_name": "rand",
+        "include_file": "stdlib.h",
+        "return_type": "int",
+        "parameter_types": [],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Random Number Generation",
+        "data_type_manipulated": "none",
+        "description": "Generates a pseudo-random number."
+    },
+    {
+        "function_name": "rand_r",
+        "include_file": "stdlib.h",
+        "return_type": "int",
+        "parameter_types": ["unsigned int*"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Random Number Generation",
+        "data_type_manipulated": "none",
+        "description": "Generates a pseudo-random number using a given seed, thread-safe."
+    },
+    {
+        "function_name": "realloc",
+        "include_file": "stdlib.h",
+        "return_type": "void*",
+        "parameter_types": ["void*", "size_t"],
+        "main_category": "Memory Management",
+        "sub_category": "Allocation",
+        "data_type_manipulated": "memory",
+        "description": "Changes the size of the memory block pointed to by ptr."
+    },
+    {
+        "function_name": "regcomp",
+        "include_file": "regex.h",
+        "return_type": "int",
+        "parameter_types": ["regex_t*", "const char*", "int"],
+        "main_category": "Data Search and Sorting",
+        "sub_category": "Regular Expression Handling",
+        "data_type_manipulated": "regular expressions",
+        "description": "Compiles a regular expression into a form that can be used for pattern matching."
+    },
+    {
+        "function_name": "regerror",
+        "include_file": "regex.h",
+        "return_type": "size_t",
+        "parameter_types": ["int", "const regex_t*", "char*", "size_t"],
+        "main_category": "Data Search and Sorting",
+        "sub_category": "Regular Expression Handling",
+        "data_type_manipulated": "error messages",
+        "description": "Produces a human-readable error message based on the error code from regcomp or regexec."
+    },
+    {
+        "function_name": "regexec",
+        "include_file": "regex.h",
+        "return_type": "int",
+        "parameter_types": ["const regex_t*", "const char*", "size_t", "regmatch_t*", "int"],
+        "main_category": "Data Search and Sorting",
+        "sub_category": "Regular Expression Handling",
+        "data_type_manipulated": "regular expressions",
+        "description": "Matches a null-terminated string against the precompiled pattern buffer specified by regex_t."
+    },
+    {
+        "function_name": "regfree",
+        "include_file": "regex.h",
+        "return_type": "void",
+        "parameter_types": ["regex_t*"],
+        "main_category": "Data Search and Sorting",
+        "sub_category": "Regular Expression Handling",
+        "data_type_manipulated": "regular expressions",
+        "description": "Frees any memory allocated by regcomp for the compiled regular expression."
+    },
+    {
+        "function_name": "remove",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["const char*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "File Management",
+        "data_type_manipulated": "files",
+        "description": "Deletes a file."
+    },
+    {
+        "function_name": "rename",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["const char*", "const char*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "File Management",
+        "data_type_manipulated": "files",
+        "description": "Renames a file or directory."
+    },
+    {
+        "function_name": "rewind1",
+        "include_file": "stdio.h",
+        "return_type": "void",
+        "parameter_types": ["FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "file streams",
+        "description": "Sets the file position to the beginning of the file stream."
+    },
+
+    {
+        "function_name": "scanf",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["const char*", "..."],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "standard input",
+        "description": "Reads formatted input from the standard input stream."
+    },
+    {
+        "function_name": "setbuf",
+        "include_file": "stdio.h",
+        "return_type": "void",
+        "parameter_types": ["FILE*", "char*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "file streams",
+        "description": "Sets the buffer to be used by the stream for I/O operations."
+    },
+    {
+        "function_name": "setjmp",
+        "include_file": "setjmp.h",
+        "return_type": "int",
+        "parameter_types": ["jmp_buf"],
+        "main_category": "Error Handling and Debugging",
+        "sub_category": "Program Control",
+        "data_type_manipulated": "none",
+        "description": "Saves the calling environment for longjmp."
+    },
+    {
+        "function_name": "setlocale",
+        "include_file": "locale.h",
+        "return_type": "char*",
+        "parameter_types": ["int", "const char*"],
+        "main_category": "System Interaction",
+        "sub_category": "Localization Support",
+        "data_type_manipulated": "locale settings",
+        "description": "Sets or queries the program's locale."
+    },
+    {
+        "function_name": "setvbuf",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["FILE*", "char*", "int", "size_t"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "file streams",
+        "description": "Sets a specific buffer and buffering mode for the given stream."
+    },
+    {
+        "function_name": "signal",
+        "include_file": "signal.h",
+        "return_type": "sighandler_t",
+        "parameter_types": ["int", "sighandler_t"],
+        "main_category": "Error Handling and Debugging",
+        "sub_category": "Signal Processing",
+        "data_type_manipulated": "process signals",
+        "description": "Sets a function to handle a particular signal."
+    },
+    {
+        "function_name": "sin",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the sine of the specified angle in radians."
+    },
+    {
+        "function_name": "sinh",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the hyperbolic sine of the specified number."
+    },
+    {
+        "function_name": "snprintf",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["char*", "size_t", "const char*", "..."],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "strings",
+        "description": "Writes formatted output to a string with a length limit."
+    },
+    {
+        "function_name": "sprintf",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["char*", "const char*", "..."],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "strings",
+        "description": "Writes formatted output to a string."
+    },
+
+    {
+        "function_name": "sqrt",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the square root of the specified number."
+    },
+    {
+        "function_name": "srand",
+        "include_file": "stdlib.h",
+        "return_type": "void",
+        "parameter_types": ["unsigned int"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Random Number Generation",
+        "data_type_manipulated": "none",
+        "description": "Seeds the pseudo-random number generator used by rand()."
+    },
+    {
+        "function_name": "sscanf",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["const char*", "const char*", "..."],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "strings",
+        "description": "Reads formatted input from a string."
+    },
+    {
+        "function_name": "strcasecmp",
+        "include_file": "strings.h",
+        "return_type": "int",
+        "parameter_types": ["const char*", "const char*"],
+        "main_category": "Data Search and Sorting",
+        "sub_category": "String Comparison",
+        "data_type_manipulated": "strings",
+        "description": "Compares two strings ignoring the case of the characters."
+    },
+    {
+        "function_name": "strcat",
+        "include_file": "string.h",
+        "return_type": "char*",
+        "parameter_types": ["char*", "const char*"],
+        "main_category": "String Operations",
+        "sub_category": "Manipulation",
+        "data_type_manipulated": "strings",
+        "description": "Appends the source string to the destination string."
+    },
+    {
+        "function_name": "strchr",
+        "include_file": "string.h",
+        "return_type": "char*",
+        "parameter_types": ["const char*", "int"],
+        "main_category": "String Operations",
+        "sub_category": "Search",
+        "data_type_manipulated": "strings",
+        "description": "Searches for the first occurrence of the character in the string."
+    },
+    {
+        "function_name": "strcmp",
+        "include_file": "string.h",
+        "return_type": "int",
+        "parameter_types": ["const char*", "const char*"],
+        "main_category": "Data Search and Sorting",
+        "sub_category": "String Comparison",
+        "data_type_manipulated": "strings",
+        "description": "Compares two strings lexicographically."
+    },
+    {
+        "function_name": "strcoll",
+        "include_file": "string.h",
+        "return_type": "int",
+        "parameter_types": ["const char*", "const char*"],
+        "main_category": "Data Search and Sorting",
+        "sub_category": "String Comparison",
+        "data_type_manipulated": "strings",
+        "description": "Compares two strings using the current locale."
+    },
+    {
+        "function_name": "strcpy",
+        "include_file": "string.h",
+        "return_type": "char*",
+        "parameter_types": ["char*", "const char*"],
+        "main_category": "String Operations",
+        "sub_category": "Manipulation",
+        "data_type_manipulated": "strings",
+        "description": "Copies the source string to the destination string."
+    },
+    {
+        "function_name": "strcspn",
+        "include_file": "string.h",
+        "return_type": "size_t",
+        "parameter_types": ["const char*", "const char*"],
+        "main_category": "String Operations",
+        "sub_category": "Search",
+        "data_type_manipulated": "strings",
+        "description": "Scans the first string for the first occurrence of any of the characters in the second string."
+    },
+
+    {
+        "function_name": "strerror",
+        "include_file": "string.h",
+        "return_type": "char*",
+        "parameter_types": ["int"],
+        "main_category": "Error Handling and Debugging",
+        "sub_category": "Error Reporting",
+        "data_type_manipulated": "strings",
+        "description": "Returns a pointer to the textual representation of the current errno value."
+    },
+    {
+        "function_name": "strfmon4",
+        "include_file": "monetary.h",
+        "return_type": "ssize_t",
+        "parameter_types": ["char*", "size_t", "const char*", "..."],
+        "main_category": "Data Formatting",
+        "sub_category": "Monetary Formatting",
+        "data_type_manipulated": "strings",
+        "description": "Formats monetary values according to the locale settings."
+    },
+    {
+        "function_name": "strftime",
+        "include_file": "time.h",
+        "return_type": "size_t",
+        "parameter_types": ["char*", "size_t", "const char*", "const struct tm*"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Time Formatting",
+        "data_type_manipulated": "strings",
+        "description": "Formats the time and date according to the locale settings and format string."
+    },
+    {
+        "function_name": "strlen",
+        "include_file": "string.h",
+        "return_type": "size_t",
+        "parameter_types": ["const char*"],
+        "main_category": "String Operations",
+        "sub_category": "Measurement",
+        "data_type_manipulated": "strings",
+        "description": "Calculates the length of the string, excluding the null terminator."
+    },
+    {
+        "function_name": "strncasecmp",
+        "include_file": "strings.h",
+        "return_type": "int",
+        "parameter_types": ["const char*", "const char*", "size_t"],
+        "main_category": "Data Search and Sorting",
+        "sub_category": "String Comparison",
+        "data_type_manipulated": "strings",
+        "description": "Compares a specified number of characters from two strings, ignoring case."
+    },
+    {
+        "function_name": "strncat",
+        "include_file": "string.h",
+        "return_type": "char*",
+        "parameter_types": ["char*", "const char*", "size_t"],
+        "main_category": "String Operations",
+        "sub_category": "Manipulation",
+        "data_type_manipulated": "strings",
+        "description": "Appends a specified number of characters from the source string to the destination string."
+    },
+    {
+        "function_name": "strncmp",
+        "include_file": "string.h",
+        "return_type": "int",
+        "parameter_types": ["const char*", "const char*", "size_t"],
+        "main_category": "Data Search and Sorting",
+        "sub_category": "String Comparison",
+        "data_type_manipulated": "strings",
+        "description": "Compares a specified number of characters from two strings."
+    },
+    {
+        "function_name": "strncpy",
+        "include_file": "string.h",
+        "return_type": "char*",
+        "parameter_types": ["char*", "const char*", "size_t"],
+        "main_category": "String Operations",
+        "sub_category": "Manipulation",
+        "data_type_manipulated": "strings",
+        "description": "Copies a specified number of characters from the source string to the destination string."
+    },
+    {
+        "function_name": "strpbrk",
+        "include_file": "string.h",
+        "return_type": "char*",
+        "parameter_types": ["const char*", "const char*"],
+        "main_category": "String Operations",
+        "sub_category": "Search",
+        "data_type_manipulated": "strings",
+        "description": "Searches a string for the first occurrence of any of the characters in a specified string."
+    },
+    {
+        "function_name": "strptime4",
+        "include_file": "time.h",
+        "return_type": "char*",
+        "parameter_types": ["const char*", "const char*", "struct tm*"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Time Parsing",
+        "data_type_manipulated": "time structures",
+        "description": "Parses a time/date string according to the format string and stores the result in a tm structure."
+    },
+
+    {
+        "function_name": "strrchr",
+        "include_file": "string.h",
+        "return_type": "char*",
+        "parameter_types": ["const char*", "int"],
+        "main_category": "String Operations",
+        "sub_category": "Search",
+        "data_type_manipulated": "strings",
+        "description": "Searches for the last occurrence of the character in the string."
+    },
+    {
+        "function_name": "strspn",
+        "include_file": "string.h",
+        "return_type": "size_t",
+        "parameter_types": ["const char*", "const char*"],
+        "main_category": "String Operations",
+        "sub_category": "Search",
+        "data_type_manipulated": "strings",
+        "description": "Calculates the length of the initial segment of the string which consists only of characters found in a specified string."
+    },
+    {
+        "function_name": "strstr",
+        "include_file": "string.h",
+        "return_type": "char*",
+        "parameter_types": ["const char*", "const char*"],
+        "main_category": "String Operations",
+        "sub_category": "Search",
+        "data_type_manipulated": "strings",
+        "description": "Finds the first occurrence of the substring in the string."
+    },
+    {
+        "function_name": "strtod",
+        "include_file": "stdlib.h",
+        "return_type": "double",
+        "parameter_types": ["const char*", "char**"],
+        "main_category": "Data Conversion and Formatting",
+        "sub_category": "Type Conversion",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Converts the initial portion of the string to a double-precision floating-point number."
+    },
+    {
+        "function_name": "strtod32",
+        "include_file": "stdlib.h",
+        "return_type": "_Decimal32",
+        "parameter_types": ["const char*", "char**"],
+        "main_category": "Data Conversion and Formatting",
+        "sub_category": "Type Conversion",
+        "data_type_manipulated": "decimal floating-point",
+        "description": "Converts the initial portion of the string to a decimal floating-point number with 32-bit precision."
+    },
+    {
+        "function_name": "strtod64",
+        "include_file": "stdlib.h",
+        "return_type": "_Decimal64",
+        "parameter_types": ["const char*", "char**"],
+        "main_category": "Data Conversion and Formatting",
+        "sub_category": "Type Conversion",
+        "data_type_manipulated": "decimal floating-point",
+        "description": "Converts the initial portion of the string to a decimal floating-point number with 64-bit precision."
+    },
+    {
+        "function_name": "strtod128",
+        "include_file": "stdlib.h",
+        "return_type": "_Decimal128",
+        "parameter_types": ["const char*", "char**"],
+        "main_category": "Data Conversion and Formatting",
+        "sub_category": "Type Conversion",
+        "data_type_manipulated": "decimal floating-point",
+        "description": "Converts the initial portion of the string to a decimal floating-point number with 128-bit precision."
+    },
+    {
+        "function_name": "strtof",
+        "include_file": "stdlib.h",
+        "return_type": "float",
+        "parameter_types": ["const char*", "char**"],
+        "main_category": "Data Conversion and Formatting",
+        "sub_category": "Type Conversion",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Converts the initial portion of the string to a floating-point number."
+    },
+    {
+        "function_name": "strtok",
+        "include_file": "string.h",
+        "return_type": "char*",
+        "parameter_types": ["char*", "const char*"],
+        "main_category": "String Operations",
+        "sub_category": "Tokenization",
+        "data_type_manipulated": "strings",
+        "description": "Tokenizes a string into sequences separated by the delimiters specified."
+    },
+    {
+        "function_name": "strtok_r",
+        "include_file": "string.h",
+        "return_type": "char*",
+        "parameter_types": ["char*", "const char*", "char**"],
+        "main_category": "String Operations",
+        "sub_category": "Tokenization",
+        "data_type_manipulated": "strings",
+        "description": "A reentrant version of strtok that tokenizes a string into sequences using specified delimiters, storing the context."
+    },
+
+    {
+        "function_name": "strtol",
+        "include_file": "stdlib.h",
+        "return_type": "long",
+        "parameter_types": ["const char*", "char**", "int"],
+        "main_category": "Data Conversion and Formatting",
+        "sub_category": "Type Conversion",
+        "data_type_manipulated": "integers",
+        "description": "Converts the initial portion of the string to a long integer."
+    },
+    {
+        "function_name": "strtold",
+        "include_file": "stdlib.h",
+        "return_type": "long double",
+        "parameter_types": ["const char*", "char**"],
+        "main_category": "Data Conversion and Formatting",
+        "sub_category": "Type Conversion",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Converts the initial portion of the string to a long double."
+    },
+    {
+        "function_name": "strtoul",
+        "include_file": "stdlib.h",
+        "return_type": "unsigned long",
+        "parameter_types": ["const char*", "char**", "int"],
+        "main_category": "Data Conversion and Formatting",
+        "sub_category": "Type Conversion",
+        "data_type_manipulated": "integers",
+        "description": "Converts the initial portion of the string to an unsigned long integer."
+    },
+    {
+        "function_name": "strxfrm",
+        "include_file": "string.h",
+        "return_type": "size_t",
+        "parameter_types": ["char*", "const char*", "size_t"],
+        "main_category": "String Operations",
+        "sub_category": "Transformation",
+        "data_type_manipulated": "strings",
+        "description": "Transforms the string to another string such that the result of strcmp on these is the same as strcoll on the original strings."
+    },
+    {
+        "function_name": "swprintf",
+        "include_file": "wchar.h",
+        "return_type": "int",
+        "parameter_types": ["wchar_t*", "size_t", "const wchar_t*", "..."],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Wide Character Support",
+        "data_type_manipulated": "wide characters",
+        "description": "Writes formatted wide character output to a string."
+    },
+    {
+        "function_name": "swscanf",
+        "include_file": "wchar.h",
+        "return_type": "int",
+        "parameter_types": ["const wchar_t*", "const wchar_t*", "..."],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Wide Character Support",
+        "data_type_manipulated": "wide characters",
+        "description": "Reads formatted input from a wide character string."
+    },
+    {
+        "function_name": "system",
+        "include_file": "stdlib.h",
+        "return_type": "int",
+        "parameter_types": ["const char*"],
+        "main_category": "System Interaction",
+        "sub_category": "Process Control",
+        "data_type_manipulated": "system commands",
+        "description": "Executes a command string in a command processor or shell."
+    },
+    {
+        "function_name": "tan",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the tangent of the specified angle in radians."
+    },
+    {
+        "function_name": "tanh",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the hyperbolic tangent of the specified number."
+    },
+    {
+        "function_name": "time",
+        "include_file": "time.h",
+        "return_type": "time_t",
+        "parameter_types": ["time_t*"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Time Measurement",
+        "data_type_manipulated": "time",
+        "description": "Gets the current calendar time."
+    },
+
+    {
+        "function_name": "time64",
+        "include_file": "time.h",
+        "return_type": "__time64_t",
+        "parameter_types": ["__time64_t*"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Time Measurement",
+        "data_type_manipulated": "time",
+        "description": "Gets the current calendar time as a 64-bit value, suitable for representing times beyond 2038."
+    },
+    {
+        "function_name": "tmpfile",
+        "include_file": "stdio.h",
+        "return_type": "FILE*",
+        "parameter_types": [],
+        "main_category": "File and I/O Operations",
+        "sub_category": "File Management",
+        "data_type_manipulated": "file streams",
+        "description": "Creates a temporary binary file that is automatically deleted when closed or the program terminates."
+    },
+    {
+        "function_name": "tmpnam",
+        "include_file": "stdio.h",
+        "return_type": "char*",
+        "parameter_types": ["char*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "File Management",
+        "data_type_manipulated": "strings",
+        "description": "Generates a unique temporary filename."
+    },
+    {
+        "function_name": "toascii",
+        "include_file": "ctype.h",
+        "return_type": "int",
+        "parameter_types": ["int"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Character Manipulation",
+        "data_type_manipulated": "characters",
+        "description": "Converts a character to its ASCII equivalent."
+    },
+    {
+        "function_name": "tolower",
+        "include_file": "ctype.h",
+        "return_type": "int",
+        "parameter_types": ["int"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Character Manipulation",
+        "data_type_manipulated": "characters",
+        "description": "Converts a character to lowercase."
+    },
+    {
+        "function_name": "toupper",
+        "include_file": "ctype.h",
+        "return_type": "int",
+        "parameter_types": ["int"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Character Manipulation",
+        "data_type_manipulated": "characters",
+        "description": "Converts a character to uppercase."
+    },
+    {
+        "function_name": "towctrans",
+        "include_file": "wctype.h",
+        "return_type": "wint_t",
+        "parameter_types": ["wint_t", "wctrans_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Manipulation",
+        "data_type_manipulated": "wide characters",
+        "description": "Applies a specified transformation to a wide character, such as tolower or toupper."
+    },
+    {
+        "function_name": "towlower4",
+        "include_file": "wctype.h",
+        "return_type": "wint_t",
+        "parameter_types": ["wint_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Manipulation",
+        "data_type_manipulated": "wide characters",
+        "description": "Converts a wide character to lowercase."
+    },
+    {
+        "function_name": "towupper4",
+        "include_file": "wctype.h",
+        "return_type": "wint_t",
+        "parameter_types": ["wint_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Manipulation",
+        "data_type_manipulated": "wide characters",
+        "description": "Converts a wide character to uppercase."
+    },
+    {
+        "function_name": "ungetc1",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["int", "FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "file streams",
+        "description": "Pushes a character back onto a stream, where it is available for subsequent read operations."
+    },
+    
+    {
+        "function_name": "ungetwc6",
+        "include_file": "stdio.h",
+        "return_type": "wint_t",
+        "parameter_types": ["wint_t", "FILE*"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Wide Character Support",
+        "data_type_manipulated": "file streams",
+        "description": "Pushes a wide character back onto a stream, where it is available for subsequent read operations."
+    },
+    {
+        "function_name": "va_arg",
+        "include_file": "stdarg.h",
+        "return_type": "type",
+        "parameter_types": ["va_list", "type"],
+        "main_category": "Data Handling",
+        "sub_category": "Variable Argument Lists",
+        "data_type_manipulated": "variadic functions",
+        "description": "Retrieves the next argument in a function with a variable number of arguments."
+    },
+    {
+        "function_name": "va_copy",
+        "include_file": "stdarg.h",
+        "return_type": "void",
+        "parameter_types": ["va_list", "va_list"],
+        "main_category": "Data Handling",
+        "sub_category": "Variable Argument Lists",
+        "data_type_manipulated": "variadic functions",
+        "description": "Copies the content of one va_list to another."
+    },
+    {
+        "function_name": "va_end",
+        "include_file": "stdarg.h",
+        "return_type": "void",
+        "parameter_types": ["va_list"],
+        "main_category": "Data Handling",
+        "sub_category": "Variable Argument Lists",
+        "data_type_manipulated": "variadic functions",
+        "description": "Ends traversal of the variable arguments, allowing a va_list to be reused."
+    },
+    {
+        "function_name": "va_start",
+        "include_file": "stdarg.h",
+        "return_type": "void",
+        "parameter_types": ["va_list", "param"],
+        "main_category": "Data Handling",
+        "sub_category": "Variable Argument Lists",
+        "data_type_manipulated": "variadic functions",
+        "description": "Initializes a va_list to retrieve the additional arguments passed to the function."
+    },
+    {
+        "function_name": "vfprintf",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["FILE*", "const char*", "va_list"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "file streams",
+        "description": "Prints formatted output to the specified stream using a va_list."
+    },
+    {
+        "function_name": "vfscanf",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["FILE*", "const char*", "va_list"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "file streams",
+        "description": "Reads formatted input from a stream using a va_list."
+    },
+    {
+        "function_name": "vfwprintf6",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["FILE*", "const wchar_t*", "va_list"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Wide Character Support",
+        "data_type_manipulated": "file streams",
+        "description": "Writes formatted wide character output to the specified stream using a va_list."
+    },
+    {
+        "function_name": "vfwscanf",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["FILE*", "const wchar_t*", "va_list"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Wide Character Support",
+        "data_type_manipulated": "file streams",
+        "description": "Reads formatted wide character input from a stream using a va_list."
+    },
+    {
+        "function_name": "vprintf",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["const char*", "va_list"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Standard Output",
+        "data_type_manipulated": "standard output",
+        "description": "Prints formatted output to the standard output using a va_list."
+    },
+
+    {
+        "function_name": "vscanf",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["const char*", "va_list"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Standard Input",
+        "data_type_manipulated": "standard input",
+        "description": "Reads formatted input from the standard input using a va_list."
+    },
+    {
+        "function_name": "vsprintf",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["char*", "const char*", "va_list"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "strings",
+        "description": "Writes formatted output to a string using a va_list."
+    },
+    {
+        "function_name": "vsnprintf",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["char*", "size_t", "const char*", "va_list"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "strings",
+        "description": "Writes formatted output to a string with size limitation using a va_list."
+    },
+    {
+        "function_name": "vsscanf",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["const char*", "const char*", "va_list"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Stream Manipulation",
+        "data_type_manipulated": "strings",
+        "description": "Reads formatted data from a string using a va_list."
+    },
+    {
+        "function_name": "vswprintf",
+        "include_file": "wchar.h",
+        "return_type": "int",
+        "parameter_types": ["wchar_t*", "size_t", "const wchar_t*", "va_list"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Wide Character Support",
+        "data_type_manipulated": "wide characters",
+        "description": "Writes formatted wide character output to a string with size limitation using a va_list."
+    },
+    {
+        "function_name": "vswscanf",
+        "include_file": "wchar.h",
+        "return_type": "int",
+        "parameter_types": ["const wchar_t*", "const wchar_t*", "va_list"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Wide Character Support",
+        "data_type_manipulated": "wide characters",
+        "description": "Reads formatted wide character input from a string using a va_list."
+    },
+    {
+        "function_name": "vwprintf6",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["const wchar_t*", "va_list"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Wide Character Support",
+        "data_type_manipulated": "standard output",
+        "description": "Prints formatted wide character output to the standard output using a va_list."
+    },
+    {
+        "function_name": "vwscanf",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["const wchar_t*", "va_list"],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Wide Character Support",
+        "data_type_manipulated": "standard input",
+        "description": "Reads formatted wide character input from the standard input using a va_list."
+    },
+    {
+        "function_name": "wcrtomb4",
+        "include_file": "wchar.h",
+        "return_type": "size_t",
+        "parameter_types": ["char*", "wchar_t", "mbstate_t*"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Conversion",
+        "data_type_manipulated": "characters",
+        "description": "Converts a wide character to a multibyte sequence."
+    },
+    {
+        "function_name": "wcscat",
+        "include_file": "wchar.h",
+        "return_type": "wchar_t*",
+        "parameter_types": ["wchar_t*", "const wchar_t*"],
+        "main_category": "String Operations",
+        "sub_category": "Manipulation",
+        "data_type_manipulated": "wide characters",
+        "description": "Appends a wide character string to the end of another wide character string."
+    },
+    
+    {
+        "function_name": "wcschr",
+        "include_file": "wchar.h",
+        "return_type": "wchar_t*",
+        "parameter_types": ["const wchar_t*", "wchar_t"],
+        "main_category": "String Operations",
+        "sub_category": "Search",
+        "data_type_manipulated": "wide characters",
+        "description": "Searches for the first occurrence of a wide character in a wide character string."
+    },
+    {
+        "function_name": "wcscmp",
+        "include_file": "wchar.h",
+        "return_type": "int",
+        "parameter_types": ["const wchar_t*", "const wchar_t*"],
+        "main_category": "Data Search and Sorting",
+        "sub_category": "String Comparison",
+        "data_type_manipulated": "wide characters",
+        "description": "Compares two wide character strings lexicographically."
+    },
+    {
+        "function_name": "wcscoll4",
+        "include_file": "wchar.h",
+        "return_type": "int",
+        "parameter_types": ["const wchar_t*", "const wchar_t*"],
+        "main_category": "Data Search and Sorting",
+        "sub_category": "String Comparison",
+        "data_type_manipulated": "wide characters",
+        "description": "Compares two wide character strings using the current locale's collation rules."
+    },
+    {
+        "function_name": "wcscpy",
+        "include_file": "wchar.h",
+        "return_type": "wchar_t*",
+        "parameter_types": ["wchar_t*", "const wchar_t*"],
+        "main_category": "String Operations",
+        "sub_category": "Manipulation",
+        "data_type_manipulated": "wide characters",
+        "description": "Copies a wide character string to another wide character string."
+    },
+    {
+        "function_name": "wcscspn",
+        "include_file": "wchar.h",
+        "return_type": "size_t",
+        "parameter_types": ["const wchar_t*", "const wchar_t*"],
+        "main_category": "String Operations",
+        "sub_category": "Search",
+        "data_type_manipulated": "wide characters",
+        "description": "Calculates the length of the initial segment of the first wide character string which consists only of characters not in the second wide character string."
+    },
+    {
+        "function_name": "wcsftime",
+        "include_file": "wchar.h",
+        "return_type": "size_t",
+        "parameter_types": ["wchar_t*", "size_t", "const wchar_t*", "const struct tm*"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Time Formatting",
+        "data_type_manipulated": "wide characters",
+        "description": "Formats the time and date as a wide character string according to the locale settings and format string."
+    },
+    {
+        "function_name": "wcslen",
+        "include_file": "wchar.h",
+        "return_type": "size_t",
+        "parameter_types": ["const wchar_t*"],
+        "main_category": "String Operations",
+        "sub_category": "Measurement",
+        "data_type_manipulated": "wide characters",
+        "description": "Calculates the length of a wide character string, excluding the null terminator."
+    },
+    {
+        "function_name": "wcslocaleconv",
+        "include_file": "locale.h",
+        "return_type": "struct lconv*",
+        "parameter_types": [],
+        "main_category": "System Interaction",
+        "sub_category": "Localization Support",
+        "data_type_manipulated": "locale settings",
+        "description": "Returns a pointer to the structure containing locale-specific information, formatted as wide characters."
+    },
+    {
+        "function_name": "wcsncat",
+        "include_file": "wchar.h",
+        "return_type": "wchar_t*",
+        "parameter_types": ["wchar_t*", "const wchar_t*", "size_t"],
+        "main_category": "String Operations",
+        "sub_category": "Manipulation",
+        "data_type_manipulated": "wide characters",
+        "description": "Appends a specified number of wide characters from the source wide character string to the destination wide character string."
+    },
+    {
+        "function_name": "wcsncmp",
+        "include_file": "wchar.h",
+        "return_type": "int",
+        "parameter_types": ["const wchar_t*", "const wchar_t*", "size_t"],
+        "main_category": "Data Search and Sorting",
+        "sub_category": "String Comparison",
+        "data_type_manipulated": "wide characters",
+        "description": "Compares a specified number of characters from two wide character strings."
+    },
+
+    {
+        "function_name": "wcsncpy",
+        "include_file": "wchar.h",
+        "return_type": "wchar_t*",
+        "parameter_types": ["wchar_t*", "const wchar_t*", "size_t"],
+        "main_category": "String Operations",
+        "sub_category": "Manipulation",
+        "data_type_manipulated": "wide characters",
+        "description": "Copies a specified number of characters from one wide character string to another, ensuring that the destination string will not be overrun."
+    },
+    {
+        "function_name": "wcspbrk",
+        "include_file": "wchar.h",
+        "return_type": "wchar_t*",
+        "parameter_types": ["const wchar_t*", "const wchar_t*"],
+        "main_category": "String Operations",
+        "sub_category": "Search",
+        "data_type_manipulated": "wide characters",
+        "description": "Searches a wide character string for the first occurrence of any of the characters that are part of another wide character string."
+    },
+    {
+        "function_name": "wcsptime",
+        "include_file": "wchar.h",
+        "return_type": "wchar_t*",
+        "parameter_types": ["const wchar_t*", "const wchar_t*", "struct tm*"],
+        "main_category": "Time and Date Management",
+        "sub_category": "Time Parsing",
+        "data_type_manipulated": "wide characters",
+        "description": "Parses a wide character string representing a time according to a format string and stores the information in a structure."
+    },
+    {
+        "function_name": "wcsrchr",
+        "include_file": "wchar.h",
+        "return_type": "wchar_t*",
+        "parameter_types": ["const wchar_t*", "wchar_t"],
+        "main_category": "String Operations",
+        "sub_category": "Search",
+        "data_type_manipulated": "wide characters",
+        "description": "Searches for the last occurrence of a specified wide character in a wide character string."
+    },
+    {
+        "function_name": "wcsrtombs4",
+        "include_file": "stdlib.h",
+        "return_type": "size_t",
+        "parameter_types": ["char*", "const wchar_t**", "size_t", "mbstate_t*"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Conversion",
+        "data_type_manipulated": "characters",
+        "description": "Converts a sequence of wide characters from a wide character string to a multibyte string, considering the current locale."
+    },
+    {
+        "function_name": "wcsspn",
+        "include_file": "wchar.h",
+        "return_type": "size_t",
+        "parameter_types": ["const wchar_t*", "const wchar_t*"],
+        "main_category": "String Operations",
+        "sub_category": "Search",
+        "data_type_manipulated": "wide characters",
+        "description": "Calculates the length of the initial segment of a wide character string which consists only of characters that are part of another wide character string."
+    },
+    {
+        "function_name": "wcsstr",
+        "include_file": "wchar.h",
+        "return_type": "wchar_t*",
+        "parameter_types": ["const wchar_t*", "const wchar_t*"],
+        "main_category": "String Operations",
+        "sub_category": "Search",
+        "data_type_manipulated": "wide characters",
+        "description": "Finds the first occurrence of a specified wide substring in a wide character string."
+    },
+    {
+        "function_name": "wcstod",
+        "include_file": "stdlib.h",
+        "return_type": "double",
+        "parameter_types": ["const wchar_t*", "wchar_t**"],
+        "main_category": "Data Conversion and Formatting",
+        "sub_category": "Type Conversion",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Converts the initial portion of a wide character string to a double-precision floating-point number."
+    },
+    {
+        "function_name": "wcstod32",
+        "include_file": "stdlib.h",
+        "return_type": "_Decimal32",
+        "parameter_types": ["const wchar_t*", "wchar_t**"],
+        "main_category": "Data Conversion and Formatting",
+        "sub_category": "Type Conversion",
+        "data_type_manipulated": "decimal floating-point",
+        "description": "Converts the initial portion of a wide character string to a decimal floating-point number with 32-bit precision."
+    },
+    {
+        "function_name": "wcstod64",
+        "include_file": "stdlib.h",
+        "return_type": "_Decimal64",
+        "parameter_types": ["const wchar_t*", "wchar_t**"],
+        "main_category": "Data Conversion and Formatting",
+        "sub_category": "Type Conversion",
+        "data_type_manipulated": "decimal floating-point",
+        "description": "Converts the initial portion of a wide character string to a decimal floating-point number with 64-bit precision."
+    },
+
+    {
+        "function_name": "wcstod128",
+        "include_file": "stdlib.h",
+        "return_type": "_Decimal128",
+        "parameter_types": ["const wchar_t*", "wchar_t**"],
+        "main_category": "Data Conversion and Formatting",
+        "sub_category": "Type Conversion",
+        "data_type_manipulated": "decimal floating-point",
+        "description": "Converts the initial portion of a wide character string to a decimal floating-point number with 128-bit precision."
+    },
+    {
+        "function_name": "wcstof",
+        "include_file": "stdlib.h",
+        "return_type": "float",
+        "parameter_types": ["const wchar_t*", "wchar_t**"],
+        "main_category": "Data Conversion and Formatting",
+        "sub_category": "Type Conversion",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Converts the initial portion of a wide character string to a floating-point number."
+    },
+    {
+        "function_name": "wcstok",
+        "include_file": "wchar.h",
+        "return_type": "wchar_t*",
+        "parameter_types": ["wchar_t*", "const wchar_t*", "wchar_t**"],
+        "main_category": "String Operations",
+        "sub_category": "Tokenization",
+        "data_type_manipulated": "wide characters",
+        "description": "Tokenizes a wide character string using specified delimiters, storing the context."
+    },
+    {
+        "function_name": "wcstol",
+        "include_file": "stdlib.h",
+        "return_type": "long",
+        "parameter_types": ["const wchar_t*", "wchar_t**", "int"],
+        "main_category": "Data Conversion and Formatting",
+        "sub_category": "Type Conversion",
+        "data_type_manipulated": "integers",
+        "description": "Converts the initial portion of a wide character string to a long integer."
+    },
+    {
+        "function_name": "wcstold",
+        "include_file": "stdlib.h",
+        "return_type": "long double",
+        "parameter_types": ["const wchar_t*", "wchar_t**"],
+        "main_category": "Data Conversion and Formatting",
+        "sub_category": "Type Conversion",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Converts the initial portion of a wide character string to a long double."
+    },
+    {
+        "function_name": "wcstombs",
+        "include_file": "stdlib.h",
+        "return_type": "size_t",
+        "parameter_types": ["char*", "const wchar_t*", "size_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Conversion",
+        "data_type_manipulated": "characters",
+        "description": "Converts a wide character string to a multibyte character string."
+    },
+    {
+        "function_name": "wcstoul",
+        "include_file": "stdlib.h",
+        "return_type": "unsigned long",
+        "parameter_types": ["const wchar_t*", "wchar_t**", "int"],
+        "main_category": "Data Conversion and Formatting",
+        "sub_category": "Type Conversion",
+        "data_type_manipulated": "integers",
+        "description": "Converts the initial portion of a wide character string to an unsigned long integer."
+    },
+    {
+        "function_name": "wcsxfrm4",
+        "include_file": "wchar.h",
+        "return_type": "size_t",
+        "parameter_types": ["wchar_t*", "const wchar_t*", "size_t"],
+        "main_category": "String Operations",
+        "sub_category": "Transformation",
+        "data_type_manipulated": "wide characters",
+        "description": "Transforms a wide character string such that the result of wcscmp on these transformed strings is the same as wcscoll on the original strings."
+    },
+    {
+        "function_name": "wctob",
+        "include_file": "wchar.h",
+        "return_type": "int",
+        "parameter_types": ["wint_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Conversion",
+        "data_type_manipulated": "characters",
+        "description": "Attempts to convert a wide character to a single-byte character."
+    },
+    {
+        "function_name": "wctomb",
+        "include_file": "stdlib.h",
+        "return_type": "int",
+        "parameter_types": ["char*", "wchar_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Conversion",
+        "data_type_manipulated": "characters",
+        "description": "Converts a wide character to its multibyte representation."
+    },
+
+    {
+        "function_name": "wctrans",
+        "include_file": "wctype.h",
+        "return_type": "wctrans_t",
+        "parameter_types": ["const char*"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Manipulation",
+        "data_type_manipulated": "wide characters",
+        "description": "Returns a type that represents a class of wide characters that can be converted to each other (e.g., tolower, toupper)."
+    },
+    {
+        "function_name": "wctype4",
+        "include_file": "wctype.h",
+        "return_type": "wctype_t",
+        "parameter_types": ["const char*"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Classification",
+        "data_type_manipulated": "wide characters",
+        "description": "Returns a value representing a class of wide characters according to a property name like 'alnum', 'alpha', etc."
+    },
+    {
+        "function_name": "wcwidth",
+        "include_file": "wchar.h",
+        "return_type": "int",
+        "parameter_types": ["wchar_t"],
+        "main_category": "Character Type and Conversion",
+        "sub_category": "Wide Character Manipulation",
+        "data_type_manipulated": "wide characters",
+        "description": "Determines the number of column positions required for a wide character."
+    },
+    {
+        "function_name": "wmemchr",
+        "include_file": "wchar.h",
+        "return_type": "wchar_t*",
+        "parameter_types": ["const wchar_t*", "wchar_t", "size_t"],
+        "main_category": "Memory Management",
+        "sub_category": "Search",
+        "data_type_manipulated": "wide characters",
+        "description": "Searches for a wide character in the first 'n' wide characters of a wide character array."
+    },
+    {
+        "function_name": "wmemcmp",
+        "include_file": "wchar.h",
+        "return_type": "int",
+        "parameter_types": ["const wchar_t*", "const wchar_t*", "size_t"],
+        "main_category": "Memory Management",
+        "sub_category": "Comparison",
+        "data_type_manipulated": "wide characters",
+        "description": "Compares the first 'n' wide characters of two wide character arrays."
+    },
+    {
+        "function_name": "wmemcpy",
+        "include_file": "wchar.h",
+        "return_type": "wchar_t*",
+        "parameter_types": ["wchar_t*", "const wchar_t*", "size_t"],
+        "main_category": "Memory Management",
+        "sub_category": "Copying",
+        "data_type_manipulated": "wide characters",
+        "description": "Copies 'n' wide characters from one wide character array to another."
+    },
+    {
+        "function_name": "wmemmove",
+        "include_file": "wchar.h",
+        "return_type": "wchar_t*",
+        "parameter_types": ["wchar_t*", "const wchar_t*", "size_t"],
+        "main_category": "Memory Management",
+        "sub_category": "Copying",
+        "data_type_manipulated": "wide characters",
+        "description": "Moves 'n' wide characters from one wide character array to another, handling overlapping memory correctly."
+    },
+    {
+        "function_name": "wmemset",
+        "include_file": "wchar.h",
+        "return_type": "wchar_t*",
+        "parameter_types": ["wchar_t*", "wchar_t", "size_t"],
+        "main_category": "Memory Management",
+        "sub_category": "Initialization",
+        "data_type_manipulated": "wide characters",
+        "description": "Fills 'n' wide characters of a wide character array with a specified wide character."
+    },
+    {
+        "function_name": "wprintf6",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["const wchar_t*", "..."],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Wide Character Support",
+        "data_type_manipulated": "standard output",
+        "description": "Prints formatted wide character output to the standard output."
+    },
+    {
+        "function_name": "wscanf6",
+        "include_file": "stdio.h",
+        "return_type": "int",
+        "parameter_types": ["const wchar_t*", "..."],
+        "main_category": "File and I/O Operations",
+        "sub_category": "Wide Character Support",
+        "data_type_manipulated": "standard input",
+        "description": "Reads formatted wide character input from the standard input."
+    },
+
+    {
+        "function_name": "y0",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the Bessel function of the second kind of order 0 for the given value."
+    },
+    {
+        "function_name": "y1",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the Bessel function of the second kind of order 1 for the given value."
+    },
+    {
+        "function_name": "yn",
+        "include_file": "math.h",
+        "return_type": "double",
+        "parameter_types": ["int", "double"],
+        "main_category": "Mathematical Operations",
+        "sub_category": "Advanced Computation",
+        "data_type_manipulated": "floating-point numbers",
+        "description": "Calculates the Bessel function of the second kind of order n for the given value."
+    } 
+    
+
+   
+]

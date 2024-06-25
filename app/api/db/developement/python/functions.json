@@ -1,0 +1,431 @@
+[
+    {
+      "name": "abs",
+      "module": "builtins",
+      "class_name": null,
+      "return_type": "Number",
+      "parameters": [
+        {
+          "name": "x",
+          "type": "Number"
+        }
+      ],
+      "docstring": "Return the absolute value of a number.",
+      "decorators": [],
+      "main_category": "Mathematical Operations",
+      "sub_category": "Numeric",
+      "data_type_manipulated": ["int", "float", "complex"],
+      "version_added": "1.0",
+      "deprecated": false,
+      "examples": [
+        "abs(-5)  # Returns 5",
+        "abs(3.14)  # Returns 3.14",
+        "abs(complex(3, 4))  # Returns 5.0"
+      ]
+    },
+    {
+      "name": "aiter",
+      "module": "builtins",
+      "class_name": null,
+      "return_type": "AsyncIterator",
+      "parameters": [
+        {
+          "name": "async_iterable",
+          "type": "AsyncIterable"
+        }
+      ],
+      "docstring": "Return an AsyncIterator for an AsyncIterable object.",
+      "decorators": [],
+      "main_category": "Iteration",
+      "sub_category": "Asynchronous",
+      "data_type_manipulated": ["AsyncIterable"],
+      "version_added": "3.10",
+      "deprecated": false,
+      "examples": [
+        "async def example():",
+        "    async for item in aiter(async_iterable):",
+        "        print(item)"
+      ]
+    },
+    {
+      "name": "all",
+      "module": "builtins",
+      "class_name": null,
+      "return_type": "bool",
+      "parameters": [
+        {
+          "name": "iterable",
+          "type": "Iterable"
+        }
+      ],
+      "docstring": "Return True if all elements of the iterable are true (or if the iterable is empty).",
+      "decorators": [],
+      "main_category": "Iteration",
+      "sub_category": "Evaluation",
+      "data_type_manipulated": ["Iterable"],
+      "version_added": "2.5",
+      "deprecated": false,
+      "examples": [
+        "all([True, True, True])  # Returns True",
+        "all([True, False, True])  # Returns False",
+        "all([])  # Returns True"
+      ]
+    },
+    {
+      "name": "anext",
+      "module": "builtins",
+      "class_name": null,
+      "return_type": "Any",
+      "parameters": [
+        {
+          "name": "async_iterator",
+          "type": "AsyncIterator"
+        },
+        {
+          "name": "default",
+          "type": "Any",
+          "default": "None"
+        }
+      ],
+      "docstring": "Return the next item from an async iterator.",
+      "decorators": [],
+      "main_category": "Iteration",
+      "sub_category": "Asynchronous",
+      "data_type_manipulated": ["AsyncIterator"],
+      "version_added": "3.10",
+      "deprecated": false,
+      "examples": [
+        "async def example():",
+        "    value = await anext(async_iterator)",
+        "    print(value)"
+      ]
+    },
+    {
+      "name": "any",
+      "module": "builtins",
+      "class_name": null,
+      "return_type": "bool",
+      "parameters": [
+        {
+          "name": "iterable",
+          "type": "Iterable"
+        }
+      ],
+      "docstring": "Return True if any element of the iterable is true. If the iterable is empty, return False.",
+      "decorators": [],
+      "main_category": "Iteration",
+      "sub_category": "Evaluation",
+      "data_type_manipulated": ["Iterable"],
+      "version_added": "2.5",
+      "deprecated": false,
+      "examples": [
+        "any([False, False, True])  # Returns True",
+        "any([False, False, False])  # Returns False",
+        "any([])  # Returns False"
+      ]
+    },
+    {
+      "name": "ascii",
+      "module": "builtins",
+      "class_name": null,
+      "return_type": "str",
+      "parameters": [
+        {
+          "name": "object",
+          "type": "Any"
+        }
+      ],
+      "docstring": "Return a string containing a printable representation of an object, escaping non-ASCII characters.",
+      "decorators": [],
+      "main_category": "String Operations",
+      "sub_category": "Representation",
+      "data_type_manipulated": ["Any"],
+      "version_added": "3.0",
+      "deprecated": false,
+      "examples": [
+        "ascii('Python')  # Returns \"'Python'\"",
+        "ascii('Pythön')  # Returns \"'Pyth\\xf6n'\""
+      ]
+    },
+    {
+      "name": "bin",
+      "module": "builtins",
+      "class_name": null,
+      "return_type": "str",
+      "parameters": [
+        {
+          "name": "x",
+          "type": "int"
+        }
+      ],
+      "docstring": "Return the binary representation of an integer.",
+      "decorators": [],
+      "main_category": "Number Operations",
+      "sub_category": "Representation",
+      "data_type_manipulated": ["int"],
+      "version_added": "2.6",
+      "deprecated": false,
+      "examples": [
+        "bin(3)  # Returns '0b11'",
+        "bin(-10)  # Returns '-0b1010'"
+      ]
+    },
+    {
+      "name": "bool",
+      "module": "builtins",
+      "class_name": null,
+      "return_type": "bool",
+      "parameters": [
+        {
+          "name": "x",
+          "type": "Any",
+          "default": "False"
+        }
+      ],
+      "docstring": "Return a Boolean value, i.e. one of True or False.",
+      "decorators": [],
+      "main_category": "Type Conversion",
+      "sub_category": "Boolean",
+      "data_type_manipulated": ["Any"],
+      "version_added": "2.3",
+      "deprecated": false,
+      "examples": [
+        "bool(1)  # Returns True",
+        "bool(0)  # Returns False",
+        "bool([])  # Returns False",
+        "bool([1, 2, 3])  # Returns True"
+      ]
+    },
+    {
+      "name": "breakpoint",
+      "module": "builtins",
+      "class_name": null,
+      "return_type": "None",
+      "parameters": [],
+      "docstring": "Drops you into the debugger at the call site.",
+      "decorators": [],
+      "main_category": "Debugging",
+      "sub_category": "Runtime Inspection",
+      "data_type_manipulated": [],
+      "version_added": "3.7",
+      "deprecated": false,
+      "examples": [
+        "if something_unexpected:",
+        "    breakpoint()"
+      ]
+    },
+    {
+      "name": "bytearray",
+      "module": "builtins",
+      "class_name": null,
+      "return_type": "bytearray",
+      "parameters": [
+        {
+          "name": "source",
+          "type": "Union[int, Iterable[int], str, bytes]",
+          "default": "None"
+        },
+        {
+          "name": "encoding",
+          "type": "str",
+          "default": "None"
+        },
+        {
+          "name": "errors",
+          "type": "str",
+          "default": "None"
+        }
+      ],
+      "docstring": "Return a new array of bytes. The bytearray type is a mutable sequence of integers in the range 0 <= x < 256.",
+      "decorators": [],
+      "main_category": "Data Types",
+      "sub_category": "Byte Sequences",
+      "data_type_manipulated": ["int", "str", "bytes"],
+      "version_added": "2.6",
+      "deprecated": false,
+      "examples": [
+        "bytearray([1, 2, 3])  # Returns bytearray(b'\\x01\\x02\\x03')",
+        "bytearray('hello', 'utf-8')  # Returns bytearray(b'hello')"
+      ]
+    },
+    {
+      "name": "bytes",
+      "module": "builtins",
+      "class_name": null,
+      "return_type": "bytes",
+      "parameters": [
+        {
+          "name": "source",
+          "type": "Union[int, Iterable[int], str, bytes]",
+          "default": "None"
+        },
+        {
+          "name": "encoding",
+          "type": "str",
+          "default": "None"
+        },
+        {
+          "name": "errors",
+          "type": "str",
+          "default": "None"
+        }
+      ],
+      "docstring": "Return a new 'bytes' object, which is an immutable sequence of integers in the range 0 <= x < 256.",
+      "decorators": [],
+      "main_category": "Data Types",
+      "sub_category": "Byte Sequences",
+      "data_type_manipulated": ["int", "str", "bytes"],
+      "version_added": "3.0",
+      "deprecated": false,
+      "examples": [
+        "bytes([1, 2, 3])  # Returns b'\\x01\\x02\\x03'",
+        "bytes('hello', 'utf-8')  # Returns b'hello'"
+      ]
+    },
+    {
+      "name": "callable",
+      "module": "builtins",
+      "class_name": null,
+      "return_type": "bool",
+      "parameters": [
+        {
+          "name": "object",
+          "type": "Any"
+        }
+      ],
+      "docstring": "Return True if the object argument appears callable, False if not.",
+      "decorators": [],
+      "main_category": "Function Operations",
+      "sub_category": "Introspection",
+      "data_type_manipulated": ["Any"],
+      "version_added": "1.0",
+      "deprecated": false,
+      "examples": [
+        "callable(len)  # Returns True",
+        "callable(100)  # Returns False"
+      ]
+    },
+    {
+      "name": "chr",
+      "module": "builtins",
+      "class_name": null,
+      "return_type": "str",
+      "parameters": [
+        {
+          "name": "i",
+          "type": "int"
+        }
+      ],
+      "docstring": "Return a string of one character whose Unicode code point is the integer i.",
+      "decorators": [],
+      "main_category": "String Operations",
+      "sub_category": "Character Conversion",
+      "data_type_manipulated": ["int"],
+      "version_added": "1.0",
+      "deprecated": false,
+      "examples": [
+        "chr(65)  # Returns 'A'",
+        "chr(8364)  # Returns '€'"
+      ]
+    },
+    {
+      "name": "classmethod",
+      "module": "builtins",
+      "class_name": null,
+      "return_type": "classmethod",
+      "parameters": [
+        {
+          "name": "function",
+          "type": "Callable"
+        }
+      ],
+      "docstring": "Transform a method into a class method.",
+      "decorators": [],
+      "main_category": "Class Operations",
+      "sub_category": "Method Transformation",
+      "data_type_manipulated": ["Callable"],
+      "version_added": "2.2",
+      "deprecated": false,
+      "examples": [
+        "class C:",
+        "    @classmethod",
+        "    def f(cls, arg1, arg2, ...):",
+        "        ..."
+      ]
+    },
+    {
+      "name": "compile",
+      "module": "builtins",
+      "class_name": null,
+      "return_type": "code",
+      "parameters": [
+        {
+          "name": "source",
+          "type": "Union[str, bytes, AST]"
+        },
+        {
+          "name": "filename",
+          "type": "str"
+        },
+        {
+          "name": "mode",
+          "type": "str"
+        },
+        {
+          "name": "flags",
+          "type": "int",
+          "default": "0"
+        },
+        {
+          "name": "dont_inherit",
+          "type": "bool",
+          "default": "False"
+        },
+        {
+          "name": "optimize",
+          "type": "int",
+          "default": "-1"
+        }
+      ],
+      "docstring": "Compile the source into a code or AST object.",
+      "decorators": [],
+      "main_category": "Code Operations",
+      "sub_category": "Compilation",
+      "data_type_manipulated": ["str", "bytes", "AST"],
+      "version_added": "1.0",
+      "deprecated": false,
+      "examples": [
+        "code = compile('a + b', '<string>', 'eval')",
+        "result = eval(code)"
+      ]
+    },
+    {
+      "name": "complex",
+      "module": "builtins",
+      "class_name": null,
+      "return_type": "complex",
+      "parameters": [
+        {
+          "name": "real",
+          "type": "Union[int, float, str]",
+          "default": "0"
+        },
+        {
+          "name": "imag",
+          "type": "Union[int, float]",
+          "default": "0"
+        }
+      ],
+      "docstring": "Create a complex number with the value real + imag*1j or convert a string or number to a complex number.",
+      "decorators": [],
+      "main_category": "Number Operations",
+      "sub_category": "Complex Numbers",
+      "data_type_manipulated": ["int", "float", "str"],
+      "version_added": "1.0",
+      "deprecated": false,
+      "examples": [
+        "complex(1, 2)  # Returns (1+2j)",
+        "complex('1+2j')  # Returns (1+2j)"
+      ]
+    }
+  ]

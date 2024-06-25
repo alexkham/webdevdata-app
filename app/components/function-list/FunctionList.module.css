@@ -1,0 +1,285 @@
+/* .functionsContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin-left: 20px;
+}
+
+.leftSide {
+    width: 100%;
+    overflow-x: auto;
+    margin-left: 20px;
+    padding-right:50px;
+}
+
+.functionList {
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    color: blue;
+    font-weight: bolder;
+    margin-left: 20px;
+}
+
+.listItem {
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.tooltip {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 15px;
+    position: absolute;
+    z-index: 100;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    padding-bottom: 20px;
+    height: fit-content;
+}
+
+.listItem:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.rightSide {
+    width: 100%;
+}
+
+.letterHeading {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    margin-left: 25px;
+}
+.controls{
+    margin-left: 50px;
+}
+
+.filterInput {
+    width: 200px;
+    padding: 5px;
+    margin-top: 10px;
+  } */
+
+  /* .functionsContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin-left: 50px;
+}
+
+.leftSide {
+    width: 100%;
+    overflow-x: auto;
+    margin-left: 20px;
+    padding-right: 50px;
+}
+
+.functionList {
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    color: blue;
+    font-weight: bolder;
+    margin-left: 20px;
+}
+
+.listItem {
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.tooltip {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 15px;
+    position: absolute;
+    z-index: 100;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    padding-bottom: 20px;
+    height: fit-content;
+}
+
+.listItem:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.rightSide {
+    width: 100%;
+}
+
+.letterHeading {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    margin-left: 25px;
+}
+
+.controls {
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 150px; /* Added for stability }*/
+
+
+/* .filterInput, .filterSelect {
+    width: 200px;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.resetButton {
+    width: 200px;
+    padding: 5px;
+    margin-top: 10px;
+}  */
+
+.functionsContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin-left: 50px;
+  }
+  
+  .leftSide {
+    width: 100%;
+    overflow-x: auto;
+    margin-left: 20px;
+    padding-right: 50px;
+  }
+  
+  .controls {
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 150px;
+    margin-bottom: -20px;
+  }
+  
+  .filterSelect,
+  .filterInput {
+    width: 250px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: 1px solid blue;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .filterSelect {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 12px) center;
+    padding-right: 30px;
+  }
+  
+  .resetButton {
+    width: 150px;
+    padding: 10px;
+    margin-top: 10px;
+    background-color:blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    max-height: 40px;
+  }
+  
+  .resetButton:hover {
+    background-color: gray;
+  }
+  
+  .functionGroups {
+    margin-top: 20px;
+  }
+  
+  .letterHeading {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    margin-left: 25px;
+  }
+  
+  .functionList {
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    color: blue;
+    font-weight: bolder;
+    margin-left: 20px;
+  }
+  
+  .listItem {
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .tooltip {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 15px;
+    position: absolute;
+    z-index: 100;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    padding-bottom: 20px;
+    height: fit-content;
+  }
+  
+  .listItem:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .rightSide {
+    width: 100%;
+  }
+  .controlsOuter{
+    display: flex;
+    flex-direction: row;
+  }
