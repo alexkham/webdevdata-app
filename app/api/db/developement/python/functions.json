@@ -427,5 +427,1485 @@
         "complex(1, 2)  # Returns (1+2j)",
         "complex('1+2j')  # Returns (1+2j)"
       ]
-    }
+    },
+    
+        {
+          "name": "delattr",
+          "module": "builtins",
+          "class_name": null,
+          "return_type": "None",
+          "parameters": [
+            {
+              "name": "object",
+              "type": "Any"
+            },
+            {
+              "name": "name",
+              "type": "str"
+            }
+          ],
+          "docstring": "Deletes the named attribute from the given object.",
+          "decorators": [],
+          "main_category": "Object Manipulation",
+          "sub_category": "Attribute Operations",
+          "data_type_manipulated": ["Any"],
+          "version_added": "1.0",
+          "deprecated": false,
+          "examples": [
+            "class MyClass:\n    x = 1\n\nobj = MyClass()\ndelattr(obj, 'x')  # Deletes the 'x' attribute from obj"
+          ]
+        },
+        {
+          "name": "dict",
+          "module": "builtins",
+          "class_name": "dict",
+          "return_type": "dict",
+          "parameters": [
+            {
+              "name": "iterable",
+              "type": "Optional[Iterable]"
+            },
+            {
+              "name": "**kwargs",
+              "type": "Any"
+            }
+          ],
+          "docstring": "Create a new dictionary.",
+          "decorators": [],
+          "main_category": "Data Structures",
+          "sub_category": "Mapping",
+          "data_type_manipulated": ["dict"],
+          "version_added": "1.0",
+          "deprecated": false,
+          "examples": [
+            "dict()  # Creates an empty dictionary",
+            "dict(a=1, b=2)  # Creates a dictionary with key-value pairs",
+            "dict([('a', 1), ('b', 2)])  # Creates a dictionary from a list of tuples"
+          ]
+        },
+        {
+          "name": "dir",
+          "module": "builtins",
+          "class_name": null,
+          "return_type": "List[str]",
+          "parameters": [
+            {
+              "name": "object",
+              "type": "Optional[Any]"
+            }
+          ],
+          "docstring": "Return a list of valid attributes for the given object.",
+          "decorators": [],
+          "main_category": "Introspection",
+          "sub_category": "Object Information",
+          "data_type_manipulated": ["Any"],
+          "version_added": "1.0",
+          "deprecated": false,
+          "examples": [
+            "dir()  # Lists names in the current local scope",
+            "dir(str)  # Lists all attributes of the str class"
+          ]
+        },
+        {
+          "name": "divmod",
+          "module": "builtins",
+          "class_name": null,
+          "return_type": "Tuple[Number, Number]",
+          "parameters": [
+            {
+              "name": "a",
+              "type": "Number"
+            },
+            {
+              "name": "b",
+              "type": "Number"
+            }
+          ],
+          "docstring": "Return a tuple of the quotient and remainder when dividing a by b.",
+          "decorators": [],
+          "main_category": "Mathematical Operations",
+          "sub_category": "Arithmetic",
+          "data_type_manipulated": ["int", "float"],
+          "version_added": "1.0",
+          "deprecated": false,
+          "examples": [
+            "divmod(7, 3)  # Returns (2, 1)",
+            "divmod(8.0, 3)  # Returns (2.0, 2.0)"
+          ]
+        },
+        {
+          "name": "enumerate",
+          "module": "builtins",
+          "class_name": "enumerate",
+          "return_type": "enumerate",
+          "parameters": [
+            {
+              "name": "iterable",
+              "type": "Iterable"
+            },
+            {
+              "name": "start",
+              "type": "int"
+            }
+          ],
+          "docstring": "Return an enumerate object.",
+          "decorators": [],
+          "main_category": "Iteration",
+          "sub_category": "Enumeration",
+          "data_type_manipulated": ["Iterable"],
+          "version_added": "2.3",
+          "deprecated": false,
+          "examples": [
+            "list(enumerate(['a', 'b', 'c']))  # Returns [(0, 'a'), (1, 'b'), (2, 'c')]",
+            "list(enumerate(['a', 'b', 'c'], start=1))  # Returns [(1, 'a'), (2, 'b'), (3, 'c')]"
+          ]
+        },
+        {
+          "name": "eval",
+          "module": "builtins",
+          "class_name": null,
+          "return_type": "Any",
+          "parameters": [
+            {
+              "name": "expression",
+              "type": "str"
+            },
+            {
+              "name": "globals",
+              "type": "Optional[dict]"
+            },
+            {
+              "name": "locals",
+              "type": "Optional[dict]"
+            }
+          ],
+          "docstring": "Evaluate a Python expression as a string and return the result.",
+          "decorators": [],
+          "main_category": "Code Execution",
+          "sub_category": "Expression Evaluation",
+          "data_type_manipulated": ["str"],
+          "version_added": "1.0",
+          "deprecated": false,
+          "examples": [
+            "eval('1 + 2')  # Returns 3",
+            "x = 10\neval('x * 2')  # Returns 20"
+          ]
+        },
+        {
+          "name": "exec",
+          "module": "builtins",
+          "class_name": null,
+          "return_type": "None",
+          "parameters": [
+            {
+              "name": "object",
+              "type": "Union[str, code]"
+            },
+            {
+              "name": "globals",
+              "type": "Optional[dict]"
+            },
+            {
+              "name": "locals",
+              "type": "Optional[dict]"
+            }
+          ],
+          "docstring": "Execute Python code dynamically.",
+          "decorators": [],
+          "main_category": "Code Execution",
+          "sub_category": "Dynamic Execution",
+          "data_type_manipulated": ["str", "code"],
+          "version_added": "1.0",
+          "deprecated": false,
+          "examples": [
+            "exec('print(\"Hello, World!\")')",
+            "x = 5\nexec('x += 1')\nprint(x)  # Prints 6"
+          ]
+        },
+        {
+          "name": "filter",
+          "module": "builtins",
+          "class_name": "filter",
+          "return_type": "filter",
+          "parameters": [
+            {
+              "name": "function",
+              "type": "Optional[Callable]"
+            },
+            {
+              "name": "iterable",
+              "type": "Iterable"
+            }
+          ],
+          "docstring": "Construct an iterator from elements of iterable for which function returns True.",
+          "decorators": [],
+          "main_category": "Iteration",
+          "sub_category": "Filtering",
+          "data_type_manipulated": ["Iterable"],
+          "version_added": "2.0",
+          "deprecated": false,
+          "examples": [
+            "list(filter(lambda x: x > 5, [1, 4, 6, 7, 3]))  # Returns [6, 7]",
+            "list(filter(None, [0, 1, False, True, '', 'hello']))  # Returns [1, True, 'hello']"
+          ]
+        },
+        {
+          "name": "float",
+          "module": "builtins",
+          "class_name": "float",
+          "return_type": "float",
+          "parameters": [
+            {
+              "name": "x",
+              "type": "Union[str, Number]"
+            }
+          ],
+          "docstring": "Convert a string or number to a floating point number.",
+          "decorators": [],
+          "main_category": "Type Conversion",
+          "sub_category": "Numeric",
+          "data_type_manipulated": ["str", "int", "float"],
+          "version_added": "1.0",
+          "deprecated": false,
+          "examples": [
+            "float(3)  # Returns 3.0",
+            "float('3.14')  # Returns 3.14",
+            "float('inf')  # Returns inf"
+          ]
+        },
+        {
+          "name": "format",
+          "module": "builtins",
+          "class_name": null,
+          "return_type": "str",
+          "parameters": [
+            {
+              "name": "value",
+              "type": "Any"
+            },
+            {
+              "name": "format_spec",
+              "type": "str"
+            }
+          ],
+          "docstring": "Return value.__format__(format_spec).",
+          "decorators": [],
+          "main_category": "String Formatting",
+          "sub_category": "Value Formatting",
+          "data_type_manipulated": ["Any"],
+          "version_added": "2.6",
+          "deprecated": false,
+          "examples": [
+            "format(42, '04d')  # Returns '0042'",
+            "format(3.14159, '.2f')  # Returns '3.14'",
+            "format('hello', '^10')  # Returns '  hello   '"
+          ]
+        },
+        {
+          "name": "frozenset",
+          "module": "builtins",
+          "class_name": "frozenset",
+          "return_type": "frozenset",
+          "parameters": [
+            {
+              "name": "iterable",
+              "type": "Optional[Iterable]"
+            }
+          ],
+          "docstring": "Return an immutable set object initialized from iterable.",
+          "decorators": [],
+          "main_category": "Data Structures",
+          "sub_category": "Set",
+          "data_type_manipulated": ["Iterable"],
+          "version_added": "2.4",
+          "deprecated": false,
+          "examples": [
+            "frozenset([1, 2, 3, 2])  # Returns frozenset({1, 2, 3})",
+            "frozenset('hello')  # Returns frozenset({'h', 'e', 'l', 'o'})"
+          ]
+        },
+        {
+          "name": "getattr",
+          "module": "builtins",
+          "class_name": null,
+          "return_type": "Any",
+          "parameters": [
+            {
+              "name": "object",
+              "type": "Any"
+            },
+            {
+              "name": "name",
+              "type": "str"
+            },
+            {
+              "name": "default",
+              "type": "Optional[Any]"
+            }
+          ],
+          "docstring": "Get a named attribute from an object; getattr(x, 'y') is equivalent to x.y.",
+          "decorators": [],
+          "main_category": "Object Manipulation",
+          "sub_category": "Attribute Operations",
+          "data_type_manipulated": ["Any"],
+          "version_added": "1.0",
+          "deprecated": false,
+          "examples": [
+            "class Person:\n    name = 'John'\n\ngetattr(Person, 'name')  # Returns 'John'",
+            "getattr(Person, 'age', 25)  # Returns 25 (default value)"
+          ]
+        },
+        {
+          "name": "globals",
+          "module": "builtins",
+          "class_name": null,
+          "return_type": "dict",
+          "parameters": [],
+          "docstring": "Return the dictionary containing the current scope's global variables.",
+          "decorators": [],
+          "main_category": "Introspection",
+          "sub_category": "Namespace",
+          "data_type_manipulated": ["dict"],
+          "version_added": "1.0",
+          "deprecated": false,
+          "examples": [
+            "x = 10\ny = 20\nprint(globals())  # Prints a dictionary containing 'x' and 'y' among other global variables"
+          ]
+        },
+        {
+          "name": "hasattr",
+          "module": "builtins",
+          "class_name": null,
+          "return_type": "bool",
+          "parameters": [
+            {
+              "name": "object",
+              "type": "Any"
+            },
+            {
+              "name": "name",
+              "type": "str"
+            }
+          ],
+          "docstring": "Return whether the object has an attribute with the given name.",
+          "decorators": [],
+          "main_category": "Object Manipulation",
+          "sub_category": "Attribute Operations",
+          "data_type_manipulated": ["Any"],
+          "version_added": "1.0",
+          "deprecated": false,
+          "examples": [
+            "class Person:\n    name = 'John'\n\nhasattr(Person, 'name')  # Returns True",
+            "hasattr(Person, 'age')  # Returns False"
+          ]
+        },
+        {
+          "name": "hash",
+          "module": "builtins",
+          "class_name": null,
+          "return_type": "int",
+          "parameters": [
+            {
+              "name": "object",
+              "type": "Any"
+            }
+          ],
+          "docstring": "Return the hash value of the object (if it has one).",
+          "decorators": [],
+          "main_category": "Object Operations",
+          "sub_category": "Hashing",
+          "data_type_manipulated": ["Any"],
+          "version_added": "1.0",
+          "deprecated": false,
+          "examples": [
+            "hash('hello')  # Returns an integer hash value",
+            "hash((1, 2, 3))  # Returns an integer hash value for the tuple"
+          ]
+        },
+        {
+          "name": "help",
+          "module": "builtins",
+          "class_name": null,
+          "return_type": "None",
+          "parameters": [
+            {
+              "name": "object",
+              "type": "Optional[Any]"
+            }
+          ],
+          "docstring": "Invoke the built-in help system.",
+          "decorators": [],
+          "main_category": "Introspection",
+          "sub_category": "Documentation",
+          "data_type_manipulated": ["Any"],
+          "version_added": "1.0",
+          "deprecated": false,
+          "examples": [
+            "help()  # Starts an interactive help session",
+            "help(str)  # Displays help for the str class"
+          ]
+        },
+        {
+          "name": "hex",
+          "module": "builtins",
+          "class_name": null,
+          "return_type": "str",
+          "parameters": [
+            {
+              "name": "x",
+              "type": "int"
+            }
+          ],
+          "docstring": "Return the hexadecimal representation of an integer.",
+          "decorators": [],
+          "main_category": "Type Conversion",
+          "sub_category": "Numeric",
+          "data_type_manipulated": ["int"],
+          "version_added": "1.0",
+          "deprecated": false,
+          "examples": [
+            "hex(255)  # Returns '0xff'",
+            "hex(-42)  # Returns '-0x2a'"
+          ]
+        },
+        
+            {
+              "name": "id",
+              "module": "builtins",
+              "class_name": null,
+              "return_type": "int",
+              "parameters": [
+                {
+                  "name": "object",
+                  "type": "Any"
+                }
+              ],
+              "docstring": "Return the identity of an object.",
+              "decorators": [],
+              "main_category": "Object Operations",
+              "sub_category": "Identity",
+              "data_type_manipulated": ["Any"],
+              "version_added": "1.0",
+              "deprecated": false,
+              "examples": [
+                "x = [1, 2, 3]\nid(x)  # Returns a unique integer identifier for x"
+              ]
+            },
+            {
+              "name": "input",
+              "module": "builtins",
+              "class_name": null,
+              "return_type": "str",
+              "parameters": [
+                {
+                  "name": "prompt",
+                  "type": "Optional[str]"
+                }
+              ],
+              "docstring": "Read a string from standard input.",
+              "decorators": [],
+              "main_category": "Input/Output",
+              "sub_category": "User Input",
+              "data_type_manipulated": ["str"],
+              "version_added": "1.0",
+              "deprecated": false,
+              "examples": [
+                "name = input('Enter your name: ')",
+                "age = int(input('Enter your age: '))"
+              ]
+            },
+            {
+              "name": "int",
+              "module": "builtins",
+              "class_name": "int",
+              "return_type": "int",
+              "parameters": [
+                {
+                  "name": "x",
+                  "type": "Union[str, Number]"
+                },
+                {
+                  "name": "base",
+                  "type": "int"
+                }
+              ],
+              "docstring": "Convert a number or string to an integer, or return 0 if no arguments are given.",
+              "decorators": [],
+              "main_category": "Type Conversion",
+              "sub_category": "Numeric",
+              "data_type_manipulated": ["str", "float", "int"],
+              "version_added": "1.0",
+              "deprecated": false,
+              "examples": [
+                "int('42')  # Returns 42",
+                "int(3.14)  # Returns 3",
+                "int('1010', 2)  # Returns 10 (binary to decimal)"
+              ]
+            },
+            {
+              "name": "isinstance",
+              "module": "builtins",
+              "class_name": null,
+              "return_type": "bool",
+              "parameters": [
+                {
+                  "name": "object",
+                  "type": "Any"
+                },
+                {
+                  "name": "classinfo",
+                  "type": "Union[type, Tuple[type, ...]]"
+                }
+              ],
+              "docstring": "Return whether an object is an instance of a class or of a subclass thereof.",
+              "decorators": [],
+              "main_category": "Type Checking",
+              "sub_category": "Instance Checking",
+              "data_type_manipulated": ["Any"],
+              "version_added": "1.0",
+              "deprecated": false,
+              "examples": [
+                "isinstance(5, int)  # Returns True",
+                "isinstance('hello', (int, str))  # Returns True"
+              ]
+            },
+            {
+              "name": "issubclass",
+              "module": "builtins",
+              "class_name": null,
+              "return_type": "bool",
+              "parameters": [
+                {
+                  "name": "class",
+                  "type": "type"
+                },
+                {
+                  "name": "classinfo",
+                  "type": "Union[type, Tuple[type, ...]]"
+                }
+              ],
+              "docstring": "Return whether 'class' is a derived from another class or is the same class.",
+              "decorators": [],
+              "main_category": "Type Checking",
+              "sub_category": "Class Relationship",
+              "data_type_manipulated": ["type"],
+              "version_added": "1.0",
+              "deprecated": false,
+              "examples": [
+                "class A: pass\nclass B(A): pass\nissubclass(B, A)  # Returns True",
+                "issubclass(bool, int)  # Returns True"
+              ]
+            },
+            {
+              "name": "iter",
+              "module": "builtins",
+              "class_name": null,
+              "return_type": "iterator",
+              "parameters": [
+                {
+                  "name": "object",
+                  "type": "Union[Iterable, Callable]"
+                },
+                {
+                  "name": "sentinel",
+                  "type": "Optional[Any]"
+                }
+              ],
+              "docstring": "Return an iterator object.",
+              "decorators": [],
+              "main_category": "Iteration",
+              "sub_category": "Iterator Creation",
+              "data_type_manipulated": ["Iterable", "Callable"],
+              "version_added": "2.2",
+              "deprecated": false,
+              "examples": [
+                "iter([1, 2, 3])  # Returns an iterator for the list",
+                "iter(lambda: random.randint(1, 10), 5)  # Returns an iterator that stops when 5 is generated"
+              ]
+            },
+            {
+              "name": "len",
+              "module": "builtins",
+              "class_name": null,
+              "return_type": "int",
+              "parameters": [
+                {
+                  "name": "s",
+                  "type": "Sized"
+                }
+              ],
+              "docstring": "Return the length (the number of items) of an object.",
+              "decorators": [],
+              "main_category": "Object Operations",
+              "sub_category": "Size",
+              "data_type_manipulated": ["Sized"],
+              "version_added": "1.0",
+              "deprecated": false,
+              "examples": [
+                "len([1, 2, 3])  # Returns 3",
+                "len('hello')  # Returns 5"
+              ]
+            },
+            {
+              "name": "list",
+              "module": "builtins",
+              "class_name": "list",
+              "return_type": "list",
+              "parameters": [
+                {
+                  "name": "iterable",
+                  "type": "Optional[Iterable]"
+                }
+              ],
+              "docstring": "Built-in mutable sequence.",
+              "decorators": [],
+              "main_category": "Data Structures",
+              "sub_category": "Sequence",
+              "data_type_manipulated": ["Iterable"],
+              "version_added": "1.0",
+              "deprecated": false,
+              "examples": [
+                "list()  # Returns an empty list []",
+                "list('hello')  # Returns ['h', 'e', 'l', 'l', 'o']",
+                "list(range(5))  # Returns [0, 1, 2, 3, 4]"
+              ]
+            },
+            {
+              "name": "locals",
+              "module": "builtins",
+              "class_name": null,
+              "return_type": "dict",
+              "parameters": [],
+              "docstring": "Return a dictionary containing the current scope's local variables.",
+              "decorators": [],
+              "main_category": "Introspection",
+              "sub_category": "Namespace",
+              "data_type_manipulated": ["dict"],
+              "version_added": "1.0",
+              "deprecated": false,
+              "examples": [
+                "def func(a, b):\n    x = 10\n    print(locals())\n\nfunc(1, 2)  # Prints a dictionary with 'a', 'b', and 'x'"
+              ]
+            },
+            {
+              "name": "map",
+              "module": "builtins",
+              "class_name": "map",
+              "return_type": "map",
+              "parameters": [
+                {
+                  "name": "function",
+                  "type": "Callable"
+                },
+                {
+                  "name": "iterable",
+                  "type": "Iterable"
+                },
+                {
+                  "name": "*iterables",
+                  "type": "Iterable"
+                }
+              ],
+              "docstring": "Apply function to every item of iterable and return an iterator of the results.",
+              "decorators": [],
+              "main_category": "Iteration",
+              "sub_category": "Mapping",
+              "data_type_manipulated": ["Iterable"],
+              "version_added": "1.0",
+              "deprecated": false,
+              "examples": [
+                "list(map(lambda x: x*2, [1, 2, 3]))  # Returns [2, 4, 6]",
+                "list(map(pow, [2, 3, 4], [3, 2, 1]))  # Returns [8, 9, 4]"
+              ]
+            },
+            {
+              "name": "max",
+              "module": "builtins",
+              "class_name": null,
+              "return_type": "Any",
+              "parameters": [
+                {
+                  "name": "*args",
+                  "type": "Any"
+                },
+                {
+                  "name": "key",
+                  "type": "Optional[Callable]"
+                }
+              ],
+              "docstring": "Return the largest item in an iterable or the largest of two or more arguments.",
+              "decorators": [],
+              "main_category": "Mathematical Operations",
+              "sub_category": "Comparison",
+              "data_type_manipulated": ["Any"],
+              "version_added": "1.0",
+              "deprecated": false,
+              "examples": [
+                "max(5, 3, 7)  # Returns 7",
+                "max([1, 2, 3])  # Returns 3",
+                "max('hello')  # Returns 'o'"
+              ]
+            },
+            {
+              "name": "memoryview",
+              "module": "builtins",
+              "class_name": "memoryview",
+              "return_type": "memoryview",
+              "parameters": [
+                {
+                  "name": "obj",
+                  "type": "Union[bytes, bytearray, array.array]"
+                }
+              ],
+              "docstring": "Create a memory view object from a bytes-like object.",
+              "decorators": [],
+              "main_category": "Memory Management",
+              "sub_category": "Memory View",
+              "data_type_manipulated": ["bytes", "bytearray", "array.array"],
+              "version_added": "2.7",
+              "deprecated": false,
+              "examples": [
+                "v = memoryview(b'abcdefg')",
+                "v[1]  # Returns 98 (ASCII value of 'b')",
+                "v[1:4].tobytes()  # Returns b'bcd'"
+              ]
+            },
+            {
+              "name": "min",
+              "module": "builtins",
+              "class_name": null,
+              "return_type": "Any",
+              "parameters": [
+                {
+                  "name": "*args",
+                  "type": "Any"
+                },
+                {
+                  "name": "key",
+                  "type": "Optional[Callable]"
+                }
+              ],
+              "docstring": "Return the smallest item in an iterable or the smallest of two or more arguments.",
+              "decorators": [],
+              "main_category": "Mathematical Operations",
+              "sub_category": "Comparison",
+              "data_type_manipulated": ["Any"],
+              "version_added": "1.0",
+              "deprecated": false,
+              "examples": [
+                "min(5, 3, 7)  # Returns 3",
+                "min([1, 2, 3])  # Returns 1",
+                "min('hello')  # Returns 'e'"
+              ]
+            },
+            {
+              "name": "next",
+              "module": "builtins",
+              "class_name": null,
+              "return_type": "Any",
+              "parameters": [
+                {
+                  "name": "iterator",
+                  "type": "Iterator"
+                },
+                {
+                  "name": "default",
+                  "type": "Optional[Any]"
+                }
+              ],
+              "docstring": "Retrieve the next item from the iterator.",
+              "decorators": [],
+              "main_category": "Iteration",
+              "sub_category": "Iterator Operations",
+              "data_type_manipulated": ["Iterator"],
+              "version_added": "2.6",
+              "deprecated": false,
+              "examples": [
+                "it = iter([1, 2, 3])",
+                "next(it)  # Returns 1",
+                "next(it, 'default')  # Returns 2"
+              ]
+            },
+            {
+              "name": "object",
+              "module": "builtins",
+              "class_name": "object",
+              "return_type": "object",
+              "parameters": [],
+              "docstring": "The base class of the class hierarchy.",
+              "decorators": [],
+              "main_category": "Object-Oriented Programming",
+              "sub_category": "Base Class",
+              "data_type_manipulated": ["Any"],
+              "version_added": "1.0",
+              "deprecated": false,
+              "examples": [
+                "class MyClass(object):\n    pass",
+                "isinstance(MyClass(), object)  # Returns True"
+              ]
+            },
+            {
+              "name": "oct",
+              "module": "builtins",
+              "class_name": null,
+              "return_type": "str",
+              "parameters": [
+                {
+                  "name": "x",
+                  "type": "int"
+                }
+              ],
+              "docstring": "Return the octal representation of an integer.",
+              "decorators": [],
+              "main_category": "Type Conversion",
+              "sub_category": "Numeric",
+              "data_type_manipulated": ["int"],
+              "version_added": "1.0",
+              "deprecated": false,
+              "examples": [
+                "oct(8)  # Returns '0o10'",
+                "oct(-56)  # Returns '-0o70'"
+              ]
+            },
+            {
+              "name": "open",
+              "module": "builtins",
+              "class_name": null,
+              "return_type": "file",
+              "parameters": [
+                {
+                  "name": "file",
+                  "type": "Union[str, bytes, int]"
+                },
+                {
+                  "name": "mode",
+                  "type": "str"
+                },
+                {
+                  "name": "buffering",
+                  "type": "int"
+                },
+                {
+                  "name": "encoding",
+                  "type": "Optional[str]"
+                },
+                {
+                  "name": "errors",
+                  "type": "Optional[str]"
+                },
+                {
+                  "name": "newline",
+                  "type": "Optional[str]"
+                },
+                {
+                  "name": "closefd",
+                  "type": "bool"
+                },
+                {
+                  "name": "opener",
+                  "type": "Optional[Callable]"
+                }
+              ],
+              "docstring": "Open file and return a corresponding file object.",
+              "decorators": [],
+              "main_category": "File I/O",
+              "sub_category": "File Operations",
+              "data_type_manipulated": ["file"],
+              "version_added": "1.0",
+              "deprecated": false,
+              "examples": [
+                "with open('file.txt', 'r') as f:\n    content = f.read()",
+                "f = open('file.txt', 'w')\nf.write('Hello, world!')\nf.close()"
+              ]
+            },
+            
+                {
+                  "name": "ord",
+                  "module": "builtins",
+                  "class_name": null,
+                  "return_type": "int",
+                  "parameters": [
+                    {
+                      "name": "c",
+                      "type": "str"
+                    }
+                  ],
+                  "docstring": "Return the Unicode code point for a one-character string.",
+                  "decorators": [],
+                  "main_category": "String Operations",
+                  "sub_category": "Character Conversion",
+                  "data_type_manipulated": ["str"],
+                  "version_added": "1.0",
+                  "deprecated": false,
+                  "examples": [
+                    "ord('A')  # Returns 65",
+                    "ord('€')  # Returns 8364"
+                  ]
+                },
+                {
+                  "name": "pow",
+                  "module": "builtins",
+                  "class_name": null,
+                  "return_type": "Union[int, float]",
+                  "parameters": [
+                    {
+                      "name": "base",
+                      "type": "Union[int, float]"
+                    },
+                    {
+                      "name": "exp",
+                      "type": "Union[int, float]"
+                    },
+                    {
+                      "name": "mod",
+                      "type": "Optional[int]"
+                    }
+                  ],
+                  "docstring": "Return base to the power exp; if mod is present, return base to the power exp, modulo mod.",
+                  "decorators": [],
+                  "main_category": "Mathematical Operations",
+                  "sub_category": "Exponentiation",
+                  "data_type_manipulated": ["int", "float"],
+                  "version_added": "1.0",
+                  "deprecated": false,
+                  "examples": [
+                    "pow(2, 3)  # Returns 8",
+                    "pow(2, 3, 5)  # Returns 3 (2^3 % 5)"
+                  ]
+                },
+                {
+                  "name": "print",
+                  "module": "builtins",
+                  "class_name": null,
+                  "return_type": "None",
+                  "parameters": [
+                    {
+                      "name": "*objects",
+                      "type": "Any"
+                    },
+                    {
+                      "name": "sep",
+                      "type": "Optional[str]"
+                    },
+                    {
+                      "name": "end",
+                      "type": "Optional[str]"
+                    },
+                    {
+                      "name": "file",
+                      "type": "Optional[TextIO]"
+                    },
+                    {
+                      "name": "flush",
+                      "type": "bool"
+                    }
+                  ],
+                  "docstring": "Print objects to the text stream file, separated by sep and followed by end.",
+                  "decorators": [],
+                  "main_category": "Input/Output",
+                  "sub_category": "Console Output",
+                  "data_type_manipulated": ["Any"],
+                  "version_added": "1.0",
+                  "deprecated": false,
+                  "examples": [
+                    "print('Hello, World!')",
+                    "print('x', 'y', 'z', sep='-')  # Prints 'x-y-z'"
+                  ]
+                },
+                {
+                  "name": "property",
+                  "module": "builtins",
+                  "class_name": "property",
+                  "return_type": "property",
+                  "parameters": [
+                    {
+                      "name": "fget",
+                      "type": "Optional[Callable]"
+                    },
+                    {
+                      "name": "fset",
+                      "type": "Optional[Callable]"
+                    },
+                    {
+                      "name": "fdel",
+                      "type": "Optional[Callable]"
+                    },
+                    {
+                      "name": "doc",
+                      "type": "Optional[str]"
+                    }
+                  ],
+                  "docstring": "Property attribute.",
+                  "decorators": [],
+                  "main_category": "Object-Oriented Programming",
+                  "sub_category": "Attributes",
+                  "data_type_manipulated": ["Any"],
+                  "version_added": "2.2",
+                  "deprecated": false,
+                  "examples": [
+                    "class C:\n    @property\n    def x(self):\n        return self._x\n    @x.setter\n    def x(self, value):\n        self._x = value"
+                  ]
+                },
+                {
+                  "name": "range",
+                  "module": "builtins",
+                  "class_name": "range",
+                  "return_type": "range",
+                  "parameters": [
+                    {
+                      "name": "start",
+                      "type": "int"
+                    },
+                    {
+                      "name": "stop",
+                      "type": "int"
+                    },
+                    {
+                      "name": "step",
+                      "type": "int"
+                    }
+                  ],
+                  "docstring": "Return an object that produces a sequence of integers from start to stop by step.",
+                  "decorators": [],
+                  "main_category": "Sequence Generation",
+                  "sub_category": "Numeric Sequence",
+                  "data_type_manipulated": ["int"],
+                  "version_added": "1.0",
+                  "deprecated": false,
+                  "examples": [
+                    "list(range(5))  # Returns [0, 1, 2, 3, 4]",
+                    "list(range(1, 10, 2))  # Returns [1, 3, 5, 7, 9]"
+                  ]
+                },
+                {
+                  "name": "repr",
+                  "module": "builtins",
+                  "class_name": null,
+                  "return_type": "str",
+                  "parameters": [
+                    {
+                      "name": "object",
+                      "type": "Any"
+                    }
+                  ],
+                  "docstring": "Return a string containing a printable representation of an object.",
+                  "decorators": [],
+                  "main_category": "Object Representation",
+                  "sub_category": "String Conversion",
+                  "data_type_manipulated": ["Any"],
+                  "version_added": "1.0",
+                  "deprecated": false,
+                  "examples": [
+                    "repr('hello')  # Returns \"'hello'\"",
+                    "repr([1, 2, 3])  # Returns '[1, 2, 3]'"
+                  ]
+                },
+                {
+                  "name": "reversed",
+                  "module": "builtins",
+                  "class_name": "reversed",
+                  "return_type": "Iterator",
+                  "parameters": [
+                    {
+                      "name": "seq",
+                      "type": "Sequence"
+                    }
+                  ],
+                  "docstring": "Return a reverse iterator over the values of the given sequence.",
+                  "decorators": [],
+                  "main_category": "Iteration",
+                  "sub_category": "Sequence Reversal",
+                  "data_type_manipulated": ["Sequence"],
+                  "version_added": "2.4",
+                  "deprecated": false,
+                  "examples": [
+                    "list(reversed([1, 2, 3]))  # Returns [3, 2, 1]",
+                    "for char in reversed('hello'): print(char)  # Prints 'o', 'l', 'l', 'e', 'h'"
+                  ]
+                },
+                {
+                  "name": "round",
+                  "module": "builtins",
+                  "class_name": null,
+                  "return_type": "Union[int, float]",
+                  "parameters": [
+                    {
+                      "name": "number",
+                      "type": "Union[int, float]"
+                    },
+                    {
+                      "name": "ndigits",
+                      "type": "Optional[int]"
+                    }
+                  ],
+                  "docstring": "Round a number to a given precision in decimal digits.",
+                  "decorators": [],
+                  "main_category": "Mathematical Operations",
+                  "sub_category": "Rounding",
+                  "data_type_manipulated": ["int", "float"],
+                  "version_added": "1.0",
+                  "deprecated": false,
+                  "examples": [
+                    "round(3.14159, 2)  # Returns 3.14",
+                    "round(5.5)  # Returns 6"
+                  ]
+                },
+                {
+                  "name": "set",
+                  "module": "builtins",
+                  "class_name": "set",
+                  "return_type": "set",
+                  "parameters": [
+                    {
+                      "name": "iterable",
+                      "type": "Optional[Iterable]"
+                    }
+                  ],
+                  "docstring": "Return a new set object, optionally with elements taken from iterable.",
+                  "decorators": [],
+                  "main_category": "Data Structures",
+                  "sub_category": "Set",
+                  "data_type_manipulated": ["Iterable"],
+                  "version_added": "2.4",
+                  "deprecated": false,
+                  "examples": [
+                    "set([1, 2, 3, 2])  # Returns {1, 2, 3}",
+                    "set('hello')  # Returns {'h', 'e', 'l', 'o'}"
+                  ]
+                },
+                {
+                  "name": "setattr",
+                  "module": "builtins",
+                  "class_name": null,
+                  "return_type": "None",
+                  "parameters": [
+                    {
+                      "name": "object",
+                      "type": "Any"
+                    },
+                    {
+                      "name": "name",
+                      "type": "str"
+                    },
+                    {
+                      "name": "value",
+                      "type": "Any"
+                    }
+                  ],
+                  "docstring": "Set a named attribute on an object with the given value.",
+                  "decorators": [],
+                  "main_category": "Object Manipulation",
+                  "sub_category": "Attribute Operations",
+                  "data_type_manipulated": ["Any"],
+                  "version_added": "1.0",
+                  "deprecated": false,
+                  "examples": [
+                    "class Person: pass\np = Person()\nsetattr(p, 'name', 'John')\nprint(p.name)  # Prints 'John'"
+                  ]
+                },
+                {
+                  "name": "slice",
+                  "module": "builtins",
+                  "class_name": "slice",
+                  "return_type": "slice",
+                  "parameters": [
+                    {
+                      "name": "start",
+                      "type": "Optional[int]"
+                    },
+                    {
+                      "name": "stop",
+                      "type": "Optional[int]"
+                    },
+                    {
+                      "name": "step",
+                      "type": "Optional[int]"
+                    }
+                  ],
+                  "docstring": "Create a slice object. Used for extended slicing (e.g. a[start:stop:step]).",
+                  "decorators": [],
+                  "main_category": "Sequence Operations",
+                  "sub_category": "Slicing",
+                  "data_type_manipulated": ["Sequence"],
+                  "version_added": "1.0",
+                  "deprecated": false,
+                  "examples": [
+                    "s = slice(1, 5, 2)",
+                    "[0, 1, 2, 3, 4, 5][s]  # Returns [1, 3]"
+                  ]
+                },
+                {
+                  "name": "sorted",
+                  "module": "builtins",
+                  "class_name": null,
+                  "return_type": "List",
+                  "parameters": [
+                    {
+                      "name": "iterable",
+                      "type": "Iterable"
+                    },
+                    {
+                      "name": "key",
+                      "type": "Optional[Callable]"
+                    },
+                    {
+                      "name": "reverse",
+                      "type": "bool"
+                    }
+                  ],
+                  "docstring": "Return a new sorted list from the items in iterable.",
+                  "decorators": [],
+                  "main_category": "Sorting",
+                  "sub_category": "Sequence Sorting",
+                  "data_type_manipulated": ["Iterable"],
+                  "version_added": "2.4",
+                  "deprecated": false,
+                  "examples": [
+                    "sorted([3, 1, 4, 1, 5, 9, 2])  # Returns [1, 1, 2, 3, 4, 5, 9]",
+                    "sorted('hello')  # Returns ['e', 'h', 'l', 'l', 'o']"
+                  ]
+                },
+                {
+                  "name": "staticmethod",
+                  "module": "builtins",
+                  "class_name": "staticmethod",
+                  "return_type": "staticmethod",
+                  "parameters": [
+                    {
+                      "name": "function",
+                      "type": "Callable"
+                    }
+                  ],
+                  "docstring": "Transform a method into a static method.",
+                  "decorators": [],
+                  "main_category": "Object-Oriented Programming",
+                  "sub_category": "Method Types",
+                  "data_type_manipulated": ["Callable"],
+                  "version_added": "2.2",
+                  "deprecated": false,
+                  "examples": [
+                    "class C:\n    @staticmethod\n    def f(arg1, arg2, ...):\n        ...",
+                    "C.f(1, 2)  # Calling static method"
+                  ]
+                },
+                {
+                  "name": "str",
+                  "module": "builtins",
+                  "class_name": "str",
+                  "return_type": "str",
+                  "parameters": [
+                    {
+                      "name": "object",
+                      "type": "Any"
+                    },
+                    {
+                      "name": "encoding",
+                      "type": "Optional[str]"
+                    },
+                    {
+                      "name": "errors",
+                      "type": "Optional[str]"
+                    }
+                  ],
+                  "docstring": "Return a string version of object.",
+                  "decorators": [],
+                  "main_category": "Type Conversion",
+                  "sub_category": "String Conversion",
+                  "data_type_manipulated": ["Any"],
+                  "version_added": "1.0",
+                  "deprecated": false,
+                  "examples": [
+                    "str(123)  # Returns '123'",
+                    "str(b'hello', encoding='utf-8')  # Returns 'hello'"
+                  ]
+                },
+                {
+                  "name": "sum",
+                  "module": "builtins",
+                  "class_name": null,
+                  "return_type": "Union[int, float]",
+                  "parameters": [
+                    {
+                      "name": "iterable",
+                      "type": "Iterable"
+                    },
+                    {
+                      "name": "start",
+                      "type": "Union[int, float]"
+                    }
+                  ],
+                  "docstring": "Return the sum of a 'start' value (default: 0) plus an iterable of numbers.",
+                  "decorators": [],
+                  "main_category": "Mathematical Operations",
+                  "sub_category": "Summation",
+                  "data_type_manipulated": ["Iterable"],
+                  "version_added": "2.3",
+                  "deprecated": false,
+                  "examples": [
+                    "sum([1, 2, 3, 4, 5])  # Returns 15",
+                    "sum([1, 2, 3], 10)  # Returns 16"
+                  ]
+                },
+
+    
+        {
+            "name": "super",
+            "module": "builtins",
+            "class_name": "super",
+            "return_type": "super",
+            "parameters": [
+            {
+                "name": "type",
+                "type": "Optional[type]"
+            },
+            {
+                "name": "object_or_type",
+                "type": "Optional[Union[object, type]]"
+            }
+            ],
+            "docstring": "Return a proxy object that delegates method calls to a parent or sibling class of type.",
+            "decorators": [],
+            "main_category": "Object-Oriented Programming",
+            "sub_category": "Inheritance",
+            "data_type_manipulated": ["type", "object"],
+            "version_added": "2.2",
+            "deprecated": false,
+            "examples": [
+            "class B:\n    def method(self):\n        print('B')\n\nclass C(B):\n    def method(self):\n        super().method()\n        print('C')\n\nC().method()  # Prints 'B' then 'C'"
+            ]
+        },
+        {
+            "name": "tuple",
+            "module": "builtins",
+            "class_name": "tuple",
+            "return_type": "tuple",
+            "parameters": [
+            {
+                "name": "iterable",
+                "type": "Optional[Iterable]"
+            }
+            ],
+            "docstring": "Return a tuple whose items are the same and in the same order as iterable's items.",
+            "decorators": [],
+            "main_category": "Data Structures",
+            "sub_category": "Sequence",
+            "data_type_manipulated": ["Iterable"],
+            "version_added": "1.0",
+            "deprecated": false,
+            "examples": [
+            "tuple([1, 2, 3])  # Returns (1, 2, 3)",
+            "tuple('abc')  # Returns ('a', 'b', 'c')"
+            ]
+        },
+        {
+            "name": "type",
+            "module": "builtins",
+            "class_name": "type",
+            "return_type": "Union[type, Type]",
+            "parameters": [
+            {
+                "name": "object",
+                "type": "Any"
+            }
+            ],
+            "docstring": "Return the type of an object, or create a new type object.",
+            "decorators": [],
+            "main_category": "Type Operations",
+            "sub_category": "Type Information",
+            "data_type_manipulated": ["Any"],
+            "version_added": "1.0",
+            "deprecated": false,
+            "examples": [
+            "type(42)  # Returns <class 'int'>",
+            "type('hello')  # Returns <class 'str'>",
+            "MyClass = type('MyClass', (object,), {'x': 42})  # Creates a new class"
+            ]
+        },
+        {
+            "name": "vars",
+            "module": "builtins",
+            "class_name": null,
+            "return_type": "dict",
+            "parameters": [
+            {
+                "name": "object",
+                "type": "Optional[Any]"
+            }
+            ],
+            "docstring": "Return the __dict__ attribute for a module, class, instance, or any other object with a __dict__ attribute.",
+            "decorators": [],
+            "main_category": "Introspection",
+            "sub_category": "Object Information",
+            "data_type_manipulated": ["Any"],
+            "version_added": "1.0",
+            "deprecated": false,
+            "examples": [
+            "class C: pass\nc = C()\nc.x = 1\nvars(c)  # Returns {'x': 1}",
+            "vars()  # Returns the current local symbol table as a dictionary"
+            ]
+        },
+        {
+            "name": "zip",
+            "module": "builtins",
+            "class_name": "zip",
+            "return_type": "zip",
+            "parameters": [
+            {
+                "name": "*iterables",
+                "type": "Iterable"
+            }
+            ],
+            "docstring": "Return an iterator of tuples where the i-th tuple contains the i-th element from each of the argument sequences or iterables.",
+            "decorators": [],
+            "main_category": "Iteration",
+            "sub_category": "Sequence Combination",
+            "data_type_manipulated": ["Iterable"],
+            "version_added": "2.0",
+            "deprecated": false,
+            "examples": [
+            "list(zip([1, 2, 3], ['a', 'b', 'c']))  # Returns [(1, 'a'), (2, 'b'), (3, 'c')]",
+            "dict(zip(['a', 'b', 'c'], [1, 2, 3]))  # Returns {'a': 1, 'b': 2, 'c': 3}"
+            ]
+        },
+        {
+            "name": "__import__",
+            "module": "builtins",
+            "class_name": null,
+            "return_type": "module",
+            "parameters": [
+            {
+                "name": "name",
+                "type": "str"
+            },
+            {
+                "name": "globals",
+                "type": "Optional[dict]"
+            },
+            {
+                "name": "locals",
+                "type": "Optional[dict]"
+            },
+            {
+                "name": "fromlist",
+                "type": "List[str]"
+            },
+            {
+                "name": "level",
+                "type": "int"
+            }
+            ],
+            "docstring": "Import a module. This is an advanced function that is not needed in everyday Python programming.",
+            "decorators": [],
+            "main_category": "Module Operations",
+            "sub_category": "Dynamic Import",
+            "data_type_manipulated": ["str", "module"],
+            "version_added": "1.0",
+            "deprecated": false,
+            "examples": [
+            "math = __import__('math')",
+            "os = __import__('os', globals(), locals(), ['path', 'makedirs'], 0)"
+            ]
+        }
+        
+                
   ]

@@ -97,7 +97,7 @@ export default function Home() {
      <p>----------------------------------------------------------</p>
      <br></br>
      <br></br>
-     {/* <PythonFunctionsList data={pythonData}></PythonFunctionsList> */}
+     <PythonFunctionsList data={pythonData}></PythonFunctionsList>
      <br></br>
      <br></br>
      <br></br>
