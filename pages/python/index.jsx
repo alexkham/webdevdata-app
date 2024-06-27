@@ -14,6 +14,14 @@ export default function PythonPage() {
             text: 'Explore the fundamentals of Python sequence slicing with our interactive guide.Clear visualizations to help you understand how slicing works with Python sequences . Learn to  use indices and step parameters to manipulate sequences and extract subsets.',
             image: 'series-L.jpg'
         },
+        {
+
+            title:'Python Functions',
+            link: 'python/functions',
+            text: 'Discover and filter Python functions by various properties, providing a comprehensive tool for exploring and understanding their usage and characteristics.',
+            image: '/python-function2.jpg'
+        },
+        
         
         
         

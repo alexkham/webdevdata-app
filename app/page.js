@@ -219,7 +219,7 @@ export default async function Home({slides}) {
      {/* <p>----------------------------------------------------------</p>
      <br></br> */}
      <br></br>
-     {/* <PythonFunctionsList data={pythonData}></PythonFunctionsList> */}
+     <PythonFunctionsList data={pythonData}></PythonFunctionsList>
      <br></br>
      <br></br>
      <br></br>

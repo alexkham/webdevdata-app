@@ -86,7 +86,7 @@ const SectionLinkGroup = ({ sections }) => {
             <h2 className={styles.cardTitle}>{capitalizeWords(section.title?.replaceAll('_', ' '))}</h2>
             <p className={styles.cardText}>{capitalizeWords(section.text)}</p>
             <Link href={`/${section.link}`} legacyBehavior>
-              <a className={styles.readMore}>Read More</a>
+              <a className={styles.readMore}>Learn More</a>
             </Link>
           </div>
         </div>

@@ -68,12 +68,26 @@
     margin-left: 25px;
   }
   
-  .functionList {
+  /* .functionList {
     width: 100%;
     list-style-type: none;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    color: blue;
+    font-weight: bolder;
+    margin-left: 20px;
+    margin-right: 10px;
+    border-left: solid black 0.5px;
+  } */
+
+  .functionList {
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* Changed from repeat(auto-fill, minmax(200px, 1fr)) */
     gap: 10px;
     color: blue;
     font-weight: bolder;
@@ -84,6 +98,7 @@
     position: relative;
     padding: 5px;
     cursor: pointer;
+    margin-right: 100px;
   }
   
   .tooltip {

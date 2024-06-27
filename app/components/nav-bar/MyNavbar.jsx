@@ -36,6 +36,7 @@ function fixNav(){
         <Link href="/python">Python</Link>
         <ul className="dropdown-content">
             <li><Link href="/python/sequence-slicing">Sequence Slicing</Link></li>
+            <li><Link href="/python/functions">Python Functions</Link></li>
                                           
          </ul>
          </li>
