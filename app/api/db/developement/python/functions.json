@@ -1905,7 +1905,2432 @@
             "math = __import__('math')",
             "os = __import__('os', globals(), locals(), ['path', 'makedirs'], 0)"
             ]
+        },
+
+        
+          {
+            "name": "clear",
+            "module": "dict",
+            "class_name": "dictionary",
+            "return_type": "None",
+            "parameters": [],
+            "docstring": "Remove all items from the dictionary.",
+            "decorators": [],
+            "main_category": "Dictionary Operations",
+            "sub_category": "Modification",
+            "data_type_manipulated": ["dictionary"],
+            "version_added": "1.5",
+            "deprecated": false,
+            "examples": [
+              "d = {'a': 1, 'b': 2}",
+              "d.clear()",
+              "print(d)  # Outputs: {}"
+            ]
+          },
+          {
+            "name": "copy",
+            "module": "dict",
+            "class_name": "dictionary",
+            "return_type": "dictionary",
+            "parameters": [],
+            "docstring": "Return a shallow copy of the dictionary.",
+            "decorators": [],
+            "main_category": "Dictionary Operations",
+            "sub_category": "Duplication",
+            "data_type_manipulated": ["dictionary"],
+            "version_added": "1.5",
+            "deprecated": false,
+            "examples": [
+              "d = {'a': 1, 'b': 2}",
+              "d2 = d.copy()",
+              "print(d2)  # Outputs: {'a': 1, 'b': 2}"
+            ]
+          },
+          {
+            "name": "fromkeys",
+            "module": "dict",
+            "class_name": "dictionary",
+            "return_type": "dictionary",
+            "parameters": [
+              {
+                "name": "iterable",
+                "type": "Iterable"
+              },
+              {
+                "name": "value",
+                "type": "Any",
+                "default": "None"
+              }
+            ],
+            "docstring": "Create a new dictionary with keys from iterable and values set to value.",
+            "decorators": [],
+            "main_category": "Dictionary Operations",
+            "sub_category": "Creation",
+            "data_type_manipulated": ["dictionary", "Iterable"],
+            "version_added": "2.3",
+            "deprecated": false,
+            "examples": [
+              "keys = ['a', 'b', 'c']",
+              "d = dict.fromkeys(keys, 0)",
+              "print(d)  # Outputs: {'a': 0, 'b': 0, 'c': 0}"
+            ]
+          },
+          {
+            "name": "get",
+            "module": "dict",
+            "class_name": "dictionary",
+            "return_type": "Any",
+            "parameters": [
+              {
+                "name": "key",
+                "type": "Any"
+              },
+              {
+                "name": "default",
+                "type": "Any",
+                "default": "None"
+              }
+            ],
+            "docstring": "Return the value for key if key is in the dictionary, else default.",
+            "decorators": [],
+            "main_category": "Dictionary Operations",
+            "sub_category": "Retrieval",
+            "data_type_manipulated": ["dictionary"],
+            "version_added": "1.5",
+            "deprecated": false,
+            "examples": [
+              "d = {'a': 1, 'b': 2}",
+              "print(d.get('a'))  # Outputs: 1",
+              "print(d.get('c', 3))  # Outputs: 3"
+            ]
+          },
+          {
+            "name": "items",
+            "module": "dict",
+            "class_name": "dictionary",
+            "return_type": "dict_items",
+            "parameters": [],
+            "docstring": "Return a new view of the dictionary's items ((key, value) pairs).",
+            "decorators": [],
+            "main_category": "Dictionary Operations",
+            "sub_category": "View",
+            "data_type_manipulated": ["dictionary"],
+            "version_added": "2.2",
+            "deprecated": false,
+            "examples": [
+              "d = {'a': 1, 'b': 2}",
+              "print(list(d.items()))  # Outputs: [('a', 1), ('b', 2)]"
+            ]
+          },
+          {
+            "name": "keys",
+            "module": "dict",
+            "class_name": "dictionary",
+            "return_type": "dict_keys",
+            "parameters": [],
+            "docstring": "Return a new view of the dictionary's keys.",
+            "decorators": [],
+            "main_category": "Dictionary Operations",
+            "sub_category": "View",
+            "data_type_manipulated": ["dictionary"],
+            "version_added": "2.2",
+            "deprecated": false,
+            "examples": [
+              "d = {'a': 1, 'b': 2}",
+              "print(list(d.keys()))  # Outputs: ['a', 'b']"
+            ]
+          },
+          {
+            "name": "pop",
+            "module": "dict",
+            "class_name": "dictionary",
+            "return_type": "Any",
+            "parameters": [
+              {
+                "name": "key",
+                "type": "Any"
+              },
+              {
+                "name": "default",
+                "type": "Any",
+                "default": "None"
+              }
+            ],
+            "docstring": "Remove specified key and return the corresponding value.",
+            "decorators": [],
+            "main_category": "Dictionary Operations",
+            "sub_category": "Modification",
+            "data_type_manipulated": ["dictionary"],
+            "version_added": "1.5",
+            "deprecated": false,
+            "examples": [
+              "d = {'a': 1, 'b': 2}",
+              "print(d.pop('a'))  # Outputs: 1",
+              "print(d)  # Outputs: {'b': 2}"
+            ]
+          },
+          {
+            "name": "popitem",
+            "module": "dict",
+            "class_name": "dictionary",
+            "return_type": "Tuple",
+            "parameters": [],
+            "docstring": "Remove and return a (key, value) pair as a 2-tuple.",
+            "decorators": [],
+            "main_category": "Dictionary Operations",
+            "sub_category": "Modification",
+            "data_type_manipulated": ["dictionary"],
+            "version_added": "2.1",
+            "deprecated": false,
+            "examples": [
+              "d = {'a': 1, 'b': 2}",
+              "print(d.popitem())  # Outputs: ('b', 2)",
+              "print(d)  # Outputs: {'a': 1}"
+            ]
+          },
+          {
+            "name": "setdefault",
+            "module": "dict",
+            "class_name": "dictionary",
+            "return_type": "Any",
+            "parameters": [
+              {
+                "name": "key",
+                "type": "Any"
+              },
+              {
+                "name": "default",
+                "type": "Any",
+                "default": "None"
+              }
+            ],
+            "docstring": "Insert key with a value of default if key is not in the dictionary.",
+            "decorators": [],
+            "main_category": "Dictionary Operations",
+            "sub_category": "Modification",
+            "data_type_manipulated": ["dictionary"],
+            "version_added": "2.0",
+            "deprecated": false,
+            "examples": [
+              "d = {'a': 1}",
+              "print(d.setdefault('b', 2))  # Outputs: 2",
+              "print(d)  # Outputs: {'a': 1, 'b': 2}"
+            ]
+          },
+          {
+            "name": "update",
+            "module": "dict",
+            "class_name": "dictionary",
+            "return_type": "None",
+            "parameters": [
+              {
+                "name": "other",
+                "type": "Union[dictionary, Iterable[Tuple[Any, Any]]]"
+              }
+            ],
+            "docstring": "Update the dictionary with the key/value pairs from other, overwriting existing keys.",
+            "decorators": [],
+            "main_category": "Dictionary Operations",
+            "sub_category": "Modification",
+            "data_type_manipulated": ["dictionary"],
+            "version_added": "1.5",
+            "deprecated": false,
+            "examples": [
+              "d = {'a': 1}",
+              "d.update({'b': 2, 'c': 3})",
+              "print(d)  # Outputs: {'a': 1, 'b': 2, 'c': 3}"
+            ]
+          },
+          {
+            "name": "values",
+            "module": "dict",
+            "class_name": "dictionary",
+            "return_type": "dict_values",
+            "parameters": [],
+            "docstring": "Return a new view of the dictionary's values.",
+            "decorators": [],
+            "main_category": "Dictionary Operations",
+            "sub_category": "View",
+            "data_type_manipulated": ["dictionary"],
+            "version_added": "2.2",
+            "deprecated": false,
+            "examples": [
+              "d = {'a': 1, 'b': 2}",
+              "print(list(d.values()))  # Outputs: [1, 2]"
+            ]
+          },
+          
+            {
+              "name": "count",
+              "module": "tuple",
+              "class_name": "tuple",
+              "return_type": "int",
+              "parameters": [
+                {
+                  "name": "value",
+                  "type": "Any"
+                }
+              ],
+              "docstring": "Return the number of times a specified value occurs in a tuple.",
+              "decorators": [],
+              "main_category": "Tuple Operations",
+              "sub_category": "Counting",
+              "data_type_manipulated": ["tuple"],
+              "version_added": "1.5",
+              "deprecated": false,
+              "examples": [
+                "t = (1, 2, 3, 1, 4, 1)",
+                "print(t.count(1))  # Outputs: 3"
+              ]
+            },
+            {
+              "name": "index",
+              "module": "tuple",
+              "class_name": "tuple",
+              "return_type": "int",
+              "parameters": [
+                {
+                  "name": "value",
+                  "type": "Any"
+                },
+                {
+                  "name": "start",
+                  "type": "int",
+                  "default": "0"
+                },
+                {
+                  "name": "end",
+                  "type": "int",
+                  "default": "None"
+                }
+              ],
+              "docstring": "Return the index of the first occurrence of the specified value.",
+              "decorators": [],
+              "main_category": "Tuple Operations",
+              "sub_category": "Searching",
+              "data_type_manipulated": ["tuple"],
+              "version_added": "1.5",
+              "deprecated": false,
+              "examples": [
+                "t = (1, 2, 3, 1, 4, 1)",
+                "print(t.index(1))  # Outputs: 0",
+                "print(t.index(1, 2))  # Outputs: 3"
+              ]
+            },
+            
+              {
+                "name": "add",
+                "module": "set",
+                "class_name": "set",
+                "return_type": "None",
+                "parameters": [
+                  {
+                    "name": "element",
+                    "type": "Any"
+                  }
+                ],
+                "docstring": "Add an element to the set.",
+                "decorators": [],
+                "main_category": "Set Operations",
+                "sub_category": "Modification",
+                "data_type_manipulated": ["set"],
+                "version_added": "2.3",
+                "deprecated": false,
+                "examples": [
+                  "s = {1, 2, 3}",
+                  "s.add(4)",
+                  "print(s)  # Outputs: {1, 2, 3, 4}"
+                ]
+              },
+              {
+                "name": "clear",
+                "module": "set",
+                "class_name": "set",
+                "return_type": "None",
+                "parameters": [],
+                "docstring": "Remove all elements from the set.",
+                "decorators": [],
+                "main_category": "Set Operations",
+                "sub_category": "Modification",
+                "data_type_manipulated": ["set"],
+                "version_added": "2.3",
+                "deprecated": false,
+                "examples": [
+                  "s = {1, 2, 3}",
+                  "s.clear()",
+                  "print(s)  # Outputs: set()"
+                ]
+              },
+              {
+                "name": "copy",
+                "module": "set",
+                "class_name": "set",
+                "return_type": "set",
+                "parameters": [],
+                "docstring": "Return a shallow copy of the set.",
+                "decorators": [],
+                "main_category": "Set Operations",
+                "sub_category": "Duplication",
+                "data_type_manipulated": ["set"],
+                "version_added": "2.3",
+                "deprecated": false,
+                "examples": [
+                  "s = {1, 2, 3}",
+                  "s_copy = s.copy()",
+                  "print(s_copy)  # Outputs: {1, 2, 3}"
+                ]
+              },
+              {
+                "name": "difference",
+                "module": "set",
+                "class_name": "set",
+                "return_type": "set",
+                "parameters": [
+                  {
+                    "name": "other",
+                    "type": "Iterable"
+                  }
+                ],
+                "docstring": "Return the difference of two or more sets as a new set.",
+                "decorators": [],
+                "main_category": "Set Operations",
+                "sub_category": "Comparison",
+                "data_type_manipulated": ["set"],
+                "version_added": "2.3",
+                "deprecated": false,
+                "examples": [
+                  "s1 = {1, 2, 3}",
+                  "s2 = {3, 4, 5}",
+                  "diff = s1.difference(s2)",
+                  "print(diff)  # Outputs: {1, 2}"
+                ]
+              },
+              {
+                "name": "difference_update",
+                "module": "set",
+                "class_name": "set",
+                "return_type": "None",
+                "parameters": [
+                  {
+                    "name": "other",
+                    "type": "Iterable"
+                  }
+                ],
+                "docstring": "Remove all elements of another set from this set.",
+                "decorators": [],
+                "main_category": "Set Operations",
+                "sub_category": "Modification",
+                "data_type_manipulated": ["set"],
+                "version_added": "2.3",
+                "deprecated": false,
+                "examples": [
+                  "s1 = {1, 2, 3}",
+                  "s2 = {3, 4, 5}",
+                  "s1.difference_update(s2)",
+                  "print(s1)  # Outputs: {1, 2}"
+                ]
+              },
+              {
+                "name": "discard",
+                "module": "set",
+                "class_name": "set",
+                "return_type": "None",
+                "parameters": [
+                  {
+                    "name": "element",
+                    "type": "Any"
+                  }
+                ],
+                "docstring": "Remove an element from a set if it is a member.",
+                "decorators": [],
+                "main_category": "Set Operations",
+                "sub_category": "Modification",
+                "data_type_manipulated": ["set"],
+                "version_added": "2.3",
+                "deprecated": false,
+                "examples": [
+                  "s = {1, 2, 3}",
+                  "s.discard(2)",
+                  "print(s)  # Outputs: {1, 3}"
+                ]
+              },
+              {
+                "name": "intersection",
+                "module": "set",
+                "class_name": "set",
+                "return_type": "set",
+                "parameters": [
+                  {
+                    "name": "other",
+                    "type": "Iterable"
+                  }
+                ],
+                "docstring": "Return the intersection of two sets as a new set.",
+                "decorators": [],
+                "main_category": "Set Operations",
+                "sub_category": "Comparison",
+                "data_type_manipulated": ["set"],
+                "version_added": "2.3",
+                "deprecated": false,
+                "examples": [
+                  "s1 = {1, 2, 3}",
+                  "s2 = {3, 4, 5}",
+                  "inter = s1.intersection(s2)",
+                  "print(inter)  # Outputs: {3}"
+                ]
+              },
+              {
+                "name": "intersection_update",
+                "module": "set",
+                "class_name": "set",
+                "return_type": "None",
+                "parameters": [
+                  {
+                    "name": "other",
+                    "type": "Iterable"
+                  }
+                ],
+                "docstring": "Update the set with the intersection of itself and another.",
+                "decorators": [],
+                "main_category": "Set Operations",
+                "sub_category": "Modification",
+                "data_type_manipulated": ["set"],
+                "version_added": "2.3",
+                "deprecated": false,
+                "examples": [
+                  "s1 = {1, 2, 3}",
+                  "s2 = {3, 4, 5}",
+                  "s1.intersection_update(s2)",
+                  "print(s1)  # Outputs: {3}"
+                ]
+              },
+              {
+                "name": "isdisjoint",
+                "module": "set",
+                "class_name": "set",
+                "return_type": "bool",
+                "parameters": [
+                  {
+                    "name": "other",
+                    "type": "Iterable"
+                  }
+                ],
+                "docstring": "Return True if two sets have a null intersection.",
+                "decorators": [],
+                "main_category": "Set Operations",
+                "sub_category": "Comparison",
+                "data_type_manipulated": ["set"],
+                "version_added": "2.6",
+                "deprecated": false,
+                "examples": [
+                  "s1 = {1, 2, 3}",
+                  "s2 = {4, 5, 6}",
+                  "print(s1.isdisjoint(s2))  # Outputs: True"
+                ]
+              },
+              {
+                "name": "issubset",
+                "module": "set",
+                "class_name": "set",
+                "return_type": "bool",
+                "parameters": [
+                  {
+                    "name": "other",
+                    "type": "Iterable"
+                  }
+                ],
+                "docstring": "Report whether another set contains this set.",
+                "decorators": [],
+                "main_category": "Set Operations",
+                "sub_category": "Comparison",
+                "data_type_manipulated": ["set"],
+                "version_added": "2.3",
+                "deprecated": false,
+                "examples": [
+                  "s1 = {1, 2}",
+                  "s2 = {1, 2, 3}",
+                  "print(s1.issubset(s2))  # Outputs: True"
+                ]
+              },
+              {
+                "name": "issuperset",
+                "module": "set",
+                "class_name": "set",
+                "return_type": "bool",
+                "parameters": [
+                  {
+                    "name": "other",
+                    "type": "Iterable"
+                  }
+                ],
+                "docstring": "Report whether this set contains another set.",
+                "decorators": [],
+                "main_category": "Set Operations",
+                "sub_category": "Comparison",
+                "data_type_manipulated": ["set"],
+                "version_added": "2.3",
+                "deprecated": false,
+                "examples": [
+                  "s1 = {1, 2, 3}",
+                  "s2 = {1, 2}",
+                  "print(s1.issuperset(s2))  # Outputs: True"
+                ]
+              },
+              {
+                "name": "pop",
+                "module": "set",
+                "class_name": "set",
+                "return_type": "Any",
+                "parameters": [],
+                "docstring": "Remove and return an arbitrary set element.",
+                "decorators": [],
+                "main_category": "Set Operations",
+                "sub_category": "Modification",
+                "data_type_manipulated": ["set"],
+                "version_added": "2.3",
+                "deprecated": false,
+                "examples": [
+                  "s = {1, 2, 3}",
+                  "element = s.pop()",
+                  "print(element)  # Outputs: 1 (or any other element)",
+                  "print(s)  # Outputs: {2, 3} (or the remaining elements)"
+                ]
+              },
+              {
+                "name": "remove",
+                "module": "set",
+                "class_name": "set",
+                "return_type": "None",
+                "parameters": [
+                  {
+                    "name": "element",
+                    "type": "Any"
+                  }
+                ],
+                "docstring": "Remove an element from a set; it must be a member.",
+                "decorators": [],
+                "main_category": "Set Operations",
+                "sub_category": "Modification",
+                "data_type_manipulated": ["set"],
+                "version_added": "2.3",
+                "deprecated": false,
+                "examples": [
+                  "s = {1, 2, 3}",
+                  "s.remove(2)",
+                  "print(s)  # Outputs: {1, 3}"
+                ]
+              },
+              {
+                "name": "symmetric_difference",
+                "module": "set",
+                "class_name": "set",
+                "return_type": "set",
+                "parameters": [
+                  {
+                    "name": "other",
+                    "type": "Iterable"
+                  }
+                ],
+                "docstring": "Return the symmetric difference of two sets as a new set.",
+                "decorators": [],
+                "main_category": "Set Operations",
+                "sub_category": "Comparison",
+                "data_type_manipulated": ["set"],
+                "version_added": "2.3",
+                "deprecated": false,
+                "examples": [
+                  "s1 = {1, 2, 3}",
+                  "s2 = {3, 4, 5}",
+                  "sym_diff = s1.symmetric_difference(s2)",
+                  "print(sym_diff)  # Outputs: {1, 2, 4, 5}"
+                ]
+              },
+              {
+                "name": "symmetric_difference_update",
+                "module": "set",
+                "class_name": "set",
+                "return_type": "None",
+                "parameters": [
+                  {
+                    "name": "other",
+                    "type": "Iterable"
+                  }
+                ],
+                "docstring": "Update a set with the symmetric difference of itself and another.",
+                "decorators": [],
+                "main_category": "Set Operations",
+                "sub_category": "Modification",
+                "data_type_manipulated": ["set"],
+                "version_added": "2.3",
+                "deprecated": false,
+                "examples": [
+                  "s1 = {1, 2, 3}",
+                  "s2 = {3, 4, 5}",
+                  "s1.symmetric_difference_update(s2)",
+                  "print(s1)  # Outputs: {1, 2, 4, 5}"
+                ]
+              },
+              {
+                "name": "union",
+                "module": "set",
+                "class_name": "set",
+                "return_type": "set",
+                "parameters": [
+                  {
+                    "name": "other",
+                    "type": "Iterable"
+                  }
+                ],
+                "docstring": "Return the union of sets as a new set.",
+                "decorators": [],
+                "main_category": "Set Operations",
+                "sub_category": "Comparison",
+                "data_type_manipulated": ["set"],
+                "version_added": "2.3",
+                "deprecated": false,
+                "examples": [
+                  "s1 = {1, 2, 3}",
+                  "s2 = {3, 4, 5}",
+                  "union = s1.union(s2)",
+                  "print(union)  # Outputs: {1, 2, 3, 4, 5}"
+                ]
+              },
+              {
+                "name": "update",
+                "module": "set",
+                "class_name": "set",
+                "return_type": "None",
+                "parameters": [
+                  {
+                    "name": "other",
+                    "type": "Iterable"
+                  }
+                ],
+                "docstring": "Update a set with the union of itself and others.",
+                "decorators": [],
+                "main_category": "Set Operations",
+                "sub_category": "Modification",
+                "data_type_manipulated": ["set"],
+                "version_added": "2.3",
+                "deprecated": false,
+                "examples": [
+                  "s1 = {1, 2, 3}",
+                  "s2 = {3, 4, 5}",
+                  "s1.update(s2)",
+                  "print(s1)  # Outputs: {1, 2, 3, 4, 5}"
+                ]
+              },
+
+              
+                {
+                  "name": "close",
+                  "module": "io",
+                  "class_name": "TextIOWrapper",
+                  "return_type": "None",
+                  "parameters": [],
+                  "docstring": "Close the file. A closed file cannot be read or written any more.",
+                  "decorators": [],
+                  "main_category": "File Operations",
+                  "sub_category": "Management",
+                  "data_type_manipulated": ["file"],
+                  "version_added": "1.5",
+                  "deprecated": false,
+                  "examples": [
+                    "f = open('example.txt', 'r')",
+                    "f.close()"
+                  ]
+                },
+                {
+                  "name": "fileno",
+                  "module": "io",
+                  "class_name": "TextIOWrapper",
+                  "return_type": "int",
+                  "parameters": [],
+                  "docstring": "Return the underlying file descriptor (an integer).",
+                  "decorators": [],
+                  "main_category": "File Operations",
+                  "sub_category": "Information",
+                  "data_type_manipulated": ["file"],
+                  "version_added": "1.5",
+                  "deprecated": false,
+                  "examples": [
+                    "f = open('example.txt', 'r')",
+                    "print(f.fileno())",
+                    "f.close()"
+                  ]
+                },
+                {
+                  "name": "flush",
+                  "module": "io",
+                  "class_name": "TextIOWrapper",
+                  "return_type": "None",
+                  "parameters": [],
+                  "docstring": "Flush the write buffers of the stream if applicable.",
+                  "decorators": [],
+                  "main_category": "File Operations",
+                  "sub_category": "Management",
+                  "data_type_manipulated": ["file"],
+                  "version_added": "1.5",
+                  "deprecated": false,
+                  "examples": [
+                    "f = open('example.txt', 'w')",
+                    "f.write('Hello')",
+                    "f.flush()",
+                    "f.close()"
+                  ]
+                },
+                {
+                  "name": "isatty",
+                  "module": "io",
+                  "class_name": "TextIOWrapper",
+                  "return_type": "bool",
+                  "parameters": [],
+                  "docstring": "Return True if the file is connected to a tty(-like) device.",
+                  "decorators": [],
+                  "main_category": "File Operations",
+                  "sub_category": "Information",
+                  "data_type_manipulated": ["file"],
+                  "version_added": "1.5",
+                  "deprecated": false,
+                  "examples": [
+                    "f = open('example.txt', 'r')",
+                    "print(f.isatty())",
+                    "f.close()"
+                  ]
+                },
+                {
+                  "name": "read",
+                  "module": "io",
+                  "class_name": "TextIOWrapper",
+                  "return_type": "str",
+                  "parameters": [
+                    {
+                      "name": "size",
+                      "type": "int",
+                      "default": "-1"
+                    }
+                  ],
+                  "docstring": "Read at most size characters from stream. If size is negative or None, read until EOF.",
+                  "decorators": [],
+                  "main_category": "File Operations",
+                  "sub_category": "Reading",
+                  "data_type_manipulated": ["file"],
+                  "version_added": "1.5",
+                  "deprecated": false,
+                  "examples": [
+                    "f = open('example.txt', 'r')",
+                    "content = f.read()",
+                    "print(content)",
+                    "f.close()"
+                  ]
+                },
+                {
+                  "name": "readable",
+                  "module": "io",
+                  "class_name": "TextIOWrapper",
+                  "return_type": "bool",
+                  "parameters": [],
+                  "docstring": "Return True if the file stream can be read from.",
+                  "decorators": [],
+                  "main_category": "File Operations",
+                  "sub_category": "Information",
+                  "data_type_manipulated": ["file"],
+                  "version_added": "2.6",
+                  "deprecated": false,
+                  "examples": [
+                    "f = open('example.txt', 'r')",
+                    "print(f.readable())",
+                    "f.close()"
+                  ]
+                },
+                {
+                  "name": "readline",
+                  "module": "io",
+                  "class_name": "TextIOWrapper",
+                  "return_type": "str",
+                  "parameters": [
+                    {
+                      "name": "size",
+                      "type": "int",
+                      "default": "-1"
+                    }
+                  ],
+                  "docstring": "Read until newline or EOF and return a single line of text.",
+                  "decorators": [],
+                  "main_category": "File Operations",
+                  "sub_category": "Reading",
+                  "data_type_manipulated": ["file"],
+                  "version_added": "1.5",
+                  "deprecated": false,
+                  "examples": [
+                    "f = open('example.txt', 'r')",
+                    "line = f.readline()",
+                    "print(line)",
+                    "f.close()"
+                  ]
+                },
+                {
+                  "name": "readlines",
+                  "module": "io",
+                  "class_name": "TextIOWrapper",
+                  "return_type": "List[str]",
+                  "parameters": [
+                    {
+                      "name": "hint",
+                      "type": "int",
+                      "default": "-1"
+                    }
+                  ],
+                  "docstring": "Read and return a list of lines from the stream.",
+                  "decorators": [],
+                  "main_category": "File Operations",
+                  "sub_category": "Reading",
+                  "data_type_manipulated": ["file"],
+                  "version_added": "1.5",
+                  "deprecated": false,
+                  "examples": [
+                    "f = open('example.txt', 'r')",
+                    "lines = f.readlines()",
+                    "print(lines)",
+                    "f.close()"
+                  ]
+                },
+                {
+                  "name": "seek",
+                  "module": "io",
+                  "class_name": "TextIOWrapper",
+                  "return_type": "int",
+                  "parameters": [
+                    {
+                      "name": "offset",
+                      "type": "int"
+                    },
+                    {
+                      "name": "whence",
+                      "type": "int",
+                      "default": "0"
+                    }
+                  ],
+                  "docstring": "Change the stream position to the given byte offset.",
+                  "decorators": [],
+                  "main_category": "File Operations",
+                  "sub_category": "Positioning",
+                  "data_type_manipulated": ["file"],
+                  "version_added": "1.5",
+                  "deprecated": false,
+                  "examples": [
+                    "f = open('example.txt', 'r')",
+                    "f.seek(5)",
+                    "print(f.read())",
+                    "f.close()"
+                  ]
+                },
+                {
+                  "name": "seekable",
+                  "module": "io",
+                  "class_name": "TextIOWrapper",
+                  "return_type": "bool",
+                  "parameters": [],
+                  "docstring": "Return True if the stream supports random access.",
+                  "decorators": [],
+                  "main_category": "File Operations",
+                  "sub_category": "Information",
+                  "data_type_manipulated": ["file"],
+                  "version_added": "2.6",
+                  "deprecated": false,
+                  "examples": [
+                    "f = open('example.txt', 'r')",
+                    "print(f.seekable())",
+                    "f.close()"
+                  ]
+                },
+                {
+                  "name": "tell",
+                  "module": "io",
+                  "class_name": "TextIOWrapper",
+                  "return_type": "int",
+                  "parameters": [],
+                  "docstring": "Return the current stream position.",
+                  "decorators": [],
+                  "main_category": "File Operations",
+                  "sub_category": "Positioning",
+                  "data_type_manipulated": ["file"],
+                  "version_added": "1.5",
+                  "deprecated": false,
+                  "examples": [
+                    "f = open('example.txt', 'r')",
+                    "f.read(5)",
+                    "print(f.tell())",
+                    "f.close()"
+                  ]
+                },
+                {
+                  "name": "truncate",
+                  "module": "io",
+                  "class_name": "TextIOWrapper",
+                  "return_type": "int",
+                  "parameters": [
+                    {
+                      "name": "size",
+                      "type": "int",
+                      "default": "None"
+                    }
+                  ],
+                  "docstring": "Resize the stream to the given size in bytes (or the current position if size is not specified).",
+                  "decorators": [],
+                  "main_category": "File Operations",
+                  "sub_category": "Modification",
+                  "data_type_manipulated": ["file"],
+                  "version_added": "1.5",
+                  "deprecated": false,
+                  "examples": [
+                    "f = open('example.txt', 'r+')",
+                    "f.truncate(10)",
+                    "f.close()"
+                  ]
+                },
+                {
+                  "name": "writable",
+                  "module": "io",
+                  "class_name": "TextIOWrapper",
+                  "return_type": "bool",
+                  "parameters": [],
+                  "docstring": "Return True if the stream supports writing.",
+                  "decorators": [],
+                  "main_category": "File Operations",
+                  "sub_category": "Information",
+                  "data_type_manipulated": ["file"],
+                  "version_added": "2.6",
+                  "deprecated": false,
+                  "examples": [
+                    "f = open('example.txt', 'w')",
+                    "print(f.writable())",
+                    "f.close()"
+                  ]
+                },
+                {
+                  "name": "write",
+                  "module": "io",
+                  "class_name": "TextIOWrapper",
+                  "return_type": "int",
+                  "parameters": [
+                    {
+                      "name": "s",
+                      "type": "str"
+                    }
+                  ],
+                  "docstring": "Write string s to the stream and return the number of characters written.",
+                  "decorators": [],
+                  "main_category": "File Operations",
+                  "sub_category": "Writing",
+                  "data_type_manipulated": ["file"],
+                  "version_added": "1.5",
+                  "deprecated": false,
+                  "examples": [
+                    "f = open('example.txt', 'w')",
+                    "n = f.write('Hello, World!')",
+                    "print(n)",
+                    "f.close()"
+                  ]
+                },
+                {
+                  "name": "writelines",
+                  "module": "io",
+                  "class_name": "TextIOWrapper",
+                  "return_type": "None",
+                  "parameters": [
+                    {
+                      "name": "lines",
+                      "type": "List[str]"
+                    }
+                  ],
+                  "docstring": "Write a list of lines to the stream. Line separators are not added.",
+                  "decorators": [],
+                  "main_category": "File Operations",
+                  "sub_category": "Writing",
+                  "data_type_manipulated": ["file"],
+                  "version_added": "1.5",
+                  "deprecated": false,
+                  "examples": [
+                    "f = open('example.txt', 'w')",
+                    "f.writelines(['Line 1\\n', 'Line 2\\n', 'Line 3\\n'])",
+                    "f.close()"
+                  ]
+                },
+                
+                  {
+                    "name": "append",
+                    "module": "list",
+                    "class_name": "list",
+                    "return_type": "None",
+                    "parameters": [
+                      {
+                        "name": "object",
+                        "type": "Any"
+                      }
+                    ],
+                    "docstring": "Add an item to the end of the list.",
+                    "decorators": [],
+                    "main_category": "List Operations",
+                    "sub_category": "Modification",
+                    "data_type_manipulated": ["list"],
+                    "version_added": "1.0",
+                    "deprecated": false,
+                    "examples": [
+                      "lst = [1, 2, 3]",
+                      "lst.append(4)",
+                      "print(lst)  # Outputs: [1, 2, 3, 4]"
+                    ]
+                  },
+                  {
+                    "name": "clear",
+                    "module": "list",
+                    "class_name": "list",
+                    "return_type": "None",
+                    "parameters": [],
+                    "docstring": "Remove all items from the list.",
+                    "decorators": [],
+                    "main_category": "List Operations",
+                    "sub_category": "Modification",
+                    "data_type_manipulated": ["list"],
+                    "version_added": "3.3",
+                    "deprecated": false,
+                    "examples": [
+                      "lst = [1, 2, 3]",
+                      "lst.clear()",
+                      "print(lst)  # Outputs: []"
+                    ]
+                  },
+                  {
+                    "name": "copy",
+                    "module": "list",
+                    "class_name": "list",
+                    "return_type": "list",
+                    "parameters": [],
+                    "docstring": "Return a shallow copy of the list.",
+                    "decorators": [],
+                    "main_category": "List Operations",
+                    "sub_category": "Duplication",
+                    "data_type_manipulated": ["list"],
+                    "version_added": "3.3",
+                    "deprecated": false,
+                    "examples": [
+                      "lst = [1, 2, 3]",
+                      "new_lst = lst.copy()",
+                      "print(new_lst)  # Outputs: [1, 2, 3]"
+                    ]
+                  },
+                  {
+                    "name": "count",
+                    "module": "list",
+                    "class_name": "list",
+                    "return_type": "int",
+                    "parameters": [
+                      {
+                        "name": "value",
+                        "type": "Any"
+                      }
+                    ],
+                    "docstring": "Return the number of times x appears in the list.",
+                    "decorators": [],
+                    "main_category": "List Operations",
+                    "sub_category": "Information",
+                    "data_type_manipulated": ["list"],
+                    "version_added": "1.0",
+                    "deprecated": false,
+                    "examples": [
+                      "lst = [1, 2, 2, 3, 2]",
+                      "print(lst.count(2))  # Outputs: 3"
+                    ]
+                  },
+                  {
+                    "name": "extend",
+                    "module": "list",
+                    "class_name": "list",
+                    "return_type": "None",
+                    "parameters": [
+                      {
+                        "name": "iterable",
+                        "type": "Iterable"
+                      }
+                    ],
+                    "docstring": "Extend the list by appending all the items from the iterable.",
+                    "decorators": [],
+                    "main_category": "List Operations",
+                    "sub_category": "Modification",
+                    "data_type_manipulated": ["list"],
+                    "version_added": "1.0",
+                    "deprecated": false,
+                    "examples": [
+                      "lst = [1, 2, 3]",
+                      "lst.extend([4, 5])",
+                      "print(lst)  # Outputs: [1, 2, 3, 4, 5]"
+                    ]
+                  },
+                  {
+                    "name": "index",
+                    "module": "list",
+                    "class_name": "list",
+                    "return_type": "int",
+                    "parameters": [
+                      {
+                        "name": "value",
+                        "type": "Any"
+                      },
+                      {
+                        "name": "start",
+                        "type": "int",
+                        "default": "0"
+                      },
+                      {
+                        "name": "stop",
+                        "type": "int",
+                        "default": "None"
+                      }
+                    ],
+                    "docstring": "Return zero-based index in the list of the first item whose value is equal to x.",
+                    "decorators": [],
+                    "main_category": "List Operations",
+                    "sub_category": "Searching",
+                    "data_type_manipulated": ["list"],
+                    "version_added": "1.0",
+                    "deprecated": false,
+                    "examples": [
+                      "lst = [1, 2, 3, 2]",
+                      "print(lst.index(2))  # Outputs: 1"
+                    ]
+                  },
+                  {
+                    "name": "insert",
+                    "module": "list",
+                    "class_name": "list",
+                    "return_type": "None",
+                    "parameters": [
+                      {
+                        "name": "index",
+                        "type": "int"
+                      },
+                      {
+                        "name": "object",
+                        "type": "Any"
+                      }
+                    ],
+                    "docstring": "Insert an item at a given position.",
+                    "decorators": [],
+                    "main_category": "List Operations",
+                    "sub_category": "Modification",
+                    "data_type_manipulated": ["list"],
+                    "version_added": "1.0",
+                    "deprecated": false,
+                    "examples": [
+                      "lst = [1, 2, 3]",
+                      "lst.insert(1, 4)",
+                      "print(lst)  # Outputs: [1, 4, 2, 3]"
+                    ]
+                  },
+                  {
+                    "name": "pop",
+                    "module": "list",
+                    "class_name": "list",
+                    "return_type": "Any",
+                    "parameters": [
+                      {
+                        "name": "index",
+                        "type": "int",
+                        "default": "-1"
+                      }
+                    ],
+                    "docstring": "Remove and return item at index (default last).",
+                    "decorators": [],
+                    "main_category": "List Operations",
+                    "sub_category": "Modification",
+                    "data_type_manipulated": ["list"],
+                    "version_added": "1.0",
+                    "deprecated": false,
+                    "examples": [
+                      "lst = [1, 2, 3]",
+                      "item = lst.pop()",
+                      "print(item)  # Outputs: 3",
+                      "print(lst)  # Outputs: [1, 2]"
+                    ]
+                  },
+                  {
+                    "name": "remove",
+                    "module": "list",
+                    "class_name": "list",
+                    "return_type": "None",
+                    "parameters": [
+                      {
+                        "name": "value",
+                        "type": "Any"
+                      }
+                    ],
+                    "docstring": "Remove first occurrence of value.",
+                    "decorators": [],
+                    "main_category": "List Operations",
+                    "sub_category": "Modification",
+                    "data_type_manipulated": ["list"],
+                    "version_added": "1.0",
+                    "deprecated": false,
+                    "examples": [
+                      "lst = [1, 2, 3, 2]",
+                      "lst.remove(2)",
+                      "print(lst)  # Outputs: [1, 3, 2]"
+                    ]
+                  },
+                  {
+                    "name": "reverse",
+                    "module": "list",
+                    "class_name": "list",
+                    "return_type": "None",
+                    "parameters": [],
+                    "docstring": "Reverse the elements of the list in place.",
+                    "decorators": [],
+                    "main_category": "List Operations",
+                    "sub_category": "Modification",
+                    "data_type_manipulated": ["list"],
+                    "version_added": "1.0",
+                    "deprecated": false,
+                    "examples": [
+                      "lst = [1, 2, 3]",
+                      "lst.reverse()",
+                      "print(lst)  # Outputs: [3, 2, 1]"
+                    ]
+                  },
+                  {
+                    "name": "sort",
+                    "module": "list",
+                    "class_name": "list",
+                    "return_type": "None",
+                    "parameters": [
+                      {
+                        "name": "key",
+                        "type": "Optional[Callable]",
+                        "default": "None"
+                      },
+                      {
+                        "name": "reverse",
+                        "type": "bool",
+                        "default": "False"
+                      }
+                    ],
+                    "docstring": "Sort the list in ascending order and return None.",
+                    "decorators": [],
+                    "main_category": "List Operations",
+                    "sub_category": "Sorting",
+                    "data_type_manipulated": ["list"],
+                    "version_added": "1.0",
+                    "deprecated": false,
+                    "examples": [
+                      "lst = [3, 1, 4, 1, 5, 9, 2]",
+                      "lst.sort()",
+                      "print(lst)  # Outputs: [1, 1, 2, 3, 4, 5, 9]"
+                    ]
+                  },
+                  
+                    {
+                      "name": "capitalize",
+                      "module": "builtins",
+                      "class_name": "str",
+                      "data_structure": "string",
+                      "return_type": "str",
+                      "parameters": [],
+                      "docstring": "Return a capitalized version of the string.",
+                      "decorators": [],
+                      "main_category": "String Operations",
+                      "sub_category": "Case Conversion",
+                      "data_type_manipulated": ["string"],
+                      "version_added": "1.0",
+                      "deprecated": false,
+                      "examples": [
+                        "s = 'hello'",
+                        "print(s.capitalize())  # Outputs: 'Hello'"
+                      ]
+                    },
+                    {
+                      "name": "casefold",
+                      "module": "builtins",
+                      "class_name": "str",
+                      "data_structure": "string",
+                      "return_type": "str",
+                      "parameters": [],
+                      "docstring": "Return a casefolded copy of the string.",
+                      "decorators": [],
+                      "main_category": "String Operations",
+                      "sub_category": "Case Conversion",
+                      "data_type_manipulated": ["string"],
+                      "version_added": "3.3",
+                      "deprecated": false,
+                      "examples": [
+                        "s = 'Hello'",
+                        "print(s.casefold())  # Outputs: 'hello'"
+                      ]
+                    },
+                    {
+                      "name": "center",
+                      "module": "builtins",
+                      "class_name": "str",
+                      "data_structure": "string",
+                      "return_type": "str",
+                      "parameters": [
+                        {
+                          "name": "width",
+                          "type": "int"
+                        },
+                        {
+                          "name": "fillchar",
+                          "type": "str",
+                          "default": "' '"
+                        }
+                      ],
+                      "docstring": "Return a centered string of length width.",
+                      "decorators": [],
+                      "main_category": "String Operations",
+                      "sub_category": "Formatting",
+                      "data_type_manipulated": ["string"],
+                      "version_added": "1.0",
+                      "deprecated": false,
+                      "examples": [
+                        "s = 'hello'",
+                        "print(s.center(10, '-'))  # Outputs: '--hello---'"
+                      ]
+                    },
+                    {
+                      "name": "count",
+                      "module": "builtins",
+                      "class_name": "str",
+                      "data_structure": "string",
+                      "return_type": "int",
+                      "parameters": [
+                        {
+                          "name": "sub",
+                          "type": "str"
+                        },
+                        {
+                          "name": "start",
+                          "type": "int",
+                          "default": "None"
+                        },
+                        {
+                          "name": "end",
+                          "type": "int",
+                          "default": "None"
+                        }
+                      ],
+                      "docstring": "Return the number of non-overlapping occurrences of substring sub in string.",
+                      "decorators": [],
+                      "main_category": "String Operations",
+                      "sub_category": "Searching",
+                      "data_type_manipulated": ["string"],
+                      "version_added": "1.0",
+                      "deprecated": false,
+                      "examples": [
+                        "s = 'hello hello'",
+                        "print(s.count('hello'))  # Outputs: 2"
+                      ]
+                    },
+                    {
+                      "name": "encode",
+                      "module": "builtins",
+                      "class_name": "str",
+                      "data_structure": "string",
+                      "return_type": "bytes",
+                      "parameters": [
+                        {
+                          "name": "encoding",
+                          "type": "str",
+                          "default": "'utf-8'"
+                        },
+                        {
+                          "name": "errors",
+                          "type": "str",
+                          "default": "'strict'"
+                        }
+                      ],
+                      "docstring": "Return an encoded version of the string as a bytes object.",
+                      "decorators": [],
+                      "main_category": "String Operations",
+                      "sub_category": "Encoding",
+                      "data_type_manipulated": ["string"],
+                      "version_added": "2.0",
+                      "deprecated": false,
+                      "examples": [
+                        "s = 'hello'",
+                        "print(s.encode('utf-8'))  # Outputs: b'hello'"
+                      ]
+                    },
+                    {
+                      "name": "endswith",
+                      "module": "builtins",
+                      "class_name": "str",
+                      "data_structure": "string",
+                      "return_type": "bool",
+                      "parameters": [
+                        {
+                          "name": "suffix",
+                          "type": "Union[str, Tuple[str]]"
+                        },
+                        {
+                          "name": "start",
+                          "type": "int",
+                          "default": "None"
+                        },
+                        {
+                          "name": "end",
+                          "type": "int",
+                          "default": "None"
+                        }
+                      ],
+                      "docstring": "Return True if the string ends with the specified suffix, False otherwise.",
+                      "decorators": [],
+                      "main_category": "String Operations",
+                      "sub_category": "Checking",
+                      "data_type_manipulated": ["string"],
+                      "version_added": "2.0",
+                      "deprecated": false,
+                      "examples": [
+                        "s = 'hello.txt'",
+                        "print(s.endswith('.txt'))  # Outputs: True"
+                      ]
+                    },
+                    {
+                      "name": "expandtabs",
+                      "module": "builtins",
+                      "class_name": "str",
+                      "data_structure": "string",
+                      "return_type": "str",
+                      "parameters": [
+                        {
+                          "name": "tabsize",
+                          "type": "int",
+                          "default": "8"
+                        }
+                      ],
+                      "docstring": "Return a copy of the string where all tab characters are replaced by one or more spaces.",
+                      "decorators": [],
+                      "main_category": "String Operations",
+                      "sub_category": "Formatting",
+                      "data_type_manipulated": ["string"],
+                      "version_added": "1.0",
+                      "deprecated": false,
+                      "examples": [
+                        "s = 'hello\\tworld'",
+                        "print(s.expandtabs(4))  # Outputs: 'hello   world'"
+                      ]
+                    },
+                    {
+                      "name": "find",
+                      "module": "builtins",
+                      "class_name": "str",
+                      "data_structure": "string",
+                      "return_type": "int",
+                      "parameters": [
+                        {
+                          "name": "sub",
+                          "type": "str"
+                        },
+                        {
+                          "name": "start",
+                          "type": "int",
+                          "default": "None"
+                        },
+                        {
+                          "name": "end",
+                          "type": "int",
+                          "default": "None"
+                        }
+                      ],
+                      "docstring": "Return the lowest index in the string where substring sub is found.",
+                      "decorators": [],
+                      "main_category": "String Operations",
+                      "sub_category": "Searching",
+                      "data_type_manipulated": ["string"],
+                      "version_added": "1.0",
+                      "deprecated": false,
+                      "examples": [
+                        "s = 'hello world'",
+                        "print(s.find('world'))  # Outputs: 6"
+                      ]
+                    },
+                    {
+                      "name": "format",
+                      "module": "builtins",
+                      "class_name": "str",
+                      "data_structure": "string",
+                      "return_type": "str",
+                      "parameters": [
+                        {
+                          "name": "*args",
+                          "type": "Any"
+                        },
+                        {
+                          "name": "**kwargs",
+                          "type": "Any"
+                        }
+                      ],
+                      "docstring": "Perform a string formatting operation.",
+                      "decorators": [],
+                      "main_category": "String Operations",
+                      "sub_category": "Formatting",
+                      "data_type_manipulated": ["string"],
+                      "version_added": "2.6",
+                      "deprecated": false,
+                      "examples": [
+                        "s = '{} {}'",
+                        "print(s.format('hello', 'world'))  # Outputs: 'hello world'"
+                      ]
+                    },
+                    {
+                      "name": "index",
+                      "module": "builtins",
+                      "class_name": "str",
+                      "data_structure": "string",
+                      "return_type": "int",
+                      "parameters": [
+                        {
+                          "name": "sub",
+                          "type": "str"
+                        },
+                        {
+                          "name": "start",
+                          "type": "int",
+                          "default": "None"
+                        },
+                        {
+                          "name": "end",
+                          "type": "int",
+                          "default": "None"
+                        }
+                      ],
+                      "docstring": "Return the lowest index in the string where substring sub is found.",
+                      "decorators": [],
+                      "main_category": "String Operations",
+                      "sub_category": "Searching",
+                      "data_type_manipulated": ["string"],
+                      "version_added": "1.0",
+                      "deprecated": false,
+                      "examples": [
+                        "s = 'hello world'",
+                        "print(s.index('world'))  # Outputs: 6"
+                      ]
+                    },
+                    {
+                      "name": "isalnum",
+                      "module": "builtins",
+                      "class_name": "str",
+                      "data_structure": "string",
+                      "return_type": "bool",
+                      "parameters": [],
+                      "docstring": "Return True if all characters in the string are alphanumeric and there is at least one character, False otherwise.",
+                      "decorators": [],
+                      "main_category": "String Operations",
+                      "sub_category": "Checking",
+                      "data_type_manipulated": ["string"],
+                      "version_added": "1.0",
+                      "deprecated": false,
+                      "examples": [
+                        "s = 'hello123'",
+                        "print(s.isalnum())  # Outputs: True"
+                      ]
+                    },
+                    {
+                      "name": "isalpha",
+                      "module": "builtins",
+                      "class_name": "str",
+                      "data_structure": "string",
+                      "return_type": "bool",
+                      "parameters": [],
+                      "docstring": "Return True if all characters in the string are alphabetic and there is at least one character, False otherwise.",
+                      "decorators": [],
+                      "main_category": "String Operations",
+                      "sub_category": "Checking",
+                      "data_type_manipulated": ["string"],
+                      "version_added": "1.0",
+                      "deprecated": false,
+                      "examples": [
+                        "s = 'hello'",
+                        "print(s.isalpha())  # Outputs: True"
+                      ]
+                    },
+                    {
+                      "name": "isascii",
+                      "module": "builtins",
+                      "class_name": "str",
+                      "data_structure": "string",
+                      "return_type": "bool",
+                      "parameters": [],
+                      "docstring": "Return True if all characters in the string are ASCII, False otherwise.",
+                      "decorators": [],
+                      "main_category": "String Operations",
+                      "sub_category": "Checking",
+                      "data_type_manipulated": ["string"],
+                      "version_added": "3.7",
+                      "deprecated": false,
+                      "examples": [
+                        "s = 'hello'",
+                        "print(s.isascii())  # Outputs: True"
+                      ]
+                    },
+                    {
+                      "name": "isdecimal",
+                      "module": "builtins",
+                      "class_name": "str",
+                      "data_structure": "string",
+                      "return_type": "bool",
+                      "parameters": [],
+                      "docstring": "Return True if all characters in the string are decimal characters and there is at least one character, False otherwise.",
+                      "decorators": [],
+                      "main_category": "String Operations",
+                      "sub_category": "Checking",
+                      "data_type_manipulated": ["string"],
+                      "version_added": "2.0",
+                      "deprecated": false,
+                      "examples": [
+                        "s = '12345'",
+                        "print(s.isdecimal())  # Outputs: True"
+                      ]
+                    },
+                    {
+                      "name": "isdigit",
+                      "module": "builtins",
+                      "class_name": "str",
+                      "data_structure": "string",
+                      "return_type": "bool",
+                      "parameters": [],
+                      "docstring": "Return True if all characters in the string are digits and there is at least one character, False otherwise.",
+                      "decorators": [],
+                      "main_category": "String Operations",
+                      "sub_category": "Checking",
+                      "data_type_manipulated": ["string"],
+                      "version_added": "1.0",
+                      "deprecated": false,
+                      "examples": [
+                        "s = '12345'",
+                        "print(s.isdigit())  # Outputs: True"
+                      ]
+                    },
+                    {
+                      "name": "isidentifier",
+                      "module": "builtins",
+                      "class_name": "str",
+                      "data_structure": "string",
+                      "return_type": "bool",
+                      "parameters": [],
+                      "docstring": "Return True if the string is a valid Python identifier, False otherwise.",
+                      "decorators": [],
+                      "main_category": "String Operations",
+                      "sub_category": "Checking",
+                      "data_type_manipulated": ["string"],
+                      "version_added": "3.0",
+                      "deprecated": false,
+                      "examples": [
+                        "s = 'valid_identifier'",
+                        "print(s.isidentifier())  # Outputs: True"
+                      ]
+                    },
+                    {
+                      "name": "islower",
+                      "module": "builtins",
+                      "class_name": "str",
+                      "data_structure": "string",
+                      "return_type": "bool",
+                      "parameters": [],
+                      "docstring": "Return True if all cased characters in the string are lowercase and there is at least one cased character, False otherwise.",
+                      "decorators": [],
+                      "main_category": "String Operations",
+                      "sub_category": "Checking",
+                      "data_type_manipulated": ["string"],
+                      "version_added": "1.0",
+                      "deprecated": false,
+                      "examples": [
+                        "s = 'hello'",
+                        "print(s.islower())  # Outputs: True"
+                      ]
+                    },
+                    {
+                      "name": "isnumeric",
+                      "module": "builtins",
+                      "class_name": "str",
+                      "data_structure": "string",
+                      "return_type": "bool",
+                      "parameters": [],
+                      "docstring": "Return True if all characters in the string are numeric characters, and there is at least one character, False otherwise.",
+                      "decorators": [],
+                      "main_category": "String Operations",
+                      "sub_category": "Checking",
+                      "data_type_manipulated": ["string"],
+                      "version_added": "2.0",
+                      "deprecated": false,
+                      "examples": [
+                        "s = '12345'",
+                        "print(s.isnumeric())  # Outputs: True"
+                      ]
+                    },
+                    {
+                      "name": "isprintable",
+                      "module": "builtins",
+                      "class_name": "str",
+                      "data_structure": "string",
+                      "return_type": "bool",
+                      "parameters": [],
+                      "docstring": "Return True if all characters in the string are printable or the string is empty, False otherwise.",
+                      "decorators": [],
+                      "main_category": "String Operations",
+                      "sub_category": "Checking",
+                      "data_type_manipulated": ["string"],
+                      "version_added": "3.0",
+                      "deprecated": false,
+                      "examples": [
+                        "s = 'Hello, World!'",
+                        "print(s.isprintable())  # Outputs: True"
+                      ]
+                    },
+                    
+                      {
+                        "name": "isspace",
+                        "module": "builtins",
+                        "class_name": "str",
+                        "data_structure": "string",
+                        "return_type": "bool",
+                        "parameters": [],
+                        "docstring": "Return True if there are only whitespace characters in the string and there is at least one character, False otherwise.",
+                        "decorators": [],
+                        "main_category": "String Operations",
+                        "sub_category": "Checking",
+                        "data_type_manipulated": ["string"],
+                        "version_added": "1.0",
+                        "deprecated": false,
+                        "examples": [
+                          "s = '   '",
+                          "print(s.isspace())  # Outputs: True"
+                        ]
+                      },
+                      {
+                        "name": "istitle",
+                        "module": "builtins",
+                        "class_name": "str",
+                        "data_structure": "string",
+                        "return_type": "bool",
+                        "parameters": [],
+                        "docstring": "Return True if the string is a titlecased string and there is at least one character, False otherwise.",
+                        "decorators": [],
+                        "main_category": "String Operations",
+                        "sub_category": "Checking",
+                        "data_type_manipulated": ["string"],
+                        "version_added": "1.0",
+                        "deprecated": false,
+                        "examples": [
+                          "s = 'This Is Title Case'",
+                          "print(s.istitle())  # Outputs: True"
+                        ]
+                      },
+                      {
+                        "name": "isupper",
+                        "module": "builtins",
+                        "class_name": "str",
+                        "data_structure": "string",
+                        "return_type": "bool",
+                        "parameters": [],
+                        "docstring": "Return True if all cased characters in the string are uppercase and there is at least one cased character, False otherwise.",
+                        "decorators": [],
+                        "main_category": "String Operations",
+                        "sub_category": "Checking",
+                        "data_type_manipulated": ["string"],
+                        "version_added": "1.0",
+                        "deprecated": false,
+                        "examples": [
+                          "s = 'HELLO'",
+                          "print(s.isupper())  # Outputs: True"
+                        ]
+                      },
+                      {
+                        "name": "join",
+                        "module": "builtins",
+                        "class_name": "str",
+                        "data_structure": "string",
+                        "return_type": "str",
+                        "parameters": [
+                          {
+                            "name": "iterable",
+                            "type": "Iterable[str]"
+                          }
+                        ],
+                        "docstring": "Return a string which is the concatenation of the strings in iterable.",
+                        "decorators": [],
+                        "main_category": "String Operations",
+                        "sub_category": "Joining",
+                        "data_type_manipulated": ["string"],
+                        "version_added": "1.0",
+                        "deprecated": false,
+                        "examples": [
+                          "s = '-'",
+                          "print(s.join(['a', 'b', 'c']))  # Outputs: 'a-b-c'"
+                        ]
+                      },
+                      {
+                        "name": "ljust",
+                        "module": "builtins",
+                        "class_name": "str",
+                        "data_structure": "string",
+                        "return_type": "str",
+                        "parameters": [
+                          {
+                            "name": "width",
+                            "type": "int"
+                          },
+                          {
+                            "name": "fillchar",
+                            "type": "str",
+                            "default": "' '"
+                          }
+                        ],
+                        "docstring": "Return left-justified string of length width.",
+                        "decorators": [],
+                        "main_category": "String Operations",
+                        "sub_category": "Formatting",
+                        "data_type_manipulated": ["string"],
+                        "version_added": "1.0",
+                        "deprecated": false,
+                        "examples": [
+                          "s = 'hello'",
+                          "print(s.ljust(10, '-'))  # Outputs: 'hello-----'"
+                        ]
+                      },
+                      {
+                        "name": "lower",
+                        "module": "builtins",
+                        "class_name": "str",
+                        "data_structure": "string",
+                        "return_type": "str",
+                        "parameters": [],
+                        "docstring": "Return a copy of the string converted to lowercase.",
+                        "decorators": [],
+                        "main_category": "String Operations",
+                        "sub_category": "Case Conversion",
+                        "data_type_manipulated": ["string"],
+                        "version_added": "1.0",
+                        "deprecated": false,
+                        "examples": [
+                          "s = 'HELLO'",
+                          "print(s.lower())  # Outputs: 'hello'"
+                        ]
+                      },
+                      {
+                        "name": "lstrip",
+                        "module": "builtins",
+                        "class_name": "str",
+                        "data_structure": "string",
+                        "return_type": "str",
+                        "parameters": [
+                          {
+                            "name": "chars",
+                            "type": "str",
+                            "default": "None"
+                          }
+                        ],
+                        "docstring": "Return a copy of the string with leading characters removed.",
+                        "decorators": [],
+                        "main_category": "String Operations",
+                        "sub_category": "Stripping",
+                        "data_type_manipulated": ["string"],
+                        "version_added": "1.0",
+                        "deprecated": false,
+                        "examples": [
+                          "s = '   hello'",
+                          "print(s.lstrip())  # Outputs: 'hello'"
+                        ]
+                      },
+                      {
+                        "name": "maketrans",
+                        "module": "builtins",
+                        "class_name": "str",
+                        "data_structure": "string",
+                        "return_type": "dict",
+                        "parameters": [
+                          {
+                            "name": "x",
+                            "type": "Union[dict, str]"
+                          },
+                          {
+                            "name": "y",
+                            "type": "str",
+                            "default": "None"
+                          },
+                          {
+                            "name": "z",
+                            "type": "str",
+                            "default": "None"
+                          }
+                        ],
+                        "docstring": "Return a translation table usable for str.translate().",
+                        "decorators": [],
+                        "main_category": "String Operations",
+                        "sub_category": "Translation",
+                        "data_type_manipulated": ["string"],
+                        "version_added": "2.6",
+                        "deprecated": false,
+                        "examples": [
+                          "trans = str.maketrans('abc', '123')",
+                          "s = 'abcdef'",
+                          "print(s.translate(trans))  # Outputs: '123def'"
+                        ]
+                      },
+                      {
+                        "name": "partition",
+                        "module": "builtins",
+                        "class_name": "str",
+                        "data_structure": "string",
+                        "return_type": "Tuple[str, str, str]",
+                        "parameters": [
+                          {
+                            "name": "sep",
+                            "type": "str"
+                          }
+                        ],
+                        "docstring": "Partition the string into three parts using the given separator.",
+                        "decorators": [],
+                        "main_category": "String Operations",
+                        "sub_category": "Splitting",
+                        "data_type_manipulated": ["string"],
+                        "version_added": "2.5",
+                        "deprecated": false,
+                        "examples": [
+                          "s = 'hello-world'",
+                          "print(s.partition('-'))  # Outputs: ('hello', '-', 'world')"
+                        ]
+                      },
+                      {
+                        "name": "replace",
+                        "module": "builtins",
+                        "class_name": "str",
+                        "data_structure": "string",
+                        "return_type": "str",
+                        "parameters": [
+                          {
+                            "name": "old",
+                            "type": "str"
+                          },
+                          {
+                            "name": "new",
+                            "type": "str"
+                          },
+                          {
+                            "name": "count",
+                            "type": "int",
+                            "default": "-1"
+                          }
+                        ],
+                        "docstring": "Return a copy with all occurrences of substring old replaced by new.",
+                        "decorators": [],
+                        "main_category": "String Operations",
+                        "sub_category": "Replacing",
+                        "data_type_manipulated": ["string"],
+                        "version_added": "1.0",
+                        "deprecated": false,
+                        "examples": [
+                          "s = 'hello hello'",
+                          "print(s.replace('hello', 'hi'))  # Outputs: 'hi hi'"
+                        ]
+                      },
+                      {
+                        "name": "rfind",
+                        "module": "builtins",
+                        "class_name": "str",
+                        "data_structure": "string",
+                        "return_type": "int",
+                        "parameters": [
+                          {
+                            "name": "sub",
+                            "type": "str"
+                          },
+                          {
+                            "name": "start",
+                            "type": "int",
+                            "default": "None"
+                          },
+                          {
+                            "name": "end",
+                            "type": "int",
+                            "default": "None"
+                          }
+                        ],
+                        "docstring": "Return the highest index in the string where substring sub is found.",
+                        "decorators": [],
+                        "main_category": "String Operations",
+                        "sub_category": "Searching",
+                        "data_type_manipulated": ["string"],
+                        "version_added": "1.0",
+                        "deprecated": false,
+                        "examples": [
+                          "s = 'hello hello'",
+                          "print(s.rfind('hello'))  # Outputs: 6"
+                        ]
+                      },
+                      {
+                        "name": "rindex",
+                        "module": "builtins",
+                        "class_name": "str",
+                        "data_structure": "string",
+                        "return_type": "int",
+                        "parameters": [
+                          {
+                            "name": "sub",
+                            "type": "str"
+                          },
+                          {
+                            "name": "start",
+                            "type": "int",
+                            "default": "None"
+                          },
+                          {
+                            "name": "end",
+                            "type": "int",
+                            "default": "None"
+                          }
+                        ],
+                        "docstring": "Return the highest index in the string where substring sub is found.",
+                        "decorators": [],
+                        "main_category": "String Operations",
+                        "sub_category": "Searching",
+                        "data_type_manipulated": ["string"],
+                        "version_added": "1.0",
+                        "deprecated": false,
+                        "examples": [
+                          "s = 'hello hello'",
+                          "print(s.rindex('hello'))  # Outputs: 6"
+                        ]
+                      },
+                      {
+                        "name": "rjust",
+                        "module": "builtins",
+                        "class_name": "str",
+                        "data_structure": "string",
+                        "return_type": "str",
+                        "parameters": [
+                          {
+                            "name": "width",
+                            "type": "int"
+                          },
+                          {
+                            "name": "fillchar",
+                            "type": "str",
+                            "default": "' '"
+                          }
+                        ],
+                        "docstring": "Return right-justified string of length width.",
+                        "decorators": [],
+                        "main_category": "String Operations",
+                        "sub_category": "Formatting",
+                        "data_type_manipulated": ["string"],
+                        "version_added": "1.0",
+                        "deprecated": false,
+                        "examples": [
+                          "s = 'hello'",
+                          "print(s.rjust(10, '-'))  # Outputs: '-----hello'"
+                        ]
+                      },
+                      {
+                        "name": "rpartition",
+                        "module": "builtins",
+                        "class_name": "str",
+                        "data_structure": "string",
+                        "return_type": "Tuple[str, str, str]",
+                        "parameters": [
+                          {
+                            "name": "sep",
+                            "type": "str"
+                          }
+                        ],
+                        "docstring": "Partition the string into three parts using the given separator.",
+                        "decorators": [],
+                        "main_category": "String Operations",
+                        "sub_category": "Splitting",
+                        "data_type_manipulated": ["string"],
+                        "version_added": "2.5",
+                        "deprecated": false,
+                        "examples": [
+                          "s = 'hello-world-python'",
+                          "print(s.rpartition('-'))  # Outputs: ('hello-world', '-', 'python')"
+                        ]
+                      },
+                      {
+                        "name": "rsplit",
+                        "module": "builtins",
+                        "class_name": "str",
+                        "data_structure": "string",
+                        "return_type": "List[str]",
+                        "parameters": [
+                          {
+                            "name": "sep",
+                            "type": "str",
+                            "default": "None"
+                          },
+                          {
+                            "name": "maxsplit",
+                            "type": "int",
+                            "default": "-1"
+                          }
+                        ],
+                        "docstring": "Return a list of the words in the string, using sep as the delimiter string.",
+                        "decorators": [],
+                        "main_category": "String Operations",
+                        "sub_category": "Splitting",
+                        "data_type_manipulated": ["string"],
+                        "version_added": "2.4",
+                        "deprecated": false,
+                        "examples": [
+                          "s = 'hello world python'",
+                          "print(s.rsplit(' ', 1))  # Outputs: ['hello world', 'python']"
+                        ]
+                      },
+                      {
+                        "name": "rstrip",
+                        "module": "builtins",
+                        "class_name": "str",
+                        "data_structure": "string",
+                        "return_type": "str",
+                        "parameters": [
+                          {
+                            "name": "chars",
+                            "type": "str",
+                            "default": "None"
+                          }
+                        ],
+                        "docstring": "Return a copy of the string with trailing characters removed.",
+                        "decorators": [],
+                        "main_category": "String Operations",
+                        "sub_category": "Stripping",
+                        "data_type_manipulated": ["string"],
+                        "version_added": "1.0",
+                        "deprecated": false,
+                        "examples": [
+                          "s = 'hello   '",
+                          "print(s.rstrip())  # Outputs: 'hello'"
+                        ]
+                      },
+                      {
+                        "name": "split",
+                        "module": "builtins",
+                        "class_name": "str",
+                        "data_structure": "string",
+                        "return_type": "List[str]",
+                        "parameters": [
+                          {
+                            "name": "sep",
+                            "type": "str",
+                            "default": "None"
+                          },
+                          {
+                            "name": "maxsplit",
+                            "type": "int",
+                            "default": "-1"
+                          }
+                        ],
+                        "docstring": "Return a list of the words in the string, using sep as the delimiter string.",
+                        "decorators": [],
+                        "main_category": "String Operations",
+                        "sub_category": "Splitting",
+                        "data_type_manipulated": ["string"],
+                        "version_added": "1.0",
+                        "deprecated": false,
+                        "examples": [
+                          "s = 'hello world python'",
+                          "print(s.split())  # Outputs: ['hello', 'world', 'python']"
+                        ]
+                      },
+                      
+        {
+          "name": "splitlines",
+          "module": "builtins",
+          "class_name": "str",
+          "data_structure": "string",
+          "return_type": "List[str]",
+          "parameters": [
+            {
+              "name": "keepends",
+              "type": "bool",
+              "default": "False"
+            }
+          ],
+          "docstring": "Return a list of the lines in the string, breaking at line boundaries.",
+          "decorators": [],
+          "main_category": "String Operations",
+          "sub_category": "Splitting",
+          "data_type_manipulated": ["string"],
+          "version_added": "1.5",
+          "deprecated": false,
+          "examples": [
+            "s = 'hello\\nworld\\npython'",
+            "print(s.splitlines())  # Outputs: ['hello', 'world', 'python']"
+          ]
+        },
+        {
+          "name": "startswith",
+          "module": "builtins",
+          "class_name": "str",
+          "data_structure": "string",
+          "return_type": "bool",
+          "parameters": [
+            {
+              "name": "prefix",
+              "type": "Union[str, Tuple[str]]"
+            },
+            {
+              "name": "start",
+              "type": "int",
+              "default": "None"
+            },
+            {
+              "name": "end",
+              "type": "int",
+              "default": "None"
+            }
+          ],
+          "docstring": "Return True if string starts with the specified prefix, False otherwise.",
+          "decorators": [],
+          "main_category": "String Operations",
+          "sub_category": "Checking",
+          "data_type_manipulated": ["string"],
+          "version_added": "2.0",
+          "deprecated": false,
+          "examples": [
+            "s = 'hello world'",
+            "print(s.startswith('hello'))  # Outputs: True"
+          ]
+        },
+        {
+          "name": "strip",
+          "module": "builtins",
+          "class_name": "str",
+          "data_structure": "string",
+          "return_type": "str",
+          "parameters": [
+            {
+              "name": "chars",
+              "type": "str",
+              "default": "None"
+            }
+          ],
+          "docstring": "Return a copy of the string with leading and trailing characters removed.",
+          "decorators": [],
+          "main_category": "String Operations",
+          "sub_category": "Stripping",
+          "data_type_manipulated": ["string"],
+          "version_added": "1.0",
+          "deprecated": false,
+          "examples": [
+            "s = '  hello  '",
+            "print(s.strip())  # Outputs: 'hello'"
+          ]
+        },
+        {
+          "name": "swapcase",
+          "module": "builtins",
+          "class_name": "str",
+          "data_structure": "string",
+          "return_type": "str",
+          "parameters": [],
+          "docstring": "Return a copy of the string with uppercase characters converted to lowercase and vice versa.",
+          "decorators": [],
+          "main_category": "String Operations",
+          "sub_category": "Case Conversion",
+          "data_type_manipulated": ["string"],
+          "version_added": "1.0",
+          "deprecated": false,
+          "examples": [
+            "s = 'Hello World'",
+            "print(s.swapcase())  # Outputs: 'hELLO wORLD'"
+          ]
+        },
+        {
+          "name": "title",
+          "module": "builtins",
+          "class_name": "str",
+          "data_structure": "string",
+          "return_type": "str",
+          "parameters": [],
+          "docstring": "Return a titlecased version of the string where words start with an uppercase character and the remaining characters are lowercase.",
+          "decorators": [],
+          "main_category": "String Operations",
+          "sub_category": "Case Conversion",
+          "data_type_manipulated": ["string"],
+          "version_added": "1.0",
+          "deprecated": false,
+          "examples": [
+            "s = 'hello world'",
+            "print(s.title())  # Outputs: 'Hello World'"
+          ]
+        },
+        {
+          "name": "translate",
+          "module": "builtins",
+          "class_name": "str",
+          "data_structure": "string",
+          "return_type": "str",
+          "parameters": [
+            {
+              "name": "table",
+              "type": "Union[dict, str]"
+            }
+          ],
+          "docstring": "Return a copy of the string in which each character has been mapped through the given translation table.",
+          "decorators": [],
+          "main_category": "String Operations",
+          "sub_category": "Translation",
+          "data_type_manipulated": ["string"],
+          "version_added": "1.0",
+          "deprecated": false,
+          "examples": [
+            "trans = str.maketrans('aeiou', '12345')",
+            "s = 'hello'",
+            "print(s.translate(trans))  # Outputs: 'h2ll4'"
+          ]
+        },
+        {
+          "name": "upper",
+          "module": "builtins",
+          "class_name": "str",
+          "data_structure": "string",
+          "return_type": "str",
+          "parameters": [],
+          "docstring": "Return a copy of the string converted to uppercase.",
+          "decorators": [],
+          "main_category": "String Operations",
+          "sub_category": "Case Conversion",
+          "data_type_manipulated": ["string"],
+          "version_added": "1.0",
+          "deprecated": false,
+          "examples": [
+            "s = 'hello'",
+            "print(s.upper())  # Outputs: 'HELLO'"
+          ]
+        },
+        {
+          "name": "zfill",
+          "module": "builtins",
+          "class_name": "str",
+          "data_structure": "string",
+          "return_type": "str",
+          "parameters": [
+            {
+              "name": "width",
+              "type": "int"
+            }
+          ],
+          "docstring": "Return a copy of the string left filled with ASCII '0' digits to make a string of length width.",
+          "decorators": [],
+          "main_category": "String Operations",
+          "sub_category": "Formatting",
+          "data_type_manipulated": ["string"],
+          "version_added": "2.2.2",
+          "deprecated": false,
+          "examples": [
+            "s = '42'",
+            "print(s.zfill(5))  # Outputs: '00042'"
+          ]
         }
+              
+      
         
                 
   ]

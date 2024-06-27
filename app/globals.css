@@ -21,4 +21,18 @@
 }
 
 
+.my-carousel{
+  width: 50%;
+  margin-left: 70px;
+
+}
+.carousel-container{
+  display: flex;
+  flex-direction: row;
+  /* background-color: red; */
+  justify-content: center;
+  
+}
+
+
 

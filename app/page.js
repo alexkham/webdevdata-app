@@ -1,4 +1,4 @@
-'use client'
+
 import AceEditorComponent from "./components/ace-editor/AceEditorComponent";
 import GridGenerator from "./components/grid-generator/GridGenerator";
 import MethodExplorer from "./components/method-explorer/MethodExplorer";
@@ -28,14 +28,107 @@ import data from './api/db/developement/c/functions.json'
 import FunctionList from "./components/function-list/FunctionList";
 import pythonData from './api/db/developement/python/functions.json'
 import PythonFunctionsList from "./components/function-list/PythonFunctionsList";
+import Carousel from "./components/simple-carousel/Carousel";
+import LanguageButtons from "./components/language-buttons/LanguageButtons";
+import dynamic from 'next/dynamic';
+import ClientCarousel from "./components/simple-carousel/ClientCarousel";
+
+
+// const Carousel = dynamic(() => import('./components/simple-carousel/Carousel'), {
+//   loading: () => <p>Loading...</p>,
+//   ssr: false
+// });
+
+// export async function getStaticProps() {
+//   // Fetch your slides data here
+//   const slidesData = [
+//     {
+//         image: "/explore.png",
+//         title: "Functions Explorer",
+//         text: "Explore C Standard Library Functions",
+//         link: "/c-programming/functions"
+//     },
+//     {
+//         image: "/prohibited.webp",
+//         title: "Slide 2",
+//         text: "This is the second slide",
+//         link: "/c-programming/things-not-to-do"
+//     },
+    
+//   ];
+
+
+//   return {
+//     props: {
+//       slidesData,
+//     },
+//     // Revalidate every hour
+//     revalidate: 3600,
+//   };
+// }
+
+// async function getSlideData() {
+//   // In a real application, you might fetch this data from an API
+//   // For now, we'll just return the static data
+//   return [
+//     {
+//       image: "/explore.png",
+//       title: "Functions Explorer",
+//       text: "Explore C Standard Library Functions",
+//       link: "/c-programming/functions"
+//   },
+//   {
+//       image: "/prohibited.webp",
+//       title: "Slide 2",
+//       text: "This is the second slide",
+//       link: "/c-programming/things-not-to-do"
+//   },
+  
+    
+//   ];
+// }
+// This function acts similarly to getStaticProps
+// export async function loader() {
+//   const response = await fetch('https://api.example.com/slides');
+//   const slides = await response.json();
+  
+//   return {
+//       props: {
+//           slides,
+//       },
+//   };
+// }
 
 
 
+export default async function Home({slides}) {
+  
+
+ 
+   
+  const slidesData = [
+    {
+        image: "/pexels-element5-1370295.jpg",
+        title: "C Standard Library Functions Explorer",
+        text: "Explore C Standard Library Functions with comprehensive insights and detailed breakdowns.",
+        link: "/c-programming/functions"
+    },
+    {
+        image: "/do-not-enter2.jpg",
+        title: "Things Not to Do in C Language",
+        text: "Common pitfalls and mistakes that programmers often encounter when working with C .",
+        link: "/c-programming/things-not-to-do"
+    },
+    
+  ];
 
 
-export default function Home() {
-
-
+  const languages = [
+    
+    { title: 'Python', color: '#336a99', logo: '/python-logo.svg', url: '/python' },
+    { title: 'C Programming', color: '#007bff', logo: '/32px-C_Programming_Language.svg.png', url: '/c-programming' },
+    
+  ];
 
   const exampleData = [
     [1, 2, 3],
@@ -65,14 +158,43 @@ export default function Home() {
     <div className="main-page-container">
       
     
-     <br></br>
+     
      {/* <DynamicAccordionCode
      data={arrays}></DynamicAccordionCode> */}
-     <br></br>
+    
      <h1>Welcome to Webdevdata</h1>
      {/* <TwoDimListSplitVisualizer></TwoDimListSplitVisualizer> */}
      <br></br>
+     <div className='carousel-container' style={{ width: '100%', margin: '0 auto', height: '400px', display: 'flex' }}>
+        <Carousel
+          slides={slidesData}
+          classN="my-carousel"
+          autoPlayInterval={10000}
+          width={65}
+        />
+
+         {/* <div style={{ width: '65%', backgroundColor: 'lightgray', padding: '20px' }}>
+          <h2>{slidesData[0].title}</h2>
+          <p>{slidesData[0].text}</p>
+          <img src={slidesData[0].image} alt={slidesData[0].title} style={{maxWidth: '100%', maxHeight: '200px'}} />
+        </div> */}
+        <div style={{ width: '35%', paddingLeft: '20px', border:'solid 1px gray', marginLeft:'10px' }}>
+          <LanguageButtons languages={languages} />
+        </div>
+      </div>
      <br></br>
+     {/* <div className='carousel-container' style={{ width: '100%', margin: '0 auto', height: '350px', display: 'flex' }}>
+      <Carousel
+        slides={slidesData}
+        classN="my-carousel"
+        autoPlayInterval={10000}
+        width={65}
+      />
+      <div style={{ width: '35%', paddingLeft: '20px',
+         border:'solid 1px gray',marginLeft:'10px' }}>
+        <LanguageButtons languages={languages} />
+      </div>
+    </div> */}
      <br></br>
      <br></br>
      <br></br>
@@ -94,10 +216,10 @@ export default function Home() {
      <br></br>
      <br></br>
      <br></br>
-     <p>----------------------------------------------------------</p>
+     {/* <p>----------------------------------------------------------</p>
+     <br></br> */}
      <br></br>
-     <br></br>
-     <PythonFunctionsList data={pythonData}></PythonFunctionsList>
+     {/* <PythonFunctionsList data={pythonData}></PythonFunctionsList> */}
      <br></br>
      <br></br>
      <br></br>
@@ -136,3 +258,4 @@ export default function Home() {
     </div>
   )
 }
+
