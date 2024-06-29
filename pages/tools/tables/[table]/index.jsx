@@ -4,20 +4,25 @@ import React from 'react'
 import '../../../pages.css'
 import GenericTable from '@/app/components/generic-table/GenericTable'
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb'
+import Head from 'next/head'
 
-export default function TablePage({ tableData }) {
+export default function TablePage({ tableData, tableName }) {
   if (!tableData) {
     return <div>No data available for this table.</div>
   }
 
   return (
     <>
+      <Head>
+        <title>{`${tableName} Table `}</title>
+        <meta name="description" content={`Detailed information about the ${tableName} table`} />
+      </Head>
       <MyNavbar />
       <br />
       <br />
       <br />
       <Breadcrumb />
-      <h1 className='title'>Table</h1>
+      <h1 className='title'>{`${tableName} Table`}</h1>
       <GenericTable data={tableData} />
       <br />
       <ScrollUpButton />
@@ -26,7 +31,6 @@ export default function TablePage({ tableData }) {
 }
 
 export async function getStaticPaths() {
-  // Define the possible values for [table]
   const tables = ['ascii'] // Only include tables you have data for
 
   const paths = tables.map((table) => ({
@@ -38,37 +42,27 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { table } = params
-  let tableData = null // Initialize with null instead of undefined
+  let tableData = null
 
-  // Load the appropriate data based on the table parameter
   if (table === 'ascii') {
     try {
       tableData = require('../../../../app/api/db/tables/ascii_data.json')
     } catch (error) {
       console.error(`Error loading data for ${table} table:`, error)
-      // If there's an error loading the data, we'll keep tableData as null
     }
   }
-  // Add more conditions here if you have other tables with data
-  // For example:
-  // else if (table === 'another_table') {
-  //   try {
-  //     tableData = require('../../../../app/api/db/tables/another_table_data.json')
-  //   } catch (error) {
-  //     console.error(`Error loading data for ${table} table:`, error)
-  //   }
-  // }
+  // Add more conditions here for other tables
 
-  // If we don't have data for this table, return notFound
   if (tableData === null) {
     return {
-      notFound: true, // This will render the 404 page
+      notFound: true,
     }
   }
 
   return {
     props: {
       tableData,
+      tableName: table.charAt(0).toUpperCase() + table.slice(1), // Capitalize the table name
     },
   }
 }
