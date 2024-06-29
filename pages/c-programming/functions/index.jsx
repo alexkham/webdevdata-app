@@ -1,28 +1,46 @@
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb'
 import MyNavbar from '@/app/components/nav-bar/MyNavbar'
 import React from 'react'
-import data from '../../../app/api/db/developement/c/functions2.json'
 import FunctionList from '@/app/components/function-list/FunctionList'
 import '../../../pages/pages.css'
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton'
+import Head from 'next/head'
 
-export default function FunctionsPage() {
+export default function FunctionsPage({ functionData }) {
   return (
     <>
-    <MyNavbar></MyNavbar>
-    <br></br>
-    <br></br>
-    <br></br>
-    
-    <Breadcrumb></Breadcrumb>
-    <h1 className='title'>C Standard Library Functions Reference</h1>
-    
-    <FunctionList data={data}></FunctionList>
-    <br></br>
-    <br></br>
-    <br></br>
-    <ScrollUpButton></ScrollUpButton>
-    
+      <Head>
+        <title>C Standard Library Functions Reference | WebDevData</title>
+        <meta name="description" content="Comprehensive reference for C Standard Library functions. Explore detailed explanations, syntax, and usage examples for C programming." />
+        <meta name="keywords" content="C functions, standard library, programming reference, C programming" />
+        <link rel="canonical" href="https://webdevdata.net/c-programming/functions" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      </Head>
+      <MyNavbar />
+      <br />
+      <br />
+      <br />
+      <Breadcrumb />
+      <main>
+        <h1 className='title'>C Standard Library Functions Reference</h1>
+        <FunctionList data={functionData} />
+      </main>
+      <br />
+      <br />
+      <br />
+      <ScrollUpButton />
     </>
   )
+}
+
+export async function getStaticProps() {
+  const data = require('../../../app/api/db/developement/c/functions2.json')
+  
+  return {
+    props: {
+      functionData: data
+    },
+    // Optionally, add revalidation to update the page periodically
+    // revalidate: 3600 // Regenerate page every hour
+  }
 }
