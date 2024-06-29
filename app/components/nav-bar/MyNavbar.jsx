@@ -43,12 +43,22 @@ function fixNav(){
 
          <li className="dropdown">
          <Link href="/c-programming">C Programming</Link>
-        <ul className="dropdown-content">
+          <ul className="dropdown-content">
             <li><Link href="/c-programming/functions">Functions</Link></li>
             <li><Link href="/c-programming/things-not-to-do">Things Not To Do</Link></li>
                                           
          </ul>
          </li>
+
+         <li className="dropdown">
+         <Link href="/tools">Tools</Link>
+          <ul className="dropdown-content">
+            <li><Link href="/tools/tables/ascii">Ascii Table</Link></li>
+            
+                                          
+         </ul>
+         </li>
+      
       
       {/* <li><Link href="/tables">Tables</Link></li> */}
       <li onClick={navigateBack} style={{cursor:'pointer'}}><a>GoBack</a></li>

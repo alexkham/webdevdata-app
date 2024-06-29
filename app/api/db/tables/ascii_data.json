@@ -1,0 +1,1293 @@
+[
+    {
+      "ASCII":0,
+      "OCT":0,
+      "HEX":"00",
+      "BIN":0,
+      "Symbol":"\u2400",
+      "HTML Number":"&#00;",
+      "HTML Name":null,
+      "Description":"Null character"
+    },
+    {
+      "ASCII":1,
+      "OCT":1,
+      "HEX":"01",
+      "BIN":1,
+      "Symbol":"\u2401",
+      "HTML Number":"&#01;",
+      "HTML Name":null,
+      "Description":"Start of Heading"
+    },
+    {
+      "ASCII":2,
+      "OCT":2,
+      "HEX":"02",
+      "BIN":10,
+      "Symbol":"\u2402",
+      "HTML Number":"&#02;",
+      "HTML Name":null,
+      "Description":"Start of Text"
+    },
+    {
+      "ASCII":3,
+      "OCT":3,
+      "HEX":"03",
+      "BIN":11,
+      "Symbol":"\u2403",
+      "HTML Number":"&#03;",
+      "HTML Name":null,
+      "Description":"End of Text"
+    },
+    {
+      "ASCII":4,
+      "OCT":4,
+      "HEX":"04",
+      "BIN":100,
+      "Symbol":"\u2404",
+      "HTML Number":"&#04;",
+      "HTML Name":null,
+      "Description":"End of Transmission"
+    },
+    {
+      "ASCII":5,
+      "OCT":5,
+      "HEX":"05",
+      "BIN":101,
+      "Symbol":"\u2405",
+      "HTML Number":"&#05;",
+      "HTML Name":null,
+      "Description":"Enquiry"
+    },
+    {
+      "ASCII":6,
+      "OCT":6,
+      "HEX":"06",
+      "BIN":110,
+      "Symbol":"\u2406",
+      "HTML Number":"&#06;",
+      "HTML Name":null,
+      "Description":"Acknowledge"
+    },
+    {
+      "ASCII":7,
+      "OCT":7,
+      "HEX":"07",
+      "BIN":111,
+      "Symbol":"\u2407",
+      "HTML Number":"&#07;",
+      "HTML Name":null,
+      "Description":"Bell, Alert"
+    },
+    {
+      "ASCII":8,
+      "OCT":10,
+      "HEX":"08",
+      "BIN":1000,
+      "Symbol":"\u2408",
+      "HTML Number":"&#08;",
+      "HTML Name":null,
+      "Description":"Backspace"
+    },
+    {
+      "ASCII":9,
+      "OCT":11,
+      "HEX":"09",
+      "BIN":1001,
+      "Symbol":"\u2409",
+      "HTML Number":"&#09;",
+      "HTML Name":null,
+      "Description":"Horizontal Tab"
+    },
+    {
+      "ASCII":10,
+      "OCT":12,
+      "HEX":"0A",
+      "BIN":1010,
+      "Symbol":"\u240a",
+      "HTML Number":"&#10;",
+      "HTML Name":null,
+      "Description":"Line Feed"
+    },
+    {
+      "ASCII":11,
+      "OCT":13,
+      "HEX":"0B",
+      "BIN":1011,
+      "Symbol":"\u240b",
+      "HTML Number":"&#11;",
+      "HTML Name":null,
+      "Description":"Vertical Tabulation"
+    },
+    {
+      "ASCII":12,
+      "OCT":14,
+      "HEX":"0C",
+      "BIN":1100,
+      "Symbol":"\u240c",
+      "HTML Number":"&#12;",
+      "HTML Name":null,
+      "Description":"Form Feed"
+    },
+    {
+      "ASCII":13,
+      "OCT":15,
+      "HEX":"0D",
+      "BIN":1101,
+      "Symbol":"\u240d",
+      "HTML Number":"&#13;",
+      "HTML Name":null,
+      "Description":"Carriage Return"
+    },
+    {
+      "ASCII":14,
+      "OCT":16,
+      "HEX":"0E",
+      "BIN":1110,
+      "Symbol":"\u240e",
+      "HTML Number":"&#14;",
+      "HTML Name":null,
+      "Description":"Shift Out"
+    },
+    {
+      "ASCII":15,
+      "OCT":17,
+      "HEX":"0F",
+      "BIN":1111,
+      "Symbol":"\u240f",
+      "HTML Number":"&#15;",
+      "HTML Name":null,
+      "Description":"Shift In"
+    },
+    {
+      "ASCII":16,
+      "OCT":20,
+      "HEX":"10",
+      "BIN":10000,
+      "Symbol":"\u2410",
+      "HTML Number":"&#16;",
+      "HTML Name":null,
+      "Description":"Data Link Escape"
+    },
+    {
+      "ASCII":17,
+      "OCT":21,
+      "HEX":"11",
+      "BIN":10001,
+      "Symbol":"\u2411",
+      "HTML Number":"&#17;",
+      "HTML Name":null,
+      "Description":"Device Control One (XON)"
+    },
+    {
+      "ASCII":18,
+      "OCT":22,
+      "HEX":"12",
+      "BIN":10010,
+      "Symbol":"\u2412",
+      "HTML Number":"&#18;",
+      "HTML Name":null,
+      "Description":"Device Control Two"
+    },
+    {
+      "ASCII":19,
+      "OCT":23,
+      "HEX":"13",
+      "BIN":10011,
+      "Symbol":"\u2413",
+      "HTML Number":"&#19;",
+      "HTML Name":null,
+      "Description":"Device Control Three (XOFF)"
+    },
+    {
+      "ASCII":20,
+      "OCT":24,
+      "HEX":"14",
+      "BIN":10100,
+      "Symbol":"\u2414",
+      "HTML Number":"&#20;",
+      "HTML Name":null,
+      "Description":"Device Control Four"
+    },
+    {
+      "ASCII":21,
+      "OCT":25,
+      "HEX":"15",
+      "BIN":10101,
+      "Symbol":"\u2415",
+      "HTML Number":"&#21;",
+      "HTML Name":null,
+      "Description":"Negative Acknowledge"
+    },
+    {
+      "ASCII":22,
+      "OCT":26,
+      "HEX":"16",
+      "BIN":10110,
+      "Symbol":"\u2416",
+      "HTML Number":"&#22;",
+      "HTML Name":null,
+      "Description":"Synchronous Idle"
+    },
+    {
+      "ASCII":23,
+      "OCT":27,
+      "HEX":"17",
+      "BIN":10111,
+      "Symbol":"\u2417",
+      "HTML Number":"&#23;",
+      "HTML Name":null,
+      "Description":"End of Transmission Block"
+    },
+    {
+      "ASCII":24,
+      "OCT":30,
+      "HEX":"18",
+      "BIN":11000,
+      "Symbol":"\u2418",
+      "HTML Number":"&#24;",
+      "HTML Name":null,
+      "Description":"Cancel"
+    },
+    {
+      "ASCII":25,
+      "OCT":31,
+      "HEX":"19",
+      "BIN":11001,
+      "Symbol":"\u2419",
+      "HTML Number":"&#25;",
+      "HTML Name":null,
+      "Description":"End of medium"
+    },
+    {
+      "ASCII":26,
+      "OCT":32,
+      "HEX":"1A",
+      "BIN":11010,
+      "Symbol":"\u241a",
+      "HTML Number":"&#26;",
+      "HTML Name":null,
+      "Description":"Substitute"
+    },
+    {
+      "ASCII":27,
+      "OCT":33,
+      "HEX":"1B",
+      "BIN":11011,
+      "Symbol":"\u241b",
+      "HTML Number":"&#27;",
+      "HTML Name":null,
+      "Description":"Escape"
+    },
+    {
+      "ASCII":28,
+      "OCT":34,
+      "HEX":"1C",
+      "BIN":11100,
+      "Symbol":"\u241c",
+      "HTML Number":"&#28;",
+      "HTML Name":null,
+      "Description":"File Separator"
+    },
+    {
+      "ASCII":29,
+      "OCT":35,
+      "HEX":"1D",
+      "BIN":11101,
+      "Symbol":"\u241d",
+      "HTML Number":"&#29;",
+      "HTML Name":null,
+      "Description":"Group Separator"
+    },
+    {
+      "ASCII":30,
+      "OCT":36,
+      "HEX":"1E",
+      "BIN":11110,
+      "Symbol":"\u241e",
+      "HTML Number":"&#30;",
+      "HTML Name":null,
+      "Description":"Record Separator"
+    },
+    {
+      "ASCII":31,
+      "OCT":37,
+      "HEX":"1F",
+      "BIN":11111,
+      "Symbol":"\u241f",
+      "HTML Number":"&#31;",
+      "HTML Name":null,
+      "Description":"Unit Separator"
+    },
+   
+    {
+      "ASCII":32,
+      "OCT":40,
+      "HEX":"20",
+      "BIN":100000,
+      "Symbol":"\u2420",
+      "HTML Number":"&#32;",
+      "HTML Name":null,
+      "Description":"Space"
+    },
+    {
+      "ASCII":45,
+      "OCT":55,
+      "HEX":"2D",
+      "BIN":101101,
+      "Symbol":"-",
+      "HTML Number":"&#45;",
+      "HTML Name":null,
+      "Description":"Hyphen-minus"
+    },
+    {
+      "ASCII":48,
+      "OCT":60,
+      "HEX":"30",
+      "BIN":110000,
+      "Symbol":"0",
+      "HTML Number":"&#48;",
+      "HTML Name":null,
+      "Description":"Zero"
+    },
+    {
+      "ASCII":49,
+      "OCT":61,
+      "HEX":"31",
+      "BIN":110001,
+      "Symbol":"1",
+      "HTML Number":"&#49;",
+      "HTML Name":null,
+      "Description":"One"
+    },
+    {
+      "ASCII":50,
+      "OCT":62,
+      "HEX":"32",
+      "BIN":110010,
+      "Symbol":"2",
+      "HTML Number":"&#50;",
+      "HTML Name":null,
+      "Description":"Two"
+    },
+    {
+      "ASCII":51,
+      "OCT":63,
+      "HEX":"33",
+      "BIN":110011,
+      "Symbol":"3",
+      "HTML Number":"&#51;",
+      "HTML Name":null,
+      "Description":"Three"
+    },
+    {
+      "ASCII":52,
+      "OCT":64,
+      "HEX":"34",
+      "BIN":110100,
+      "Symbol":"4",
+      "HTML Number":"&#52;",
+      "HTML Name":null,
+      "Description":"Four"
+    },
+    {
+      "ASCII":53,
+      "OCT":65,
+      "HEX":"35",
+      "BIN":110101,
+      "Symbol":"5",
+      "HTML Number":"&#53;",
+      "HTML Name":null,
+      "Description":"Five"
+    },
+    {
+      "ASCII":54,
+      "OCT":66,
+      "HEX":"36",
+      "BIN":110110,
+      "Symbol":"6",
+      "HTML Number":"&#54;",
+      "HTML Name":null,
+      "Description":"Six"
+    },
+    {
+      "ASCII":55,
+      "OCT":67,
+      "HEX":"37",
+      "BIN":110111,
+      "Symbol":"7",
+      "HTML Number":"&#55;",
+      "HTML Name":null,
+      "Description":"Seven"
+    },
+    {
+      "ASCII":56,
+      "OCT":70,
+      "HEX":"38",
+      "BIN":111000,
+      "Symbol":"8",
+      "HTML Number":"&#56;",
+      "HTML Name":null,
+      "Description":"Eight"
+    },
+    {
+      "ASCII":57,
+      "OCT":71,
+      "HEX":"39",
+      "BIN":111001,
+      "Symbol":"9",
+      "HTML Number":"&#57;",
+      "HTML Name":null,
+      "Description":"Nine"
+    },
+    {
+      "ASCII":65,
+      "OCT":101,
+      "HEX":"41",
+      "BIN":1000001,
+      "Symbol":"A",
+      "HTML Number":"&#65;",
+      "HTML Name":null,
+      "Description":"Uppercase A"
+    },
+    {
+      "ASCII":66,
+      "OCT":102,
+      "HEX":"42",
+      "BIN":1000010,
+      "Symbol":"B",
+      "HTML Number":"&#66;",
+      "HTML Name":null,
+      "Description":"Uppercase B"
+    },
+    {
+      "ASCII":67,
+      "OCT":103,
+      "HEX":"43",
+      "BIN":1000011,
+      "Symbol":"C",
+      "HTML Number":"&#67;",
+      "HTML Name":null,
+      "Description":"Uppercase C"
+    },
+    {
+      "ASCII":68,
+      "OCT":104,
+      "HEX":"44",
+      "BIN":1000100,
+      "Symbol":"D",
+      "HTML Number":"&#68;",
+      "HTML Name":null,
+      "Description":"Uppercase D"
+    },
+    {
+      "ASCII":69,
+      "OCT":105,
+      "HEX":"45",
+      "BIN":1000101,
+      "Symbol":"E",
+      "HTML Number":"&#69;",
+      "HTML Name":null,
+      "Description":"Uppercase E"
+    },
+    {
+      "ASCII":70,
+      "OCT":106,
+      "HEX":"46",
+      "BIN":1000110,
+      "Symbol":"F",
+      "HTML Number":"&#70;",
+      "HTML Name":null,
+      "Description":"Uppercase F"
+    },
+    {
+      "ASCII":71,
+      "OCT":107,
+      "HEX":"47",
+      "BIN":1000111,
+      "Symbol":"G",
+      "HTML Number":"&#71;",
+      "HTML Name":null,
+      "Description":"Uppercase G"
+    },
+    {
+      "ASCII":72,
+      "OCT":110,
+      "HEX":"48",
+      "BIN":1001000,
+      "Symbol":"H",
+      "HTML Number":"&#72;",
+      "HTML Name":null,
+      "Description":"Uppercase H"
+    },
+    {
+      "ASCII":73,
+      "OCT":111,
+      "HEX":"49",
+      "BIN":1001001,
+      "Symbol":"I",
+      "HTML Number":"&#73;",
+      "HTML Name":null,
+      "Description":"Uppercase I"
+    },
+    {
+      "ASCII":74,
+      "OCT":112,
+      "HEX":"4A",
+      "BIN":1001010,
+      "Symbol":"J",
+      "HTML Number":"&#74;",
+      "HTML Name":null,
+      "Description":"Uppercase J"
+    },
+    {
+      "ASCII":75,
+      "OCT":113,
+      "HEX":"4B",
+      "BIN":1001011,
+      "Symbol":"K",
+      "HTML Number":"&#75;",
+      "HTML Name":null,
+      "Description":"Uppercase K"
+    },
+    {
+      "ASCII":76,
+      "OCT":114,
+      "HEX":"4C",
+      "BIN":1001100,
+      "Symbol":"L",
+      "HTML Number":"&#76;",
+      "HTML Name":null,
+      "Description":"Uppercase L"
+    },
+    {
+      "ASCII":77,
+      "OCT":115,
+      "HEX":"4D",
+      "BIN":1001101,
+      "Symbol":"M",
+      "HTML Number":"&#77;",
+      "HTML Name":null,
+      "Description":"Uppercase M"
+    },
+    {
+      "ASCII":78,
+      "OCT":116,
+      "HEX":"4E",
+      "BIN":1001110,
+      "Symbol":"N",
+      "HTML Number":"&#78;",
+      "HTML Name":null,
+      "Description":"Uppercase N"
+    },
+    {
+      "ASCII":79,
+      "OCT":117,
+      "HEX":"4F",
+      "BIN":1001111,
+      "Symbol":"O",
+      "HTML Number":"&#79;",
+      "HTML Name":null,
+      "Description":"Uppercase O"
+    },
+    {
+      "ASCII":80,
+      "OCT":120,
+      "HEX":"50",
+      "BIN":1010000,
+      "Symbol":"P",
+      "HTML Number":"&#80;",
+      "HTML Name":null,
+      "Description":"Uppercase P"
+    },
+    {
+      "ASCII":81,
+      "OCT":121,
+      "HEX":"51",
+      "BIN":1010001,
+      "Symbol":"Q",
+      "HTML Number":"&#81;",
+      "HTML Name":null,
+      "Description":"Uppercase Q"
+    },
+    {
+      "ASCII":82,
+      "OCT":122,
+      "HEX":"52",
+      "BIN":1010010,
+      "Symbol":"R",
+      "HTML Number":"&#82;",
+      "HTML Name":null,
+      "Description":"Uppercase R"
+    },
+    {
+      "ASCII":83,
+      "OCT":123,
+      "HEX":"53",
+      "BIN":1010011,
+      "Symbol":"S",
+      "HTML Number":"&#83;",
+      "HTML Name":null,
+      "Description":"Uppercase S"
+    },
+    {
+      "ASCII":84,
+      "OCT":124,
+      "HEX":"54",
+      "BIN":1010100,
+      "Symbol":"T",
+      "HTML Number":"&#84;",
+      "HTML Name":null,
+      "Description":"Uppercase T"
+    },
+    {
+      "ASCII":85,
+      "OCT":125,
+      "HEX":"55",
+      "BIN":1010101,
+      "Symbol":"U",
+      "HTML Number":"&#85;",
+      "HTML Name":null,
+      "Description":"Uppercase U"
+    },
+    {
+      "ASCII":86,
+      "OCT":126,
+      "HEX":"56",
+      "BIN":1010110,
+      "Symbol":"V",
+      "HTML Number":"&#86;",
+      "HTML Name":null,
+      "Description":"Uppercase V"
+    },
+    {
+      "ASCII":87,
+      "OCT":127,
+      "HEX":"57",
+      "BIN":1010111,
+      "Symbol":"W",
+      "HTML Number":"&#87;",
+      "HTML Name":null,
+      "Description":"Uppercase W"
+    },
+    {
+      "ASCII":88,
+      "OCT":130,
+      "HEX":"58",
+      "BIN":1011000,
+      "Symbol":"X",
+      "HTML Number":"&#88;",
+      "HTML Name":null,
+      "Description":"Uppercase X"
+    },
+    {
+      "ASCII":89,
+      "OCT":131,
+      "HEX":"59",
+      "BIN":1011001,
+      "Symbol":"Y",
+      "HTML Number":"&#89;",
+      "HTML Name":null,
+      "Description":"Uppercase Y"
+    },
+    {
+      "ASCII":90,
+      "OCT":132,
+      "HEX":"5A",
+      "BIN":1011010,
+      "Symbol":"Z",
+      "HTML Number":"&#90;",
+      "HTML Name":null,
+      "Description":"Uppercase Z"
+    },
+    {
+      "ASCII":97,
+      "OCT":141,
+      "HEX":"61",
+      "BIN":1100001,
+      "Symbol":"A",
+      "HTML Number":"&#97;",
+      "HTML Name":null,
+      "Description":"Lowercase a"
+    },
+    {
+      "ASCII":98,
+      "OCT":142,
+      "HEX":"62",
+      "BIN":1100010,
+      "Symbol":"B",
+      "HTML Number":"&#98;",
+      "HTML Name":null,
+      "Description":"Lowercase b"
+    },
+    {
+      "ASCII":99,
+      "OCT":143,
+      "HEX":"63",
+      "BIN":1100011,
+      "Symbol":"C",
+      "HTML Number":"&#99;",
+      "HTML Name":null,
+      "Description":"Lowercase c"
+    },
+    {
+      "ASCII":100,
+      "OCT":144,
+      "HEX":"64",
+      "BIN":1100100,
+      "Symbol":"D",
+      "HTML Number":"&#100;",
+      "HTML Name":null,
+      "Description":"Lowercase d"
+    },
+    {
+      "ASCII":101,
+      "OCT":145,
+      "HEX":"65",
+      "BIN":1100101,
+      "Symbol":"E",
+      "HTML Number":"&#101;",
+      "HTML Name":null,
+      "Description":"Lowercase e"
+    },
+    {
+      "ASCII":102,
+      "OCT":146,
+      "HEX":"66",
+      "BIN":1100110,
+      "Symbol":"F",
+      "HTML Number":"&#102;",
+      "HTML Name":null,
+      "Description":"Lowercase f"
+    },
+    {
+      "ASCII":103,
+      "OCT":147,
+      "HEX":"67",
+      "BIN":1100111,
+      "Symbol":"G",
+      "HTML Number":"&#103;",
+      "HTML Name":null,
+      "Description":"Lowercase g"
+    },
+    {
+      "ASCII":104,
+      "OCT":150,
+      "HEX":"68",
+      "BIN":1101000,
+      "Symbol":"H",
+      "HTML Number":"&#104;",
+      "HTML Name":null,
+      "Description":"Lowercase h"
+    },
+    {
+      "ASCII":105,
+      "OCT":151,
+      "HEX":"69",
+      "BIN":1101001,
+      "Symbol":"I",
+      "HTML Number":"&#105;",
+      "HTML Name":null,
+      "Description":"Lowercase i"
+    },
+    {
+      "ASCII":106,
+      "OCT":152,
+      "HEX":"6A",
+      "BIN":1101010,
+      "Symbol":"J",
+      "HTML Number":"&#106;",
+      "HTML Name":null,
+      "Description":"Lowercase j"
+    },
+    {
+      "ASCII":107,
+      "OCT":153,
+      "HEX":"6B",
+      "BIN":1101011,
+      "Symbol":"K",
+      "HTML Number":"&#107;",
+      "HTML Name":null,
+      "Description":"Lowercase k"
+    },
+    {
+      "ASCII":108,
+      "OCT":154,
+      "HEX":"6C",
+      "BIN":1101100,
+      "Symbol":"L",
+      "HTML Number":"&#108;",
+      "HTML Name":null,
+      "Description":"Lowercase l"
+    },
+    {
+      "ASCII":109,
+      "OCT":155,
+      "HEX":"6D",
+      "BIN":1101101,
+      "Symbol":"M",
+      "HTML Number":"&#109;",
+      "HTML Name":null,
+      "Description":"Lowercase m"
+    },
+    {
+      "ASCII":110,
+      "OCT":156,
+      "HEX":"6E",
+      "BIN":1101110,
+      "Symbol":"N",
+      "HTML Number":"&#110;",
+      "HTML Name":null,
+      "Description":"Lowercase n"
+    },
+    {
+      "ASCII":111,
+      "OCT":157,
+      "HEX":"6F",
+      "BIN":1101111,
+      "Symbol":"O",
+      "HTML Number":"&#111;",
+      "HTML Name":null,
+      "Description":"Lowercase o"
+    },
+    {
+      "ASCII":112,
+      "OCT":160,
+      "HEX":"70",
+      "BIN":1110000,
+      "Symbol":"P",
+      "HTML Number":"&#112;",
+      "HTML Name":null,
+      "Description":"Lowercase p"
+    },
+    {
+      "ASCII":113,
+      "OCT":161,
+      "HEX":"71",
+      "BIN":1110001,
+      "Symbol":"Q",
+      "HTML Number":"&#113;",
+      "HTML Name":null,
+      "Description":"Lowercase q"
+    },
+    {
+      "ASCII":114,
+      "OCT":162,
+      "HEX":"72",
+      "BIN":1110010,
+      "Symbol":"R",
+      "HTML Number":"&#114;",
+      "HTML Name":null,
+      "Description":"Lowercase r"
+    },
+    {
+      "ASCII":115,
+      "OCT":163,
+      "HEX":"73",
+      "BIN":1110011,
+      "Symbol":"S",
+      "HTML Number":"&#115;",
+      "HTML Name":null,
+      "Description":"Lowercase s"
+    },
+    {
+      "ASCII":116,
+      "OCT":164,
+      "HEX":"74",
+      "BIN":1110100,
+      "Symbol":"T",
+      "HTML Number":"&#116;",
+      "HTML Name":null,
+      "Description":"Lowercase t"
+    },
+    {
+      "ASCII":117,
+      "OCT":165,
+      "HEX":"75",
+      "BIN":1110101,
+      "Symbol":"U",
+      "HTML Number":"&#117;",
+      "HTML Name":null,
+      "Description":"Lowercase u"
+    },
+    {
+      "ASCII":118,
+      "OCT":166,
+      "HEX":"76",
+      "BIN":1110110,
+      "Symbol":"V",
+      "HTML Number":"&#118;",
+      "HTML Name":null,
+      "Description":"Lowercase v"
+    },
+    {
+      "ASCII":119,
+      "OCT":167,
+      "HEX":"77",
+      "BIN":1110111,
+      "Symbol":"W",
+      "HTML Number":"&#119;",
+      "HTML Name":null,
+      "Description":"Lowercase w"
+    },
+    {
+      "ASCII":120,
+      "OCT":170,
+      "HEX":"78",
+      "BIN":1111000,
+      "Symbol":"X",
+      "HTML Number":"&#120;",
+      "HTML Name":null,
+      "Description":"Lowercase x"
+    },
+    {
+      "ASCII":121,
+      "OCT":171,
+      "HEX":"79",
+      "BIN":1111001,
+      "Symbol":"Y",
+      "HTML Number":"&#121;",
+      "HTML Name":null,
+      "Description":"Lowercase y"
+    },
+    {
+      "ASCII":122,
+      "OCT":172,
+      "HEX":"7A",
+      "BIN":1111010,
+      "Symbol":"Z",
+      "HTML Number":"&#122;",
+      "HTML Name":null,
+      "Description":"Lowercase z"
+    },
+    {
+      "ASCII":127,
+      "OCT":177,
+      "HEX":"7F",
+      "BIN":1111111,
+      "Symbol":"\u2421",
+      "HTML Number":"&#127;",
+      "HTML Name":null,
+      "Description":"Delete"
+    },
+    {
+      "ASCII":33,
+      "OCT":41,
+      "HEX":"21",
+      "BIN":100001,
+      "Symbol":"!",
+      "HTML Number":"&#33;",
+      "HTML Name":"&excl;",
+      "Description":"Exclamation mark"
+    },
+    {
+      "ASCII":34,
+      "OCT":42,
+      "HEX":"22",
+      "BIN":100010,
+      "Symbol":"\"",
+      "HTML Number":"&#34;",
+      "HTML Name":"&quot;",
+      "Description":"Double quotes (or speech marks)"
+    },
+    {
+      "ASCII":35,
+      "OCT":43,
+      "HEX":"23",
+      "BIN":100011,
+      "Symbol":"#",
+      "HTML Number":"&#35;",
+      "HTML Name":"&num;",
+      "Description":"Number sign"
+    },
+    {
+      "ASCII":36,
+      "OCT":44,
+      "HEX":"24",
+      "BIN":100100,
+      "Symbol":"$",
+      "HTML Number":"&#36;",
+      "HTML Name":"&dollar;",
+      "Description":"Dollar"
+    },
+    {
+      "ASCII":37,
+      "OCT":45,
+      "HEX":"25",
+      "BIN":100101,
+      "Symbol":"%",
+      "HTML Number":"&#37;",
+      "HTML Name":"&percnt;",
+      "Description":"Per cent sign"
+    },
+    {
+      "ASCII":38,
+      "OCT":46,
+      "HEX":"26",
+      "BIN":100110,
+      "Symbol":"&",
+      "HTML Number":"&#38;",
+      "HTML Name":"&amp;",
+      "Description":"Ampersand"
+    },
+    {
+      "ASCII":39,
+      "OCT":47,
+      "HEX":"27",
+      "BIN":100111,
+      "Symbol":"'",
+      "HTML Number":"&#39;",
+      "HTML Name":"&apos;",
+      "Description":"Single quote"
+    },
+    {
+      "ASCII":40,
+      "OCT":50,
+      "HEX":"28",
+      "BIN":101000,
+      "Symbol":"(",
+      "HTML Number":"&#40;",
+      "HTML Name":"&lparen;",
+      "Description":"Open parenthesis (or open bracket)"
+    },
+    {
+      "ASCII":41,
+      "OCT":51,
+      "HEX":"29",
+      "BIN":101001,
+      "Symbol":")",
+      "HTML Number":"&#41;",
+      "HTML Name":"&rparen;",
+      "Description":"Close parenthesis (or close bracket)"
+    },
+    {
+      "ASCII":42,
+      "OCT":52,
+      "HEX":"2A",
+      "BIN":101010,
+      "Symbol":"*",
+      "HTML Number":"&#42;",
+      "HTML Name":"&ast;",
+      "Description":"Asterisk"
+    },
+    {
+      "ASCII":43,
+      "OCT":53,
+      "HEX":"2B",
+      "BIN":101011,
+      "Symbol":"+",
+      "HTML Number":"&#43;",
+      "HTML Name":"&plus;",
+      "Description":"Plus"
+    },
+    {
+      "ASCII":44,
+      "OCT":54,
+      "HEX":"2C",
+      "BIN":101100,
+      "Symbol":",",
+      "HTML Number":"&#44;",
+      "HTML Name":"&comma;",
+      "Description":"Comma"
+    },
+    {
+      "ASCII":46,
+      "OCT":56,
+      "HEX":"2E",
+      "BIN":101110,
+      "Symbol":".",
+      "HTML Number":"&#46;",
+      "HTML Name":"&period;",
+      "Description":"Period, dot or full stop"
+    },
+    {
+      "ASCII":47,
+      "OCT":57,
+      "HEX":"2F",
+      "BIN":101111,
+      "Symbol":"\/",
+      "HTML Number":"&#47;",
+      "HTML Name":"&sol;",
+      "Description":"Slash or divide"
+    },
+    {
+      "ASCII":58,
+      "OCT":72,
+      "HEX":"3A",
+      "BIN":111010,
+      "Symbol":":",
+      "HTML Number":"&#58;",
+      "HTML Name":"&colon;",
+      "Description":"Colon"
+    },
+    {
+      "ASCII":59,
+      "OCT":73,
+      "HEX":"3B",
+      "BIN":111011,
+      "Symbol":";",
+      "HTML Number":"&#59;",
+      "HTML Name":"&semi;",
+      "Description":"Semicolon"
+    },
+    {
+      "ASCII":60,
+      "OCT":74,
+      "HEX":"3C",
+      "BIN":111100,
+      "Symbol":"<",
+      "HTML Number":"&#60;",
+      "HTML Name":"&lt;",
+      "Description":"Less than (or open angled bracket)"
+    },
+    {
+      "ASCII":61,
+      "OCT":75,
+      "HEX":"3D",
+      "BIN":111101,
+      "Symbol":"=",
+      "HTML Number":"&#61;",
+      "HTML Name":"&equals;",
+      "Description":"Equals"
+    },
+    {
+      "ASCII":62,
+      "OCT":76,
+      "HEX":"3E",
+      "BIN":111110,
+      "Symbol":">",
+      "HTML Number":"&#62;",
+      "HTML Name":"&gt;",
+      "Description":"Greater than (or close angled bracket)"
+    },
+    {
+      "ASCII":63,
+      "OCT":77,
+      "HEX":"3F",
+      "BIN":111111,
+      "Symbol":"?",
+      "HTML Number":"&#63;",
+      "HTML Name":"&quest;",
+      "Description":"Question mark"
+    },
+    {
+      "ASCII":64,
+      "OCT":100,
+      "HEX":"40",
+      "BIN":1000000,
+      "Symbol":"@",
+      "HTML Number":"&#64;",
+      "HTML Name":"&commat;",
+      "Description":"At sign"
+    },
+    {
+      "ASCII":91,
+      "OCT":133,
+      "HEX":"5B",
+      "BIN":1011011,
+      "Symbol":"[",
+      "HTML Number":"&#91;",
+      "HTML Name":"&lsqb;",
+      "Description":"Opening bracket"
+    },
+    {
+      "ASCII":92,
+      "OCT":134,
+      "HEX":"5C",
+      "BIN":1011100,
+      "Symbol":"\\",
+      "HTML Number":"&#92;",
+      "HTML Name":"&bsol;",
+      "Description":"Backslash"
+    },
+    {
+      "ASCII":93,
+      "OCT":135,
+      "HEX":"5D",
+      "BIN":1011101,
+      "Symbol":"]",
+      "HTML Number":"&#93;",
+      "HTML Name":"&rsqb;",
+      "Description":"Closing bracket"
+    },
+    {
+      "ASCII":94,
+      "OCT":136,
+      "HEX":"5E",
+      "BIN":1011110,
+      "Symbol":"^",
+      "HTML Number":"&#94;",
+      "HTML Name":"&Hat;",
+      "Description":"Caret - circumflex"
+    },
+    {
+      "ASCII":95,
+      "OCT":137,
+      "HEX":"5F",
+      "BIN":1011111,
+      "Symbol":"_",
+      "HTML Number":"&#95;",
+      "HTML Name":"&lowbar;",
+      "Description":"Underscore"
+    },
+    {
+      "ASCII":96,
+      "OCT":140,
+      "HEX":"60",
+      "BIN":1100000,
+      "Symbol":"`",
+      "HTML Number":"&#96;",
+      "HTML Name":"&grave;",
+      "Description":"Grave accent"
+    },
+    {
+      "ASCII":123,
+      "OCT":173,
+      "HEX":"7B",
+      "BIN":1111011,
+      "Symbol":"{",
+      "HTML Number":"&#123;",
+      "HTML Name":"&lcub;",
+      "Description":"Opening brace"
+    },
+    {
+      "ASCII":124,
+      "OCT":174,
+      "HEX":"7C",
+      "BIN":1111100,
+      "Symbol":"|",
+      "HTML Number":"&#124;",
+      "HTML Name":"&verbar;",
+      "Description":"Vertical bar"
+    },
+    {
+      "ASCII":125,
+      "OCT":175,
+      "HEX":"7D",
+      "BIN":1111101,
+      "Symbol":"}",
+      "HTML Number":"&#125;",
+      "HTML Name":"&rcub;",
+      "Description":"Closing brace"
+    },
+    {
+      "ASCII":126,
+      "OCT":176,
+      "HEX":"7E",
+      "BIN":1111110,
+      "Symbol":"~",
+      "HTML Number":"&#126;",
+      "HTML Name":"&tilde;",
+      "Description":"Equivalency sign - tilde"
+    },
+    {
+        "ASCII": 127,
+        "OCT": "177",
+        "HEX": "7F",
+        "BIN": "1111111",
+        "Symbol": "\u2421",
+        "HTML Number": "&#127;",
+        "HTML Name": null,
+        "Description": "Delete character"
+      }
+  ]

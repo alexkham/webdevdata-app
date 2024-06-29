@@ -32,6 +32,9 @@ import Carousel from "./components/simple-carousel/Carousel";
 import LanguageButtons from "./components/language-buttons/LanguageButtons";
 import dynamic from 'next/dynamic';
 import ClientCarousel from "./components/simple-carousel/ClientCarousel";
+import GenericTable from "./components/generic-table/GenericTable";
+import asciiData from './api/db/tables/ascii_data.json'
+import AsciiConverter from "./components/converters/AsciiConverter";
 
 
 // const Carousel = dynamic(() => import('./components/simple-carousel/Carousel'), {
@@ -103,7 +106,32 @@ import ClientCarousel from "./components/simple-carousel/ClientCarousel";
 
 export default async function Home({slides}) {
   
-
+//  const asciiData=[
+  
+//     {
+//       "DEC": 0,
+//       "OCT": 0,
+//       "HEX": "00",
+//       "BIN": 0,
+//       "Symbol": "\u2400",
+//       "HTML Number": "&#00;",
+//       "HTML Name": null,
+//       "Description": "Null character"
+//     },
+//     {
+//       "DEC": 1,
+//       "OCT": 1,
+//       "HEX": "01",
+//       "BIN": 1,
+//       "Symbol": "\u2401",
+//       "HTML Number": "&#01;",
+//       "HTML Name": null,
+//       "Description": "Start of Heading"
+//     },
+    
+  
+  
+//  ]
  
    
   const slidesData = [
@@ -219,10 +247,13 @@ export default async function Home({slides}) {
      {/* <p>----------------------------------------------------------</p>
      <br></br> */}
      <br></br>
-     <PythonFunctionsList data={pythonData}></PythonFunctionsList>
+     {/* <PythonFunctionsList data={pythonData}></PythonFunctionsList> */}
      <br></br>
      <br></br>
      <br></br>
+     <div >
+     {/* <GenericTable data={asciiData}></GenericTable> */}
+     </div>
      <br></br>
      {/* <TwoDimArray2  data={exampleData} 
      highlightedIndices={highlightedIndices} 
@@ -250,6 +281,7 @@ export default async function Home({slides}) {
                 setStartCol={dummySetter} setStopCol={dummySetter} setStepCol={dummySetter}
             /> */}
      <br></br>
+     {/* <AsciiConverter></AsciiConverter> */}
      <br></br>
      {/* <CollapsibleTree data={pandas}></CollapsibleTree> */}
      {/* <MermaidDiagram chartDefinition={pandas}></MermaidDiagram> */}

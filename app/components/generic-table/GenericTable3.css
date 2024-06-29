@@ -1,0 +1,61 @@
+.table-container {
+    margin: 40px auto;
+    width: 95%;
+    overflow-x: auto; /* Ensures accessibility for smaller screens */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Elegant and readable font */
+    border-radius: 8px; /* Rounded corners for the container */
+}
+
+.my-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff; /* Pure white background for a clean look */
+}
+
+.my-table th, .my-table td {
+    padding: 12px 18px; /* Generous padding for a spacious layout */
+    text-align: left;
+    border-bottom: 2px solid #f0f0f0; /* Soft grey border for a light separation */
+}
+
+.my-table th {
+    background-color: #fafafa; /* Very light grey background for headers */
+    color: #5a5a5a; /* Soft dark grey for text */
+    font-size: 16px; /* Prominent size for header text */
+    letter-spacing: 0.5px; /* Slight spacing to increase legibility */
+}
+
+.my-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternating row colors for better readability */
+}
+
+.my-table tr:hover {
+    background-color: #f1f1f1; /* Light grey for hover, adding interactivity */
+}
+
+.my-table td {
+    font-size: 15px; /* Comfortable reading size for data */
+}
+
+.my-table button {
+    padding: 8px 16px;
+    background-color: #4a90e2; /* Soft blue for a friendly button color */
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold; /* Makes the button text stand out */
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none; /* Removes the default focus outline */
+    transition: all 0.3s ease; /* Smooth transition for all changes */
+}
+
+.my-table button:hover {
+    background-color: #357abd; /* Slightly darker blue on hover */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Shadow for depth */
+}
+
+.my-table button:focus {
+    border: 1px solid #fff; /* Adds a subtle focus indicator */
+}

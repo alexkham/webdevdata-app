@@ -1,0 +1,38 @@
+.table-container {
+    margin: 20px auto;
+    width: 90%;
+    overflow-x: auto; /* Allows horizontal scrolling for smaller screens */
+    font-family: 'Arial', sans-serif; /* Uses Arial font */
+    overflow-y: auto; /* Allows vertical scrolling within the table container */
+    max-height: 80vh; /* Limits the height of the table container */
+}
+
+.my-table {
+    width: 100%;
+    border-collapse: collapse; /* Removes space between borders */
+    background-color: #f8f9fa; /* Sets a light gray background color */
+}
+
+.my-table th, .my-table td {
+    padding: 10px 15px; /* Provides padding inside cells */
+    border-bottom: 1px solid #e1e1e1; /* Light gray border for separation */
+    text-align: center; /* Centers text horizontally */
+    vertical-align: middle; /* Centers text vertically */
+}
+
+.my-table th {
+    background-color: #4d4dff; /* Blue background for headers */
+    color: white; /* White text for headers */
+    font-size: 16px; /* Font size for headers */
+    position: sticky;
+    top: 0; /* Sticks at the top of the viewport */
+    z-index: 10; /* Ensures the header is on top */
+}
+
+.my-table tr:hover {
+    background-color: #f1f1f1; /* Light gray background on hover */
+}
+
+.my-table td {
+    font-size: 14px; /* Font size for normal cells */
+}
