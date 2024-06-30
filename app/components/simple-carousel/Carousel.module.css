@@ -2,8 +2,9 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    /* Add a minimum height to ensure content is visible */
     min-height: 300px;
+    margin-left: 20px;
+   
 }
 
 .slide {
@@ -13,7 +14,6 @@
     left: 0;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-    /* Ensure slide takes full height of carousel */
     height: 100%;
 }
 
@@ -23,36 +23,34 @@
 
 .image {
     width: 100%;
-    height: 68%;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
 
 .slideContent {
     position: absolute;
-    bottom: 0;  /* Change from 200px to 0 */
+    bottom: 0;
     left: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
-    padding: 20px;
+    padding: 15px;
     z-index: 1000;
-    padding-left: 100px;
-    padding: 30px;
     text-transform: capitalize;
-    
 }
 
 .prevButton, .nextButton {
     position: absolute;
-    top: 58%;
+    top: 50%;
     transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.6);
     color: white;
     border: none;
-    padding: 10px;
+    padding: 10px 15px;
     cursor: pointer;
     z-index: 10;
+    font-size: 18px;
 }
 
 .prevButton {
@@ -64,5 +62,55 @@
 }
 
 .slideContent a {
-    color:aliceblue
+    color: aliceblue;
+}
+
+@media (max-width: 768px) {
+    .carousel {
+        min-height: 200px;
+    }
+
+    .slideContent {
+        padding: 10px;
+    }
+
+    .slideContent h2 {
+        font-size: 1.2em;
+        margin-bottom: 5px;
+    }
+
+    .slideContent p {
+        font-size: 0.9em;
+        margin-bottom: 5px;
+    }
+
+    .prevButton, .nextButton {
+        padding: 5px 10px;
+        font-size: 16px;
+        margin: 10px;
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel {
+        min-height: 150px;
+        z-index: -10000;
+    }
+
+    .slideContent h2 {
+        font-size: 1em;
+    }
+
+    .slideContent p {
+        font-size: 0.8em;
+    }
+
+    .prevButton, .nextButton {
+        padding: 3px 8px;
+        font-size: 16px;
+        height:60px;
+        margin:5px;
+        max-width: 20px;
+    }
 }

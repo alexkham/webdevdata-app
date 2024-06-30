@@ -25,6 +25,7 @@
   transition: all 0.3s ease-in-out;
   min-height: 60px;
   background-color: white;
+  z-index: 11;
 }
 
 .nav .container {
@@ -81,6 +82,7 @@
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1000000;
+ 
 }
 
 .nav .dropdown-content a {
@@ -139,7 +141,7 @@
   .nav .dropdown-content {
     position: static;
     box-shadow: none;
-    background-color: inherit;
+    
   }
 
   .nav .dropdown-content a {
@@ -160,6 +162,7 @@
 
   .nav:not(.active) ul.mobile-open {
     background-color: white;
+    z-index: 100000;
   }
 }
 
@@ -175,6 +178,8 @@
     cursor: pointer;
     color: inherit;
     margin-left:1rem;
+    z-index: 10000;
+    
   }
 
   
