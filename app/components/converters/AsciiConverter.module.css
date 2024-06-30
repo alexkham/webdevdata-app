@@ -1,0 +1,137 @@
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .leftColumn, .rightColumn {
+    flex: 1;
+  }
+  
+  .leftColumn {
+    flex: 1;
+    margin-right: 20px;
+    width: 480px;  /* Add this line */
+    margin-top: -30px;
+  }
+
+  .inputGroup {
+    margin-bottom: 20px;
+  }
+  
+  .inputGroup label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .inputGroup select, .inputGroup textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .inputGroup textarea {
+    resize: vertical;
+  }
+  
+  .messageContainer {
+    min-height: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .error, .warning {
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .error {
+    background-color: #ffebee;
+    color: #c62828;
+  }
+  
+  .warning {
+    background-color: #fff3e0;
+    color: #ef6c00;
+  }
+  
+  .buttonGroup {
+    display: flex;
+    gap: 10px;
+    margin-top: -50px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .convertButton {
+    background-color: #2196f3;
+    /* #4caf50 */
+  }
+  
+  .convertButton:hover {
+    background-color: #1e88e5
+    /* #45a049 */
+  }
+  
+  .convertButton:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .resetButton {
+    background-color: #f44336;
+  }
+  
+  .resetButton:hover {
+    background-color: #d32f2f;
+  }
+  
+  .outputField {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .outputField label {
+    flex: 0 0 120px;
+    font-weight: bold;
+  }
+  
+  .outputField input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+  }
+  
+  .copyButton {
+    width: 60px!important;
+    padding: 10px 0;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-top: 0px;
+    max-width: 60px!important;
+  }
+  
+  .copyButton:hover {
+    background-color: #1e88e5;
+  }

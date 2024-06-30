@@ -140,6 +140,7 @@ function MyNavbar() {
             <Link href="/tools">Tools</Link>
             <ul className="dropdown-content">
               <li><Link href="/tools/tables/ascii">Ascii Table</Link></li>
+              <li><Link href="/tools/converters/ascii-converter">Ascii Converter</Link></li>
             </ul>
           </li>
           <li onClick={navigateBack} style={{cursor:'pointer'}}><a>GoBack</a></li>
