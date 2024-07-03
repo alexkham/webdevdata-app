@@ -35,7 +35,8 @@
   z-index: 0;
   top: -15px;
   right: -15px;
-  background: #7952b3;
+  background:#4d4dff; 
+  /* #7952b3; */
   height: 200px;
   width: 25px;
   border-radius: 32px;
@@ -72,7 +73,8 @@
   display: inline-block;
   margin-top: auto;
   padding: 5px 10px;
-  background-color: #7952b3;
+  background-color: #4d4dff;
+  /* #7952b3; */
   color: white;
   text-decoration: none;
   border-radius: 4px;
@@ -84,7 +86,8 @@
 
 .card:hover .card-link {
   background-color: #ffffff;
-  color: #7952b3;
+  color:#4d4dff;
+   /* #7952b3; */
 }
 
 @media (max-width: 768px) {

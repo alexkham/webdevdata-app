@@ -35,6 +35,8 @@ import ClientCarousel from "./components/simple-carousel/ClientCarousel";
 import GenericTable from "./components/generic-table/GenericTable";
 import asciiData from './api/db/tables/ascii_data.json'
 import AsciiConverter from "./components/converters/AsciiConverter";
+import JsonConverter from "./components/converters/JsonConverter";
+import CssUnitsConverter from "./components/converters/CssUnitsConverter";
 
 
 // const Carousel = dynamic(() => import('./components/simple-carousel/Carousel'), {
@@ -230,12 +232,14 @@ export default async function Home({slides}) {
      <br></br>
      <br></br>
      <br></br>
+     <h1>JSON ⇄ XML Converter</h1>
+     <JsonConverter></JsonConverter>
      <br></br>
      <br></br>
      <br></br>
      <br></br>
      <br></br>
-     <br></br>
+     <CssUnitsConverter></CssUnitsConverter>
      {/* <TwoDimArray  data={exampleData} 
      highlightedIndices={highlightedIndices} 
      shouldHighlight={true}></TwoDimArray> */}

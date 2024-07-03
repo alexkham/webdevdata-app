@@ -34,5 +34,22 @@
   
 }
 
+@media (max-width: 768px) {
+  .scroll-up-button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+.scroll-up-button:hover {
+  background-color: #357ae8;
+  transform: scale(1.1);
+}
+
+.scroll-up-button:active {
+  transform: scale(0.95);
+}
+
 
 

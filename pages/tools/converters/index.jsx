@@ -64,7 +64,7 @@ export default function ConvertersPage({ cardsData }) {
         <meta property="og:description" content="Explore our collection of useful converters for various data formats and units. Tools for ASCII, binary, hex, and more." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://webdevdata.net/tools/converters" />
-        <link rel="canonical" href="https://webdevdata.net/tools/converters" />
+        <link rel="canonical" href="https:/webdevdata.net/tools/converters" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <MyNavbar />
@@ -87,6 +87,13 @@ export async function getStaticProps() {
       color: "#f0f0f0"
     },
     // Add more card objects as needed
+
+    {
+        title: "Css Units Converter",
+        content: "Instantly convert between all CSS units with precision and ease. From pixels to viewport sizes, ems to rems, percentages to physical units - this powerful tool handles it all. ",
+        link: "/tools/converters/css-units-converter",
+        color: "#f0f0f0"
+      },
   ];
 
   return {
