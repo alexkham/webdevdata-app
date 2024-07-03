@@ -232,14 +232,14 @@ export default async function Home({slides}) {
      <br></br>
      <br></br>
      <br></br>
-     <h1>JSON ⇄ XML Converter</h1>
-     <JsonConverter></JsonConverter>
+     {/* <h1>JSON ⇄ XML Converter</h1>
+     <JsonConverter></JsonConverter> */}
      <br></br>
      <br></br>
      <br></br>
      <br></br>
      <br></br>
-     <CssUnitsConverter></CssUnitsConverter>
+     {/* <CssUnitsConverter></CssUnitsConverter> */}
      {/* <TwoDimArray  data={exampleData} 
      highlightedIndices={highlightedIndices} 
      shouldHighlight={true}></TwoDimArray> */}
