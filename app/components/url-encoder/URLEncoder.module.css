@@ -1,0 +1,140 @@
+/* URLEncoder.module.css */
+.outerContainer {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 20px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  min-height: 900px;
+  min-width:800px
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  min-width:800px
+}
+
+.inputArea {
+  width: 600px;  /* Ensure full width */
+  min-height: 100px; /* Prevent vertical resizing issues */
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.outputContainer {
+  margin-top: 20px;
+  min-height: 60px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.convertButton {
+  background-color: #2196f3;
+  color:white;
+  padding: 10px;
+  min-width: 100px;
+  border: none;
+  border-radius: 4px;
+}
+
+.convertButton:hover {
+  background-color: #1e88e5;
+}
+
+.resetButton {
+  background-color: #f44336;
+  color:white;
+  padding: 10px;
+  min-width: 100px;
+  border: none;
+  border-radius: 4px;
+}
+
+.resetButton:hover {
+  background-color: #d32f2f;
+}
+
+.copyButton {
+  padding: 10px;
+  background-color: #2196f3;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.copyButton:hover {
+  background-color: #1e88e5;
+}
+
+.errorMessage {
+  color: #f44336;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.container {
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  /* overflow-y: auto; */
+}
+
+.title {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  color: #555;
+  margin-top: 18px;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+}
+
+.listItem {
+  margin-bottom: 10px;
+}
+/* Assuming the rest of your styles are defined in this CSS module file */
+.rightSide {
+  height: 500px; /* Adjust this height based on your design needs */
+  overflow-y: auto; /* Enables vertical scrolling */
+  padding: 20px; /* Optional for spacing */
+  border-left: 1px solid #ccc; /* Optional for visual separation if needed */
+}
+

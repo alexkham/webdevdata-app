@@ -37,7 +37,7 @@ export default function MethodPage({ data }) {
       <div className='syntax'>
         <br></br>
         <h3>Syntax</h3>
-      <span >{renderTextWithLineBreaksSeparator(data.signature,';')}</span>
+      {/* <span >{renderTextWithLineBreaksSeparator(data.signature,';')}</span> */}
       </div>
       <ParametersTabs tabs={data.parameters}></ParametersTabs>
       

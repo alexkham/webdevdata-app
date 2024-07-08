@@ -22,7 +22,7 @@ export default function FunctionsPage({ functionData }) {
       <br />
       <Breadcrumb />
       <main>
-        <h1 className='title'>C Standard Library Functions Reference</h1>
+        <h1 className='title' style={{marginTop:'-30px', marginBottom:'-30px'}}>C Standard Library Functions Reference</h1>
         <FunctionList data={functionData} />
       </main>
       <br />

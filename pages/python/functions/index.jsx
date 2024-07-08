@@ -4,7 +4,7 @@ import React from 'react'
 import '../../pages.css'
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb'
 import PythonFunctionsList from '@/app/components/function-list/PythonFunctionsList'
-import pythonData from '../../../app/api/db/developement/python/functions.json'
+import pythonData from '../../../app/api/db/developement/python/functions_new.json'
 
 export default function PythonFunctionsPage() {
   return (

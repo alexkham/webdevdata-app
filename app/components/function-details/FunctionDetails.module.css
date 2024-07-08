@@ -1,0 +1,137 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.outerTabContainer, .innerTabContainer {
+  display: flex;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.tabButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  /* background: none; */
+  /* border: none; */
+  cursor: pointer;
+  border-bottom: 1px solid gray !important;
+  /* background-color: red !important; */
+  margin-right: 15px;
+
+}
+
+.tabButton.active {
+  border-bottom: 2px solid #007bff !important;
+  color: #007bff;
+}
+
+.content {
+  background-color: #f8f9fa;
+  padding: 50px;
+  border-radius: 5px;
+  position: relative;
+  min-height: 400px;
+  width: 100%;
+}
+
+.tabContent {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  width: calc(100% - 40px); /* Adjust for left and right padding */
+  padding: 30px;
+}
+
+.tabContent.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.exampleContent {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.codeExplanationContainer {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.codeContainer {
+  flex: 7;
+  width: 70%;
+}
+
+.explanationContainer {
+  flex: 4;
+  width: 30%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.innerTabContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tabButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.tabButton.active {
+  border-bottom: 2px solid #007bff;
+  color: #007bff;
+}
+
+.runButton {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color:#808080;
+   /* #007bff; */
+  /* #4CAF50; */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.runButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.outputBox {
+  background-color: black;
+  /* #f0f0f0; */
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 4px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin-top: 10px;
+  color: #ffff4d;
+  /* #1aff1a; */
+}

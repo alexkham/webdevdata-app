@@ -37,6 +37,12 @@ import asciiData from './api/db/tables/ascii_data.json'
 import AsciiConverter from "./components/converters/AsciiConverter";
 import JsonConverter from "./components/converters/JsonConverter";
 import CssUnitsConverter from "./components/converters/CssUnitsConverter";
+import FunctionDetails from "./components/function-details/FunctionDetails";
+import functionD from './api/db/developement/c/functions_new.json'
+
+import pythonFunctionData from '../app/api/db/developement/python/functions_new.json'
+import PythonFunctionDetails from "./components/function-details/PythonFunctionDetails";
+//import PythonFunctionDetails from "../app/components/function-details/PythonFunctionDetails";
 
 
 // const Carousel = dynamic(() => import('./components/simple-carousel/Carousel'), {
@@ -182,7 +188,7 @@ export default async function Home({slides}) {
 
     const dummySetter = () => {};
 
-  
+    const pythonData=pythonFunctionData[1]
  
   return (
     <div className="main-page-container">
@@ -254,6 +260,7 @@ export default async function Home({slides}) {
      {/* <PythonFunctionsList data={pythonData}></PythonFunctionsList> */}
      <br></br>
      <br></br>
+     {/* <FunctionDetails functionData={functionD[3]}></FunctionDetails> */}
      <br></br>
      <div >
      {/* <GenericTable data={asciiData}></GenericTable> */}
@@ -268,6 +275,7 @@ export default async function Home({slides}) {
      <br></br>
      {/* <VisualizeLambda></VisualizeLambda> */}
      <br></br>
+     {/* <PythonFunctionDetails functionData={pythonData}></PythonFunctionDetails> */}
      <br></br>
      {/* <TreeStructure></TreeStructure> */}
      <br></br>
@@ -276,7 +284,9 @@ export default async function Home({slides}) {
      shouldHighlight={true}
      ></TwoDimArray2> */}
      <br></br>
+     {/* <PythonFunctionDetails functionData={pythonData}></PythonFunctionDetails> */}
      <br></br>
+     {/* <PythonFunctionDetails functionData={pythonData}></PythonFunctionDetails> */}
      <br></br>
      {/* <TwoDimSlicingInputs
                 startRow={startRow} stopRow={stopRow} stepRow={stepRow}

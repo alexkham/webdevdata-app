@@ -141,6 +141,9 @@ function MyNavbar() {
             <ul className="dropdown-content">
               <li><Link href="/tools/tables/ascii">Ascii Table</Link></li>
               <li><Link href="/tools/converters/ascii-converter">Ascii Converter</Link></li>
+              <li><Link href="/tools/converters/css-units-converter">CSS Units Converter</Link></li>
+              <li><Link href="/tools/coding-tools/url-encoder-decoder">URL Encoder/Decoder</Link></li>
+              <li><Link href="/tools/coding-tools/css-minifier">CSS Minifier</Link></li>
             </ul>
           </li>
           <li onClick={navigateBack} style={{cursor:'pointer'}}><a>GoBack</a></li>

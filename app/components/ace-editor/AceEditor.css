@@ -1,73 +1,68 @@
-.ace-container{
+/* .ace-container {
     background-color: black;
     padding: 10px;
-    
-   border-top-left-radius: 5px;
-   border-top-right-radius: 5px;
-    width: 600px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     height: 50px;
     padding-top: 0px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    
 }
 
-.ace-container button{
+.ace-container button {
     margin-top: 10px;
 }
 
-.ace-editor{
-    min-width: 600px;
+.ace-editor {
     min-height: 300px;
     padding-top: 30px;
 }
 
+.ace-editor > div {
+    width: 100% !important;
+}
+
 .btn-container {
     position: absolute;
-    top: 0; /* Adjust if you want some margin from the top */
-    right: 0; /* Adjust if you want some margin from the right */
+    top: 0;
+    right: 0;
     margin-top: 10px;
 }
 
-
-.container div{
-   
+.container div {
     width: 100px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    
 }
 
-.container div>button{
-    
+.container div > button {
     margin-bottom: 12px;
     margin-right: 10px;
     min-height: 30px;
-    font-size:small;
+    font-size: small;
 }
 
 .visible {
     visibility: visible;
 }
+
 .invisible {
     visibility: hidden;
-    
 }
 
-.btn-container button{
+.btn-container button {
     min-width: 100px;
 }
 
-.copy-btn:hover{
+.copy-btn:hover {
     background: fixed;
     background-color: aliceblue;
     color: black;
-   
-   
 }
-.copy-btn{
+
+.copy-btn {
     background: none;
     color: azure;
     border: solid white 0.5px;
@@ -77,4 +72,43 @@
     border-radius: 3px;
     min-height: 20px;
     margin-top: 20px;
+} */
+
+.ace-editor-wrapper {
+    width: 100%;
+}
+
+.ace-container {
+    background-color: black;
+    padding: 0px;
+    padding-top: -10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.ace-editor {
+    width: 100% !important;
+    min-height: 200px;
+}
+
+.copy-btn {
+    background: none;
+    color: azure;
+    border: solid white 0.5px;
+    padding: 5px;
+    border-radius: 3px;
+    max-width: 30px;
+    margin-bottom: 10px;
+    min-width: 100px;
+    margin-right: 50px;
+    min-height: 30px;
+    margin-top: 5px;
+}
+
+.copy-btn:hover {
+    background-color: aliceblue;
+    color: black;
 }

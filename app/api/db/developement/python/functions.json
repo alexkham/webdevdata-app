@@ -1,6 +1,6 @@
 [
     {
-      "name": "abs",
+      "name": "abs ",
       "module": "builtins",
       "class_name": null,
       "return_type": "Number",
@@ -3296,7 +3296,7 @@
                       ]
                     },
                     {
-                      "name": "count",
+                      "name": "count (string)",
                       "module": "builtins",
                       "class_name": "str",
                       "data_structure": "string",
@@ -4327,6 +4327,63 @@
           "examples": [
             "s = '42'",
             "print(s.zfill(5))  # Outputs: '00042'"
+          ]
+        },
+        {
+          "name": "zfill",
+          "module": "builtins",
+          "class_name": "str",
+          "data_structure": "string",
+          "return_type": "str",
+          "parameters": [
+            {
+              "name": "width",
+              "type": "int",
+              "description": "The desired width of the resulting string"
+            }
+          ],
+          "docstring": "Return a copy of the string left filled with ASCII '0' digits to make a string of length width.",
+          "extended_description": "The zfill() method returns a copy of the string padded on the left with zeros ('0') to fill the specified width. If the string is already longer than the specified width, it is returned unchanged. The method preserves any sign prefix ('+' or '-') by moving it to the beginning of the resulting string.",
+          "decorators": [],
+          "main_category": "String Operations",
+          "sub_category": "Formatting",
+          "data_type_manipulated": ["string"],
+          "version_added": "2.2.2",
+          "deprecated": false,
+          "examples": [
+            {
+              "title": "Basic Usage",
+              "code": "s = '42'\nprint(s.zfill(5))",
+              "output": "00042"
+            },
+            {
+              "title": "With Negative Number",
+              "code": "s = '-42'\nprint(s.zfill(6))",
+              "output": "-00042"
+            },
+            {
+              "title": "String Longer Than Width",
+              "code": "s = '12345'\nprint(s.zfill(3))",
+              "output": "12345"
+            },
+            {
+              "title": "With Decimal Point",
+              "code": "s = '3.14'\nprint(s.zfill(7))",
+              "output": "0003.14"
+            },
+            {
+              "title": "With Non-Numeric String",
+              "code": "s = 'abc'\nprint(s.zfill(5))",
+              "output": "00abc"
+            }
+          ],
+          "performance_considerations": "zfill() has a time complexity of O(n), where n is the width specified. It's generally efficient for most use cases, especially when working with numeric strings.",
+          "common_pitfalls": "Remember that zfill() only adds zeros to the left of the string. If you need to add zeros after a decimal point for numeric formatting, you should use other formatting methods like f-strings or the format() method. Also, be aware that zfill() doesn't validate if the string represents a valid number; it will add zeros to any string.",
+          "related_functions": ["rjust", "ljust", "center"],
+          "notes": [
+            "zfill() is particularly useful for padding numeric strings, especially when working with fixed-width fields.",
+            "For more complex numeric formatting, consider using the format() method or f-strings.",
+            "zfill() preserves any existing sign (+ or -) by moving it to the left of the zero padding."
           ]
         }
               

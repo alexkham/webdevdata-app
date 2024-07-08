@@ -1392,6 +1392,7 @@
 'use client'
 import React, { useState, useMemo, useEffect } from 'react';
 import styles from './FunctionList.module.css';
+import Link from 'next/link';
 
 const FunctionList = ({ data }) => {
   const [filter, setFilter] = useState('');
@@ -1564,7 +1565,9 @@ const FunctionList = ({ data }) => {
               <ul className={styles.functionList}>
                 {functions.map((func, index) => (
                   <li key={index} className={styles.listItem}>
+                    <Link href={`functions/${func.function_name}`}>
                     {func.function_name}
+                    </Link>
                     <span className={styles.tooltip}>{func.description}</span>
                   </li>
                 ))}

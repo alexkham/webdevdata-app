@@ -80,6 +80,13 @@
   position: relative;
   padding: 5px;
   cursor: pointer;
+  text-decoration: none;
+}
+
+.listItem a{
+
+  text-decoration: none;
+
 }
 
 .tooltip {

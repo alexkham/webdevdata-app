@@ -927,6 +927,7 @@
 'use client'
 import React, { useState, useMemo } from 'react';
 import styles from './PythonFunctionsList.module.css';
+import Link from 'next/link';
 
 const PythonFunctionsList = ({ data }) => {
   const [filter, setFilter] = useState('');
@@ -934,6 +935,8 @@ const PythonFunctionsList = ({ data }) => {
   const [filterOptions, setFilterOptions] = useState([]);
   const [actionType, setActionType] = useState('');
   const [actionDetails, setActionDetails] = useState('');
+
+  console.log('Items Available   '+data.length)
 
   const filterTypes = [
     { value: "", label: "Select filter type" },
@@ -1139,7 +1142,12 @@ const PythonFunctionsList = ({ data }) => {
                   <ul className={styles.functionList}>
                     {functions.map((func, index) => (
                       <li key={index} className={styles.listItem}>
-                        {func.name}
+                        <Link href={`functions/${func.name}`}>
+                        {(func.name==="__import__"||
+                        func.name==="difference_update"||
+                        func.name==="symmetric_difference"||
+                        func.name==="symmetric_difference_update")?func.name:func.name.replaceAll('_',' ')}
+                        </Link>
                         {functionCounts[func.name] > 1 && (
                           <span className={styles.dataTypeIndicator}>
                             ({func.data_type_manipulated[0]})

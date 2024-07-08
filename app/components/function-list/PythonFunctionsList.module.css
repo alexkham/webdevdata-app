@@ -1,7 +1,7 @@
 .functionsContainer {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 2fr;
   gap: 20px;
   margin: 0 auto;
   padding: 0 20px;
@@ -84,6 +84,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
+  width: 300px;
 }
 
 @media (min-width: 768px) {
@@ -128,6 +129,13 @@
   padding: 5px;
   cursor: pointer;
 }
+
+.listItem a{
+
+  text-decoration: none;
+
+}
+
 
 .tooltip {
   visibility: hidden;

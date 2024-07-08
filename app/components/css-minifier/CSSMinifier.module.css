@@ -1,0 +1,99 @@
+/* CSSMinifier.module.css */
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2/3 and 1/3 column widths */
+    gap: 10px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    min-height: 1200px;
+}
+
+.leftPanel {
+    display: flex;
+    flex-direction: row; /* Keep the overall direction as column */
+}
+
+.textareasContainer {
+    display: flex; /* New container to hold text areas side by side */
+    overflow-x: auto; /* Allows scrolling horizontally if needed */
+    margin-bottom: 10px; /* Space below the text area container */
+}
+
+.textarea {
+    flex: 1; /* Each textarea takes equal space */
+    min-width: 300px; /* Minimum width to ensure visibility of content */
+    margin-right: 10px; /* Space between text areas */
+    height: 350px; /* Fixed height for each textarea */
+    resize: none; /* Disable resizing to maintain layout */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 400px;
+    max-height: 350px;
+    margin-bottom: 5px;
+}
+
+.buttonGroup {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.button {
+    padding: 10px 20px;
+    margin-right: 10px; /* Space between buttons */
+    border: none;
+    border-radius: 4px;
+    background-color: #0070f3;
+    color: white;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+    justify-self: center;
+   margin-top: -200px;
+}
+
+.rightPanel {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-left: 1px solid #ccc;
+   
+}
+.leftInput{
+    display: flex;
+    flex-direction: column;
+}
+.rightInput{
+    display: flex;
+    flex-direction: column;
+    min-height: 600px;
+    align-items: center;
+}
+.leftOuter{
+    display: flex;
+    flex-direction: column;
+    min-height: 600px;
+    justify-content: flex-start;
+    align-items: center;
+}
+.leftPanel{
+    min-height: 600px;
+    /* margin-bottom: -180px; */
+}
+
+.buttonReset {
+    padding: 10px 20px;
+    margin-right: 10px; /* Space between buttons */
+    border: none;
+    border-radius: 4px;
+    background-color: #f44336;
+    color: white;
+    cursor: pointer;
+}
