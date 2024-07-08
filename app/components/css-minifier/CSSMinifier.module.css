@@ -23,7 +23,7 @@
     flex: 1; /* Each textarea takes equal space */
     min-width: 300px; /* Minimum width to ensure visibility of content */
     margin-right: 10px; /* Space between text areas */
-    height: 350px; /* Fixed height for each textarea */
+    height: 320px; /* Fixed height for each textarea */
     resize: none; /* Disable resizing to maintain layout */
     padding: 8px;
     border: 1px solid #ccc;

@@ -54,7 +54,7 @@ export default function CSSMinifierPage() {
       <br />
       <br />
       <Breadcrumb />
-      <h1 className='title' style={{marginTop:'-40px', marginBottom:'-50px'}}>CSS Minifier</h1>
+      <h1 className='title' style={{marginTop:'-50px', marginBottom:'-50px'}}>CSS Minifier</h1>
       <div className={styles.container}>
         <div className={styles.leftOuter}>
           <CSSMinifier />
