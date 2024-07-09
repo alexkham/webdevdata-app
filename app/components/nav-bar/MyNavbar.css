@@ -163,6 +163,7 @@
   .nav:not(.active) ul.mobile-open {
     background-color: white;
     z-index: 100000;
+    padding:20px;
   }
 }
 

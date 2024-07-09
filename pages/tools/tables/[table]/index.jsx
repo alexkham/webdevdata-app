@@ -22,7 +22,7 @@ export default function TablePage({ tableData, tableName }) {
       <br />
       <br />
       <Breadcrumb />
-      <h1 className='title'>{`${tableName} Table`}</h1>
+      <h1 className='title' style={{marginTop:'-30px', marginBottom:'-30px'}}>{`${tableName} Table`}</h1>
       <GenericTable data={tableData} />
       <br />
       <ScrollUpButton />

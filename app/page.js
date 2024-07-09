@@ -42,6 +42,8 @@ import functionD from './api/db/developement/c/functions_new.json'
 
 import pythonFunctionData from '../app/api/db/developement/python/functions_new.json'
 import PythonFunctionDetails from "./components/function-details/PythonFunctionDetails";
+import CSSBeautifier from "./components/css-minifier/CSSBeautifier";
+import CaseConverter from "./components/case-converter/CaseConverter";
 //import PythonFunctionDetails from "../app/components/function-details/PythonFunctionDetails";
 
 
@@ -286,6 +288,7 @@ export default async function Home({slides}) {
      <br></br>
      {/* <PythonFunctionDetails functionData={pythonData}></PythonFunctionDetails> */}
      <br></br>
+     <CSSBeautifier></CSSBeautifier>
      {/* <PythonFunctionDetails functionData={pythonData}></PythonFunctionDetails> */}
      <br></br>
      {/* <TwoDimSlicingInputs
@@ -296,6 +299,25 @@ export default async function Home({slides}) {
             /> */}
      <br></br>
      {/* <AsciiConverter></AsciiConverter> */}
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <CaseConverter></CaseConverter>
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
+     <br></br>
      <br></br>
      {/* <CollapsibleTree data={pandas}></CollapsibleTree> */}
      {/* <MermaidDiagram chartDefinition={pandas}></MermaidDiagram> */}

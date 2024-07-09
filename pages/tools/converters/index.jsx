@@ -68,9 +68,12 @@ export default function ConvertersPage({ cardsData }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <MyNavbar />
+      <br></br>
+      <br></br>
+      <br></br>
       <main >
         <Breadcrumb />
-        <h1 className='title'>Converters</h1>
+        <h1 className='title' style={{marginTop:'-30px', marginBottom:'-20px'}}>Converters</h1>
         <CardsGroup cards={cardsData} />
       </main>
       <ScrollUpButton />

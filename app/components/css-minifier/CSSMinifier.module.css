@@ -10,21 +10,21 @@
 
 .leftPanel {
     display: flex;
-    flex-direction: row; /* Keep the overall direction as column */
+    flex-direction: row;
 }
 
 .textareasContainer {
-    display: flex; /* New container to hold text areas side by side */
-    overflow-x: auto; /* Allows scrolling horizontally if needed */
-    margin-bottom: 10px; /* Space below the text area container */
+    display: flex;
+    overflow-x: auto;
+    margin-bottom: 10px;
 }
 
 .textarea {
-    flex: 1; /* Each textarea takes equal space */
-    min-width: 300px; /* Minimum width to ensure visibility of content */
-    margin-right: 10px; /* Space between text areas */
-    height: 320px; /* Fixed height for each textarea */
-    resize: none; /* Disable resizing to maintain layout */
+    flex: 1;
+    min-width: 300px;
+    margin-right: 10px;
+    height: 300px;
+    resize: none;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -35,12 +35,12 @@
 
 .buttonGroup {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    flex-wrap: wrap;
 }
 
 .button {
     padding: 10px 20px;
-    margin-right: 10px; /* Space between buttons */
+    margin-right: 10px;
     border: none;
     border-radius: 4px;
     background-color: #0070f3;
@@ -56,7 +56,7 @@
     color: red;
     margin-top: 10px;
     justify-self: center;
-   margin-top: -200px;
+    margin-top: -200px;
 }
 
 .rightPanel {
@@ -64,36 +64,70 @@
     flex-direction: column;
     padding: 30px;
     border-left: 1px solid #ccc;
-   
 }
-.leftInput{
+
+.leftInput {
     display: flex;
     flex-direction: column;
 }
-.rightInput{
+
+.rightInput {
     display: flex;
     flex-direction: column;
     min-height: 600px;
     align-items: center;
 }
-.leftOuter{
+
+.leftOuter {
     display: flex;
     flex-direction: column;
     min-height: 600px;
     justify-content: flex-start;
     align-items: center;
 }
-.leftPanel{
+
+.leftPanel {
     min-height: 600px;
-    /* margin-bottom: -180px; */
 }
 
 .buttonReset {
     padding: 10px 20px;
-    margin-right: 10px; /* Space between buttons */
+    margin-right: 10px;
     border: none;
     border-radius: 4px;
     background-color: #f44336;
     color: white;
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        margin-top: 5px;
+    }
+
+    .leftPanel {
+        flex-direction: column;
+    }
+
+    .textareasContainer {
+        flex-direction: column;
+    }
+
+    .textarea {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .rightPanel {
+        border-left: none;
+        border-top: 1px solid #ccc;
+        margin-top: 20px;
+    }
+
+    .button, .buttonReset {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 }

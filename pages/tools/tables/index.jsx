@@ -21,9 +21,12 @@ export default function TablesPage({ cardsData }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <MyNavbar />
+      <br></br>
+      <br></br>
+      <br></br>
       <main>
         <Breadcrumb />
-        <h1 className='title'>Tables</h1>
+        <h1 className='title' style={{marginTop:'-30px', marginBottom:'-20px'}}>Tables</h1>
         <CardsGroup cards={cardsData} />
       </main>
       <ScrollUpButton />

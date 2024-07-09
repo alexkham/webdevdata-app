@@ -49,6 +49,12 @@ export async function getStaticProps() {
       text: 'Access a variety of conversion tools for different units and formats. Our converters simplify calculations and transformations for developers and designers.',
     //   image: '/images/converters-icon.jpg'
     },
+    {
+      title: 'Coding Tools',
+      link: '/tools/coding-tools',
+      text: 'Enhance Your Coding Efficiency with Our Digital Toolbox. From URL Encoding to CSS Minification, Our Conversion Tools Streamline Common Development Tasks and Optimize Your Code.',
+    //   image: '/images/converters-icon.jpg'
+    },
   ];
 
   return {

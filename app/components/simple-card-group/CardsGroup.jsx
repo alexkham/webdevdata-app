@@ -127,7 +127,7 @@ function Card({ title, content, color, link }) {
       <h2>{title}</h2>
       <p>{content}</p>
       {link && (
-        <a href={link} className="card-link" target="_blank" rel="noopener noreferrer">
+        <a href={link} className="card-link"  rel="noopener noreferrer">
           Learn More
         </a>
       )}

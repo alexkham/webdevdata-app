@@ -108,7 +108,7 @@ export default function AsciiConverterPage({ staticContent }) {
       <br />
       <br />
       <Breadcrumb />
-      <h1 className='title'>ASCII Converter</h1>
+      <h1 className='title' style={{marginTop:'-30px', marginBottom:'-30px'}}>ASCII Converter</h1>
       <AsciiConverter />
       {staticContent && (
         <section>

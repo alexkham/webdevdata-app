@@ -1,12 +1,11 @@
 /* URLEncoder.module.css */
 .outerContainer {
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 2fr 2fr;
   gap: 10px;
   padding: 20px;
   font-family: Arial, sans-serif;
   min-height: 900px;
-  /* min-width:800px */
 }
 
 .container {
@@ -15,17 +14,18 @@
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  /* min-width:600px */
+  min-width: 600px;
 }
 
 .inputArea {
-  width: 600px;  /* Ensure full width */
-  min-height: 100px; /* Prevent vertical resizing issues */
+  width: 600px;
+  min-height: 100px;
   margin-bottom: 15px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: none;
+  min-width: 600px;
 }
 
 .buttonGroup {
@@ -42,6 +42,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 600px;
 }
 
 .button {
@@ -56,7 +57,7 @@
 
 .convertButton {
   background-color: #2196f3;
-  color:white;
+  color: white;
   padding: 10px;
   min-width: 100px;
   border: none;
@@ -69,7 +70,7 @@
 
 .resetButton {
   background-color: #f44336;
-  color:white;
+  color: white;
   padding: 10px;
   min-width: 100px;
   border: none;
@@ -87,7 +88,6 @@
   border-radius: 4px;
   color: white;
   cursor: pointer;
-  border-radius: 4px;
 }
 
 .copyButton:hover {
@@ -107,7 +107,6 @@
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  /* overflow-y: auto; */
 }
 
 .title {
@@ -130,12 +129,52 @@
 .listItem {
   margin-bottom: 10px;
 }
-/* Assuming the rest of your styles are defined in this CSS module file */
+
 .rightSide {
-  height: 500px; /* Adjust this height based on your design needs */
-  overflow-y: auto; /* Enables vertical scrolling */
-  padding: 20px; /* Optional for spacing */
-  border-left: 1px solid #ccc; /* Optional for visual separation if needed */
+  height: 500px;
+  overflow-y: auto;
+  padding: 20px;
+  border-left: 1px solid #ccc;
   min-width: 300px;
 }
 
+@media (max-width: 768px) {
+  .outerContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .container, .inputArea {
+    width: 100%;
+    max-width: none;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+  }
+
+  .button, .convertButton, .resetButton, .copyButton {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .rightSide {
+    border-left: none;
+    border-top: 1px solid #ccc;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .outerContainer, .container {
+    padding: 10px;
+  }
+
+  .outputContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .copyButton {
+    margin-top: 10px;
+  }
+}
