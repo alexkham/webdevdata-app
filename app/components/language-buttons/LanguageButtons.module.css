@@ -1,83 +1,95 @@
 .languageButtonWrapper {
-    height: 100%;
-    overflow-y: auto;
-    padding-right: 10px; /* Space for scrollbar */
-  }
-  
-  .languageButtonContainer {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-  }
-  
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 10px; /* Space for scrollbar */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.languageButtonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.languageLink {
+  flex-grow: 1;
+  min-width: 30%;
+  max-width: calc(50% - 10px); /* Ensure at least 2 buttons per row */
+  margin: 5px;
+  text-decoration: none;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.languageLink:hover {
+  opacity: 0.8;
+}
+
+.languageButton {
+  width: 100%;
+  padding: 15px 10px; /* Increased vertical padding for better touch targets */
+  border: none;
+  background: none;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px; /* Ensure readable font size on mobile */
+}
+
+.languageLogo {
+  width: 30px; /* Slightly larger for better visibility on small screens */
+  height: 30px;
+  margin-bottom: 8px; /* Increased space between logo and text */
+}
+
+/* Custom scrollbar styles for webkit browsers */
+.languageButtonWrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.languageButtonWrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.languageButtonWrapper::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.languageButtonWrapper::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@media (max-width: 768px) {
   .languageLink {
-    flex-grow: 1;
-    min-width: 30%;
-    max-width: calc(50% - 10px); /* Ensure at least 2 buttons per row */
-    margin: 5px;
-    text-decoration: none;
-    border-radius: 5px;
-    overflow: hidden;
-    transition: all 0.3s ease;
+    min-width: 45%;
   }
-  
-  .languageLink:hover {
-    opacity: 0.8;
-  }
-  
   .languageButton {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    background: none;
-    color: white;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; /* Ensure vertical centering */
-    cursor: pointer;
+    padding: 20px 10px; /* Even larger touch target on tablets */
   }
-  
+}
+
+@media (max-width: 480px) {
+  .languageLink {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .languageButton {
+    padding: 20px 15px; /* Largest touch target on phones */
+    font-size: 18px; /* Slightly larger font for better readability on phones */
+  }
   .languageLogo {
-    width: 25px;
-    height: 25px;
-    margin-bottom: 5px; /* Space between logo and text */
+    width: 35px; /* Larger logo on very small screens */
+    height: 35px;
   }
-  
-  /* Custom scrollbar styles for webkit browsers */
-  .languageButtonWrapper::-webkit-scrollbar {
-    width: 6px;
-  }
-  
-  .languageButtonWrapper::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  .languageButtonWrapper::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 3px;
-  }
-  
-  .languageButtonWrapper::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-  
-  @media (max-width: 768px) {
-    .languageLink {
-      min-width: 45%;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .languageLink {
-      min-width: 100%;
-      max-width: 100%;
-    }
-  }
-  
-  /* Styles for when there is no logo */
-  .languageButton.noLogo {
-    justify-content: center; /* Center content horizontally when no logo */
-  }
-  
+}
+
+/* Styles for when there is no logo */
+.languageButton.noLogo {
+  justify-content: center; /* Center content horizontally when no logo */
+}

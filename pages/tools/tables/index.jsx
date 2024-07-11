@@ -42,6 +42,13 @@ export async function getStaticProps() {
       link: "/tools/tables/ascii",
       color: "#f0f0f0"
     },
+
+    {
+      title: "HTML Tags Table",
+      content: "Comprehensive inventory of HTML tags, detailing  names, functions, categories, attributes, deprecation status, and usage examples, serving as a concise reference for web developers.",
+      link: "/tools/tables/html_tags",
+      color: "#f0f0f0"
+    },
     // Add more card objects here as you add more tables
   ];
 

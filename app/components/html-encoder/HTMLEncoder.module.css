@@ -1,0 +1,207 @@
+.outerContainer {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    min-height: 900px;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    min-width: 800px;
+  }
+  
+  .columnsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .inputArea {
+    width: 100%;
+    min-height: 280px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    min-width: 300px;
+  }
+  
+  /* .buttonGroup {
+    gap: 10px;
+    margin-bottom: 15px;
+    max-height: 40px;
+    width:100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  } */
+
+  .buttonGroup {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+    min-height: 40px; /* Changed from max-height to min-height */
+    width: 100%;
+  }
+
+
+  .buttonContainer {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  
+  .outputContainer {
+    min-height: 280px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .convertButton {
+    background-color: #2196f3;
+  }
+  
+  .convertButton:hover {
+    background-color: #1e88e5;
+  }
+  
+  .resetButton {
+    background-color: #f44336;
+  }
+  
+  .resetButton:hover {
+    background-color: #d32f2f;
+  }
+  
+  .copyButton {
+    padding: 10px;
+    background-color: #2196f3;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    align-self: flex-end;
+    
+  }
+  
+  .copyButton:hover {
+    background-color: #1e88e5;
+  }
+/*   
+  .errorMessage {
+    color: #f44336;
+    padding: 10px;
+    margin-top: 0px;
+    display: inline;
+    
+    max-height: 40px;
+    width: 100%;
+    margin-left: auto;
+  } */
+ 
+  
+  .errorMessage {
+    color: #f44336;
+    padding: 5px 10px;
+    margin: 0;
+    display: inline-block;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+  }
+
+
+  .title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  
+  .subtitle {
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+  }
+  
+  .charCount {
+    margin-bottom: 10px;
+    color: #666;
+  }
+  
+  .warning {
+    color: #f44336;
+  }
+  
+  @media (max-width: 768px) {
+    .outerContainer {
+      grid-template-columns: 1fr;
+    }
+  
+    .columnsContainer {
+      grid-template-columns: 1fr;
+    }
+  
+    .buttonGroup {
+      flex-direction: column;
+    }
+  
+    .button, .convertButton, .resetButton, .copyButton {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .outputContainer {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .copyButton {
+      margin-top: 10px;
+    }
+  }

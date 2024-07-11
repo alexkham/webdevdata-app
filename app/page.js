@@ -44,6 +44,10 @@ import pythonFunctionData from '../app/api/db/developement/python/functions_new.
 import PythonFunctionDetails from "./components/function-details/PythonFunctionDetails";
 import CSSBeautifier from "./components/css-minifier/CSSBeautifier";
 import CaseConverter from "./components/case-converter/CaseConverter";
+import CaseConverter2 from "./components/case-converter/CaseConverter2";
+import { explanations } from "./components/case-converter/caseExplanations";
+import TextAnalyzer from "./components/text-analyzer/TextAnalyzer";
+import styles from './MainPage.module.css';
 //import PythonFunctionDetails from "../app/components/function-details/PythonFunctionDetails";
 
 
@@ -80,68 +84,13 @@ import CaseConverter from "./components/case-converter/CaseConverter";
 //   };
 // }
 
-// async function getSlideData() {
-//   // In a real application, you might fetch this data from an API
-//   // For now, we'll just return the static data
-//   return [
-//     {
-//       image: "/explore.png",
-//       title: "Functions Explorer",
-//       text: "Explore C Standard Library Functions",
-//       link: "/c-programming/functions"
-//   },
-//   {
-//       image: "/prohibited.webp",
-//       title: "Slide 2",
-//       text: "This is the second slide",
-//       link: "/c-programming/things-not-to-do"
-//   },
-  
-    
-//   ];
-// }
-// This function acts similarly to getStaticProps
-// export async function loader() {
-//   const response = await fetch('https://api.example.com/slides');
-//   const slides = await response.json();
-  
-//   return {
-//       props: {
-//           slides,
-//       },
-//   };
-// }
+
 
 
 
 export default async function Home({slides}) {
   
-//  const asciiData=[
-  
-//     {
-//       "DEC": 0,
-//       "OCT": 0,
-//       "HEX": "00",
-//       "BIN": 0,
-//       "Symbol": "\u2400",
-//       "HTML Number": "&#00;",
-//       "HTML Name": null,
-//       "Description": "Null character"
-//     },
-//     {
-//       "DEC": 1,
-//       "OCT": 1,
-//       "HEX": "01",
-//       "BIN": 1,
-//       "Symbol": "\u2401",
-//       "HTML Number": "&#01;",
-//       "HTML Name": null,
-//       "Description": "Start of Heading"
-//     },
-    
-  
-  
-//  ]
+
  
    
   const slidesData = [
@@ -192,138 +141,184 @@ export default async function Home({slides}) {
 
     const pythonData=pythonFunctionData[1]
  
-  return (
-    <div className="main-page-container">
+  // return (
+  //   <div className="main-page-container">
       
     
      
-     {/* <DynamicAccordionCode
-     data={arrays}></DynamicAccordionCode> */}
+  //    {/* <DynamicAccordionCode
+  //    data={arrays}></DynamicAccordionCode> */}
     
-     <h1>Welcome to Webdevdata</h1>
-     {/* <TwoDimListSplitVisualizer></TwoDimListSplitVisualizer> */}
-     <br></br>
-     <div className='carousel-container' style={{ width: '100%', margin: '0 auto', height: '400px', display: 'flex' }}>
-        <Carousel
-          slides={slidesData}
-          classN="my-carousel"
-          autoPlayInterval={10000}
-          width={65}
-        />
+  //    <h1>Welcome to Webdevdata</h1>
+  //    {/* <TwoDimListSplitVisualizer></TwoDimListSplitVisualizer> */}
+  //    <br></br>
+  //    <div className='carousel-container' style={{ width: '100%', margin: '0 auto', height: '400px', display: 'flex' }}>
+  //       <Carousel
+  //         slides={slidesData}
+  //         classN="my-carousel"
+  //         autoPlayInterval={10000}
+  //         width={65}
+  //       />
 
-         {/* <div style={{ width: '65%', backgroundColor: 'lightgray', padding: '20px' }}>
-          <h2>{slidesData[0].title}</h2>
-          <p>{slidesData[0].text}</p>
-          <img src={slidesData[0].image} alt={slidesData[0].title} style={{maxWidth: '100%', maxHeight: '200px'}} />
-        </div> */}
-        <div style={{ width: '35%', paddingLeft: '20px', border:'solid 1px gray', marginLeft:'10px' }}>
+  //        {/* <div style={{ width: '65%', backgroundColor: 'lightgray', padding: '20px' }}>
+  //         <h2>{slidesData[0].title}</h2>
+  //         <p>{slidesData[0].text}</p>
+  //         <img src={slidesData[0].image} alt={slidesData[0].title} style={{maxWidth: '100%', maxHeight: '200px'}} />
+  //       </div> */}
+  //       <div style={{ width: '35%', paddingLeft: '20px', border:'solid 1px gray', marginLeft:'10px' }}>
+  //         <LanguageButtons languages={languages} />
+  //       </div>
+  //     </div>
+  //    <br></br>
+  //    {/* <div className='carousel-container' style={{ width: '100%', margin: '0 auto', height: '350px', display: 'flex' }}>
+  //     <Carousel
+  //       slides={slidesData}
+  //       classN="my-carousel"
+  //       autoPlayInterval={10000}
+  //       width={65}
+  //     />
+  //     <div style={{ width: '35%', paddingLeft: '20px',
+  //        border:'solid 1px gray',marginLeft:'10px' }}>
+  //       <LanguageButtons languages={languages} />
+  //     </div>
+  //   </div> */}
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    {/* <FunctionList data={data}></FunctionList> */}
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    {/* <h1>JSON ⇄ XML Converter</h1>
+  //    <JsonConverter></JsonConverter> */}
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    {/* <CssUnitsConverter></CssUnitsConverter> */}
+  //    {/* <TwoDimArray  data={exampleData} 
+  //    highlightedIndices={highlightedIndices} 
+  //    shouldHighlight={true}></TwoDimArray> */}
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    {/* <p>----------------------------------------------------------</p>
+  //    <br></br> */}
+  //    <br></br>
+  //    {/* <PythonFunctionsList data={pythonData}></PythonFunctionsList> */}
+  //    <br></br>
+  //    <br></br>
+  //    {/* <FunctionDetails functionData={functionD[3]}></FunctionDetails> */}
+  //    <br></br>
+  //    <div >
+  //    {/* <GenericTable data={asciiData}></GenericTable> */}
+  //    </div>
+  //    <br></br>
+  //    {/* <TwoDimArray2  data={exampleData} 
+  //    highlightedIndices={highlightedIndices} 
+  //    shouldHighlight={true}></TwoDimArray2> */}
+
+
+
+  //    <br></br>
+  //    {/* <VisualizeLambda></VisualizeLambda> */}
+  //    <br></br>
+  //    {/* <PythonFunctionDetails functionData={pythonData}></PythonFunctionDetails> */}
+  //    <br></br>
+  //    {/* <TreeStructure></TreeStructure> */}
+  //    <br></br>
+  //    {/* <TwoDimArray2
+  //    highlightedIndices={highlightedIndices} 
+  //    shouldHighlight={true}
+  //    ></TwoDimArray2> */}
+  //    <br></br>
+  //    {/* <PythonFunctionDetails functionData={pythonData}></PythonFunctionDetails> */}
+  //    <br></br>
+  //    {/* <CSSBeautifier></CSSBeautifier> */}
+  //    {/* <PythonFunctionDetails functionData={pythonData}></PythonFunctionDetails> */}
+  //    <br></br>
+  //    {/* <TwoDimSlicingInputs
+  //               startRow={startRow} stopRow={stopRow} stepRow={stepRow}
+  //               setStartRow={dummySetter} setStopRow={dummySetter} setStepRow={dummySetter}
+  //               startCol={startCol} stopCol={stopCol} stepCol={stepCol}
+  //               setStartCol={dummySetter} setStopCol={dummySetter} setStepCol={dummySetter}
+  //           /> */}
+  //    <br></br>
+  //    {/* <AsciiConverter></AsciiConverter> */}
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    {/* <CaseConverter></CaseConverter> */}
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    {/* <CaseConverter2 explanations={explanations}></CaseConverter2> */}
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    <br></br>
+  //    {/* <p>-----------------------------------------</p> */}
+
+  //    {/* <TextAnalyzer></TextAnalyzer> */}
+  //    <br></br>
+  //    <br></br>
+  //    {/* <CollapsibleTree data={pandas}></CollapsibleTree> */}
+  //    {/* <MermaidDiagram chartDefinition={pandas}></MermaidDiagram> */}
+  //    <br></br>
+  //   <ScrollUpButton ></ScrollUpButton>
+  //   </div>
+  // )
+  return (
+    <div className={styles.mainPageContainer}>
+      <br></br>
+      <br></br>
+      <br></br>
+      <h1 className={styles.title}>Welcome to Webdevdata</h1>
+      
+      <div className={styles.contentWrapper}>
+        <div className={styles.carouselWrapper}>
+          <Carousel
+            slides={slidesData}
+            classN="my-carousel"
+            autoPlayInterval={10000}
+          />
+        </div>
+        
+        <div className={styles.languageButtonsWrapper}>
           <LanguageButtons languages={languages} />
         </div>
       </div>
-     <br></br>
-     {/* <div className='carousel-container' style={{ width: '100%', margin: '0 auto', height: '350px', display: 'flex' }}>
-      <Carousel
-        slides={slidesData}
-        classN="my-carousel"
-        autoPlayInterval={10000}
-        width={65}
-      />
-      <div style={{ width: '35%', paddingLeft: '20px',
-         border:'solid 1px gray',marginLeft:'10px' }}>
-        <LanguageButtons languages={languages} />
-      </div>
-    </div> */}
-     <br></br>
-     <br></br>
-     <br></br>
-     {/* <FunctionList data={data}></FunctionList> */}
-     <br></br>
-     <br></br>
-     <br></br>
-     {/* <h1>JSON ⇄ XML Converter</h1>
-     <JsonConverter></JsonConverter> */}
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     {/* <CssUnitsConverter></CssUnitsConverter> */}
-     {/* <TwoDimArray  data={exampleData} 
-     highlightedIndices={highlightedIndices} 
-     shouldHighlight={true}></TwoDimArray> */}
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     {/* <p>----------------------------------------------------------</p>
-     <br></br> */}
-     <br></br>
-     {/* <PythonFunctionsList data={pythonData}></PythonFunctionsList> */}
-     <br></br>
-     <br></br>
-     {/* <FunctionDetails functionData={functionD[3]}></FunctionDetails> */}
-     <br></br>
-     <div >
-     {/* <GenericTable data={asciiData}></GenericTable> */}
-     </div>
-     <br></br>
-     {/* <TwoDimArray2  data={exampleData} 
-     highlightedIndices={highlightedIndices} 
-     shouldHighlight={true}></TwoDimArray2> */}
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
 
-
-
-     <br></br>
-     {/* <VisualizeLambda></VisualizeLambda> */}
-     <br></br>
-     {/* <PythonFunctionDetails functionData={pythonData}></PythonFunctionDetails> */}
-     <br></br>
-     {/* <TreeStructure></TreeStructure> */}
-     <br></br>
-     {/* <TwoDimArray2
-     highlightedIndices={highlightedIndices} 
-     shouldHighlight={true}
-     ></TwoDimArray2> */}
-     <br></br>
-     {/* <PythonFunctionDetails functionData={pythonData}></PythonFunctionDetails> */}
-     <br></br>
-     <CSSBeautifier></CSSBeautifier>
-     {/* <PythonFunctionDetails functionData={pythonData}></PythonFunctionDetails> */}
-     <br></br>
-     {/* <TwoDimSlicingInputs
-                startRow={startRow} stopRow={stopRow} stepRow={stepRow}
-                setStartRow={dummySetter} setStopRow={dummySetter} setStepRow={dummySetter}
-                startCol={startCol} stopCol={stopCol} stepCol={stepCol}
-                setStartCol={dummySetter} setStopCol={dummySetter} setStepCol={dummySetter}
-            /> */}
-     <br></br>
-     {/* <AsciiConverter></AsciiConverter> */}
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <CaseConverter></CaseConverter>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     <br></br>
-     {/* <CollapsibleTree data={pandas}></CollapsibleTree> */}
-     {/* <MermaidDiagram chartDefinition={pandas}></MermaidDiagram> */}
-     <br></br>
-    <ScrollUpButton ></ScrollUpButton>
+      <ScrollUpButton />
     </div>
-  )
+  );
+
 }
 

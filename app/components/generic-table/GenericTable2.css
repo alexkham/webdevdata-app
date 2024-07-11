@@ -23,10 +23,13 @@
 .my-table th {
     background-color: #4d4dff; /* Blue background for headers */
     color: white; /* White text for headers */
-    font-size: 16px; /* Font size for headers */
+    font-size: 12px; /* Font size for headers */
     position: sticky;
     top: 0; /* Sticks at the top of the viewport */
     z-index: 10; /* Ensures the header is on top */
+    max-height: 30px;
+    width: fit-content;
+    min-width: 120px;
 }
 
 .my-table tr:hover {

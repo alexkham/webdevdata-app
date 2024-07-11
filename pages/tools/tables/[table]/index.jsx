@@ -5,11 +5,14 @@ import '../../../pages.css'
 import GenericTable from '@/app/components/generic-table/GenericTable'
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb'
 import Head from 'next/head'
+import {availableTables} from '../../../../tableConfig'
+import { capitalizeWords } from '@/utils/functions'
 
 export default function TablePage({ tableData, tableName }) {
   if (!tableData) {
     return <div>No data available for this table.</div>
   }
+  console.log(tableName)
 
   return (
     <>
@@ -22,7 +25,7 @@ export default function TablePage({ tableData, tableName }) {
       <br />
       <br />
       <Breadcrumb />
-      <h1 className='title' style={{marginTop:'-30px', marginBottom:'-30px'}}>{`${tableName} Table`}</h1>
+      <h1 className='title' style={{marginTop:'-50px', marginBottom:'-50px'}}>{`${tableName} Table`}</h1>
       <GenericTable data={tableData} />
       <br />
       <ScrollUpButton />
@@ -30,39 +33,71 @@ export default function TablePage({ tableData, tableName }) {
   )
 }
 
+// export async function getStaticPaths() {
+//   const tables = ['ascii'] // Only include tables you have data for
+
+//   const paths = tables.map((table) => ({
+//     params: { table },
+//   }))
+
+//   return { paths, fallback: false }
+// }
+
+// export async function getStaticProps({ params }) {
+//   const { table } = params
+//   let tableData = null
+
+//   if (table === 'ascii') {
+//     try {
+//       tableData = require('../../../../app/api/db/tables/ascii_data.json')
+//     } catch (error) {
+//       console.error(`Error loading data for ${table} table:`, error)
+//     }
+//   }
+//   // Add more conditions here for other tables
+
+//   if (tableData === null) {
+//     return {
+//       notFound: true,
+//     }
+//   }
+
+//   return {
+//     props: {
+//       tableData,
+//       tableName: table.charAt(0).toUpperCase() + table.slice(1), // Capitalize the table name
+//     },
+//   }
+// }
+
+
 export async function getStaticPaths() {
-  const tables = ['ascii'] // Only include tables you have data for
-
-  const paths = tables.map((table) => ({
+  const paths = availableTables.map((table) => ({
     params: { table },
-  }))
+  }));
 
-  return { paths, fallback: false }
+  return { paths, fallback: false };
 }
 
+
 export async function getStaticProps({ params }) {
-  const { table } = params
-  let tableData = null
+  const { table } = params;
+  let tableData = null;
 
-  if (table === 'ascii') {
-    try {
-      tableData = require('../../../../app/api/db/tables/ascii_data.json')
-    } catch (error) {
-      console.error(`Error loading data for ${table} table:`, error)
-    }
-  }
-  // Add more conditions here for other tables
-
-  if (tableData === null) {
+  try {
+    const myModule = await import(`../../../../app/api/db/tables/${table}_data.json`);
+    tableData = myModule.default;
+  } catch (error) {
+    console.error(`Error loading data for ${table} table:`, error);
     return {
       notFound: true,
-    }
+    };
   }
 
   return {
     props: {
       tableData,
-      tableName: table.charAt(0).toUpperCase() + table.slice(1), // Capitalize the table name
+      tableName: capitalizeWords((table.charAt(0).toUpperCase() + table.slice(1)).replaceAll('_',' ')), // Capitalize the table name
     },
-  }
+  };
 }

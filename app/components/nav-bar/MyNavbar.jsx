@@ -140,10 +140,14 @@ function MyNavbar() {
             <Link href="/tools">Tools</Link>
             <ul className="dropdown-content">
               <li><Link href="/tools/tables/ascii">Ascii Table</Link></li>
+              <li><Link href="/tools/tables/html_tags">HTML Tags Table</Link></li>
               <li><Link href="/tools/converters/ascii-converter">Ascii Converter</Link></li>
               <li><Link href="/tools/converters/css-units-converter">CSS Units Converter</Link></li>
               <li><Link href="/tools/coding-tools/url-encoder-decoder">URL Encoder/Decoder</Link></li>
               <li><Link href="/tools/coding-tools/css-minifier">CSS Minifier</Link></li>
+              <li><Link href="/tools/coding-tools/html-encoder">HTML Encoder</Link></li>
+              <li><Link href="/tools/text/text-analyzer">Text Analyzer</Link></li>
+              <li><Link href="/tools/text/case-converter">Case Converter</Link></li>
             </ul>
           </li>
           <li onClick={navigateBack} style={{cursor:'pointer'}}><a>GoBack</a></li>

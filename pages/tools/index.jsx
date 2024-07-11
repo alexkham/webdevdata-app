@@ -52,7 +52,13 @@ export async function getStaticProps() {
     {
       title: 'Coding Tools',
       link: '/tools/coding-tools',
-      text: 'Enhance Your Coding Efficiency with Our Digital Toolbox. From URL Encoding to CSS Minification, Our Conversion Tools Streamline Common Development Tasks and Optimize Your Code.',
+      text: 'Enhance Your Coding Efficiency with Our Digital Toolbox. From URL and HTML Encoding to CSS Minification, Our Conversion Tools Streamline Common Development Tasks and Optimize Your Code.',
+    //   image: '/images/converters-icon.jpg'
+    },
+    {
+      title: 'Text Processing Tools',
+      link: '/tools/text',
+      text: 'Powerful utilities for text manipulation and analysis. Features include a Text Analyzer , and a Case Converter. Essential for writers, developers, and anyone working with text content.',
     //   image: '/images/converters-icon.jpg'
     },
   ];

@@ -1,0 +1,54 @@
+.mainPageContainer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .contentWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .carouselWrapper {
+    flex: 2;
+    min-width: 0; /* Allows flex item to shrink below its minimum content size */
+  }
+  
+  .languageButtonsWrapper {
+    flex: 1;
+    border: 1px solid gray;
+    padding: 10px;
+    min-width: 200px; /* Ensure buttons have enough space */
+  }
+  
+  @media (max-width: 768px) {
+    .contentWrapper {
+      flex-direction: column;
+    }
+  
+    .carouselWrapper,
+    .languageButtonsWrapper {
+      width: 100%;
+    }
+  
+    .languageButtonsWrapper {
+      margin-top: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .mainPageContainer {
+      padding: 10px;
+    }
+  
+    .title {
+      font-size: 24px;
+    }
+  }

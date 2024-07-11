@@ -89,6 +89,12 @@ export async function getStaticProps() {
       color: "#f0f0f0"
     },
     {
+      title: "HTML Encoder/Decoder",
+      content: "Transform HTML content between its raw and encoded forms with precision. This HTML Encoder/Decoder tool is essential for web developers, content managers, and security professionals working with markup languages.",
+      link: "/tools/coding-tools/html-encoder",
+      color: "#f0f0f0"
+    },
+    {
       title: "CSS Minifier",
       content: "Compress CSS code by removing unnecessary characters and optimizing syntax. Reduces file size for faster website loading. Essential for web performance optimization and efficient stylesheet management.",
       link: "/tools/coding-tools/css-minifier",

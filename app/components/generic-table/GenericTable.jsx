@@ -200,6 +200,7 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react';
 import './GenericTable2.css';
+import { capitalizeWords } from '@/utils/functions';
 
 const GenericTable = ({ data }) => {
     const headerRef = useRef(null);
@@ -230,7 +231,7 @@ const GenericTable = ({ data }) => {
                     <tr>
                         {columnHeaders.map((header, index) => (
                             <th key={index} className={sticky ? 'sticky' : ''}>
-                                {header}
+                                {capitalizeWords(header.replaceAll('_',' '))}
                             </th>
                         ))}
                     </tr>
