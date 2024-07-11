@@ -145,6 +145,7 @@ function MyNavbar() {
               <li><Link href="/tools/converters/css-units-converter">CSS Units Converter</Link></li>
               <li><Link href="/tools/coding-tools/url-encoder-decoder">URL Encoder/Decoder</Link></li>
               <li><Link href="/tools/coding-tools/css-minifier">CSS Minifier</Link></li>
+              <li><Link href="/tools/coding-tools/javascript-minifier">Javascript Minifier</Link></li>
               <li><Link href="/tools/coding-tools/html-encoder">HTML Encoder</Link></li>
               <li><Link href="/tools/text/text-analyzer">Text Analyzer</Link></li>
               <li><Link href="/tools/text/case-converter">Case Converter</Link></li>

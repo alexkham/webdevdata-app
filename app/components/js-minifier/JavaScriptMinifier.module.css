@@ -31,42 +31,56 @@
   }
   
   .inputArea {
-    width: 100%;
+    width: 90%;
     min-height: 250px;
     margin-bottom: 15px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
-    min-width: 300px;
+    min-width: 280px;
+    
   }
   
-  /* .buttonGroup {
-    gap: 10px;
-    margin-bottom: 15px;
-    max-height: 40px;
-    width:100%;
-    
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  } */
-
   .buttonGroup {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
     margin-bottom: 15px;
-    min-height: 40px; /* Changed from max-height to min-height */
+    min-height: 40px;
     width: 100%;
   }
-
-
+  
   .buttonContainer {
     display: flex;
     gap: 10px;
     flex-shrink: 0;
+  }
+  
+  .encodingContainer {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .encodingSelect {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    max-width: 200px;
+  }
+  
+  .tooltipIcon {
+    cursor: help;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
   }
   
   .outputContainer {
@@ -77,6 +91,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-width: 300px;
   }
   
   .button {
@@ -113,24 +128,11 @@
     color: white;
     cursor: pointer;
     align-self: flex-end;
-    
   }
   
   .copyButton:hover {
     background-color: #1e88e5;
   }
-/*   
-  .errorMessage {
-    color: #f44336;
-    padding: 10px;
-    margin-top: 0px;
-    display: inline;
-    
-    max-height: 40px;
-    width: 100%;
-    margin-left: auto;
-  } */
- 
   
   .errorMessage {
     color: #f44336;
@@ -142,13 +144,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     flex-grow: 1;
-  }
-
-
-  .title {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 16px;
   }
   
   .subtitle {
@@ -170,6 +165,44 @@
   
   .warning {
     color: #f44336;
+  }
+  .tooltipContainer {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltipIcon {
+    cursor: help;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+  
+  .tooltipText {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltipContainer:hover .tooltipText {
+    visibility: visible;
+    opacity: 1;
   }
   
   @media (max-width: 768px) {
