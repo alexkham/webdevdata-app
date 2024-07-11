@@ -100,6 +100,13 @@ export async function getStaticProps() {
       link: "/tools/coding-tools/css-minifier",
       color: "#f0f0f0"
     },
+
+    {
+      title: "Javascript Minifier",
+      content: "Minify JavaScript code by removing unnecessary characters and optimizing syntax. Reduces file size for faster website loading and improved performance. Essential for web application optimization, efficient script delivery, and enhancing user experience. ",
+      link: "/tools/coding-tools/javascript-minifier",
+      color: "#f0f0f0"
+    },
   ]
 
   return {
