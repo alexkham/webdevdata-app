@@ -11,9 +11,11 @@ import styles from './JavaScriptMinifierPage.module.css';
 import '../../../pages.css'
 import MyNavbar from '@/app/components/nav-bar/MyNavbar';
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb';
+import Layout from '@/pages/Layout';
 
 export default function JavaScriptMinifierPage({ explanations }) {
   return (
+    <Layout>
     <div className={styles.page}>
       <Head>
         <title>JavaScript Minifier Tool</title>
@@ -21,7 +23,7 @@ export default function JavaScriptMinifierPage({ explanations }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <MyNavbar></MyNavbar>
+    
       <br></br>
       <br></br>
       <Breadcrumb></Breadcrumb>
@@ -46,6 +48,7 @@ export default function JavaScriptMinifierPage({ explanations }) {
         </div>
       </main>
     </div>
+    </Layout>
   );
 }
 

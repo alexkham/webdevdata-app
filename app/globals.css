@@ -51,5 +51,10 @@
   transform: scale(0.95);
 }
 
+html, body {
+  height: 100%; /* Ensures that the html and body elements take up the full viewport height */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+}
 
 

@@ -881,11 +881,18 @@ export default function JavaScriptMinifier() {
             </div>
             {error && <div className={styles.errorMessage}>{error}</div>}
           </div>
+          {/* <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="13 17 18 12 13 7"></polyline>
+            <polyline points="6 17 11 12 6 7"></polyline>
+          </svg> */}
           <div className={styles.column}>
             <h2 className={styles.subtitle}>Output</h2>
             <div className={styles.outputContainer}>
-              <button className={styles.copyButton} onClick={handleCopy}>{copyButtonText}</button>
-              <p className={styles.text}>{output}</p>
+              <button className={styles.copyButton} onClick={handleCopy}><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>{copyButtonText}</button>
+              <p  className={styles.text}>{output}</p>
             </div>
           </div>
         </div>

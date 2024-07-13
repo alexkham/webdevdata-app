@@ -1,0 +1,17 @@
+.outerContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh !important; /* Full height of the viewport */
+  }
+  
+  .contentWrap {
+    flex: 1;  /* Takes up all available space, pushing the footer to the bottom */
+    display: flex; /* Allows further flex properties if needed */
+    flex-direction: column; /* Aligns children vertically */
+  }
+  
+  .footer {
+    flex-shrink: 0; /* Prevents the footer from shrinking */
+    width: 100%; /* Full width */
+  }
+  

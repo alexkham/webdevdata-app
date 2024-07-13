@@ -11,6 +11,8 @@
   "dependencies": {
     "ace-builds": "^1.32.9",
     "cors": "^2.8.5",
+    "fs": "^0.0.1-security",
+    "html-minifier": "^4.0.0",
     "iconv-lite": "^0.6.3",
     "katex": "^0.16.10",
     "mermaid": "^10.9.0",
