@@ -161,7 +161,7 @@ function MyNavbar2() {
             <div className={`megamenu ${activeMegaMenu === 'python' ? 'active' : ''}`}>
               <div className="megamenu-content">
                 <div className="megamenu-column">
-                  <h3></h3>
+                  
                   <ul>
                     <li><Link href="/python/sequence-slicing" onClick={closeMobileMenu}>Sequence Slicing</Link></li>
                     <li><Link href="/python/functions" onClick={closeMobileMenu}>Python Functions</Link></li>
@@ -179,7 +179,7 @@ function MyNavbar2() {
             <div className={`megamenu ${activeMegaMenu === 'c programming' ? 'active' : ''}`}>
               <div className="megamenu-content">
                 <div className="megamenu-column">
-                  <h3></h3>
+                 
                   <ul>
                     <li><Link href="/c-programming/things-not-to-do" onClick={closeMobileMenu}>Things Not To Do </Link></li>
                     <li><Link href="/c-programming/functions" onClick={closeMobileMenu}>C Standard Library Functions</Link></li>
@@ -197,7 +197,9 @@ function MyNavbar2() {
             <div className={`megamenu ${activeMegaMenu === 'tools' ? 'active' : ''}`}>
               <div className="megamenu-content">
                 <div className="megamenu-column">
+                    <Link href={'/tools/coding-tools'}>
                   <h3>Coding Tools</h3>
+                  </Link>
                   <ul>
                     <li><Link href="/tools/coding-tools/url-encoder-decoder" onClick={closeMobileMenu}>URL Encoder/Decoder</Link></li>
                     <li><Link href="/tools/coding-tools/html-encoder" onClick={closeMobileMenu}>HTML Encoder</Link></li>
@@ -208,21 +210,28 @@ function MyNavbar2() {
                   </ul>
                 </div>
                 <div className="megamenu-column">
+                    <Link href={'/tools/text'}>
                   <h3>Text Processing</h3>
+                  </Link>
                   <ul>
                     <li><Link href="/tools/text/text-analyzer" onClick={closeMobileMenu}>Text Analyzer</Link></li>
                     <li><Link href="/tools/text/case-converter" onClick={closeMobileMenu}>Case Converter</Link></li>
                   </ul>
                 </div>
                 <div className="megamenu-column">
+                    <Link  href={'/tools/converters'}>
                   <h3>Converters</h3>
+                  </Link>
                   <ul>
                     <li><Link href="/tools/converters/ascii-converter" onClick={closeMobileMenu}>ASCII Converter</Link></li>
                     <li><Link href="/tools/converters/css-units-converter" onClick={closeMobileMenu}>CSS Units Converter</Link></li>
+                    <li><Link href="/tools/converters/html-entities" onClick={closeMobileMenu}>HTML Entities Converter</Link></li>
                   </ul>
                 </div>
                 <div className="megamenu-column">
+                    <Link href={'/tools/tables'}>
                   <h3>Tables</h3>
+                  </Link>
                   <ul>
                     <li><Link href="/tools/tables/ascii" onClick={closeMobileMenu}>ASCII Table</Link></li>
                     <li><Link href="/tools/tables/html_tags" onClick={closeMobileMenu}>HTML Tags Table</Link></li>

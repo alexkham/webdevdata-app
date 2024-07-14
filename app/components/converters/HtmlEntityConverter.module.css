@@ -1,0 +1,273 @@
+.outerContainer {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 5px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    min-height: 900px;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    min-width: 600px;
+    max-width: 600px;
+  }
+  
+  .columnsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .inputArea {
+    width: 100%;
+    min-height: 200px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    min-width: 350px;
+    max-width: 350px;
+  }
+  
+  .buttonGroup {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+    min-height: 40px;
+    width: 100%;
+    margin-top: -40px;
+    width: 200px;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  
+  .encodingContainer {
+    display: flex;
+    gap: 10px;
+    width: 270px;
+    justify-content: flex-end;
+  }
+  
+  .encodingSelect {
+    width: 130px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    min-height: 40px;
+  }
+
+  .selectField{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    min-width: 200px;
+  }
+  
+
+  .selectContainer{
+    min-height: 130px;
+    margin-left: 20px;
+    min-width: 150px;
+    width: 200px;
+    margin-top: 30px;
+   
+  }
+  
+  .outputContainer {
+    min-height: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 350px;
+    max-width: 350px;
+    overflow: hidden;
+    overflow-x: scroll;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .convertButton {
+    background-color: #2196f3;
+  }
+  
+  .convertButton:hover {
+    background-color: #1e88e5;
+  }
+  
+  .resetButton {
+    background-color: #f44336;
+  }
+  
+  .resetButton:hover {
+    background-color: #d32f2f;
+  }
+  
+  .copyButton {
+    padding: 10px;
+    background-color: #2196f3;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    align-self: flex-end;
+  }
+  
+  .copyButton:hover {
+    background-color: #1e88e5;
+  }
+  
+  .errorMessage {
+    color: #f44336;
+    padding: 5px 10px;
+    margin: 0;
+    display: inline-block;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    margin-top: -40px;
+  }
+  
+  .subtitle {
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+  }
+  
+  .charCount {
+    margin-bottom: 10px;
+    color: #666;
+  }
+  
+  .warning {
+    color: #f44336;
+  }
+
+
+  .selectWithTooltip {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .tooltipContainer {
+    position: relative;
+    display: inline-block;
+    margin-left: 5px;
+  }
+  
+  .tooltipIcon {
+    cursor: help;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .tooltipText {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltipContainer:hover .tooltipText {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .outerContainer {
+      grid-template-columns: 1fr;
+    }
+  
+    .columnsContainer {
+      grid-template-columns: 1fr;
+    }
+  
+    .buttonGroup {
+      flex-direction: column;
+    }
+  
+    .button, .convertButton, .resetButton, .copyButton {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 10px;
+      min-width: unset;
+    }
+  
+    .outputContainer {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .copyButton {
+      margin-top: 10px;
+    }
+  
+    .inputArea, .outputContainer {
+      min-width: unset;
+      max-width: 100%;
+    }
+  }

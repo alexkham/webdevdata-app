@@ -97,6 +97,12 @@ export async function getStaticProps() {
         link: "/tools/converters/css-units-converter",
         color: "#f0f0f0"
       },
+      {
+        title: "HTML Entities Converter",
+        content:"Effortlessly convert text to HTML entities and back . Ensure your web content displays correctly across all browsers and devices with ease.",
+        link: "/tools/converters/html-entities",
+        color: "#f0f0f0"
+      },
   ];
 
   return {

@@ -74,6 +74,7 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1000000;
     margin-top: 15px;
+    
   }
   
   .megamenu.active {
@@ -84,6 +85,7 @@
     display: flex;
     padding: 0px;
     margin-top: 10px;
+    
     
   }
   
@@ -118,7 +120,9 @@
     transition: all 0.3s ease;
     font-size: 16px;  /* Increased font size */
     display: block;
-    padding: 15px;
+    padding: 5px;
+    font-size: 14px;
+    line-height: 1.6;
   }
   
   .megamenu-column a:hover {

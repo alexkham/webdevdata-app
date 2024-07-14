@@ -34,6 +34,14 @@
     border-radius: 4px;
     font-size: 16px;
   }
+
+  .selectField{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
   
   .inputGroup textarea {
     resize: vertical;
@@ -53,11 +61,13 @@
   .error {
     background-color: #ffebee;
     color: #c62828;
+    margin-bottom: 20px;
   }
   
   .warning {
     background-color: #fff3e0;
     color: #ef6c00;
+    margin-bottom: 20px;
   }
   
   .buttonGroup {
@@ -119,7 +129,7 @@
   }
   
   .copyButton {
-    width: 60px!important;
+    width: 70px!important;
     padding: 10px 0;
     background-color: #2196f3;
     color: white;
@@ -129,7 +139,9 @@
     font-size: 14px;
     transition: background-color 0.3s;
     margin-top: 0px;
-    max-width: 60px!important;
+    /* max-width: 60px!important; */
+    max-height: 50px;
+    height:38px;
   }
   
   .copyButton:hover {
