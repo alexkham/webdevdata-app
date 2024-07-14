@@ -5,10 +5,11 @@ import MyNavbar from '@/app/components/nav-bar/MyNavbar'
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton'
 import CardsGroup from '@/app/components/simple-card-group/CardsGroup'
 import '../../pages.css'
+import Layout from '@/pages/Layout'
 
 export default function TablesPage({ cardsData }) {
   return (
-    <>
+    <Layout>
       <Head>
         <title>Tables | Webdevdata</title>
         <meta name="description" content="Explore our collection of useful tables for web development. Reference ASCII codes and more." />
@@ -20,7 +21,7 @@ export default function TablesPage({ cardsData }) {
         <link rel="canonical" href="https://webdevdata.net/tools/tables" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <MyNavbar />
+      {/* <MyNavbar /> */}
       <br></br>
       <br></br>
       <br></br>
@@ -30,7 +31,7 @@ export default function TablesPage({ cardsData }) {
         <CardsGroup cards={cardsData} />
       </main>
       <ScrollUpButton />
-    </>
+    </Layout>
   )
 }
 

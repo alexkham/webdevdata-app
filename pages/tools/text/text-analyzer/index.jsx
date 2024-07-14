@@ -27,10 +27,11 @@ import TextAnalyzer from '@/app/components/text-analyzer/TextAnalyzer'
 import React from 'react'
 import Head from 'next/head'
 import '../../../pages.css'
+import Layout from '@/pages/Layout'
 
 export default function TextAnalyzerPage() {
   return (
-    <>
+    <Layout>
       <Head>
         <title>Text Analyzer | Your Website Name</title>
         <meta name="description" content="Analyze your text with our powerful Text Analyzer tool. Get insights on word count, character count, and more." />
@@ -38,7 +39,7 @@ export default function TextAnalyzerPage() {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://yourwebsite.com/tools/text-analyzer" />
       </Head>
-      <MyNavbar />
+      {/* <MyNavbar /> */}
       <br />
       <br />
       <br />
@@ -46,7 +47,7 @@ export default function TextAnalyzerPage() {
       <h1 className='title' style={{marginTop:'-50px', marginBottom:'-30px'}}>Text Analyzer</h1>
       <TextAnalyzer />
       <ScrollUpButton />
-    </>
+    </Layout>
   )
 }
 

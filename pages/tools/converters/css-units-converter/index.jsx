@@ -71,10 +71,11 @@ import CssUnitsConverter from '@/app/components/converters/CssUnitsConverter'
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton'
 import Head from 'next/head'
 import '../../../pages.css'
+import Layout from '@/pages/Layout'
 
 export default function CssUnitConverterPage({ pageTitle, pageDescription }) {
   return (
-    <>
+    <Layout>
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
@@ -91,7 +92,7 @@ export default function CssUnitConverterPage({ pageTitle, pageDescription }) {
         <meta name="twitter:description" content={pageDescription} />
         <meta name="twitter:image" content="https://webdevdata.net/images/css-units-converter.png" /> */}
       </Head>
-      <MyNavbar />
+      {/* <MyNavbar /> */}
       <br></br>
       <br></br>
       <br></br>
@@ -101,7 +102,7 @@ export default function CssUnitConverterPage({ pageTitle, pageDescription }) {
         <CssUnitsConverter />
         <ScrollUpButton />
       </main>
-    </>
+    </Layout>
   )
 }
 

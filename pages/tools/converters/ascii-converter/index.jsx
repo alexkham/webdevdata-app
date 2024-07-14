@@ -88,10 +88,11 @@ import MyNavbar from '@/app/components/nav-bar/MyNavbar'
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton'
 import AsciiConverter from '@/app/components/converters/AsciiConverter'
 import '../../../pages.css'
+import Layout from '@/pages/Layout'
 
 export default function AsciiConverterPage({ staticContent }) {
   return (
-    <>
+    <Layout>
       <Head>
         <title>ASCII Converter | Webdevdata</title>
         <meta name="description" content="Convert text to ASCII and vice versa with our easy-to-use ASCII converter tool." />
@@ -103,7 +104,7 @@ export default function AsciiConverterPage({ staticContent }) {
         <link rel="canonical" href="https://webdevdata.net/tools/converters/ascii-converter" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <MyNavbar />
+      {/* <MyNavbar /> */}
       <br />
       <br />
       <br />
@@ -119,7 +120,7 @@ export default function AsciiConverterPage({ staticContent }) {
       <br />
       <br />
       <ScrollUpButton />
-    </>
+    </Layout>
   )
 }
 

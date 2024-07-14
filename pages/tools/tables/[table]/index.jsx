@@ -7,6 +7,7 @@ import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb'
 import Head from 'next/head'
 import {availableTables} from '../../../../tableConfig'
 import { capitalizeWords } from '@/utils/functions'
+import Layout from '@/pages/Layout'
 
 export default function TablePage({ tableData, tableName }) {
   if (!tableData) {
@@ -15,12 +16,12 @@ export default function TablePage({ tableData, tableName }) {
   console.log(tableName)
 
   return (
-    <>
+    <Layout>
       <Head>
         <title>{`${tableName} Table `}</title>
         <meta name="description" content={`Detailed information about the ${tableName} table`} />
       </Head>
-      <MyNavbar />
+      {/* <MyNavbar /> */}
       <br />
       <br />
       <br />
@@ -29,7 +30,7 @@ export default function TablePage({ tableData, tableName }) {
       <GenericTable data={tableData} />
       <br />
       <ScrollUpButton />
-    </>
+    </Layout>
   )
 }
 

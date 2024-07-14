@@ -26,10 +26,11 @@ import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton'
 import URLEncoder from '@/app/components/url-encoder/URLEncoder2'
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb'
 import Head from 'next/head'
+import Layout from '@/pages/Layout'
 
 export default function URLEncoderDecoderPage() {
   return (
-    <>
+    <Layout>
       <Head>
         <title>URL Encoder/Decoder Tool</title>
         <meta name="description" content="Free online tool to encode and decode URLs. Convert special characters to their URL-safe format and vice versa." />
@@ -37,7 +38,7 @@ export default function URLEncoderDecoderPage() {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https:/webdevdata.net/tools/coding-tools/url-encoder-decoder" />
       </Head>
-      <MyNavbar />
+      {/* <MyNavbar /> */}
       <br></br>
       <br></br>
       <br></br>
@@ -47,7 +48,7 @@ export default function URLEncoderDecoderPage() {
         <URLEncoder />
       </main>
       <ScrollUpButton />
-    </>
+    </Layout>
   )
 }
 

@@ -31,10 +31,11 @@ import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton'
 import styles from '../../../../app/components/css-minifier/CSSMinifier.module.css'
 import '../../../pages.css'
 import Head from 'next/head'
+import Layout from '@/pages/Layout'
 
 export default function CSSMinifierPage() {
   return (
-    <>
+    <Layout>
     <Head>
         <title>CSS Minifier | Optimize Your Stylesheets</title>
         <meta name="description" content="Free online CSS minifier tool. Compress your CSS code, remove unnecessary spaces and comments, and optimize your stylesheets for better website performance." />
@@ -49,7 +50,7 @@ export default function CSSMinifierPage() {
         <meta name="twitter:title" content="CSS Minifier | Optimize Your Stylesheets" />
         <meta name="twitter:description" content="Free online CSS minifier tool. Compress your CSS code and optimize your stylesheets for better website performance." />
       </Head>
-      <MyNavbar />
+      {/* <MyNavbar /> */}
       <br />
       <br />
       <br />
@@ -75,6 +76,6 @@ export default function CSSMinifierPage() {
       <br />
       <br />
       <ScrollUpButton />
-    </>
+    </Layout>
   )
 }

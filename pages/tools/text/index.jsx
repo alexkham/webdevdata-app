@@ -5,10 +5,11 @@ import React from 'react'
 import '../../pages.css'
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton'
 import CardsGroup from '@/app/components/simple-card-group/CardsGroup'
+import Layout from '@/pages/Layout'
 
 export default function TextToolsPage({ cardsData }) {
   return (
-    <>
+    <Layout>
       <Head>
         <title>Text Tools | Webdevdata</title>
         <meta name="description" content="Explore our collection of text tools including Text Analyzer and Case Converter. Enhance your text processing workflow with these essential utilities." />
@@ -24,7 +25,7 @@ export default function TextToolsPage({ cardsData }) {
         <meta name="twitter:title" content="Text Tools | Webdevdata" />
         <meta name="twitter:description" content="Explore our collection of text tools including Text Analyzer and Case Converter." />
       </Head>
-      <MyNavbar />
+      {/* <MyNavbar /> */}
       <br />
       <br />
       <br />
@@ -32,7 +33,7 @@ export default function TextToolsPage({ cardsData }) {
       <h1 className='title' style={{marginTop:'-30px', marginBottom:'-10px'}}>Text Tools</h1>
       <CardsGroup cards={cardsData} />
       <ScrollUpButton />
-    </>
+    </Layout>
   )
 }
 

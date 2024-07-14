@@ -48,11 +48,12 @@ import React from 'react'
 import '../../pages.css'
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton'
 import CardsGroup from '@/app/components/simple-card-group/CardsGroup'
+import Layout from '@/pages/Layout'
 
 export default function CodingToolsPage({ cardsData }) {
     
   return (
-    <>
+    <Layout>
       <Head>
         <title>Coding Tools | Webdevdata</title>
         <meta name="description" content="Explore our collection of coding tools including URL Encoder/Decoder and CSS Minifier. Enhance your web development workflow with these essential utilities." />
@@ -68,7 +69,7 @@ export default function CodingToolsPage({ cardsData }) {
         <meta name="twitter:title" content="Coding Tools | Webdevdata" />
         <meta name="twitter:description" content="Explore our collection of coding tools including URL Encoder/Decoder and CSS Minifier." />
       </Head>
-      <MyNavbar></MyNavbar>
+      {/* <MyNavbar></MyNavbar> */}
       <br></br>
       <br></br>
       <br></br>
@@ -76,7 +77,7 @@ export default function CodingToolsPage({ cardsData }) {
       <h1 className='title' style={{marginTop:'-30px', marginBottom:'-10px'}}>Coding Tools</h1>
       <CardsGroup cards={cardsData}></CardsGroup>                   
       <ScrollUpButton></ScrollUpButton>
-    </>
+    </Layout>
   )
 }
 

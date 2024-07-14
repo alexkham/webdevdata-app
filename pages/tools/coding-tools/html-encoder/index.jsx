@@ -4,9 +4,11 @@ import styles from './HTMLEncoderPage.module.css';
 import '../../../pages.css'
 import MyNavbar from '@/app/components/nav-bar/MyNavbar';
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb';
+import Layout from '@/pages/Layout';
 
 export default function HTMLEncoderPage({ explanations }) {
   return (
+    <Layout>
     <div className={styles.page}>
       <Head>
         <title>HTML Encoder and Decoder Tool</title>
@@ -14,7 +16,7 @@ export default function HTMLEncoderPage({ explanations }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <MyNavbar></MyNavbar>
+      {/* <MyNavbar></MyNavbar> */}
       <br></br>
       <br></br>
       <Breadcrumb></Breadcrumb>
@@ -40,6 +42,7 @@ export default function HTMLEncoderPage({ explanations }) {
         </div>
       </main>
     </div>
+    </Layout>
   );
 }
 
