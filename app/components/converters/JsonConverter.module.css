@@ -1,0 +1,172 @@
+.container {
+    display: flex;
+    font-family: monospace;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .column {
+    flex: 1;
+    min-width: 300px;
+    padding: 0 10px;
+  }
+  
+  .controlsColumn {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+    height: 400px; /* Fixed height to prevent shifting */
+  }
+  
+  .select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .textarea {
+    width: 100%;
+    height: 400px;
+    padding: 20px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+  }
+  
+  .outputWrapper {
+    position: relative;
+  }
+  
+  .outputWrapper .textarea {
+    padding-right: 80px;
+  }
+  
+  .convertButton, .resetButton {
+    width: 100%;
+    max-width: 100px;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px 0;
+    min-width: 120px;
+  }
+  
+  .convertButton {
+    background-color: #007bff;
+  }
+  
+  .convertButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .resetButton {
+    background-color: #f44336;
+  }
+  
+  .resetButton:hover {
+    background-color: #d32f2f;
+  }
+  
+  .copyButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .copyButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .copyButton svg {
+    margin-right: 5px;
+  }
+  
+  .fileInputContainer {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .fileInput {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  .fileInputLabel {
+    width: 100%;
+    max-width: 120px;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+  }
+  
+  .fileInputLabel:hover {
+    background-color: #0056b3;
+  }
+  
+  .fileName {
+    margin-top: 5px;
+    font-size: 14px;
+    word-break: break-all;
+    text-align: center;
+    min-height: 60px; /* Fixed height for filename area */
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .column, .controlsColumn {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .controlsColumn {
+      height: auto;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    .select, .convertButton, .resetButton, .fileInputContainer {
+      width: 48%;
+    }
+  
+    .fileName {
+      min-height: 40px;
+    }
+  }

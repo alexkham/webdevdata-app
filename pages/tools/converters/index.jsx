@@ -104,6 +104,12 @@ export async function getStaticProps() {
         link: "/tools/converters/html-entities",
         color: "#f0f0f0"
       },
+      {
+        title: "JSON to XML Converter",
+        content:"Convert between JSON and XML formats. Ensure your data is compatible across different systems and APIs, facilitating smooth integration and data exchange.",
+        link: "/tools/converters/json-xml",
+        color: "#f0f0f0"
+      },
   ];
 
   return {

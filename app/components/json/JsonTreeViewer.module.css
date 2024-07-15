@@ -300,6 +300,7 @@
 
   .textarea {
     height: 400px; /* Increased height for larger display areas */
+    
   }
 }
 
@@ -313,5 +314,10 @@
 @media (max-width: 768px) {
   .textarea, .treeView {
     height: 300px; /* Reduced height for mobile */
+    width: 100%;
+    margin-top: 10px;
+  }
+  .container{
+    width: 100%;
   }
 }

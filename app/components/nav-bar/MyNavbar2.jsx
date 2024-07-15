@@ -227,6 +227,7 @@ function MyNavbar2() {
                     <li><Link href="/tools/converters/ascii-converter" onClick={closeMobileMenu}>ASCII Converter</Link></li>
                     <li><Link href="/tools/converters/css-units-converter" onClick={closeMobileMenu}>CSS Units Converter</Link></li>
                     <li><Link href="/tools/converters/html-entities" onClick={closeMobileMenu}>HTML Entities Converter</Link></li>
+                    <li><Link href="/tools/converters/json-xml" onClick={closeMobileMenu}>JSON to XML Converter</Link></li>
                   </ul>
                 </div>
                 <div className="megamenu-column">
