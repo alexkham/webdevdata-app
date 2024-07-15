@@ -1,0 +1,317 @@
+.toggle {
+  display: inline-block;
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Ensure it's square */
+  line-height: 20px; /* Center the icon vertically */
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  font-size: 14px; /* Adjust font size for visibility */
+  background-color: #f0f0f0; /* Light background for visibility */
+  border-radius: 3px; /* Rounded corners for aesthetics */
+}
+
+.toggle.expanded {
+  transform: rotate(0deg); /* No rotation needed since we switch icons */
+}
+
+
+
+.container {
+  font-family: monospace;
+  font-size: 14px;
+  background-color: #f4f8fb; /* Light blue background for the container */
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
+}
+
+.treeView {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc; /* Subtle border */
+}
+
+.row {
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.key {
+  color: #a52a2a; /* Reddish color for keys */
+}
+
+.value {
+  color: #2a50a5; /* Differentiate types of values */
+}
+
+.value.string {
+  color: #2a2aa5; /* Blue for strings */
+}
+
+.value.number {
+  color: #a5712a; /* Brown for numbers */
+}
+
+.value.boolean {
+  color: #2aa52a; /* Green for booleans */
+}
+
+.toggle {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  color: #555;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  background-color: #eee;
+  border-radius: 10px; /* Circular toggle buttons */
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.toggle.expanded {
+  transform: rotate(0deg);
+}
+
+.bracket {
+  color: #888; /* Grey for brackets */
+}
+
+.children {
+  margin-left: 20px;
+}
+
+.error {
+  color: red;
+}
+
+.object {
+  margin-bottom: 5px;
+}
+.value.string {
+  color: #2a2aa5; /* Blue for strings */
+}
+
+.value.number {
+  color: #a5712a; /* Brown for numbers */
+}
+
+.value.boolean {
+  color: #2aa52a; /* Green for booleans */
+}
+
+
+
+
+
+/* JSONTreeViewer.module.css */
+.container {
+  display: flex;
+  width: 100%; /* Full width of the viewport */
+}
+
+.textareaContainer, .outputContainer {
+  flex: 1; /* Each container takes half the width */
+  padding: 20px;
+}
+
+.textareaContainer {
+  position: relative;
+}
+
+.textarea {
+  width: 500px;
+  min-height: 300px; /* Larger textarea */
+  /* height: fit-content; */
+  font-family: monospace;
+  font-size: 16px;
+  padding-top: 40px; /* Room for buttons */
+  padding: 20px;
+  margin-left: 30px;
+  
+}
+
+.button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #007bff; /* Bluish color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  
+}
+
+.resetButton {
+  background-color: #f44336;
+  min-width: 100px;
+ margin-top: 5px;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.resetButton:hover {
+  background-color: #d32f2f;
+}
+
+.viewButton{
+
+ 
+  background-color: #007bff; /* Bluish color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  
+
+}
+
+
+.viewButton:hover {
+  background-color: #0056b3; /* Darker on hover */
+}
+
+.buttonGroup{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items:center;
+  width: 150px;
+  min-width: 150px;
+}
+
+.outputContainer {
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  height: 400px; /* Match the height of the textarea */
+  overflow: auto; /* Scrollable */
+  font-family: monospace;
+  padding: 20px;
+  white-space: pre-wrap; /* Ensures JSON formatting */
+}
+
+.error {
+  background-color: #ffebee;
+  color: #c62828;
+  font-size: larger;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  margin-left: 30px;
+
+}
+
+.inputContainer{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+ 
+}
+
+.treeView{
+  min-height: 300px;
+  height: fit-content;
+  width: 100%;
+  margin-left: 30px;
+  margin-top: 20px;
+
+}
+
+
+.textareaWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.copyInputButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.copyInputButton:hover {
+  background-color: #0056b3;
+}
+
+/* .copyInputButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+} */
+
+.textarea {
+  padding-right: 70px; /* Make room for the copy button */
+}
+
+
+
+/* Adjustments for mobile devices */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack the areas vertically on smaller screens */
+    align-items: center; /* Center the content for better mobile usability */
+  }
+
+  .textareaContainer, .outputContainer {
+    width: 100%; /* Full width to utilize the limited space on mobile screens */
+    margin-bottom: 20px; /* Space between the input and output areas */
+  }
+
+  .textarea {
+    height: 300px; /* Reduced height for better fit on mobile screens */
+    padding: 40px 10px 10px 10px; /* Adjust padding to prevent overlap with button */
+  }
+
+  .button {
+    padding: 8px 16px; /* Adjust button size for easier interaction on mobile */
+  }
+}
+
+/* Adjustments for tablets and desktops */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row; /* Side-by-side layout on larger screens */
+  }
+
+  .textareaContainer, .outputContainer {
+    width: 100%; /* Half width for each container */
+    margin-bottom: 0; /* No space between since they are side by side */
+  }
+
+  .textarea {
+    height: 400px; /* Increased height for larger display areas */
+  }
+}
+
+
+.textarea, .treeView {
+  min-height: 300px;
+  height: 350px; /* Set a default height */
+  overflow-y: auto; /* Add scrollbar if content exceeds height */
+}
+
+@media (max-width: 768px) {
+  .textarea, .treeView {
+    height: 300px; /* Reduced height for mobile */
+  }
+}

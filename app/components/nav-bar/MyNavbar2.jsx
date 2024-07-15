@@ -206,6 +206,7 @@ function MyNavbar2() {
                     <li><Link href="/tools/coding-tools/css-minifier" onClick={closeMobileMenu}>CSS Minifier</Link></li>
                     <li><Link href="/tools/coding-tools/javascript-minifier" onClick={closeMobileMenu}>Javascript Minifier</Link></li>
                     <li><Link href="/tools/coding-tools/html-minifier" onClick={closeMobileMenu}>HTML Minifier</Link></li>
+                    <li><Link href="/tools/coding-tools/json-tree" onClick={closeMobileMenu}>JSON Tree Viewer</Link></li>
                     
                   </ul>
                 </div>

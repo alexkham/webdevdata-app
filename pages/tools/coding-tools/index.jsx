@@ -108,6 +108,19 @@ export async function getStaticProps() {
       link: "/tools/coding-tools/javascript-minifier",
       color: "#f0f0f0"
     },
+    {
+      title: "HTML Minifier",
+      content: "Compress HTML code by removing unnecessary characters, whitespace, and optimizing markup structure.Reduces file size for faster website loading and improved performance. Crucial for web application optimization, efficient content delivery, and enhancing user experience.",
+      link: "/tools/coding-tools/html-minifier",
+      color: "#f0f0f0"
+    },
+
+    {
+      title: "JSON Tree Viewer",
+      content: "Visualize JSON data in a collapsible tree structure, highlighting nested objects and arrays. Improves readability and navigation of complex JSON structures. Essential for API response analysis, debugging, and data exploration. Enhances developer productivity and data comprehension.",
+      link: "/tools/coding-tools/json-tree",
+      color: "#f0f0f0"
+    },
   ]
 
   return {
