@@ -106,7 +106,13 @@ export async function getStaticProps() {
       },
       {
         title: "JSON to XML Converter",
-        content:"Convert between JSON and XML formats. Ensure your data is compatible across different systems and APIs, facilitating smooth integration and data exchange.",
+        content:"Convert between JSON and XML formats and back. Ensure your data is compatible across different systems and APIs, facilitating smooth integration and data exchange.",
+        link: "/tools/converters/json-xml",
+        color: "#f0f0f0"
+      },
+      {
+        title: "YAML to JSON Converter",
+        content:"Convert between YAML and JSON and back effortlessly. Streamline data interchange between configuration files, APIs, and various tools, enhancing compatibility and readability across different systems.",
         link: "/tools/converters/json-xml",
         color: "#f0f0f0"
       },
