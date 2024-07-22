@@ -2369,6 +2369,11 @@
   resolved "https://registry.npmjs.org/@xtuc/long/-/long-4.2.2.tgz"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
+JSV@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.npmjs.org/JSV/-/JSV-4.0.2.tgz"
+  integrity sha512-ZJ6wx9xaKJ3yFUhq5/sk82PJMuUyLk277I8mQeyDgCTjGdjWJIvPfaU5LIXaMuaN2UO1X3kZH4+lgphublZUHw==
+
 abab@^2.0.0:
   version "2.0.6"
   resolved "https://registry.npmjs.org/abab/-/abab-2.0.6.tgz"
@@ -7294,6 +7299,11 @@ immer@1.10.0:
   resolved "https://registry.npmjs.org/immer/-/immer-1.10.0.tgz"
   integrity sha512-O3sR1/opvCDGLEVcvrGTMtLac8GJ5IwZC4puPrLuRj3l7ICKvkmA0vGuU9OW8mV9WIBRnaxp5GJh9IEAaNOoYg==
 
+immutable@^3.8.1:
+  version "3.8.2"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.2.tgz#c2439951455bb39913daf281376f1530e104adf3"
+  integrity sha512-15gZoQ38eYjEjxkorfbcgBKBL6R7T459OuK+CpcWt7O3KF4uPCx2tD0uFETlUDIyo+1789crbMhTvQBSR5yBMg==
+
 import-cwd@^2.0.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/import-cwd/-/import-cwd-2.1.0.tgz"
@@ -8377,7 +8387,7 @@ js-yaml@^3.13.1:
 
 js-yaml@^4.1.0:
   version "4.1.0"
-  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-4.1.0.tgz#c1fb65f8f5017901cdd2c951864ba18458a10602"
+  resolved "https://registry.npmjs.org/js-yaml/-/js-yaml-4.1.0.tgz"
   integrity sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==
   dependencies:
     argparse "^2.0.1"
@@ -8518,7 +8528,7 @@ json5@^1.0.1, json5@^1.0.2:
   dependencies:
     minimist "^1.2.0"
 
-json5@^2.1.0, json5@^2.1.2:
+json5@^2.1.0, json5@^2.1.2, json5@^2.2.3:
   version "2.2.3"
   resolved "https://registry.npmjs.org/json5/-/json5-2.2.3.tgz"
   integrity sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==
@@ -8534,6 +8544,15 @@ jsonify@^0.0.1:
   version "0.0.1"
   resolved "https://registry.npmjs.org/jsonify/-/jsonify-0.0.1.tgz"
   integrity sha512-2/Ki0GcmuqSrgFyelQq9M05y7PS0mEwuIzrf3f1fPqkVDVRvZrPZtVSMHxdgo8Aq0sxAOb/cr2aqqA3LeWHVPg==
+
+jsonlint-mod@^1.7.6:
+  version "1.7.6"
+  resolved "https://registry.npmjs.org/jsonlint-mod/-/jsonlint-mod-1.7.6.tgz"
+  integrity sha512-oGuk6E1ehmIpw0w9ttgb2KsDQQgGXBzZczREW8OfxEm9eCQYL9/LCexSnh++0z3AiYGcXpBgqDSx9AAgzl/Bvg==
+  dependencies:
+    JSV "^4.0.2"
+    chalk "^2.4.2"
+    underscore "^1.9.1"
 
 jsprim@^1.2.2:
   version "1.4.2"
@@ -10559,6 +10578,13 @@ pako@~1.0.5:
   resolved "https://registry.npmjs.org/pako/-/pako-1.0.11.tgz"
   integrity sha512-4hLB8Py4zZce5s4yd9XzopqwVv/yGNhV1Bl8NTmCq1763HeK2+EwVTv+leGeL13Dnh2wfbqowVPXCIO0z4taYw==
 
+pandas-js@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/pandas-js/-/pandas-js-0.2.4.tgz#7bfbda79aab0e5c278203789ca26b703633235d7"
+  integrity sha512-/zZV9z/u8SOny/0RQFik6OhG0ieBZb23TRHNs4pUHj2ONDeqvlHN9742pQXVvj6IYFFm0FaAmmWuBqz/mDLFmg==
+  dependencies:
+    immutable "^3.8.1"
+
 parallel-transform@^1.1.0:
   version "1.2.0"
   resolved "https://registry.npmjs.org/parallel-transform/-/parallel-transform-1.2.0.tgz"
@@ -11538,6 +11564,11 @@ prepend-http@^1.0.0:
   version "1.0.4"
   resolved "https://registry.npmjs.org/prepend-http/-/prepend-http-1.0.4.tgz"
   integrity sha512-PhmXi5XmoyKw1Un4E+opM2KcsJInDvKyuOumcjjw3waw86ZNjHwVUOOWLc4bCzLdcKNaWBH9e99sbWzDQsVaYg==
+
+prettier@^3.3.3:
+  version "3.3.3"
+  resolved "https://registry.npmjs.org/prettier/-/prettier-3.3.3.tgz"
+  integrity sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==
 
 pretty-bytes@^5.1.0:
   version "5.6.0"
@@ -13841,6 +13872,11 @@ unbox-primitive@^1.0.2:
     has-bigints "^1.0.2"
     has-symbols "^1.0.3"
     which-boxed-primitive "^1.0.2"
+
+underscore@^1.9.1:
+  version "1.13.6"
+  resolved "https://registry.npmjs.org/underscore/-/underscore-1.13.6.tgz"
+  integrity sha512-+A5Sja4HP1M08MaXya7p5LvjuM7K6q/2EaC0+iovj/wOcMsTzMvDFbasi/oSapiwOlt252IqsKqPjCl7huKS0A==
 
 undici-types@~5.26.4:
   version "5.26.5"

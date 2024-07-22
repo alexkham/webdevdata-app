@@ -1,0 +1,157 @@
+/* .jsonFormatter {
+    font-family: monospace;
+    margin-left: 20px;
+  }
+  
+  .textareaContainer, .outputContainer {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  
+  .lineNumbers {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    background-color: #f0f0f0;
+    color: #999;
+    text-align: right;
+    user-select: none;
+    overflow-y: hidden;
+  }
+  
+  .lineNumbers div {
+    padding: 0 5px;
+    line-height: 1.5;
+    font-size: 14px;
+  }
+  
+  .textarea, .output {
+    margin: 0;
+    padding: 0 5px 0 35px;
+    border: 1px solid #ccc;
+    white-space: pre;
+    line-height: 1.5;
+    font-size: 14px;
+    min-width: 300px;
+    overflow-y: auto;
+  }
+  
+  .outputContainer {
+    margin-top: 10px;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 10px;
+  } */
+
+  /* .jsonFormatter {
+    font-family: monospace;
+    margin-left: 20px;
+  }
+  
+  .textareaContainer, .outputContainer {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  
+  .lineNumbers {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    background-color: #f0f0f0;
+    color: #999;
+    text-align: right;
+    user-select: none;
+    overflow-y: hidden;
+  }
+  
+  .lineNumbers div {
+    padding: 0 3px;
+    line-height: 1.5;
+    font-size: 14px;
+    border-bottom: solid 0.5px #ccc;
+  }
+  
+  .textarea, .output {
+    margin: 0;
+    padding: 0 5px 0 35px;
+    border: 1px solid #ccc;
+    white-space: pre;
+    line-height: 1.5;
+    font-size: 14.5px;
+    min-width: 300px;
+    overflow-y: auto;
+  }
+  
+  .outputContainer {
+    margin-top: 10px;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 10px;
+  } */
+
+  .jsonFormatter {
+    font-family: monospace;
+    margin-left: 20px;
+  }
+  
+  .textareaContainer, .outputContainer {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  
+  .lineNumbers {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    background-color: #f0f0f0;
+    color: #999;
+    text-align: right;
+    user-select: none;
+    overflow-y: hidden;
+  }
+  
+  .lineNumbers div {
+    padding: 0 3px;
+    line-height: 1.5;
+    font-size: 14px;
+    border-bottom: solid 0.5px #ccc;
+  }
+  
+  .textarea, .output {
+    margin: 0;
+    padding: 0 5px 0 35px;
+    border: 1px solid #ccc;
+    white-space: pre;
+    line-height: 1.5;
+    font-size: 14.5px;
+    min-width: 300px;
+    overflow: hidden;
+    resize: none;
+  }
+  
+  .textarea {
+    height: auto;
+    overflow: hidden;
+  }
+  
+  .outputContainer {
+    margin-top: 10px;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 10px;
+  }

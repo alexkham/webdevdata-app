@@ -288,6 +288,7 @@ export default async function Home({slides}) {
   //   </div>
   // )
   return (
+    
     <div className={styles.mainPageContainer}>
       <br></br>
       <br></br>

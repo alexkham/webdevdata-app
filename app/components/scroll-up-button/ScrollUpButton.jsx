@@ -67,38 +67,9 @@ const ScrollUpButton = () => {
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
-  // return (
-  //   <>
-  //     {isVisible && (
-  //       <button 
-  //         onClick={scrollToTop}
-  //         className="scroll-up-button"
-  //         aria-label="Scroll to top"
-  //         style={{
-  //           position: 'fixed',
-  //           bottom: '20px',
-  //           right: '20px',
-  //           zIndex: 1000,
-  //           backgroundColor: '#4d4dff',
-  //           color: 'white',
-  //           width: '50px',
-  //           height: '50px',
-  //           borderRadius: '50%',
-  //           border: 'none',
-  //           boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
-  //           cursor: 'pointer',
-  //           transition: 'background-color 0.3s, transform 0.3s',
-  //           display: 'flex',
-  //           alignItems: 'center',
-  //           justifyContent: 'center',
-  //           fontSize: '24px'
-  //         }}
-  //       >
-  //         ↑
-  //       </button>
-  //     )}
-  //   </>
-  // );
+ 
+ 
+ 
   return (
     <>
       {isVisible && (

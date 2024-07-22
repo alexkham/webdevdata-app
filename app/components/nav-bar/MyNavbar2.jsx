@@ -157,7 +157,9 @@ function MyNavbar2() {
           <li className="megamenu-item" 
               onMouseEnter={() => handleMouseEnter('python')} 
               onMouseLeave={handleMouseLeave}>
+            <Link href={'/python'}>
             <span className='navbar-item'>Python</span>
+            </Link>
             <div className={`megamenu ${activeMegaMenu === 'python' ? 'active' : ''}`}>
               <div className="megamenu-content">
                 <div className="megamenu-column">
@@ -175,7 +177,9 @@ function MyNavbar2() {
           <li className="megamenu-item" 
               onMouseEnter={() => handleMouseEnter('c programming')} 
               onMouseLeave={handleMouseLeave}>
+            <Link  href={'/c-programming'}>
             <span className='navbar-item'>C Programming</span>
+            </Link>
             <div className={`megamenu ${activeMegaMenu === 'c programming' ? 'active' : ''}`}>
               <div className="megamenu-content">
                 <div className="megamenu-column">
@@ -193,7 +197,9 @@ function MyNavbar2() {
           <li className="megamenu-item"
               onMouseEnter={() => handleMouseEnter('tools')}
               onMouseLeave={handleMouseLeave}>
+            <Link  href={'/tools'}>
             <span className='navbar-item'>Tools</span>
+            </Link>
             <div className={`megamenu ${activeMegaMenu === 'tools' ? 'active' : ''}`}>
               <div className="megamenu-content">
                 <div className="megamenu-column">
@@ -217,6 +223,7 @@ function MyNavbar2() {
                   <ul>
                     <li><Link href="/tools/text/text-analyzer" onClick={closeMobileMenu}>Text Analyzer</Link></li>
                     <li><Link href="/tools/text/case-converter" onClick={closeMobileMenu}>Case Converter</Link></li>
+                    <li><Link href="/tools/text/markdown-editor" onClick={closeMobileMenu}>Markdown Editor</Link></li>
                   </ul>
                 </div>
                 <div className="megamenu-column">

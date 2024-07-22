@@ -53,10 +53,11 @@ import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton'
 import Head from 'next/head'
 import '../pages.css'
 import SectionLinkGroup from '@/app/components/section-link-group/SectionLinkGroup'
+import Layout from '../Layout'
 
 export default function PythonPage({ pageTitle, pageDescription, sections }) {
   return (
-    <>
+    <Layout>
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
@@ -68,7 +69,7 @@ export default function PythonPage({ pageTitle, pageDescription, sections }) {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https:/webdevdata.net/python" />
       </Head>
-      <MyNavbar />
+      {/* <MyNavbar /> */}
       <br></br>
       <br></br>
       <br></br>
@@ -78,7 +79,7 @@ export default function PythonPage({ pageTitle, pageDescription, sections }) {
         <SectionLinkGroup sections={sections} />
         <ScrollUpButton />
       </main>
-    </>
+    </Layout>
   )
 }
 

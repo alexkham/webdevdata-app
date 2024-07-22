@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
-import MyNavbar from './components/nav-bar/MyNavbar'
+import MyNavbar2 from './components/nav-bar/MyNavbar2'
 import ScrollUpButton from './components/scroll-up-button/ScrollUpButton'
 import Footer from './components/footer/Footer'
 //import Breadcrumb from './components/breadcrumb/BreadCrumb'
@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <MyNavbar></MyNavbar>
+        <MyNavbar2></MyNavbar2>
         {/* <br></br>
         <br></br>
         <br></br>
