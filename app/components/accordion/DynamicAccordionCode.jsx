@@ -3,27 +3,12 @@ import React from 'react';
 import './AccordionToggle2.css';
 import './Accordion.css'
 import DynamicNestedTable from '../nested-table/DynamicNestedTable';
-import { capitalizeWords } from '@/app/page';
+import { capitalizeWords } from '@/utils/functions';
 import Link from 'next/link';
 import SimpleCodeExample from '../code-example/SimpleCodeExample';
 
-function DynamicAccordionCode({data,link,width}) {
+function DynamicAccordionCode({data,link,width, codeTheme = 'twilight', codeMode = 'c_cpp'}) {
 
-// const toggleSection = (sectionId) => {
-//     const sections = document.querySelectorAll('.accordion__section');
-
-//     sections.forEach(section => {
-//       if (section.id === sectionId) {
-//         section.classList.toggle('open');
-//         // Scroll the section into view
-//         if (section.classList.contains('open')) {
-//           section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-//         }
-//       } else {
-//         section.classList.remove('open');
-//       }
-//     });
-//   };
 
 const toggleSection = (sectionId) => {
     const sections = document.querySelectorAll('.accordion__section');
@@ -54,7 +39,7 @@ const toggleSection = (sectionId) => {
        {data.map((item,index)=>{
         return(
             <div key={index} id={`section${index}`} className="accordion__section" onClick={() => toggleSection(`section${index}`)}>
-            <div className="accordion__label">{item.title}</div>
+            <div className="accordion__label">{capitalizeWords(item.title.replaceAll('_',' '))}</div>
             <div className="accordion__content" 
             style={{width:'1500px'}} 
             onClick={preventClose}>
@@ -68,7 +53,9 @@ const toggleSection = (sectionId) => {
                  <SimpleCodeExample 
                  code={item.code} 
                  article={item.explanation} 
-                 width={'950px'}></SimpleCodeExample>
+                 codeMode={codeMode}
+                 codeTheme={codeTheme}
+                 width={'100%'}></SimpleCodeExample>
                 {link && data[index]?.function && (
                 <Link href={`${link}${encodeURIComponent(data[index].function.split('(')[0])}`}
                 className='link'>

@@ -19,6 +19,7 @@
     "json5": "^2.2.3",
     "jsonlint-mod": "^1.7.6",
     "katex": "^0.16.10",
+    "lucide-react": "^0.435.0",
     "mermaid": "^10.9.0",
     "next": "^14.2.4",
     "pandas-js": "^0.2.4",

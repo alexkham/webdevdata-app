@@ -187,6 +187,7 @@ function MyNavbar2() {
                   <ul>
                     <li><Link href="/c-programming/things-not-to-do" onClick={closeMobileMenu}>Things Not To Do </Link></li>
                     <li><Link href="/c-programming/functions" onClick={closeMobileMenu}>C Standard Library Functions</Link></li>
+                    <li><Link href="/c-programming/examples" onClick={closeMobileMenu}>Code Examples</Link></li>
                    
                   </ul>
                 </div>

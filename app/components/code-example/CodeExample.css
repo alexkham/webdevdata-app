@@ -1,18 +1,14 @@
-.main-container .outer-container{
-    /* display: grid;
-    grid-template-columns: 5fr 1fr; */
+.main-container .outer-container {
     width: 100%;
     margin-bottom: 200px;
     margin: 20px;
-    
-}
-.outer-container{
-   
-    width: 1000px;
-    /* padding: 20px; */
 }
 
-.upper-row{
+.outer-container {
+    width: 1000px;
+}
+
+.upper-row {
     background-color: yellow;
     display: flex;
     flex-direction: row;
@@ -26,24 +22,19 @@
     height: 400px;
     padding-top: 30px;
     padding-bottom: 20px;
-   
 }
 
-.left{
-   /* margin-right: 50px; */
-   padding-left: 50px;
-  
-   
+.left {
+    padding-left: 50px;
 }
-.right{
-    /* background-color: yellow; */
+
+.right {
     margin-bottom: 50px;
     margin-left: 0px;
     margin-right: 50px;
-    
-
 }
-.markdown{
+
+.markdown {
     margin-top: 50px;
     background-color: lightgray;
     padding: 50px;
@@ -51,76 +42,62 @@
     border-radius: 5px;
 }
 
-.code-example{
-    /* padding: 10px; */
-}
-
-.general-block{
+.general-block {
     width: 90%;
-    /* display: flex;
-    flex-direction: row; */
-    
-    display:grid;
+    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 10px;
-    border:solid blue 1px;
+    border: solid blue 1px;
     border-radius: 5px;
     background-color: yellow;
     padding-left: 10px;
     max-width: 970px;
-    
-  
 }
 
-.code-block{
-    /* width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center; */
+.code-block {
     margin-top: 30px;
     margin-bottom: 30px;
 }
 
-.text-block{
+.text-block {
     margin-top: 0px;
     padding: 20px;
     background-color: lightgray;
     margin: 20px;
-    font-weight: bold;
+    font-weight: 400;
     margin-right: 30px;
+    text-align: center;
 }
-.title-container{
+
+.title-container {
     display: flex;
     flex-direction: row;
-    
     justify-content: center;
     align-items: center;
 }
 
-.info{
+.info {
     margin-top: 25px;
     margin-left: 20px;
     font-size: large;
     font-weight: bold;
-    border:solid blue 1px;
+    border: solid blue 1px;
     width: 20px;
     height: 20px;
     text-align: center;
     margin-bottom: 20px;
     border-radius: 50%;
-    color:blue;
-    cursor: pointer; /* Indicates clickable items */
+    color: blue;
+    cursor: pointer;
     display: inline-block;
     margin-left: 10px;
-    color: #555; /* Adjust color based on your theme */
+    color: #555;
     font-size: 18px;
     position: relative;
-    
 }
 
-.title-container h3{
+.title-container h3 {
     text-transform: capitalize;
-   
 }
 
 .tooltip {
@@ -154,4 +131,52 @@
 .info:hover .tooltip {
     visibility: visible;
     opacity: 1;
+}
+
+/* Mobile-friendly adjustments */
+@media screen and (max-width: 1000px) {
+    .outer-container,
+    .upper-row {
+        width: 100%;
+        max-width: 1000px;
+    }
+
+    .general-block {
+        width: 100%;
+        max-width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .markdown {
+        margin-left: 20px;
+        padding: 20px;
+    }
+
+    .text-block {
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .upper-row {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+        padding: 20px;
+        margin: 0;
+    }
+
+    .markdown {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 15px;
+    }
+
+    .text-block {
+        margin: 10px;
+    }
 }

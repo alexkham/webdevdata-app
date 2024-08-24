@@ -1,5 +1,5 @@
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb'
-import MyNavbar from '@/app/components/nav-bar/MyNavbar'
+import MyNavbar2 from '@/app/components/nav-bar/MyNavbar2'
 import React from 'react'
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton'
 import Head from 'next/head'
@@ -21,7 +21,7 @@ export default function ToolsPage({ pageTitle, pageDescription, sections }) {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https:/webdevdata.net/tools" />
       </Head>
-      <MyNavbar />
+      <MyNavbar2 />
       <br></br>
       <br></br>
       <br></br>

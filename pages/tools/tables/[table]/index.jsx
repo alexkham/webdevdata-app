@@ -8,6 +8,7 @@ import Head from 'next/head'
 import {availableTables} from '../../../../tableConfig'
 import { capitalizeWords } from '@/utils/functions'
 import Layout from '@/pages/Layout'
+import TableWrapper from '@/app/components/generic-table/TableWrapper'
 
 export default function TablePage({ tableData, tableName }) {
   if (!tableData) {
@@ -28,6 +29,7 @@ export default function TablePage({ tableData, tableName }) {
       <Breadcrumb />
       <h1 className='title' style={{marginTop:'-50px', marginBottom:'-50px'}}>{`${tableName} Table`}</h1>
       <GenericTable data={tableData} />
+      {/* <TableWrapper initialData={tableData} TableComponent={GenericTable}></TableWrapper> */}
       <br />
       <ScrollUpButton />
     </Layout>

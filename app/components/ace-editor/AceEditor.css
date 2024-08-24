@@ -90,8 +90,10 @@
 }
 
 .ace-editor {
-    width: 100% !important;
+    width: 600px !important;
     min-height: 200px;
+    padding-top: 20px;
+    
 }
 
 .copy-btn {
@@ -102,13 +104,19 @@
     border-radius: 3px;
     max-width: 30px;
     margin-bottom: 10px;
-    min-width: 100px;
+    min-width: 80px;
     margin-right: 50px;
-    min-height: 30px;
+    min-height: 25px;
     margin-top: 5px;
 }
 
 .copy-btn:hover {
     background-color: aliceblue;
     color: black;
+}
+
+/* Assuming your syntax highlighter applies this class to comments */
+.comment {
+    color: yellow;  /* Green color for comments */
+    font-style: italic;
 }

@@ -1,0 +1,111 @@
+.accordion {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .accordion__section {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .accordion__label {
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .accordion__label:hover {
+    background-color: #e7e7e7;
+  }
+  
+  .chevron {
+    border-style: solid;
+    border-width: 0.25em 0.25em 0 0;
+    content: '';
+    display: inline-block;
+    height: 0.45em;
+    position: relative;
+    transform: rotate(135deg);
+    vertical-align: top;
+    width: 0.45em;
+    transition: transform 0.3s ease;
+  }
+  
+  .accordion__section.open .chevron {
+    transform: rotate(-45deg);
+  }
+  
+  .accordion__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .accordion__section.open .accordion__content {
+    max-height: 1000px; /* Adjust as needed */
+    padding: 15px;
+  }
+  
+  .related_functions {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+  }
+  
+  .related_functions h4 {
+    margin-bottom: 10px;
+  }
+  
+  .related_functions ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .related_functions li {
+    margin-bottom: 5px;
+  }
+  
+  .related_functions a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  
+  .related_functions a:hover {
+    text-decoration: underline;
+  }
+
+  .related_functions li {
+    position: relative;
+  }
+  
+  .tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 10%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .related_functions li:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    padding:10px;
+  }

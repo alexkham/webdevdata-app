@@ -1,0 +1,317 @@
+[
+  {
+    "title": "trim_trailing_whitespace",
+    "sub_category": "Substring extraction",
+    "code": "/* Code to trim trailing whitespace from a string */\nchar str[] = \"Hello, World!   \\t  \";\nint len = strlen(str); /* Get initial string length */\n\n/* Iterate from end, removing whitespace */\nwhile (len > 0 && (str[len - 1] == ' ' || str[len - 1] == '\\t')) {\n    str[--len] = '\\0'; /* Replace whitespace with null terminator */\n}",
+    "mermaid": "flowchart TD\n    A[Start] --> B[Get string length]\n    B --> C{Is last char whitespace?}\n    C -- Yes --> D[Remove last char]\n    D --> E[Decrement length]\n    E --> C\n    C -- No --> F[End]",
+    "explanation": "This function removes trailing whitespace (spaces and tabs) from a string. It works by iterating from the end of the string and replacing whitespace characters with null terminators until a non-whitespace character is encountered.",
+    "related_functions": [
+      {
+        "name": "strlen",
+        "description": "Calculates the length of a given string"
+      },
+      {
+        "name": "isspace",
+        "description": "Checks whether a character is a white-space character"
+      },
+      {
+        "name": "strcspn",
+        "description": "Calculates the length of the initial segment of str1 which consists entirely of characters not in str2"
+      }
+    ]
+  },
+  {
+    "title": "convert_to_uppercase",
+    "sub_category": "String formatting",
+    "code": "#include <ctype.h>\n\n/* Code to convert a string to uppercase */\nchar str[] = \"Hello, World!\";\nchar *ptr = str; /* Pointer to iterate through string */\n\n/* Loop until null terminator is reached */\nwhile (*ptr) {\n    *ptr = toupper((unsigned char)*ptr); /* Convert to uppercase */\n    ptr++; /* Move to next character */\n}",
+    "mermaid": "flowchart TD\n    A[Start] --> B{End of string?}\n    B -- No --> C[Convert current char to uppercase]\n    C --> D[Move to next char]\n    D --> B\n    B -- Yes --> E[End]",
+    "explanation": "This code converts all lowercase letters in a string to uppercase. It uses the `toupper` function from `<ctype.h>` and iterates through each character of the string using a pointer.",
+    "related_functions": [
+      {
+        "name": "toupper",
+        "description": "Converts a character to uppercase"
+      },
+      {
+        "name": "isupper",
+        "description": "Checks if a character is uppercase"
+      },
+      {
+        "name": "islower",
+        "description": "Checks if a character is lowercase"
+      },
+      {
+        "name": "strupr",
+        "description": "Converts a string to uppercase (non-standard)"
+      }
+    ]
+  },
+  {
+    "title": "reverse_string",
+    "sub_category": "String manipulation",
+    "code": "#include <string.h>\n\n/* Code to reverse a string in-place */\nchar str[] = \"Hello, World!\";\nchar *start = str; /* Pointer to start of string */\nchar *end = str + strlen(str) - 1; /* Pointer to end of string */\nchar temp;\n\n/* Loop until pointers meet in middle */\nwhile (start < end) {\n    /* Swap characters */\n    temp = *start;\n    *start++ = *end;\n    *end-- = temp;\n}",
+    "mermaid": "flowchart TD\n    A[Start] --> B[Set start and end pointers]\n    B --> C{start < end?}\n    C -- Yes --> D[Swap characters]\n    D --> E[Move pointers]\n    E --> C\n    C -- No --> F[End]",
+    "explanation": "This function reverses a string in-place. It uses two pointers, one starting from the beginning and one from the end, swapping characters as it moves towards the center of the string.",
+    "related_functions": [
+      {
+        "name": "strlen",
+        "description": "Calculates the length of a given string"
+      },
+      {
+        "name": "memcpy",
+        "description": "Copies a block of memory from one location to another"
+      },
+      {
+        "name": "strrev",
+        "description": "Reverses a string (non-standard function)"
+      }
+    ]
+  },
+  {
+    "title": "find_first_occurrence",
+    "sub_category": "String searching",
+    "code": "/* Code to find the first occurrence of a character in a string */\nchar str[] = \"Hello, World!\";\nchar target_char = 'o';\nchar *result = NULL; /* Pointer to store result */\n\n/* Loop until end of string */\nwhile (*str != '\\0') {\n    if (*str == target_char) {\n        result = str; /* Store pointer to matching char */\n        break; /* Exit loop once found */\n    }\n    str++; /* Move to next character */\n}",
+    "mermaid": "flowchart TD\n    A[Start] --> B{End of string?}\n    B -- No --> C{Current char matches target?}\n    C -- Yes --> D[Set result and break]\n    C -- No --> E[Move to next char]\n    E --> B\n    B -- Yes --> F[End]",
+    "explanation": "This code finds the first occurrence of a specific character in a string. It returns a pointer to the character if found, or NULL if not found. The function iterates through the string, comparing each character to the target.",
+    "related_functions": [
+      {
+        "name": "strchr",
+        "description": "Locates the first occurrence of a character in a string"
+      },
+      {
+        "name": "strrchr",
+        "description": "Locates the last occurrence of a character in a string"
+      },
+      {
+        "name": "strstr",
+        "description": "Locates the first occurrence of a substring in a string"
+      }
+    ]
+  },
+  {
+    "title": "copy_string",
+    "sub_category": "String manipulation",
+    "code": "/* Code to copy a string */\nchar src[] = \"Hello, World!\";\nchar dest[20]; /* Ensure dest is large enough */\nchar *src_ptr = src; /* Pointer to source string */\nchar *dest_ptr = dest; /* Pointer to destination string */\n\n/* Copy characters and check for null terminator */\nwhile ((*dest_ptr++ = *src_ptr++) != '\\0');",
+    "mermaid": "flowchart TD\n    A[Start] --> B[Set source and destination pointers]\n    B --> C{Copy char and check if null?}\n    C -- Not null --> D[Move to next char]\n    D --> C\n    C -- Null --> E[End]",
+    "explanation": "This snippet copies a string from `src` to `dest`, including the null terminator. It's similar to the standard `strcpy` function, using pointer arithmetic to efficiently copy characters one by one.",
+    "related_functions": [
+      {
+        "name": "strcpy",
+        "description": "Copies a string"
+      },
+      {
+        "name": "strncpy",
+        "description": "Copies a specific number of characters from one string to another"
+      },
+      {
+        "name": "memcpy",
+        "description": "Copies a block of memory from one location to another"
+      },
+      {
+        "name": "memmove",
+        "description": "Copies a block of memory, handling overlapping memory correctly"
+      }
+    ]
+  },
+  {
+    "title": "string_concatenation",
+    "sub_category": "String concatenation",
+    "code": "/* Code to concatenate two strings */\nchar dest[50] = \"Hello\";\nchar src[] = \", World!\";\nint dest_len = strlen(dest);\nint i;\n\n/* Append characters from src to dest */\nfor (i = 0; src[i] != '\\0'; i++) {\n    dest[dest_len + i] = src[i];\n}\ndest[dest_len + i] = '\\0'; /* Add null terminator */",
+    "mermaid": "flowchart TD\n    A[Start] --> B[Get dest length]\n    B --> C{End of src?}\n    C -- No --> D[Copy char to dest]\n    D --> E[Move to next char]\n    E --> C\n    C -- Yes --> F[Add null terminator]\n    F --> G[End]",
+    "explanation": "This function concatenates two strings by appending the source string to the destination string.",
+    "related_functions": [
+      {
+        "name": "strcat",
+        "description": "Concatenates two strings"
+      },
+      {
+        "name": "strncat",
+        "description": "Concatenates a specific number of characters from one string to another"
+      },
+      {
+        "name": "sprintf",
+        "description": "Writes formatted output to a string"
+      }
+    ]
+  },
+  {
+    "title": "count_substring_occurrences",
+    "sub_category": "String searching",
+    "code": "/* Code to count occurrences of a substring in a string */\nint count_occurrences(char* str, char* sub) {\n    int count = 0;\n    char* tmp = str;\n    while ((tmp = strstr(tmp, sub)) != NULL) {\n        count++;\n        tmp += strlen(sub); /* Move past the current occurrence */\n    }\n    return count;\n}",
+    "mermaid": "flowchart TD\n    A[Start] --> B{Find substring}\n    B -- Found --> C[Increment count]\n    C --> D[Move past occurrence]\n    D --> B\n    B -- Not found --> E[Return count]\n    E --> F[End]",
+    "explanation": "This function counts the number of times a substring appears within a larger string using the strstr function.",
+    "related_functions": [
+      {
+        "name": "strstr",
+        "description": "Locates the first occurrence of a substring in a string"
+      },
+      {
+        "name": "strchr",
+        "description": "Locates the first occurrence of a character in a string"
+      },
+      {
+        "name": "strpbrk",
+        "description": "Searches a string for any of a set of characters"
+      }
+    ]
+  },
+  {
+    "title": "string_tokenization",
+    "sub_category": "String tokenization",
+    "code": "char str[] = \"Hello,World,How,Are,You\";\nchar *token;\n\n/* Get the first token */\ntoken = strtok(str, \",\");\n\n/* Walk through other tokens */\nwhile( token != NULL ) {\n    printf( \"%s\\n\", token );\n    \n    /* Get next token */\n    token = strtok(NULL, \",\");\n}\n\n/* str is now \"Hello\\0World\\0How\\0Are\\0You\\0\" */",
+    "mermaid": "flowchart TD\n    A[Start] --> B[Get first token]\n    B --> C{Token exists?}\n    C -- Yes --> D[Print token]\n    D --> E[Get next token]\n    E --> C\n    C -- No --> F[End]",
+    "explanation": "This code demonstrates string tokenization using strtok(). It splits a string into tokens based on a delimiter.",
+    "related_functions": [
+      {
+        "name": "strtok",
+        "description": "Breaks a string into a series of tokens"
+      },
+      {
+        "name": "strtok_r",
+        "description": "Thread-safe version of strtok"
+      },
+      {
+        "name": "strsep",
+        "description": "Extracts tokens from strings"
+      },
+      {
+        "name": "sscanf",
+        "description": "Reads formatted input from a string"
+      }
+    ]
+  },
+  {
+    "title": "string_padding",
+    "sub_category": "String formatting",
+    "code": "char str[] = \"Hello\";\nint desired_length = 10;\nint current_length = strlen(str);\n\n/* Check if padding is needed */\nif (current_length < desired_length) {\n    int padding = desired_length - current_length;\n    \n    /* Shift existing string to the right */\n    memmove(str + padding, str, current_length + 1);\n    \n    /* Add padding spaces */\n    memset(str, ' ', padding);\n}\n\n/* str is now \"     Hello\\0\" */",
+    "mermaid": "flowchart TD\n    A[Start] --> B{Need padding?}\n    B -- Yes --> C[Calculate padding]\n    C --> D[Shift string]\n    D --> E[Add spaces]\n    B -- No --> F[End]\n    E --> F",
+    "explanation": "This code pads a string with leading spaces to reach a desired length.",
+    "related_functions": [
+      {
+        "name": "strlen",
+        "description": "Calculates the length of a string"
+      },
+      {
+        "name": "memmove",
+        "description": "Copies memory to another location"
+      },
+      {
+        "name": "memset",
+        "description": "Fills a block of memory with a particular value"
+      },
+      {
+        "name": "sprintf",
+        "description": "Writes formatted output to a string"
+      }
+    ]
+  },
+  {
+    "title": "string_compression",
+    "sub_category": "String compression/decompression",
+    "code": "char str[] = \"aabcccccaaa\";\nchar compressed[100] = {0}; /* Ensure enough space */\nint count = 1;\nint j = 0;\n\n/* Compress the string */\nfor (int i = 1; str[i] != '\\0'; i++) {\n    if (str[i] == str[i-1]) {\n        count++;\n    } else {\n        /* Add character and count to compressed string */\n        compressed[j++] = str[i-1];\n        compressed[j++] = count + '0';\n        count = 1;\n    }\n}\n\n/* Add last character and count */\ncompressed[j++] = str[strlen(str)-1];\ncompressed[j++] = count + '0';\n\n/* Use original if compression doesn't save space */\nif (strlen(compressed) >= strlen(str)) {\n    strcpy(compressed, str);\n}\n\n/* compressed is now \"a2b1c5a3\" */",
+    "mermaid": "flowchart TD\n    A[Start] --> B[Initialize variables]\n    B --> C{End of string?}\n    C -- No --> D{Same as previous?}\n    D -- Yes --> E[Increment count]\n    D -- No --> F[Add char and count]\n    E --> C\n    F --> C\n    C -- Yes --> G[Add last char and count]\n    G --> H{Compressed shorter?}\n    H -- Yes --> I[Use compressed]\n    H -- No --> J[Use original]\n    I --> K[End]\n    J --> K",
+    "explanation": "This code performs basic string compression by replacing repeated characters with the character followed by its count.",
+    "related_functions": [
+      {
+        "name": "strlen",
+        "description": "Calculates the length of a string"
+      },
+      {
+        "name": "strcpy",
+        "description": "Copies one string to another"
+      },
+      {
+        "name": "sprintf",
+        "description": "Writes formatted output to a string"
+      }
+    ]
+  },
+  {
+    "title": "string_length",
+    "sub_category": "String manipulation",
+    "code": "char str[] = \"Hello, World!\";\nint length = 0;\n\n/* Calculate string length manually */\nwhile (str[length] != '\\0') {\n    length++;\n}\n/* length now contains the string length */",
+    "mermaid": "flowchart TD\n    A[Start] --> B[Initialize length]\n    B --> C{Is current char null?}\n    C -- No --> D[Increment length]\n    D --> E[Move to next char]\n    E --> C\n    C -- Yes --> F[End]",
+    "explanation": "This code calculates the length of a string manually by counting characters until the null terminator.",
+    "related_functions": [
+      {
+        "name": "strlen",
+        "description": "Calculates the length of a string"
+      },
+      {
+        "name": "strnlen",
+        "description": "Calculates the length of a string up to a maximum number of characters"
+      },
+      {
+        "name": "wcslen",
+        "description": "Calculates the length of a wide character string"
+      }
+    ]
+  },
+  {
+    "title": "string_comparison",
+    "sub_category": "String manipulation",
+    "code": "char str1[] = \"apple\";\nchar str2[] = \"banana\";\nint result = 0;\nint i = 0;\n\n/* Compare strings manually */\nwhile (str1[i] != '\\0' && str2[i] != '\\0') {\n    if (str1[i] != str2[i]) {\n        result = str1[i] - str2[i];\n        break;\n    }\n    i++;\n}\n\nif (result == 0) {\n    result = str1[i] - str2[i];\n}\n/* result is negative, zero, or positive based on comparison */",
+    "mermaid": "flowchart TD\n    A[Start] --> B[Initialize variables]\n    B --> C{Both chars non-null?}\n    C -- Yes --> D{Chars equal?}\n    D -- Yes --> E[Move to next char]\n    E --> C\n    D -- No --> F[Calculate difference]\n    C -- No --> G[Compare final chars]\n    F --> H[End]\n    G --> H",
+    "explanation": "This code compares two strings manually, character by character, returning the difference between the first non-matching characters.",
+    "related_functions": [
+      {
+        "name": "strcmp",
+        "description": "Compares two strings"
+      },
+      {
+        "name": "strncmp",
+        "description": "Compares up to n characters of two strings"
+      },
+      {
+        "name": "strcoll",
+        "description": "Compares two strings using the current locale"
+      },
+      {
+        "name": "memcmp",
+        "description": "Compares two blocks of memory"
+      }
+    ]
+  },
+  {
+    "title": "string_to_lowercase",
+    "sub_category": "String formatting",
+    "code": "char str[] = \"Hello, WORLD!\";\nint i = 0;\n\n/* Convert string to lowercase */\nwhile (str[i] != '\\0') {\n    if (str[i] >= 'A' && str[i] <= 'Z') {\n        str[i] = str[i] + 32; /* ASCII difference between upper and lowercase */\n    }\n    i++;\n}\n/* str is now \"hello, world!\" */",
+    "mermaid": "flowchart TD\n    A[Start] --> B[Initialize index]\n    B --> C{End of string?}\n    C -- No --> D{Is uppercase?}\n    D -- Yes --> E[Convert to lowercase]\n    D -- No --> F[Keep character]\n    E --> G[Move to next char]\n    F --> G\n    G --> C\n    C -- Yes --> H[End]",
+    "explanation": "This code converts all uppercase letters in a string to lowercase using ASCII value manipulation.",
+    "related_functions": [
+      {
+        "name": "tolower",
+        "description": "Converts a given character to lowercase"
+      },
+      {
+        "name": "islower",
+        "description": "Checks if a character is lowercase"
+      },
+      {
+        "name": "isupper",
+        "description": "Checks if a character is uppercase"
+      },
+      {
+        "name": "strlwr",
+        "description": "Converts a string to lowercase (non-standard)"
+      }
+    ]
+  },
+  {
+    "title": "string_palindrome_check",
+    "sub_category": "String searching",
+    "code": "char str[] = \"A man a plan a canal Panama\";\nint start = 0;\nint end = strlen(str) - 1;\nint is_palindrome = 1;\n\nwhile (start < end) {\n    if (tolower(str[start]) != tolower(str[end])) {\n        is_palindrome = 0;\n        break;\n    }\n    start++;\n    end--;\n}\n/* is_palindrome is 1 if the string is a palindrome, 0 otherwise */",
+    "mermaid": "flowchart TD\n    A[Start] --> B[Initialize variables]\n    B --> C{start < end?}\n    C -- Yes --> D{Characters match?}\n    D -- Yes --> E[Move pointers]\n    D -- No --> F[Not palindrome]\n    E --> C\n    C -- No --> G[Is palindrome]\n    F --> H[End]\n    G --> H",
+    "explanation": "This code checks if a string is a palindrome by comparing characters from both ends towards the middle, ignoring case.",
+    "related_functions": [
+      {
+        "name": "strlen",
+        "description": "Calculates the length of a string"
+      },
+      {
+        "name": "tolower",
+        "description": "Converts a given character to lowercase"
+      }
+    ]
+  }
+
+]

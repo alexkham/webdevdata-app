@@ -50,6 +50,12 @@ export async function getStaticProps() {
       link: "/tools/tables/html_tags",
       color: "#f0f0f0"
     },
+    {
+      title: "Metric Prefixes Table ",
+      content:"Comprehensive table of metric prefixes, detailing names, symbols, and corresponding multiplying factors, ranging from quetta (10³⁰) to quecto (10⁻³⁰), serving as a concise reference.",
+      link: "/tools/tables/prefixes",
+      color: "#f0f0f0"
+    },
     // Add more card objects here as you add more tables
   ];
 

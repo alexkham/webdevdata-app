@@ -1,0 +1,29 @@
+{
+  "tableTitle": "Metric Prefixes",
+  "rows": [
+    {"Name": "quetta", "Symbol": "Q", "Multiplying factor": "10³⁰"},
+    {"Name": "ronna", "Symbol": "R", "Multiplying factor": "10²⁷"},
+    {"Name": "yotta", "Symbol": "Y", "Multiplying factor": "10²⁴"},
+    {"Name": "zetta", "Symbol": "Z", "Multiplying factor": "10²¹"},
+    {"Name": "exa", "Symbol": "E", "Multiplying factor": "10¹⁸"},
+    {"Name": "peta", "Symbol": "P", "Multiplying factor": "10¹⁵"},
+    {"Name": "tera", "Symbol": "T", "Multiplying factor": "10¹²"},
+    {"Name": "giga", "Symbol": "G", "Multiplying factor": "10⁹"},
+    {"Name": "mega", "Symbol": "M", "Multiplying factor": "10⁶"},
+    {"Name": "kilo", "Symbol": "k", "Multiplying factor": "10³"},
+    {"Name": "hecto", "Symbol": "h", "Multiplying factor": "10²"},
+    {"Name": "deca", "Symbol": "da", "Multiplying factor": "10"},
+    {"Name": "deci", "Symbol": "d", "Multiplying factor": "10⁻¹"},
+    {"Name": "centi", "Symbol": "c", "Multiplying factor": "10⁻²"},
+    {"Name": "milli", "Symbol": "m", "Multiplying factor": "10⁻³"},
+    {"Name": "micro", "Symbol": "µ", "Multiplying factor": "10⁻⁶"},
+    {"Name": "nano", "Symbol": "n", "Multiplying factor": "10⁻⁹"},
+    {"Name": "pico", "Symbol": "p", "Multiplying factor": "10⁻¹²"},
+    {"Name": "femto", "Symbol": "f", "Multiplying factor": "10⁻¹⁵"},
+    {"Name": "atto", "Symbol": "a", "Multiplying factor": "10⁻¹⁸"},
+    {"Name": "zepto", "Symbol": "z", "Multiplying factor": "10⁻²¹"},
+    {"Name": "yocto", "Symbol": "y", "Multiplying factor": "10⁻²⁴"},
+    {"Name": "ronto", "Symbol": "r", "Multiplying factor": "10⁻²⁷"},
+    {"Name": "quecto", "Symbol": "q", "Multiplying factor": "10⁻³⁰"}
+  ]
+}

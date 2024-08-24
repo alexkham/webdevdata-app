@@ -1,0 +1,185 @@
+{
+    "Pandas Operations": {
+      "DataFrame Operations": {
+        "Loading Data": [
+          "Load from CSV",
+          "Load from Excel",
+          "Load from MySQL",
+          "Load from inline text",
+          "Load from Python dictionary"
+        ],
+        "Saving Data": [
+          "Save to CSV",
+          "Save to Excel",
+          "Save to MySQL",
+          "Save to dictionary",
+          "Save to string"
+        ],
+        "Data Inspection": [
+          "Peek at contents",
+          "Summary statistics",
+          "Information",
+          "Data types",
+          "Shape and size"
+        ]
+      },
+      "Column Operations": {
+        "Index and Labels": [
+          "Get column index and labels",
+          "Change column labels"
+        ],
+        "Selection": [
+          "Select by name",
+          "Select by number",
+          "Select with attributes"
+        ],
+        "Modification": [
+          "Add new columns",
+          "Swap columns",
+          "Drop columns"
+        ],
+        "Arithmetic and Functions": [
+          "Vectorized arithmetic",
+          "Apply numpy functions"
+        ]
+      },
+      "Row Operations": {
+        "Index and Labels": [
+          "Get row index and labels",
+          "Change row index"
+        ],
+        "Selection": [
+          "Select by condition",
+          "Select using isin"
+        ],
+        "Modification": [
+          "Add rows",
+          "Drop rows",
+          "Sort rows"
+        ]
+      },
+      "Combining DataFrames": {
+        "Merge": [
+          "Merge on indexes",
+          "Merge on columns"
+        ],
+        "Join": [
+          "Join on indexes"
+        ],
+        "Concatenate": [
+          "Simple concatenation"
+        ],
+        "Combine": [
+          "Combine first"
+        ]
+      },
+      "Groupby": {
+        "Grouping": [
+          "Group by single/multiple columns",
+          "Group by level"
+        ],
+        "Aggregation": [
+          "Sum",
+          "Multiple aggregations",
+          "Custom aggregations"
+        ],
+        "Transformation": [
+          "Apply transformations",
+          "Fill missing data"
+        ],
+        "Filtering": [
+          "Apply filtering functions"
+        ]
+      },
+      "Pivot Tables": {
+        "Pivoting": [
+          "Pivot to wide format",
+          "Melt to long format",
+          "Unstack to long format"
+        ]
+      },
+      "String Operations": {
+        "Manipulation": [
+          "Lower case",
+          "Upper case",
+          "Length",
+          "Append suffix",
+          "Concatenate"
+        ],
+        "Regular Expressions": [
+          "Contains",
+          "Starts with",
+          "Ends with",
+          "Replace",
+          "Extract"
+        ]
+      },
+      "Statistics": {
+        "Summary and Descriptive Stats": [
+          "Describe",
+          "Correlation",
+          "Covariance",
+          "Kurtosis",
+          "Mean absolute deviation",
+          "Standard error of mean",
+          "Variance"
+        ],
+        "Counts and Binning": [
+          "Value counts",
+          "Cross-tabulation",
+          "Quantiles",
+          "Rank",
+          "Histogram binning"
+        ],
+        "Advanced Analysis": [
+          "Regression",
+          "Smoothing"
+        ]
+      },
+      "Handling Missing Data": {
+        "Missing Data": [
+          "Drop missing data",
+          "Fill missing data",
+          "Replace missing data"
+        ],
+        "Non-finite Numbers": [
+          "Handle infinity",
+          "Test for finite numbers"
+        ]
+      },
+      "Categorical Data": {
+        "Handling Categorical Data": [
+          "Create categorical data",
+          "Convert to category type",
+          "Reorder and sort categories",
+          "Rename categories",
+          "Add/remove categories"
+        ]
+      },
+      "Dates, Times and Indexes": {
+        "Creating and Converting": [
+          "Create Timestamps and Periods",
+          "Convert strings to dates"
+        ],
+        "Indexing": [
+          "DatetimeIndex",
+          "PeriodIndex"
+        ],
+        "Manipulation": [
+          "Extract date/time",
+          "Convert between index types"
+        ],
+        "Operations": [
+          "Date range generation",
+          "Error handling",
+          "Upsampling and downsampling",
+          "Time zones",
+          "Row selection by time"
+        ],
+        "Accessor Attributes": [
+          "Series.dt accessor"
+        ]
+      }
+    }
+  }
+  

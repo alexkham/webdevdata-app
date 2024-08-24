@@ -1,7 +1,7 @@
 import React from 'react';
 import LinkTextGroup from '@/app/components/link-group/LinkTextGroup';
 import styles from '../../../app/components/link-group/LinkGroup.module.css';
-import MyNavbar from '@/app/components/nav-bar/MyNavbar';
+import MyNavbar2 from '@/app/components/nav-bar/MyNavbar2';
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton';
 
 export default function ThingsNotToDo() {
@@ -19,7 +19,7 @@ export default function ThingsNotToDo() {
   ];
 
   return (
-    <><MyNavbar></MyNavbar>
+    <><MyNavbar2></MyNavbar2>
     <br></br>
     <br></br>
     <br></br>

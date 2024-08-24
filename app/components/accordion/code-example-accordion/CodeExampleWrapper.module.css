@@ -1,0 +1,72 @@
+.wrapper {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 150px;
+  }
+  
+  .searchInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .group {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  
+  .groupTitle {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .groupContent {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+   background-color:#e6e6e6;
+  }
+
+  .groupHeader{
+    color: #4f46e5;
+  }
+
+  .searchContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .searchInput {
+    width: 100%;
+    padding-right: 30px; /* Make space for the clear button */
+    min-width: 500px;
+  }
+  
+  .clearButton {
+    position: absolute;
+    right: 10px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  
+  .clearIcon {
+    color: #999999; /* Customize color as needed */
+    margin-bottom: 20px;
+  }
+  
