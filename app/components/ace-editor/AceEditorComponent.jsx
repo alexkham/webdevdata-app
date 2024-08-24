@@ -68,7 +68,7 @@
 
 // export default AceEditorComponent;
 
-
+'use client'
 import React, { useEffect, useState } from 'react';
 import AceEditor from 'react-ace';
 
