@@ -2,6 +2,7 @@
 import React, { useState, useRef } from 'react';
 import AceEditorComponent from '../ace-editor/AceEditorComponent';
 import styles from './FunctionDetails.module.css';
+import Link from 'next/link';
 
 export default function PythonFunctionDetails({functionData}) {
   const [activeTab, setActiveTab] = useState('description');
@@ -105,6 +106,15 @@ export default function PythonFunctionDetails({functionData}) {
               </ul>
             </>
           )}
+          <br></br>
+         
+          {functionData.module==='builtins'&&
+          <Link 
+          className={styles.link}
+          href={`https://docs.python.org/3/library/functions.html#${functionData.name}`}
+          target="_blank"
+          rel="noopener noreferrer" >
+            Read More from Python Documentation </Link>}
         </div>
 
         <div ref={tabRefs.signature} className={`${styles.tabContent} ${activeTab === 'signature' ? styles.active : ''}`}>

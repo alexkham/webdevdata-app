@@ -1,5 +1,5 @@
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb'
-import MyNavbar from '@/app/components/nav-bar/MyNavbar'
+import MyNavbar2 from '@/app/components/nav-bar/MyNavbar2'
 import React from 'react'
 import FunctionList from '@/app/components/function-list/FunctionList'
 import '../../../pages/pages.css'
@@ -16,7 +16,7 @@ export default function FunctionsPage({ functionData }) {
         <link rel="canonical" href="https://webdevdata.net/c-programming/functions" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       </Head>
-      <MyNavbar />
+      <MyNavbar2 />
       <br />
       <br />
       <br />

@@ -57,7 +57,7 @@ const MermaidDiagram = ({ chartDefinition }) => {
                 theme: 'default',
                 themeVariables: {
                     textColor: 'blue',
-                    fontSize: '18px',
+                    fontSize: '38px',
                     lineColor: '#7155cc',
                 }
             });
@@ -68,7 +68,7 @@ const MermaidDiagram = ({ chartDefinition }) => {
                     mermaid.init(undefined, mermaidRef.current);
                     const textElements = mermaidRef.current.querySelectorAll('svg text');
                     textElements.forEach(text => {
-                        text.style.fontSize = '36px'; // Adjust the font size
+                        text.style.fontSize = '66px'; // Adjust the font size
                     });
                 }
             });

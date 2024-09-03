@@ -1,0 +1,43 @@
+{
+    "C Data Types": {
+      "Basic Types": {
+        "Integer Types": [
+          "int",
+          "short",
+          "long",
+          "long long",
+          "unsigned int",
+          "unsigned short",
+          "unsigned long",
+          "unsigned long long"
+        ],
+        "Floating-Point Types": [
+          "float",
+          "double",
+          "long double"
+        ],
+        "Character Type": [
+          "char"
+        ],
+        "Void Type": [
+          "void"
+        ]
+      },
+      "Derived Types": {
+        "Arrays": [],
+        "Pointers": [],
+        "Functions": []
+      },
+      "User-Defined Types": {
+        "struct": [],
+        "union": [],
+        "enum": [],
+        "typedef": []
+      },
+      "Special Types": [
+        "size_t",
+        "_Bool",
+        "_Complex"
+      ]
+    }
+  }
