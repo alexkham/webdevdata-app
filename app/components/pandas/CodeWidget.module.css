@@ -1,0 +1,37 @@
+.codeWidgetContainer {
+    position: relative;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    overflow: hidden;
+    margin: 1rem 0;
+  }
+  
+  .codeBlock {
+    padding: 1rem;
+    background-color: #f7fafc;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  
+  .copyButton {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.5rem;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .copyButton:hover {
+    background-color: #edf2f7;
+  }
+  
+  .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }

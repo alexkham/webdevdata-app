@@ -129,7 +129,7 @@
 import { useState, useEffect } from 'react';
 import styles from './DataFrameDisplay.module.css';
 
-function DataFrameDisplay({ dataFrame }) {
+function DataFrameDisplay2({ dataFrame }) {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -175,4 +175,4 @@ function DataFrameDisplay({ dataFrame }) {
     );
 }
 
-export default DataFrameDisplay;
+export default DataFrameDisplay2;

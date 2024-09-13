@@ -6,12 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-sitemap": "node generate-sitemap.mjs"
   },
   "dependencies": {
     "ace-builds": "^1.32.9",
     "cors": "^2.8.5",
     "fs": "^0.0.1-security",
+    "globby": "^14.0.2",
     "html-entities": "^2.5.2",
     "html-minifier": "^4.0.0",
     "iconv-lite": "^0.6.3",
