@@ -99,8 +99,7 @@ const simulateCodeExecution = (exampleIndex) => {
           <p>{functionData.extended_description}</p>
           <br></br>
           <br></br>
-          <br></br>
-          <br></br>
+         
 
           {external_links&&external_links[functionData.function_name]&&<Link
           className={styles.link}
