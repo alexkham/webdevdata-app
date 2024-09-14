@@ -729,7 +729,7 @@ const getImageUrl = (url) => {
   return `/images/${imageName}`;
 };
 
-const HomePageComponent = ({ categorizedUrls, metaDescriptions = {} }) => {
+const HomePageComponent = ({ categorizedUrls, metaDescriptions = {} ,title=' ' }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   
   // Validate and provide defaults for categorizedUrls
@@ -823,7 +823,7 @@ const HomePageComponent = ({ categorizedUrls, metaDescriptions = {} }) => {
   return (
     <div className={`${styles.container} ${lora.variable} ${roboto.variable}`} id='top'>
       <header className={styles.header}>
-        <h1 className={`${styles.siteTitle} ${lora.className} title-large`}>Learn Mathematics Online</h1>
+        <h1 className={`${styles.siteTitle} ${lora.className} title-large`}>{title}</h1>
         <nav className={`${styles.nav} ${roboto.className}`}>
           {Object.keys(validatedUrls.categories).map((category) => (
             <a key={category} href={`#${category}`} className={`${styles.navLink} body-text`}>

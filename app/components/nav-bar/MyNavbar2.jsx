@@ -109,6 +109,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import './MyNavbar2.css'
+import SearchBar from './SearchBar'
+import SearchBar2 from './SearchBar2'
 
 function MyNavbar2() {
   const [isNavActive, setIsNavActive] = useState(false)
@@ -252,8 +254,20 @@ function MyNavbar2() {
             </div>
           </li>
           <li onClick={navigateBack} style={{cursor:'pointer'}} className='navbar-item'><a>Go Back</a></li>
+          
+          {/* <li><SearchBar width='200px'></SearchBar></li>  */}
+          {/* <li><SearchBar2></SearchBar2></li> */}
+          <li>
+  <div style={{ position: 'relative' ,marginLeft:'100px'}} className='search-block'>
+    <SearchBar2 width='200px' />
+  </div>
+</li>
         </ul>
+        {/* <div className="navbar-search">
+      <SearchBar width='200px' />
+    </div> */}
       </div>
+     
     </nav>
   )
 }
