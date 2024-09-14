@@ -5012,6 +5012,7 @@
         }
       ],
       "related_functions": ["fseek", "ftell", "fsetpos"],
+      "link":"https://www.google.com",
       "performance_considerations": "rewind is generally efficient for resetting the file position. However, for very large files, especially on systems with slow storage, moving the file position may incur some I/O overhead. In such cases, consider structuring your program to minimize the need for rewinding."
     },
     

@@ -102,6 +102,7 @@ import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb';
 import Head from 'next/head';
 import MySidebar from '@/app/components/sidebar/Sidebar';
 import styles from '@/app/components/sidebar/MySidebar.module.css';
+import external_links from '../../../../app/components/function-details/c_docs_links.json'
 
 export default function FunctionPage({ functionData,allFunctionNames }) {
     return (
@@ -126,7 +127,8 @@ export default function FunctionPage({ functionData,allFunctionNames }) {
                 </h1>
                 <div style={{flexGrow: 1, marginLeft: '20px', overflow: 'auto'}}>
                     {functionData ? (
-                        <FunctionDetails functionData={functionData} />
+                        <FunctionDetails functionData={functionData} 
+                        external_links={external_links}/>
                     ) : (
                         <p>Function data not found.</p>
                     )}

@@ -114,7 +114,7 @@ export default function PythonFunctionDetails({functionData}) {
           href={`https://docs.python.org/3/library/functions.html#${functionData.name}`}
           target="_blank"
           rel="noopener noreferrer" >
-            Read More from Python Documentation </Link>}
+            Read More about {functionData.name} from Python Documentation </Link>}
         </div>
 
         <div ref={tabRefs.signature} className={`${styles.tabContent} ${activeTab === 'signature' ? styles.active : ''}`}>

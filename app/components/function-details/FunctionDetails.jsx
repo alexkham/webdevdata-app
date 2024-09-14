@@ -6,7 +6,7 @@ import styles from './FunctionDetails.module.css';
 import Link from 'next/link';
 ///import functionsD from '../../api/db/developement/c/functions_new.json'
 
-const FunctionDetails = ({functionData}) => {
+const FunctionDetails = ({functionData,external_links}) => {
   const [activeTab, setActiveTab] = useState('description');
   const [activeExampleTab, setActiveExampleTab] = useState(0);
   const [codeOutput, setCodeOutput] = useState('');
@@ -98,7 +98,21 @@ const simulateCodeExecution = (exampleIndex) => {
           <br></br>
           <p>{functionData.extended_description}</p>
           <br></br>
-          {functionData.link&&<Link href={`${functionData.link}`}>Read More</Link>}
+          <br></br>
+          <br></br>
+          <br></br>
+
+          {external_links&&external_links[functionData.function_name]&&<Link
+          className={styles.link}
+          href={`${external_links[functionData.function_name]}`}
+          target="_blank"
+          rel="noopener noreferrer">Read More about {functionData.function_name} from  C Documentation</Link>}
+         
+          {functionData.link&&<Link
+          className={styles.link}
+          href={`${functionData.link}`}
+          target="_blank"
+          rel="noopener noreferrer">Read More about {functionData.function_name} from  C Documentation</Link>}
         </div>
 
         <div ref={tabRefs.prototype} className={`${styles.tabContent} ${activeTab === 'prototype' ? styles.active : ''}`}>
