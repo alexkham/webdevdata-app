@@ -7,12 +7,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+  <!-- <url>
     <loc>https://webdevdata.net/code-example</loc>
     <lastmod>2024-09-14T06:22:03.702Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>
+  </url> -->
   <url>
     <loc>https://webdevdata.net/methods-explorer</loc>
     <lastmod>2024-09-14T06:22:03.702Z</lastmod>

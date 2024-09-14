@@ -258,10 +258,10 @@ function MyNavbar2() {
           {/* <li><SearchBar width='200px'></SearchBar></li>  */}
           {/* <li><SearchBar2></SearchBar2></li> */}
           <li>
-  <div style={{ position: 'relative' ,marginLeft:'100px'}} className='search-block'>
-    <SearchBar2 width='200px' />
-  </div>
-</li>
+            <div style={{ position: 'relative' ,marginLeft:'100px'}} className='search-block'>
+              <SearchBar2 width='200px' />
+            </div>
+          </li>
         </ul>
         {/* <div className="navbar-search">
       <SearchBar width='200px' />
