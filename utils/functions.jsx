@@ -60,3 +60,9 @@ export const renderTextWithLineBreaksSeparator = (text, separator) => {
     ));
   }
 };
+
+export const formatTitle = (url) => {
+  const title = url.split('/').pop() || url;
+  return capitalizeWords(title.replaceAll('_', ' ').replaceAll('-', ' '));
+};
+
