@@ -31,7 +31,7 @@ export default function FunctionPage({ data , nameList }) {
   }
 
   return (
-    <>
+    <div>
           <Head></Head>
          <input type="checkbox" id="sidebar-toggle" className={styles.sidebarToggle} />
          <MySidebar data={functionNames}
@@ -62,7 +62,7 @@ export default function FunctionPage({ data , nameList }) {
       <ScrollUpButton></ScrollUpButton>
       <br />
       </div>
-    </>
+    </div>
   );
 }
 
