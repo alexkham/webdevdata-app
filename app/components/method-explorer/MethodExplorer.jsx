@@ -168,13 +168,13 @@ function MethodExplorer() {
             {/* <span>{searchTerm}</span> */}
             
            <div className='initial-select-container'>
-            <SelectComponent2
+            {/* <SelectComponent2
                 label={'Programming Language'}
                 options={languagesNames}
                 size={'200px'}
                 handleChange={handleLanguageChange}
                 value={language}
-                lookup={' Programming Language'} />
+                lookup={' Programming Language'} /> */}
             
             {language && !(language.startsWith('Select')) &&
                 <SelectComponent2

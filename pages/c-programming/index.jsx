@@ -23,6 +23,13 @@ export default function CProgrammingPage() {
           text: 'C Programming Pitfalls Guide: Explore common mistakes and unsafe practices in C, categorized by data types, to improve code quality and avoid critical errors in your projects.',
           image: 'do-not.png'
         },
+
+        {
+            title:'Code Examples',
+            link: 'c-programming/examples',
+            text: 'Explore efficient and robust code snippets for various data types and operations in C, demonstrating best practices and correct usage across different scenarios.',
+            image: 'examples.svg'
+          },
         
         
         

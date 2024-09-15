@@ -67,11 +67,11 @@
   white-space: nowrap;
   opacity: 0;
   transition: opacity 0.2s;
-  height: 3000px;
-  overflow-y: auto;
-  scrollbar-color: #888 #f1f1f1;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  height: 3000px !important;
+  overflow-y: auto !important;
+  scrollbar-color: #888 #f1f1f1 !important;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
   display: flex;
   flex-direction: column;
 }
@@ -87,7 +87,7 @@
 }
 
 .content::-webkit-scrollbar {
-  display: none;
+  display: none !important;
 }
 
 .sidebarToggle:checked + .sidebar .content {

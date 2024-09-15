@@ -60,7 +60,7 @@
     },
     {
         "function": "concat()",
-        "link": "https://www.w3schools.com/jsref/jsref_concat_array.asp",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat",
         "parameters": [
             {
                 "parameter": "array1,...,arrayN",
@@ -154,7 +154,7 @@
     },
     {
         "function": "copyWithin()",
-        "link": "https://www.w3schools.com/jsref/jsref_copywithin.asp",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin",
         "parameters": [
             {
                 "parameter": "target",
@@ -221,7 +221,7 @@
     },
     {
         "function": "entries()",
-        "link": "https://www.w3schools.com/jsref/jsref_entries.asp",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries",
         "parameters": [],
         "description": "Returns a key/value pair Array Iteration Object.",
         "signature": "array.entries()",

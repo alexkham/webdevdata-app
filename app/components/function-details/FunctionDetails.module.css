@@ -113,6 +113,11 @@
   color: white;
   border: none;
   cursor: pointer;
+  max-height: 30px;
+  font-size: small;
+  
+  min-width: 50px;
+  width: 100px;
 }
 
 .runButton:disabled {
@@ -133,10 +138,20 @@
   color: #ffff4d;
   
 }
+.outputTitle{
+  margin:10px;
+  font-size: medium;
+  min-width: 60px;
+}
 
 .link{
   text-decoration: none;
   color: #007bff;
+}
+
+.outputContainer{
+  display: flex;
+  flex-direction: row;
 }
 
 @media (min-width: 768px) {

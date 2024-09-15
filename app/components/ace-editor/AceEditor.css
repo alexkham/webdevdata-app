@@ -85,14 +85,17 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
+    align-items: flex-end;
     
 }
 
 .ace-editor {
-    width: 600px !important;
+    width: 100%;
     min-height: 200px;
     padding-top: 20px;
+   
     
 }
 

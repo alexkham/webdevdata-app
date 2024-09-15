@@ -114,3 +114,159 @@ body {
   margin-left: 0px;
   
 }
+
+
+.sidebarToggle {
+  position: absolute;
+  opacity: 0;
+  width: 70px;
+  height: 80px;
+  top: 120px;
+  left: 0;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.sidebar {
+  position: fixed;
+  top: 120px;
+  left: 0;
+  height: calc(100vh - 150px);
+  width: 70px;
+  background: none;
+  transition: width 0.3s;
+  overflow: hidden;
+  z-index: 1000;
+ 
+}
+
+.sidebarToggle:checked + .sidebar {
+  width: 250px;
+  border-right: solid 0.5px #737373;
+  margin-right: 50px;
+}
+
+.toggleBtn {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 50px;
+  height: 80px;
+  background-color: #333333;
+  opacity: 0.8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: left 0.3s ease;
+  z-index: 10;
+  color: aliceblue;
+  border-radius: 5px;
+  font-size: small;
+}
+
+.toggleBtn::before {
+  content: "\276F\276F";
+  font-size: 18px;
+  transition: transform 0.3s;
+}
+
+.sidebarToggle:checked + .sidebar .toggleBtn {
+  left: 25px;
+  transform: none;
+}
+
+.sidebarToggle:checked + .sidebar .toggleBtn::before {
+  transform: rotate(180deg);
+}
+
+.content {
+  padding: 100px 20px 10px 30px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+  height: 3000px !important;
+  overflow-y: auto !important;
+  scrollbar-color: #888 #f1f1f1 !important;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.content .link {
+  text-decoration: none;
+  color: #0000EE;  /* Default link color (light blue) */
+  padding: 5px 0;
+}
+
+.content .link:visited {
+  color: #0000EE;  /* Same color for visited links */
+}
+
+.content::-webkit-scrollbar {
+  display: none !important;
+}
+
+.sidebarToggle:checked + .sidebar .content {
+  opacity: 1;
+}
+
+.content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.pageWrapper {
+  transition: margin-left 0.3s ease;
+  margin-left: 40px;
+}
+
+.sidebarToggle:checked ~ .pageWrapper {
+  margin-left: 250px;
+}
+
+.scrollIndicator {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: black;
+  border-bottom: 1px solid #eee;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+ 
+ 
+  height: 30px;
+  border-radius: 5px;
+}
+
+.chevron {
+  font-size: 20px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}

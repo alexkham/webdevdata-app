@@ -183,7 +183,7 @@ import React from 'react';
 import styles from './MySidebar.module.css';
 import Link from 'next/link';
 
-const MySidebar = ({title, data}) => {
+const MySidebar = ({title, data ,baseUrl}) => {
   return (
     <>
       <input type="checkbox" id="sidebar-toggle" className={styles.sidebarToggle} />
@@ -195,7 +195,7 @@ const MySidebar = ({title, data}) => {
             <span className={styles.chevron}>&#9662;</span>
           </div>
           {data && data.map((functionName, index) => (
-            <Link className={styles.link} key={index} href={`/c-programming/functions/${functionName}`}>{functionName}</Link>
+            <Link className={styles.link} key={index} href={`/${baseUrl}/${functionName}`}>{functionName}</Link>
           ))}
         </div>
       </div>

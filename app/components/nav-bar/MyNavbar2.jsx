@@ -155,7 +155,7 @@ function MyNavbar2() {
         </button>
         <ul className={`navbar-menu ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
           <li className='navbar-item'><Link href="/" onClick={closeMobileMenu}>Home</Link></li>
-          <li className='navbar-item'><Link href="/methods-explorer" onClick={closeMobileMenu}>Methods Explorer</Link></li>
+          <li className='navbar-item'><Link href="/methods-explorer" onClick={closeMobileMenu}>Javascript Methods</Link></li>
           <li className="megamenu-item" 
               onMouseEnter={() => handleMouseEnter('python')} 
               onMouseLeave={handleMouseLeave}>

@@ -115,7 +115,8 @@ export default function FunctionPage({ functionData,allFunctionNames }) {
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
             </Head>
             <input type="checkbox" id="sidebar-toggle" className={styles.sidebarToggle} />
-            <MySidebar data={allFunctionNames} />
+            <MySidebar data={allFunctionNames}
+            baseUrl={'/c-programming/functions'} />
             <div className={styles.pageWrapper}>
                 <MyNavbar2 />
                 <br />
@@ -134,7 +135,7 @@ export default function FunctionPage({ functionData,allFunctionNames }) {
                     )}
                 </div>
                
-                {/* Your existing br tags */}
+               
                 <ScrollUpButton />
             </div>
         </>

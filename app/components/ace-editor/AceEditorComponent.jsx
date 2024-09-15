@@ -112,7 +112,7 @@ const AceEditorComponent = ({ code, fontSize, theme, mode, onChange, width }) =>
                 <button onClick={copyToClipboard} className='copy-btn'>
                     {copied ? "Copied!" : "Copy Code"}
                 </button>
-            </div>
+            
             <AceEditor
                 style={{width: '100%', height: '250px',padding:'20px',paddingTop:'50px'}}
                 className='ace-editor'
@@ -131,6 +131,7 @@ const AceEditorComponent = ({ code, fontSize, theme, mode, onChange, width }) =>
                     tabSize: 2,
                 }}
             />
+            </div>
         </div>
     );
 
