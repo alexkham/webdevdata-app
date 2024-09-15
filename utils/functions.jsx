@@ -66,3 +66,12 @@ export const formatTitle = (url) => {
   return capitalizeWords(title.replaceAll('_', ' ').replaceAll('-', ' '));
 };
 
+export const  removeLastSAndCapitalize=(word)=> {
+  // Remove the last 's' if it exists
+  let newWord = word.endsWith('s') ? word.slice(0, -1) : word;
+  
+  // Capitalize the first letter
+  return newWord.charAt(0).toUpperCase() + newWord.slice(1).toLowerCase();
+}
+
+

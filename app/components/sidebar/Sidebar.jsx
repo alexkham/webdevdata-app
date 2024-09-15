@@ -189,7 +189,7 @@ const MySidebar = ({title, data ,baseUrl}) => {
       <input type="checkbox" id="sidebar-toggle" className={styles.sidebarToggle} />
       <div className={styles.sidebar}>
         <label htmlFor="sidebar-toggle" className={styles.toggleBtn}>{title}</label>
-        <div className={styles.content}>
+        <div className={styles.content} style={{height:'300px',zIndex:'10000',overflow:'scroll'}}>
           <div className={styles.scrollIndicator}>
             Scroll Down to See All
             <span className={styles.chevron}>&#9662;</span>

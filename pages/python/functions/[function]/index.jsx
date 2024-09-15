@@ -8,6 +8,7 @@ import MyNavbar from '@/app/components/nav-bar/MyNavbar';
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton';
 import functionsDb from '../../../../app/api/db/developement/python/functions_new.json';
 import '../../../pages.css'
+import MyNavbar2 from '@/app/components/nav-bar/MyNavbar2';
 
 const PythonFunctionPage = ({ functionData, functionName }) => {
   const pageTitle = functionData
@@ -27,7 +28,7 @@ const PythonFunctionPage = ({ functionData, functionName }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       </Head>
       <main>
-        <MyNavbar />
+        <MyNavbar2 />
         <br />
         <br />
         <br />

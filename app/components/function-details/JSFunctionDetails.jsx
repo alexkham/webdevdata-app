@@ -126,10 +126,10 @@ const JSFunctionDetails = ({ functionData,linkData }) => {
           <br></br>
           <br></br>
 
-          {linkData?.link && (
+          {linkData && (
             <Link
               className={styles.link}
-              href={linkData[functionData.link]}
+              href={linkData}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -137,7 +137,7 @@ const JSFunctionDetails = ({ functionData,linkData }) => {
             </Link>
           )}
          
-          {functionData.link && (
+          {/* {functionData.link && (
             <Link
               className={styles.link}
               href={functionData.link}
@@ -146,7 +146,7 @@ const JSFunctionDetails = ({ functionData,linkData }) => {
             >
               Read More about {functionData.function} from JS Documentation
             </Link>
-          )}
+          )} */}
         </div>
 
         <div ref={tabRefs.signature} className={`${styles.tabContent} ${activeTab === 'signature' ? styles.active : ''}`}>
