@@ -268,7 +268,7 @@ export default function SQLClausePage({ tocItemsData }) {
 }
 
 export async function getStaticProps() {
-  const { clauses } = await import('./clauses');
+  const { clauses } = await import('../../api/sql/_clausesData');
 
   const tocItems = [
     {

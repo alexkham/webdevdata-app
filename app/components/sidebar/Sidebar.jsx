@@ -195,7 +195,7 @@ const MySidebar = ({title, data ,baseUrl}) => {
             <span className={styles.chevron}>&#9662;</span>
           </div>
           {data && data.map((functionName, index) => (
-            <Link className={styles.link} key={index} href={`/${baseUrl}/${functionName}`}>{functionName}</Link>
+            <Link className={styles.link} key={index} href={`${baseUrl}/${functionName}`}>{functionName}</Link>
           ))}
         </div>
       </div>

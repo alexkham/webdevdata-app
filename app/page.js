@@ -115,6 +115,7 @@ export default async function Home({slides}) {
     { title: 'Python', color: '#336a99', logo: '/python-logo.svg', url: '/python' },
     { title: 'C Programming', color: '#007bff', logo: '/32px-C_Programming_Language.svg.png', url: '/c-programming' },
     { title: 'SQL', color: '#007bff', logo: '/database.svg', url: '/sql' },
+    { title: 'Javascript', color: '#007bff', logo: '/js.svg', url: '/methods-explorer' },
     
   ];
 
@@ -291,6 +292,7 @@ export default async function Home({slides}) {
   return (
     
     <div className={styles.mainPageContainer}>
+      <br></br>
       <br></br>
       <br></br>
       <br></br>

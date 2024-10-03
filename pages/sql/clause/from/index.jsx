@@ -207,7 +207,7 @@ export default function FromPage({ tocItemsData, keyWords }) {
 }
 
 export async function getStaticProps() {
-  const { tocItems, keyWords } = await import('./from');
+  const { tocItems, keyWords } = await import('../../../api/sql/_fromData');
 
   const serializableTocItems = tocItems.map(item => ({
     ...item,
@@ -231,3 +231,5 @@ export async function getStaticProps() {
     },
   };
 }
+
+

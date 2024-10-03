@@ -255,7 +255,7 @@ export default function SelectPage({ tocItemsData }) {
 }
 
 export async function getStaticProps() {
-  const { select } = await import('./select');
+  const { select } = await import('../../../api/sql/_selectData');
 
   const tocItems = [
     {
