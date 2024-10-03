@@ -1,0 +1,348 @@
+/* .widget {
+    max-width: 100%;
+    margin: 2rem auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+  }
+  
+  .header {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .title {
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .contentWrapper {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .codeWrapper {
+    flex: 1;
+    border-right: 1px solid #e2e8f0;
+  }
+  
+  .fullWidth {
+    width: 100%;
+    border-right: none;
+  }
+  
+  .codeHeader {
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: flex-end;
+    background: none;
+    border-bottom: 1px solid #e2e8f0;
+
+  }
+  
+  .copyButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #4a5568;
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  
+  .copyButton:hover {
+    background-color: #edf2f7;
+    border-color: #cbd5e0;
+  }
+  
+  .icon {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+  
+  .codeContainer {
+    overflow-x: auto;
+  }
+  
+  .codeContainer pre {
+    white-space: pre !important;
+    margin: 0 !important;
+  }
+  
+  .explanation {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+  
+  .explanationTitle {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .contentWrapper {
+      flex-direction: column;
+    }
+  
+    .codeWrapper {
+      border-right: none;
+      border-bottom: 1px solid #e2e8f0;
+    }
+  }
+
+
+  .tableWrapper {
+    margin-top: 1rem;
+    overflow-x: auto;
+    background-color: white;
+    margin-top: 20px;
+  }
+  
+  .sqlTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+  }
+  
+  .sqlTable th, .sqlTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .sqlTable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .sqlTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .sqlTable tr:hover {
+    background-color: #f5f5f5;
+  } */
+
+
+  .widget {
+    max-width: 100%;
+    margin: 2rem auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    font-weight: 700;
+  }
+  
+  .header {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .title {
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .contentWrapper {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .codeWrapper {
+    flex: 1;
+    border-right: 1px solid #e2e8f0;
+  }
+  
+  .fullWidth {
+    width: 100%;
+    border-right: none;
+  }
+  
+  .codeHeader {
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: flex-end;
+    background: none;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .copyButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #4a5568;
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  
+  .copyButton:hover {
+    background-color: #edf2f7;
+    border-color: #cbd5e0;
+  }
+  
+  .icon {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+  
+  .codeContainer {
+    overflow-x: auto;
+    background-color:black;
+  }
+  
+  .codeContainer pre {
+    white-space: pre !important;
+    margin: 0 !important;
+  }
+  
+  .explanation {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    font-weight: 400;
+  }
+  
+  .explanationTitle {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tableSection {
+    border-top: 1px solid #e2e8f0;
+  }
+  
+  .tableToggle {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: #4a5568;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .tableToggle span {
+    margin-left: 0.5rem;
+  }
+  
+  .tableWrapper {
+    margin-top: 1rem;
+    overflow-x: auto;
+    background-color: white;
+    padding: 0 1rem 1rem;
+  }
+  
+  .sqlTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .sqlTable th, .sqlTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .sqlTable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .sqlTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .sqlTable tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  @media (max-width: 768px) {
+    .contentWrapper {
+      flex-direction: column;
+    }
+  
+    .codeWrapper {
+      border-right: none;
+      border-bottom: 1px solid #e2e8f0;
+    }
+  }
+
+  .tableName{
+    margin: auto;
+    margin-left: 100px;
+  }
+
+
+  .tabContainer {
+    display: flex;
+    overflow-x: auto;
+    /* background-color: #e6f2ff; */
+    border-radius: 8px 8px 0 0;
+    padding: 10px 10px 0;
+    border-bottom: solid gray 0.5px;
+   
+  }
+  
+  .tabButton {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px 8px 0 0;
+    background-color: #4a90e2;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+    transition: all 0.3s ease;
+    margin-right: 5px;
+    min-width: 150px;
+    height: 40px;
+    margin-bottom: 3px;
+  }
+  
+  .tabButton:hover {
+    background-color: #3a7bd5;
+  }
+  
+  /* .tabButton.activeTab {
+    background-color:#1e5799;
+  } */
+  
+  .tabButton.activeTab {
+    background-color: #1e5799;
+    transform: translateY(-3px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+
+  .tabButton:focus {
+    outline: none;
+    /* box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5); */
+  }
+  
+  @media (max-width: 600px) {
+    .tabButton {
+      padding: 10px 15px;
+      font-size: 0.9rem;
+    }
+  }

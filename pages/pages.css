@@ -270,3 +270,22 @@ body {
     transform: translateY(-5px);
   }
 }
+
+/* Single class for all code styling */
+.code {
+  background-color: #f4f4f4; /* Light grey background */
+  border: 1px solid #ccc; /* Light grey border */
+  border-radius: 4px; /* Rounded corners */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font */
+  padding: 8px; /* Uniform padding */
+  display: inline-block; /* Suitable for both inline and block */
+  white-space: pre-wrap; /* Maintains formatting for block */
+  overflow-x: auto; /* Scrollbar if needed */
+}
+/* Single class for simple inline code styling */
+.inline-code {
+  background-color: #f4f4f4; /* Light grey background */
+  border-radius: 3px; /* Slightly rounded corners */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font */
+  padding: 2px 4px; /* Small padding around the text */
+}

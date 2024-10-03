@@ -58,3 +58,23 @@ html, body {
 }
 
 
+a {
+  color: #3498db;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom-color 0.3s ease;
+  font-weight: bold;
+}
+
+a:hover {
+  border-bottom-color: #3498db;
+}
+
+a:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.3);
+}
+
+a:active {
+  color: #2980b9;
+}

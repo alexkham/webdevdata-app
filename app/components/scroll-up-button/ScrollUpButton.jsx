@@ -43,7 +43,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 
-const ScrollUpButton = () => {
+const ScrollUpButton = ({right='20px'}) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const scrollToTop = () => {
@@ -79,7 +79,7 @@ const ScrollUpButton = () => {
           style={{
             position: 'fixed',
             bottom: '20px',
-            right: '20px',
+            right: `${right}`,
             zIndex: 1000,
             backgroundColor: '#4d4dff', // Adjust color as needed
             width: '50px',

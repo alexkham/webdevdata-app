@@ -85,6 +85,12 @@ import {
   });
 
 
+  export const poppins400 = Poppins({
+    weight: '400',
+    style: 'normal',
+    subsets: ['latin'],
+  });
+
   export const lora700 = Lora({
     weight: ['700'],
     style: ['normal'],

@@ -7,7 +7,7 @@ import 'katex/dist/katex.min.css';  // Ensure styles are applied
 
 const MarkdownComponent = ({ article }) => {
   return (
-    <div style={{maxWidth:'700px'}}>
+    <div style={{maxWidth:'1200px'}}>
     <ReactMarkdown
       remarkPlugins={[remarkMath, remarkGfm]}
       rehypePlugins={[rehypeKatex]}

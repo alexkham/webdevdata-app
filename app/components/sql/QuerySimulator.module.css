@@ -1,0 +1,500 @@
+/* .container {
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .layout {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .tablesSection {
+    flex: 0 0 40%;
+  }
+  
+  .tabContainer {
+    display: flex;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tab {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+  
+  .activeTab {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  .tableDisplay {
+    border: 1px solid #bfbfbf;
+    border-radius: 0.375rem;
+    padding: 0.5rem;
+  }
+  
+  .tableTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tableWrapper {
+    overflow-x: auto;
+    max-height: 300px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .th, .td {
+    border: 1px solid #cccccc;
+    padding: 0.25rem 0.5rem;
+    text-align: left;
+    font-size: 0.875rem;
+    height: 30px;
+  }
+  
+  .th {
+    background-color: #f8fafc;
+  }
+  
+  .evenRow {
+    background-color: #f8fafc;
+  }
+  
+  .queryBuilder {
+    flex: 1;
+  }
+  
+  .clause {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .clauseTitle {
+    font-weight: 600;
+    margin-right: 0.5rem;
+    min-width: 80px;
+  }
+  
+  .selectPreview {
+    flex: 1;
+    padding: 0.25rem 0.5rem;
+    background-color: #f1f5f9;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .toggleButton {
+    margin-left: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background-color: #e2e8f0;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+  
+  .selectOptions {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.25rem;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .checkboxGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .label {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkbox {
+    margin-right: 0.25rem;
+  }
+  
+  .columnName {
+    font-family: monospace;
+    font-size: 0.875rem;
+  }
+  
+  .select, .input {
+    flex: 1;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #bfbfbf;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    height: 30px;
+  }
+  
+  .buttonGroup {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .executeButton, .resetButton {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+  
+  .executeButton {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  .resetButton {
+    background-color: #e2e8f0;
+    color: #1f2937;
+  }
+  
+  .executeButton:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+  }
+  
+  .errorContainer {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: #fee2e2;
+    border: 1px solid #fecaca;
+    border-radius: 0.25rem;
+  }
+  
+  .errorList {
+    list-style-type: disc;
+    padding-left: 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .queryResult {
+    margin-top: 1rem;
+    width: 40%;
+  }
+  
+  .resultTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .highlightedColumn {
+    background-color: #ccffcc;
+  } */
+
+  .container {
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f8fafc;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2d3748;
+  }
+  
+  .layout {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .tablesSection {
+    flex: 0 0 40%;
+  }
+  
+  .tabContainer {
+    display: flex;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tab {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #e2e8f0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .tab:hover {
+    background-color: #cbd5e0;
+  }
+  
+  .activeTab {
+    background-color: #4299e1;
+    color: white;
+  }
+  
+  .tableDisplay, .queryResult {
+    border: 1px solid #cbd5e0;
+    border-radius: 0.375rem;
+    padding: 0.5rem;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .tableTitle, .resultTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #2d3748;
+  }
+  
+  .tableWrapper {
+    overflow-x: auto;
+    max-height: 300px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  
+  .th, .td {
+    border: 1px solid #e2e8f0;
+    padding: 0.5rem;
+    text-align: left;
+    font-size: 0.875rem;
+  }
+  
+  .th {
+    background-color: #edf2f7;
+    font-weight: 600;
+    color: #4a5568;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .table tr:nth-child(even) {
+    background-color: #f7fafc;
+  }
+  
+  .table tr:hover {
+    background-color: #ebf8ff;
+  }
+  
+  .queryBuilder {
+    flex: 1;
+  }
+  
+  .clause {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+  
+  .clauseTitle {
+    font-weight: 600;
+    margin-right: 0.75rem;
+    min-width: 80px;
+    color: #4a5568;
+  }
+  
+  .selectPreview {
+    flex: 1;
+    padding: 0.375rem 0.75rem;
+    background-color: #edf2f7;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .toggleButton {
+    margin-left: 0.5rem;
+    padding: 0.375rem 0.75rem;
+    background-color: #edf2f7;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .toggleButton:hover {
+    background-color: #e2e8f0;
+  }
+  
+  .selectOptions {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.25rem;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: white;
+  }
+  
+  .checkboxGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .checkbox {
+    margin-right: 0.375rem;
+  }
+  
+  .columnName {
+    font-family: monospace;
+    font-size: 0.875rem;
+    color: #4a5568;
+  }
+  
+  .select, .input {
+    flex: 1;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    transition: border-color 0.3s;
+    height: 30px;
+  }
+  
+  .select:focus, .input:focus {
+    outline: none;
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+  }
+  
+  .buttonGroup {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+  
+  .executeButton, .resetButton {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: background-color 0.3s;
+  }
+  
+  .executeButton {
+    background-color: #4299e1;
+    color: white;
+  }
+  
+  .executeButton:hover {
+    background-color: #3182ce;
+  }
+  
+  .executeButton:disabled {
+    background-color: #a0aec0;
+    cursor: not-allowed;
+  }
+  
+  .resetButton {
+    background-color: #edf2f7;
+    color: #4a5568;
+  }
+  
+  .resetButton:hover {
+    background-color: #e2e8f0;
+  }
+  
+  .errorContainer {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: #fed7d7;
+    border: 1px solid #feb2b2;
+    border-radius: 0.25rem;
+    color: #c53030;
+  }
+  
+  .errorList {
+    list-style-type: disc;
+    padding-left: 1.25rem;
+    font-size: 0.875rem;
+  }
+  
+  .queryResult {
+    margin-top: 1rem;
+    display: inline-block;
+    max-width: 100%;
+  }
+  
+  .highlightedColumn {
+    background-color: #c6f6d5;
+    border:solid white 1px
+    
+  }
+  
+  .queryResult .table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: auto;
+    min-width: 100%;
+  }
+  
+  .queryResult .th,
+  .queryResult .td {
+    border: 1px solid #e2e8f0;
+    padding: 0.5rem;
+    text-align: left;
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+  
+  .queryResult .th {
+    background-color: #edf2f7;
+    font-weight: 600;
+    color: #4a5568;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .queryResult .table tr:nth-child(even) {
+    background-color: #f7fafc;
+  }
+  
+  .queryResult .table tr:hover {
+    background-color: #ebf8ff;
+  }

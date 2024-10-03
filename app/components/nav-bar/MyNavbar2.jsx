@@ -156,6 +156,11 @@ function MyNavbar2() {
         <ul className={`navbar-menu ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
           <li className='navbar-item'><Link href="/" onClick={closeMobileMenu}>Home</Link></li>
           <li className='navbar-item'><Link href="/methods-explorer" onClick={closeMobileMenu}>Javascript Methods</Link></li>
+          <li className='navbar-item'>
+          <Link  href={'/sql'}>
+            <span className='navbar-item'>SQL</span>
+            </Link>
+          </li>
           <li className="megamenu-item" 
               onMouseEnter={() => handleMouseEnter('python')} 
               onMouseLeave={handleMouseLeave}>
@@ -197,9 +202,11 @@ function MyNavbar2() {
               </div>
             </div>
           </li>
+         
           <li className="megamenu-item"
               onMouseEnter={() => handleMouseEnter('tools')}
               onMouseLeave={handleMouseLeave}>
+                
             <Link  href={'/tools'}>
             <span className='navbar-item'>Tools</span>
             </Link>

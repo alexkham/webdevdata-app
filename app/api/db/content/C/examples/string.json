@@ -139,6 +139,7 @@
     "code": "/* Code to count occurrences of a substring in a string */\nint count_occurrences(char* str, char* sub) {\n    int count = 0;\n    char* tmp = str;\n    while ((tmp = strstr(tmp, sub)) != NULL) {\n        count++;\n        tmp += strlen(sub); /* Move past the current occurrence */\n    }\n    return count;\n}",
     "mermaid": "flowchart TD\n    A[Start] --> B{Find substring}\n    B -- Found --> C[Increment count]\n    C --> D[Move past occurrence]\n    D --> B\n    B -- Not found --> E[Return count]\n    E --> F[End]",
     "explanation": "This function counts the number of times a substring appears within a larger string using the strstr function.",
+    
     "related_functions": [
       {
         "name": "strstr",
