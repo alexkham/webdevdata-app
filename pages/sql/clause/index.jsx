@@ -232,7 +232,7 @@ import { renderContent } from '@/utils/renderContent';
 import '../../pages.css';
 import '../../../app/globals.css';
 
-export default function SQLClausePage({ tocItemsData }) {
+export default function SQLClausePage({ tocItemsData ,keyWords }) {
   const tocItems = tocItemsData.map(item => ({
     ...item,
     content: renderContent(item.content)
@@ -243,7 +243,7 @@ export default function SQLClausePage({ tocItemsData }) {
       <Head>
         <title>SQL Clauses - Comprehensive Guide</title>
         <meta name="description" content="Explore SQL clauses: SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY, and LIMIT. Learn their uses and interactions in database queries." />
-        <meta name="keywords" content="SQL, database, clauses, SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY, LIMIT" />
+        <meta name="keywords" content={keyWords.join(', ')} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="SQL Clauses - Comprehensive Guide" />
         <meta property="og:description" content="Explore SQL clauses: SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY, and LIMIT. Learn their uses and interactions in database queries." />
@@ -268,7 +268,7 @@ export default function SQLClausePage({ tocItemsData }) {
 }
 
 export async function getStaticProps() {
-  const { clauses } = await import('../../api/sql/_clausesData');
+  const { clauses ,keyWords } = await import('../../api/sql/_clausesData');
 
   const tocItems = [
     {
@@ -435,6 +435,7 @@ This internal execution order ensures that the database processes the query effi
   return {
     props: {
       tocItemsData: tocItems,
+      keyWords
     },
   };
 }

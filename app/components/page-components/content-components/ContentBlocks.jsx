@@ -3265,7 +3265,7 @@ import React, { useEffect, useRef } from 'react';
 import { InlineMath, BlockMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 import styles from './ContentBlocks.module.css';
-import { lora700, poppins500 } from '@/utils/fonts';
+import { lora700, poppins400 } from '@/utils/fonts';
 import ReactMarkdown from 'react-markdown';
 import remarkMath from 'remark-math';
 import remarkGfm from 'remark-gfm';
@@ -3482,6 +3482,7 @@ const ContentBlocks = ({ tocItems }) => {
             )}
             <br />
             <br />
+            <br />
             <div className={styles.titleContainer}>
             <h2 className={`${styles.blockTitle} ${lora700.className}`}>
               {renderMathContent(item.title)}
@@ -3492,7 +3493,7 @@ const ContentBlocks = ({ tocItems }) => {
             <button className={styles.backButton} onClick={navigateBack}>Go Back</button>
             </div>
             {processedContent && (
-              <div className={`${styles.blockContent} ${poppins500.className}`}>
+              <div className={`${styles.blockContent} ${poppins400.className}`}>
                 {processedContent}
               </div>
             )}

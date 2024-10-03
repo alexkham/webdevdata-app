@@ -389,7 +389,7 @@ export default function SQLPage({ tocItemsData, sql }) {
       <br />
       <br />
       <br />
-      <ScrollUpButton />
+      <ScrollUpButton right='150px' />
     </>
   );
 }

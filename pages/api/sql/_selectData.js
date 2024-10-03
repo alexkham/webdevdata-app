@@ -13,12 +13,12 @@ export const select=[
         },
         {
           title: "Single Column Selection with Join",
-          code: `SELECT tableA.column_name FROM tableA JOIN tableB ON tableA.commonColumn = tableB.commonColumn;`,
+          code: `SELECT tableA.column_name FROM tableA JOIN tableB \nON tableA.commonColumn = tableB.commonColumn;`,
           explanation: "This query showcases how to select a single column from one table while joining it with another table based on a common column."
         },
         {
           title: "Employee Department ID with Join",
-          code: `SELECT Employees.departmentID FROM Employees JOIN Departments ON Employees.deptID = Departments.deptID;`,
+          code: `SELECT Employees.departmentID FROM Employees JOIN Departments\n ON Employees.deptID = Departments.deptID;`,
           explanation: "This query retrieves the departmentID from the Employees table while joining it with the Departments table, demonstrating a practical join operation."
         },
         {
@@ -132,6 +132,8 @@ export const select=[
             "explanation": "This example query counts the number of employees in each department. It groups the rows in the Employees table by the department column, then uses the COUNT(*) function to count the number of rows (employees) in each group. The result provides a summary of how many employees are in each department."
           }
       ]
+
+      export const keyWords = ["sql language", "sql programming", "sql query", "learn sql", "sql select"];
 
 
 

@@ -11,7 +11,7 @@
         "type": "Number"
       }
     ],
-    "docstring": "Return the absolute value of a number.",
+    "docstring": "Returns the absolute value of a number.",
     "decorators": [],
     "main_category": "Mathematical Operations",
     "sub_category": "Numeric",
@@ -67,7 +67,7 @@
         "type": "AsyncIterable"
       }
     ],
-    "docstring": "Return an AsyncIterator for an AsyncIterable object.",
+    "docstring": "Returns an AsyncIterator for an AsyncIterable object.",
     "decorators": [],
     "main_category": "Iteration",
     "sub_category": "Asynchronous",
@@ -117,7 +117,7 @@
         "type": "Iterable"
       }
     ],
-    "docstring": "Return True if all elements of the iterable are true (or if the iterable is empty).",
+    "docstring": "Returns True if all elements of the iterable are true (or if the iterable is empty).",
     "decorators": [],
     "main_category": "Iteration",
     "sub_category": "Evaluation",
@@ -184,7 +184,7 @@
         "default": "None"
       }
     ],
-    "docstring": "Return the next item from an async iterator.",
+    "docstring": "Returns the next item from an async iterator.",
     "decorators": [],
     "main_category": "Iteration",
     "sub_category": "Asynchronous",
@@ -238,7 +238,7 @@
         "type": "Iterable"
       }
     ],
-    "docstring": "Return True if any element of the iterable is true. If the iterable is empty, return False.",
+    "docstring": "Returns True if any element of the iterable is true. If the iterable is empty, return False.",
     "decorators": [],
     "main_category": "Iteration",
     "sub_category": "Evaluation",
@@ -300,7 +300,7 @@
         "type": "Any"
       }
     ],
-    "docstring": "Return a string containing a printable representation of an object, escaping non-ASCII characters.",
+    "docstring": "Returns a string containing a printable representation of an object, escaping non-ASCII characters.",
     "decorators": [],
     "main_category": "String Operations",
     "sub_category": "Representation",
@@ -357,7 +357,7 @@
         "type": "int"
       }
     ],
-    "docstring": "Return the binary representation of an integer.",
+    "docstring": "Returns the binary representation of an integer.",
     "decorators": [],
     "main_category": "Number Operations",
     "sub_category": "Representation",
@@ -420,7 +420,7 @@
         "default": "False"
       }
     ],
-    "docstring": "Return a Boolean value, i.e. one of True or False.",
+    "docstring": "Returns a Boolean value, i.e. one of True or False.",
     "decorators": [],
     "main_category": "Type Conversion",
     "sub_category": "Boolean",
@@ -540,7 +540,7 @@
         "default": "None"
       }
     ],
-    "docstring": "Return a new array of bytes. The bytearray type is a mutable sequence of integers in the range 0 <= x < 256.",
+    "docstring": "Returns a new array of bytes. The bytearray type is a mutable sequence of integers in the range 0 <= x < 256.",
     "decorators": [],
     "main_category": "Data Types",
     "sub_category": "Byte Sequences",
@@ -617,7 +617,7 @@
         "default": "None"
       }
     ],
-    "docstring": "Return a new 'bytes' object, which is an immutable sequence of integers in the range 0 <= x < 256.",
+    "docstring": "Returns a new 'bytes' object, which is an immutable sequence of integers in the range 0 <= x < 256.",
     "decorators": [],
     "main_category": "Data Types",
     "sub_category": "Byte Sequences",
@@ -683,7 +683,7 @@
         "type": "Any"
       }
     ],
-    "docstring": "Return True if the object argument appears callable, False if not.",
+    "docstring": "Returns True if the object argument appears callable, False if not.",
     "decorators": [],
     "main_category": "Function Operations",
     "sub_category": "Introspection",
@@ -740,7 +740,7 @@
         "type": "int"
       }
     ],
-    "docstring": "Return a string of one character whose Unicode code point is the integer i.",
+    "docstring": "Returns a string of one character whose Unicode code point is the integer i.",
     "decorators": [],
     "main_category": "String Operations",
     "sub_category": "Character Conversion",
@@ -804,7 +804,7 @@
         "type": "Callable"
       }
     ],
-    "docstring": "Transform a method into a class method.",
+    "docstring": "Transforms a method into a class method.",
     "decorators": [],
     "main_category": "Class Operations",
     "sub_category": "Method Transformation",
@@ -884,7 +884,7 @@
         "default": "-1"
       }
     ],
-    "docstring": "Compile the source into a code or AST object.",
+    "docstring": "Compiles the source into a code or AST object.",
     "decorators": [],
     "main_category": "Code Operations",
     "sub_category": "Compilation",
@@ -960,7 +960,7 @@
         "default": "0"
       }
     ],
-    "docstring": "Create a complex number with the value real + imag*1j or convert a string or number to a complex number.",
+    "docstring": "Creates a complex number with the value real + imag*1j or convert a string or number to a complex number.",
     "decorators": [],
     "main_category": "Number Operations",
     "sub_category": "Complex Numbers",
@@ -1094,7 +1094,7 @@
         "type": "Any"
       }
     ],
-    "docstring": "Create a new dictionary.",
+    "docstring": "Creates a new dictionary.",
     "decorators": [],
     "main_category": "Data Structures",
     "sub_category": "Mapping",
@@ -1164,7 +1164,7 @@
         "type": "Number"
       }
     ],
-    "docstring": "Return a tuple of the quotient and remainder when dividing a by b.",
+    "docstring": "Returns a tuple of the quotient and remainder when dividing a by b.",
     "decorators": [],
     "main_category": "Mathematical Operations",
     "sub_category": "Arithmetic",
@@ -1235,7 +1235,7 @@
         "default": "0"
       }
     ],
-    "docstring": "Return an enumerate object.",
+    "docstring": "Returns an enumerate object.",
     "decorators": [],
     "main_category": "Iteration",
     "sub_category": "Enumeration",
@@ -1307,7 +1307,7 @@
         "default": "None"
       }
     ],
-    "docstring": "Evaluate a Python expression as a string and return the result.",
+    "docstring": "Evaluates a Python expression as a string and return the result.",
     "decorators": [],
     "main_category": "Code Execution",
     "sub_category": "Expression Evaluation",
@@ -1393,7 +1393,7 @@
         "default": "None"
       }
     ],
-    "docstring": "Execute Python code dynamically.",
+    "docstring": "Executes Python code dynamically.",
     "decorators": [],
     "main_category": "Code Execution",
     "sub_category": "Dynamic Execution",
@@ -1473,7 +1473,7 @@
         "type": "Iterable"
       }
     ],
-    "docstring": "Construct an iterator from elements of iterable for which function returns True.",
+    "docstring": "Constructs an iterator from elements of iterable for which function returns True.",
     "decorators": [],
     "main_category": "Iteration",
     "sub_category": "Filtering",
@@ -1542,7 +1542,7 @@
         "default": "0.0"
       }
     ],
-    "docstring": "Convert a string or number to a floating point number.",
+    "docstring": "Converts a string or number to a floating point number.",
     "decorators": [],
     "main_category": "Type Conversion",
     "sub_category": "Numeric",
@@ -1619,7 +1619,7 @@
         "default": "''"
       }
     ],
-    "docstring": "Return value.__format__(format_spec).",
+    "docstring": "Returns value.__format__(format_spec).",
     "decorators": [],
     "main_category": "String Formatting",
     "sub_category": "Value Formatting",
@@ -1688,7 +1688,7 @@
         "default": "None"
       }
     ],
-    "docstring": "Return an immutable set object initialized from iterable.",
+    "docstring": "Returns an immutable set object initialized from iterable.",
     "decorators": [],
     "main_category": "Data Structures",
     "sub_category": "Set",
@@ -1765,7 +1765,7 @@
         "default": "None"
       }
     ],
-    "docstring": "Get a named attribute from an object; getattr(x, 'y') is equivalent to x.y.",
+    "docstring": "Gets a named attribute from an object; getattr(x, 'y') is equivalent to x.y.",
     "decorators": [],
     "main_category": "Object Manipulation",
     "sub_category": "Attribute Operations",
@@ -1828,7 +1828,7 @@
     "class_name": null,
     "return_type": "dict",
     "parameters": [],
-    "docstring": "Return the dictionary containing the current scope's global variables.",
+    "docstring": "Returns the dictionary containing the current scope's global variables.",
     "decorators": [],
     "main_category": "Introspection",
     "sub_category": "Namespace",
@@ -1876,7 +1876,7 @@
         "type": "str"
       }
     ],
-    "docstring": "Return whether the object has an attribute with the given name.",
+    "docstring": "Returns whether the object has an attribute with the given name.",
     "decorators": [],
     "main_category": "Object Manipulation",
     "sub_category": "Attribute Operations",
@@ -1920,7 +1920,7 @@
         "type": "Any"
       }
     ],
-    "docstring": "Return the hash value of the object (if it has one).",
+    "docstring": "Returns the hash value of the object (if it has one).",
     "decorators": [],
     "main_category": "Object Operations",
     "sub_category": "Hashing",
@@ -1964,7 +1964,7 @@
         "type": "Optional[Any]"
       }
     ],
-    "docstring": "Invoke the built-in help system.",
+    "docstring": "Invokes the built-in help system.",
     "decorators": [],
     "main_category": "Introspection",
     "sub_category": "Documentation",
@@ -2021,7 +2021,7 @@
         "type": "int"
       }
     ],
-    "docstring": "Return the hexadecimal representation of an integer.",
+    "docstring": "Returns the hexadecimal representation of an integer.",
     "decorators": [],
     "main_category": "Type Conversion",
     "sub_category": "Numeric",
@@ -2078,7 +2078,7 @@
         "type": "Any"
       }
     ],
-    "docstring": "Return the identity of an object.",
+    "docstring": "Returns the identity of an object.",
     "decorators": [],
     "main_category": "Object Operations",
     "sub_category": "Identity",
@@ -2135,7 +2135,7 @@
         "type": "Optional[str]"
       }
     ],
-    "docstring": "Read a string from standard input.",
+    "docstring": "Reads a string from standard input.",
     "decorators": [],
     "main_category": "Input/Output",
     "sub_category": "User Input",
@@ -2194,7 +2194,7 @@
         "type": "Optional[int]"
       }
     ],
-    "docstring": "Convert a number or string to an integer, or return 0 if no arguments are given.",
+    "docstring": "Converts a number or string to an integer, or return 0 if no arguments are given.",
     "decorators": [],
     "main_category": "Type Conversion",
     "sub_category": "Numeric",
@@ -2255,7 +2255,7 @@
         "type": "Union[type, Tuple[type, ...]]"
       }
     ],
-    "docstring": "Return whether an object is an instance of a class or of a subclass thereof.",
+    "docstring": "Returns whether an object is an instance of a class or of a subclass thereof.",
     "decorators": [],
     "main_category": "Type Checking",
     "sub_category": "Instance Checking",
@@ -2315,7 +2315,7 @@
         "type": "Union[type, Tuple[type, ...]]"
       }
     ],
-    "docstring": "Return whether 'class' is a derived from another class or is the same class.",
+    "docstring": "Returns whether 'class' is a derived from another class or is the same class.",
     "decorators": [],
     "main_category": "Type Checking",
     "sub_category": "Class Relationship",
@@ -2374,7 +2374,7 @@
         "type": "Optional[Any]"
       }
     ],
-    "docstring": "Return an iterator object.",
+    "docstring": "Returns an iterator object.",
     "decorators": [],
     "main_category": "Iteration",
     "sub_category": "Iterator Creation",
@@ -2430,7 +2430,7 @@
         "type": "Sized"
       }
     ],
-    "docstring": "Return the length (the number of items) of an object.",
+    "docstring": "Returns the length (the number of items) of an object.",
     "decorators": [],
     "main_category": "Object Operations",
     "sub_category": "Size",
@@ -2535,7 +2535,7 @@
     "class_name": null,
     "return_type": "dict",
     "parameters": [],
-    "docstring": "Return a dictionary containing the current scope's local variables.",
+    "docstring": "Returns a dictionary containing the current scope's local variables.",
     "decorators": [],
     "main_category": "Introspection",
     "sub_category": "Namespace",
@@ -2597,7 +2597,7 @@
         "type": "Iterable"
       }
     ],
-    "docstring": "Apply function to every item of iterable and return an iterator of the results.",
+    "docstring": "Applies function to every item of iterable and return an iterator of the results.",
     "decorators": [],
     "main_category": "Iteration",
     "sub_category": "Mapping",
@@ -2661,7 +2661,7 @@
         "type": "Optional[Any]"
       }
     ],
-    "docstring": "Return the largest item in an iterable or the largest of two or more arguments.",
+    "docstring": "Returns the largest item in an iterable or the largest of two or more arguments.",
     "decorators": [],
     "main_category": "Mathematical Operations",
     "sub_category": "Comparison",
@@ -2721,7 +2721,7 @@
         "type": "Union[bytes, bytearray, array.array]"
       }
     ],
-    "docstring": "Create a memory view object from a bytes-like object.",
+    "docstring": "Creates a memory view object from a bytes-like object.",
     "decorators": [],
     "main_category": "Memory Management",
     "sub_category": "Memory View",
@@ -2785,7 +2785,7 @@
         "type": "Optional[Any]"
       }
     ],
-    "docstring": "Return the smallest item in an iterable or the smallest of two or more arguments.",
+    "docstring": "Returns the smallest item in an iterable or the smallest of two or more arguments.",
     "decorators": [],
     "main_category": "Mathematical Operations",
     "sub_category": "Comparison",
@@ -2849,7 +2849,7 @@
         "type": "Optional[Any]"
       }
     ],
-    "docstring": "Retrieve the next item from the iterator.",
+    "docstring": "Retrieves the next item from the iterator.",
     "decorators": [],
     "main_category": "Iteration",
     "sub_category": "Iterator Operations",
@@ -2955,7 +2955,7 @@
         "type": "int"
       }
     ],
-    "docstring": "Return the octal representation of an integer.",
+    "docstring": "Returns the octal representation of an integer.",
     "decorators": [],
     "main_category": "Type Conversion",
     "sub_category": "Numeric",
@@ -3038,7 +3038,7 @@
         "type": "Optional[Callable]"
       }
     ],
-    "docstring": "Open file and return a corresponding file object.",
+    "docstring": "Opens file and return a corresponding file object.",
     "decorators": [],
     "main_category": "File I/O",
     "sub_category": "File Operations",
@@ -3095,7 +3095,7 @@
         "type": "str"
       }
     ],
-    "docstring": "Return the Unicode code point for a one-character string.",
+    "docstring": "Returns the Unicode code point for a one-character string.",
     "decorators": [],
     "main_category": "String Operations",
     "sub_category": "Character Conversion",
@@ -3157,7 +3157,7 @@
         "type": "Optional[int]"
       }
     ],
-    "docstring": "Return base to the power exp; if mod is present, return base to the power exp, modulo mod.",
+    "docstring": "Returns base to the power exp; if mod is present, return base to the power exp, modulo mod.",
     "decorators": [],
     "main_category": "Mathematical Operations",
     "sub_category": "Exponentiation",
@@ -3228,7 +3228,7 @@
         "type": "bool"
       }
     ],
-    "docstring": "Print objects to the text stream file, separated by sep and followed by end.",
+    "docstring": "Prints objects to the text stream file, separated by sep and followed by end.",
     "decorators": [],
     "main_category": "Input/Output",
     "sub_category": "Console Output",

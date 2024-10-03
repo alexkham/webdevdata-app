@@ -35,3 +35,6 @@ export const  clauses = [
       explanation: "This final example uses LIMIT to restrict the output to only the first 10 rows of the result set."
     }
   ];
+
+  export const keyWords = ["sql language", "sql programming", "sql query", "learn sql", "sql select","sql from"];
+

@@ -219,7 +219,7 @@ import { renderContent } from '@/utils/renderContent';
 import '../../../pages.css';
 import '../../../../app/globals.css';
 
-export default function SelectPage({ tocItemsData }) {
+export default function SelectPage({ tocItemsData ,keyWords}) {
   const tocItems = tocItemsData.map(item => ({
     ...item,
     content: renderContent(item.content)
@@ -230,7 +230,7 @@ export default function SelectPage({ tocItemsData }) {
       <Head>
         <title>Select SQL Clause - Learn SQL</title>
         <meta name="description" content="Master the SELECT clause in SQL with comprehensive examples and explanations." />
-        <meta name="keywords" content="SQL, SELECT clause, database queries, SQL tutorial" />
+        <meta name="keywords" content={keyWords.join(', ')} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="Select SQL Clause - Learn SQL" />
         <meta property="og:description" content="Master the SELECT clause in SQL with comprehensive examples and explanations." />
@@ -255,7 +255,7 @@ export default function SelectPage({ tocItemsData }) {
 }
 
 export async function getStaticProps() {
-  const { select } = await import('../../../api/sql/_selectData');
+  const { select ,keyWords } = await import('../../../api/sql/_selectData');
 
   const tocItems = [
     {
@@ -376,6 +376,7 @@ export async function getStaticProps() {
   return {
     props: {
       tocItemsData: tocItems,
+      keyWords
     },
   };
 }
