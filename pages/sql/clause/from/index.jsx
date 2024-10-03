@@ -201,7 +201,7 @@ export default function FromPage({ tocItemsData, keyWords }) {
       <h1 className='title' style={{marginTop:'-30px',marginBottom:'-30px'}}>From SQL Clause</h1>
       <TableOfContents tocItems={tocItems} showNumbers={false} />
       <ContentBlocks tocItems={tocItems} />
-      <ScrollUpButton right='150px' />
+      <ScrollUpButton  />
     </>
   );
 }

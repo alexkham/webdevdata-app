@@ -262,7 +262,7 @@ export default function SQLClausePage({ tocItemsData ,keyWords }) {
       <h1 className='title' style={{marginTop:'-40px'}}>SQL Clauses</h1>
       <TableOfContents tocItems={tocItems} showNumbers={false} />
       <ContentBlocks tocItems={tocItems} />
-      <ScrollUpButton right='150px' />
+      <ScrollUpButton  />
     </>
   );
 }

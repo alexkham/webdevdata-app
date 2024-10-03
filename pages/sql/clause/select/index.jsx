@@ -249,7 +249,7 @@ export default function SelectPage({ tocItemsData ,keyWords}) {
       <h1 className='title' style={{marginTop:'-30px',marginBottom:'-30px'}}>Select SQL Clause</h1>
       <TableOfContents tocItems={tocItems} showNumbers={false} />
       <ContentBlocks tocItems={tocItems} />
-      <ScrollUpButton right='150px' />
+      <ScrollUpButton  />
     </>
   );
 }
