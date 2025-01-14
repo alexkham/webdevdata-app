@@ -881,7 +881,7 @@ const functionsDb=[
       "sub_category": "Allocation",
       "data_type_manipulated": "memory",
       "description": "dynamicall allocates memory on the heap, initializing allocated bytes to zero.",
-      "extended_description": `...`,
+      "extended_description": `..`,
       "return_value": "Returns a pointer to the allocated memory if successful, or NULL if the memory allocation fails.",
       "parameter_values": "This function takes two parameters: nmemb (the number of elements to allocate) and size (the size of each element in bytes).",
       "function_prototype": {
