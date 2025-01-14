@@ -1,0 +1,97 @@
+.languageButtonWrapper {
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.languageButtonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.languageLink {
+  flex: 1 0 calc(50% - 10px);
+  margin: 5px;
+  min-width: calc(50% - 10px);
+  max-width: calc(50% - 10px);
+  text-decoration: none;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.languageLink:hover {
+  opacity: 0.8;
+}
+
+.languageButton {
+  width: 100%;
+  height: 100%;
+  padding: 20px 15px;
+  border: none;
+  background: none;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.languageLogo {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+/* Custom scrollbar styles */
+.languageButtonWrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.languageButtonWrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.languageButtonWrapper::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.languageButtonWrapper::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@media (max-width: 768px) {
+  .languageLink {
+    flex: 1 0 calc(50% - 10px);
+    min-width: calc(50% - 10px);
+    max-width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .languageLink {
+    flex: 1 0 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+  
+  .languageButton {
+    font-size: 18px;
+  }
+  
+  .languageLogo {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* Styles for when there is no logo */
+.languageButton.noLogo {
+  justify-content: center;
+}

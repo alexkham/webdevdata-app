@@ -1,0 +1,80 @@
+.main-page-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  justify-content: center;
+  width: 100%;
+  padding-top: 100px;
+}
+.language-js{
+  margin-left: 30px;
+}
+.syntax{
+  margin-top: 10px;
+  background-color: yellow;
+}
+
+.urgent{
+  background-color: red;
+  color: red;
+}
+
+
+.my-carousel{
+  width: 50%;
+  margin-left: 70px;
+
+}
+.carousel-container{
+  display: flex;
+  flex-direction: row;
+  /* background-color: red; */
+  justify-content: center;
+  
+}
+
+@media (max-width: 768px) {
+  .scroll-up-button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+.scroll-up-button:hover {
+  background-color: #357ae8;
+  transform: scale(1.1);
+}
+
+.scroll-up-button:active {
+  transform: scale(0.95);
+}
+
+html, body {
+  height: 100%; /* Ensures that the html and body elements take up the full viewport height */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+}
+
+
+a {
+  color: #3498db;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom-color 0.3s ease;
+  font-weight: bold;
+}
+
+a:hover {
+  border-bottom-color: #3498db;
+}
+
+a:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.3);
+}
+
+a:active {
+  color: #2980b9;
+}

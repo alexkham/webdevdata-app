@@ -1,0 +1,31 @@
+/* components/footer/Footer.module.css */
+.footer {
+    background-color:#f2f2f2;
+    padding: 1rem;
+    text-align: center;
+    border-top: 0.5px solid lightgray;
+    padding: 20px;
+  }
+  
+  .footer-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .footer-nav a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .footer-nav a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-copy {
+    color: #6c757d;
+  }
+  

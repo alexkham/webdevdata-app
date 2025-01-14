@@ -1,0 +1,182 @@
+.main-container .outer-container {
+    width: 100%;
+    margin-bottom: 200px;
+    margin: 20px;
+}
+
+.outer-container {
+    width: 1000px;
+}
+
+.upper-row {
+    background-color: yellow;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 1000px;
+    padding: 0px;
+    margin-left: 20px;
+    border: solid blue 1px;
+    border-radius: 5px;
+    height: 400px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.left {
+    padding-left: 50px;
+}
+
+.right {
+    margin-bottom: 50px;
+    margin-left: 0px;
+    margin-right: 50px;
+}
+
+.markdown {
+    margin-top: 50px;
+    background-color: lightgray;
+    padding: 50px;
+    margin-left: 100px;
+    border-radius: 5px;
+}
+
+.general-block {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+    border: solid blue 1px;
+    border-radius: 5px;
+    background-color: yellow;
+    padding-left: 10px;
+    max-width: 970px;
+}
+
+.code-block {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.text-block {
+    margin-top: 0px;
+    padding: 20px;
+    background-color: lightgray;
+    margin: 20px;
+    font-weight: 400;
+    margin-right: 30px;
+    text-align: center;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.info {
+    margin-top: 25px;
+    margin-left: 20px;
+    font-size: large;
+    font-weight: bold;
+    border: solid blue 1px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    color: blue;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 10px;
+    color: #555;
+    font-size: 18px;
+    position: relative;
+}
+
+.title-container h3 {
+    text-transform: capitalize;
+}
+
+.tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.info:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Mobile-friendly adjustments */
+@media screen and (max-width: 1000px) {
+    .outer-container,
+    .upper-row {
+        width: 100%;
+        max-width: 1000px;
+    }
+
+    .general-block {
+        width: 100%;
+        max-width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .markdown {
+        margin-left: 20px;
+        padding: 20px;
+    }
+
+    .text-block {
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .upper-row {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+        padding: 20px;
+        margin: 0;
+    }
+
+    .markdown {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 15px;
+    }
+
+    .text-block {
+        margin: 10px;
+    }
+}

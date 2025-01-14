@@ -1,0 +1,44 @@
+.wrap {
+    display: flex;
+    width: 100%;
+}
+
+.step {
+    background: #f2f2f2;
+    padding: 12px 35px;
+    position: relative;
+    text-align: center;
+    flex: 1;
+    font-size: 14px;
+}
+
+.step::after {
+    content: "";
+    border: 16px solid transparent;
+    border-left: 16px solid #f2f2f2;
+    position: absolute;
+    right: -32px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.step:last-child::after {
+    display: none;
+}
+
+.current {
+    background: #14a800;
+    color: white;
+}
+
+.current::after {
+    border-left-color: #14a800;
+}
+
+.step small {
+    display: block;
+    font-size: 12px;
+    margin-top: 4px;
+    opacity: 0.9;
+}

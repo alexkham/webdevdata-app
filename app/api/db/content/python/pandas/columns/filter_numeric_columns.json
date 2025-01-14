@@ -1,0 +1,106 @@
+[
+    {
+        "title": "Filter Numeric Columns Using select_dtypes",
+        "code": "numeric_cols = cars.select_dtypes(include=['number']).columns\nfiltered_df = cars[numeric_cols]",
+        "explanation": "The select_dtypes method is a straightforward and efficient way to filter columns based on their data types. This method selects all columns of numeric data types, including integers and floats.",
+        "language": "Python",
+        "category": "DataFrame Operations",
+        "sub_category": "pandas"
+    },
+    {
+        "title": "Filter Numeric Columns Using applymap and all",
+        "code": "import numpy as np\nnumeric_cols = cars.columns[cars.applymap(np.isreal).all()]\nfiltered_df = cars[numeric_cols]",
+        "explanation": "The applymap method applies a function to each element of the DataFrame. In this case, np.isreal checks if each element is a real number, and .all() ensures all elements in the column meet this condition.",
+        "language": "Python",
+        "category": "DataFrame Operations",
+        "sub_category": "pandas"
+    },
+    {
+        "title": "Filter Numeric Columns Using dtypes",
+        "code": "numeric_cols = cars.columns[cars.dtypes.apply(lambda x: np.issubdtype(x, np.number))]\nfiltered_df = cars[numeric_cols]",
+        "explanation": "Using the dtypes attribute and applying a lambda function with np.issubdtype, you can filter columns that have a numeric data type. This method checks the data type of each column and ensures it is a subtype of np.number.",
+        "language": "Python",
+        "category": "DataFrame Operations",
+        "sub_category": "pandas"
+    },
+    {
+        "title": "Filter Numeric Columns Using _get_numeric_data",
+        "code": "filtered_df = cars._get_numeric_data()",
+        "explanation": "The _get_numeric_data method returns a DataFrame containing only the columns with numeric data. This is a quick and efficient way to filter out non-numeric columns.",
+        "language": "Python",
+        "category": "DataFrame Operations",
+        "sub_category": "pandas"
+    },
+    {
+        "title": "Filter Numeric Columns Using to_numeric with errors='coerce'",
+        "code": "numeric_df = cars.apply(pd.to_numeric, errors='coerce')\nfiltered_df = numeric_df.dropna(axis=1, how='any')",
+        "explanation": "The to_numeric method converts all columns to numeric, coercing non-numeric values to NaN. Subsequently, dropna is used to remove any columns containing NaN values, effectively filtering out non-numeric columns.",
+        "language": "Python",
+        "category": "DataFrame Operations",
+        "sub_category": "pandas"
+    },
+    {
+        "title": "Filter Numeric Columns Using describe",
+        "code": "numeric_cols = cars.describe().columns\nfiltered_df = cars[numeric_cols]",
+        "explanation": "The describe method provides summary statistics for numeric columns. By retrieving the columns from the describe output, you can filter out the numeric columns.",
+        "language": "Python",
+        "category": "DataFrame Operations",
+        "sub_category": "pandas"
+    },
+    {
+        "title": "Filter Numeric Columns Using infer_objects",
+        "code": "inferred_cars = cars.infer_objects()\nnumeric_cols = inferred_cars.select_dtypes(include=['number']).columns\nfiltered_df = inferred_cars[numeric_cols]",
+        "explanation": "The infer_objects method converts object-type columns to more specific data types if possible. After inferring types, you can then use select_dtypes to filter numeric columns.",
+        "language": "Python",
+        "category": "DataFrame Operations",
+        "sub_category": "pandas"
+    },
+    {
+        "title": "Filter Numeric Columns Using is_numeric_dtype",
+        "code": "numeric_cols = [col for col in cars.columns if pd.api.types.is_numeric_dtype(cars[col])]\nfiltered_df = cars[numeric_cols]",
+        "explanation": "The is_numeric_dtype function checks if a column's data type is numeric. By using a list comprehension, you can filter out all numeric columns.",
+        "language": "Python",
+        "category": "DataFrame Operations",
+        "sub_category": "pandas"
+    },
+    {
+        "title": "Filter Numeric Columns Using map with np.issubdtype",
+        "code": "numeric_cols = cars.columns[cars.dtypes.map(lambda x: np.issubdtype(x, np.number))]\nfiltered_df = cars[numeric_cols]",
+        "explanation": "By mapping np.issubdtype over the DataFrame's dtypes, you can check if each column's data type is a subtype of np.number. This approach helps in filtering out numeric columns.",
+        "language": "Python",
+        "category": "DataFrame Operations",
+        "sub_category": "pandas"
+    },
+    {
+        "title": "Filter Numeric Columns Using filter with a Lambda Function",
+        "code": "numeric_cols = list(filter(lambda col: np.issubdtype(cars[col].dtype, np.number), cars.columns))\nfiltered_df = cars[numeric_cols]",
+        "explanation": "Using filter with a lambda function, you can check if each column's data type is a subtype of np.number, effectively filtering out numeric columns.",
+        "language": "Python",
+        "category": "DataFrame Operations",
+        "sub_category": "pandas"
+    },
+    {
+        "title": "Filter Numeric Columns Using List Comprehension with pd.to_numeric",
+        "code": "numeric_cols = [col for col in cars.columns if pd.to_numeric(cars[col], errors='coerce').notna().all()]\nfiltered_df = cars[numeric_cols]",
+        "explanation": "By converting each column to numeric and checking for non-NaN values, you can filter out numeric columns. This method ensures only columns that can be fully converted to numeric types are retained.",
+        "language": "Python",
+        "category": "DataFrame Operations",
+        "sub_category": "pandas"
+    },
+    {
+        "title": "Filter Numeric Columns Using select_dtypes with np.number",
+        "code": "filtered_df = cars.select_dtypes(include=[np.number])",
+        "explanation": "Using select_dtypes with np.number ensures that only numeric columns (both integers and floats) are selected from the DataFrame.",
+        "language": "Python",
+        "category": "DataFrame Operations",
+        "sub_category": "pandas"
+    },
+    {
+        "title": "Filter Numeric Columns Using is_float_dtype and is_integer_dtype",
+        "code": "numeric_cols = [col for col in cars.columns if pd.api.types.is_float_dtype(cars[col]) or pd.api.types.is_integer_dtype(cars[col])]\nfiltered_df = cars[numeric_cols]",
+        "explanation": "By checking if columns are either float or integer data types using is_float_dtype and is_integer_dtype, you can filter out numeric columns.",
+        "language": "Python",
+        "category": "DataFrame Operations",
+        "sub_category": "pandas"
+    }
+]

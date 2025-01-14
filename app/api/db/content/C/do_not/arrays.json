@@ -1,0 +1,58 @@
+[
+    {
+        "title": "Do Not Assume Fixed Array Bounds",
+        "code": "int arr[5];\nfor (int i = 0; i <= 5; i++) {\n    arr[i] = i;  // Writing out of bounds on the last iteration\n}",
+        "explanation": "Assuming array bounds without careful consideration can lead to writing or reading out of bounds, causing undefined behavior.",
+        "language": "C",
+        "category": "arrays",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Neglect to Check Array Bounds",
+        "code": "int arr[10];\nint index = 15;\nif (index >= 0 && index < 10) {\n    printf(\"%d\", arr[index]);\n} else {\n    fprintf(stderr, \"Index out of bounds\\n\");\n}",
+        "explanation": "Always check that your array indices are within bounds before using them to prevent access violations and potential security vulnerabilities.",
+        "language": "C",
+        "category": "arrays",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Forget to Initialize Arrays",
+        "code": "int arr[10];\nfor (int i = 0; i < 10; i++) {\n    printf(\"%d\\n\", arr[i]);  // Potentially uninitialized values\n}",
+        "explanation": "Uninitialized arrays may contain garbage values. Always initialize arrays to a known value before use.",
+        "language": "C",
+        "category": "arrays",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Use Incorrect Data Types for Indices",
+        "code": "int arr[10];\nfloat index = 3.5;\narr[(int)index] = 10;  // Casting may lead to unexpected behavior",
+        "explanation": "Using floating-point or other inappropriate data types for array indices can lead to subtle bugs due to improper casting or rounding. Always use an integer type for indexing arrays.",
+        "language": "C",
+        "category": "arrays",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Misuse the sizeof Operator with Arrays",
+        "code": "int arr[10];\nint total = sizeof(arr) / sizeof(int);  // Correct usage\nint total_wrong = sizeof(arr) / sizeof(arr[0]);  // Also correct but often misunderstood as the size of the pointer when used with array parameters",
+        "explanation": "The sizeof operator returns the total byte size of the array, which can be mistakenly taken as the size of the pointer, especially when the array is passed to functions. Ensure you use sizeof correctly to compute the number of elements in an array.",
+        "language": "C",
+        "category": "arrays",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Pass Arrays to Functions Without Size",
+        "code": "void process(int arr[]) {\n    // No size information about arr here\n}\nint main() {\n    int numbers[10];\n    process(numbers);\n}",
+        "explanation": "When passing arrays to functions, also pass their sizes to ensure safe access. Without size information, the function does not know the array's bounds, risking out-of-bound accesses.",
+        "language": "C",
+        "category": "arrays",
+        "sub_category": ""
+    },
+    {
+        "title": "Do Not Perform Pointer Arithmetic Without Checks",
+        "code": "int arr[10];\nint *p = arr + 5;\nfor (int i = 0; i < 10; i++) {\n    *p++ = i;  // Goes out of bounds\n}",
+        "explanation": "Pointer arithmetic can easily lead to out-of-bounds errors if not carefully checked, especially when incrementing beyond the array's allocated size.",
+        "language": "C",
+        "category": "arrays",
+        "sub_category": ""
+    }
+]

@@ -1,0 +1,30 @@
+.accordion__section {
+    margin-bottom: 0px; /* Spacing between sections */
+  }
+  
+  .accordion__section .accordion__content {
+    display: none; /* Initially hide all content */
+    padding: 10px;
+    border: 1px solid #ddd; /* Optional styling */
+    background-color: white;
+  }
+  
+  .accordion__section.open .accordion__content {
+    display: block; /* Display content when section is open */
+  }
+  
+  .accordion__label {
+    display: block; /* Make the label block level */
+    /* padding: 10px; */
+    background-color: #200095; /* Optional styling */
+    cursor: pointer;
+    border: 1px solid #ddd;
+     /* Optional styling */
+     height: 100%;
+    
+  }
+
+  /* .accordion__content{
+    height: 800px;
+  }
+   */

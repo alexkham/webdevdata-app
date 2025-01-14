@@ -1,0 +1,1115 @@
+[
+    {
+      "Tag Name": "!--...--",
+      "Description": "Defines a comment",
+      "category": "Document Structure",
+      "sub_category": "Root",
+      "Attributes": "None",
+      "Deprecated": "No",
+      "Example Usage": "<!-- This is a comment -->"
+    },
+    {
+      "Tag Name": "!DOCTYPE",
+      "Description": "Specifies the document type",
+      "category": "Document Structure",
+      "sub_category": "Root",
+      "Attributes": "None",
+      "Deprecated": "No",
+      "Example Usage": "<!DOCTYPE html>"
+    },
+    {
+      "Tag Name": "a",
+      "Description": "Defines a hyperlink",
+      "category": "Text Content",
+      "sub_category": "Inline Text",
+      "Attributes": "href, target, rel, download",
+      "Deprecated": "No",
+      "Example Usage": "<a href=\"https://example.com\">Link</a>"
+    },
+    {
+      "Tag Name": "abbr",
+      "Description": "Defines an abbreviation or acronym",
+      "category": "Text Content",
+      "sub_category": "Inline Text",
+      "Attributes": "title",
+      "Deprecated": "No",
+      "Example Usage": "<abbr title=\"World Health Organization\">WHO</abbr>"
+    },
+    {
+      "Tag Name": "acronym",
+      "Description": "Defines an acronym",
+      "category": "Text Content",
+      "sub_category": "Inline Text",
+      "Attributes": "title",
+      "Deprecated": "Yes (HTML5). Use <abbr> instead. Deprecated to improve semantic markup.",
+      "Example Usage": "<acronym title=\"As Soon As Possible\">ASAP</acronym>"
+    },
+    {
+      "Tag Name": "address",
+      "Description": "Defines contact information for the author/owner of a document",
+      "category": "Text Content",
+      "sub_category": "Block-level Text",
+      "Attributes": "None",
+      "Deprecated": "No",
+      "Example Usage": "<address>Written by <a href=\"mailto:webmaster@example.com\">Jon Doe</a>.</address>"
+    },
+    {
+      "Tag Name": "applet",
+      "Description": "Embeds a Java applet",
+      "category": "Multimedia and Embedded Content",
+      "sub_category": "Embedded Content",
+      "Attributes": "code, object",
+      "Deprecated": "Yes (HTML4.01, removed in HTML5). Use <object> instead. Deprecated due to security concerns and obsolescence of Java applets.",
+      "Example Usage": "<applet code=\"Game.class\" width=\"250\" height=\"350\">Java applet</applet>"
+    },
+    {
+      "Tag Name": "area",
+      "Description": "Defines an area inside an image map",
+      "category": "Multimedia and Embedded Content",
+      "sub_category": "Images and Graphics",
+      "Attributes": "shape, coords, href, alt",
+      "Deprecated": "No",
+      "Example Usage": "<area shape=\"rect\" coords=\"34,44,270,350\" alt=\"Computer\" href=\"computer.htm\">"
+    },
+    {
+      "Tag Name": "article",
+      "Description": "Defines an independent, self-contained content",
+      "category": "Document Structure",
+      "sub_category": "Content Sectioning",
+      "Attributes": "None",
+      "Deprecated": "No",
+      "Example Usage": "<article><h1>Article Title</h1><p>Article content...</p></article>"
+    },
+    {
+      "Tag Name": "aside",
+      "Description": "Defines content aside from the page content",
+      "category": "Document Structure",
+      "sub_category": "Content Sectioning",
+      "Attributes": "None",
+      "Deprecated": "No",
+      "Example Usage": "<aside><h4>Sidebar</h4><p>Some sidebar content...</p></aside>"
+    },
+    
+        {
+          "Tag Name": "audio",
+          "Description": "Embeds sound content in documents",
+          "category": "Multimedia and Embedded Content",
+          "sub_category": "Audio and Video",
+          "Attributes": "src, controls, autoplay, loop",
+          "Deprecated": "No",
+          "Example Usage": "<audio controls><source src=\"audio.mp3\" type=\"audio/mpeg\">Your browser does not support the audio element.</audio>"
+        },
+        {
+          "Tag Name": "b",
+          "Description": "Specifies bold text",
+          "category": "Text Content",
+          "sub_category": "Inline Text",
+          "Attributes": "None",
+          "Deprecated": "No",
+          "Example Usage": "<b>This text is bold</b>"
+        },
+        {
+          "Tag Name": "base",
+          "Description": "Specifies the base URL/target for all relative URLs in a document",
+          "category": "Document Structure",
+          "sub_category": "Document Metadata",
+          "Attributes": "href, target",
+          "Deprecated": "No",
+          "Example Usage": "<base href=\"https://www.example.com/\" target=\"_blank\">"
+        },
+        {
+          "Tag Name": "basefont",
+          "Description": "Specifies a default color, size, and font for all text in a document",
+          "category": "Text Content",
+          "sub_category": "Inline Text",
+          "Attributes": "color, face, size",
+          "Deprecated": "Yes (HTML4, removed in HTML5). Use CSS instead. Deprecated to separate structure from presentation.",
+          "Example Usage": "<basefont color=\"red\" size=\"3\" face=\"Arial\">"
+        },
+        {
+          "Tag Name": "bdi",
+          "Description": "Isolates a part of text that might be formatted in a different direction from other text outside it",
+          "category": "Text Content",
+          "sub_category": "Inline Text",
+          "Attributes": "None",
+          "Deprecated": "No",
+          "Example Usage": "<p>This text is in English, but the next word is <bdi>عربي</bdi> which is Arabic.</p>"
+        },
+        {
+          "Tag Name": "bdo",
+          "Description": "Overrides the current text direction",
+          "category": "Text Content",
+          "sub_category": "Inline Text",
+          "Attributes": "dir",
+          "Deprecated": "No",
+          "Example Usage": "<bdo dir=\"rtl\">This text will go right-to-left</bdo>"
+        },
+        {
+          "Tag Name": "big",
+          "Description": "Defines bigger text",
+          "category": "Text Content",
+          "sub_category": "Inline Text",
+          "Attributes": "None",
+          "Deprecated": "Yes (HTML5). Use CSS font-size instead. Deprecated to separate structure from presentation.",
+          "Example Usage": "<big>This text is bigger</big>"
+        },
+        {
+          "Tag Name": "blockquote",
+          "Description": "Defines a section that is quoted from another source",
+          "category": "Text Content",
+          "sub_category": "Block-level Text",
+          "Attributes": "cite",
+          "Deprecated": "No",
+          "Example Usage": "<blockquote cite=\"http://www.example.com\">Here is a long quotation...</blockquote>"
+        },
+        {
+          "Tag Name": "body",
+          "Description": "Defines the document's body",
+          "category": "Document Structure",
+          "sub_category": "Content Sectioning",
+          "Attributes": "None",
+          "Deprecated": "No",
+          "Example Usage": "<body><h1>This is a heading</h1><p>This is a paragraph.</p></body>"
+        },
+        {
+          "Tag Name": "br",
+          "Description": "Defines a single line break",
+          "category": "Text Content",
+          "sub_category": "Inline Text",
+          "Attributes": "None",
+          "Deprecated": "No",
+          "Example Usage": "<p>This is a paragraph<br>with a line break.</p>"
+        },
+        
+            {
+              "Tag Name": "button",
+              "Description": "Defines a clickable button",
+              "category": "Data Representation",
+              "sub_category": "Forms",
+              "Attributes": "type, name, value, disabled",
+              "Deprecated": "No",
+              "Example Usage": "<button type=\"button\">Click me!</button>"
+            },
+            {
+              "Tag Name": "canvas",
+              "Description": "Used to draw graphics, on the fly, via scripting (usually JavaScript)",
+              "category": "Multimedia and Embedded Content",
+              "sub_category": "Images and Graphics",
+              "Attributes": "width, height",
+              "Deprecated": "No",
+              "Example Usage": "<canvas id=\"myCanvas\" width=\"200\" height=\"100\"></canvas>"
+            },
+            {
+              "Tag Name": "caption",
+              "Description": "Defines a table caption",
+              "category": "Data Representation",
+              "sub_category": "Tables",
+              "Attributes": "None",
+              "Deprecated": "No",
+              "Example Usage": "<table><caption>Monthly savings</caption><tr><th>Month</th><th>Savings</th></tr></table>"
+            },
+            {
+              "Tag Name": "center",
+              "Description": "Defines centered text",
+              "category": "Text Content",
+              "sub_category": "Block-level Text",
+              "Attributes": "None",
+              "Deprecated": "Yes (HTML4, removed in HTML5). Use CSS text-align: center instead. Deprecated to separate structure from presentation.",
+              "Example Usage": "<center>This text is centered</center>"
+            },
+            {
+              "Tag Name": "cite",
+              "Description": "Defines the title of a work",
+              "category": "Text Content",
+              "sub_category": "Inline Text",
+              "Attributes": "None",
+              "Deprecated": "No",
+              "Example Usage": "<p><cite>The Scream</cite> by Edvard Munch. Painted in 1893.</p>"
+            },
+            {
+              "Tag Name": "code",
+              "Description": "Defines a piece of computer code",
+              "category": "Text Content",
+              "sub_category": "Inline Text",
+              "Attributes": "None",
+              "Deprecated": "No",
+              "Example Usage": "<code>var person = {firstName:\"John\", lastName:\"Doe\"};</code>"
+            },
+            {
+              "Tag Name": "col",
+              "Description": "Specifies column properties for each column within a <colgroup> element",
+              "category": "Data Representation",
+              "sub_category": "Tables",
+              "Attributes": "span",
+              "Deprecated": "No",
+              "Example Usage": "<table><colgroup><col span=\"2\" style=\"background-color:red\"><col style=\"background-color:yellow\"></colgroup></table>"
+            },
+            {
+              "Tag Name": "colgroup",
+              "Description": "Specifies a group of one or more columns in a table for formatting",
+              "category": "Data Representation",
+              "sub_category": "Tables",
+              "Attributes": "span",
+              "Deprecated": "No",
+              "Example Usage": "<table><colgroup><col span=\"2\" style=\"background-color:red\"><col style=\"background-color:yellow\"></colgroup></table>"
+            },
+            {
+              "Tag Name": "data",
+              "Description": "Links the given content with a machine-readable translation",
+              "category": "Text Content",
+              "sub_category": "Inline Text",
+              "Attributes": "value",
+              "Deprecated": "No",
+              "Example Usage": "<data value=\"398\">Mini Ketchup</data>"
+            },
+            {
+              "Tag Name": "datalist",
+              "Description": "Specifies a list of pre-defined options for input controls",
+              "category": "Data Representation",
+              "sub_category": "Forms",
+              "Attributes": "None",
+              "Deprecated": "No",
+              "Example Usage": "<input list=\"browsers\"><datalist id=\"browsers\"><option value=\"Chrome\"><option value=\"Firefox\"></datalist>"
+            },
+            
+                {
+                  "Tag Name": "dd",
+                  "Description": "Defines a description/value of a term in a description list",
+                  "category": "Text Content",
+                  "sub_category": "Lists",
+                  "Attributes": "None",
+                  "Deprecated": "No",
+                  "Example Usage": "<dl><dt>Coffee</dt><dd>Black hot drink</dd></dl>"
+                },
+                {
+                  "Tag Name": "del",
+                  "Description": "Defines text that has been deleted from a document",
+                  "category": "Text Content",
+                  "sub_category": "Inline Text",
+                  "Attributes": "cite, datetime",
+                  "Deprecated": "No",
+                  "Example Usage": "<p>My favorite color is <del>blue</del> <ins>red</ins>!</p>"
+                },
+                {
+                  "Tag Name": "details",
+                  "Description": "Defines additional details that the user can view or hide",
+                  "category": "Interactive Elements",
+                  "sub_category": null,
+                  "Attributes": "open",
+                  "Deprecated": "No",
+                  "Example Usage": "<details><summary>Copyright 2021.</summary><p>All rights reserved.</p></details>"
+                },
+                {
+                  "Tag Name": "dfn",
+                  "Description": "Specifies a term that is going to be defined within the content",
+                  "category": "Text Content",
+                  "sub_category": "Inline Text",
+                  "Attributes": "None",
+                  "Deprecated": "No",
+                  "Example Usage": "<p><dfn>HTML</dfn> is the standard markup language for creating web pages.</p>"
+                },
+                {
+                  "Tag Name": "dialog",
+                  "Description": "Defines a dialog box or window",
+                  "category": "Interactive Elements",
+                  "sub_category": null,
+                  "Attributes": "open",
+                  "Deprecated": "No",
+                  "Example Usage": "<dialog open><p>Greetings, everyone!</p></dialog>"
+                },
+                {
+                  "Tag Name": "dir",
+                  "Description": "Defines a directory list",
+                  "category": "Text Content",
+                  "sub_category": "Lists",
+                  "Attributes": "compact",
+                  "Deprecated": "Yes (HTML5). Use <ul> instead. Deprecated due to lack of semantic meaning.",
+                  "Example Usage": "<dir><li>html</li><li>xhtml</li><li>css</li></dir>"
+                },
+                {
+                  "Tag Name": "div",
+                  "Description": "Defines a section in a document",
+                  "category": "Text Content",
+                  "sub_category": "Block-level Text",
+                  "Attributes": "None",
+                  "Deprecated": "No",
+                  "Example Usage": "<div><h2>This is a heading in a div element</h2><p>This is some text in a div element.</p></div>"
+                },
+                {
+                  "Tag Name": "dl",
+                  "Description": "Defines a description list",
+                  "category": "Text Content",
+                  "sub_category": "Lists",
+                  "Attributes": "None",
+                  "Deprecated": "No",
+                  "Example Usage": "<dl><dt>Coffee</dt><dd>Black hot drink</dd><dt>Milk</dt><dd>White cold drink</dd></dl>"
+                },
+                {
+                  "Tag Name": "dt",
+                  "Description": "Defines a term/name in a description list",
+                  "category": "Text Content",
+                  "sub_category": "Lists",
+                  "Attributes": "None",
+                  "Deprecated": "No",
+                  "Example Usage": "<dl><dt>Coffee</dt><dd>Black hot drink</dd></dl>"
+                },
+                {
+                  "Tag Name": "em",
+                  "Description": "Defines emphasized text",
+                  "category": "Text Content",
+                  "sub_category": "Inline Text",
+                  "Attributes": "None",
+                  "Deprecated": "No",
+                  "Example Usage": "<p>This is <em>emphasized</em> text.</p>"
+                },
+              
+                {
+                      "Tag Name": "embed",
+                      "Description": "Defines a container for an external application or interactive content",
+                      "category": "Multimedia and Embedded Content",
+                      "sub_category": "Embedded Content",
+                      "Attributes": "src, type, width, height",
+                      "Deprecated": "No",
+                      "Example Usage": "<embed src=\"helloworld.swf\" type=\"application/x-shockwave-flash\" width=\"300\" height=\"200\">"
+                    },
+                    {
+                      "Tag Name": "fieldset",
+                      "Description": "Groups related elements in a form",
+                      "category": "Data Representation",
+                      "sub_category": "Forms",
+                      "Attributes": "disabled, form, name",
+                      "Deprecated": "No",
+                      "Example Usage": "<fieldset><legend>Personalia:</legend><label>Name: <input type=\"text\"></label></fieldset>"
+                    },
+                    {
+                      "Tag Name": "figcaption",
+                      "Description": "Defines a caption for a <figure> element",
+                      "category": "Multimedia and Embedded Content",
+                      "sub_category": "Images and Graphics",
+                      "Attributes": "None",
+                      "Deprecated": "No",
+                      "Example Usage": "<figure><img src=\"pic.jpg\" alt=\"My Image\"><figcaption>Fig.1 - My Image</figcaption></figure>"
+                    },
+                    {
+                      "Tag Name": "figure",
+                      "Description": "Specifies self-contained content",
+                      "category": "Multimedia and Embedded Content",
+                      "sub_category": "Images and Graphics",
+                      "Attributes": "None",
+                      "Deprecated": "No",
+                      "Example Usage": "<figure><img src=\"pic.jpg\" alt=\"My Image\"><figcaption>Fig.1 - My Image</figcaption></figure>"
+                    },
+                    {
+                      "Tag Name": "font",
+                      "Description": "Defines font, color, and size for text",
+                      "category": "Text Content",
+                      "sub_category": "Inline Text",
+                      "Attributes": "color, face, size",
+                      "Deprecated": "Yes (HTML4, removed in HTML5). Use CSS instead. Deprecated to separate structure from presentation.",
+                      "Example Usage": "<font color=\"red\" size=\"3\" face=\"Verdana\">This is some text!</font>"
+                    },
+                    {
+                      "Tag Name": "footer",
+                      "Description": "Defines a footer for a document or section",
+                      "category": "Document Structure",
+                      "sub_category": "Content Sectioning",
+                      "Attributes": "None",
+                      "Deprecated": "No",
+                      "Example Usage": "<footer><p>© 2021 My Company</p></footer>"
+                    },
+                    {
+                      "Tag Name": "form",
+                      "Description": "Defines an HTML form for user input",
+                      "category": "Data Representation",
+                      "sub_category": "Forms",
+                      "Attributes": "action, method, name, target",
+                      "Deprecated": "No",
+                      "Example Usage": "<form action=\"/submit-form\" method=\"post\"><input type=\"text\" name=\"username\"><input type=\"submit\"></form>"
+                    },
+                    {
+                      "Tag Name": "frame",
+                      "Description": "Defines a window (a frame) in a frameset",
+                      "category": "Document Structure",
+                      "sub_category": "Content Sectioning",
+                      "Attributes": "src, name, frameborder, scrolling",
+                      "Deprecated": "Yes (HTML5). Use <iframe> or CSS instead. Deprecated due to usability and accessibility concerns.",
+                      "Example Usage": "<frameset cols=\"25%,75%\"><frame src=\"frame_a.htm\"><frame src=\"frame_b.htm\"></frameset>"
+                    },
+                    {
+                      "Tag Name": "frameset",
+                      "Description": "Defines a set of frames",
+                      "category": "Document Structure",
+                      "sub_category": "Content Sectioning",
+                      "Attributes": "cols, rows",
+                      "Deprecated": "Yes (HTML5). Use CSS to create layouts instead. Deprecated due to usability and accessibility concerns.",
+                      "Example Usage": "<frameset cols=\"25%,50%,25%\"><frame src=\"frame_a.htm\"><frame src=\"frame_b.htm\"><frame src=\"frame_c.htm\"></frameset>"
+                    },
+                    {
+                      "Tag Name": "h1 to h6",
+                      "Description": "Defines HTML headings",
+                      "category": "Text Content",
+                      "sub_category": "Block-level Text",
+                      "Attributes": "None",
+                      "Deprecated": "No",
+                      "Example Usage": "<h1>This is heading 1</h1><h2>This is heading 2</h2><h3>This is heading 3</h3>"
+                    },
+
+                    
+            {
+                "Tag Name": "head",
+                "Description": "Contains metadata/information for the document",
+                "category": "Document Structure",
+                "sub_category": "Document Metadata",
+                "Attributes": "None",
+                "Deprecated": "No",
+                "Example Usage": "<head><title>Page Title</title></head>"
+            },
+            {
+                "Tag Name": "header",
+                "Description": "Defines a header for a document or section",
+                "category": "Document Structure",
+                "sub_category": "Content Sectioning",
+                "Attributes": "None",
+                "Deprecated": "No",
+                "Example Usage": "<header><h1>Welcome to My Website</h1><p>A site about web development</p></header>"
+            },
+            {
+                "Tag Name": "hgroup",
+                "Description": "Groups heading elements",
+                "category": "Document Structure",
+                "sub_category": "Content Sectioning",
+                "Attributes": "None",
+                "Deprecated": "Yes (HTML5), but reintroduced in HTML 5.2. Use individual heading elements instead when deprecated. Deprecated due to lack of widespread use and potential confusion.",
+                "Example Usage": "<hgroup><h1>Main Title</h1><h2>Subtitle</h2></hgroup>"
+            },
+            {
+                "Tag Name": "hr",
+                "Description": "Defines a thematic change in the content",
+                "category": "Text Content",
+                "sub_category": "Block-level Text",
+                "Attributes": "None",
+                "Deprecated": "No",
+                "Example Usage": "<p>This is some text</p><hr><p>This is some other text</p>"
+            },
+            {
+                "Tag Name": "html",
+                "Description": "Defines the root of an HTML document",
+                "category": "Document Structure",
+                "sub_category": "Root",
+                "Attributes": "xmlns, lang",
+                "Deprecated": "No",
+                "Example Usage": "<html lang=\"en\"><head><title>Page Title</title></head><body></body></html>"
+            },
+            {
+                "Tag Name": "i",
+                "Description": "Defines a part of text in an alternate voice or mood",
+                "category": "Text Content",
+                "sub_category": "Inline Text",
+                "Attributes": "None",
+                "Deprecated": "No",
+                "Example Usage": "<p>He thought, <i>This can't be real!</i></p>"
+            },
+            {
+                "Tag Name": "iframe",
+                "Description": "Defines an inline frame",
+                "category": "Multimedia and Embedded Content",
+                "sub_category": "Embedded Content",
+                "Attributes": "src, width, height, name, sandbox",
+                "Deprecated": "No",
+                "Example Usage": "<iframe src=\"https://www.example.com\" width=\"500\" height=\"300\"></iframe>"
+            },
+            {
+                "Tag Name": "img",
+                "Description": "Defines an image",
+                "category": "Multimedia and Embedded Content",
+                "sub_category": "Images and Graphics",
+                "Attributes": "src, alt, width, height",
+                "Deprecated": "No",
+                "Example Usage": "<img src=\"image.jpg\" alt=\"Description of image\" width=\"500\" height=\"300\">"
+            },
+            {
+                "Tag Name": "input",
+                "Description": "Defines an input control",
+                "category": "Data Representation",
+                "sub_category": "Forms",
+                "Attributes": "type, name, value, required, placeholder",
+                "Deprecated": "No",
+                "Example Usage": "<input type=\"text\" name=\"username\" placeholder=\"Enter username\">"
+            },
+            {
+                "Tag Name": "ins",
+                "Description": "Defines a text that has been inserted into a document",
+                "category": "Text Content",
+                "sub_category": "Inline Text",
+                "Attributes": "cite, datetime",
+                "Deprecated": "No",
+                "Example Usage": "<p>My favorite color is <del>blue</del> <ins>red</ins>!</p>"
+            },
+    
+        {
+            "Tag Name": "kbd",
+            "Description": "Defines keyboard input",
+            "category": "Text Content",
+            "sub_category": "Inline Text",
+            "Attributes": "None",
+            "Deprecated": "No",
+            "Example Usage": "<p>Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy text.</p>"
+        },
+        {
+            "Tag Name": "label",
+            "Description": "Defines a label for an <input> element",
+            "category": "Data Representation",
+            "sub_category": "Forms",
+            "Attributes": "for",
+            "Deprecated": "No",
+            "Example Usage": "<label for=\"username\">Username:</label><input type=\"text\" id=\"username\">"
+        },
+        {
+            "Tag Name": "legend",
+            "Description": "Defines a caption for a <fieldset> element",
+            "category": "Data Representation",
+            "sub_category": "Forms",
+            "Attributes": "None",
+            "Deprecated": "No",
+            "Example Usage": "<fieldset><legend>Personal Information:</legend><input type=\"text\" name=\"firstname\"></fieldset>"
+        },
+        {
+            "Tag Name": "li",
+            "Description": "Defines a list item",
+            "category": "Text Content",
+            "sub_category": "Lists",
+            "Attributes": "value",
+            "Deprecated": "No",
+            "Example Usage": "<ul><li>First item</li><li>Second item</li></ul>"
+        },
+        {
+            "Tag Name": "link",
+            "Description": "Defines the relationship between a document and an external resource",
+            "category": "Document Structure",
+            "sub_category": "Document Metadata",
+            "Attributes": "href, rel, type",
+            "Deprecated": "No",
+            "Example Usage": "<link rel=\"stylesheet\" href=\"styles.css\">"
+        },
+        {
+            "Tag Name": "main",
+            "Description": "Specifies the main content of a document",
+            "category": "Document Structure",
+            "sub_category": "Content Sectioning",
+            "Attributes": "None",
+            "Deprecated": "No",
+            "Example Usage": "<main><h1>Most Important Content</h1><p>This is the main content of the webpage.</p></main>"
+        },
+        {
+            "Tag Name": "map",
+            "Description": "Defines an image map",
+            "category": "Multimedia and Embedded Content",
+            "sub_category": "Images and Graphics",
+            "Attributes": "name",
+            "Deprecated": "No",
+            "Example Usage": "<img src=\"image.jpg\" alt=\"Image Map\" usemap=\"#workmap\"><map name=\"workmap\"><area shape=\"rect\" coords=\"34,44,270,350\" alt=\"Computer\" href=\"computer.htm\"></map>"
+        },
+        {
+            "Tag Name": "mark",
+            "Description": "Defines marked/highlighted text",
+            "category": "Text Content",
+            "sub_category": "Inline Text",
+            "Attributes": "None",
+            "Deprecated": "No",
+            "Example Usage": "<p>Do not forget to <mark>buy milk</mark> today.</p>"
+        },
+        {
+            "Tag Name": "menu",
+            "Description": "Defines a list/menu of commands",
+            "category": "Interactive Elements",
+            "sub_category": null,
+            "Attributes": "type",
+            "Deprecated": "No",
+            "Example Usage": "<menu><li><button onclick=\"copy()\">Copy</button></li><li><button onclick=\"cut()\">Cut</button></li></menu>"
+        },
+        {
+            "Tag Name": "meta",
+            "Description": "Defines metadata about an HTML document",
+            "category": "Document Structure",
+            "sub_category": "Document Metadata",
+            "Attributes": "name, content, charset, http-equiv",
+            "Deprecated": "No",
+            "Example Usage": "<meta charset=\"UTF-8\"><meta name=\"description\" content=\"Free Web tutorials\">"
+        },
+        {
+              "Tag Name": "meter",
+              "Description": "Defines a scalar measurement within a known range",
+              "category": "Data Representation",
+              "sub_category": "Forms",
+              "Attributes": "value, min, max, low, high, optimum",
+              "Deprecated": "No",
+              "Example Usage": "<meter value=\"2\" min=\"0\" max=\"10\">2 out of 10</meter>"
+            },
+            {
+              "Tag Name": "nav",
+              "Description": "Defines navigation links",
+              "category": "Document Structure",
+              "sub_category": "Content Sectioning",
+              "Attributes": "None",
+              "Deprecated": "No",
+              "Example Usage": "<nav><a href=\"/html/\">HTML</a> | <a href=\"/css/\">CSS</a> | <a href=\"/js/\">JavaScript</a></nav>"
+            },
+            {
+              "Tag Name": "noframes",
+              "Description": "Defines an alternate content for users that do not support frames",
+              "category": "Document Structure",
+              "sub_category": "Content Sectioning",
+              "Attributes": "None",
+              "Deprecated": "Yes (HTML5). Use CSS for layout instead. Deprecated along with frames due to accessibility and usability concerns.",
+              "Example Usage": "<noframes><body>Your browser does not support frames.</body></noframes>"
+            },
+            {
+              "Tag Name": "noscript",
+              "Description": "Defines an alternate content for users that do not support client-side scripts",
+              "category": "Scripting and Styling",
+              "sub_category": "Scripting",
+              "Attributes": "None",
+              "Deprecated": "No",
+              "Example Usage": "<noscript>Your browser does not support JavaScript!</noscript>"
+            },
+            {
+              "Tag Name": "object",
+              "Description": "Defines an embedded object",
+              "category": "Multimedia and Embedded Content",
+              "sub_category": "Embedded Content",
+              "Attributes": "data, type, width, height",
+              "Deprecated": "No",
+              "Example Usage": "<object data=\"movie.mp4\" width=\"400\" height=\"300\"></object>"
+            },
+            {
+              "Tag Name": "ol",
+              "Description": "Defines an ordered list",
+              "category": "Text Content",
+              "sub_category": "Lists",
+              "Attributes": "reversed, start, type",
+              "Deprecated": "No",
+              "Example Usage": "<ol><li>First item</li><li>Second item</li><li>Third item</li></ol>"
+            },
+            {
+              "Tag Name": "optgroup",
+              "Description": "Defines a group of related options in a drop-down list",
+              "category": "Data Representation",
+              "sub_category": "Forms",
+              "Attributes": "label, disabled",
+              "Deprecated": "No",
+              "Example Usage": "<select><optgroup label=\"Swedish Cars\"><option value=\"volvo\">Volvo</option><option value=\"saab\">Saab</option></optgroup></select>"
+            },
+            {
+              "Tag Name": "option",
+              "Description": "Defines an option in a drop-down list",
+              "category": "Data Representation",
+              "sub_category": "Forms",
+              "Attributes": "value, selected, disabled",
+              "Deprecated": "No",
+              "Example Usage": "<select><option value=\"volvo\">Volvo</option><option value=\"saab\">Saab</option></select>"
+            },
+            {
+              "Tag Name": "output",
+              "Description": "Defines the result of a calculation",
+              "category": "Data Representation",
+              "sub_category": "Forms",
+              "Attributes": "for, form, name",
+              "Deprecated": "No",
+              "Example Usage": "<form oninput=\"x.value=parseInt(a.value)+parseInt(b.value)\"><input type=\"range\" id=\"a\" value=\"50\">+<input type=\"number\" id=\"b\" value=\"25\">=<output name=\"x\" for=\"a b\"></output></form>"
+            },
+            {
+              "Tag Name": "p",
+              "Description": "Defines a paragraph",
+              "category": "Text Content",
+              "sub_category": "Block-level Text",
+              "Attributes": "None",
+              "Deprecated": "No",
+              "Example Usage": "<p>This is a paragraph.</p>"
+            },
+    
+        {
+            "Tag Name": "param",
+            "Description": "Defines a parameter for an object",
+            "category": "Multimedia and Embedded Content",
+            "sub_category": "Embedded Content",
+            "Attributes": "name, value",
+            "Deprecated": "No",
+            "Example Usage": "<object data=\"movie.swf\"><param name=\"autoplay\" value=\"true\"></object>"
+        },
+        {
+            "Tag Name": "picture",
+            "Description": "Defines a container for multiple image resources",
+            "category": "Multimedia and Embedded Content",
+            "sub_category": "Images and Graphics",
+            "Attributes": "None",
+            "Deprecated": "No",
+            "Example Usage": "<picture><source media=\"(min-width:650px)\" srcset=\"img_pink_flowers.jpg\"><img src=\"img_white_flower.jpg\" alt=\"Flowers\"></picture>"
+        },
+        {
+            "Tag Name": "pre",
+            "Description": "Defines preformatted text",
+            "category": "Text Content",
+            "sub_category": "Block-level Text",
+            "Attributes": "None",
+            "Deprecated": "No",
+            "Example Usage": "<pre>Text in a pre element is displayed in a fixed-width font, and preserves both spaces and line breaks</pre>"
+        },
+        {
+            "Tag Name": "progress",
+            "Description": "Represents the progress of a task",
+            "category": "Data Representation",
+            "sub_category": "Forms",
+            "Attributes": "value, max",
+            "Deprecated": "No",
+            "Example Usage": "<progress value=\"22\" max=\"100\"></progress>"
+        },
+        {
+            "Tag Name": "q",
+            "Description": "Defines a short quotation",
+            "category": "Text Content",
+            "sub_category": "Inline Text",
+            "Attributes": "cite",
+            "Deprecated": "No",
+            "Example Usage": "<p>WWF's goal is to: <q>Build a future where people live in harmony with nature.</q></p>"
+        },
+        {
+            "Tag Name": "rp",
+            "Description": "Defines what to show in browsers that do not support ruby annotations",
+            "category": "Text Content",
+            "sub_category": "Inline Text",
+            "Attributes": "None",
+            "Deprecated": "No",
+            "Example Usage": "<ruby>漢 <rp>(</rp><rt>ㄏㄢˋ</rt><rp>)</rp></ruby>"
+        },
+        {
+            "Tag Name": "rt",
+            "Description": "Defines an explanation/pronunciation of characters (for East Asian typography)",
+            "category": "Text Content",
+            "sub_category": "Inline Text",
+            "Attributes": "None",
+            "Deprecated": "No",
+            "Example Usage": "<ruby>漢 <rt>ㄏㄢˋ</rt></ruby>"
+        },
+        {
+            "Tag Name": "ruby",
+            "Description": "Defines a ruby annotation (for East Asian typography)",
+            "category": "Text Content",
+            "sub_category": "Inline Text",
+            "Attributes": "None",
+            "Deprecated": "No",
+            "Example Usage": "<ruby>漢 <rt>ㄏㄢˋ</rt></ruby>"
+        },
+        {
+            "Tag Name": "s",
+            "Description": "Defines text that is no longer correct",
+            "category": "Text Content",
+            "sub_category": "Inline Text",
+            "Attributes": "None",
+            "Deprecated": "No",
+            "Example Usage": "<p><s>My car is blue.</s> My new car is silver.</p>"
+        },
+        {
+            "Tag Name": "samp",
+            "Description": "Defines sample output from a computer program",
+            "category": "Text Content",
+            "sub_category": "Inline Text",
+            "Attributes": "None",
+            "Deprecated": "No",
+            "Example Usage": "<p>Message from my computer:</p><p><samp>File not found.<br>Press F1 to continue</samp></p>"
+        },
+        
+            {
+              "Tag Name": "script",
+              "Description": "Defines a client-side script",
+              "category": "Scripting and Styling",
+              "sub_category": "Scripting",
+              "Attributes": "src, type, async, defer",
+              "Deprecated": "No",
+              "Example Usage": "<script src=\"script.js\"></script>"
+            },
+            {
+              "Tag Name": "search",
+              "Description": "Defines a search section",
+              "category": "Document Structure",
+              "sub_category": "Content Sectioning",
+              "Attributes": "None",
+              "Deprecated": "No",
+              "Example Usage": "<search><form><input type=\"search\"><button>Search</button></form></search>"
+            },
+            {
+              "Tag Name": "section",
+              "Description": "Defines a section in a document",
+              "category": "Document Structure",
+              "sub_category": "Content Sectioning",
+              "Attributes": "None",
+              "Deprecated": "No",
+              "Example Usage": "<section><h1>WWF</h1><p>The World Wide Fund for Nature (WWF) is an international organization working on issues regarding the conservation, research and restoration of the environment.</p></section>"
+            },
+            {
+              "Tag Name": "select",
+              "Description": "Defines a drop-down list",
+              "category": "Data Representation",
+              "sub_category": "Forms",
+              "Attributes": "name, multiple, size",
+              "Deprecated": "No",
+              "Example Usage": "<select name=\"cars\"><option value=\"volvo\">Volvo</option><option value=\"saab\">Saab</option><option value=\"fiat\">Fiat</option></select>"
+            },
+            {
+              "Tag Name": "small",
+              "Description": "Defines smaller text",
+              "category": "Text Content",
+              "sub_category": "Inline Text",
+              "Attributes": "None",
+              "Deprecated": "No",
+              "Example Usage": "<p>This is some normal text. <small>This is some smaller text.</small></p>"
+            },
+            {
+              "Tag Name": "source",
+              "Description": "Defines multiple media resources for media elements (<video> and <audio>)",
+              "category": "Multimedia and Embedded Content",
+              "sub_category": "Audio and Video",
+              "Attributes": "src, type, media",
+              "Deprecated": "No",
+              "Example Usage": "<video width=\"320\" height=\"240\" controls><source src=\"movie.mp4\" type=\"video/mp4\"><source src=\"movie.ogg\" type=\"video/ogg\"></video>"
+            },
+            {
+              "Tag Name": "span",
+              "Description": "Defines a section in a document",
+              "category": "Text Content",
+              "sub_category": "Inline Text",
+              "Attributes": "None",
+              "Deprecated": "No",
+              "Example Usage": "<p>My mother has <span style=\"color:blue\">blue</span> eyes.</p>"
+            },
+            {
+              "Tag Name": "strike",
+              "Description": "Defines strikethrough text",
+              "category": "Text Content",
+              "sub_category": "Inline Text",
+              "Attributes": "None",
+              "Deprecated": "Yes (HTML5). Use <s> or <del> instead. Deprecated to improve semantic markup.",
+              "Example Usage": "<p><strike>This text is strikethrough.</strike></p>"
+            },
+            {
+              "Tag Name": "strong",
+              "Description": "Defines important text",
+              "category": "Text Content",
+              "sub_category": "Inline Text",
+              "Attributes": "None",
+              "Deprecated": "No",
+              "Example Usage": "<strong>This text is important!</strong>"
+            },
+            {
+              "Tag Name": "style",
+              "Description": "Defines style information for a document",
+              "category": "Scripting and Styling",
+              "sub_category": "Styling",
+              "Attributes": "type, media",
+              "Deprecated": "No",
+              "Example Usage": "<style>body {background-color: powderblue;}</style>"
+            },
+    
+        {
+            "Tag Name": "sub",
+            "Description": "Defines subscripted text",
+            "category": "Text Content",
+            "sub_category": "Inline Text",
+            "Attributes": "None",
+            "Deprecated": "No",
+            "Example Usage": "<p>H<sub>2</sub>O is the chemical formula for water.</p>"
+        },
+        {
+            "Tag Name": "summary",
+            "Description": "Defines a visible heading for a <details> element",
+            "category": "Interactive Elements",
+            "sub_category": null,
+            "Attributes": "None",
+            "Deprecated": "No",
+            "Example Usage": "<details><summary>Copyright 2021</summary><p>All rights reserved.</p></details>"
+        },
+        {
+            "Tag Name": "sup",
+            "Description": "Defines superscripted text",
+            "category": "Text Content",
+            "sub_category": "Inline Text",
+            "Attributes": "None",
+            "Deprecated": "No",
+            "Example Usage": "<p>The 4<sup>th</sup> of July is American Independence Day.</p>"
+        },
+        {
+            "Tag Name": "svg",
+            "Description": "Defines a container for SVG graphics",
+            "category": "Multimedia and Embedded Content",
+            "sub_category": "Images and Graphics",
+            "Attributes": "width, height",
+            "Deprecated": "No",
+            "Example Usage": "<svg width=\"100\" height=\"100\"><circle cx=\"50\" cy=\"50\" r=\"40\" stroke=\"green\" stroke-width=\"4\" fill=\"yellow\" /></svg>"
+        },
+        {
+            "Tag Name": "table",
+            "Description": "Defines a table",
+            "category": "Data Representation",
+            "sub_category": "Tables",
+            "Attributes": "border",
+            "Deprecated": "No",
+            "Example Usage": "<table><tr><th>Header 1</th><th>Header 2</th></tr><tr><td>row 1, cell 1</td><td>row 1, cell 2</td></tr></table>"
+        },
+        {
+            "Tag Name": "tbody",
+            "Description": "Groups the body content in a table",
+            "category": "Data Representation",
+            "sub_category": "Tables",
+            "Attributes": "None",
+            "Deprecated": "No",
+            "Example Usage": "<table><thead><tr><th>Month</th><th>Savings</th></tr></thead><tbody><tr><td>January</td><td>$100</td></tr></tbody></table>"
+        },
+        {
+            "Tag Name": "td",
+            "Description": "Defines a cell in a table",
+            "category": "Data Representation",
+            "sub_category": "Tables",
+            "Attributes": "colspan, rowspan",
+            "Deprecated": "No",
+            "Example Usage": "<table><tr><td>Cell 1</td><td>Cell 2</td></tr></table>"
+        },
+        {
+            "Tag Name": "template",
+            "Description": "Defines a template",
+            "category": "Web Components",
+            "sub_category": null,
+            "Attributes": "None",
+            "Deprecated": "No",
+            "Example Usage": "<template><h2>Flower</h2><img src=\"img_white_flower.jpg\"></template>"
+        },
+        {
+            "Tag Name": "textarea",
+            "Description": "Defines a multiline input control (text area)",
+            "category": "Data Representation",
+            "sub_category": "Forms",
+            "Attributes": "name, rows, cols",
+            "Deprecated": "No",
+            "Example Usage": "<textarea name=\"message\" rows=\"10\" cols=\"30\">The cat was playing in the garden.</textarea>"
+        },
+        {
+            "Tag Name": "tfoot",
+            "Description": "Groups the footer content in a table",
+            "category": "Data Representation",
+            "sub_category": "Tables",
+            "Attributes": "None",
+            "Deprecated": "No",
+            "Example Usage": "<table><thead><tr><th>Month</th><th>Savings</th></tr></thead><tbody><tr><td>January</td><td>$100</td></tr></tbody><tfoot><tr><td>Sum</td><td>$180</td></tr></tfoot></table>"
+        },
+        
+            {
+              "Tag Name": "th",
+              "Description": "Defines a header cell in a table",
+              "category": "Data Representation",
+              "sub_category": "Tables",
+              "Attributes": "colspan, rowspan, scope",
+              "Deprecated": "No",
+              "Example Usage": "<table><tr><th>Month</th><th>Savings</th></tr><tr><td>January</td><td>$100</td></tr></table>"
+            },
+            {
+              "Tag Name": "thead",
+              "Description": "Groups the header content in a table",
+              "category": "Data Representation",
+              "sub_category": "Tables",
+              "Attributes": "None",
+              "Deprecated": "No",
+              "Example Usage": "<table><thead><tr><th>Month</th><th>Savings</th></tr></thead><tbody><tr><td>January</td><td>$100</td></tr></tbody></table>"
+            },
+            {
+              "Tag Name": "time",
+              "Description": "Defines a date/time",
+              "category": "Text Content",
+              "sub_category": "Inline Text",
+              "Attributes": "datetime",
+              "Deprecated": "No",
+              "Example Usage": "<p>We open at <time>10:00</time> every morning.</p>"
+            },
+            {
+              "Tag Name": "title",
+              "Description": "Defines a title for the document",
+              "category": "Document Structure",
+              "sub_category": "Document Metadata",
+              "Attributes": "None",
+              "Deprecated": "No",
+              "Example Usage": "<title>HTML Reference</title>"
+            },
+            {
+              "Tag Name": "tr",
+              "Description": "Defines a row in a table",
+              "category": "Data Representation",
+              "sub_category": "Tables",
+              "Attributes": "None",
+              "Deprecated": "No",
+              "Example Usage": "<table><tr><td>Cell 1</td><td>Cell 2</td></tr></table>"
+            },
+            {
+              "Tag Name": "track",
+              "Description": "Defines text tracks for media elements (<video> and <audio>)",
+              "category": "Multimedia and Embedded Content",
+              "sub_category": "Audio and Video",
+              "Attributes": "src, kind, srclang, label, default",
+              "Deprecated": "No",
+              "Example Usage": "<video width=\"320\" height=\"240\" controls><source src=\"movie.mp4\" type=\"video/mp4\"><track src=\"subtitles_en.vtt\" kind=\"subtitles\" srclang=\"en\" label=\"English\"></video>"
+            },
+            {
+              "Tag Name": "tt",
+              "Description": "Defines teletype text",
+              "category": "Text Content",
+              "sub_category": "Inline Text",
+              "Attributes": "None",
+              "Deprecated": "Yes (HTML5). Use CSS instead. Deprecated to separate structure from presentation.",
+              "Example Usage": "<tt>This is teletype text</tt>"
+            },
+            {
+              "Tag Name": "u",
+              "Description": "Defines text that should be stylistically different from normal text",
+              "category": "Text Content",
+              "sub_category": "Inline Text",
+              "Attributes": "None",
+              "Deprecated": "No",
+              "Example Usage": "<p>This is some <u>mispeled</u> text.</p>"
+            },
+            {
+              "Tag Name": "ul",
+              "Description": "Defines an unordered list",
+              "category": "Text Content",
+              "sub_category": "Lists",
+              "Attributes": "None",
+              "Deprecated": "No",
+              "Example Usage": "<ul><li>Coffee</li><li>Tea</li><li>Milk</li></ul>"
+            },
+            {
+              "Tag Name": "var",
+              "Description": "Defines a variable",
+              "category": "Text Content",
+              "sub_category": "Inline Text",
+              "Attributes": "None",
+              "Deprecated": "No",
+              "Example Usage": "<p>The area of a triangle is: 1/2 x <var>b</var> x <var>h</var>, where <var>b</var> is the base, and <var>h</var> is the vertical height.</p>"
+            },
+            {
+              "Tag Name": "video",
+              "Description": "Defines a video or movie",
+              "category": "Multimedia and Embedded Content",
+              "sub_category": "Audio and Video",
+              "Attributes": "src, width, height, controls, autoplay",
+              "Deprecated": "No",
+              "Example Usage": "<video width=\"320\" height=\"240\" controls><source src=\"movie.mp4\" type=\"video/mp4\"><source src=\"movie.ogg\" type=\"video/ogg\"></video>"
+            },
+            {
+              "Tag Name": "wbr",
+              "Description": "Defines a possible line-break",
+              "category": "Text Content",
+              "sub_category": "Inline Text",
+              "Attributes": "None",
+              "Deprecated": "No",
+              "Example Usage": "<p>This is a very long word: supercali<wbr>fragilistic<wbr>expialidocious</p>"
+            }
+          
+        
+           
+      
+  ]

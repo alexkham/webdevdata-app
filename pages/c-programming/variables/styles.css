@@ -1,0 +1,257 @@
+/* .variable-table {
+    width: 70%;
+    padding: 10px;
+    margin: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 4px 8px;
+    line-height: 1.1;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  .scope-col {
+    background-color: #f2f2f2;
+  }
+  
+  .small {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .na {
+    color: #999;
+  }
+  
+  .modifier {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+  }
+  
+  .modifier .text {
+    display: inline-block;
+    background: #eef;
+    padding: 2px 6px;
+    border-radius: 2px;
+    cursor: help;
+  }
+  
+  .modifier .tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    z-index: 100;
+    background-color: #333;
+    color: white;
+    padding: 6px;
+    border-radius: 4px;
+    width: 160px;
+    text-align: center;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .modifier .tooltip:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+  }
+  
+  .modifier:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  } */
+
+  
+.variable-table {
+  width: 70%;
+  padding: 10px;
+  margin: auto;
+  transform: scale(0.95);
+  margin-top: 0px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 4px 8px;
+  line-height: 1.1;
+}
+
+th {
+  background-color: #f5f5f5;
+}
+
+.scope-col {
+  background-color: #f9f9f9;
+  color: #3498db;
+  font-weight: 600;
+}
+
+.small {
+  font-size: 12px;
+  color: #666;
+}
+
+.na {
+  color: #999;
+}
+
+.modifier {
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+}
+
+.modifier .text {
+  display: inline-block;
+  background: #eef;
+  padding: 2px 6px;
+  border-radius: 2px;
+  cursor: help;
+}
+
+.modifier .tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  z-index: 100;
+  background-color: #333;
+  color: white;
+  padding: 6px;
+  border-radius: 4px;
+  width: 160px;
+  text-align: center;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.2s ease-in-out;
+}
+
+.modifier .tooltip:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.modifier:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sections-nav {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.sections-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.section-link {
+  text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+}
+
+.variable-section {
+  margin: auto;
+  width: 90%;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  min-height: 500px;
+}
+.section-content{
+    /* min-height: 450px; */
+}
+
+.nav-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.nav-button {
+  padding: 5px 15px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+}
+
+.section-nav {
+    margin-top: 20px;
+  }
+  
+  .section-nav .nav-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 0 8px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .section-nav .nav-btn:hover {
+    background: #e5e5e5;
+  }
+
+
+  .section-nav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  
+  .nav-btn {
+    padding: 6px 12px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .nav-btn:hover {
+    background: #e5e5e5;
+  }
+
+  

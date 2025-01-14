@@ -1,0 +1,71 @@
+{
+    "root": {
+      "name": "Core Concepts of C",
+      "value": 90,
+      "details": [
+        "Fundamentals of Data Types",
+        "Variable Scope and Linkage",
+        "Structured Control Flow"
+      ]
+    },
+    "children": [
+      {
+        "name": "Data Types",
+        "value": 90,
+        "details": [
+          "Primary Types: int, char, float",
+          "Composite Types: structs, unions, arrays",
+          "Qualifiers: const, volatile"
+        ],
+        "link":"https://www.google.com"
+      },
+      {
+        "name": "Variables",
+        "value": 50,
+        "details": [
+          "Local vs Global Variables",
+          "Static and External Storage Classes",
+          "Dynamic Memory Allocation"
+        ]
+      },
+      {
+        "name": "Control Structures",
+        "value": 60,
+        "details": [
+          "Conditional Statements: if, else, switch",
+          "Loops: for, while, do-while",
+          "Jump Statements: break, continue, goto"
+        ]
+      },
+      {
+        "name": "Functions",
+        "value": 65,
+        "details": [
+          "Declaration vs Definition",
+          "Recursion and Stack Usage",
+          "Function Pointers"
+        ]
+      },
+
+      {
+        "name": "Functions",
+        "value": 65,
+        "details": [
+          "Declaration vs Definition",
+          "Recursion and Stack Usage",
+          "Function Pointers"
+        ]
+      },
+      {
+        "name": "Functions",
+        "value": 65,
+        "details": [
+          "Declaration vs Definition",
+          "Recursion and Stack Usage",
+          "Function Pointers"
+        ]
+      }
+     
+    ]
+  }
+  

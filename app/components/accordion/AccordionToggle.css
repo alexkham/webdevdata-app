@@ -1,0 +1,13 @@
+.accordion__section .accordion__content {
+    display: none; /* Initially hide all content */
+  }
+  
+  .accordion__section.open .accordion__content {
+    display: block; /* Display content when section is open */
+  }
+  
+  .accordion__label {
+    cursor: pointer;
+    /* Add more styles as needed */
+  }
+  

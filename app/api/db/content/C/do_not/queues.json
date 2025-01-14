@@ -1,0 +1,37 @@
+[
+    {
+        "title": "Do Not Dequeue from an Empty Queue",
+        "code": "if (isEmpty(queue)) {\n    fprintf(stderr, \"Cannot dequeue from an empty queue\\n\");\n    return -1;\n}",
+        "explanation": "Attempting to dequeue from an empty queue can lead to undefined behavior. Always check if the queue is empty before dequeuing.",
+        "language": "C",
+        "category": "Queues"
+    },
+    {
+        "title": "Do Not Forget to Manage Queue Pointers Correctly",
+        "code": "if (isEmpty(queue)) {\n    queue->front = queue->rear = NULL;\n}",
+        "explanation": "When managing a queue, ensure that the front and rear pointers are managed consistently to prevent logical errors.",
+        "language": "C",
+        "category": "Queues"
+    },
+    {
+        "title": "Do Not Overlook Queue Overflow",
+        "code": "if (isFull(queue)) {\n    fprintf(stderr, \"Queue overflow\\n\");\n    return;\n}",
+        "explanation": "Ensure you check for queue overflow when enqueuing to prevent memory corruption or data loss.",
+        "language": "C",
+        "category": "Queues"
+    },
+    {
+        "title": "Do Not Use Inefficient Queue Operations",
+        "code": "for (int i = queue->front; i != queue->rear; i = (i + 1) % QUEUE_SIZE) {\n    // process queue[i]\n}",
+        "explanation": "For circular queues, ensure that operations are efficient and correctly handle wrapping at the boundary.",
+        "language": "C",
+        "category": "Queues"
+    },
+    {
+        "title": "Do Not Neglect Synchronization in Concurrent Environments",
+        "code": "enqueue(queue, item); // What if multiple threads are enqueuing simultaneously?",
+        "explanation": "In a multi-threaded environment, operations on queues must be synchronized to avoid race conditions and data corruption.",
+        "language": "C",
+        "category": "Queues"
+    }
+]

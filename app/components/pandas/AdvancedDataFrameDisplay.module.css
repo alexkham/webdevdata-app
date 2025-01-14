@@ -1,0 +1,121 @@
+.advancedDataFrameContainer {
+  font-family: 'Roboto Mono', monospace;
+  margin: 1rem 0;
+  max-width: 100%;
+  position: relative;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  max-height: 500px;
+  overflow-y: auto;
+  margin-bottom: 50px; /* Space for the sticky footer */
+}
+
+.dataFrameTable {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13px;
+  border: none;
+}
+
+.dataFrameTable th,
+.dataFrameTable td {
+  padding: 6px 13px;
+  text-align: right;
+  border: none;
+}
+
+.dataFrameTable th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  text-align: right;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.dataFrameTable th:first-child,
+.dataFrameTable td:first-child {
+  border-right: 1px solid #ddd;
+  font-weight: bold;
+  text-align: right;
+  position: sticky;
+  left: 0;
+  background-color: #f8f9fa;
+  z-index: 20;
+}
+
+.dataRow:nth-child(even) {
+  background-color: #fff;
+}
+
+.dataRow:nth-child(odd) {
+  background-color: #f8f9fa;
+}
+
+.indexCell {
+  color: #000;
+  font-weight: normal;
+}
+
+.dataRow:hover {
+  background-color: #f1f3f4;
+}
+
+.stickyFooter {
+  position: sticky;
+  bottom: 0;
+  background-color: #fff;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  z-index: 1000;
+}
+
+.toggleButton {
+  background-color: #f1f3f4;
+  color: #1a73e8;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.toggleButton:hover {
+  background-color: #e8eaed;
+}
+
+.infoBox {
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  padding: 1rem;
+  font-family: 'Roboto Mono', monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 12px;
+  line-height: 1.4;
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .dataFrameTable {
+    font-size: 11px;
+  }
+  
+  .dataFrameTable th,
+  .dataFrameTable td {
+    padding: 4px 8px;
+  }
+
+  .toggleButton {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}

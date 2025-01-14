@@ -1,0 +1,176 @@
+/* function-prototype/function-prototype.module.css
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+  }
+  
+  .function {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-family: monospace;
+  }
+  
+  .block {
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  
+  .funcName {
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+  
+  .legend {
+    margin-top: 2rem;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+  }
+  
+  .legendItem {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+  }
+  
+  .colorBox {
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+    border-radius: 3px;
+  }
+
+  .coma{
+    line-height: 2rem;
+    font-weight: 400;
+    font-size: 30px;
+    color:gray;
+   
+    margin-left: 3px;
+    margin-right: 3px;
+    
+  }
+
+  .content {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    background: white;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+   }
+
+   .explanation {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #475569;
+    background: #f1f5f9;
+    padding: 8px 12px;
+    border-radius: 6px;
+  } */
+   
+
+  .container {
+ background: white;
+ padding: 0rem;
+ border-radius: 8px;
+ padding-left: 20px;
+}
+
+.function {
+ font-family: monospace;
+ font-size: 1.1rem;
+ line-height: 1.4;
+ margin-bottom: 1.5rem;
+}
+
+.block {
+ padding: 0.2rem 0.5rem; 
+ border-radius: 4px;
+ display: inline-block;
+}
+
+.funcName {
+ font-weight: bold;
+ font-size: 1.8rem;
+ color: #1e40af;
+}
+
+.coma {
+ color: #666;
+ font-size: 30px;
+ line-height: 2rem;
+ margin: 0 3px;
+}
+
+.legend {
+ margin-top: 1.5rem;
+ padding-top: 0.5rem;
+ border-top: 2px solid #eee;
+}
+
+.legendItem {
+ display: flex;
+ align-items: flex-start;
+ margin: 0.75rem 0;
+}
+
+.colorBox {
+ width: 20px;
+ height: 20px;
+ margin-right: 0.75rem;
+ border-radius: 3px;
+ margin-top: 0.25rem;
+ border: solid 1px lightgray;
+}
+
+.legendContent > div:first-child {
+ color: #1e40af;
+ font-weight: 600;
+ margin-bottom: 0.25rem;
+}
+
+.explanation {
+ font-size: 15px;
+ line-height: 2.2;
+ background: #f2f2f2;
+ color: #564d5e;
+ /* padding: 0.5rem 0.75rem; */
+ border-radius: 4px;
+ padding: 10px;
+ padding-left: 20px;
+ font-weight: 500;
+ font-style: italic;
+ min-width: 500px;
+ width:fit-content
+}
+.itemTitle{
+    color:#3498db;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+
+.explanation a{
+    color: #3498db;
+    text-decoration: none;
+}
+
+.linkedNote{
+  margin-left: 10px;
+  margin-top: 20px;
+  color: black;
+  font-weight: 500;
+}
+
+.linkedNote a{
+  text-decoration: none;
+  color: #3498db;
+  font-weight: bold;
+  
+}
+

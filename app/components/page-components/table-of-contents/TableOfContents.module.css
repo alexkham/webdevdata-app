@@ -1,0 +1,115 @@
+/* .container {
+    max-width: 48rem;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #f2f2f2;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: solid 0.5px #b3b3b3;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #1a202c;
+  }
+  
+  .mainList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .item {
+    margin-bottom: 1rem;
+  }
+  
+  .mainLink ,.mainItem {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #3182ce;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .mainLink:hover {
+    color: #2c5282;
+  }
+  
+  .subLink {
+    color: #4a5568;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .subLink:hover {
+    color: #3182ce;
+  }
+  
+  .subList {
+    list-style-type: none;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+  } */
+
+  .container {
+    max-width: 40.8rem;
+    margin: 1.7rem auto;
+    padding: 1.275rem;
+    background-color: #f2f2f2;
+    border-radius: 0.425rem;
+    box-shadow: 0 3.4px 5.1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: solid 0.425px #b3b3b3;
+  }
+  
+  .title {
+    font-size: 1.275rem;
+    font-weight: bold;
+    margin-bottom: 0.85rem;
+    color: #1a202c;
+  }
+  
+  .mainList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .item {
+    margin-bottom: 0.85rem;
+  }
+  
+  .mainLink, .mainItem {
+    font-size: 0.95625rem;
+    font-weight: 600;
+    color: #3182ce;
+    text-decoration: none;
+    transition: color 0.17s;
+  }
+  
+  .mainLink:hover {
+    color: #2c5282;
+  }
+  
+  .subLink {
+    color: #4a5568;
+    text-decoration: none;
+    transition: color 0.17s;
+  }
+  
+  .subLink:hover {
+    color: #3182ce;
+  }
+  
+  .subList {
+    list-style-type: none;
+    padding-left: 1.275rem;
+    margin-top: 0.425rem;
+  }

@@ -1,0 +1,124 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cardContent {
+    text-decoration: none;
+    color: #0070f3;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    max-height: 80px;
+    padding: 10px;
+  }
+  
+  .cardContent:hover {
+    color: #005bb5;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cardContent {
+    text-decoration: none;
+    color: #0070f3;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .cardTitle {
+    margin: 0;
+    font-size: 22px;
+    color: #0070f3;
+  }
+  
+  .cardText {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .cardContent:hover .cardTitle {
+    color: #005bb5;
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .description {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #666;
+    margin-top: 30px;
+    line-height: 1.8;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  /* Add this to the top of your CSS file to apply Roboto globally */
+/* body {
+    font-family: 'Roboto', sans-serif;
+  } */
+  
+  /* Ensure the following classes use the Roboto font */
+  .title {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .description {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .card {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .cardTitle {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .cardText {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  
+   

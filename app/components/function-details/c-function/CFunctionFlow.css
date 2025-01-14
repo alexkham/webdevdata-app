@@ -1,0 +1,158 @@
+.diagram-container{
+   
+}
+
+
+.svg-diagram {
+    width: 100%;
+    background-color: white;
+    height: 600px;
+    margin-top: -20px;
+    overflow: visible;
+    z-index: 10;
+   
+  }
+  
+  .arrow-marker {
+    fill: #4B5563;
+  }
+  
+  .param-box {
+    fill: white;
+    stroke: #3B82F6;
+    stroke-width: 2;
+    z-index: 10;
+  }
+  
+  .function-box {
+    fill: white;
+    stroke: #8B5CF6;
+    stroke-width: 2;
+   
+  }
+  
+  .return-box {
+    fill: white;
+    stroke: #10B981;
+    stroke-width: 2;
+  }
+  
+  .param-text {
+    font-family: monospace;
+    fill: #1E40AF;
+  }
+  
+  .param-type {
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    fill: #4B5563;
+    color :lightgray;
+  }
+  
+  .param-description {
+    font-size: 0.75rem;
+    fill: #6B7280;
+  }
+  
+  .function-text {
+    font-family: monospace;
+    font-size: 1.125rem;
+    fill: #7C3AED;
+    
+  }
+  
+  .return-text {
+    font-family: monospace;
+    fill: #047857;
+  }
+  
+  .arrow-path {
+    stroke: #4B5563;
+    stroke-width: 2;
+    fill: none;
+  }
+
+   a{
+    text-decoration: none;
+    
+  }
+
+  .modifier {
+    position: relative;
+    display: inline-block;
+    margin: 5px; /* Reduced spacing between modifiers */
+  }
+  
+  .modifier .text {
+    display: inline-block;
+    background: #eef;
+    padding: 2px 6px; /* Tightened padding within modifiers */
+    border-radius: 2px;
+    cursor: help;
+  }
+  
+  /* .modifier .tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    z-index: 100;
+    background-color: #333;
+    color: white;
+    padding: 20px; 
+    border-radius: 4px;
+    width: 3060px;
+    text-align: center;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.2s ease-in-out;
+   
+  }
+  
+  .modifier .tooltip:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+  } */
+
+
+  .modifier .tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    z-index: 100000000;
+    background-color: #333;
+    color: white;
+    padding: 70px;
+    border-radius: 4px;
+    width: 600px;
+    text-align: left;
+    top: 100%;
+    left: -50px;
+    margin-top: 10px;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .modifier .tooltip:before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 20px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #333 transparent;
+  }
+  
+  .modifier:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+   width: 600px;
+   z-index: 10000000;
+  }
+  
