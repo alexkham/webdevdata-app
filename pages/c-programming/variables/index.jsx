@@ -167,7 +167,8 @@ import MyList from '@/app/components/page-components/MyList';
 import ContentBlock from '@/app/components/page-components/ContentBlock';
 import CodeIllustration from '@/app/components/code-example/code-illustration/CodeIllustration';
 
-export default function VariablesPage({ tableData, scopeList, scopePyramid, lifeSpan, scopeTarget,blockScopeExample }) {
+export default function VariablesPage({ tableData, scopeList, scopePyramid, 
+  lifeSpan, scopeTarget,blockScopeExample ,lifetimeList}) {
  return (
    <>
      <MyNavbar2/>
@@ -190,12 +191,21 @@ export default function VariablesPage({ tableData, scopeList, scopePyramid, life
                  <text x={110} y={37} fontSize={11}>(duration)</text>
                </svg>
              </th>
-             {tableData.headers.map((header, index) => (
+             {/* {tableData.headers.map((header, index) => (
                <th key={index}>
                  {header.text}<br />
                  <span className="small">{header.description}</span>
                </th>
-             ))}
+             ))} */}
+
+          {tableData.headers.map((header, index) => (
+            <th key={index} className="scope-col">
+              <a href={header.link} style={{ textDecoration: 'none', color: 'inherit' }}>
+                {header.text}<br />
+                <span className="small">{header.description}</span>
+              </a>
+            </th>
+          ))}
            </tr>
          </thead>
          <tbody>
@@ -319,6 +329,33 @@ export default function VariablesPage({ tableData, scopeList, scopePyramid, life
     dangerouslySetInnerHTML={{ __html: lifeSpan }}
   />
   <br/>
+  <ContentBlock 
+        id="automatic"
+        content={lifetimeList[0]}
+        boxed={true}
+        color="yellow"
+      />
+  <br/>
+  <ContentBlock 
+        id="register"
+        content={lifetimeList[1]}
+        boxed={true}
+        color="yellow"
+      />
+  <br/>
+  <ContentBlock 
+        id="static"
+        content={lifetimeList[2]}
+        boxed={true}
+        color="yellow"
+      />
+  <br/>
+  <ContentBlock 
+        id="program"
+        content={lifetimeList[3]}
+        boxed={true}
+        color="yellow"
+      />
   <br/>
    <NavigationButtons nextLink="#modifiers" />
 </div>
@@ -339,6 +376,16 @@ export default function VariablesPage({ tableData, scopeList, scopePyramid, life
 
 
 export async function getStaticProps() {
+
+  const lifetimeList = [
+    `**Automatic Variables**: A variable with automatic lifetime exists only within its block of declaration and is automatically deallocated when the block execution ends. Each time the block is entered, the variable is recreated, and its value must be reinitialized. It&apos;s the default lifetime for local variables and provides efficient memory management for temporary data.`,
+    
+    `**Register Variables**: A register variable has automatic lifetime but suggests storage in CPU registers rather than main memory for faster access. Like automatic variables, they exist only during block execution and are deallocated upon exit. However, their physical storage location (whether actually in a register or not) is ultimately determined by the compiler&apos;s optimization decisions.`,
+    
+    `**Static Variables**: A static variable persists between function calls, maintaining its value throughout program execution once initialized. Unlike automatic variables, it is initialized only once when program execution begins and retains its memory location even when out of scope. This provides a way to maintain state information between function invocations.`,
+    
+    `**Program Variables**: A program variable exists for the entire runtime of the program, from start to finish. It is allocated when the program begins execution and deallocated only when the program terminates. These variables, typically global or extern, provide program-wide data storage and maintain their values throughout the entire program execution.`
+];
 
   const blockScopeExample = `#include <stdio.h>
 
@@ -485,10 +532,10 @@ void main() {
 
   const tableData = {
     headers: [
-      { text: 'Automatic', description: 'deallocated after block' },
-      { text: 'Register', description: 'stored in CPU register' },
-      { text: 'Static', description: 'persists between calls' },
-      { text: 'Program', description: 'exists entire runtime' }
+      { text: 'Automatic', description: 'deallocated after block', link: '#automatic' },
+      { text: 'Register', description: 'stored in CPU register', link: '#register' },
+      { text: 'Static', description: 'persists between calls', link: '#static' },
+      { text: 'Program', description: 'exists entire runtime', link: '#program' }
     ],
     rows: [
       {
@@ -694,7 +741,8 @@ void main() {
       scopePyramid,
       lifeSpan,
       scopeTarget,
-      blockScopeExample
+      blockScopeExample,
+      lifetimeList
       
     }
   }
