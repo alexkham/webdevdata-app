@@ -1,0 +1,220 @@
+/* .container {
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .blocksList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .block {
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .blockHeader {
+    padding: 16px;
+    padding-bottom: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .chevron {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #666;
+  }
+  
+  .mainInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    text-align: center;
+    padding: 0 40px;
+  }
+  
+  .title {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .explanation {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .expandedContent {
+    padding: 16px;
+    border-top: 1px solid #e2e2e2;
+    background: #f8fafc;
+    min-height: 120px;
+  }
+  
+  .tabContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .tabList {
+    display: flex;
+    gap: 12px;
+    border-bottom: 1px solid #e2e2e2;
+    padding-bottom: 8px;
+  }
+  
+  .tabButton {
+    padding: 4px 12px;
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .tabButton.activeTab {
+    color: #2563eb;
+  }
+  
+  .tabButton.activeTab::after {
+    content: '';
+    position: absolute;
+    bottom: -9px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #2563eb;
+  }
+  
+  .tabPanel {
+    display: none;
+    white-space: pre-line;
+  }
+  
+  .activePanel {
+    display: block;
+  }
+  
+  .simpleContent {
+    font-size: 16px;
+    line-height: 1.5;
+    white-space: pre-line;
+  } */
+
+
+  .container {
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .blocksList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .block {
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .blockHeader {
+    padding: 16px;
+    padding-bottom: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .chevron {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .mainInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    text-align: center;
+    padding: 0 40px;
+  }
+  
+  .title {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .explanation {
+    font-size: 14px;
+  }
+  
+  .expandedContent {
+    padding: 16px;
+    border-top: 1px solid #e2e2e2;
+    background: #f8fafc;
+    min-height: 120px;
+  }
+  
+  .tabContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .tabList {
+    display: flex;
+    gap: 12px;
+    border-bottom: 1px solid #e2e2e2;
+    padding-bottom: 8px;
+  }
+  
+  .tabButton {
+    padding: 4px 12px;
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .tabButton.activeTab {
+    color: #2563eb;
+  }
+  
+  .tabButton.activeTab::after {
+    content: '';
+    position: absolute;
+    bottom: -9px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #2563eb;
+  }
+  
+  .tabPanel {
+    display: none;
+    white-space: pre-line;
+  }
+  
+  .activePanel {
+    display: block;
+  }
+  
+  .simpleContent {
+    font-size: 16px;
+    line-height: 1.5;
+    white-space: pre-line;
+  }

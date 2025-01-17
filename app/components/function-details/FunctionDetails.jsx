@@ -1117,6 +1117,10 @@ const FunctionDetails = ({functionData, external_links}) => {
       <div className={styles.content}>
         <div ref={prototypeRef} className={`${styles.tabContent} ${activeTab === 'prototype' ? styles.active : ''}`}>
           <FunctionPrototype prototype={functionData.function_prototype} colorScheme="default" />
+          <br/>
+          <div>
+    {processContent(`Read more about parameters of ${functionData.function_name} in #tab:parameters# section`)}
+</div>
         </div>
 
         <div ref={descriptionRef} className={`${styles.tabContent} ${activeTab === 'description' ? styles.active : ''}`}>

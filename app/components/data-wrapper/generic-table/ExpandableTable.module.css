@@ -1,0 +1,228 @@
+.tableContainer {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse; /* Ensures no spacing between cells */
+  text-align: left;
+}
+
+.headerCell {
+  padding: 12px 16px;
+  font-weight: 600;
+  color: #1f2937;
+  background-color: #f3f4f6;
+  text-transform: capitalize;
+  border-bottom: 1px solid #d1d5db;
+  border-right: 1px solid #d1d5db; /* Added border between columns */
+}
+
+.iconCell {
+  width: 48px;
+  padding: 12px 16px;
+  background-color: #f3f4f6;
+  border-right: 1px solid #d1d5db; /* Added border between columns */
+}
+
+.tableRow {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.tableRow:hover {
+  background-color: #f9fafb;
+}
+
+.simpleRow {
+  background-color: white;
+  transition: background-color 0.2s ease;
+}
+
+.simpleRow:hover {
+  background-color: #f9fafb;
+}
+
+.tableCell {
+  padding: 12px 16px;
+  border-bottom: 1px solid #d1d5db;
+  border-right: 1px solid #d1d5db; /* Added border between columns */
+  color: #111827;
+  white-space: nowrap; /* Prevent cell content from wrapping */
+}
+
+.cellContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  text-wrap: wrap;
+}
+
+.copyButton {
+  min-width: 60px;
+  padding: 4px 12px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  color: #64748b;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copyButton:hover {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #475569;
+}
+
+.copyButton:active {
+  background-color: #e2e8f0;
+}
+
+.copyButton.copied {
+  background-color: #e0f2fe;
+  border-color: #93c5fd;
+  color: #2563eb;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  color: #6b7280;
+}
+
+.expandedContent {
+  background-color: #f9fafb;
+  padding: 16px;
+ 
+  padding-left: 80px;
+}
+
+.tabContainer {
+  width: 100%;
+}
+
+.tabList {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 4px;
+  border-radius: 6px;
+  margin-left: 16px; /* Align tabs with the parent column */
+}
+
+.tabButton {
+  padding: 8px 16px;
+  border: none;
+  background-color: transparent;
+  color: #4b5563;
+  cursor: pointer;
+  font-weight: 500;
+  text-transform: capitalize;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.tabButton:hover {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.activeTab {
+  background-color: white;
+  color: #374151;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.tabPanel {
+  display: none;
+  background-color: white;
+  padding: 16px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.activePanel {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+.hiddenPanel {
+  display: none;
+}
+
+.contentItem {
+  margin-bottom: 16px;
+}
+
+.contentItem:last-child {
+  margin-bottom: 0;
+}
+
+.contentLabel {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 4px;
+  text-transform: capitalize;
+}
+
+.contentValue {
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.simpleContent {
+  padding: 16px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  color: #374151;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .tableContainer{
+    overflow-x: scroll;
+    
+  }
+  .tabList {
+    flex-wrap: wrap;
+  }
+
+  .tabButton {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .headerCell,
+  .tableCell,
+  .iconCell {
+    padding: 8px 12px;
+  }
+}
