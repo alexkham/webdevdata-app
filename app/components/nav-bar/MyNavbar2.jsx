@@ -257,6 +257,7 @@ function MyNavbar2() {
                   <ul>
                     <li><Link href="/tools/tables/ascii" onClick={closeMobileMenu}>ASCII Table</Link></li>
                     <li><Link href="/tools/tables/html_tags" onClick={closeMobileMenu}>HTML Tags Table</Link></li>
+                    <li><Link href="/tools/tables/prefixes" onClick={closeMobileMenu}>Metric Prefixes Table</Link></li>
                   </ul>
                 </div>
               </div>
