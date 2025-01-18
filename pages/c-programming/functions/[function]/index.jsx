@@ -67,7 +67,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     const functionData = functionsDb.find(item => item.function_name === params.function);
     const allFunctionNames = functionsDb
-    .map(item => item.function_name)
+    .map(item => item.function_name.trim())
     .filter(name => name !== params.function);
     console.log('All C Functions:')
     console.log(allFunctionNames.length)
