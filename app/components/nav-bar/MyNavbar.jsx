@@ -121,7 +121,7 @@ function MyNavbar() {
         </button>
         <ul className={isMobileMenuOpen ? 'mobile-open' : ''}>
           <li><Link href="/">Home</Link></li>
-          <li><Link href="/methods-explorer">Methods Explorer</Link></li>
+          {/* <li><Link href="/methods-explorer">Methods Explorer</Link></li> */}
           <li className="dropdown">
             <Link href="/python">Python</Link>
             <ul className="dropdown-content">
