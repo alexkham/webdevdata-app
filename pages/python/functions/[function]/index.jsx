@@ -83,7 +83,7 @@ export async function getStaticProps({ params }) {
  const functionData = functionsDb.find(
    (item) => item.name.trim().toLowerCase() === functionName.toLowerCase()
  );
- const allNames=functionsDb.map(f=>f.name)
+ const allNames=functionsDb.map(f=>f.name.trim())
  .filter(name => name !== params.function);
  console.log(allNames);
  
