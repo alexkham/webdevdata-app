@@ -30,6 +30,18 @@ export default function CProgrammingPage() {
             text: 'Explore efficient and robust code snippets for various data types and operations in C, demonstrating best practices and correct usage across different scenarios.',
             image: 'examples.svg'
           },
+          {
+            title:'Variables in C Language',
+            link: 'c-programming/variables',
+            text: 'Learn about different kinds of variables in C and how to differentiate them by scope, lifetime and other features',
+            image: 'examples.svg'
+          },
+          {
+            title:'Data Types in C',
+            link: 'c-programming/data-types',
+            text: 'Master numerous data types existing in C language and learn how to use them correctly.',
+            image: 'examples.svg'
+          },
         
         
         

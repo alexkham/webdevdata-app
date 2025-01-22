@@ -196,6 +196,7 @@ function MyNavbar2() {
                     <li><Link href="/c-programming/functions" onClick={closeMobileMenu}>C Standard Library Functions</Link></li>
                     <li><Link href="/c-programming/examples" onClick={closeMobileMenu}>Code Examples</Link></li>
                     <li><Link href="/c-programming/variables" onClick={closeMobileMenu}>Variables in C</Link></li>
+                    <li><Link href="/c-programming/data-types" onClick={closeMobileMenu}>Data Types in C</Link></li>
                    
                   </ul>
                 </div>

@@ -946,7 +946,7 @@ import Link from 'next/link';
 import { processContent } from '@/utils/contentProcessor';
 import FunctionPrototype from './c-function/FunctionPrototype';
 import CFunctionFlow from './c-function/CFunctionFlow';
-import MyList from '../page-components/MyList';
+import MyList from '../page-components/lists/MyList';
 import MermaidDiagram2 from '../mermaid-diagram/MermaidDiagram2';
 
 

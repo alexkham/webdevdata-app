@@ -1,0 +1,384 @@
+/* .container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .cardHeader {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .cardTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .cardContent {
+    padding: 20px;
+  }
+  
+  .inputContainer {
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  .inputWrapper {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .input:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .button {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .button:hover {
+    background: #f5f5f5;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modalContent {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .modalHeader {
+    margin-bottom: 20px;
+  }
+  
+  .modalTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .textarea {
+    width: 100%;
+    min-height: 200px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: monospace;
+    margin-bottom: 10px;
+    resize: vertical;
+  }
+  
+  .charCount {
+    font-size: 0.875rem;
+    color: #666;
+  }
+  
+  .operationsGrid {
+    display: grid;
+    gap: 16px;
+  }
+  
+  .operationCard {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 16px;
+  }
+  
+  .operationHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .operationName {
+    font-family: monospace;
+    font-size: 0.875rem;
+  }
+  
+  .operationDescription {
+    font-size: 0.875rem;
+    color: #666;
+  }
+  
+  .operationResult {
+    background: #f5f5f5;
+    padding: 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    word-break: break-all;
+  } */
+
+
+
+  .container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border: 1px solid #eaeaea;
+  }
+  
+  .cardHeader {
+    padding: 24px;
+    border-bottom: 1px solid #eee;
+    background: #f8f9fa;
+    border-radius: 12px 12px 0 0;
+  }
+  
+  .cardTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    color: #2d3748;
+  }
+  
+  .cardContent {
+    padding: 24px;
+  }
+  
+  .inputContainer {
+    margin-bottom: 24px;
+  }
+  
+  .label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #4a5568;
+  }
+  
+  .inputWrapper {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .input:hover {
+    background-color: #f7fafc;
+    border-color: #cbd5e0;
+  }
+  
+  .button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+  }
+  
+  .resetButton {
+    background: #edf2f7;
+    color: #4a5568;
+  }
+  
+  .resetButton:hover {
+    background: #e2e8f0;
+  }
+  
+  .doneButton {
+    background: #3182ce;
+    color: white;
+  }
+  
+  .doneButton:hover {
+    background: #2c5282;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+  }
+  
+  .modalContent {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease;
+  }
+  
+  .modalHeader {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .modalTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    color: #2d3748;
+  }
+  
+  .modalActions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+  
+  .textarea {
+    width: 100%;
+    min-height: 200px;
+    padding: 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    font-family: monospace;
+    margin-bottom: 10px;
+    resize: vertical;
+    line-height: 1.5;
+    transition: border-color 0.2s ease;
+  }
+  
+  .textarea:focus {
+    outline: none;
+    border-color: #3182ce;
+  }
+  
+  .charCount {
+    font-size: 0.875rem;
+    color: #718096;
+  }
+  
+  .operationsGrid {
+    display: grid;
+    gap: 16px;
+  }
+  
+  .operationCard {
+    border: 1px solid #edf2f7;
+    border-radius: 8px;
+    padding: 16px;
+    transition: all 0.2s ease;
+  }
+  
+  .operationCard:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-color: #e2e8f0;
+  }
+  
+  .operationHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .operationName {
+    font-family: monospace;
+    font-size: 0.875rem;
+    color: #4a5568;
+    background: #edf2f7;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  
+  .operationDescription {
+    font-size: 0.875rem;
+    color: #718096;
+  }
+  
+  .operationResult {
+    background: #f7fafc;
+    padding: 12px;
+    border-radius: 6px;
+    font-family: monospace;
+    word-break: break-all;
+    color: #2d3748;
+    border: 1px solid #edf2f7;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { 
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

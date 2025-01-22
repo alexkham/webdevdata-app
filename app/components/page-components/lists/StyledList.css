@@ -1,0 +1,163 @@
+/* StyledList.css */
+.styled-list-container {
+    padding: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+  
+  .list-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    position: relative;
+  }
+  
+  .list-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+  }
+  
+  .list-item {
+    padding: 16px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--item-background, white);
+    transition: all 0.2s ease;
+  }
+  
+  /* Theme-specific styles */
+  .modern .list-item {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modern .list-item:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gradient .list-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+  }
+  
+  .gradient .list-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+  .timeline .list-items {
+    position: relative;
+    border-left: 2px solid var(--item-border-color, #93c5fd);
+    padding-left: 24px;
+  }
+  
+  .timeline .list-item {
+    position: relative;
+  }
+  
+  .timeline .item-icon {
+    position: absolute;
+    left: -35px;
+    background: var(--icon-color);
+    border-radius: 50%;
+    padding: 2px;
+  }
+  
+  .floating .list-item {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .floating .list-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .hexagonal {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hexagonal::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+    background: var(--pattern);
+    background-size: 16px 16px;
+    pointer-events: none;
+  }
+  
+  .hexagonal .list-item {
+    border-left: 4px solid var(--item-border-color);
+  }
+  
+  .glassmorphic .list-item {
+    border: 1px solid var(--item-border-color);
+  }
+  
+  .stacked .list-item {
+    position: relative;
+  }
+  
+  .stacked .list-item::before,
+  .stacked .list-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: white;
+    border-radius: 6px;
+    z-index: -1;
+  }
+  
+  .stacked .list-item::before {
+    transform: translateY(4px) rotate(1deg);
+  }
+  
+  .stacked .list-item::after {
+    transform: translateY(2px) rotate(-1deg);
+  }
+  
+  .neumorphic .list-item {
+    box-shadow: var(--item-shadow);
+  }
+  
+  /* Icons */
+  .item-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--icon-color);
+    flex-shrink: 0;
+  }
+  
+  /* Numbered list */
+  .numbered .list-item {
+    counter-increment: item;
+  }
+  
+  .numbered .list-item::before {
+    content: counter(item) ".";
+    margin-right: 8px;
+    font-weight: 600;
+  }
+  
+  /* Layout adjustments for lists without icons */
+  .has-icons .list-item {
+    padding-left: 16px;
+  }
+  
+  .list-item:not(:has(.item-icon)) {
+    padding-left: 16px;
+  }
+
+  .list-item a {
+    text-decoration: none;
+
+
+    
+  }

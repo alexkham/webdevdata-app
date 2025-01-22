@@ -163,7 +163,7 @@ import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb';
 import '../../pages.css'
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton';
 import NavigationButtons from '@/app/components/page-components/NavigationButtons';
-import MyList from '@/app/components/page-components/MyList';
+import MyList from '@/app/components/page-components/lists/MyList';
 import ContentBlock from '@/app/components/page-components/ContentBlock';
 import CodeIllustration from '@/app/components/code-example/code-illustration/CodeIllustration';
 
