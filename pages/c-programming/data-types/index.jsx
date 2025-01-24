@@ -135,7 +135,17 @@ textColor={' #3498db'}/>
 
 export async function getStaticProps(){
 
+  const similarities=[
+    `**Similarities and Differences**
+At a high level, the four categories share a common goal: to represent and manipulate data efficiently in a C program. Core Types and Memory Types both provide the basic building blocks of data, but Memory Types go a step further by offering mechanisms to manage and measure memory in a system-dependent manner. Pointer Types, on the other hand, offer a more abstract approach to memory management by allowing direct references to memory locations, while Special Types are more niche, focused on specialized system-level operations like time handling or file I/O.
 
+The key differences lie in the level of abstraction and specificity of each category. Core Types are general-purpose and can be used in virtually any part of a program. Memory Types are more specialized for low-level system operations, such as memory allocation and pointer arithmetic. Pointer Types provide a high level of control over memory and data, while Special Types are domain-specific, abstracting away the complexity of system-level operations.
+
+**Usage in C Programming**
+Each category of data types plays a vital role in C programming. Core Types are foundational and used for most basic operations. Memory Types are essential for system-level tasks like memory management and pointer arithmetic. Pointer Types offer flexibility and efficiency, enabling the creation of complex data structures and enabling memory operations to be performed dynamically. Finally, Special Types are critical when interacting with the operating system or managing specialized data such as time and file handling.
+
+Together, these categories form a comprehensive set of tools that make C a powerful, flexible, and efficient language for both high-level application development and low-level system programming. Understanding the differences and similarities between these categories allows C programmers to write cleaner, more efficient, and more maintainable code.`
+  ]
 
   const types=[
     {text:'Core Types',link:'#core'},
@@ -146,10 +156,37 @@ export async function getStaticProps(){
   ]
 
   const content=[
-    `**Core Types**
-The Core Types are the fundamental building blocks of the C programming language. They consist of the primitive data types that most C programs rely on for general-purpose computation. These types define how data is stored and manipulated at the most basic level. Types like int, char, float, and double represent integral numbers, characters, and floating-point numbers, respectively. In addition, there are several variations of these types—such as long, short, unsigned, and void—which allow for more control over the size and behavior of the data. For example, unsigned int can store only non-negative numbers, while void represents an empty or undefined data type used for functions that do not return any value.
+    `**Core (Basic) Types**
+The Core Types are the fundamental building blocks of the C programming language. They include the primitive data types that most C programs rely on for general-purpose computation.
+**The C language defines five basic data types. These are**:
+\t•Integer **(int)**: Used for whole numbers, both positive and negative.
+\t•Character **(char)**: Represents single characters (e.g., 'a', '1') and often used to handle ASCII values.
+\t•Floating-point **(float)**: Represents single-precision decimal numbers.
+\t•Double-precision floating-point **(double)**: Used for double-precision decimal numbers.
+\t•Void **(void)**: Represents no type or a function that returns nothing.
 
-The Core Types are essential for almost all applications written in C, from simple algorithms to complex systems-level programming. These types are directly supported by hardware, making them efficient in terms of both performance and memory usage. They also provide the foundation for more complex types and abstractions, such as arrays, structures, and unions.`,
+These types define how data is stored and manipulated at the most basic level.
+
+In addition, there are several type qualifiers like **short, long, signed, and unsigned** that are used to modify the properties of basic data types, particularly integers and floating-point numbers.They allow more control over the size and behavior of the data.
+
+ **Length Qualifiers**:
+ \t•**short**: Only applies to int. Defines a smaller integer type (usually 16 bits).
+ \t•**long**: Applies to both int and double. Defines a larger integer type or higher precision for floating-point numbers.
+
+**Sign Qualifiers**:
+  \t \t•**signed**: Allows both positive and negative values. Default for integer types.
+  \t•**unsigned**: Allows only non-negative values (positive and zero). Often doubles the positive range.
+
+Length and Sign qualifiers may be combined between them and added to basic data types to create modified types which are still refered as variations of Core data types.
+Need to notice that not every length qualifier may be paired with every sign qualifier and not every combination between qualifiers and basic types are possible.In addition, there are rules concerning default values for properties represented by qualifiers.
+To delve deeper into different types of Core data types , visit the relevant page [here](!/c-programming/data-types/basic).
+
+The Basic Types are essential for almost all applications written in C, from simple algorithms to complex systems-level programming. They are supported directly by hardware, making them efficient in terms of both performance and memory usage. They also provide the foundation for more complex types and abstractions, such as arrays, structures, and unions.
+
+
+[Read More](!/c-programming/)
+<span className='link'></span>
+`,
 
     `**Memory Types**
 Memory Types in C are specialized types designed to handle the allocation, addressing, and manipulation of memory. These types are often used in operations involving memory management, file handling, and pointer arithmetic. Memory Types such as size_t, ssize_t, ptrdiff_t, and fpos_t are defined to address specific needs related to system-level programming. For example, size_t is used to represent the size of objects in memory, ensuring that it can accommodate the addressable range of the system, whether it is a 32-bit or 64-bit architecture. Similarly, ptrdiff_t is used to calculate the difference between two pointers, which is essential in operations like traversing arrays or buffers.
@@ -169,6 +206,8 @@ For example, time_t is used to represent time values, enabling programs to perfo
 
 Special Types are often abstractions that simplify complex system-level operations. They may not be as fundamental as the Core Types but are indispensable in certain contexts, such as system programming or writing programs that interface with hardware or the operating system. These types are typically defined in standard libraries and are optimized to handle specific tasks that would otherwise require more complicated manual memory and data management.`
   ]
+
+  
 
 
   return{

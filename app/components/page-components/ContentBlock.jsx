@@ -78,70 +78,148 @@
 // export default ContentBlock;
 
 
-import React from 'react';
-import { processContent } from '@/utils/contentProcessor';
+// import React from 'react';
+// import { processContent } from '@/utils/contentProcessor';
 
-const ContentBlock = ({
- content,
- id,
- boxed = false,
- compact = false,
- divided = false,
- color = 'gray',
- displayField = 'text'
-}) => {
- const colors = {
-   gray: { marker: '#6B7280', bg: '#F3F4F6', border: '#E5E7EB' },
-   blue: { marker: '#3B82F6', bg: '#EFF6FF', border: '#BFDBFE' },
-   green: { marker: '#10B981', bg: '#ECFDF5', border: '#A7F3D0' },
-   red: { marker: '#EF4444', bg: '#FEF2F2', border: '#FECACA' },
-   yellow: { marker: '#F59E0B', bg: '#fdfdea', border: '#FEF08A' }
- };
+// const ContentBlock = ({
+//  content,
+//  id,
+//  boxed = false,
+//  compact = false,
+//  divided = false,
+//  color = 'gray',
+//  displayField = 'text'
+// }) => {
+//  const colors = {
+//    gray: { marker: '#6B7280', bg: '#F3F4F6', border: '#E5E7EB' },
+//    blue: { marker: '#3B82F6', bg: '#EFF6FF', border: '#BFDBFE' },
+//    green: { marker: '#10B981', bg: '#ECFDF5', border: '#A7F3D0' },
+//    red: { marker: '#EF4444', bg: '#FEF2F2', border: '#FECACA' },
+//    yellow: { marker: '#F59E0B', bg: '#fdfdea', border: '#FEF08A' }
+//  };
 
- const styles = {
-   container: {
-     margin: '0.5rem 0',
-     position: 'relative',
-     padding: compact ? '0.25rem 1rem' : '0.5rem 1rem',
-     ...(boxed && {
-       backgroundColor: colors[color].bg,
-       border: `1px solid ${colors[color].border}`,
-       borderRadius: '0.375rem',
-       margin: '0.95rem 0'
-     }),
-     ...(divided && !boxed && {
-       borderBottom: `1px solid ${colors[color].border}`
-     }),
-     fontSize: '16px'
-   },
-   content: {
-     flex: 1
-   }
- };
+//  const styles = {
+//    container: {
+//      margin: '0.5rem 0',
+//      position: 'relative',
+//      padding: compact ? '0.25rem 1rem' : '0.5rem 1rem',
+//      ...(boxed && {
+//        backgroundColor: colors[color].bg,
+//        border: `1px solid ${colors[color].border}`,
+//        borderRadius: '0.375rem',
+//        margin: '0.95rem 0'
+//      }),
+//      ...(divided && !boxed && {
+//        borderBottom: `1px solid ${colors[color].border}`
+//      }),
+//      fontSize: '16px'
+//    },
+//    content: {
+//      flex: 1
+//    }
+//  };
 
- const prepareContent = (item) => {
-   if (typeof item === 'string') {
-     return item;
-   }
+//  const prepareContent = (item) => {
+//    if (typeof item === 'string') {
+//      return item;
+//    }
    
-   if (typeof item === 'object' && item !== null) {
-     return item[displayField] || JSON.stringify(item);
-   }
+//    if (typeof item === 'object' && item !== null) {
+//      return item[displayField] || JSON.stringify(item);
+//    }
    
-   return String(item);
- };
+//    return String(item);
+//  };
 
- return (
-   <div id={id} style={styles.container}>
-    <br/>
-    <br/>
+//  return (
+//    <div id={id} style={styles.container}>
+//     <br/>
+//     <br/>
   
     
-     <div style={styles.content}>
-       {processContent(prepareContent(content))}
-     </div>
-   </div>
- );
+//      <div style={styles.content}>
+//        {processContent(prepareContent(content))}
+//      </div>
+//    </div>
+//  );
+// };
+
+// export default ContentBlock;
+
+
+// // text-decoration: none;
+// //   color: #3498db;
+// //   font-weight: bold;
+
+
+import React from 'react';
+import { processContent } from '@/utils/contentProcessor';
+import './styles.css'
+
+const ContentBlock = ({ 
+  content,
+  id,
+  boxed = false,
+  compact = false,
+  divided = false,
+  color = 'gray',
+  displayField = 'text'
+}) => {
+  const colors = {
+    gray: { marker: '#6B7280', bg: '#F3F4F6', border: '#E5E7EB' },
+    blue: { marker: '#3B82F6', bg: '#EFF6FF', border: '#BFDBFE' },
+    green: { marker: '#10B981', bg: '#ECFDF5', border: '#A7F3D0' },
+    red: { marker: '#EF4444', bg: '#FEF2F2', border: '#FECACA' },
+    yellow: { marker: '#F59E0B', bg: '#fdfdea', border: '#FEF08A' }
+  };
+
+  const styles = {
+    container: {
+      margin: '0.5rem 0',
+      position: 'relative',
+      padding: compact ? '0.25rem 1rem' : '1.5rem 5rem',
+      ...(boxed && {
+        backgroundColor: colors[color].bg,
+        border: `1px solid ${colors[color].border}`,
+        borderRadius: '0.375rem',
+        margin: '0.95rem 0'
+      }),
+      ...(divided && !boxed && {
+        borderBottom: `1px solid ${colors[color].border}`
+      }),
+      fontSize: '16px'
+    },
+    content: {
+      flex: 1,
+       a : {
+        textDecoration: 'none',
+        color: '#3498db',
+        fontWeight: 'bold'
+      }
+    }
+  };
+
+  const prepareContent = (item) => {
+    if (typeof item === 'string') {
+      return item;
+    }
+        
+    if (typeof item === 'object' && item !== null) {
+      return item[displayField] || JSON.stringify(item);
+    }
+        
+    return String(item);
+  };
+
+  return (
+    <div id={id} style={styles.container}>
+      <br/>
+      <br/>              
+      <div style={styles.content}>
+        {processContent(prepareContent(content))}
+      </div>
+    </div>
+  );
 };
 
 export default ContentBlock;

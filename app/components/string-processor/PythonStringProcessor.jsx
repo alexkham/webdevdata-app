@@ -133,7 +133,7 @@ const ResetIcon = () => (
   </svg>
 );
 
-const StringProcessor = () => {
+const PythonStringProcessor = () => {
   const [inputString, setInputString] = useState('Hello, World!');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [tempString, setTempString] = useState('');
@@ -277,4 +277,4 @@ const StringProcessor = () => {
   );
 };
 
-export default StringProcessor;
+export default PythonStringProcessor;

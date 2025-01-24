@@ -1,0 +1,326 @@
+/* .wrapper {
+    padding: 0.75rem;
+    background: #fafafa;
+  }
+  
+  .selectionPanel {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .panelHeader {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .instructions {
+    flex: 1;
+    color: #666;
+    line-height: 1.4;
+    font-size: 0.9rem;
+  }
+  
+  .globalActions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .globalActions button,
+  .categoryActions button {
+    padding: 0.35rem 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: #fff;
+    color: #374151;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .globalActions button:hover,
+  .categoryActions button:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+  }
+  
+  .categoriesRow {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  
+  .categoryPanel {
+    flex: 1;
+    min-width: 180px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fff;
+  }
+  
+  .categoryHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    cursor: pointer;
+    background: #f9fafb;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .categoryTitle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .categoryTitle h3 {
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+  }
+  
+  .arrow {
+    font-size: 0.75rem;
+    color: #6b7280;
+    transition: transform 0.2s;
+  }
+  
+  .arrow.expanded {
+    transform: rotate(90deg);
+  }
+  
+  .categoryActions {
+    display: flex;
+    gap: 0.35rem;
+  }
+  
+  .categoryActions button {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .operations {
+    padding: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    background: #fff;
+    border-radius: 0 0 8px 8px;
+  }
+  
+  .operationLabel {
+    flex: 0 1 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.5rem;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: #374151;
+    transition: all 0.2s;
+  }
+  
+  .operationLabel:hover {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+  }
+  
+  .operationLabel input {
+    margin: 0;
+  }
+  
+  .operationsContainer :global(.operationsGrid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 0.75rem;
+  } */
+
+
+  .wrapper {
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #f6f8ff 0%, #f0f4ff 100%);
+  }
+  
+  .selectionPanel {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #e1e8ff;
+  }
+  
+  .panelHeader {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #e6edff;
+  }
+  
+  .instructions {
+    flex: 1;
+    color: #4a5568;
+    line-height: 1.4;
+    font-size: 1.rem;
+  }
+  
+  .globalActions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .globalActions button {
+    padding: 0.35rem 0.75rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+  
+  .globalActions button:first-child {
+    background: #4f46e5;
+    color: white;
+  }
+  
+  .globalActions button:first-child:hover {
+    background: #4338ca;
+  }
+  
+  .globalActions button:last-child {
+    background: #ef4444;
+    color: white;
+  }
+  
+  .globalActions button:last-child:hover {
+    background: #dc2626;
+  }
+  
+  .categoriesRow {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  
+  .categoryPanel {
+    flex: 1;
+    min-width: 180px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fff;
+    transition: all 0.2s;
+  }
+  
+  .categoryPanel:hover {
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.1);
+    border-color: #c7d2fe;
+  }
+  
+  .categoryHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    cursor: pointer;
+    background: #f8faff;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .categoryTitle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .categoryTitle h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #4f46e5;
+  }
+  
+  .arrow {
+    color: #4f46e5;
+    font-size: 1.2rem;
+    transition: transform 0.2s;
+  }
+  
+  .arrow.expanded {
+    transform: rotate(90deg);
+  }
+  
+  .categoryActions {
+    display: flex;
+    gap: 0.35rem;
+  }
+  
+  .categoryActions button {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    background: white;
+    color: tgray;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .categoryActions button:hover {
+    background: #f5f3ff;
+    border-color: #c7d2fe;
+  }
+  
+  .operations {
+    padding: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    background: #fff;
+    border-radius: 0 0 8px 8px;
+  }
+  
+  .operationLabel {
+    flex: 0 1 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.5rem;
+    background: #f8faff;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #4b5563;
+    transition: all 0.2s;
+  }
+  
+  .operationLabel:hover {
+    background: #f5f3ff;
+    border-color: #c7d2fe;
+    color: #4f46e5;
+  }
+  
+  .operationLabel input {
+    margin: 0;
+    accent-color: #4f46e5;
+  }
+  
+  .operationsContainer :global(.operationsGrid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 0.75rem;
+  }
