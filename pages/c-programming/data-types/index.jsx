@@ -184,7 +184,7 @@ To delve deeper into different types of Core data types , visit the relevant pag
 The Basic Types are essential for almost all applications written in C, from simple algorithms to complex systems-level programming. They are supported directly by hardware, making them efficient in terms of both performance and memory usage. They also provide the foundation for more complex types and abstractions, such as arrays, structures, and unions.
 
 
-[Read More](!/c-programming/)
+[Read More](!/c-programming/data-types/basic)
 <span className='link'></span>
 `,
 

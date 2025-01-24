@@ -1834,7 +1834,7 @@ const StringProcessorWrapper = ({ language = 'Python', defaultString, baseUrl, t
             <button onClick={handleResetAllCategories}>Reset All</button>
           </div>
           <div className={styles.instructions}>
-            Select string operations from categories below. Click 'All Operations' to view all available functions.
+            Select string operations from categories below. Click &#39;All Operations&#39; to view all available functions.
           </div>
         </div>
         
