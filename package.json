@@ -47,6 +47,9 @@
     "terser": "^5.31.2",
     "xml2js": "^0.6.2"
   },
+  "engines": {
+    "node": "24.x"
+  },
   "devDependencies": {
     "eslint": "^8",
     "eslint-config-next": "14.0.4"
