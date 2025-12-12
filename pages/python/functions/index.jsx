@@ -3,7 +3,7 @@ import MyNavbar2 from '@/app/components/nav-bar/MyNavbar2'
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton'
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb'
 import PythonFunctionsList from '@/app/components/function-list/PythonFunctionsList'
-import pythonData from '../../../app/api/db/developement/python/functions_new.json'
+import pythonData from '../../../app/api/db/developement/python/functions_new.js'
 import Head from 'next/head'
 import '../../pages.css'
 

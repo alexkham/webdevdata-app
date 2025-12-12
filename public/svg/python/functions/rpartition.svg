@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+    <!-- Background -->
+    <rect width="600" height="400" fill="#f8f9fa"/>
+    
+    <!-- Original string box -->
+    <rect x="50" y="40" width="500" height="80" rx="10" fill="white" stroke="#dee2e6" stroke-width="2" filter="url(#shadow)"/>
+    <text x="70" y="30" font-family="Arial, sans-serif" font-size="16" fill="#495057">Original string: "Hello , World , Python"</text>
+    
+    <!-- Individual characters in original -->
+    <text x="70" y="85" font-family="Arial, sans-serif" font-size="24" fill="#6c757d">
+        <tspan x="70">"</tspan>
+        <tspan x="90">H</tspan>
+        <tspan x="110">e</tspan>
+        <tspan x="130">l</tspan>
+        <tspan x="150">l</tspan>
+        <tspan x="170">o</tspan>
+        <tspan x="190" fill="#a2d2ff">␣</tspan> <!-- Space after Hello (blue) -->
+        <tspan x="210">,</tspan>
+        <tspan x="230" fill="#a2d2ff">␣</tspan> <!-- Space before World (blue) -->
+        <tspan x="250">W</tspan>
+        <tspan x="280">o</tspan>
+        <tspan x="300">r</tspan>
+        <tspan x="320">l</tspan>
+        <tspan x="340">d</tspan>
+        <tspan x="360" fill="#a2d2ff">␣</tspan> <!-- Space after World (blue) -->
+        <tspan x="380">,</tspan>
+        <tspan x="400" fill="#a2d2ff">␣</tspan> <!-- Space before Python (blue) -->
+        <tspan x="420">P</tspan>
+        <tspan x="450">y</tspan>
+        <tspan x="470">t</tspan>
+        <tspan x="490">h</tspan>
+        <tspan x="510">o</tspan>
+        <tspan x="530">n</tspan>
+        <tspan x="550">"</tspan>
+    </text>
+    
+    <!-- Arrow indicating the rpartition point -->
+    <path d="M380,120 L380,160" fill="none" stroke="#ff758f" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Arrow marker definition -->
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#ff758f"/>
+        </marker>
+        <filter id="shadow" x="-0.5" y="-0.5" width="2" height="2">
+            <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#adb5bd" flood-opacity="0.5"/>
+        </filter>
+    </defs>
+    
+    <!-- Result box -->
+    <rect x="50" y="180" width="500" height="120" rx="10" fill="white" stroke="#dee2e6" stroke-width="2" filter="url(#shadow)"/>
+    <text x="70" y="170" font-family="Arial, sans-serif" font-size="16" fill="#495057">After rpartition(","):</text>
+    <text x="70" y="210" font-family="Arial, sans-serif" font-size="24" fill="#495057">
+        <tspan x="70">("Hello , World ",</tspan>
+        <tspan x="70" dy="30">",",</tspan>
+        <tspan x="70" dy="30">" Python")</tspan>
+    </text>
+    
+    <!-- Legend -->
+    <rect x="50" y="320" width="15" height="15" fill="#a2d2ff" rx="3"/>
+    <text x="75" y="335" font-family="Arial, sans-serif" font-size="14" fill="#495057">Spaces ('␣')</text>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="600" height="300">
+    <!-- Background -->
+    <rect width="600" height="300" fill="#f8f9fa"/>
+    
+    <!-- Original string box -->
+    <rect x="50" y="40" width="500" height="80" rx="10" fill="white" stroke="#dee2e6" stroke-width="2" filter="url(#shadow)"/>
+    <text x="70" y="30" font-family="Arial, sans-serif" font-size="16" fill="#495057">Original string: "Hello, World!"</text>
+    
+    <!-- Individual characters in original -->
+    <text x="70" y="85" font-family="Arial, sans-serif" font-size="24" fill="#6c757d">
+        <tspan x="70">"</tspan>
+        <tspan x="90">H</tspan>
+        <tspan x="110">e</tspan>
+        <tspan x="130">l</tspan>
+        <tspan x="150">l</tspan>
+        <tspan x="170" fill="#a2d2ff">o</tspan>
+        <tspan x="190">,</tspan>
+        <tspan x="210">␣</tspan>
+        <tspan x="220">W</tspan>
+        <tspan x="250" fill="#a2d2ff">o</tspan>
+        <tspan x="270">r</tspan>
+        <tspan x="290">l</tspan>
+        <tspan x="310">d</tspan>
+        <tspan x="330">!</tspan>
+        <tspan x="350">"</tspan>
+    </text>
+    
+    <!-- Arrows indicating the occurrences of 'o' -->
+    <path d="M170,120 L170,160" fill="none" stroke="#ff758f" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M250,120 L250,160" fill="none" stroke="#ff758f" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Arrow marker definition -->
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#ff758f"/>
+        </marker>
+        <filter id="shadow" x="-0.5" y="-0.5" width="2" height="2">
+            <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#adb5bd" flood-opacity="0.5"/>
+        </filter>
+    </defs>
+    
+    <!-- Result box -->
+    <rect x="50" y="180" width="500" height="80" rx="10" fill="white" stroke="#dee2e6" stroke-width="2" filter="url(#shadow)"/>
+    <text x="70" y="170" font-family="Arial, sans-serif" font-size="16" fill="#495057">After rfind('o'):</text>
+    <text x="70" y="210" font-family="Arial, sans-serif" font-size="24" fill="#4CAF50">8</text>
+    
+    <!-- Legend -->
+    <rect x="50" y="270" width="15" height="15" fill="#a2d2ff" rx="3"/>
+    <text x="75" y="285" font-family="Arial, sans-serif" font-size="14" fill="#495057">Occurrences of 'o'</text>
+    <rect x="50" y="300" width="15" height="15" fill="#4CAF50" rx="3"/>
+    <text x="75" y="315" font-family="Arial, sans-serif" font-size="14" fill="#495057">Index of the last occurrence</text>
+</svg>

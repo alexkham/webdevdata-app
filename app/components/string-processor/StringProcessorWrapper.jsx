@@ -1685,7 +1685,7 @@
 
 import React, { useState } from 'react';
 import StringProcessor from './StringProcessor';
-import { pythonData } from './pythonData';
+// import { pythonData } from './pythonData';
 import styles from './StringProcessorWrapper.module.css';
 
 const CategoryPanel = ({ 
@@ -1744,7 +1744,7 @@ const CategoryPanel = ({
   );
 };
 
-const StringProcessorWrapper = ({ language = 'Python', defaultString, baseUrl, title, ...otherProps }) => {
+const StringProcessorWrapper = ({pythonData, language = 'Python', defaultString, baseUrl, title, ...otherProps }) => {
   const [selectedOperations, setSelectedOperations] = useState({});
   
   const functionCategories = language.toLowerCase() === 'python' ? pythonData : {};

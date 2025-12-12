@@ -1921,80 +1921,335 @@ const ResetIcon = () => (
  </svg>
 );
 
-const OperationCard = ({ operation, inputString, baseUrl = '/' }) => {
- const { name, format, description, operation: operationFn, args = [] } = operation;
- const [argValues, setArgValues] = useState(args.map(arg => arg.default || ''));
+// const OperationCard = ({ operation, inputString, baseUrl = '/' }) => {
+//  const { name, format, description, operation: operationFn, args = [] } = operation;
+//  const [argValues, setArgValues] = useState(args.map(arg => arg.default || ''));
 
- const formatOperation = useCallback((op, str, isExample = false) => {
-   const argStr = args.length > 0 
-     ? `(${argValues.join(', ')})` 
-     : '()';
+//  const formatOperation = useCallback((op, str, isExample = false) => {
+//    const argStr = args.length > 0 
+//      ? `(${argValues.join(', ')})` 
+//      : '()';
  
-   const input = isExample ? `"${str}"` : str;
+//    const input = isExample ? `"${str}"` : str;
        
-   switch (op.format) {
-     case 'dot':
-       return `${input}.${op.name}${argStr}`;
-     case 'function':
-       return `${op.name}(${input})`;
-     default:
-       return op.name;
-   }
- }, [args, argValues]);
+//    switch (op.format) {
+//      case 'dot':
+//        return `${input}.${op.name}${argStr}`;
+//      case 'function':
+//        return `${op.name}(${input})`;
+//      default:
+//        return op.name;
+//    }
+//  }, [args, argValues]);
 
- const handleArgChange = (index, value) => {
-   const newArgs = [...argValues];
-   newArgs[index] = value;
-   setArgValues(newArgs);
- };
+//  const handleArgChange = (index, value) => {
+//    const newArgs = [...argValues];
+//    newArgs[index] = value;
+//    setArgValues(newArgs);
+//  };
 
- const executeOperation = () => {
-   try {
-     return operationFn(inputString, ...argValues);
-   } catch (error) {
-     return error.message; 
-   }
- };
+//  const executeOperation = () => {
+//    try {
+//      return operationFn(inputString, ...argValues);
+//    } catch (error) {
+//      return error.message; 
+//    }
+//  };
 
- return (
-   <div className={styles.operationCard}>
-     <div className={styles.operationHeader}>
-       <div className={styles.operationInfo}>
-         <span className={styles.operationName}>
-           <code>{formatOperation(operation, 'str')}</code>
-         </span>
-         {args.length > 0 && (
-           <div className={styles.argsContainer}>
-             {args.map((arg, index) => (
-               <div key={arg.name} className={styles.argInput}>
-                 <label>{arg.name}:</label>
-                 <input
-                   type={arg.type}
-                   value={argValues[index]}
-                   onChange={(e) => handleArgChange(index, e.target.value)}
-                   placeholder={arg.placeholder || arg.type}
-                 />
-               </div>
-             ))}
-           </div>
-         )}
-       </div>
-       <span className={styles.operationDescription}>{description}</span>
-     </div>
-     <div className={styles.operationResult}>
-       {executeOperation()}
-     </div>
-     <div className={styles.operationExample}>
-       Example with current input: {formatOperation(operation, inputString, true)}
-     </div>
-     <div className={styles.readMoreContainer}>
-       <a href={`${baseUrl}${name.split('(')[0]}`} className={styles.readMoreButton}>
-         Read More about {name.split('(')[0]}
-       </a>
-     </div>
-   </div>
- );
-};
+//  return (
+//    <div className={styles.operationCard}>
+//      <div className={styles.operationHeader}>
+//        <div className={styles.operationInfo}>
+//          <span className={styles.operationName}>
+//            <code>{formatOperation(operation, 'str')}</code>
+//          </span>
+//          {args.length > 0 && (
+//            <div className={styles.argsContainer}>
+//              {args.map((arg, index) => (
+//                <div key={arg.name} className={styles.argInput}>
+//                  <label>{arg.name}:</label>
+//                  <input
+//                    type={arg.type}
+//                    value={argValues[index]}
+//                    onChange={(e) => handleArgChange(index, e.target.value)}
+//                    placeholder={arg.placeholder || arg.type}
+//                  />
+//                </div>
+//              ))}
+//            </div>
+//          )}
+//        </div>
+//        <span className={styles.operationDescription}>{description}</span>
+//      </div>
+//      <div className={styles.operationResult}>
+//        {executeOperation()}
+//      </div>
+//      <div className={styles.operationExample}>
+//        Example with current input: {formatOperation(operation, inputString, true)}
+//      </div>
+//      <div className={styles.readMoreContainer}>
+//        <a href={`${baseUrl}${name.split('(')[0]}`} className={styles.readMoreButton}>
+//          Read More about {name.split('(')[0]}
+//        </a>
+//      </div>
+//    </div>
+//  );
+// };
+
+// StringProcessor.js
+// const OperationCard = ({ operation, inputString, baseUrl = '/' }) => {
+//     const { name, format, description, operation: operationFn, args = [] } = operation;
+//     const [argValues, setArgValues] = useState(args.map(arg => arg.default || ''));
+  
+//     const formatOperation = useCallback((op, str, isExample = false) => {
+//       const argStr = args.length > 0 ? `(${argValues.join(', ')})` : '()';
+//       const input = isExample ? `"${str}"` : str;
+          
+//       switch (op.format) {
+//         case 'dot':
+//           return `${input}.${op.name}${argStr}`;
+//         case 'function':
+//           return `${op.name}(${input})`;
+//         default:
+//           return op.name;
+//       }
+//     }, [args, argValues]);
+  
+//     const handleArgChange = (index, value) => {
+//       const newArgs = [...argValues];
+//       newArgs[index] = value;
+//       setArgValues(newArgs);
+//     };
+  
+//     const executeOperation = () => {
+//       try {
+//         return operationFn(inputString, ...argValues);
+//       } catch (error) {
+//         return error.message;
+//       }
+//     };
+  
+//     return (
+//       <div className={styles.operationCard}>
+//         <div className={styles.operationHeader}>
+//           <div className={styles.operationInfo}>
+//             <span className={styles.operationName}>
+//               <code>{formatOperation(operation, 'str')}</code>
+//             </span>
+//             {args.length > 0 && (
+//               <div className={styles.argsContainer}>
+//                 {args.map((arg, index) => (
+//                   <div key={arg.name} className={styles.argInput}>
+//                     <label>{arg.name}:</label>
+//                     <div className={styles.inputWithTooltip}>
+//                       <input
+//                         type={arg.type}
+//                         value={argValues[index]}
+//                         onChange={(e) => handleArgChange(index, e.target.value)}
+//                         placeholder={arg.placeholder}
+//                       />
+//                       {arg.argument_explanation && (
+//                         <div className={styles.argument_explanation}>
+//                           {arg.argument_explanation}
+//                         </div>
+//                       )}
+//                     </div>
+//                   </div>
+//                 ))}
+//               </div>
+//             )}
+//           </div>
+//           <span className={styles.operationDescription}>{description}</span>
+//         </div>
+//         <div className={styles.operationResult}>
+//           {executeOperation()}
+//         </div>
+//         <div className={styles.operationExample}>
+//           Example with current input: {formatOperation(operation, inputString, true)}
+//         </div>
+//         <div className={styles.readMoreContainer}>
+//           <a href={`${baseUrl}${name.split('(')[0]}`} className={styles.readMoreButton}>
+//             Read More about {name.split('(')[0]}
+//           </a>
+//         </div>
+//       </div>
+//     );
+//   };
+
+// StringProcessor.js
+// const OperationCard = ({ operation, inputString, baseUrl = '/' }) => {
+//     const { name, format, description, operation: operationFn, args = [] } = operation;
+//     const [argValues, setArgValues] = useState(args.map(arg => arg.default || ''));
+   
+//     const formatOperation = useCallback((op, str, isExample = false) => {
+//       const argStr = args.length > 0 ? `(${argValues.join(', ')})` : '()';
+//       const input = isExample ? `"${str}"` : str;
+          
+//       switch (op.format) {
+//         case 'dot': return `${input}.${op.name}${argStr}`;
+//         case 'function': return `${op.name}(${input})`;
+//         default: return op.name;
+//       }
+//     }, [args, argValues]);
+   
+//     const handleArgChange = (index, value) => {
+//       const newArgs = [...argValues];
+//       newArgs[index] = value;
+//       setArgValues(newArgs);
+//     };
+   
+//     const executeOperation = () => {
+//       try {
+//         return operationFn(inputString, ...argValues);
+//       } catch (error) {
+//         return error.message;
+//       }
+//     };
+   
+//     return (
+//       <div className={styles.operationCard}>
+//         <div className={styles.operationHeader}>
+//           <div className={styles.operationInfo}>
+//             <span className={styles.operationName}>
+//               <code>{formatOperation(operation, 'str')}</code>
+//             </span>
+//             {args.length > 0 && (
+//               <div className={styles.argsContainer}>
+//                 {args.map((arg, index) => (
+//                   <div key={arg.name} className={styles.argInput}>
+//                     <label>{arg.name}:</label>
+//                     <div className={styles.inputWithTooltip}>
+//                       <input
+//                         type={arg.type}
+//                         value={argValues[index]}
+//                         onChange={(e) => handleArgChange(index, e.target.value)}
+//                         placeholder={arg.placeholder}
+//                       />
+//                       <span className={styles.tooltipTrigger}>?</span>
+//                       {arg.argument_explanation && (
+//                         <div className={styles.argument_explanation}>
+//                           {arg.argument_explanation}
+//                         </div>
+//                       )}
+//                     </div>
+//                   </div>
+//                 ))}
+//               </div>
+//             )}
+//           </div>
+//           <span className={styles.operationDescription}>{description}</span>
+//         </div>
+//         <div className={styles.operationResult}>
+//           {executeOperation()}
+//         </div>
+//         <div className={styles.operationExample}>
+//           Example with current input: {formatOperation(operation, inputString, true)}
+//         </div>
+//         <div className={styles.readMoreContainer}>
+//           <a href={`${baseUrl}${name.split('(')[0]}`} className={styles.readMoreButton}>
+//             Read More about {name.split('(')[0]}
+//           </a>
+//         </div>
+//       </div>
+//     );
+//    };
+   
+
+const OperationCard = ({ operation, inputString, baseUrl = '/' }) => {
+    const { name, format, description, operation: operationFn, args = [] } = operation;
+    const [argValues, setArgValues] = useState(args.map(arg => arg.default || ''));
+    const [activeTooltips, setActiveTooltips] = useState(new Array(args.length).fill(false));
+   
+    const formatOperation = useCallback((op, str, isExample = false) => {
+      const argStr = args.length > 0 ? `(${argValues.join(', ')})` : '()';
+      const input = isExample ? `"${str}"` : str;
+      
+      switch (op.format) {
+        case 'dot': return `${input}.${op.name}${argStr}`;
+        case 'function': return `${op.name}(${input})`;
+        default: return op.name;
+      }
+    }, [args, argValues]);
+   
+    const handleArgChange = (index, value) => {
+      const newArgs = [...argValues];
+      newArgs[index] = value;
+      setArgValues(newArgs);
+    };
+   
+    const handleTooltipToggle = (index) => {
+      const newTooltips = new Array(args.length).fill(false);
+      newTooltips[index] = true;
+      setActiveTooltips(newTooltips);
+    };
+   
+    const handleTooltipHide = () => {
+      setActiveTooltips(new Array(args.length).fill(false));
+    };
+   
+    const executeOperation = () => {
+      try {
+        return operationFn(inputString, ...argValues);
+      } catch (error) {
+        return error.message;
+      }
+    };
+   
+    return (
+      <div className={styles.operationCard}>
+        <div className={styles.operationHeader}>
+          <div className={styles.operationInfo}>
+            <span className={styles.operationName}>
+              <code>{formatOperation(operation, 'str')}</code>
+            </span>
+            {args.length > 0 && (
+              <div className={styles.argsContainer}>
+                {args.map((arg, index) => (
+                  <div key={arg.name} className={styles.argInput}>
+                    <label>{arg.name}:</label>
+                    <div className={styles.inputWithTooltip}>
+                      <input
+                        type={arg.type}
+                        value={argValues[index]}
+                        onChange={(e) => handleArgChange(index, e.target.value)}
+                        placeholder={arg.placeholder}
+                      />
+                      <span 
+                        className={styles.tooltipTrigger}
+                        onMouseEnter={() => handleTooltipToggle(index)}
+                        onMouseLeave={handleTooltipHide}
+                      >?</span>
+                       {/* {arg.argument_explanation && <span className={styles.tooltipTrigger}>?</span>} */}
+                      {arg.argument_explanation && activeTooltips[index] && (
+                        <div className={styles.argument_explanation}>
+                          {arg.argument_explanation}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+          <span className={styles.operationDescription}>{description}</span>
+        </div>
+        <div className={styles.operationResult}>
+          {executeOperation()}
+        </div>
+        <div className={styles.operationExample}>
+          Example with current input: {formatOperation(operation, inputString, true)}
+        </div>
+        <div className={styles.readMoreContainer}>
+          <a href={`${baseUrl}${name.split('(')[0]}`} className={styles.readMoreButton}>
+            Read More about {name.split('(')[0]}
+          </a>
+        </div>
+      </div>
+    );
+   };
+   
+  
+
 
 const Modal = ({ isOpen, onClose, onDone, value, onChange }) => {
  if (!isOpen) return null;
@@ -2042,7 +2297,7 @@ const Modal = ({ isOpen, onClose, onDone, value, onChange }) => {
 
 const StringProcessor = ({ 
  language = 'Python',
- defaultString = 'Hello, World!',
+ defaultString = 'Hello , World!',
  baseUrl = '/',
  operations = [
    {

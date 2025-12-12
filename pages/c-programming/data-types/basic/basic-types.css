@@ -1,0 +1,170 @@
+.page-title {
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+    margin: 40px 0;
+    text-align: center;
+  }
+  
+  .types-table {
+    margin: 40px auto;
+    max-width: 1200px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .types-table table {
+    width: 100%;
+    border-spacing: 0 15px;
+  }
+  
+  .types-table th {
+    text-align: left;
+    font-size: 1.1rem;
+    padding: 15px 25px;
+    font-weight: normal;
+  }
+  
+  .qualifier-col {
+    width: 25%;
+    background-color: #f5f5f5;
+    padding: 15px 25px;
+  }
+  
+  .qualifier {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .types-table td {
+    padding: 15px 25px;
+    vertical-align: top;
+  }
+  
+  .type-desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+  }
+
+  .code-type {
+    font-family: 'Consolas', 'Monaco', monospace;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: #f5f5f5;
+    transition: all 0.2s ease;
+  }
+  
+  .code-type:hover {
+    background: #e5e5e5;
+    cursor: pointer;
+    color: gray !important ;
+    padding: 10px;
+  }
+  
+  .modifier a {
+    text-decoration: none;
+    color: gray !important;
+  }
+  
+  .modifier:hover .tooltip {
+    display: block;
+  }
+
+  .modifier.text{
+    color: gray;
+  }
+
+  .text.code-type {
+    font-family: monospace;
+    padding: 2px 6px;  
+    border-radius: 4px;
+    background: #f5f5f5;
+    color: #666 !important;
+   }
+   
+   .text.code-type:hover {
+    background: #e5e5e5;
+    cursor: pointer;
+   }
+   .text{
+    padding: 15px;
+    color: gray !important;
+   }
+
+   .modifier{
+    color: gray !important;
+   }
+  td>span.text.code-type{
+    padding: 10px;
+   }
+
+   .variable-table {
+    margin: 20px;
+    overflow-x: auto;
+    width: 60%;
+  }
+  
+  .variable-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .variable-table th, .variable-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .variable-table th {
+    background-color: #f5f5f5;
+  }
+  
+  .scope-col {
+    background-color: #f9f9f9;
+    font-weight: bold;
+  }
+  
+  .small {
+    font-size: 0.8em;
+    color: #666;
+  }
+  
+  .modifier {
+    margin-bottom: 8px;
+    position: relative;
+    color: gray !important;
+  }
+  
+  .modifier .tooltip {
+    display: none;
+    position: absolute;
+    background: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 100;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .modifier:hover .tooltip {
+    display: block;
+  }
+  
+  .title {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .table-container{
+    display: flex;
+    flex-direction: row;
+    /* background-color: red; */
+  }

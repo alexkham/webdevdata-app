@@ -5,7 +5,7 @@ import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb';
 import PythonFunctionDetails from '@/app/components/function-details/PythonFunctionDetails';
 import MyNavbar from '@/app/components/nav-bar/MyNavbar';
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton';
-import functionsDb from '../../../../app/api/db/developement/python/functions_new.json';
+import functionsDb from '../../../../app/api/db/developement/python/functions_new.js';
 import '../../../pages.css' 
 import MyNavbar2 from '@/app/components/nav-bar/MyNavbar2';
 import MySidebar from '@/app/components/sidebar/Sidebar';

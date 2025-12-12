@@ -52,7 +52,8 @@ export const pythonData = {
                   name: 'substring',
                   type: 'text',
                   default: 'a',
-                  placeholder: 'substring' 
+                  placeholder: 'substring' ,
+                   argument_explanation: 'Pattern to look for in the string. Can be single character or longer string'
                 }]
                },
           {
@@ -64,7 +65,8 @@ export const pythonData = {
               name: 'substring',
               type: 'text',
               default: 'a',
-              placeholder: 'Find what'
+              placeholder: 'Find what',
+               argument_explanation: 'Pattern to look for in the string. Can be single character or longer string'
             }]
           },
           {
@@ -80,7 +82,8 @@ export const pythonData = {
               name: 'substring',
               type: 'text',
               default: 'a',
-              placeholder: 'Find what'
+              placeholder: 'Find what',
+               argument_explanation: 'Pattern to look for in the string. Can be single character or longer string'
             }]
           },
           {
@@ -96,7 +99,8 @@ export const pythonData = {
               name: 'substring',
               type: 'text',
               default: 'a',
-              placeholder: 'Find what' 
+              placeholder: 'Find what' ,
+               argument_explanation: 'Pattern to look for in the string. Can be single character or longer string'
             }]
           },
           {
@@ -108,7 +112,8 @@ export const pythonData = {
               name: 'prefix',
               type: 'text',
               default: 'Hello',
-              placeholder: 'prefix'
+              placeholder: 'prefix',
+               argument_explanation: 'String must start with this exact sequence of characters'
             }]
            },
            {
@@ -120,7 +125,8 @@ export const pythonData = {
               name: 'suffix',
               type: 'text',
               default: '!', 
-              placeholder: 'suffix'
+              placeholder: 'suffix',
+              argument_explanation: 'String must end with this exact sequence of characters'
             }]
            },
           {
@@ -132,7 +138,8 @@ export const pythonData = {
               name: 'substring',
               type: 'text',
               default: 'a',
-              placeholder: 'Count what'
+              placeholder: 'Count what',
+              argument_explanation: 'Pattern to count occurrences of in the string'
             }]
           }
         ]
@@ -141,28 +148,35 @@ export const pythonData = {
        split: {
         label: 'Split & Join',
         operations: [
-          {
-            name: 'split',
-            format: 'dot',
-            description: 'Split string into list', 
-            operation: (str, sep=' ') => JSON.stringify(str.split(sep)),
-            args: [{
-              name: 'separator',
-              type: 'text',
-              placeholder: 'separator'
-            }]
-          },
-          {
-            name: 'rsplit',
-            format: 'dot', 
-            description: 'Split string from right',
-            operation: (str, sep=' ') => JSON.stringify(str.split(sep).reverse()),
-            args: [{
-              name: 'separator',
-              type: 'text',
-              placeholder: 'separator'
-            }]
-          },
+            {
+                name: 'split',
+                format: 'dot',
+                description: 'Split string into list using whitespace as delimiter',
+                operation: (str) => JSON.stringify(str.trim().split(/\s+/)),
+                args: [{
+                  name: 'separator',
+                  type: 'text',
+                  placeholder: 'separator',
+                  argument_explanation: 'If provided, splits on this separator instead of whitespace'
+                }]
+              },
+              {
+                name: 'rsplit',
+                format: 'dot',
+                description: 'Split string into list using whitespace as delimiter',
+                operation: (str, sep, maxsplit) => JSON.stringify(str.trim().split(/\s+/)),
+                args: [{
+                  name: 'separator',
+                  type: 'text',
+                  placeholder: 'separator',
+                  argument_explanation: 'If provided, splits on this separator instead of whitespace'
+                }, {
+                  name: 'maxsplit',
+                  type: 'number',
+                  placeholder: 'maxs',
+                  argument_explanation: 'Maximum number of splits to perform from the right. -1 means no limit'
+                }]
+              },
           {
             name: 'splitlines',
             format: 'dot',
@@ -186,9 +200,258 @@ export const pythonData = {
               name: 'separator',
               type: 'text',
               default: ',',
-              placeholder: 'separator'
+              placeholder: 'separator',
+              argument_explanation:'Character or sub-string at the first occurense of which the string will be split.'
             }]
           },
+          {
+            name: 'rpartition',
+            format: 'dot',
+            description: 'Partition from right',
+            operation: (str, sep='.') => {
+              if (!sep) throw new Error('ValueError: empty separator');
+              const idx = str.lastIndexOf(sep);
+              return JSON.stringify([
+                idx === -1 ? '' : str.slice(0, idx),
+                idx === -1 ? '' : sep,
+                idx === -1 ? str : str.slice(idx + sep.length)
+              ]);
+            },
+            args: [{
+              name: 'separator',
+              type: 'text',
+              default: '.',
+              placeholder: 'separator',
+              argument_explanation: 'Last separator occurrence to split on. Returns: [before_separator, separator, after_separator]. If not found: ["", "", original_string]'
+            }]
+          },
+      
+        ]
+       },
+       format: {
+        label: 'Format',
+        operations: [
+            {
+                name: 'strip',
+                format: 'dot',
+                description: 'Remove leading/trailing chars',
+                operation: (str, chars=' ') => {
+                  const regex = new RegExp(`^[${chars}]+|[${chars}]+$`, 'g');
+                  return str.replace(regex, '');
+                },
+                args: [{
+                  name: 'chars',
+                  type: 'text',
+                  default: ' ',
+                  placeholder: 'chars',
+                  argument_explanation: 'Characters to remove from both ends. If not specified, removes whitespace'
+                }]
+              },
+              {
+                name: 'lstrip',
+                format: 'dot',
+                description: 'Remove leading chars',
+                operation: (str, chars=' ') => {
+                  const regex = new RegExp(`^[${chars}]+`);
+                  return str.replace(regex, '');
+                },
+                args: [{
+                  name: 'chars',
+                  type: 'text',
+                  default: ' ',
+                  placeholder: 'chars',
+                  argument_explanation: 'Characters to remove from start. If not specified, removes whitespace'
+                }]
+               },
+               {
+                name: 'rstrip',
+                format: 'dot',
+                description: 'Remove trailing chars',
+                operation: (str, chars=' ') => {
+                  const regex = new RegExp(`[${chars}]+$`);
+                  return str.replace(regex, '');
+                },
+                args: [{
+                  name: 'chars', 
+                  type: 'text',
+                  default: ' ',
+                  placeholder: 'chars',
+                  argument_explanation: 'Characters to remove from end. If not specified, removes whitespace'
+                }]
+               },
+        //        {
+        //         name: 'ljust',
+        //         format: 'dot', 
+        //         description: 'Left justify string',
+        //         operation: (str, width, fillchar=' ') => {
+        //           const padding = Math.max(0, width - str.length);
+        //           return str + fillchar.repeat(padding);
+        //         },
+        //         args: [{
+        //           name: 'width',
+        //           type: 'number',
+        //           default: '20',
+        //           placeholder: 'width',
+        //           argument_explanation: 'Total length of output string after padding'
+        //         },
+        //         {
+        //           name: 'fillchar',
+        //           type: 'text', 
+        //           default: ' ',
+        //           placeholder: 'fillchar', 
+        //           argument_explanation: 'Character to pad empty space. Must be exactly one character'
+        //         }]
+        //        },
+        //   {
+        //     name: 'rjust',
+        //     format: 'dot',
+        //     description: 'Right justify string',
+        //     operation: (str, width, fillchar=' ') => {
+        //         const padding = Math.max(0, width - str.length);
+        //         return fillchar.repeat(padding) + str;
+        //       },
+        //     args: [{
+        //       name: 'width',
+        //       type: 'number',
+        //       default: '20',
+        //       placeholder: 'width',
+        //       argument_explanation: 'Total length of output string after padding'
+        //     },
+        //     {
+        //       name: 'fillchar',
+        //       type: 'text',
+        //       default: ' ',
+        //       placeholder: 'fillchar',
+        //       argument_explanation: 'Character to pad empty space. Must be exactly one character'
+        //     }]
+        //   },
+
+        {
+            name: 'ljust',
+            format: 'dot',
+            description: 'Left justify string',
+            operation: (str, width, fillchar=' ') => str + fillchar.repeat(width - str.length).replaceAll(' ',''),
+            args: [{
+              name: 'width',
+              type: 'number',
+              default: '20',
+              placeholder: 'width', 
+              argument_explanation: 'Total length of output string after padding'
+            },
+            {
+              name: 'fillchar',
+              type: 'text',
+              default: ' ',
+              placeholder: 'fillchar',
+              argument_explanation: 'Character to pad empty space. Must be exactly one character'
+            }]
+           },
+           
+           {
+            name: 'rjust',
+            format: 'dot',
+            description: 'Right justify string',
+            operation: (str, width, fillchar=' ') => fillchar.repeat(Math.max(0, width - str.length)).replaceAll(' ','') + str,
+            args: [{
+              name: 'width',
+              type: 'number',
+              default: '20',
+              placeholder: 'width',
+              argument_explanation: 'Total length of output string after padding'
+            },
+            {
+              name: 'fillchar',
+              type: 'text',
+              default: ' ',
+              placeholder: 'fillchar',
+              argument_explanation: 'Character to pad empty space. Must be exactly one character'
+            }]
+           },
+          {
+            name: 'center',
+            format: 'dot',
+            description: 'Center string',
+            operation: (str, width, fillchar=' ') => {
+              const padding = width - str.length;
+              const padLeft = Math.floor(padding/2);
+              const padRight = padding - padLeft;
+              return fillchar.repeat(padLeft).replaceAll(' ','') + str + fillchar.repeat(padRight).replaceAll(' ','');
+            },
+            args: [{
+              name: 'width',
+              type: 'number',
+              default: '20',
+              placeholder: 'width',
+              argument_explanation: 'Total length of output string after padding'
+            },
+            {
+              name: 'fillchar',
+              type: 'text',
+              default: ' ',
+              placeholder: 'fillchar',
+              argument_explanation: 'Character to pad empty space. Must be exactly one character'
+            }]
+          },
+          {
+            name: 'zfill',
+            format: 'dot',
+            description: 'Pad with zeros on left',
+            operation: (str, width) => str.padStart(width, '0'),
+            args: [{
+              name: 'width',
+              type: 'number',
+              default: '10',
+              placeholder: 'width',
+              argument_explanation: 'Total length of output string after padding with zeros'
+            }]
+          },
+        //   {
+        //     name: 'format',
+        //     format: 'dot',
+        //     description: 'Format string with values',
+        //     operation: (str, values) => str.replace(/\{([^}]+)\}/g, (_, key) => values[key]),
+        //     args: [{
+        //       name: 'values',
+        //       type: 'text',
+        //       default: '{"name":"World"}',
+        //       placeholder: 'JSON values',
+        //       argument_explanation: 'JSON object with values to insert into placeholders like {name}'
+        //     }]
+        //   }
+        ]
+       }
+
+    };
+
+
+
+
+
+
+
+
+
+
+      //   {
+        //     name: 'ljust',
+        //     format: 'dot',
+        //     description: 'Left-justify string to width specified',
+        //     operation: (str, width, fillchar=' ') => str.padEnd(width, fillchar),
+        //     args: [{
+        //       name: 'width',
+        //       type: 'number',
+        //       default: '20',
+        //       placeholder: 'width',
+        //       argument_explanation: 'Length of output string. Original string plus padding to reach this length.'
+        //     },
+        //     {
+        //       name: 'fillchar', 
+        //       type: 'text',
+        //       default: ' ',
+        //       placeholder: 'fillchar',
+        //       argument_explanation: 'Character to pad empty space with. Must be exactly one character long.'
+        //     }]
+        //    }
         //   {
         //     name: 'rpartition',
         //     format: 'dot',
@@ -208,7 +471,7 @@ export const pythonData = {
         //     }]
         //   },
 
-        
+
         //   {
         //     name: 'join',
         //     format: 'dot',
@@ -220,10 +483,6 @@ export const pythonData = {
         //       placeholder: 'separator'
         //     }]
         //   }
-        ]
-       }
-
-    };
 
 
 

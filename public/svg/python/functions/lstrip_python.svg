@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350">
+    <!-- Background -->
+    <rect width="600" height="350" fill="#f8f9fa"/>
+    
+    <!-- Original string box -->
+    <rect x="50" y="40" width="500" height="80" rx="10" fill="white" stroke="#dee2e6" stroke-width="2" filter="url(#shadow)"/>
+    <text x="70" y="30" font-family="Arial, sans-serif" font-size="16" fill="#495057">Original string: "   Hello World!   "</text>
+    
+    <!-- Individual characters in original -->
+    <text x="70" y="85" font-family="Arial, sans-serif" font-size="24" fill="#6c757d">
+        <tspan x="70">"</tspan>
+        <tspan x="90" fill="#a2d2ff">␣</tspan>
+        <tspan x="110" fill="#a2d2ff">␣</tspan>
+        <tspan x="130" fill="#a2d2ff">␣</tspan>
+        <tspan x="150">H</tspan>
+        <tspan x="170">e</tspan>
+        <tspan x="190">l</tspan>
+        <tspan x="210">l</tspan>
+        <tspan x="230">o</tspan>
+        <tspan x="250">␣</tspan>
+        <tspan x="270">W</tspan>
+        <tspan x="290">o</tspan>
+        <tspan x="310">r</tspan>
+        <tspan x="330">l</tspan>
+        <tspan x="350">d</tspan>
+        <tspan x="370">!</tspan>
+        <tspan x="390" fill="#a2d2ff">␣</tspan>
+        <tspan x="410" fill="#a2d2ff">␣</tspan>
+        <tspan x="430" fill="#a2d2ff">␣</tspan>
+        <tspan x="450">"</tspan>
+    </text>
+    
+    <!-- Arrows indicating lstrip operation -->
+    <path d="M120,130 L120,170" fill="none" stroke="#ff758f" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Arrow marker definition -->
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#ff758f"/>
+        </marker>
+        <filter id="shadow" x="-0.5" y="-0.5" width="2" height="2">
+            <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#adb5bd" flood-opacity="0.5"/>
+        </filter>
+    </defs>
+    
+    <!-- Result string box -->
+    <rect x="50" y="190" width="500" height="80" rx="10" fill="white" stroke="#dee2e6" stroke-width="2" filter="url(#shadow)"/>
+    <text x="70" y="180" font-family="Arial, sans-serif" font-size="16" fill="#495057">After lstrip(): "Hello World!   "</text>
+    
+    <!-- Individual characters in result -->
+    <text x="70" y="235" font-family="Arial, sans-serif" font-size="24" fill="#6c757d">
+        <tspan x="70">"</tspan>
+        <tspan x="90">H</tspan>
+        <tspan x="110">e</tspan>
+        <tspan x="130">l</tspan>
+        <tspan x="150">l</tspan>
+        <tspan x="170">o</tspan>
+        <tspan x="190">␣</tspan>
+        <tspan x="210">W</tspan>
+        <tspan x="230">o</tspan>
+        <tspan x="250">r</tspan>
+        <tspan x="270">l</tspan>
+        <tspan x="290">d</tspan>
+        <tspan x="310">!</tspan>
+        <tspan x="330" fill="#a2d2ff">␣</tspan>
+        <tspan x="350" fill="#a2d2ff">␣</tspan>
+        <tspan x="370" fill="#a2d2ff">␣</tspan>
+        <tspan x="390">"</tspan>
+    </text>
+    
+    <!-- Legend -->
+    <rect x="50" y="290" width="15" height="15" fill="#a2d2ff" rx="3"/>
+    <text x="75" y="305" font-family="Arial, sans-serif" font-size="14" fill="#495057">Whitespace removed by lstrip()</text>
+    <path d="M200,290 L220,305" fill="none" stroke="#ff758f" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

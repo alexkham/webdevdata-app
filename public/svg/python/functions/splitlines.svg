@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+    <!-- Background -->
+    <rect width="600" height="400" fill="#f8f9fa"/>
+    
+    <!-- Original string box -->
+    <rect x="50" y="40" width="500" height="150" rx="10" fill="white" stroke="#dee2e6" stroke-width="2" filter="url(#shadow)"/>
+    <text x="70" y="30" font-family="Arial, sans-serif" font-size="16" fill="#495057">Original string:</text>
+    
+    <!-- Multi-line string -->
+    <text x="70" y="80" font-family="Arial, sans-serif" font-size="24" fill="#6c757d">
+        <tspan x="70">Hello</tspan>
+        <tspan x="70" dy="30">World</tspan>
+        <tspan x="70" dy="30">Python</tspan>
+        <tspan x="70" dy="30">Programming</tspan>
+    </text>
+    
+    <!-- Result box -->
+    <rect x="50" y="220" width="500" height="80" rx="10" fill="white" stroke="#dee2e6" stroke-width="2" filter="url(#shadow)"/>
+    <text x="70" y="210" font-family="Arial, sans-serif" font-size="16" fill="#495057">After splitlines():</text>
+    <text x="70" y="260" font-family="Arial, sans-serif" font-size="24" fill="#495057">
+        ["Hello", "World", "Python", "Programming"]
+    </text>
+</svg>

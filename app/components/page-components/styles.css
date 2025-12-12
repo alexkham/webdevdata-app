@@ -24,3 +24,10 @@ a {
     background: #3498db;
     color: lightgray !important;
    }
+
+   .container{
+    padding-top: 0px !important;
+   }
+   .content{
+    margin-top: -30px !important;
+   }

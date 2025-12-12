@@ -1,0 +1,95 @@
+.container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #E6F0FF, #EAE6FF);
+    padding: 5rem;
+    padding-top: 20px;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #3730A3;
+    margin-bottom: 1rem;
+    margin-top: -20px;
+  }
+  
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    height: 160px;
+    width: calc(33.333% - 1rem);
+    min-width: 300px;
+    max-width: 380px;
+  }
+  
+  .card:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cardHeader {
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #4F46E5;
+    margin-right: 0.5rem;
+  }
+  
+  .tableTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1F2937;
+  }
+  
+  .description {
+    padding: 0 0.75rem 0.75rem;
+    flex-grow: 1;
+    color: #6B7280;
+    font-size: 0.815rem;
+    line-height: 1.2;
+  }
+  
+  .cardFooter {
+    background-color: #4F46E5;
+    padding: 0.4rem;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .viewText {
+    color: white;
+    font-weight: 500;
+    font-size: 0.815rem;
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      width: 100%;
+      max-width: none;
+    }
+    
+    .container {
+      padding: 2rem;
+      padding-top: 20px;
+    }
+  }

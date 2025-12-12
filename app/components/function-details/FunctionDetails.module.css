@@ -250,3 +250,26 @@
 .extendedDescription{
   font-size: 17px;
 }
+
+.svgContainer {
+  margin: 20px 0;
+  display: flex;
+  gap: 20px;
+}
+
+.svgWrapper {
+  flex: 2;
+}
+
+.svgExplanation {
+  flex: 1;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  color: #495057;
+  font-style: italic;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+/* .svgWrapper svg rect{
+  width: 600px;
+} */

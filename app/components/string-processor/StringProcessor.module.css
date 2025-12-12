@@ -2,13 +2,15 @@
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
+  
 }
 
 .card {
   background: #ffffff;
   border-radius: 8px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
+  /* overflow: hidden; */
+  /* background-color: red; */
 }
 
 .cardHeader {
@@ -258,4 +260,48 @@
   display: flex;
   justify-content: flex-end;
   gap: 16px;
+}
+
+
+
+.inputWithTooltip {
+ position: relative;
+ display: flex;
+ align-items: center;
+ gap: 8px;
+}
+
+.tooltipTrigger {
+ width: 25px;
+ height: 25px;
+ border-radius: 50%;
+ background: #0066cc;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ cursor: help;
+ font-weight: bold;
+ color: white;
+}
+
+.argument_explanation {
+ visibility: hidden;
+ position: absolute;
+ left: calc(100% + 28px);
+ top: 50%;
+ transform: translateY(-50%);
+ background: #000;
+ color: white;
+ padding: 10px;
+ border-radius: 6px;
+ width: 200px;
+ margin-left: 8px;
+ font-size: 18px;
+ z-index: 100000;
+ box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+ overflow: visible;
+}
+
+.inputWithTooltip:hover .argument_explanation {
+ visibility: visible;
 }
