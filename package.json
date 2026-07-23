@@ -55,5 +55,6 @@
   "devDependencies": {
     "eslint": "^8",
     "eslint-config-next": "14.0.4"
-  }
+  },
+  "packageManager": "npm@10.9.2"
 }

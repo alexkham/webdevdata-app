@@ -126,6 +126,9 @@ export async function getStaticProps() {
 
 export default function ToolsLandingPage({ pillar, seoData, secondaryLinks }) {
   // Editorial widget content per category. Keyed by catalog category label.
+  // These are render functions called as widget(cluster), not components —
+  // the display-name rule is a false positive here.
+  /* eslint-disable react/display-name */
   const CLUSTER_WIDGETS = {
     'JSON Tools': (cluster) => (
       <>
@@ -228,6 +231,7 @@ export default function ToolsLandingPage({ pillar, seoData, secondaryLinks }) {
       </>
     ),
   };
+  /* eslint-enable react/display-name */
 
   const renderClusterWidget = (cluster) => {
     const widget = CLUSTER_WIDGETS[cluster.category];
