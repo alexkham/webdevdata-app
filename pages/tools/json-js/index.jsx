@@ -181,7 +181,7 @@ const SECTIONS = [
       <>
         <p><strong>Not every key can be unquoted.</strong> A key like <code>&quot;first name&quot;</code>, <code>&quot;123id&quot;</code>, or <code>&quot;class&quot;</code> (a reserved word) must stay quoted to be valid JS. The tool handles this automatically &mdash; it only unquotes keys that match <code>/^[A-Za-z_$][A-Za-z0-9_$]*/</code> and aren&apos;t reserved words.</p>
         <p><strong>JS-only values are rejected on JS &rarr; JSON.</strong> <code>undefined</code>, functions, <code>NaN</code>, and <code>Infinity</code> aren&apos;t valid JSON. The tool surfaces a clear error rather than producing broken output.</p>
-        <p><strong>Comments are stripped.</strong> On JS &rarr; JSON, both <code>//</code> and <code>/* ... */</code> comments are stripped before parsing. The output is comment-free.</p>
+        <p><strong>Comments are stripped.</strong> On JS &rarr; JSON, both <code>{'//'}</code> and <code>{'/* ... */'}</code> comments are stripped before parsing. The output is comment-free.</p>
         <p><strong><code>const</code>/<code>let</code>/<code>var</code> declarations are unwrapped.</strong> Paste <code>const user = &#123;...&#125;</code> and the tool strips the declaration and semicolon before parsing the object literal.</p>
       </>
     ),

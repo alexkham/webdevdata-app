@@ -7,7 +7,7 @@
 // Contains the COMPLETE page list per pillar — nothing truncated.
 
 export const homeCatalog = {
-  generatedAt: "2026-07-23T21:00:39.074Z",
+  generatedAt: "2026-07-23T21:44:18.129Z",
   pillars: [
   {
     "id": "tools",
@@ -17,7 +17,7 @@ export const homeCatalog = {
     "ctaLabel": "Browse Tools",
     "stats": [
       {
-        "n": "13",
+        "n": "14",
         "label": "Pages"
       },
       {
@@ -28,7 +28,7 @@ export const homeCatalog = {
     "breakdown": [
       {
         "label": "General",
-        "count": 13
+        "count": 14
       }
     ],
     "pages": [
@@ -72,6 +72,13 @@ export const homeCatalog = {
         "desc": "Minify JavaScript in your browser. Terser under the hood, with mangling, compression, drop-console, and comment options.",
         "href": "/tools/js-minifier",
         "category": "Formatters & Minifiers",
+        "subCategory": null
+      },
+      {
+        "name": "JSON Formatter / Validator",
+        "desc": "Format, validate, and minify JSON online. Pretty-print with 2 or 4 spaces or tabs, sort keys, escape unicode, and catch syntax errors — all client-side.",
+        "href": "/tools/json-formatter",
+        "category": "JSON Tools",
         "subCategory": null
       },
       {

@@ -1043,6 +1043,7 @@
 // ─────────────────────────────────────────────────────────────
 
 import { useState, useRef, useEffect } from 'react';
+import Link from 'next/link';
 
 /* ── Icon generation (same helper, duplicated per file-per-domain rule) ─ */
 function generateIcon(category, slug) {
@@ -1964,9 +1965,9 @@ function MockEditorialTool() {
 function MockSiteHeader() {
   return (
     <header className="mock-header">
-      <a href="/" className="mock-logo">webdev<span>data</span></a>
+      <Link href="/" className="mock-logo">webdev<span>data</span></Link>
       <nav className="mock-nav">
-        <a href="/tools" className="active">Tools</a>
+        <Link href="/tools" className="active">Tools</Link>
         <a href="/reference">Reference</a>
         <a href="/learn">Learn</a>
       </nav>

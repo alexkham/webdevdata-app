@@ -164,7 +164,7 @@ const SECTIONS = [
         <p><strong>Compress</strong> — enables terser&apos;s expression-level optimizations: dead code elimination, constant folding, inline simple functions, remove unreachable branches.</p>
         <p><strong>Drop <code>console</code></strong> — removes all <code>console.*</code> calls. Only active when Compress is on.</p>
         <p><strong>Drop <code>debugger</code></strong> — removes all <code>debugger;</code> statements. Only active when Compress is on.</p>
-        <p><strong>Comments</strong> — <em>None</em> strips every comment. <em>Important</em> keeps <code>/*! */</code>-style banners (license headers). <em>All</em> keeps every comment.</p>
+        <p><strong>Comments</strong> — <em>None</em> strips every comment. <em>Important</em> keeps <code>{'/*! */'}</code>-style banners (license headers). <em>All</em> keeps every comment.</p>
         <p><strong>Target</strong> — ECMAScript version the output must run on. <em>ES5</em> for legacy browser support; <em>Latest</em> for modern-only builds.</p>
       </>
     ),

@@ -2,6 +2,7 @@
 // Renamed from json-tree-viewer. Diff vs v1: slug is /tools/json-tree (no "-viewer").
 
 import Head from 'next/head';
+import Link from 'next/link';
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb';
 import ToolFrame from '@/app/components/tool-page/ToolFrame';
 import JsonTreeViewerTool from '@/app/components/tools/JsonTreeViewerTool';
@@ -174,7 +175,7 @@ const SECTIONS = [
       <>
         <p><strong>Node paths are collision-free.</strong> A key named <code>id</code> inside <code>users[0]</code> and another <code>id</code> inside <code>orders[3]</code> track independently — this tool uses full paths like <code>root.users.0.id</code>, not just key names.</p>
         <p><strong>Very large inputs may lag.</strong> The parse is debounced 200ms, but rendering a huge tree (tens of thousands of nodes) still takes work. For massive structures, collapse before searching.</p>
-        <p><strong>Strict JSON only.</strong> The tool uses <code>JSON.parse</code>, so trailing commas, comments, and unquoted keys are rejected. If your input is loose JS-object syntax, run it through <a href="/tools/json-js">JSON &harr; JS Converter</a> first.</p>
+        <p><strong>Strict JSON only.</strong> The tool uses <code>JSON.parse</code>, so trailing commas, comments, and unquoted keys are rejected. If your input is loose JS-object syntax, run it through <Link href="/tools/json-js">JSON &harr; JS Converter</Link> first.</p>
       </>
     ),
   },

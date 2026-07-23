@@ -40,6 +40,7 @@ const navItems = [
       { label: "Html Minifier", href: "/tools/html-minifier" },
       { label: "Js Beautifier", href: "/tools/js-beautifier" },
       { label: "Js Minifier", href: "/tools/js-minifier" },
+      { label: "Json Formatter", href: "/tools/json-formatter" },
       { label: "Json Js", href: "/tools/json-js" },
       { label: "Json Tree", href: "/tools/json-tree" },
       { label: "Json Xml", href: "/tools/json-xml" },

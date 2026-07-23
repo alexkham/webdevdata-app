@@ -1,9 +1,11 @@
-// pages/tools/css-minifier/index.jsx — v1
+// pages/tools/json-formatter/index.jsx
+// JSON Formatter / Validator / Minifier tool page.
 
 import Head from 'next/head';
+import Link from 'next/link';
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb';
 import ToolFrame from '@/app/components/tool-page/ToolFrame';
-import CssMinifierTool from '@/app/components/tools/CssMinifierTool';
+import JsonFormatterTool from '@/app/components/tools/JsonFormatterTool';
 import { getSiblings } from '../../../utils/getSiblings';
 
 const SITE_URL = 'https://www.webdevdata.net';
@@ -82,7 +84,8 @@ function Kbd({ children }) {
 function ShortcutsTable() {
   const rows = [
     { keys: [<Kbd key="k1">Cmd</Kbd>, ' / ', <Kbd key="k2">Ctrl</Kbd>, ' + ', <Kbd key="k3">K</Kbd>], desc: 'Focus the input pane' },
-    { keys: [<Kbd key="k1">Cmd</Kbd>, ' / ', <Kbd key="k2">Ctrl</Kbd>, ' + ', <Kbd key="k3">Enter</Kbd>], desc: 'Copy output to clipboard' },
+    { keys: [<Kbd key="k1">Cmd</Kbd>, ' / ', <Kbd key="k2">Ctrl</Kbd>, ' + ', <Kbd key="k3">Enter</Kbd>], desc: 'Copy the output to clipboard' },
+    { keys: [<Kbd key="k1">Cmd</Kbd>, ' / ', <Kbd key="k2">Ctrl</Kbd>, ' + ', <Kbd key="k3">/</Kbd>], desc: 'Switch between Format and Minify' },
   ];
   return (
     <table style={{ borderCollapse: 'collapse', width: '100%', maxWidth: 520 }}>
@@ -123,9 +126,9 @@ const SECTIONS = [
     title: 'How to use',
     content: (
       <>
-        <p>Paste CSS into the input pane. The minified output appears on the right as you type (300ms debounce).</p>
-        <p>Toggle <strong>Restructure</strong> for aggressive optimization — merging duplicate selectors, hoisting common declarations, dropping unused rules. Turn it off if you need the output to preserve source order and structure.</p>
-        <p>Pick a <strong>Comments</strong> mode: <em>None</em> strips everything, <em>Exclamation</em> keeps <code>{'/*! */'}</code> license banners, <em>All</em> preserves every comment.</p>
+        <p>Paste JSON into the left pane, or drop a file onto the drop zone. The output updates live as you type &mdash; formatted with your chosen indent in <strong>Format</strong> mode, collapsed to one line in <strong>Minify</strong> mode.</p>
+        <p>If the input isn&apos;t valid JSON, the output pane shows the parse error with the line and column where it occurred, so this doubles as a validator &mdash; there&apos;s no separate &quot;validate&quot; button to press.</p>
+        <p>Copy the result with the <strong>Copy</strong> button, or download it as <code>formatted.json</code> / <code>minified.json</code>. The stats footer tracks size, top-level key count, and nesting depth as you go.</p>
       </>
     ),
   },
@@ -134,7 +137,7 @@ const SECTIONS = [
     title: 'Keyboard shortcuts',
     content: (
       <>
-        <p>Two shortcuts:</p>
+        <p>Three shortcuts:</p>
         <ShortcutsTable />
       </>
     ),
@@ -144,14 +147,15 @@ const SECTIONS = [
     title: 'When to use it',
     content: (
       <>
-        <p>CSS minification saves bytes on production stylesheets, especially large frameworks or handwritten design systems.</p>
+        <p>Format when you need to read; minify when you need to ship.</p>
         <ul>
-          <li>Shipping a hand-authored stylesheet to a CDN without a build pipeline.</li>
-          <li>Checking how small a snippet becomes before wiring it into a bundler.</li>
-          <li>Compressing inline critical CSS for above-the-fold rendering.</li>
-          <li>Cleaning up copy-pasted CSS from a design tool.</li>
+          <li>Making a minified API response readable before debugging against it.</li>
+          <li>Checking whether a hand-edited config file is still valid JSON.</li>
+          <li>Normalizing indentation before committing a JSON file to version control.</li>
+          <li>Sorting keys to diff two JSON documents that differ only in key order.</li>
+          <li>Minifying a payload before embedding it in a query string, env var, or fixture.</li>
         </ul>
-        <p><strong>When not to use:</strong> If you have a build pipeline (webpack, Vite, PostCSS), minify there — the output can then be integrated with source maps and hashed filenames.</p>
+        <p>If you mainly want to explore a deep structure rather than re-print it, the <Link href="/tools/json-tree">JSON Tree Viewer</Link> is the better fit.</p>
       </>
     ),
   },
@@ -160,13 +164,9 @@ const SECTIONS = [
     title: 'Options',
     content: (
       <>
-        <p><strong>Restructure</strong> — enables csso&apos;s AST-level optimizations: merge duplicate selectors, hoist shared declarations, remove unused rules from selector groups, optimize shorthand properties. Turn off if you need output that mirrors source structure line-for-line.</p>
-        <p><strong>Comments</strong>:</p>
-        <ul>
-          <li><em>None</em> — strips every comment.</li>
-          <li><em>Exclamation</em> — keeps only <code>{'/*! ... */'}</code>-style comments (used for license headers). Standard for open-source CSS.</li>
-          <li><em>All</em> — preserves every comment.</li>
-        </ul>
+        <p><strong>Indent</strong> &mdash; 2 spaces (default), 4 spaces, or a tab character per nesting level. Only shown in Format mode; Minify always produces a single line with no whitespace between tokens.</p>
+        <p><strong>Sort keys A&rarr;Z</strong> &mdash; recursively sorts every object&apos;s keys alphabetically, at every nesting level, in both modes. Values and array order are untouched. Useful for stable diffs.</p>
+        <p><strong>Escape non-ASCII</strong> &mdash; replaces every character above U+007E in the output with its <code>\uXXXX</code> escape. The result is pure ASCII and still parses to the exact same strings.</p>
       </>
     ),
   },
@@ -175,11 +175,10 @@ const SECTIONS = [
     title: 'Format-specific gotchas',
     content: (
       <>
-        <p><strong>Restructure can reorder rules.</strong> Merging duplicate selectors and hoisting common declarations changes source order. If your CSS relies on specific declaration order for the cascade (rare but possible), turn Restructure off.</p>
-        <p><strong>CSS variables are preserved.</strong> <code>--custom-prop</code> definitions and <code>var(...)</code> references pass through unchanged.</p>
-        <p><strong>Vendor prefixes are preserved.</strong> csso doesn&apos;t remove <code>-webkit-</code> or <code>-moz-</code> prefixes unless they&apos;re unambiguously redundant. Use autoprefixer&apos;s <code>--remove</code> upstream if you want them dropped.</p>
-        <p><strong>Unknown at-rules pass through.</strong> Non-standard at-rules (some framework macros) are kept as-is.</p>
-        <p><strong>csso loads on first use.</strong> First minify triggers the library download; subsequent runs are instant.</p>
+        <p><strong>Big numbers lose precision.</strong> JavaScript parses JSON numbers as IEEE 754 doubles, so integers beyond 2<sup>53</sup>&minus;1 (like 64-bit IDs) get rounded, and long decimals may re-print differently. If exact digits matter, keep them as strings.</p>
+        <p><strong>Duplicate keys collapse.</strong> JSON with the same key twice in one object is parsed by keeping only the last occurrence &mdash; the earlier value silently disappears from the output.</p>
+        <p><strong>Trailing commas are invalid.</strong> <code>{'{"a": 1,}'}</code> is legal in JavaScript but not in JSON &mdash; the tool rejects it with an error. Same for single quotes and unquoted keys; convert loose JS-object syntax with the <Link href="/tools/json-js">JSON &harr; JS Converter</Link> first.</p>
+        <p><strong>Comments are not JSON.</strong> <code>{'//'}</code> and <code>{'/* */'}</code> comments belong to JSONC/JSON5, not RFC 8259 JSON, and will fail validation here.</p>
       </>
     ),
   },
@@ -187,7 +186,7 @@ const SECTIONS = [
     id: 'privacy',
     title: 'Privacy',
     content: (
-      <p>Everything runs in your browser. Your CSS never leaves the page — no server, no logging, no analytics on the content.</p>
+      <p>Everything runs in your browser. Your JSON never leaves the page &mdash; no server, no logging, no analytics on the content.</p>
     ),
   },
 ];
@@ -196,92 +195,98 @@ const SECTIONS = [
 
 export async function getStaticProps() {
   const keyWords = [
-    'css minifier',
-    'minify css',
-    'css compressor',
-    'css optimizer',
-    'compress css online',
-    'css minification',
+    'json formatter',
+    'json validator',
+    'format json online',
+    'json beautifier',
+    'json minifier',
+    'pretty print json',
+    'json pretty printer',
+    'validate json online',
+    'minify json',
+    'json lint',
   ];
 
   const seoData = {
-    title: 'CSS Minifier | WebDevData',
-    description: 'Minify CSS in your browser with csso. AST-based optimization, not just regex — merges duplicate selectors, optimizes shorthand, preserves variables.',
-    name: 'CSS Minifier',
-    subtitle: 'Client-side CSS minification with real AST-level optimization. Live output.',
-    url: '/tools/css-minifier',
+    title: 'JSON Formatter & Validator | WebDevData',
+    description: 'Format, validate, and minify JSON online. Pretty-print with 2 or 4 spaces or tabs, sort keys, escape unicode, and catch syntax errors — all client-side.',
+    name: 'JSON Formatter / Validator',
+    subtitle: 'Format, validate, and minify JSON. Sort keys, escape unicode, clear parse errors. Client-side.',
+    url: '/tools/json-formatter',
     keywords: keyWords.join(', '),
     ogImagePath: '',
     canonicalOverride: null,
-    hubDescription: 'Minify CSS with csso, in your browser.',
-    category: 'Tools',
-    subCategory: 'Formatters',
+    hubDescription: 'Format, validate, and minify JSON with key sorting and unicode escaping.',
+    category: 'JSON Tools',
+    subCategory: null,
     breadcrumb: [
       { label: 'Home', href: '/' },
       { label: 'Tools', href: '/tools' },
-      { label: 'CSS Minifier', href: '/tools/css-minifier' },
+      { label: 'JSON Formatter', href: '/tools/json-formatter' },
     ],
     applicationCategory: 'DeveloperApplication',
     featureList: [
-      'CSS minification via csso',
-      'AST-level optimization (not regex)',
-      'Merge duplicate selectors',
-      'Optimize shorthand properties',
-      'Preserve CSS variables and vendor prefixes',
-      'Configurable comment handling',
-      'Live byte-savings stats',
+      'Format (pretty-print) with 2 spaces, 4 spaces, or tabs',
+      'Minify to a single line',
+      'Implicit validation with line and column on parse errors',
+      'Recursive key sorting (A–Z)',
+      'Escape non-ASCII characters as \\uXXXX',
+      'File drop — load any JSON file',
+      'Live stats: size delta, top-level count, nesting depth',
+      'Copy and download output',
       'Client-side, no data leaves the browser',
     ],
-    datePublished: '2026-07-21',
+    datePublished: '2026-07-24',
   };
 
   const calloutData = {
-    highlight: 'CSS minification in your browser.',
-    text: 'Paste CSS, get minified output. Real AST-based minifier; nothing sent to a server.',
+    highlight: 'Format, validate, and minify JSON.',
+    text: 'Paste JSON, get clean output or a compact single line — errors show line and column. Nothing sent to a server.',
     jumps: [
       { to: 'how', label: 'How to use ↓' },
       { to: 'shortcuts', label: 'Shortcuts ↓' },
     ],
   };
 
-  const siblings = getSiblings('css-minifier', 'tools', {
+  const siblings = getSiblings('json-formatter', 'tools', {
     exclude: [],
   });
 
   const referenceData = {
     heading: 'Reference',
     items: [
-      { label: 'csso', href: 'https://github.com/css/csso', meta: 'Underlying minifier' },
-      { label: 'CSS specifications', href: 'https://www.w3.org/Style/CSS/', meta: 'W3C CSS working group' },
-      { label: 'Related tool', href: '/tools/html-minifier', meta: 'HTML minifier' },
-      { label: 'Related tool', href: '/tools/js-minifier', meta: 'JavaScript minifier' },
+      { label: 'RFC 8259 (JSON)', href: 'https://datatracker.ietf.org/doc/html/rfc8259', meta: 'JSON specification' },
+      { label: 'JSON.parse()', href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse', meta: 'MDN — parse JSON string' },
+      { label: 'JSON.stringify()', href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify', meta: 'MDN — serialize to JSON' },
+      { label: 'json.org', href: 'https://www.json.org/json-en.html', meta: 'JSON grammar reference' },
+      { label: 'Related tool', href: '/tools/json-tree', meta: 'Interactive JSON tree viewer' },
     ],
   };
 
   const faqQuestions = {
     q1: {
-      question: 'What does CSS minification do?',
-      answer: 'Removes whitespace, comments, and redundant syntax. A proper minifier like csso also merges duplicate selectors, optimizes shorthand properties, and hoists common declarations. The result renders identically but ships smaller.',
+      question: 'Is my JSON uploaded anywhere?',
+      answer: 'No. Parsing, formatting, and minifying all happen in your browser with the native JSON engine. The input never leaves the page — no server, no logging.',
     },
     q2: {
-      question: 'Is this the same as regex-based minification?',
-      answer: 'No. csso parses CSS into an AST and applies real optimizations. Regex-based minification only removes whitespace and can break on valid CSS constructs like nested media queries or complex selectors.',
+      question: 'What is the difference between Format and Minify?',
+      answer: 'Both parse your JSON and re-print it. Format adds indentation and line breaks for readability; Minify strips all insignificant whitespace into a single line for the smallest size. The data is identical either way.',
     },
     q3: {
-      question: 'Will Restructure change my output layout?',
-      answer: 'It can — Restructure merges duplicate selectors and reorders declarations. This is safe in typical CSS but can change behavior if your styles rely on very specific cascade order. Turn Restructure off if you hit issues.',
+      question: 'Why did my large numbers change?',
+      answer: 'JavaScript stores JSON numbers as IEEE 754 double-precision floats. Integers above 9007199254740991 (2^53 − 1) cannot be represented exactly and get rounded. Keep 64-bit IDs and high-precision decimals as strings if the exact digits matter.',
     },
     q4: {
-      question: 'Are CSS variables and vendor prefixes preserved?',
-      answer: 'Yes. csso passes both through unchanged. If you want vendor prefixes stripped, use autoprefixer with the --remove flag as a preprocessing step.',
+      question: 'Does key order matter in JSON?',
+      answer: 'Per RFC 8259, object member order carries no meaning and parsers are free to ignore it. That is why the Sort keys option is safe: sorted output is semantically identical, and it makes diffs between documents stable.',
     },
     q5: {
-      question: 'Why does the first minify take a moment?',
-      answer: 'csso is loaded on demand — the first minify triggers the download. After that, minification is instant.',
+      question: 'Is there a maximum input size?',
+      answer: 'No hard limit — it depends on your browser’s memory. Documents up to a few megabytes format instantly; very large files (tens of MB) may take a moment or hit browser string limits.',
     },
     q6: {
-      question: 'Does the tool send my CSS anywhere?',
-      answer: 'No. All minification happens in your browser. The input never leaves the page.',
+      question: 'Why is my JSON with comments or trailing commas rejected?',
+      answer: 'Comments and trailing commas belong to JSONC and JSON5, not standard JSON. This tool validates against strict RFC 8259 JSON via JSON.parse. Convert loose JS-object syntax with the JSON ↔ JS Converter first.',
     },
   };
 
@@ -360,7 +365,9 @@ export async function getStaticProps() {
   };
 }
 
-export default function CssMinifierPage({
+// ── Page function ────────────────────────────────────────
+
+export default function JsonFormatterPage({
   seoData,
   calloutData,
   siblings,
@@ -466,7 +473,7 @@ export default function CssMinifierPage({
         sections={sections}
         referencePanel={referencePanel}
       >
-        <CssMinifierTool
+        <JsonFormatterTool
           theme={toolOptions.theme}
           showExplanations={toolOptions.showExplanations}
           showOrientationToggle={toolOptions.showOrientationToggle}
