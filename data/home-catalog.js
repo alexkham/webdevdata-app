@@ -7,7 +7,7 @@
 // Contains the COMPLETE page list per pillar — nothing truncated.
 
 export const homeCatalog = {
-  generatedAt: "2026-07-23T21:44:18.129Z",
+  generatedAt: "2026-07-23T22:19:39.276Z",
   pillars: [
   {
     "id": "tools",
