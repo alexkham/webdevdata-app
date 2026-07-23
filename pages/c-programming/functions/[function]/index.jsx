@@ -1,7 +1,6 @@
 
 import React from 'react';
 import functionsDb from '../../../../app/api/db/developement/c/functions_new2.js';
-import MyNavbar2 from '@/app/components/nav-bar/MyNavbar2';
 import '../../../pages.css';
 import FunctionDetails from '@/app/components/function-details/FunctionDetails';
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton';
@@ -25,7 +24,7 @@ export default function FunctionPage({ functionData,allFunctionNames }) {
             <MySidebar data={allFunctionNames}
             baseUrl={'/c-programming/functions'} />
             <div className={styles.pageWrapper}>
-                <MyNavbar2 />
+                
                 <br />
                 <br />
                 <br />

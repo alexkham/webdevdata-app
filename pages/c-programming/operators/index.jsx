@@ -1,6 +1,5 @@
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb'
 import HierarchyPyramid from '@/app/components/hierarchy-diagrams/HierarchyPyramid';
-import MyNavbar2 from '@/app/components/nav-bar/MyNavbar2'
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton';
 import React from 'react'
 import '../../pages.css'
@@ -139,7 +138,7 @@ export default function OperatorsPage() {
 
   return (
     <>
-    <MyNavbar2/>
+    
     <br/>
     <br/>
    

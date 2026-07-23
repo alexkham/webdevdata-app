@@ -11,7 +11,7 @@
 // export default function VariablesPage({ tableData ,scopeList,scopePyramid,lifeSpan ,scopeTarget}) {
 //   return (
 //     <>
-//       <MyNavbar2/>
+//       
 //       <br/>
 //       <br/>
 //       <br/>
@@ -158,7 +158,6 @@
 
 import React from 'react'
 import './styles.css'
-import MyNavbar2 from '@/app/components/nav-bar/MyNavbar2';
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb';
 import '../../pages.css'
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton';
@@ -171,7 +170,7 @@ export default function VariablesPage({ tableData, scopeList, scopePyramid,
   lifeSpan, scopeTarget,blockScopeExample ,lifetimeList}) {
  return (
    <>
-     <MyNavbar2/>
+     
      <br/>
      <br/>
      <br/>

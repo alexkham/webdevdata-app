@@ -27,7 +27,7 @@
 //         <link rel="canonical" href={`https://www.webdevdata.net/c-programming/examples/${example}`} />
 
 //       </Head>
-//       <MyNavbar2 />
+//       
 //       <br></br>
 //       <br></br>
 //       <br></br>
@@ -75,7 +75,6 @@
 import DynamicAccordionCode from '@/app/components/accordion/DynamicAccordionCode'
 import React from 'react'
 import { useRouter } from 'next/router'
-import MyNavbar2 from '@/app/components/nav-bar/MyNavbar2'
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb'
 import '../../../pages.css'
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton'
@@ -135,7 +134,7 @@ export default function ExamplePage({ data, example, relatedExamples }) {
         </script>
       </Head>
       
-      <MyNavbar2 />
+      
       <br></br>
       <br></br>
       <br></br>

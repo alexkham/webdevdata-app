@@ -7,7 +7,6 @@ import MyNavbar from '@/app/components/nav-bar/MyNavbar';
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton';
 import functionsDb from '../../../../app/api/db/developement/python/functions_new.js';
 import '../../../pages.css' 
-import MyNavbar2 from '@/app/components/nav-bar/MyNavbar2';
 import MySidebar from '@/app/components/sidebar/Sidebar';
 import styles from '@/app/components/sidebar/MySidebar.module.css';
 
@@ -41,7 +40,7 @@ const PythonFunctionPage = ({ functionData, functionName,allNames }) => {
      <input type="checkbox" id="sidebar-toggle" className={styles.sidebarToggle} />
      <MySidebar data={allNames} baseUrl={'/python/functions/'}/>
      <div className={styles.pageWrapper}>
-       <MyNavbar2 />
+       
        <br />
        <br />
        <br />

@@ -3,21 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "node generate-nav.mjs && node generate-home-catalog.mjs && next dev",
+    "build": "node generate-nav.mjs && next build && node generate-sitemap.mjs && node generate-home-catalog.mjs",
     "start": "next start",
-    "lint": "next lint",
-    "generate-sitemap": "node generate-sitemap.mjs"
+    "lint": "next lint"
   },
   "dependencies": {
     "@monaco-editor/react": "^4.7.0",
     "ace-builds": "^1.38.0",
     "cors": "^2.8.5",
+    "csso": "^5.0.5",
     "fs": "^0.0.1-security",
     "globby": "^14.0.2",
     "html-entities": "^2.5.2",
     "html-minifier": "^4.0.0",
     "iconv-lite": "^0.6.3",
+    "js-beautify": "^2.0.3",
     "js-yaml": "^4.1.0",
     "json5": "^2.2.3",
     "jsonlint-mod": "^1.7.6",

@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import MarkdownComponent from '@/app/components/markdown-component/MarkdownComponent';
-import MyNavbar2 from '@/app/components/nav-bar/MyNavbar2';
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb';
 import TableOfContents from '@/app/components/page-components/table-of-contents/TableOfContents';
 import ContentBlocks from '@/app/components/page-components/content-components/ContentBlocks';
@@ -33,7 +32,7 @@ export default function WherePage({ tocItemsData ,keyWords}) {
         <meta name="twitter:description" content="Master the WHERE clause in SQL with comprehensive examples and explanations." />
         <link rel="canonical" href="https://webdevdata.net/sql/clause/where" />
       </Head>
-      <MyNavbar2 />
+      
       <br />
       <br />
       <br />

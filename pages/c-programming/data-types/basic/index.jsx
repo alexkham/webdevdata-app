@@ -5,7 +5,7 @@
 // // // // // export default function BasicDataTypesPage() {
 // // // // //   return (
 // // // // //     <>
-// // // // //     <MyNavbar2/>
+// // // // //     
 // // // // //     <br/>
 // // // // //     <br/>
 // // // // //     <br/>
@@ -71,7 +71,7 @@
 
 // // // //   return (
 // // // //     <>
-// // // //       <MyNavbar2/>
+// // // //       
 // // // //       <br/>
 // // // //       <br/>
       
@@ -133,7 +133,7 @@
 // // // export default function BasicDataTypesPage() {
 // // //   return (
 // // //     <>
-// // //       <MyNavbar2/>
+// // //       
 // // //       <br/>
 // // //       <br/>
 // // //       <br/>
@@ -294,7 +294,7 @@
 
 // //   return (
 // //     <>
-// //       <MyNavbar2/>
+// //       
 // //       <br/>
 // //       <br/>
 // //       <br/>
@@ -404,7 +404,7 @@
 
 //   return (
 //     <>
-//       <MyNavbar2/>
+//       
 //       <br/>
 //       <br/>
 //       <br/>
@@ -570,7 +570,6 @@
 
 
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb'
-import MyNavbar2 from '@/app/components/nav-bar/MyNavbar2'
 import React from 'react'
 
 import ContentBlock from '@/app/components/page-components/ContentBlock'
@@ -757,7 +756,7 @@ In many ways, int is the building block that bridges the gap between primitive s
 
 return (
     <>
-      <MyNavbar2/>
+      
       <br/>
       <br/>
       <br/>

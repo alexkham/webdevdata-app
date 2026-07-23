@@ -1,5 +1,4 @@
 
-import MyNavbar2 from '@/app/components/nav-bar/MyNavbar2'
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton'
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb'
 import PythonFunctionsList from '@/app/components/function-list/PythonFunctionsList'
@@ -16,7 +15,7 @@ export default function PythonFunctionsPage({ pythonFunctions }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://www.webdevdata.net/python-functions" />
       </Head>
-      <MyNavbar2 />
+      
       <br></br>
       <br></br>
       <br></br>

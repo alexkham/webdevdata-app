@@ -1,100 +1,105 @@
+// generate-sitemap.mjs
+// Generates public/sitemap.xml from the pages actually emitted by `next build`
+// (.next/server/pages/**/*.html), so dynamic routes from getStaticPaths are included.
+// Runs after `next build` (see package.json scripts).
+// Usage: node generate-sitemap.mjs [--slug-to-exclude ...]
+//   e.g. node generate-sitemap.mjs --draft
 
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const functionsDb = JSON.parse(fs.readFileSync(
-  path.join(process.cwd(), './app/api/db/developement/c/functions_new.json'),
-  'utf8'
-));
-
-const pythonFunctionsDb = JSON.parse(fs.readFileSync(
-  path.join(process.cwd(), './app/api/db/developement/python/functions.json'),
-  'utf8'
-));
-
-// Get things-not-to-do types
-const doNotDir = path.join(process.cwd(), 'app', 'api', 'db', 'content', 'C', 'do_not');
-const thingsNotToDoTypes = fs.readdirSync(doNotDir)
-  .filter(filename => filename.endsWith('.json'))
-  .map(filename => filename.replace('.json', ''));
-
-// Get example types 
-const examplesDir = path.join(process.cwd(), 'app', 'api', 'db', 'content', 'C', 'examples');
-const exampleTypes = fs.readdirSync(examplesDir)
-  .filter(filename => filename.endsWith('.json'))
-  .map(filename => filename.replace('.json', ''));
-
-// JS method routes section removed
-// const jsDir = path.join(process.cwd(), 'app', 'api', 'db', 'developement', 'javascript');
-// const jsMethodRoutes = [];
-// const jsFiles = fs.readdirSync(jsDir).filter(f => f.endsWith('_methods.json'));
-// for (const file of jsFiles) {
-//   const objectType = file.replace('_methods.json', '');
-//   const data = JSON.parse(fs.readFileSync(path.join(jsDir, file), 'utf8'));
-//   const routes = data.map(method => 
-//     `/javascript/${objectType}/${method.function.toLowerCase().split('(')[0]}`
-//   );
-//   jsMethodRoutes.push(...routes);
-// }
+import { globby } from 'globby';
 
 const SITE_URL = 'https://www.webdevdata.net';
-const excludedPages = process.argv.slice(2).map(arg => arg.replace(/^--/, ''));
+const BUILD_PAGES_DIR = '.next/server/pages';
+const OUTPUT_FILE = path.join(process.cwd(), 'public', 'sitemap.xml');
 
-(async () => {
-  try {
-    const { globby } = await import('globby');
-    
-    const pages = await globby([
-      'pages/**/*.{js,jsx,ts,tsx}',
-      '!pages/_*.{js,jsx,ts,tsx}',
-      '!pages/api',
-      '!pages/404.js',
-      '!pages/500.js'
-    ]);
+const PAGE_EXTENSIONS = ['.jsx', '.js', '.tsx', '.ts'];
 
-    const filteredPages = pages.filter(page => !excludedPages.some(excludedPage =>
-      page.includes(`/${excludedPage}.`) ||
-      page.includes(`/${excludedPage}/`)
-    ));
+// Scratch/test pages — any route segment starting with "test" is never published.
+const isScratchRoute = (route) => route.split('/').some((seg) => seg.startsWith('test'));
 
-    const dynamicRoutes = [
-      ...functionsDb.map(func => `/c-programming/functions/${func.function_name}`),
-      ...pythonFunctionsDb.map(func => `/python/functions/${func.name.trim().toLowerCase()}`),
-      ...thingsNotToDoTypes.map(type => `/c-programming/things-not-to-do/${type}`),
-      ...exampleTypes.map(example => `/c-programming/examples/${example}`)
-      // jsMethodRoutes removed from here
-    ];
+const cliExcludes = process.argv.slice(2).map((arg) => arg.replace(/^--/, ''));
 
-    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${[...filteredPages.map(page => {
-  const route = page
-    .replace('pages', '')
-    .replace(/\.(js|jsx|ts|tsx)$/, '')
-    .replace(/\/index$/, '');
-  return `  <url>
-    <loc>${SITE_URL}${route}</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>`;
-}), ...dynamicRoutes.map(route => `  <url>
-    <loc>${SITE_URL}${route}</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>`
-)].join('\n')}
-</urlset>`;
+if (!fs.existsSync(path.join(process.cwd(), BUILD_PAGES_DIR))) {
+  console.error(`Error: ${BUILD_PAGES_DIR} not found. Run \`next build\` first.`);
+  process.exit(1);
+}
 
-    const outputPath = path.join(process.cwd(), 'public', 'sitemap.xml');
-    fs.writeFileSync(outputPath, sitemap);
-    console.log(`Sitemap generated at ${outputPath}`);
-  } catch (error) {
-    console.error('Error:', error);
+const htmlFiles = await globby([
+  `${BUILD_PAGES_DIR}/**/*.html`,
+  `!${BUILD_PAGES_DIR}/404.html`,
+  `!${BUILD_PAGES_DIR}/500.html`,
+  `!${BUILD_PAGES_DIR}/**/_*.html`,
+]);
+
+// '.next/server/pages/python/functions/abs.html' -> '/python/functions/abs'
+// '.next/server/pages/index.html' -> '/'
+function toRoute(file) {
+  let route = file.slice(BUILD_PAGES_DIR.length).replace(/\.html$/, '');
+  if (route === '/index') route = '/';
+  return route || '/';
+}
+
+// lastmod: mtime of the source page file if we can find it, else the built HTML, else now.
+function lastmodFor(route, htmlFile) {
+  const rel = route === '/' ? 'index' : route.slice(1);
+  const candidates = [];
+  for (const ext of PAGE_EXTENSIONS) {
+    candidates.push(path.join(process.cwd(), 'pages', `${rel}${ext}`));
+    candidates.push(path.join(process.cwd(), 'pages', rel, `index${ext}`));
   }
-})();
+  if (route === '/') {
+    for (const ext of PAGE_EXTENSIONS) {
+      candidates.push(path.join(process.cwd(), 'app', `page${ext}`));
+    }
+  }
+  for (const candidate of candidates) {
+    try {
+      return fs.statSync(candidate).mtime;
+    } catch {
+      // not this one — keep looking
+    }
+  }
+  try {
+    return fs.statSync(htmlFile).mtime;
+  } catch {
+    return new Date();
+  }
+}
+
+const pages = htmlFiles
+  .map((file) => ({ file, route: toRoute(file) }))
+  .filter(({ route }) => !route.includes('/_index'))
+  .filter(({ route }) => !isScratchRoute(route))
+  .filter(({ route }) => !cliExcludes.some((slug) => route.split('/').includes(slug)));
+
+// The homepage is the one live route served by the app router (app/page.js), so it
+// builds to .next/server/app/index.html instead of .next/server/pages/. Special-case
+// it here — all other routes live in pages/.
+const APP_INDEX_HTML = path.join(process.cwd(), '.next', 'server', 'app', 'index.html');
+if (!pages.some(({ route }) => route === '/') && fs.existsSync(APP_INDEX_HTML)) {
+  pages.push({ file: APP_INDEX_HTML, route: '/' });
+}
+
+// Homepage at position 0, then alphabetical (keeps output idempotent).
+pages.sort((a, b) => {
+  if (a.route === '/') return -1;
+  if (b.route === '/') return 1;
+  return a.route.localeCompare(b.route);
+});
+
+const urls = pages
+  .map(({ file, route }) => `  <url>
+    <loc>${SITE_URL}${route}</loc>
+    <lastmod>${lastmodFor(route, file).toISOString()}</lastmod>
+  </url>`)
+  .join('\n');
+
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls}
+</urlset>
+`;
+
+fs.writeFileSync(OUTPUT_FILE, sitemap);
+console.log(`Sitemap generated at ${OUTPUT_FILE} (${pages.length} URLs)`);

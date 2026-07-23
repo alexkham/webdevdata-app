@@ -1,0 +1,47 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "text-sloth",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "D:\\next js\\my projects\\text-sloth", "run", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "qr-jay",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "D:\\next js\\my projects\\qr-jay", "run", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "excel-plaza",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "D:\\next js\\my projects\\excel-plaza", "run", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "clock-bunny",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "D:\\next js\\my projects\\clock-bunny", "run", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "converthog",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "D:\\next js\\my projects\\converthog", "run", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "docs-bubble",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "D:\\next js\\my projects\\docs-bubble", "run", "dev"],
+      "port": 3000
+    }
+  ]
+}

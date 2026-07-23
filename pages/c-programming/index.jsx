@@ -4,7 +4,6 @@ import SectionLinkGroup from '@/app/components/section-link-group/SectionLinkGro
 import React from 'react'
 import '../../pages/pages.css'
 import Link from 'next/link';
-import Layout from '../Layout';
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb';
 
 export default function CProgrammingPage() {
@@ -49,7 +48,7 @@ export default function CProgrammingPage() {
 
 
   return (
-   <Layout>
+   <>
    {/* <MyNavbar></MyNavbar> */}
    <br></br>
    <br></br>
@@ -98,6 +97,6 @@ export default function CProgrammingPage() {
    <br></br>
    <br></br>
    <ScrollUpButton></ScrollUpButton>
-   </Layout>
+   </>
   )
 }

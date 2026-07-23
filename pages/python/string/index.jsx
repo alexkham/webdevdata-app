@@ -1,5 +1,4 @@
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb'
-import MyNavbar2 from '@/app/components/nav-bar/MyNavbar2'
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton'
 import React from 'react'
 
@@ -12,7 +11,7 @@ export default function StringPage() {
     ]
   return (
     <>
-    <MyNavbar2/>
+    
     <br/>
     <br/>
     <br/>

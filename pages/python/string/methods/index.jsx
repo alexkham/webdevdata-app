@@ -1,5 +1,4 @@
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb'
-import MyNavbar2 from '@/app/components/nav-bar/MyNavbar2'
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton'
 import StringProcessorWrapper from '@/app/components/string-processor/StringProcessorWrapper'
 import React from 'react'
@@ -9,7 +8,7 @@ import '../../../pages.css'
 export default function MethodsPage() {
   return (
     <>
-    <MyNavbar2/>
+    
     <br/>
     <br/>
     <br/>

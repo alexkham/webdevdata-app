@@ -2,7 +2,6 @@ import React from 'react';
 import DynamicAccordionCode from '@/app/components/accordion/DynamicAccordionCode';
 import '../../../pages.css';
 import { capitalizeWords } from '@/utils/functions';
-import MyNavbar2 from '@/app/components/nav-bar/MyNavbar2';
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton';
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb';
 import Head from 'next/head';
@@ -23,7 +22,7 @@ const ThingsNotToDoPage = ({ type, content }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       </Head>
       <main>
-      <MyNavbar2 />
+      
       <br />
       <br />
       <br />

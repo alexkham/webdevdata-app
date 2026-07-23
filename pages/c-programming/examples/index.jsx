@@ -1,5 +1,4 @@
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb'
-import MyNavbar2 from '@/app/components/nav-bar/MyNavbar2'
 import React from 'react';
 import '../../pages.css';
 import { Code, Database ,Brackets} from 'lucide-react'; 
@@ -95,7 +94,7 @@ export default function ExamplesPagePage() {
     <Head>
     <link rel="canonical" href="https://www.webdevdata.net/c-programming/examples" />
     </Head>
-    <MyNavbar2></MyNavbar2>
+    
     <br></br>
     <br></br>
     <br></br>

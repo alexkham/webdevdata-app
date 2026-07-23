@@ -122,7 +122,7 @@
 
 //   return (
 //     <>
-//     <MyNavbar2/>
+//     
 //     <br/>
 //     <br/>
 //     <br/>
@@ -144,7 +144,6 @@ import TableOfContents from '@/app/components/page-components/table-of-contents/
 import ContentBlocks from '@/app/components/page-components/content-components/ContentBlocks';
 import MarkdownComponent from '@/app/components/markdown-component/MarkdownComponent';
 import SQLCodeWidget from '@/app/components/sql/SQLCodeWidget';
-import MyNavbar2 from '@/app/components/nav-bar/MyNavbar2';
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb';
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton';
 import '../../../pages.css';
@@ -193,7 +192,7 @@ export default function FromPage({ tocItemsData, keyWords }) {
         <meta name="twitter:description" content="Learn about the FROM clause in SQL, its usage, and advanced techniques." />
         <link rel="canonical" href="https://webdevdata.net/sql/clause/from" />
         </Head>
-      <MyNavbar2 />
+      
       <br />
       <br />
       <br />

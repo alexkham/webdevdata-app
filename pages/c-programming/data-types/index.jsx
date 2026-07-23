@@ -1,5 +1,4 @@
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb'
-import MyNavbar2 from '@/app/components/nav-bar/MyNavbar2'
 import React from 'react';
 import '../../pages.css'
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton';
@@ -59,7 +58,7 @@ export default function DataTypesPage({ content, types }) {
         <meta property="og:type" content="article" />
         <link rel="canonical" href="https://www.webdevdata.net/c-programming/data-types" />
       </Head>
-    <MyNavbar2/>
+    
     <br/>
     <br/>
    

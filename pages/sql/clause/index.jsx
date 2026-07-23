@@ -206,7 +206,7 @@
 
 //   return (
 //     <>
-//     <MyNavbar2></MyNavbar2>
+//     
 //     <br/>
 //     <br/>
 //     <br/>
@@ -222,7 +222,6 @@
 import React from 'react';
 import Head from 'next/head';
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb';
-import MyNavbar2 from '@/app/components/nav-bar/MyNavbar2';
 import ContentBlocks from '@/app/components/page-components/content-components/ContentBlocks';
 import TableOfContents from '@/app/components/page-components/table-of-contents/TableOfContents';
 import MarkdownComponent from '@/app/components/markdown-component/MarkdownComponent';
@@ -254,7 +253,7 @@ export default function SQLClausePage({ tocItemsData ,keyWords }) {
         <meta name="twitter:description" content="Explore SQL clauses: SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY, and LIMIT. Learn their uses and interactions in database queries." />
         <link rel="canonical" href="https://webdevdata.net/sql/clauses" />
       </Head>
-      <MyNavbar2 />
+      
       <br />
       <br />
       <br />
