@@ -6,46 +6,90 @@
 // featured picks (live-demo items, discovery order).
 
 export const pythonRollup = {
-  generatedAt: "2026-07-31T15:49:52.999Z",
-  total: 11,
-  liveTotal: 11,
+  generatedAt: "2026-07-31T16:54:20.971Z",
+  total: 21,
+  liveTotal: 21,
   types: [
   {
-    "type": "dict",
-    "count": 1
+    "type": "builtin",
+    "count": 5
   },
   {
     "type": "str",
-    "count": 6
+    "count": 10
   },
   {
-    "type": "builtin",
-    "count": 2
+    "type": "dict",
+    "count": 3
   },
   {
     "type": "list",
-    "count": 2
+    "count": 3
   }
 ],
   categories: [
   {
-    "category": "dict",
-    "count": 1
+    "category": "builtin",
+    "count": 5
   },
   {
     "category": "string",
-    "count": 6
+    "count": 10
   },
   {
-    "category": "builtin",
-    "count": 2
+    "category": "dict",
+    "count": 3
   },
   {
     "category": "list",
-    "count": 2
+    "count": 3
   }
 ],
   featured: [
+  {
+    "slug": "abs",
+    "name": "abs",
+    "signature": "abs(x)",
+    "blurb": "Return the absolute value of a number.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "abs absolute value magnitude negative positive"
+  },
+  {
+    "slug": "capitalize",
+    "name": "str.capitalize",
+    "signature": "str.capitalize()",
+    "blurb": "Return a copy with the first character titlecased and the rest lowercased.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "capitalize first letter sentence case title"
+  },
+  {
+    "slug": "dict-pop",
+    "name": "dict.pop",
+    "signature": "dict.pop(key[, default])",
+    "blurb": "Remove a key and return its value, with an optional default.",
+    "category": "dict",
+    "type": "dict",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "pop remove key dictionary delete return value"
+  },
+  {
+    "slug": "find",
+    "name": "str.find",
+    "signature": "str.find(sub, start=0, end=len(s))",
+    "blurb": "Return the lowest index of a substring, or -1 if absent.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "find index position locate search substring where"
+  },
   {
     "slug": "get",
     "name": "dict.get",
@@ -67,50 +111,6 @@ export const pythonRollup = {
     "hasLiveDemo": true,
     "version": "Python 2.0+",
     "searchTerms": "join concatenate glue separator combine"
-  },
-  {
-    "slug": "len",
-    "name": "len",
-    "signature": "len(obj)",
-    "blurb": "Return the number of items in a container.",
-    "category": "builtin",
-    "type": "builtin",
-    "hasLiveDemo": true,
-    "version": "Python 1.0+",
-    "searchTerms": "len length size count items number of elements"
-  },
-  {
-    "slug": "list-count",
-    "name": "list.count",
-    "signature": "list.count(value)",
-    "blurb": "Count how many items in the list equal a value.",
-    "category": "list",
-    "type": "list",
-    "hasLiveDemo": true,
-    "version": "Python 2.0+",
-    "searchTerms": "count occurrences list frequency how many items"
-  },
-  {
-    "slug": "list-pop",
-    "name": "list.pop",
-    "signature": "list.pop(index=-1)",
-    "blurb": "Remove and return an item — the last one by default.",
-    "category": "list",
-    "type": "list",
-    "hasLiveDemo": true,
-    "version": "Python 2.0+",
-    "searchTerms": "pop remove last item stack lifo delete return"
-  },
-  {
-    "slug": "lower",
-    "name": "str.lower",
-    "signature": "str.lower()",
-    "blurb": "Return a copy of the string with all cased characters lowercased.",
-    "category": "string",
-    "type": "str",
-    "hasLiveDemo": true,
-    "version": "Python 2.0+",
-    "searchTerms": "lower lowercase case insensitive normalize"
   }
 ]
 };

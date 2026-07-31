@@ -5,8 +5,52 @@
 // Flat list for the /reference/python/functions explorer.
 
 export const pythonFunctionsCatalog = {
-  generatedAt: "2026-07-31T15:49:52.998Z",
+  generatedAt: "2026-07-31T16:54:20.971Z",
   items: [
+  {
+    "slug": "abs",
+    "name": "abs",
+    "signature": "abs(x)",
+    "blurb": "Return the absolute value of a number.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "abs absolute value magnitude negative positive"
+  },
+  {
+    "slug": "capitalize",
+    "name": "str.capitalize",
+    "signature": "str.capitalize()",
+    "blurb": "Return a copy with the first character titlecased and the rest lowercased.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "capitalize first letter sentence case title"
+  },
+  {
+    "slug": "dict-pop",
+    "name": "dict.pop",
+    "signature": "dict.pop(key[, default])",
+    "blurb": "Remove a key and return its value, with an optional default.",
+    "category": "dict",
+    "type": "dict",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "pop remove key dictionary delete return value"
+  },
+  {
+    "slug": "find",
+    "name": "str.find",
+    "signature": "str.find(sub, start=0, end=len(s))",
+    "blurb": "Return the lowest index of a substring, or -1 if absent.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "find index position locate search substring where"
+  },
   {
     "slug": "get",
     "name": "dict.get",
@@ -52,6 +96,17 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "count occurrences list frequency how many items"
   },
   {
+    "slug": "list-index",
+    "name": "list.index",
+    "signature": "list.index(value, start=0, end=len(lst))",
+    "blurb": "Return the index of the first item equal to a value.",
+    "category": "list",
+    "type": "list",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "index position find locate list where item"
+  },
+  {
     "slug": "list-pop",
     "name": "list.pop",
     "signature": "list.pop(index=-1)",
@@ -74,6 +129,17 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "lower lowercase case insensitive normalize"
   },
   {
+    "slug": "max",
+    "name": "max",
+    "signature": "max(iterable, *, key=None, default=...)",
+    "blurb": "Return the largest item of an iterable or of two or more arguments.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "max maximum largest biggest highest greatest"
+  },
+  {
     "slug": "replace",
     "name": "str.replace",
     "signature": "str.replace(old, new, count=-1)",
@@ -83,6 +149,28 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.0+",
     "searchTerms": "replace substitute string swap"
+  },
+  {
+    "slug": "round",
+    "name": "round",
+    "signature": "round(number, ndigits=None)",
+    "blurb": "Round a number to a given precision — halves go to the even neighbor.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "round rounding decimal precision banker half even"
+  },
+  {
+    "slug": "setdefault",
+    "name": "dict.setdefault",
+    "signature": "dict.setdefault(key, default=None)",
+    "blurb": "Return the value for a key, inserting the default first if missing.",
+    "category": "dict",
+    "type": "dict",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "setdefault insert default missing key initialize grouping"
   },
   {
     "slug": "sorted",
@@ -107,6 +195,17 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "split break tokenize delimiter list"
   },
   {
+    "slug": "startswith",
+    "name": "str.startswith",
+    "signature": "str.startswith(prefix, start=0, end=len(s))",
+    "blurb": "Test whether the string begins with a prefix.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "startswith prefix begins with check test boolean"
+  },
+  {
     "slug": "str-count",
     "name": "str.count",
     "signature": "str.count(sub, start=0, end=len(s))",
@@ -127,6 +226,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.0+",
     "searchTerms": "strip trim whitespace remove clean"
+  },
+  {
+    "slug": "upper",
+    "name": "str.upper",
+    "signature": "str.upper()",
+    "blurb": "Return a copy of the string with all cased characters uppercased.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "upper uppercase caps case convert"
   }
 ]
 };

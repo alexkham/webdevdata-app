@@ -5,30 +5,50 @@
 // slug → emulator function, for every content item with hasLiveDemo:true
 // whose emulator file exists. Static imports — predictable bundling.
 
+import absEmu from './emulators/python/abs';
+import capitalizeEmu from './emulators/python/capitalize';
+import dictPopEmu from './emulators/python/dict-pop';
+import findEmu from './emulators/python/find';
 import getEmu from './emulators/python/get';
 import joinEmu from './emulators/python/join';
 import lenEmu from './emulators/python/len';
 import listCountEmu from './emulators/python/list-count';
+import listIndexEmu from './emulators/python/list-index';
 import listPopEmu from './emulators/python/list-pop';
 import lowerEmu from './emulators/python/lower';
+import maxEmu from './emulators/python/max';
 import replaceEmu from './emulators/python/replace';
+import roundEmu from './emulators/python/round';
+import setdefaultEmu from './emulators/python/setdefault';
 import sortedEmu from './emulators/python/sorted';
 import splitEmu from './emulators/python/split';
+import startswithEmu from './emulators/python/startswith';
 import strCountEmu from './emulators/python/str-count';
 import stripEmu from './emulators/python/strip';
+import upperEmu from './emulators/python/upper';
 
 const emulators = {
+  'abs': absEmu,
+  'capitalize': capitalizeEmu,
+  'dict-pop': dictPopEmu,
+  'find': findEmu,
   'get': getEmu,
   'join': joinEmu,
   'len': lenEmu,
   'list-count': listCountEmu,
+  'list-index': listIndexEmu,
   'list-pop': listPopEmu,
   'lower': lowerEmu,
+  'max': maxEmu,
   'replace': replaceEmu,
+  'round': roundEmu,
+  'setdefault': setdefaultEmu,
   'sorted': sortedEmu,
   'split': splitEmu,
+  'startswith': startswithEmu,
   'str-count': strCountEmu,
   'strip': stripEmu,
+  'upper': upperEmu,
 };
 
 export function getEmulator(slug) {

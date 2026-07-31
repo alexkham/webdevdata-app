@@ -14,17 +14,27 @@ import { useMemo, useState } from 'react';
 import { pyRepr } from '@/utils/code-highlight';
 
 // Turn the raw form value into the emulator argument. Input kinds:
-//   'text'         string as-is
-//   'text-or-none' empty string → null (Python None default)
-//   'number'       int, NaN → -1
-//   'csv'          comma-separated items → list of trimmed strings
-//   'kv'           "a: 1, b: 2" pairs → dict of string values
+//   'text'           string as-is
+//   'text-or-none'   empty string → null (Python None default)
+//   'number'         int, NaN → -1
+//   'number-or-none' int, empty/NaN → null (for optional int params)
+//   'float'          float, NaN → 0
+//   'csv'            comma-separated items → list of trimmed strings
+//   'kv'             "a: 1, b: 2" pairs → dict of string values
 function coerce(raw, param) {
   const s = String(raw);
   switch (param.input) {
     case 'number': {
       const n = parseInt(s, 10);
       return Number.isNaN(n) ? -1 : n;
+    }
+    case 'number-or-none': {
+      const n = parseInt(s, 10);
+      return Number.isNaN(n) ? null : n;
+    }
+    case 'float': {
+      const f = parseFloat(s);
+      return Number.isNaN(f) ? 0 : f;
     }
     case 'text-or-none':
       return s === '' ? null : s;
@@ -72,7 +82,8 @@ export default function MethodDemo({ method, emulator }) {
     isDefault: (() => {
       const decl = byName.get(p.name);
       if (!decl || decl.required) return false;
-      if (args[i + 1] === null) return decl.default === 'None';
+      // null means the field was left empty → Python default applies
+      if (args[i + 1] === null) return true;
       return String(args[i + 1]) === String(decl.default);
     })(),
   }));
