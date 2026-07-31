@@ -6,7 +6,7 @@
 // file under content/reference/.
 
 export const referenceCatalog = {
-  generatedAt: "2026-07-31T02:01:59.657Z",
+  generatedAt: "2026-07-31T02:36:20.030Z",
   languages: [
   {
     "id": "python",

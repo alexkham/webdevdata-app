@@ -1968,7 +1968,7 @@ function MockSiteHeader() {
       <Link href="/" className="mock-logo">webdev<span>data</span></Link>
       <nav className="mock-nav">
         <Link href="/tools" className="active">Tools</Link>
-        <a href="/reference">Reference</a>
+        <Link href="/reference">Reference</Link>
         <a href="/learn">Learn</a>
       </nav>
 
