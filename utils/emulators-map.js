@@ -5,10 +5,30 @@
 // slug → emulator function, for every content item with hasLiveDemo:true
 // whose emulator file exists. Static imports — predictable bundling.
 
+import getEmu from './emulators/python/get';
+import joinEmu from './emulators/python/join';
+import lenEmu from './emulators/python/len';
+import listCountEmu from './emulators/python/list-count';
+import listPopEmu from './emulators/python/list-pop';
+import lowerEmu from './emulators/python/lower';
 import replaceEmu from './emulators/python/replace';
+import sortedEmu from './emulators/python/sorted';
+import splitEmu from './emulators/python/split';
+import strCountEmu from './emulators/python/str-count';
+import stripEmu from './emulators/python/strip';
 
 const emulators = {
+  'get': getEmu,
+  'join': joinEmu,
+  'len': lenEmu,
+  'list-count': listCountEmu,
+  'list-pop': listPopEmu,
+  'lower': lowerEmu,
   'replace': replaceEmu,
+  'sorted': sortedEmu,
+  'split': splitEmu,
+  'str-count': strCountEmu,
+  'strip': stripEmu,
 };
 
 export function getEmulator(slug) {

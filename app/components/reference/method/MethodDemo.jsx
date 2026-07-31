@@ -13,10 +13,36 @@
 import { useMemo, useState } from 'react';
 import { pyRepr } from '@/utils/code-highlight';
 
+// Turn the raw form value into the emulator argument. Input kinds:
+//   'text'         string as-is
+//   'text-or-none' empty string → null (Python None default)
+//   'number'       int, NaN → -1
+//   'csv'          comma-separated items → list of trimmed strings
+//   'kv'           "a: 1, b: 2" pairs → dict of string values
 function coerce(raw, param) {
-  if (param.input !== 'number') return String(raw);
-  const n = parseInt(raw, 10);
-  return Number.isNaN(n) ? -1 : n;
+  const s = String(raw);
+  switch (param.input) {
+    case 'number': {
+      const n = parseInt(s, 10);
+      return Number.isNaN(n) ? -1 : n;
+    }
+    case 'text-or-none':
+      return s === '' ? null : s;
+    case 'csv':
+      return s.trim() === '' ? [] : s.split(',').map((x) => x.trim());
+    case 'kv': {
+      const obj = {};
+      if (s.trim() === '') return obj;
+      s.split(',').forEach((pair) => {
+        const idx = pair.indexOf(':');
+        if (idx === -1) return;
+        obj[pair.slice(0, idx).trim()] = pair.slice(idx + 1).trim();
+      });
+      return obj;
+    }
+    default:
+      return s;
+  }
 }
 
 export default function MethodDemo({ method, emulator }) {
@@ -42,10 +68,12 @@ export default function MethodDemo({ method, emulator }) {
   // Call preview: receiver.method(arg, ...) — trailing args that equal the
   // declared parameter default are omitted, the way you would write the call.
   const callParts = demoParams.slice(1).map((p, i) => ({
-    text: typeof args[i + 1] === 'string' ? pyRepr(args[i + 1]) : String(args[i + 1]),
+    text: typeof args[i + 1] === 'number' ? String(args[i + 1]) : pyRepr(args[i + 1]),
     isDefault: (() => {
       const decl = byName.get(p.name);
-      return decl && !decl.required && String(args[i + 1]) === String(decl.default);
+      if (!decl || decl.required) return false;
+      if (args[i + 1] === null) return decl.default === 'None';
+      return String(args[i + 1]) === String(decl.default);
     })(),
   }));
   let lastShown = callParts.length - 1;

@@ -68,8 +68,9 @@ export function highlightPython(code) {
   return tokens;
 }
 
-// Python repr() of a JS string — used by demo/pitfall components to render
-// call previews and outputs the way Python would print them.
+// Python repr() of a JS value — used by demo/pitfall components to render
+// call previews and outputs the way Python would print them. Arrays render
+// as Python lists, plain objects as Python dicts.
 export function pyRepr(value) {
   if (typeof value === 'string') {
     return "'" + value.replace(/\\/g, '\\\\').replace(/'/g, "\\'") + "'";
@@ -77,5 +78,11 @@ export function pyRepr(value) {
   if (value === null || value === undefined) return 'None';
   if (value === true) return 'True';
   if (value === false) return 'False';
+  if (Array.isArray(value)) {
+    return '[' + value.map(pyRepr).join(', ') + ']';
+  }
+  if (typeof value === 'object') {
+    return '{' + Object.entries(value).map(([k, v]) => `${pyRepr(k)}: ${pyRepr(v)}`).join(', ') + '}';
+  }
   return String(value);
 }

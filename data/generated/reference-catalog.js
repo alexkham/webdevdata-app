@@ -6,19 +6,85 @@
 // file under content/reference/.
 
 export const referenceCatalog = {
-  generatedAt: "2026-07-31T02:36:20.030Z",
+  generatedAt: "2026-07-31T15:49:52.997Z",
   languages: [
   {
     "id": "python",
     "href": "/reference/python",
-    "count": 1,
+    "count": 11,
     "categories": [
       {
         "id": "functions",
         "href": "/reference/python/functions",
-        "count": 1,
-        "liveCount": 1,
+        "count": 11,
+        "liveCount": 11,
         "items": [
+          {
+            "slug": "get",
+            "name": "dict.get",
+            "signature": "dict.get(key, default=None)",
+            "blurb": "Return the value for a key, or a default — never raises.",
+            "category": "dict",
+            "type": "dict",
+            "hasLiveDemo": true,
+            "version": "Python 2.0+",
+            "searchTerms": "get dictionary key default safe access lookup keyerror"
+          },
+          {
+            "slug": "join",
+            "name": "str.join",
+            "signature": "str.join(iterable)",
+            "blurb": "Concatenate an iterable of strings with this string as the separator.",
+            "category": "string",
+            "type": "str",
+            "hasLiveDemo": true,
+            "version": "Python 2.0+",
+            "searchTerms": "join concatenate glue separator combine"
+          },
+          {
+            "slug": "len",
+            "name": "len",
+            "signature": "len(obj)",
+            "blurb": "Return the number of items in a container.",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "len length size count items number of elements"
+          },
+          {
+            "slug": "list-count",
+            "name": "list.count",
+            "signature": "list.count(value)",
+            "blurb": "Count how many items in the list equal a value.",
+            "category": "list",
+            "type": "list",
+            "hasLiveDemo": true,
+            "version": "Python 2.0+",
+            "searchTerms": "count occurrences list frequency how many items"
+          },
+          {
+            "slug": "list-pop",
+            "name": "list.pop",
+            "signature": "list.pop(index=-1)",
+            "blurb": "Remove and return an item — the last one by default.",
+            "category": "list",
+            "type": "list",
+            "hasLiveDemo": true,
+            "version": "Python 2.0+",
+            "searchTerms": "pop remove last item stack lifo delete return"
+          },
+          {
+            "slug": "lower",
+            "name": "str.lower",
+            "signature": "str.lower()",
+            "blurb": "Return a copy of the string with all cased characters lowercased.",
+            "category": "string",
+            "type": "str",
+            "hasLiveDemo": true,
+            "version": "Python 2.0+",
+            "searchTerms": "lower lowercase case insensitive normalize"
+          },
           {
             "slug": "replace",
             "name": "str.replace",
@@ -29,6 +95,50 @@ export const referenceCatalog = {
             "hasLiveDemo": true,
             "version": "Python 2.0+",
             "searchTerms": "replace substitute string swap"
+          },
+          {
+            "slug": "sorted",
+            "name": "sorted",
+            "signature": "sorted(iterable, key=None, reverse=False)",
+            "blurb": "Return a new sorted list from any iterable.",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": true,
+            "version": "Python 2.4+",
+            "searchTerms": "sorted sort order ascending descending key reverse"
+          },
+          {
+            "slug": "split",
+            "name": "str.split",
+            "signature": "str.split(sep=None, maxsplit=-1)",
+            "blurb": "Break a string into a list of substrings on a delimiter.",
+            "category": "string",
+            "type": "str",
+            "hasLiveDemo": true,
+            "version": "Python 2.0+",
+            "searchTerms": "split break tokenize delimiter list"
+          },
+          {
+            "slug": "str-count",
+            "name": "str.count",
+            "signature": "str.count(sub, start=0, end=len(s))",
+            "blurb": "Count non-overlapping occurrences of a substring.",
+            "category": "string",
+            "type": "str",
+            "hasLiveDemo": true,
+            "version": "Python 2.0+",
+            "searchTerms": "count occurrences substring frequency how many"
+          },
+          {
+            "slug": "strip",
+            "name": "str.strip",
+            "signature": "str.strip(chars=None)",
+            "blurb": "Return a copy with leading and trailing characters removed.",
+            "category": "string",
+            "type": "str",
+            "hasLiveDemo": true,
+            "version": "Python 2.0+",
+            "searchTerms": "strip trim whitespace remove clean"
           }
         ]
       }

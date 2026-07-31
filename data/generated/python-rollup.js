@@ -6,32 +6,111 @@
 // featured picks (live-demo items, discovery order).
 
 export const pythonRollup = {
-  generatedAt: "2026-07-31T02:36:20.032Z",
-  total: 1,
-  liveTotal: 1,
+  generatedAt: "2026-07-31T15:49:52.999Z",
+  total: 11,
+  liveTotal: 11,
   types: [
   {
-    "type": "str",
+    "type": "dict",
     "count": 1
+  },
+  {
+    "type": "str",
+    "count": 6
+  },
+  {
+    "type": "builtin",
+    "count": 2
+  },
+  {
+    "type": "list",
+    "count": 2
   }
 ],
   categories: [
   {
-    "category": "string",
+    "category": "dict",
     "count": 1
+  },
+  {
+    "category": "string",
+    "count": 6
+  },
+  {
+    "category": "builtin",
+    "count": 2
+  },
+  {
+    "category": "list",
+    "count": 2
   }
 ],
   featured: [
   {
-    "slug": "replace",
-    "name": "str.replace",
-    "signature": "str.replace(old, new, count=-1)",
-    "blurb": "Return a copy with all occurrences of old replaced by new.",
+    "slug": "get",
+    "name": "dict.get",
+    "signature": "dict.get(key, default=None)",
+    "blurb": "Return the value for a key, or a default — never raises.",
+    "category": "dict",
+    "type": "dict",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "get dictionary key default safe access lookup keyerror"
+  },
+  {
+    "slug": "join",
+    "name": "str.join",
+    "signature": "str.join(iterable)",
+    "blurb": "Concatenate an iterable of strings with this string as the separator.",
     "category": "string",
     "type": "str",
     "hasLiveDemo": true,
     "version": "Python 2.0+",
-    "searchTerms": "replace substitute string swap"
+    "searchTerms": "join concatenate glue separator combine"
+  },
+  {
+    "slug": "len",
+    "name": "len",
+    "signature": "len(obj)",
+    "blurb": "Return the number of items in a container.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "len length size count items number of elements"
+  },
+  {
+    "slug": "list-count",
+    "name": "list.count",
+    "signature": "list.count(value)",
+    "blurb": "Count how many items in the list equal a value.",
+    "category": "list",
+    "type": "list",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "count occurrences list frequency how many items"
+  },
+  {
+    "slug": "list-pop",
+    "name": "list.pop",
+    "signature": "list.pop(index=-1)",
+    "blurb": "Remove and return an item — the last one by default.",
+    "category": "list",
+    "type": "list",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "pop remove last item stack lifo delete return"
+  },
+  {
+    "slug": "lower",
+    "name": "str.lower",
+    "signature": "str.lower()",
+    "blurb": "Return a copy of the string with all cased characters lowercased.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "lower lowercase case insensitive normalize"
   }
 ]
 };
