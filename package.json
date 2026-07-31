@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node generate-nav.mjs && node generate-home-catalog.mjs && next dev",
-    "build": "node generate-nav.mjs && next build && node generate-sitemap.mjs && node generate-home-catalog.mjs",
+    "dev": "node generate-nav.mjs && node generate-home-catalog.mjs && node generate-reference-catalogs.mjs && next dev",
+    "build": "node generate-nav.mjs && node generate-reference-catalogs.mjs && next build && node generate-sitemap.mjs && node generate-home-catalog.mjs",
     "start": "next start",
     "lint": "next lint"
   },

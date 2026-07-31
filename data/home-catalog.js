@@ -7,8 +7,51 @@
 // Contains the COMPLETE page list per pillar — nothing truncated.
 
 export const homeCatalog = {
-  generatedAt: "2026-07-23T22:19:39.276Z",
+  generatedAt: "2026-07-31T02:01:59.582Z",
   pillars: [
+  {
+    "id": "reference",
+    "title": "Reference",
+    "href": "/reference",
+    "blurb": "Function and method references with live in-browser demos: signatures, parameters, examples and pitfalls for every entry.",
+    "ctaLabel": "Browse Reference",
+    "stats": [
+      {
+        "n": "2",
+        "label": "Pages"
+      },
+      {
+        "n": "2",
+        "label": "Categories"
+      }
+    ],
+    "breakdown": [
+      {
+        "label": "Python",
+        "count": 1
+      },
+      {
+        "label": "General",
+        "count": 1
+      }
+    ],
+    "pages": [
+      {
+        "name": "Python functions",
+        "desc": "Browse Python built-in functions and type methods: signatures, parameters, examples, pitfalls and live in-browser demos.",
+        "href": "/reference/python/functions",
+        "category": "Python",
+        "subCategory": null
+      },
+      {
+        "name": "Python",
+        "desc": "Python reference with live in-browser demos: built-in functions, string, list, dict and set methods — signatures, examples, pitfalls.",
+        "href": "/reference/python",
+        "category": "General",
+        "subCategory": null
+      }
+    ]
+  },
   {
     "id": "tools",
     "title": "Tools",

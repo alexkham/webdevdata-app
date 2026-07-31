@@ -15,12 +15,10 @@ const navItems = [
     ]
   },
   {
-    label: "Python",
-    href: "/python",
+    label: "Reference",
+    href: "/reference",
     children: [
-      { label: "Functions", href: "/python/functions" },
-      { label: "Sequence Slicing", href: "/python/sequence-slicing" },
-      { label: "String", href: "/python/string" }
+      { label: "Python", href: "/reference/python" }
     ]
   },
   {
