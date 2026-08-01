@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/functions explorer.
 
 export const pythonFunctionsCatalog = {
-  generatedAt: "2026-07-31T16:54:20.971Z",
+  generatedAt: "2026-08-01T05:17:50.188Z",
   items: [
   {
     "slug": "abs",
@@ -17,6 +17,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 1.0+",
     "searchTerms": "abs absolute value magnitude negative positive"
+  },
+  {
+    "slug": "append",
+    "name": "list.append",
+    "signature": "list.append(item)",
+    "blurb": "Add one item to the end of the list, in place.",
+    "category": "list",
+    "type": "list",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "append add push end list insert item"
   },
   {
     "slug": "capitalize",
@@ -41,6 +52,17 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "pop remove key dictionary delete return value"
   },
   {
+    "slug": "endswith",
+    "name": "str.endswith",
+    "signature": "str.endswith(suffix, start=0, end=len(s))",
+    "blurb": "Test whether the string ends with a suffix.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "endswith suffix extension ends with check boolean"
+  },
+  {
     "slug": "find",
     "name": "str.find",
     "signature": "str.find(sub, start=0, end=len(s))",
@@ -63,6 +85,28 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "get dictionary key default safe access lookup keyerror"
   },
   {
+    "slug": "int",
+    "name": "int",
+    "signature": "int(x, base=10)",
+    "blurb": "Convert a string or number to an integer, with an optional base.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "int integer convert parse cast base hex binary string to number"
+  },
+  {
+    "slug": "isdigit",
+    "name": "str.isdigit",
+    "signature": "str.isdigit()",
+    "blurb": "Test whether all characters are digits and the string is non-empty.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "isdigit numeric digits check validate number test"
+  },
+  {
     "slug": "join",
     "name": "str.join",
     "signature": "str.join(iterable)",
@@ -83,6 +127,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 1.0+",
     "searchTerms": "len length size count items number of elements"
+  },
+  {
+    "slug": "list-copy",
+    "name": "list.copy",
+    "signature": "list.copy()",
+    "blurb": "Return a shallow copy of the list.",
+    "category": "list",
+    "type": "list",
+    "hasLiveDemo": true,
+    "version": "Python 3.3+",
+    "searchTerms": "copy shallow duplicate clone list alias"
   },
   {
     "slug": "list-count",
@@ -140,6 +195,17 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "max maximum largest biggest highest greatest"
   },
   {
+    "slug": "min",
+    "name": "min",
+    "signature": "min(iterable, *, key=None, default=...)",
+    "blurb": "Return the smallest item of an iterable or of two or more arguments.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "min minimum smallest lowest least"
+  },
+  {
     "slug": "replace",
     "name": "str.replace",
     "signature": "str.replace(old, new, count=-1)",
@@ -160,6 +226,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 1.0+",
     "searchTerms": "round rounding decimal precision banker half even"
+  },
+  {
+    "slug": "rstrip",
+    "name": "str.rstrip",
+    "signature": "str.rstrip(chars=None)",
+    "blurb": "Return a copy with trailing characters removed.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "rstrip trim right trailing whitespace newline chomp"
   },
   {
     "slug": "setdefault",
@@ -228,6 +305,28 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "strip trim whitespace remove clean"
   },
   {
+    "slug": "sum",
+    "name": "sum",
+    "signature": "sum(iterable, start=0)",
+    "blurb": "Add the items of an iterable of numbers.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "sum total add accumulate numbers aggregate"
+  },
+  {
+    "slug": "title",
+    "name": "str.title",
+    "signature": "str.title()",
+    "blurb": "Return a titlecased copy — every word starts uppercase.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "title titlecase capitalize words headline case"
+  },
+  {
     "slug": "upper",
     "name": "str.upper",
     "signature": "str.upper()",
@@ -237,6 +336,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.0+",
     "searchTerms": "upper uppercase caps case convert"
+  },
+  {
+    "slug": "zfill",
+    "name": "str.zfill",
+    "signature": "str.zfill(width)",
+    "blurb": "Left-pad with zeros to a given width, sign-aware.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 2.2+",
+    "searchTerms": "zfill zero pad leading zeros width fill numeric"
   }
 ]
 };

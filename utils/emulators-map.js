@@ -6,49 +6,69 @@
 // whose emulator file exists. Static imports — predictable bundling.
 
 import absEmu from './emulators/python/abs';
+import appendEmu from './emulators/python/append';
 import capitalizeEmu from './emulators/python/capitalize';
 import dictPopEmu from './emulators/python/dict-pop';
+import endswithEmu from './emulators/python/endswith';
 import findEmu from './emulators/python/find';
 import getEmu from './emulators/python/get';
+import intEmu from './emulators/python/int';
+import isdigitEmu from './emulators/python/isdigit';
 import joinEmu from './emulators/python/join';
 import lenEmu from './emulators/python/len';
+import listCopyEmu from './emulators/python/list-copy';
 import listCountEmu from './emulators/python/list-count';
 import listIndexEmu from './emulators/python/list-index';
 import listPopEmu from './emulators/python/list-pop';
 import lowerEmu from './emulators/python/lower';
 import maxEmu from './emulators/python/max';
+import minEmu from './emulators/python/min';
 import replaceEmu from './emulators/python/replace';
 import roundEmu from './emulators/python/round';
+import rstripEmu from './emulators/python/rstrip';
 import setdefaultEmu from './emulators/python/setdefault';
 import sortedEmu from './emulators/python/sorted';
 import splitEmu from './emulators/python/split';
 import startswithEmu from './emulators/python/startswith';
 import strCountEmu from './emulators/python/str-count';
 import stripEmu from './emulators/python/strip';
+import sumEmu from './emulators/python/sum';
+import titleEmu from './emulators/python/title';
 import upperEmu from './emulators/python/upper';
+import zfillEmu from './emulators/python/zfill';
 
 const emulators = {
   'abs': absEmu,
+  'append': appendEmu,
   'capitalize': capitalizeEmu,
   'dict-pop': dictPopEmu,
+  'endswith': endswithEmu,
   'find': findEmu,
   'get': getEmu,
+  'int': intEmu,
+  'isdigit': isdigitEmu,
   'join': joinEmu,
   'len': lenEmu,
+  'list-copy': listCopyEmu,
   'list-count': listCountEmu,
   'list-index': listIndexEmu,
   'list-pop': listPopEmu,
   'lower': lowerEmu,
   'max': maxEmu,
+  'min': minEmu,
   'replace': replaceEmu,
   'round': roundEmu,
+  'rstrip': rstripEmu,
   'setdefault': setdefaultEmu,
   'sorted': sortedEmu,
   'split': splitEmu,
   'startswith': startswithEmu,
   'str-count': strCountEmu,
   'strip': stripEmu,
+  'sum': sumEmu,
+  'title': titleEmu,
   'upper': upperEmu,
+  'zfill': zfillEmu,
 };
 
 export function getEmulator(slug) {

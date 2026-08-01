@@ -40,6 +40,13 @@ function coerce(raw, param) {
       return s === '' ? null : s;
     case 'csv':
       return s.trim() === '' ? [] : s.split(',').map((x) => x.trim());
+    case 'csv-num':
+      return s.trim() === ''
+        ? []
+        : s.split(',').map((x) => {
+            const f = parseFloat(x.trim());
+            return Number.isNaN(f) ? 0 : f;
+          });
     case 'kv': {
       const obj = {};
       if (s.trim() === '') return obj;

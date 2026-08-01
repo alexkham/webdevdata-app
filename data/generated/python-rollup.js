@@ -6,42 +6,42 @@
 // featured picks (live-demo items, discovery order).
 
 export const pythonRollup = {
-  generatedAt: "2026-07-31T16:54:20.971Z",
-  total: 21,
-  liveTotal: 21,
+  generatedAt: "2026-08-01T05:17:50.188Z",
+  total: 31,
+  liveTotal: 31,
   types: [
   {
     "type": "builtin",
+    "count": 8
+  },
+  {
+    "type": "list",
     "count": 5
   },
   {
     "type": "str",
-    "count": 10
+    "count": 15
   },
   {
     "type": "dict",
-    "count": 3
-  },
-  {
-    "type": "list",
     "count": 3
   }
 ],
   categories: [
   {
     "category": "builtin",
+    "count": 8
+  },
+  {
+    "category": "list",
     "count": 5
   },
   {
     "category": "string",
-    "count": 10
+    "count": 15
   },
   {
     "category": "dict",
-    "count": 3
-  },
-  {
-    "category": "list",
     "count": 3
   }
 ],
@@ -56,6 +56,17 @@ export const pythonRollup = {
     "hasLiveDemo": true,
     "version": "Python 1.0+",
     "searchTerms": "abs absolute value magnitude negative positive"
+  },
+  {
+    "slug": "append",
+    "name": "list.append",
+    "signature": "list.append(item)",
+    "blurb": "Add one item to the end of the list, in place.",
+    "category": "list",
+    "type": "list",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "append add push end list insert item"
   },
   {
     "slug": "capitalize",
@@ -80,6 +91,17 @@ export const pythonRollup = {
     "searchTerms": "pop remove key dictionary delete return value"
   },
   {
+    "slug": "endswith",
+    "name": "str.endswith",
+    "signature": "str.endswith(suffix, start=0, end=len(s))",
+    "blurb": "Test whether the string ends with a suffix.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "endswith suffix extension ends with check boolean"
+  },
+  {
     "slug": "find",
     "name": "str.find",
     "signature": "str.find(sub, start=0, end=len(s))",
@@ -89,28 +111,6 @@ export const pythonRollup = {
     "hasLiveDemo": true,
     "version": "Python 2.0+",
     "searchTerms": "find index position locate search substring where"
-  },
-  {
-    "slug": "get",
-    "name": "dict.get",
-    "signature": "dict.get(key, default=None)",
-    "blurb": "Return the value for a key, or a default — never raises.",
-    "category": "dict",
-    "type": "dict",
-    "hasLiveDemo": true,
-    "version": "Python 2.0+",
-    "searchTerms": "get dictionary key default safe access lookup keyerror"
-  },
-  {
-    "slug": "join",
-    "name": "str.join",
-    "signature": "str.join(iterable)",
-    "blurb": "Concatenate an iterable of strings with this string as the separator.",
-    "category": "string",
-    "type": "str",
-    "hasLiveDemo": true,
-    "version": "Python 2.0+",
-    "searchTerms": "join concatenate glue separator combine"
   }
 ]
 };
