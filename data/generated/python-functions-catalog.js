@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/functions explorer.
 
 export const pythonFunctionsCatalog = {
-  generatedAt: "2026-08-04T15:23:04.144Z",
+  generatedAt: "2026-08-04T16:52:46.020Z",
   items: [
   {
     "slug": "abs",
@@ -52,6 +52,17 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "append add push end list insert item"
   },
   {
+    "slug": "ascii",
+    "name": "ascii",
+    "signature": "ascii(object)",
+    "blurb": "Like repr(), but escapes every non-ASCII character with \\x, \\u, or \\U.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "ascii repr escape non-ascii unicode debug safe log printable pure ascii representation"
+  },
+  {
     "slug": "bin",
     "name": "bin",
     "signature": "bin(x)",
@@ -72,6 +83,28 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.3+",
     "searchTerms": "bool boolean true false truthy falsy convert if test cast"
+  },
+  {
+    "slug": "bytearray",
+    "name": "bytearray",
+    "signature": "bytearray(source=..., encoding=..., errors=...)",
+    "blurb": "The MUTABLE sibling of bytes — same reads, plus append / extend / assignment.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytearray mutable bytes buffer binary append extend modify in place assignment"
+  },
+  {
+    "slug": "bytes",
+    "name": "bytes",
+    "signature": "bytes(source=..., encoding=..., errors=...)",
+    "blurb": "Construct an immutable bytes object — three call shapes: size, iterable, or string.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes bytearray immutable binary byte object encode utf-8 iterable size constructor"
   },
   {
     "slug": "capitalize",
@@ -105,6 +138,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.2+",
     "searchTerms": "classmethod decorator cls class method alternative constructor factory from_string bound"
+  },
+  {
+    "slug": "complex",
+    "name": "complex",
+    "signature": "complex(real=0, imag=0) / complex(string)",
+    "blurb": "Construct a complex number — from two floats, or from a Python-style string like &quot;3+4j&quot;.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "complex number imaginary j real number type constructor math engineering"
   },
   {
     "slug": "delattr",
@@ -171,6 +215,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.2+",
     "searchTerms": "values view dict iterate for loop payload data"
+  },
+  {
+    "slug": "dir",
+    "name": "dir",
+    "signature": "dir([object])",
+    "blurb": "List names in the local scope or on an object — introspection with sorted output.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "dir list attributes methods introspection scope names discover explore instance class"
   },
   {
     "slug": "divmod",
@@ -569,6 +624,17 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "difference set subtract minus remove not in exclude leftover complement without"
   },
   {
+    "slug": "set-difference_update",
+    "name": "set.difference_update",
+    "signature": "set.difference_update(*others)",
+    "blurb": "Remove every element that appears in the given iterables — in place.",
+    "category": "set",
+    "type": "set",
+    "hasLiveDemo": true,
+    "version": "Python 2.6+",
+    "searchTerms": "difference_update set remove subtract in place mutate none minus except drop"
+  },
+  {
     "slug": "set-discard",
     "name": "set.discard",
     "signature": "set.discard(elem)",
@@ -591,6 +657,17 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "intersection set common shared and ampersand overlap both contains all"
   },
   {
+    "slug": "set-intersection_update",
+    "name": "set.intersection_update",
+    "signature": "set.intersection_update(*others)",
+    "blurb": "Keep only elements found in the set AND every given iterable — in place.",
+    "category": "set",
+    "type": "set",
+    "hasLiveDemo": true,
+    "version": "Python 2.6+",
+    "searchTerms": "intersection_update set common shared overlap keep only in place mutate none"
+  },
+  {
     "slug": "set-symmetric_difference",
     "name": "set.symmetric_difference",
     "signature": "set.symmetric_difference(other)",
@@ -602,6 +679,17 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "symmetric difference xor either or exclusive set both not shared unique caret"
   },
   {
+    "slug": "set-symmetric_difference_update",
+    "name": "set.symmetric_difference_update",
+    "signature": "set.symmetric_difference_update(other)",
+    "blurb": "Update the set to contain elements in EITHER but not BOTH — in place.",
+    "category": "set",
+    "type": "set",
+    "hasLiveDemo": true,
+    "version": "Python 2.6+",
+    "searchTerms": "symmetric_difference_update xor either not both in place mutate none unique"
+  },
+  {
     "slug": "set-union",
     "name": "set.union",
     "signature": "set.union(*others)",
@@ -611,6 +699,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.6+",
     "searchTerms": "union set combine merge or pipe operator new elements distinct unique"
+  },
+  {
+    "slug": "set-update",
+    "name": "set.update",
+    "signature": "set.update(*others)",
+    "blurb": "Add every element from one or more iterables — in place.",
+    "category": "set",
+    "type": "set",
+    "hasLiveDemo": true,
+    "version": "Python 2.6+",
+    "searchTerms": "update set add union merge many iterable in place mutate none extend"
   },
   {
     "slug": "setattr",

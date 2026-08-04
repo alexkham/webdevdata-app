@@ -9,17 +9,22 @@ import absEmu from './emulators/python/abs';
 import allEmu from './emulators/python/all';
 import anyEmu from './emulators/python/any';
 import appendEmu from './emulators/python/append';
+import asciiEmu from './emulators/python/ascii';
 import binEmu from './emulators/python/bin';
 import boolEmu from './emulators/python/bool';
+import bytearrayEmu from './emulators/python/bytearray';
+import bytesEmu from './emulators/python/bytes';
 import capitalizeEmu from './emulators/python/capitalize';
 import chrEmu from './emulators/python/chr';
 import classmethodEmu from './emulators/python/classmethod';
+import complexEmu from './emulators/python/complex';
 import delattrEmu from './emulators/python/delattr';
 import dictItemsEmu from './emulators/python/dict-items';
 import dictKeysEmu from './emulators/python/dict-keys';
 import dictPopEmu from './emulators/python/dict-pop';
 import dictUpdateEmu from './emulators/python/dict-update';
 import dictValuesEmu from './emulators/python/dict-values';
+import dirEmu from './emulators/python/dir';
 import divmodEmu from './emulators/python/divmod';
 import endswithEmu from './emulators/python/endswith';
 import enumerateEmu from './emulators/python/enumerate';
@@ -56,10 +61,14 @@ import roundEmu from './emulators/python/round';
 import rstripEmu from './emulators/python/rstrip';
 import setAddEmu from './emulators/python/set-add';
 import setDifferenceEmu from './emulators/python/set-difference';
+import setDifference_updateEmu from './emulators/python/set-difference_update';
 import setDiscardEmu from './emulators/python/set-discard';
 import setIntersectionEmu from './emulators/python/set-intersection';
+import setIntersection_updateEmu from './emulators/python/set-intersection_update';
 import setSymmetric_differenceEmu from './emulators/python/set-symmetric_difference';
+import setSymmetric_difference_updateEmu from './emulators/python/set-symmetric_difference_update';
 import setUnionEmu from './emulators/python/set-union';
+import setUpdateEmu from './emulators/python/set-update';
 import setattrEmu from './emulators/python/setattr';
 import setdefaultEmu from './emulators/python/setdefault';
 import sliceEmu from './emulators/python/slice';
@@ -91,17 +100,22 @@ const emulators = {
   'all': allEmu,
   'any': anyEmu,
   'append': appendEmu,
+  'ascii': asciiEmu,
   'bin': binEmu,
   'bool': boolEmu,
+  'bytearray': bytearrayEmu,
+  'bytes': bytesEmu,
   'capitalize': capitalizeEmu,
   'chr': chrEmu,
   'classmethod': classmethodEmu,
+  'complex': complexEmu,
   'delattr': delattrEmu,
   'dict-items': dictItemsEmu,
   'dict-keys': dictKeysEmu,
   'dict-pop': dictPopEmu,
   'dict-update': dictUpdateEmu,
   'dict-values': dictValuesEmu,
+  'dir': dirEmu,
   'divmod': divmodEmu,
   'endswith': endswithEmu,
   'enumerate': enumerateEmu,
@@ -138,10 +152,14 @@ const emulators = {
   'rstrip': rstripEmu,
   'set-add': setAddEmu,
   'set-difference': setDifferenceEmu,
+  'set-difference_update': setDifference_updateEmu,
   'set-discard': setDiscardEmu,
   'set-intersection': setIntersectionEmu,
+  'set-intersection_update': setIntersection_updateEmu,
   'set-symmetric_difference': setSymmetric_differenceEmu,
+  'set-symmetric_difference_update': setSymmetric_difference_updateEmu,
   'set-union': setUnionEmu,
+  'set-update': setUpdateEmu,
   'setattr': setattrEmu,
   'setdefault': setdefaultEmu,
   'slice': sliceEmu,

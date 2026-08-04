@@ -6,13 +6,13 @@
 // featured picks (live-demo items, discovery order).
 
 export const pythonRollup = {
-  generatedAt: "2026-08-04T15:23:04.145Z",
-  total: 80,
-  liveTotal: 80,
+  generatedAt: "2026-08-04T16:52:46.021Z",
+  total: 89,
+  liveTotal: 89,
   types: [
   {
     "type": "builtin",
-    "count": 34
+    "count": 39
   },
   {
     "type": "list",
@@ -28,13 +28,13 @@ export const pythonRollup = {
   },
   {
     "type": "set",
-    "count": 6
+    "count": 10
   }
 ],
   categories: [
   {
     "category": "builtin",
-    "count": 34
+    "count": 39
   },
   {
     "category": "list",
@@ -50,7 +50,7 @@ export const pythonRollup = {
   },
   {
     "category": "set",
-    "count": 6
+    "count": 10
   }
 ],
   featured: [
@@ -99,6 +99,17 @@ export const pythonRollup = {
     "searchTerms": "append add push end list insert item"
   },
   {
+    "slug": "ascii",
+    "name": "ascii",
+    "signature": "ascii(object)",
+    "blurb": "Like repr(), but escapes every non-ASCII character with \\x, \\u, or \\U.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "ascii repr escape non-ascii unicode debug safe log printable pure ascii representation"
+  },
+  {
     "slug": "bin",
     "name": "bin",
     "signature": "bin(x)",
@@ -108,17 +119,6 @@ export const pythonRollup = {
     "hasLiveDemo": true,
     "version": "Python 2.6+",
     "searchTerms": "bin binary base 2 convert integer string representation prefix 0b bits"
-  },
-  {
-    "slug": "bool",
-    "name": "bool",
-    "signature": "bool(x=False)",
-    "blurb": "Convert any value to True or False using Python&apos;s truthiness rules.",
-    "category": "builtin",
-    "type": "builtin",
-    "hasLiveDemo": true,
-    "version": "Python 2.3+",
-    "searchTerms": "bool boolean true false truthy falsy convert if test cast"
   }
 ]
 };
