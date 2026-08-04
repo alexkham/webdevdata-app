@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/functions explorer.
 
 export const pythonFunctionsCatalog = {
-  generatedAt: "2026-08-04T13:06:08.191Z",
+  generatedAt: "2026-08-04T15:23:04.144Z",
   items: [
   {
     "slug": "abs",
@@ -94,6 +94,28 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 1.0+",
     "searchTerms": "chr character unicode codepoint code point convert integer string ord inverse"
+  },
+  {
+    "slug": "classmethod",
+    "name": "classmethod",
+    "signature": "classmethod(function)",
+    "blurb": "Transform a method so its first argument is the CLASS (`cls`), not the instance.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 2.2+",
+    "searchTerms": "classmethod decorator cls class method alternative constructor factory from_string bound"
+  },
+  {
+    "slug": "delattr",
+    "name": "delattr",
+    "signature": "delattr(object, name)",
+    "blurb": "Delete an attribute by name — the runtime-string equivalent of `del object.name`.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "delattr attribute delete remove dynamic reflection immutable type object"
   },
   {
     "slug": "dict-items",
@@ -217,6 +239,28 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "get dictionary key default safe access lookup keyerror"
   },
   {
+    "slug": "globals",
+    "name": "globals",
+    "signature": "globals()",
+    "blurb": "The module-level namespace dict — the same dict every top-level assignment writes to.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "globals namespace module scope dict variables reflection top-level names"
+  },
+  {
+    "slug": "hash",
+    "name": "hash",
+    "signature": "hash(object)",
+    "blurb": "Return the hash of a hashable value — the key mechanism behind dicts and sets.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "hash hashable dict set key hash randomization pythonhashseed unhashable typeerror int"
+  },
+  {
     "slug": "hex",
     "name": "hex",
     "signature": "hex(x)",
@@ -226,6 +270,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 1.0+",
     "searchTerms": "hex hexadecimal base 16 convert integer string representation prefix 0x"
+  },
+  {
+    "slug": "id",
+    "name": "id",
+    "signature": "id(object)",
+    "blurb": "Return a unique-per-lifetime integer identifier for the object.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "id identity memory address unique object is operator interned pointer"
   },
   {
     "slug": "int",
@@ -369,6 +424,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 1.0+",
     "searchTerms": "sort in-place mutate order list timsort stable ascending descending reverse"
+  },
+  {
+    "slug": "locals",
+    "name": "locals",
+    "signature": "locals()",
+    "blurb": "The current local namespace dict — behavior differs by context (module / function / class).",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "locals namespace scope local variables function class dict reflection frame"
   },
   {
     "slug": "lower",
@@ -547,6 +613,17 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "union set combine merge or pipe operator new elements distinct unique"
   },
   {
+    "slug": "setattr",
+    "name": "setattr",
+    "signature": "setattr(object, name, value)",
+    "blurb": "Set an attribute by name — the runtime-string equivalent of `object.name = value`.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "setattr attribute set write assign dynamic reflection immutable type object"
+  },
+  {
     "slug": "setdefault",
     "name": "dict.setdefault",
     "signature": "dict.setdefault(key, default=None)",
@@ -556,6 +633,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.0+",
     "searchTerms": "setdefault insert default missing key initialize grouping"
+  },
+  {
+    "slug": "slice",
+    "name": "slice",
+    "signature": "slice(stop) / slice(start, stop[, step])",
+    "blurb": "Build a slice object — the thing `x[i:j:k]` creates internally.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "slice range start stop step object __getitem__ index custom builtin sequence"
   },
   {
     "slug": "sorted",
@@ -589,6 +677,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.0+",
     "searchTerms": "startswith prefix begins with check test boolean"
+  },
+  {
+    "slug": "staticmethod",
+    "name": "staticmethod",
+    "signature": "staticmethod(function)",
+    "blurb": "Attach a plain function to a class — no `self`, no `cls`, no magic.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 2.2+",
+    "searchTerms": "staticmethod decorator no self no cls utility class function nested class scope namespace"
   },
   {
     "slug": "str-center",
@@ -723,6 +822,17 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "sum total add accumulate numbers aggregate"
   },
   {
+    "slug": "super",
+    "name": "super",
+    "signature": "super() / super(type, obj_or_type)",
+    "blurb": "Return a proxy that dispatches method calls to a parent class — the cooperative-inheritance escape hatch.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 2.2+",
+    "searchTerms": "super parent class inheritance mro method delegate cooperative diamond super() init"
+  },
+  {
     "slug": "title",
     "name": "str.title",
     "signature": "str.title()",
@@ -743,6 +853,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.0+",
     "searchTerms": "upper uppercase caps case convert"
+  },
+  {
+    "slug": "vars",
+    "name": "vars",
+    "signature": "vars([object])",
+    "blurb": "Return an object&apos;s __dict__ — instance-only attributes, in declaration order.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "vars dict attribute instance __dict__ introspection namespace object module"
   },
   {
     "slug": "zfill",

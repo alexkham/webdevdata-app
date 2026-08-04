@@ -6,13 +6,13 @@
 // featured picks (live-demo items, discovery order).
 
 export const pythonRollup = {
-  generatedAt: "2026-08-04T13:06:08.193Z",
-  total: 69,
-  liveTotal: 69,
+  generatedAt: "2026-08-04T15:23:04.145Z",
+  total: 80,
+  liveTotal: 80,
   types: [
   {
     "type": "builtin",
-    "count": 23
+    "count": 34
   },
   {
     "type": "list",
@@ -34,7 +34,7 @@ export const pythonRollup = {
   categories: [
   {
     "category": "builtin",
-    "count": 23
+    "count": 34
   },
   {
     "category": "list",

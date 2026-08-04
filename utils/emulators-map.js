@@ -13,6 +13,8 @@ import binEmu from './emulators/python/bin';
 import boolEmu from './emulators/python/bool';
 import capitalizeEmu from './emulators/python/capitalize';
 import chrEmu from './emulators/python/chr';
+import classmethodEmu from './emulators/python/classmethod';
+import delattrEmu from './emulators/python/delattr';
 import dictItemsEmu from './emulators/python/dict-items';
 import dictKeysEmu from './emulators/python/dict-keys';
 import dictPopEmu from './emulators/python/dict-pop';
@@ -24,7 +26,10 @@ import enumerateEmu from './emulators/python/enumerate';
 import findEmu from './emulators/python/find';
 import floatEmu from './emulators/python/float';
 import getEmu from './emulators/python/get';
+import globalsEmu from './emulators/python/globals';
+import hashEmu from './emulators/python/hash';
 import hexEmu from './emulators/python/hex';
+import idEmu from './emulators/python/id';
 import intEmu from './emulators/python/int';
 import isdigitEmu from './emulators/python/isdigit';
 import joinEmu from './emulators/python/join';
@@ -38,6 +43,7 @@ import listPopEmu from './emulators/python/list-pop';
 import listRemoveEmu from './emulators/python/list-remove';
 import listReverseEmu from './emulators/python/list-reverse';
 import listSortEmu from './emulators/python/list-sort';
+import localsEmu from './emulators/python/locals';
 import lowerEmu from './emulators/python/lower';
 import maxEmu from './emulators/python/max';
 import minEmu from './emulators/python/min';
@@ -54,10 +60,13 @@ import setDiscardEmu from './emulators/python/set-discard';
 import setIntersectionEmu from './emulators/python/set-intersection';
 import setSymmetric_differenceEmu from './emulators/python/set-symmetric_difference';
 import setUnionEmu from './emulators/python/set-union';
+import setattrEmu from './emulators/python/setattr';
 import setdefaultEmu from './emulators/python/setdefault';
+import sliceEmu from './emulators/python/slice';
 import sortedEmu from './emulators/python/sorted';
 import splitEmu from './emulators/python/split';
 import startswithEmu from './emulators/python/startswith';
+import staticmethodEmu from './emulators/python/staticmethod';
 import strCenterEmu from './emulators/python/str-center';
 import strCountEmu from './emulators/python/str-count';
 import strLjustEmu from './emulators/python/str-ljust';
@@ -70,8 +79,10 @@ import strSplitlinesEmu from './emulators/python/str-splitlines';
 import strEmu from './emulators/python/str';
 import stripEmu from './emulators/python/strip';
 import sumEmu from './emulators/python/sum';
+import superEmu from './emulators/python/super';
 import titleEmu from './emulators/python/title';
 import upperEmu from './emulators/python/upper';
+import varsEmu from './emulators/python/vars';
 import zfillEmu from './emulators/python/zfill';
 import zipEmu from './emulators/python/zip';
 
@@ -84,6 +95,8 @@ const emulators = {
   'bool': boolEmu,
   'capitalize': capitalizeEmu,
   'chr': chrEmu,
+  'classmethod': classmethodEmu,
+  'delattr': delattrEmu,
   'dict-items': dictItemsEmu,
   'dict-keys': dictKeysEmu,
   'dict-pop': dictPopEmu,
@@ -95,7 +108,10 @@ const emulators = {
   'find': findEmu,
   'float': floatEmu,
   'get': getEmu,
+  'globals': globalsEmu,
+  'hash': hashEmu,
   'hex': hexEmu,
+  'id': idEmu,
   'int': intEmu,
   'isdigit': isdigitEmu,
   'join': joinEmu,
@@ -109,6 +125,7 @@ const emulators = {
   'list-remove': listRemoveEmu,
   'list-reverse': listReverseEmu,
   'list-sort': listSortEmu,
+  'locals': localsEmu,
   'lower': lowerEmu,
   'max': maxEmu,
   'min': minEmu,
@@ -125,10 +142,13 @@ const emulators = {
   'set-intersection': setIntersectionEmu,
   'set-symmetric_difference': setSymmetric_differenceEmu,
   'set-union': setUnionEmu,
+  'setattr': setattrEmu,
   'setdefault': setdefaultEmu,
+  'slice': sliceEmu,
   'sorted': sortedEmu,
   'split': splitEmu,
   'startswith': startswithEmu,
+  'staticmethod': staticmethodEmu,
   'str-center': strCenterEmu,
   'str-count': strCountEmu,
   'str-ljust': strLjustEmu,
@@ -141,8 +161,10 @@ const emulators = {
   'str': strEmu,
   'strip': stripEmu,
   'sum': sumEmu,
+  'super': superEmu,
   'title': titleEmu,
   'upper': upperEmu,
+  'vars': varsEmu,
   'zfill': zfillEmu,
   'zip': zipEmu,
 };
