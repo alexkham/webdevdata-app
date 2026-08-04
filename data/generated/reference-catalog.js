@@ -6,18 +6,18 @@
 // file under content/reference/.
 
 export const referenceCatalog = {
-  generatedAt: "2026-08-01T05:17:50.187Z",
+  generatedAt: "2026-08-04T13:06:08.188Z",
   languages: [
   {
     "id": "python",
     "href": "/reference/python",
-    "count": 31,
+    "count": 69,
     "categories": [
       {
         "id": "functions",
         "href": "/reference/python/functions",
-        "count": 31,
-        "liveCount": 31,
+        "count": 69,
+        "liveCount": 69,
         "items": [
           {
             "slug": "abs",
@@ -31,6 +31,28 @@ export const referenceCatalog = {
             "searchTerms": "abs absolute value magnitude negative positive"
           },
           {
+            "slug": "all",
+            "name": "all",
+            "signature": "all(iterable)",
+            "blurb": "True if every item is truthy — stops at the first falsy.",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": true,
+            "version": "Python 2.5+",
+            "searchTerms": "all every truthy boolean iterable short-circuit and universal check"
+          },
+          {
+            "slug": "any",
+            "name": "any",
+            "signature": "any(iterable)",
+            "blurb": "True if any item is truthy — stops at the first hit.",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": true,
+            "version": "Python 2.5+",
+            "searchTerms": "any true truthy exists short-circuit or boolean iterable check"
+          },
+          {
             "slug": "append",
             "name": "list.append",
             "signature": "list.append(item)",
@@ -40,6 +62,28 @@ export const referenceCatalog = {
             "hasLiveDemo": true,
             "version": "Python 2.0+",
             "searchTerms": "append add push end list insert item"
+          },
+          {
+            "slug": "bin",
+            "name": "bin",
+            "signature": "bin(x)",
+            "blurb": "Integer to binary literal string, with the \"0b\" prefix.",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": true,
+            "version": "Python 2.6+",
+            "searchTerms": "bin binary base 2 convert integer string representation prefix 0b bits"
+          },
+          {
+            "slug": "bool",
+            "name": "bool",
+            "signature": "bool(x=False)",
+            "blurb": "Convert any value to True or False using Python&apos;s truthiness rules.",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": true,
+            "version": "Python 2.3+",
+            "searchTerms": "bool boolean true false truthy falsy convert if test cast"
           },
           {
             "slug": "capitalize",
@@ -53,6 +97,39 @@ export const referenceCatalog = {
             "searchTerms": "capitalize first letter sentence case title"
           },
           {
+            "slug": "chr",
+            "name": "chr",
+            "signature": "chr(i)",
+            "blurb": "Codepoint to single-character string.",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "chr character unicode codepoint code point convert integer string ord inverse"
+          },
+          {
+            "slug": "dict-items",
+            "name": "dict.items",
+            "signature": "dict.items()",
+            "blurb": "A live view of the dict as (key, value) pairs.",
+            "category": "dict",
+            "type": "dict",
+            "hasLiveDemo": true,
+            "version": "Python 2.2+",
+            "searchTerms": "items pairs view dict key value iterate for loop unpack"
+          },
+          {
+            "slug": "dict-keys",
+            "name": "dict.keys",
+            "signature": "dict.keys()",
+            "blurb": "A live view of the dict&apos;s keys.",
+            "category": "dict",
+            "type": "dict",
+            "hasLiveDemo": true,
+            "version": "Python 2.2+",
+            "searchTerms": "keys view dict names iterate for loop names set operations"
+          },
+          {
             "slug": "dict-pop",
             "name": "dict.pop",
             "signature": "dict.pop(key[, default])",
@@ -62,6 +139,39 @@ export const referenceCatalog = {
             "hasLiveDemo": true,
             "version": "Python 2.0+",
             "searchTerms": "pop remove key dictionary delete return value"
+          },
+          {
+            "slug": "dict-update",
+            "name": "dict.update",
+            "signature": "dict.update([other])",
+            "blurb": "Merge another dict in — silently overwriting existing keys.",
+            "category": "dict",
+            "type": "dict",
+            "hasLiveDemo": true,
+            "version": "Python 1.5+",
+            "searchTerms": "update merge dict combine overwrite kwargs union add insert"
+          },
+          {
+            "slug": "dict-values",
+            "name": "dict.values",
+            "signature": "dict.values()",
+            "blurb": "A live view of the dict&apos;s values.",
+            "category": "dict",
+            "type": "dict",
+            "hasLiveDemo": true,
+            "version": "Python 2.2+",
+            "searchTerms": "values view dict iterate for loop payload data"
+          },
+          {
+            "slug": "divmod",
+            "name": "divmod",
+            "signature": "divmod(a, b)",
+            "blurb": "Quotient and remainder in one call — (a // b, a % b).",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "divmod division quotient remainder modulo floor tuple pair math"
           },
           {
             "slug": "endswith",
@@ -75,6 +185,17 @@ export const referenceCatalog = {
             "searchTerms": "endswith suffix extension ends with check boolean"
           },
           {
+            "slug": "enumerate",
+            "name": "enumerate",
+            "signature": "enumerate(iterable, start=0)",
+            "blurb": "Pair every item with a running index.",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": true,
+            "version": "Python 2.3+",
+            "searchTerms": "enumerate index counter pair position numbered loop iteration for"
+          },
+          {
             "slug": "find",
             "name": "str.find",
             "signature": "str.find(sub, start=0, end=len(s))",
@@ -86,6 +207,17 @@ export const referenceCatalog = {
             "searchTerms": "find index position locate search substring where"
           },
           {
+            "slug": "float",
+            "name": "float",
+            "signature": "float(x=0.0)",
+            "blurb": "Parse a string or convert a number to a float.",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "float parse convert number decimal nan inf infinity string to float underscore scientific"
+          },
+          {
             "slug": "get",
             "name": "dict.get",
             "signature": "dict.get(key, default=None)",
@@ -95,6 +227,17 @@ export const referenceCatalog = {
             "hasLiveDemo": true,
             "version": "Python 2.0+",
             "searchTerms": "get dictionary key default safe access lookup keyerror"
+          },
+          {
+            "slug": "hex",
+            "name": "hex",
+            "signature": "hex(x)",
+            "blurb": "Integer to lowercase hexadecimal string, with the \"0x\" prefix.",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "hex hexadecimal base 16 convert integer string representation prefix 0x"
           },
           {
             "slug": "int",
@@ -163,6 +306,17 @@ export const referenceCatalog = {
             "searchTerms": "count occurrences list frequency how many items"
           },
           {
+            "slug": "list-extend",
+            "name": "list.extend",
+            "signature": "list.extend(iterable)",
+            "blurb": "Append every item from an iterable to the end.",
+            "category": "list",
+            "type": "list",
+            "hasLiveDemo": true,
+            "version": "Python 1.5+",
+            "searchTerms": "extend concat append iterable items add multiple end merge combine"
+          },
+          {
             "slug": "list-index",
             "name": "list.index",
             "signature": "list.index(value, start=0, end=len(lst))",
@@ -174,6 +328,17 @@ export const referenceCatalog = {
             "searchTerms": "index position find locate list where item"
           },
           {
+            "slug": "list-insert",
+            "name": "list.insert",
+            "signature": "list.insert(i, item)",
+            "blurb": "Insert an item at a given position — shifting the rest right.",
+            "category": "list",
+            "type": "list",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "insert position index add prepend beginning list mutate before"
+          },
+          {
             "slug": "list-pop",
             "name": "list.pop",
             "signature": "list.pop(index=-1)",
@@ -183,6 +348,39 @@ export const referenceCatalog = {
             "hasLiveDemo": true,
             "version": "Python 2.0+",
             "searchTerms": "pop remove last item stack lifo delete return"
+          },
+          {
+            "slug": "list-remove",
+            "name": "list.remove",
+            "signature": "list.remove(value)",
+            "blurb": "Remove the first occurrence of a value — raises if not found.",
+            "category": "list",
+            "type": "list",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "remove delete first occurrence value list mutate valueerror missing"
+          },
+          {
+            "slug": "list-reverse",
+            "name": "list.reverse",
+            "signature": "list.reverse()",
+            "blurb": "Flip the list end-to-end IN PLACE — returns None.",
+            "category": "list",
+            "type": "list",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "reverse in-place mutate list backward order flip end to end"
+          },
+          {
+            "slug": "list-sort",
+            "name": "list.sort",
+            "signature": "list.sort(*, key=None, reverse=False)",
+            "blurb": "Sort the list IN PLACE — returns None, not the list.",
+            "category": "list",
+            "type": "list",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "sort in-place mutate order list timsort stable ascending descending reverse"
           },
           {
             "slug": "lower",
@@ -218,6 +416,39 @@ export const referenceCatalog = {
             "searchTerms": "min minimum smallest lowest least"
           },
           {
+            "slug": "oct",
+            "name": "oct",
+            "signature": "oct(x)",
+            "blurb": "Integer to octal literal string, with the \"0o\" prefix.",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "oct octal base 8 convert integer string representation prefix 0o file permissions chmod"
+          },
+          {
+            "slug": "ord",
+            "name": "ord",
+            "signature": "ord(c)",
+            "blurb": "Single character to its Unicode codepoint.",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "ord ordinal character unicode codepoint code point convert to integer chr inverse"
+          },
+          {
+            "slug": "pow",
+            "name": "pow",
+            "signature": "pow(base, exp[, mod])",
+            "blurb": "base**exp, optionally modulo mod — with a fast path when both are given.",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "pow power exponent modular exponentiation exp mod square multiply cryptography rsa"
+          },
+          {
             "slug": "replace",
             "name": "str.replace",
             "signature": "str.replace(old, new, count=-1)",
@@ -227,6 +458,17 @@ export const referenceCatalog = {
             "hasLiveDemo": true,
             "version": "Python 2.0+",
             "searchTerms": "replace substitute string swap"
+          },
+          {
+            "slug": "reversed",
+            "name": "reversed",
+            "signature": "reversed(seq)",
+            "blurb": "Walk any sequence back to front — lazily, without copying.",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": true,
+            "version": "Python 2.4+",
+            "searchTerms": "reversed reverse iterator backward last first order lazy sequence"
           },
           {
             "slug": "round",
@@ -249,6 +491,72 @@ export const referenceCatalog = {
             "hasLiveDemo": true,
             "version": "Python 2.0+",
             "searchTerms": "rstrip trim right trailing whitespace newline chomp"
+          },
+          {
+            "slug": "set-add",
+            "name": "set.add",
+            "signature": "set.add(elem)",
+            "blurb": "Add an element — silently no-ops if it&apos;s already there.",
+            "category": "set",
+            "type": "set",
+            "hasLiveDemo": true,
+            "version": "Python 2.3+",
+            "searchTerms": "add insert set mutate append unique element hashable no-op duplicate"
+          },
+          {
+            "slug": "set-difference",
+            "name": "set.difference",
+            "signature": "set.difference(*others)",
+            "blurb": "A new set of elements in self but NOT in any other.",
+            "category": "set",
+            "type": "set",
+            "hasLiveDemo": true,
+            "version": "Python 2.6+",
+            "searchTerms": "difference set subtract minus remove not in exclude leftover complement without"
+          },
+          {
+            "slug": "set-discard",
+            "name": "set.discard",
+            "signature": "set.discard(elem)",
+            "blurb": "Remove an element — silently no-ops if it&apos;s not there.",
+            "category": "set",
+            "type": "set",
+            "hasLiveDemo": true,
+            "version": "Python 2.3+",
+            "searchTerms": "discard remove set delete mutate silent no-op missing keyerror safe"
+          },
+          {
+            "slug": "set-intersection",
+            "name": "set.intersection",
+            "signature": "set.intersection(*others)",
+            "blurb": "A new set of elements present in self AND every other iterable.",
+            "category": "set",
+            "type": "set",
+            "hasLiveDemo": true,
+            "version": "Python 2.6+",
+            "searchTerms": "intersection set common shared and ampersand overlap both contains all"
+          },
+          {
+            "slug": "set-symmetric_difference",
+            "name": "set.symmetric_difference",
+            "signature": "set.symmetric_difference(other)",
+            "blurb": "A new set of elements in exactly one of the two sets — never both.",
+            "category": "set",
+            "type": "set",
+            "hasLiveDemo": true,
+            "version": "Python 2.6+",
+            "searchTerms": "symmetric difference xor either or exclusive set both not shared unique caret"
+          },
+          {
+            "slug": "set-union",
+            "name": "set.union",
+            "signature": "set.union(*others)",
+            "blurb": "A new set combining self and every other iterable.",
+            "category": "set",
+            "type": "set",
+            "hasLiveDemo": true,
+            "version": "Python 2.6+",
+            "searchTerms": "union set combine merge or pipe operator new elements distinct unique"
           },
           {
             "slug": "setdefault",
@@ -295,6 +603,17 @@ export const referenceCatalog = {
             "searchTerms": "startswith prefix begins with check test boolean"
           },
           {
+            "slug": "str-center",
+            "name": "str.center",
+            "signature": "str.center(width, fillchar=\" \")",
+            "blurb": "Center within a given width, padding both sides.",
+            "category": "string",
+            "type": "str",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "center pad both sides width align middle format string spaces fill"
+          },
+          {
             "slug": "str-count",
             "name": "str.count",
             "signature": "str.count(sub, start=0, end=len(s))",
@@ -304,6 +623,94 @@ export const referenceCatalog = {
             "hasLiveDemo": true,
             "version": "Python 2.0+",
             "searchTerms": "count occurrences substring frequency how many"
+          },
+          {
+            "slug": "str-ljust",
+            "name": "str.ljust",
+            "signature": "str.ljust(width, fillchar=\" \")",
+            "blurb": "Left-align within a given width — pad on the right.",
+            "category": "string",
+            "type": "str",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "ljust left justify align pad right width format string spaces fill"
+          },
+          {
+            "slug": "str-partition",
+            "name": "str.partition",
+            "signature": "str.partition(sep)",
+            "blurb": "Split at the first occurrence of sep — always into three pieces.",
+            "category": "string",
+            "type": "str",
+            "hasLiveDemo": true,
+            "version": "Python 2.5+",
+            "searchTerms": "partition split first occurrence separator triple tuple before after key value"
+          },
+          {
+            "slug": "str-rfind",
+            "name": "str.rfind",
+            "signature": "str.rfind(sub, start=0, end=len(s))",
+            "blurb": "Return the highest index of a substring, or -1 if absent.",
+            "category": "string",
+            "type": "str",
+            "hasLiveDemo": true,
+            "version": "Python 2.0+",
+            "searchTerms": "rfind reverse find last index position locate search substring right file extension"
+          },
+          {
+            "slug": "str-rjust",
+            "name": "str.rjust",
+            "signature": "str.rjust(width, fillchar=\" \")",
+            "blurb": "Right-align within a given width — pad on the left.",
+            "category": "string",
+            "type": "str",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "rjust right justify align pad left width format string spaces fill numeric column"
+          },
+          {
+            "slug": "str-rpartition",
+            "name": "str.rpartition",
+            "signature": "str.rpartition(sep)",
+            "blurb": "Split at the LAST occurrence of sep — always into three pieces.",
+            "category": "string",
+            "type": "str",
+            "hasLiveDemo": true,
+            "version": "Python 2.5+",
+            "searchTerms": "rpartition split last occurrence separator triple tuple before after file extension right"
+          },
+          {
+            "slug": "str-rsplit",
+            "name": "str.rsplit",
+            "signature": "str.rsplit(sep=None, maxsplit=-1)",
+            "blurb": "Split from the right — behaves like split unless maxsplit is set.",
+            "category": "string",
+            "type": "str",
+            "hasLiveDemo": true,
+            "version": "Python 2.4+",
+            "searchTerms": "rsplit reverse split right maxsplit from end delimiter separator whitespace tail"
+          },
+          {
+            "slug": "str-splitlines",
+            "name": "str.splitlines",
+            "signature": "str.splitlines(keepends=False)",
+            "blurb": "Split at universal newlines — no trailing empty string.",
+            "category": "string",
+            "type": "str",
+            "hasLiveDemo": true,
+            "version": "Python 2.0+",
+            "searchTerms": "splitlines split newline crlf lines universal keepends line breaks text file"
+          },
+          {
+            "slug": "str",
+            "name": "str",
+            "signature": "str(object=&apos;&apos;, encoding=&apos;utf-8&apos;, errors=&apos;strict&apos;)",
+            "blurb": "Convert any object to a string via __str__ (or decode bytes).",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "str string constructor convert cast decode bytes repr text format"
           },
           {
             "slug": "strip",
@@ -359,6 +766,17 @@ export const referenceCatalog = {
             "hasLiveDemo": true,
             "version": "Python 2.2+",
             "searchTerms": "zfill zero pad leading zeros width fill numeric"
+          },
+          {
+            "slug": "zip",
+            "name": "zip",
+            "signature": "zip(*iterables, strict=False)",
+            "blurb": "Pair items from two or more iterables, one from each.",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": true,
+            "version": "Python 2.0+",
+            "searchTerms": "zip pair combine parallel iterate together lockstep tuples merge"
           }
         ]
       }

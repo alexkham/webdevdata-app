@@ -6,43 +6,51 @@
 // featured picks (live-demo items, discovery order).
 
 export const pythonRollup = {
-  generatedAt: "2026-08-01T05:17:50.188Z",
-  total: 31,
-  liveTotal: 31,
+  generatedAt: "2026-08-04T13:06:08.193Z",
+  total: 69,
+  liveTotal: 69,
   types: [
   {
     "type": "builtin",
-    "count": 8
+    "count": 23
   },
   {
     "type": "list",
-    "count": 5
+    "count": 10
   },
   {
     "type": "str",
-    "count": 15
+    "count": 23
   },
   {
     "type": "dict",
-    "count": 3
+    "count": 7
+  },
+  {
+    "type": "set",
+    "count": 6
   }
 ],
   categories: [
   {
     "category": "builtin",
-    "count": 8
+    "count": 23
   },
   {
     "category": "list",
-    "count": 5
+    "count": 10
   },
   {
     "category": "string",
-    "count": 15
+    "count": 23
   },
   {
     "category": "dict",
-    "count": 3
+    "count": 7
+  },
+  {
+    "category": "set",
+    "count": 6
   }
 ],
   featured: [
@@ -58,6 +66,28 @@ export const pythonRollup = {
     "searchTerms": "abs absolute value magnitude negative positive"
   },
   {
+    "slug": "all",
+    "name": "all",
+    "signature": "all(iterable)",
+    "blurb": "True if every item is truthy — stops at the first falsy.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 2.5+",
+    "searchTerms": "all every truthy boolean iterable short-circuit and universal check"
+  },
+  {
+    "slug": "any",
+    "name": "any",
+    "signature": "any(iterable)",
+    "blurb": "True if any item is truthy — stops at the first hit.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 2.5+",
+    "searchTerms": "any true truthy exists short-circuit or boolean iterable check"
+  },
+  {
     "slug": "append",
     "name": "list.append",
     "signature": "list.append(item)",
@@ -69,48 +99,26 @@ export const pythonRollup = {
     "searchTerms": "append add push end list insert item"
   },
   {
-    "slug": "capitalize",
-    "name": "str.capitalize",
-    "signature": "str.capitalize()",
-    "blurb": "Return a copy with the first character titlecased and the rest lowercased.",
-    "category": "string",
-    "type": "str",
+    "slug": "bin",
+    "name": "bin",
+    "signature": "bin(x)",
+    "blurb": "Integer to binary literal string, with the \"0b\" prefix.",
+    "category": "builtin",
+    "type": "builtin",
     "hasLiveDemo": true,
-    "version": "Python 2.0+",
-    "searchTerms": "capitalize first letter sentence case title"
+    "version": "Python 2.6+",
+    "searchTerms": "bin binary base 2 convert integer string representation prefix 0b bits"
   },
   {
-    "slug": "dict-pop",
-    "name": "dict.pop",
-    "signature": "dict.pop(key[, default])",
-    "blurb": "Remove a key and return its value, with an optional default.",
-    "category": "dict",
-    "type": "dict",
+    "slug": "bool",
+    "name": "bool",
+    "signature": "bool(x=False)",
+    "blurb": "Convert any value to True or False using Python&apos;s truthiness rules.",
+    "category": "builtin",
+    "type": "builtin",
     "hasLiveDemo": true,
-    "version": "Python 2.0+",
-    "searchTerms": "pop remove key dictionary delete return value"
-  },
-  {
-    "slug": "endswith",
-    "name": "str.endswith",
-    "signature": "str.endswith(suffix, start=0, end=len(s))",
-    "blurb": "Test whether the string ends with a suffix.",
-    "category": "string",
-    "type": "str",
-    "hasLiveDemo": true,
-    "version": "Python 2.0+",
-    "searchTerms": "endswith suffix extension ends with check boolean"
-  },
-  {
-    "slug": "find",
-    "name": "str.find",
-    "signature": "str.find(sub, start=0, end=len(s))",
-    "blurb": "Return the lowest index of a substring, or -1 if absent.",
-    "category": "string",
-    "type": "str",
-    "hasLiveDemo": true,
-    "version": "Python 2.0+",
-    "searchTerms": "find index position locate search substring where"
+    "version": "Python 2.3+",
+    "searchTerms": "bool boolean true false truthy falsy convert if test cast"
   }
 ]
 };

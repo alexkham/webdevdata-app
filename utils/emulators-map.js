@@ -6,69 +6,145 @@
 // whose emulator file exists. Static imports — predictable bundling.
 
 import absEmu from './emulators/python/abs';
+import allEmu from './emulators/python/all';
+import anyEmu from './emulators/python/any';
 import appendEmu from './emulators/python/append';
+import binEmu from './emulators/python/bin';
+import boolEmu from './emulators/python/bool';
 import capitalizeEmu from './emulators/python/capitalize';
+import chrEmu from './emulators/python/chr';
+import dictItemsEmu from './emulators/python/dict-items';
+import dictKeysEmu from './emulators/python/dict-keys';
 import dictPopEmu from './emulators/python/dict-pop';
+import dictUpdateEmu from './emulators/python/dict-update';
+import dictValuesEmu from './emulators/python/dict-values';
+import divmodEmu from './emulators/python/divmod';
 import endswithEmu from './emulators/python/endswith';
+import enumerateEmu from './emulators/python/enumerate';
 import findEmu from './emulators/python/find';
+import floatEmu from './emulators/python/float';
 import getEmu from './emulators/python/get';
+import hexEmu from './emulators/python/hex';
 import intEmu from './emulators/python/int';
 import isdigitEmu from './emulators/python/isdigit';
 import joinEmu from './emulators/python/join';
 import lenEmu from './emulators/python/len';
 import listCopyEmu from './emulators/python/list-copy';
 import listCountEmu from './emulators/python/list-count';
+import listExtendEmu from './emulators/python/list-extend';
 import listIndexEmu from './emulators/python/list-index';
+import listInsertEmu from './emulators/python/list-insert';
 import listPopEmu from './emulators/python/list-pop';
+import listRemoveEmu from './emulators/python/list-remove';
+import listReverseEmu from './emulators/python/list-reverse';
+import listSortEmu from './emulators/python/list-sort';
 import lowerEmu from './emulators/python/lower';
 import maxEmu from './emulators/python/max';
 import minEmu from './emulators/python/min';
+import octEmu from './emulators/python/oct';
+import ordEmu from './emulators/python/ord';
+import powEmu from './emulators/python/pow';
 import replaceEmu from './emulators/python/replace';
+import reversedEmu from './emulators/python/reversed';
 import roundEmu from './emulators/python/round';
 import rstripEmu from './emulators/python/rstrip';
+import setAddEmu from './emulators/python/set-add';
+import setDifferenceEmu from './emulators/python/set-difference';
+import setDiscardEmu from './emulators/python/set-discard';
+import setIntersectionEmu from './emulators/python/set-intersection';
+import setSymmetric_differenceEmu from './emulators/python/set-symmetric_difference';
+import setUnionEmu from './emulators/python/set-union';
 import setdefaultEmu from './emulators/python/setdefault';
 import sortedEmu from './emulators/python/sorted';
 import splitEmu from './emulators/python/split';
 import startswithEmu from './emulators/python/startswith';
+import strCenterEmu from './emulators/python/str-center';
 import strCountEmu from './emulators/python/str-count';
+import strLjustEmu from './emulators/python/str-ljust';
+import strPartitionEmu from './emulators/python/str-partition';
+import strRfindEmu from './emulators/python/str-rfind';
+import strRjustEmu from './emulators/python/str-rjust';
+import strRpartitionEmu from './emulators/python/str-rpartition';
+import strRsplitEmu from './emulators/python/str-rsplit';
+import strSplitlinesEmu from './emulators/python/str-splitlines';
+import strEmu from './emulators/python/str';
 import stripEmu from './emulators/python/strip';
 import sumEmu from './emulators/python/sum';
 import titleEmu from './emulators/python/title';
 import upperEmu from './emulators/python/upper';
 import zfillEmu from './emulators/python/zfill';
+import zipEmu from './emulators/python/zip';
 
 const emulators = {
   'abs': absEmu,
+  'all': allEmu,
+  'any': anyEmu,
   'append': appendEmu,
+  'bin': binEmu,
+  'bool': boolEmu,
   'capitalize': capitalizeEmu,
+  'chr': chrEmu,
+  'dict-items': dictItemsEmu,
+  'dict-keys': dictKeysEmu,
   'dict-pop': dictPopEmu,
+  'dict-update': dictUpdateEmu,
+  'dict-values': dictValuesEmu,
+  'divmod': divmodEmu,
   'endswith': endswithEmu,
+  'enumerate': enumerateEmu,
   'find': findEmu,
+  'float': floatEmu,
   'get': getEmu,
+  'hex': hexEmu,
   'int': intEmu,
   'isdigit': isdigitEmu,
   'join': joinEmu,
   'len': lenEmu,
   'list-copy': listCopyEmu,
   'list-count': listCountEmu,
+  'list-extend': listExtendEmu,
   'list-index': listIndexEmu,
+  'list-insert': listInsertEmu,
   'list-pop': listPopEmu,
+  'list-remove': listRemoveEmu,
+  'list-reverse': listReverseEmu,
+  'list-sort': listSortEmu,
   'lower': lowerEmu,
   'max': maxEmu,
   'min': minEmu,
+  'oct': octEmu,
+  'ord': ordEmu,
+  'pow': powEmu,
   'replace': replaceEmu,
+  'reversed': reversedEmu,
   'round': roundEmu,
   'rstrip': rstripEmu,
+  'set-add': setAddEmu,
+  'set-difference': setDifferenceEmu,
+  'set-discard': setDiscardEmu,
+  'set-intersection': setIntersectionEmu,
+  'set-symmetric_difference': setSymmetric_differenceEmu,
+  'set-union': setUnionEmu,
   'setdefault': setdefaultEmu,
   'sorted': sortedEmu,
   'split': splitEmu,
   'startswith': startswithEmu,
+  'str-center': strCenterEmu,
   'str-count': strCountEmu,
+  'str-ljust': strLjustEmu,
+  'str-partition': strPartitionEmu,
+  'str-rfind': strRfindEmu,
+  'str-rjust': strRjustEmu,
+  'str-rpartition': strRpartitionEmu,
+  'str-rsplit': strRsplitEmu,
+  'str-splitlines': strSplitlinesEmu,
+  'str': strEmu,
   'strip': stripEmu,
   'sum': sumEmu,
   'title': titleEmu,
   'upper': upperEmu,
   'zfill': zfillEmu,
+  'zip': zipEmu,
 };
 
 export function getEmulator(slug) {
