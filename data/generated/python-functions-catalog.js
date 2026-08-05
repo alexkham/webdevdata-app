@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/functions explorer.
 
 export const pythonFunctionsCatalog = {
-  generatedAt: "2026-08-04T16:52:46.020Z",
+  generatedAt: "2026-08-05T14:00:33.052Z",
   items: [
   {
     "slug": "abs",
@@ -107,6 +107,17 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "bytes bytearray immutable binary byte object encode utf-8 iterable size constructor"
   },
   {
+    "slug": "callable",
+    "name": "callable",
+    "signature": "callable(object)",
+    "blurb": "True if the object can be called — functions, methods, classes, and objects with __call__.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "callable check function method class lambda __call__ invokable reflection"
+  },
+  {
     "slug": "capitalize",
     "name": "str.capitalize",
     "signature": "str.capitalize()",
@@ -160,6 +171,39 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 1.0+",
     "searchTerms": "delattr attribute delete remove dynamic reflection immutable type object"
+  },
+  {
+    "slug": "dict-clear",
+    "name": "dict.clear",
+    "signature": "dict.clear()",
+    "blurb": "Remove all items in place — every reference to the dict sees it become empty.",
+    "category": "dict",
+    "type": "dict",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "clear empty reset dict wipe delete all items purge reset state mutate"
+  },
+  {
+    "slug": "dict-copy",
+    "name": "dict.copy",
+    "signature": "dict.copy()",
+    "blurb": "Shallow copy — new dict, same nested references.",
+    "category": "dict",
+    "type": "dict",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "copy dict shallow duplicate clone deep new independent nested references"
+  },
+  {
+    "slug": "dict-fromkeys",
+    "name": "dict.fromkeys",
+    "signature": "dict.fromkeys(iterable, value=None)",
+    "blurb": "Build a new dict with every key mapped to the same value.",
+    "category": "dict",
+    "type": "dict",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "fromkeys build create dict from keys initialize default value shared mutable"
   },
   {
     "slug": "dict-items",
@@ -261,6 +305,17 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "enumerate index counter pair position numbered loop iteration for"
   },
   {
+    "slug": "filter",
+    "name": "filter",
+    "signature": "filter(predicate, iterable)",
+    "blurb": "Keep items where the predicate returns truthy — lazily.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "filter predicate keep items iterator lazy functional truthy false none"
+  },
+  {
     "slug": "find",
     "name": "str.find",
     "signature": "str.find(sub, start=0, end=len(s))",
@@ -283,6 +338,28 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "float parse convert number decimal nan inf infinity string to float underscore scientific"
   },
   {
+    "slug": "format",
+    "name": "format",
+    "signature": "format(value, format_spec=&apos;&apos;)",
+    "blurb": "Apply a format spec to a value — the engine behind f-strings and str.format.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 2.6+",
+    "searchTerms": "format spec pad width precision hex binary decimal align f-string engine number"
+  },
+  {
+    "slug": "frozenset",
+    "name": "frozenset",
+    "signature": "frozenset([iterable])",
+    "blurb": "The immutable, hashable set — usable as a dict key or as an element of another set.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 2.4+",
+    "searchTerms": "frozenset immutable hashable set constant readonly dict key element unique"
+  },
+  {
     "slug": "get",
     "name": "dict.get",
     "signature": "dict.get(key, default=None)",
@@ -294,6 +371,17 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "get dictionary key default safe access lookup keyerror"
   },
   {
+    "slug": "getattr",
+    "name": "getattr",
+    "signature": "getattr(object, name[, default])",
+    "blurb": "Get an attribute by name — with an optional default to avoid AttributeError.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "getattr attribute get default reflection dynamic access method property"
+  },
+  {
     "slug": "globals",
     "name": "globals",
     "signature": "globals()",
@@ -303,6 +391,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 1.0+",
     "searchTerms": "globals namespace module scope dict variables reflection top-level names"
+  },
+  {
+    "slug": "hasattr",
+    "name": "hasattr",
+    "signature": "hasattr(object, name)",
+    "blurb": "True if the object has the named attribute — equivalent to getattr-with-try-except.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "hasattr attribute check exists reflection duck typing getattr method property"
   },
   {
     "slug": "hash",
@@ -338,6 +437,17 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "id identity memory address unique object is operator interned pointer"
   },
   {
+    "slug": "input",
+    "name": "input",
+    "signature": "input(prompt=&apos;&apos;)",
+    "blurb": "Read a line from stdin — always returns str, trailing newline stripped.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "input read stdin prompt line user readline string always str raw_input"
+  },
+  {
     "slug": "int",
     "name": "int",
     "signature": "int(x, base=10)",
@@ -358,6 +468,28 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.0+",
     "searchTerms": "isdigit numeric digits check validate number test"
+  },
+  {
+    "slug": "isinstance",
+    "name": "isinstance",
+    "signature": "isinstance(object, classinfo)",
+    "blurb": "Check whether an object is an instance of a class — subclasses count.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.5+",
+    "searchTerms": "isinstance instance type check class subclass duck typing typecheck reflection"
+  },
+  {
+    "slug": "iter",
+    "name": "iter",
+    "signature": "iter(iterable) / iter(callable, sentinel)",
+    "blurb": "Get an iterator from any iterable — the entry point to Python&apos;s iteration protocol.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.5+",
+    "searchTerms": "iter iterator iterable protocol next generator stopiteration sentinel callable"
   },
   {
     "slug": "join",
@@ -503,6 +635,17 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "lower lowercase case insensitive normalize"
   },
   {
+    "slug": "map",
+    "name": "map",
+    "signature": "map(func, *iterables)",
+    "blurb": "Apply a function to every item — lazily, and across multiple iterables in parallel.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "map apply function transform each item lazy iterator functional list comprehension"
+  },
+  {
     "slug": "max",
     "name": "max",
     "signature": "max(iterable, *, key=None, default=...)",
@@ -523,6 +666,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 1.0+",
     "searchTerms": "min minimum smallest lowest least"
+  },
+  {
+    "slug": "next",
+    "name": "next",
+    "signature": "next(iterator[, default])",
+    "blurb": "Advance an iterator by one — with an optional default to avoid StopIteration.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 2.6+",
+    "searchTerms": "next iterator advance stopiteration default first item peek generator"
   },
   {
     "slug": "oct",
@@ -558,6 +712,28 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "pow power exponent modular exponentiation exp mod square multiply cryptography rsa"
   },
   {
+    "slug": "print",
+    "name": "print",
+    "signature": "print(*objects, sep=&apos; &apos;, end=&apos;\\n&apos;, file=sys.stdout, flush=False)",
+    "blurb": "Write objects to stdout — customize the separator, the ending, the destination, and the flush.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "print output stdout write display sep end file flush newline space multiple arguments"
+  },
+  {
+    "slug": "range",
+    "name": "range",
+    "signature": "range(stop) / range(start, stop[, step])",
+    "blurb": "A lazy arithmetic sequence — half-open interval, integer only.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "range iterate for loop sequence integer start stop step exclusive count"
+  },
+  {
     "slug": "replace",
     "name": "str.replace",
     "signature": "str.replace(old, new, count=-1)",
@@ -567,6 +743,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.0+",
     "searchTerms": "replace substitute string swap"
+  },
+  {
+    "slug": "repr",
+    "name": "repr",
+    "signature": "repr(x)",
+    "blurb": "The unambiguous, eval-friendly string representation — for debugging, not display.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "repr representation debug eval quoted string unambiguous string display print"
   },
   {
     "slug": "reversed",
@@ -611,6 +798,28 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.3+",
     "searchTerms": "add insert set mutate append unique element hashable no-op duplicate"
+  },
+  {
+    "slug": "set-clear",
+    "name": "set.clear",
+    "signature": "set.clear()",
+    "blurb": "Remove all elements in place — every reference sees the set become empty.",
+    "category": "set",
+    "type": "set",
+    "hasLiveDemo": true,
+    "version": "Python 2.6+",
+    "searchTerms": "clear empty reset set wipe delete all elements purge reset state mutate"
+  },
+  {
+    "slug": "set-copy",
+    "name": "set.copy",
+    "signature": "set.copy()",
+    "blurb": "Shallow copy — new set, same element references.",
+    "category": "set",
+    "type": "set",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "copy set shallow duplicate clone new independent references"
   },
   {
     "slug": "set-difference",
@@ -666,6 +875,61 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.6+",
     "searchTerms": "intersection_update set common shared overlap keep only in place mutate none"
+  },
+  {
+    "slug": "set-isdisjoint",
+    "name": "set.isdisjoint",
+    "signature": "set.isdisjoint(other)",
+    "blurb": "True if self and other share no elements.",
+    "category": "set",
+    "type": "set",
+    "hasLiveDemo": true,
+    "version": "Python 2.6+",
+    "searchTerms": "isdisjoint no overlap disjoint separate share nothing empty intersection none common"
+  },
+  {
+    "slug": "set-issubset",
+    "name": "set.issubset",
+    "signature": "set.issubset(other)",
+    "blurb": "True if every element of self is in other — empty set is a subset of everything.",
+    "category": "set",
+    "type": "set",
+    "hasLiveDemo": true,
+    "version": "Python 2.6+",
+    "searchTerms": "issubset contains contained within all elements subset of set less than equal"
+  },
+  {
+    "slug": "set-issuperset",
+    "name": "set.issuperset",
+    "signature": "set.issuperset(other)",
+    "blurb": "True if every element of other is in self — the mirror of issubset.",
+    "category": "set",
+    "type": "set",
+    "hasLiveDemo": true,
+    "version": "Python 2.6+",
+    "searchTerms": "issuperset contains all elements superset of set greater than equal has every"
+  },
+  {
+    "slug": "set-pop",
+    "name": "set.pop",
+    "signature": "set.pop()",
+    "blurb": "Remove and return an arbitrary element — raises KeyError if empty.",
+    "category": "set",
+    "type": "set",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "pop set remove arbitrary any element keyerror empty drain iterate destroy"
+  },
+  {
+    "slug": "set-remove",
+    "name": "set.remove",
+    "signature": "set.remove(elem)",
+    "blurb": "Remove an element — raises KeyError if it&apos;s not there.",
+    "category": "set",
+    "type": "set",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "remove set delete mutate keyerror strict missing element required"
   },
   {
     "slug": "set-symmetric_difference",
@@ -789,6 +1053,17 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "staticmethod decorator no self no cls utility class function nested class scope namespace"
   },
   {
+    "slug": "str-casefold",
+    "name": "str.casefold",
+    "signature": "str.casefold()",
+    "blurb": "Aggressive lowercase for case-insensitive comparison — stronger than lower().",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 3.3+",
+    "searchTerms": "casefold lower unicode case insensitive compare german ß sharp s equal fold"
+  },
+  {
     "slug": "str-center",
     "name": "str.center",
     "signature": "str.center(width, fillchar=\" \")",
@@ -811,6 +1086,160 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "count occurrences substring frequency how many"
   },
   {
+    "slug": "str-encode",
+    "name": "str.encode",
+    "signature": "str.encode(encoding=\"utf-8\", errors=\"strict\")",
+    "blurb": "Convert a string to bytes using the given encoding — the string-to-bytes boundary.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 2.0+",
+    "searchTerms": "encode bytes utf-8 ascii latin-1 encoding decode charset unicode error strict"
+  },
+  {
+    "slug": "str-expandtabs",
+    "name": "str.expandtabs",
+    "signature": "str.expandtabs(tabsize=8)",
+    "blurb": "Replace tabs with spaces to align at the next tab stop — not with a fixed number of spaces.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "expandtabs tab tabs spaces expand tabstop align column indentation replace"
+  },
+  {
+    "slug": "str-format",
+    "name": "str.format",
+    "signature": "str.format(*args, **kwargs)",
+    "blurb": "Fill `{}` placeholders — positional, numbered, or named — with the format spec after the colon.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 2.6+",
+    "searchTerms": "format string template placeholder braces positional keyword f-string mini language spec"
+  },
+  {
+    "slug": "str-isalnum",
+    "name": "str.isalnum",
+    "signature": "str.isalnum()",
+    "blurb": "True if every character is a letter or digit and the string is non-empty.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "isalnum alphanumeric letters digits check unicode empty validate identifier"
+  },
+  {
+    "slug": "str-isalpha",
+    "name": "str.isalpha",
+    "signature": "str.isalpha()",
+    "blurb": "True if every character is alphabetic and the string is non-empty.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "isalpha alphabetic letter check unicode non empty validate name"
+  },
+  {
+    "slug": "str-isascii",
+    "name": "str.isascii",
+    "signature": "str.isascii()",
+    "blurb": "True if every character is in the ASCII range (0..127) — empty string also True.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 3.7+",
+    "searchTerms": "isascii ascii check unicode empty range codepoint 128 validate range"
+  },
+  {
+    "slug": "str-isdecimal",
+    "name": "str.isdecimal",
+    "signature": "str.isdecimal()",
+    "blurb": "The narrowest numeric check — decimal digits only, no superscripts, no fractions.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "isdecimal decimal digit check narrow ascii unicode strict number position"
+  },
+  {
+    "slug": "str-isidentifier",
+    "name": "str.isidentifier",
+    "signature": "str.isidentifier()",
+    "blurb": "True if the string could be a valid Python identifier — reserved keywords also pass.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "isidentifier identifier variable name valid python check keyword reserved underscore"
+  },
+  {
+    "slug": "str-islower",
+    "name": "str.islower",
+    "signature": "str.islower()",
+    "blurb": "True if every cased character is lowercase and the string has at least one cased character.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "islower lowercase all lower check case letters test cased character"
+  },
+  {
+    "slug": "str-isnumeric",
+    "name": "str.isnumeric",
+    "signature": "str.isnumeric()",
+    "blurb": "True if every character is numeric — including Roman numerals and fractions.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "isnumeric numeric roman numeral fraction check unicode superscript vulgar"
+  },
+  {
+    "slug": "str-isprintable",
+    "name": "str.isprintable",
+    "signature": "str.isprintable()",
+    "blurb": "True if every character is printable and the string has no control characters — empty is True.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "isprintable printable control character check tab newline empty repr display"
+  },
+  {
+    "slug": "str-isspace",
+    "name": "str.isspace",
+    "signature": "str.isspace()",
+    "blurb": "True if every character is whitespace and the string is non-empty.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "isspace whitespace check tab newline space empty blank unicode nbsp"
+  },
+  {
+    "slug": "str-istitle",
+    "name": "str.istitle",
+    "signature": "str.istitle()",
+    "blurb": "True if the string is in strict title case — first letter of each word uppercase, rest lowercase.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "istitle title case capitalize word start uppercase check first letter apostrophe"
+  },
+  {
+    "slug": "str-isupper",
+    "name": "str.isupper",
+    "signature": "str.isupper()",
+    "blurb": "True if every cased character is uppercase and the string has at least one cased character.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "isupper uppercase all caps check case letters test cased character"
+  },
+  {
     "slug": "str-ljust",
     "name": "str.ljust",
     "signature": "str.ljust(width, fillchar=\" \")",
@@ -822,6 +1251,28 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "ljust left justify align pad right width format string spaces fill"
   },
   {
+    "slug": "str-lstrip",
+    "name": "str.lstrip",
+    "signature": "str.lstrip(chars=None)",
+    "blurb": "Strip leading whitespace — or leading characters from a given set.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "lstrip left strip trim leading whitespace remove chars set start front"
+  },
+  {
+    "slug": "str-maketrans",
+    "name": "str.maketrans",
+    "signature": "str.maketrans(x[, y[, z]])",
+    "blurb": "Build a translation table for str.translate — three call shapes.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 2.6+",
+    "searchTerms": "maketrans translation table translate build map dict ordinals delete"
+  },
+  {
     "slug": "str-partition",
     "name": "str.partition",
     "signature": "str.partition(sep)",
@@ -831,6 +1282,28 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.5+",
     "searchTerms": "partition split first occurrence separator triple tuple before after key value"
+  },
+  {
+    "slug": "str-removeprefix",
+    "name": "str.removeprefix",
+    "signature": "str.removeprefix(prefix)",
+    "blurb": "Remove an exact leading substring — safer than lstrip for prefix stripping.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 3.9+",
+    "searchTerms": "removeprefix remove prefix substring strip leading intent exact safe modern"
+  },
+  {
+    "slug": "str-removesuffix",
+    "name": "str.removesuffix",
+    "signature": "str.removesuffix(suffix)",
+    "blurb": "Remove an exact trailing substring — safer than rstrip for suffix stripping.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 3.9+",
+    "searchTerms": "removesuffix remove suffix substring strip trailing exact intent safe modern extension"
   },
   {
     "slug": "str-rfind",
@@ -888,6 +1361,28 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "splitlines split newline crlf lines universal keepends line breaks text file"
   },
   {
+    "slug": "str-swapcase",
+    "name": "str.swapcase",
+    "signature": "str.swapcase()",
+    "blurb": "Flip case per character — uppercase becomes lowercase and vice versa.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "swapcase invert flip case toggle uppercase lowercase reverse letter"
+  },
+  {
+    "slug": "str-translate",
+    "name": "str.translate",
+    "signature": "str.translate(table)",
+    "blurb": "Apply a character-mapping table — replace, delete, or transform in one pass.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 1.6+",
+    "searchTerms": "translate replace map characters delete ordinals table chr encode transform"
+  },
+  {
     "slug": "str",
     "name": "str",
     "signature": "str(object=&apos;&apos;, encoding=&apos;utf-8&apos;, errors=&apos;strict&apos;)",
@@ -941,6 +1436,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.0+",
     "searchTerms": "title titlecase capitalize words headline case"
+  },
+  {
+    "slug": "type",
+    "name": "type",
+    "signature": "type(object) / type(name, bases, dict)",
+    "blurb": "Get an object&apos;s type, or create a new class dynamically.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "type class introspection instance check reflection metaclass isinstance object"
   },
   {
     "slug": "upper",
