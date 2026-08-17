@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'Delete an attribute by name — the runtime-string equivalent of `del object.name`.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 1.0+',
   searchTerms: 'delattr attribute delete remove dynamic reflection immutable type object',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 1.0+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: '`del` when the attribute name is a string — used for dynamic cleanup and namespace management.',
 

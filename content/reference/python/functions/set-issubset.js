@@ -38,8 +38,8 @@ export const method = {
   ],
 
   demoParams: [
-    { name: 'a', type: 'set', hint: 'self (comma-separated)',  input: 'csv' },
-    { name: 'b', type: 'set', hint: 'other (comma-separated)', input: 'csv' },
+    { name: 'a', type: 'set', hint: 'self (comma-separated)',  input: 'csv-set' },
+    { name: 'b', type: 'set', hint: 'other (comma-separated)', input: 'csv-set' },
   ],
   cases: [
     { id: 'subset',     label: 'proper subset',   values: { a: '1,2',       b: '1,2,3,4' } },

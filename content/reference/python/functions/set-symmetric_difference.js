@@ -40,8 +40,8 @@ export const method = {
   ],
 
   demoParams: [
-    { name: 'a', type: 'set', hint: 'first set (comma-separated)',  input: 'csv' },
-    { name: 'b', type: 'set', hint: 'second set (comma-separated)', input: 'csv' },
+    { name: 'a', type: 'set', hint: 'first set (comma-separated)',  input: 'csv-set' },
+    { name: 'b', type: 'set', hint: 'second set (comma-separated)', input: 'csv-set' },
   ],
   cases: [
     { id: 'overlap',  label: 'partial overlap',      values: { a: '1,2,3,4', b: '3,4,5,6' } },

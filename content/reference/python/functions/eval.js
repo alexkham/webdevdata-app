@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'Evaluate a Python EXPRESSION from a string — powerful, dangerous, usually the wrong tool.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 1.0+',
   searchTerms: 'eval evaluate expression dynamic security danger literal untrusted parse ast',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 1.0+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'Evaluate a Python expression from a string. Only use on TRUSTED input — never on user data.',
 

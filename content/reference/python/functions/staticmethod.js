@@ -8,7 +8,7 @@ export const meta = {
   blurb:       'Attach a plain function to a class — no `self`, no `cls`, no magic.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 2.2+',
   searchTerms: 'staticmethod decorator no self no cls utility class function nested class scope namespace',
 };
@@ -21,7 +21,7 @@ export const method = {
 
   category:    'Built-in function / decorator',
   version:     'Python 2.2+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'A plain function that lives inside a class. The compiler drops the auto-self / auto-cls behavior.',
 

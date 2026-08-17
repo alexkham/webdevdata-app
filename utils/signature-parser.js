@@ -27,7 +27,28 @@ export function parseSignature(signature, parameters = []) {
 
   const openIdx = signature.indexOf('(');
   if (openIdx === -1) {
-    return [{ kind: 'name', text: signature }];
+    // Paren-less signature (operators: 'a + b'). Words matching a declared
+    // parameter become hoverable param tokens; everything else is plain.
+    if (parameters.length === 0) return [{ kind: 'name', text: signature }];
+    const re = /[A-Za-z_][A-Za-z0-9_]*/g;
+    let last = 0;
+    let m;
+    while ((m = re.exec(signature)) !== null) {
+      if (m.index > last) tokens.push({ kind: 'sep', text: signature.slice(last, m.index) });
+      const p = byName.get(m[0]);
+      if (p) {
+        tokens.push({
+          kind: 'param',
+          text: m[0],
+          hint: { desc: p.desc, type: p.type, required: p.required, default: p.default },
+        });
+      } else {
+        tokens.push({ kind: 'name', text: m[0] });
+      }
+      last = re.lastIndex;
+    }
+    if (last < signature.length) tokens.push({ kind: 'sep', text: signature.slice(last) });
+    return tokens;
   }
 
   // Everything before '(' — split a dotted receiver prefix from the name.

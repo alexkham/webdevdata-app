@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'Keep items where the predicate returns truthy — lazily.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 1.0+',
   searchTerms: 'filter predicate keep items iterator lazy functional truthy false none',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 1.0+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'Keep items where a predicate returns truthy — lazily. The functional cousin of a filtered comprehension.',
 

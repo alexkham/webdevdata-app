@@ -156,22 +156,23 @@ function collectContent(warnings) {
 // ─────────────────────────────────────────────────────────────
 
 function checkEmulators(items, warnings) {
-  const withEmulator = []; // { language, slug, file }
-  const seenSlugs = new Map();
+  const withEmulator = []; // { language, category, slug }
+  const seenKeys = new Map(); // 'category/slug' → language
 
   for (const item of items) {
     if (!item.meta.hasLiveDemo) continue;
-    const emuFile = path.join(EMULATORS_DIR, item.language, `${item.slug}.js`);
+    const emuFile = path.join(EMULATORS_DIR, item.language, item.category, `${item.slug}.js`);
     if (!fs.existsSync(emuFile)) {
-      warnings.push(`[warn] hasLiveDemo:true but no emulator at utils/emulators/${item.language}/${item.slug}.js (${item.language}/${item.category}/${item.slug})`);
+      warnings.push(`[warn] hasLiveDemo:true but no emulator at utils/emulators/${item.language}/${item.category}/${item.slug}.js`);
       continue;
     }
-    if (seenSlugs.has(item.slug)) {
-      warnings.push(`[warn] emulator slug collision: "${item.slug}" in ${item.language} and ${seenSlugs.get(item.slug)} — map keeps the first`);
+    const key = `${item.category}/${item.slug}`;
+    if (seenKeys.has(key)) {
+      warnings.push(`[warn] emulator key collision: "${key}" in ${item.language} and ${seenKeys.get(key)} — map keeps the first`);
       continue;
     }
-    seenSlugs.set(item.slug, item.language);
-    withEmulator.push({ language: item.language, slug: item.slug });
+    seenKeys.set(key, item.language);
+    withEmulator.push({ language: item.language, category: item.category, slug: item.slug });
   }
   return withEmulator;
 }
@@ -231,7 +232,24 @@ export const pythonFunctionsCatalog = {
   return metas;
 }
 
-function emitPythonRollup(metas) {
+function emitPythonOperatorsCatalog(items) {
+  const metas = items
+    .filter((it) => it.language === 'python' && it.category === 'operators')
+    .map((it) => it.meta);
+
+  const out = `${AUTO_HEADER('generate-reference-catalogs.mjs')}//
+// Flat list for the /reference/python/operators explorer.
+
+export const pythonOperatorsCatalog = {
+  generatedAt: ${JSON.stringify(new Date().toISOString())},
+  items: ${JSON.stringify(metas, null, 2)}
+};
+`;
+  fs.writeFileSync(path.join(GENERATED_DIR, 'python-operators-catalog.js'), out);
+  return metas;
+}
+
+function emitPythonRollup(metas, operatorMetas = []) {
   const byType = new Map();
   for (const m of metas) {
     const t = m.type || 'other';
@@ -258,25 +276,31 @@ export const pythonRollup = {
   liveTotal: ${metas.filter((m) => m.hasLiveDemo).length},
   types: ${JSON.stringify(types, null, 2)},
   categories: ${JSON.stringify(categories, null, 2)},
-  featured: ${JSON.stringify(featured, null, 2)}
+  featured: ${JSON.stringify(featured, null, 2)},
+  operators: {
+    total: ${operatorMetas.length},
+    liveTotal: ${operatorMetas.filter((m) => m.hasLiveDemo).length}
+  }
 };
 `;
   fs.writeFileSync(path.join(GENERATED_DIR, 'python-rollup.js'), out);
 }
 
 function emitEmulatorsMap(withEmulator) {
-  const ident = (slug) => slug.replace(/-([a-z0-9])/g, (_, c) => c.toUpperCase()) + 'Emu';
+  const ident = ({ category, slug }) =>
+    (category + '-' + slug).replace(/-([a-z0-9])/g, (_, c) => c.toUpperCase()) + 'Emu';
 
   const imports = withEmulator
-    .map(({ language, slug }) => `import ${ident(slug)} from './emulators/${language}/${slug}';`)
+    .map((e) => `import ${ident(e)} from './emulators/${e.language}/${e.category}/${e.slug}';`)
     .join('\n');
   const entries = withEmulator
-    .map(({ slug }) => `  '${slug}': ${ident(slug)},`)
+    .map((e) => `  '${e.category}/${e.slug}': ${ident(e)},`)
     .join('\n');
 
   const out = `${AUTO_HEADER('generate-reference-catalogs.mjs')}//
-// slug → emulator function, for every content item with hasLiveDemo:true
-// whose emulator file exists. Static imports — predictable bundling.
+// category/slug → emulator function, for every content item with
+// hasLiveDemo:true whose emulator file exists. Static imports —
+// predictable bundling.
 
 ${imports}
 
@@ -284,8 +308,8 @@ const emulators = {
 ${entries}
 };
 
-export function getEmulator(slug) {
-  return emulators[slug];
+export function getEmulator(category, slug) {
+  return emulators[category + '/' + slug];
 }
 `;
   fs.writeFileSync(EMULATORS_MAP_FILE, out);
@@ -304,7 +328,8 @@ function main() {
   fs.mkdirSync(GENERATED_DIR, { recursive: true });
   const languages = emitReferenceCatalog(items);
   const pyFunctions = emitPythonFunctionsCatalog(items);
-  emitPythonRollup(pyFunctions);
+  const pyOperators = emitPythonOperatorsCatalog(items);
+  emitPythonRollup(pyFunctions, pyOperators);
   emitEmulatorsMap(withEmulator);
 
   warnings.forEach((w) => console.warn(`  ${w}`));

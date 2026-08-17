@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'The current local namespace dict — behavior differs by context (module / function / class).',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 1.0+',
   searchTerms: 'locals namespace scope local variables function class dict reflection frame',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 1.0+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'The local scope&apos;s namespace — but the semantics change with context, and function locals are often a SNAPSHOT.',
 

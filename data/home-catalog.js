@@ -7,7 +7,7 @@
 // Contains the COMPLETE page list per pillar — nothing truncated.
 
 export const homeCatalog = {
-  generatedAt: "2026-08-05T14:00:32.399Z",
+  generatedAt: "2026-08-17T08:08:20.972Z",
   pillars: [
   {
     "id": "reference",
@@ -17,7 +17,7 @@ export const homeCatalog = {
     "ctaLabel": "Browse Reference",
     "stats": [
       {
-        "n": "2",
+        "n": "3",
         "label": "Pages"
       },
       {
@@ -28,7 +28,7 @@ export const homeCatalog = {
     "breakdown": [
       {
         "label": "Python",
-        "count": 1
+        "count": 2
       },
       {
         "label": "General",
@@ -48,6 +48,13 @@ export const homeCatalog = {
         "desc": "Python reference with live in-browser demos: built-in functions, string, list, dict and set methods — signatures, examples, pitfalls.",
         "href": "/reference/python",
         "category": "General",
+        "subCategory": null
+      },
+      {
+        "name": "Python operators",
+        "desc": "Browse Python operators: arithmetic, comparison, logical, bitwise, membership, identity and the walrus — with examples, pitfalls and live demos.",
+        "href": "/reference/python/operators",
+        "category": "Python",
         "subCategory": null
       }
     ]

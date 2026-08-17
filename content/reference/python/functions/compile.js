@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'Compile Python source into a reusable code object — the precursor to eval / exec.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 1.0+',
   searchTerms: 'compile code object bytecode eval exec ast parse mode single expression',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 1.0+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'Precompile source once; execute many times. Also the entry point for AST-based code transformation.',
 

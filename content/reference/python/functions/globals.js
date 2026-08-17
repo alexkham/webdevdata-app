@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'The module-level namespace dict — the same dict every top-level assignment writes to.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 1.0+',
   searchTerms: 'globals namespace module scope dict variables reflection top-level names',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 1.0+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'Direct access to the module&apos;s namespace dict — the layer just below the language.',
 

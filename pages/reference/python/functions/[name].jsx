@@ -120,7 +120,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function MethodPage({ seoData, meta, method, siblings, siblingsTitle, schemas, frameOptions }) {
-  const emulator = getEmulator(meta.slug);
+  const emulator = getEmulator('functions', meta.slug);
   const canonical = `${SITE_URL}${seoData.url}`;
   const ogImage = `${SITE_URL}${DEFAULT_OG_IMAGE}`;
 

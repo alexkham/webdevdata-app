@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'Open a file — the standard entry point for reading and writing.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 1.0+',
   searchTerms: 'open file read write text binary mode encoding context manager with utf-8 close',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 1.0+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'Open a file. Almost always use it with `with` — Python will close for you.',
 

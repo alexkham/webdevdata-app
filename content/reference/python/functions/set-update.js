@@ -38,8 +38,8 @@ export const method = {
   ],
 
   demoParams: [
-    { name: 'set',   type: 'set', hint: 'existing elements',       input: 'csv' },
-    { name: 'other', type: 'set', hint: 'items to add (iterable)', input: 'csv' },
+    { name: 'set',   type: 'set', hint: 'existing elements',       input: 'csv-set' },
+    { name: 'other', type: 'set', hint: 'items to add (iterable)', input: 'csv-set' },
   ],
   cases: [
     { id: 'basic',    label: 'basic',           values: { set: 'a,b,c',   other: 'd,e,f' } },

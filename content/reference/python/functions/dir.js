@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'List names in the local scope or on an object — introspection with sorted output.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 1.0+',
   searchTerms: 'dir list attributes methods introspection scope names discover explore instance class',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 1.0+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'The introspection escape hatch — &quot;what can I do with this thing?&quot;',
 

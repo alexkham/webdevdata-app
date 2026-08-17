@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'Check whether one class is a subclass of another (or a tuple of others).',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 1.0+',
   searchTerms: 'issubclass subclass class inheritance check type isinstance mro derived hierarchy',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 1.0+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'Type-vs-type check. The class-level counterpart to isinstance (which is instance-vs-type).',
 

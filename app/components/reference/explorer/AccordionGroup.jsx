@@ -11,6 +11,7 @@ export default function AccordionGroup({
   count,
   liveCount,
   blurb,
+  unitLabel = 'functions',
   defaultOpen = false,
   forceOpen = false,
   children,
@@ -25,7 +26,7 @@ export default function AccordionGroup({
           <span className="cat">{catLabel}</span> <span>{title}</span>
         </div>
         <div className="group-meta">
-          <span><b>{count}</b> functions</span>
+          <span><b>{count}</b> {unitLabel}</span>
           {typeof liveCount === 'number' && <span><b>{liveCount}</b> live</span>}
           <span className="chev" />
         </div>

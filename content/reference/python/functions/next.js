@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'Advance an iterator by one — with an optional default to avoid StopIteration.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 2.6+',
   searchTerms: 'next iterator advance stopiteration default first item peek generator',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 2.6+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'Advance an iterator by one — with an optional default to fall back on when the iterator is exhausted.',
 

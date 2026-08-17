@@ -2,283 +2,296 @@
 // Regenerated on every `npm run dev` and `npm run build`.
 // Do NOT edit by hand — changes here are overwritten.
 //
-// slug → emulator function, for every content item with hasLiveDemo:true
-// whose emulator file exists. Static imports — predictable bundling.
+// category/slug → emulator function, for every content item with
+// hasLiveDemo:true whose emulator file exists. Static imports —
+// predictable bundling.
 
-import absEmu from './emulators/python/abs';
-import allEmu from './emulators/python/all';
-import anyEmu from './emulators/python/any';
-import appendEmu from './emulators/python/append';
-import asciiEmu from './emulators/python/ascii';
-import binEmu from './emulators/python/bin';
-import boolEmu from './emulators/python/bool';
-import bytearrayEmu from './emulators/python/bytearray';
-import bytesEmu from './emulators/python/bytes';
-import callableEmu from './emulators/python/callable';
-import capitalizeEmu from './emulators/python/capitalize';
-import chrEmu from './emulators/python/chr';
-import classmethodEmu from './emulators/python/classmethod';
-import complexEmu from './emulators/python/complex';
-import delattrEmu from './emulators/python/delattr';
-import dictClearEmu from './emulators/python/dict-clear';
-import dictCopyEmu from './emulators/python/dict-copy';
-import dictFromkeysEmu from './emulators/python/dict-fromkeys';
-import dictItemsEmu from './emulators/python/dict-items';
-import dictKeysEmu from './emulators/python/dict-keys';
-import dictPopEmu from './emulators/python/dict-pop';
-import dictUpdateEmu from './emulators/python/dict-update';
-import dictValuesEmu from './emulators/python/dict-values';
-import dirEmu from './emulators/python/dir';
-import divmodEmu from './emulators/python/divmod';
-import endswithEmu from './emulators/python/endswith';
-import enumerateEmu from './emulators/python/enumerate';
-import filterEmu from './emulators/python/filter';
-import findEmu from './emulators/python/find';
-import floatEmu from './emulators/python/float';
-import formatEmu from './emulators/python/format';
-import frozensetEmu from './emulators/python/frozenset';
-import getEmu from './emulators/python/get';
-import getattrEmu from './emulators/python/getattr';
-import globalsEmu from './emulators/python/globals';
-import hasattrEmu from './emulators/python/hasattr';
-import hashEmu from './emulators/python/hash';
-import hexEmu from './emulators/python/hex';
-import idEmu from './emulators/python/id';
-import inputEmu from './emulators/python/input';
-import intEmu from './emulators/python/int';
-import isdigitEmu from './emulators/python/isdigit';
-import isinstanceEmu from './emulators/python/isinstance';
-import iterEmu from './emulators/python/iter';
-import joinEmu from './emulators/python/join';
-import lenEmu from './emulators/python/len';
-import listCopyEmu from './emulators/python/list-copy';
-import listCountEmu from './emulators/python/list-count';
-import listExtendEmu from './emulators/python/list-extend';
-import listIndexEmu from './emulators/python/list-index';
-import listInsertEmu from './emulators/python/list-insert';
-import listPopEmu from './emulators/python/list-pop';
-import listRemoveEmu from './emulators/python/list-remove';
-import listReverseEmu from './emulators/python/list-reverse';
-import listSortEmu from './emulators/python/list-sort';
-import localsEmu from './emulators/python/locals';
-import lowerEmu from './emulators/python/lower';
-import mapEmu from './emulators/python/map';
-import maxEmu from './emulators/python/max';
-import minEmu from './emulators/python/min';
-import nextEmu from './emulators/python/next';
-import octEmu from './emulators/python/oct';
-import ordEmu from './emulators/python/ord';
-import powEmu from './emulators/python/pow';
-import printEmu from './emulators/python/print';
-import rangeEmu from './emulators/python/range';
-import replaceEmu from './emulators/python/replace';
-import reprEmu from './emulators/python/repr';
-import reversedEmu from './emulators/python/reversed';
-import roundEmu from './emulators/python/round';
-import rstripEmu from './emulators/python/rstrip';
-import setAddEmu from './emulators/python/set-add';
-import setClearEmu from './emulators/python/set-clear';
-import setCopyEmu from './emulators/python/set-copy';
-import setDifferenceEmu from './emulators/python/set-difference';
-import setDifference_updateEmu from './emulators/python/set-difference_update';
-import setDiscardEmu from './emulators/python/set-discard';
-import setIntersectionEmu from './emulators/python/set-intersection';
-import setIntersection_updateEmu from './emulators/python/set-intersection_update';
-import setIsdisjointEmu from './emulators/python/set-isdisjoint';
-import setIssubsetEmu from './emulators/python/set-issubset';
-import setIssupersetEmu from './emulators/python/set-issuperset';
-import setPopEmu from './emulators/python/set-pop';
-import setRemoveEmu from './emulators/python/set-remove';
-import setSymmetric_differenceEmu from './emulators/python/set-symmetric_difference';
-import setSymmetric_difference_updateEmu from './emulators/python/set-symmetric_difference_update';
-import setUnionEmu from './emulators/python/set-union';
-import setUpdateEmu from './emulators/python/set-update';
-import setattrEmu from './emulators/python/setattr';
-import setdefaultEmu from './emulators/python/setdefault';
-import sliceEmu from './emulators/python/slice';
-import sortedEmu from './emulators/python/sorted';
-import splitEmu from './emulators/python/split';
-import startswithEmu from './emulators/python/startswith';
-import staticmethodEmu from './emulators/python/staticmethod';
-import strCasefoldEmu from './emulators/python/str-casefold';
-import strCenterEmu from './emulators/python/str-center';
-import strCountEmu from './emulators/python/str-count';
-import strEncodeEmu from './emulators/python/str-encode';
-import strExpandtabsEmu from './emulators/python/str-expandtabs';
-import strFormatEmu from './emulators/python/str-format';
-import strIsalnumEmu from './emulators/python/str-isalnum';
-import strIsalphaEmu from './emulators/python/str-isalpha';
-import strIsasciiEmu from './emulators/python/str-isascii';
-import strIsdecimalEmu from './emulators/python/str-isdecimal';
-import strIsidentifierEmu from './emulators/python/str-isidentifier';
-import strIslowerEmu from './emulators/python/str-islower';
-import strIsnumericEmu from './emulators/python/str-isnumeric';
-import strIsprintableEmu from './emulators/python/str-isprintable';
-import strIsspaceEmu from './emulators/python/str-isspace';
-import strIstitleEmu from './emulators/python/str-istitle';
-import strIsupperEmu from './emulators/python/str-isupper';
-import strLjustEmu from './emulators/python/str-ljust';
-import strLstripEmu from './emulators/python/str-lstrip';
-import strMaketransEmu from './emulators/python/str-maketrans';
-import strPartitionEmu from './emulators/python/str-partition';
-import strRemoveprefixEmu from './emulators/python/str-removeprefix';
-import strRemovesuffixEmu from './emulators/python/str-removesuffix';
-import strRfindEmu from './emulators/python/str-rfind';
-import strRjustEmu from './emulators/python/str-rjust';
-import strRpartitionEmu from './emulators/python/str-rpartition';
-import strRsplitEmu from './emulators/python/str-rsplit';
-import strSplitlinesEmu from './emulators/python/str-splitlines';
-import strSwapcaseEmu from './emulators/python/str-swapcase';
-import strTranslateEmu from './emulators/python/str-translate';
-import strEmu from './emulators/python/str';
-import stripEmu from './emulators/python/strip';
-import sumEmu from './emulators/python/sum';
-import superEmu from './emulators/python/super';
-import titleEmu from './emulators/python/title';
-import typeEmu from './emulators/python/type';
-import upperEmu from './emulators/python/upper';
-import varsEmu from './emulators/python/vars';
-import zfillEmu from './emulators/python/zfill';
-import zipEmu from './emulators/python/zip';
+import functionsAbsEmu from './emulators/python/functions/abs';
+import functionsAllEmu from './emulators/python/functions/all';
+import functionsAnyEmu from './emulators/python/functions/any';
+import functionsAppendEmu from './emulators/python/functions/append';
+import functionsAsciiEmu from './emulators/python/functions/ascii';
+import functionsBinEmu from './emulators/python/functions/bin';
+import functionsBoolEmu from './emulators/python/functions/bool';
+import functionsBytearrayEmu from './emulators/python/functions/bytearray';
+import functionsBytesEmu from './emulators/python/functions/bytes';
+import functionsCapitalizeEmu from './emulators/python/functions/capitalize';
+import functionsChrEmu from './emulators/python/functions/chr';
+import functionsComplexEmu from './emulators/python/functions/complex';
+import functionsDictClearEmu from './emulators/python/functions/dict-clear';
+import functionsDictCopyEmu from './emulators/python/functions/dict-copy';
+import functionsDictFromkeysEmu from './emulators/python/functions/dict-fromkeys';
+import functionsDictItemsEmu from './emulators/python/functions/dict-items';
+import functionsDictKeysEmu from './emulators/python/functions/dict-keys';
+import functionsDictPopEmu from './emulators/python/functions/dict-pop';
+import functionsDictUpdateEmu from './emulators/python/functions/dict-update';
+import functionsDictValuesEmu from './emulators/python/functions/dict-values';
+import functionsDivmodEmu from './emulators/python/functions/divmod';
+import functionsEndswithEmu from './emulators/python/functions/endswith';
+import functionsEnumerateEmu from './emulators/python/functions/enumerate';
+import functionsFindEmu from './emulators/python/functions/find';
+import functionsFloatEmu from './emulators/python/functions/float';
+import functionsFormatEmu from './emulators/python/functions/format';
+import functionsFrozensetEmu from './emulators/python/functions/frozenset';
+import functionsGetEmu from './emulators/python/functions/get';
+import functionsHashEmu from './emulators/python/functions/hash';
+import functionsHexEmu from './emulators/python/functions/hex';
+import functionsIntEmu from './emulators/python/functions/int';
+import functionsIsdigitEmu from './emulators/python/functions/isdigit';
+import functionsJoinEmu from './emulators/python/functions/join';
+import functionsLenEmu from './emulators/python/functions/len';
+import functionsListCopyEmu from './emulators/python/functions/list-copy';
+import functionsListCountEmu from './emulators/python/functions/list-count';
+import functionsListExtendEmu from './emulators/python/functions/list-extend';
+import functionsListIndexEmu from './emulators/python/functions/list-index';
+import functionsListInsertEmu from './emulators/python/functions/list-insert';
+import functionsListPopEmu from './emulators/python/functions/list-pop';
+import functionsListRemoveEmu from './emulators/python/functions/list-remove';
+import functionsListReverseEmu from './emulators/python/functions/list-reverse';
+import functionsListSortEmu from './emulators/python/functions/list-sort';
+import functionsLowerEmu from './emulators/python/functions/lower';
+import functionsMaxEmu from './emulators/python/functions/max';
+import functionsMinEmu from './emulators/python/functions/min';
+import functionsOctEmu from './emulators/python/functions/oct';
+import functionsOrdEmu from './emulators/python/functions/ord';
+import functionsPowEmu from './emulators/python/functions/pow';
+import functionsRangeEmu from './emulators/python/functions/range';
+import functionsReplaceEmu from './emulators/python/functions/replace';
+import functionsReprEmu from './emulators/python/functions/repr';
+import functionsReversedEmu from './emulators/python/functions/reversed';
+import functionsRoundEmu from './emulators/python/functions/round';
+import functionsRstripEmu from './emulators/python/functions/rstrip';
+import functionsSetAddEmu from './emulators/python/functions/set-add';
+import functionsSetClearEmu from './emulators/python/functions/set-clear';
+import functionsSetCopyEmu from './emulators/python/functions/set-copy';
+import functionsSetDifferenceEmu from './emulators/python/functions/set-difference';
+import functionsSetDifference_updateEmu from './emulators/python/functions/set-difference_update';
+import functionsSetDiscardEmu from './emulators/python/functions/set-discard';
+import functionsSetIntersectionEmu from './emulators/python/functions/set-intersection';
+import functionsSetIntersection_updateEmu from './emulators/python/functions/set-intersection_update';
+import functionsSetIsdisjointEmu from './emulators/python/functions/set-isdisjoint';
+import functionsSetIssubsetEmu from './emulators/python/functions/set-issubset';
+import functionsSetIssupersetEmu from './emulators/python/functions/set-issuperset';
+import functionsSetPopEmu from './emulators/python/functions/set-pop';
+import functionsSetRemoveEmu from './emulators/python/functions/set-remove';
+import functionsSetSymmetric_differenceEmu from './emulators/python/functions/set-symmetric_difference';
+import functionsSetSymmetric_difference_updateEmu from './emulators/python/functions/set-symmetric_difference_update';
+import functionsSetUnionEmu from './emulators/python/functions/set-union';
+import functionsSetUpdateEmu from './emulators/python/functions/set-update';
+import functionsSetattrEmu from './emulators/python/functions/setattr';
+import functionsSetdefaultEmu from './emulators/python/functions/setdefault';
+import functionsSliceEmu from './emulators/python/functions/slice';
+import functionsSortedEmu from './emulators/python/functions/sorted';
+import functionsSplitEmu from './emulators/python/functions/split';
+import functionsStartswithEmu from './emulators/python/functions/startswith';
+import functionsStrCasefoldEmu from './emulators/python/functions/str-casefold';
+import functionsStrCenterEmu from './emulators/python/functions/str-center';
+import functionsStrCountEmu from './emulators/python/functions/str-count';
+import functionsStrEncodeEmu from './emulators/python/functions/str-encode';
+import functionsStrExpandtabsEmu from './emulators/python/functions/str-expandtabs';
+import functionsStrFormatEmu from './emulators/python/functions/str-format';
+import functionsStrIsalnumEmu from './emulators/python/functions/str-isalnum';
+import functionsStrIsalphaEmu from './emulators/python/functions/str-isalpha';
+import functionsStrIsasciiEmu from './emulators/python/functions/str-isascii';
+import functionsStrIsdecimalEmu from './emulators/python/functions/str-isdecimal';
+import functionsStrIsidentifierEmu from './emulators/python/functions/str-isidentifier';
+import functionsStrIslowerEmu from './emulators/python/functions/str-islower';
+import functionsStrIsnumericEmu from './emulators/python/functions/str-isnumeric';
+import functionsStrIsprintableEmu from './emulators/python/functions/str-isprintable';
+import functionsStrIsspaceEmu from './emulators/python/functions/str-isspace';
+import functionsStrIstitleEmu from './emulators/python/functions/str-istitle';
+import functionsStrIsupperEmu from './emulators/python/functions/str-isupper';
+import functionsStrLjustEmu from './emulators/python/functions/str-ljust';
+import functionsStrLstripEmu from './emulators/python/functions/str-lstrip';
+import functionsStrMaketransEmu from './emulators/python/functions/str-maketrans';
+import functionsStrPartitionEmu from './emulators/python/functions/str-partition';
+import functionsStrRemoveprefixEmu from './emulators/python/functions/str-removeprefix';
+import functionsStrRemovesuffixEmu from './emulators/python/functions/str-removesuffix';
+import functionsStrRfindEmu from './emulators/python/functions/str-rfind';
+import functionsStrRjustEmu from './emulators/python/functions/str-rjust';
+import functionsStrRpartitionEmu from './emulators/python/functions/str-rpartition';
+import functionsStrRsplitEmu from './emulators/python/functions/str-rsplit';
+import functionsStrSplitlinesEmu from './emulators/python/functions/str-splitlines';
+import functionsStrSwapcaseEmu from './emulators/python/functions/str-swapcase';
+import functionsStrTranslateEmu from './emulators/python/functions/str-translate';
+import functionsStrEmu from './emulators/python/functions/str';
+import functionsStripEmu from './emulators/python/functions/strip';
+import functionsSumEmu from './emulators/python/functions/sum';
+import functionsSuperEmu from './emulators/python/functions/super';
+import functionsTitleEmu from './emulators/python/functions/title';
+import functionsUpperEmu from './emulators/python/functions/upper';
+import functionsVarsEmu from './emulators/python/functions/vars';
+import functionsZfillEmu from './emulators/python/functions/zfill';
+import functionsZipEmu from './emulators/python/functions/zip';
+import operatorsAddEmu from './emulators/python/operators/add';
+import operatorsAndEmu from './emulators/python/operators/and';
+import operatorsBitwiseAndEmu from './emulators/python/operators/bitwise-and';
+import operatorsBitwiseOrEmu from './emulators/python/operators/bitwise-or';
+import operatorsBitwiseXorEmu from './emulators/python/operators/bitwise-xor';
+import operatorsEqEmu from './emulators/python/operators/eq';
+import operatorsFloordivEmu from './emulators/python/operators/floordiv';
+import operatorsGeEmu from './emulators/python/operators/ge';
+import operatorsGtEmu from './emulators/python/operators/gt';
+import operatorsInEmu from './emulators/python/operators/in';
+import operatorsInvertEmu from './emulators/python/operators/invert';
+import operatorsLeEmu from './emulators/python/operators/le';
+import operatorsLshiftEmu from './emulators/python/operators/lshift';
+import operatorsLtEmu from './emulators/python/operators/lt';
+import operatorsModEmu from './emulators/python/operators/mod';
+import operatorsMulEmu from './emulators/python/operators/mul';
+import operatorsNeEmu from './emulators/python/operators/ne';
+import operatorsNotInEmu from './emulators/python/operators/not-in';
+import operatorsNotEmu from './emulators/python/operators/not';
+import operatorsOrEmu from './emulators/python/operators/or';
+import operatorsPowEmu from './emulators/python/operators/pow';
+import operatorsRshiftEmu from './emulators/python/operators/rshift';
+import operatorsSubEmu from './emulators/python/operators/sub';
+import operatorsTruedivEmu from './emulators/python/operators/truediv';
 
 const emulators = {
-  'abs': absEmu,
-  'all': allEmu,
-  'any': anyEmu,
-  'append': appendEmu,
-  'ascii': asciiEmu,
-  'bin': binEmu,
-  'bool': boolEmu,
-  'bytearray': bytearrayEmu,
-  'bytes': bytesEmu,
-  'callable': callableEmu,
-  'capitalize': capitalizeEmu,
-  'chr': chrEmu,
-  'classmethod': classmethodEmu,
-  'complex': complexEmu,
-  'delattr': delattrEmu,
-  'dict-clear': dictClearEmu,
-  'dict-copy': dictCopyEmu,
-  'dict-fromkeys': dictFromkeysEmu,
-  'dict-items': dictItemsEmu,
-  'dict-keys': dictKeysEmu,
-  'dict-pop': dictPopEmu,
-  'dict-update': dictUpdateEmu,
-  'dict-values': dictValuesEmu,
-  'dir': dirEmu,
-  'divmod': divmodEmu,
-  'endswith': endswithEmu,
-  'enumerate': enumerateEmu,
-  'filter': filterEmu,
-  'find': findEmu,
-  'float': floatEmu,
-  'format': formatEmu,
-  'frozenset': frozensetEmu,
-  'get': getEmu,
-  'getattr': getattrEmu,
-  'globals': globalsEmu,
-  'hasattr': hasattrEmu,
-  'hash': hashEmu,
-  'hex': hexEmu,
-  'id': idEmu,
-  'input': inputEmu,
-  'int': intEmu,
-  'isdigit': isdigitEmu,
-  'isinstance': isinstanceEmu,
-  'iter': iterEmu,
-  'join': joinEmu,
-  'len': lenEmu,
-  'list-copy': listCopyEmu,
-  'list-count': listCountEmu,
-  'list-extend': listExtendEmu,
-  'list-index': listIndexEmu,
-  'list-insert': listInsertEmu,
-  'list-pop': listPopEmu,
-  'list-remove': listRemoveEmu,
-  'list-reverse': listReverseEmu,
-  'list-sort': listSortEmu,
-  'locals': localsEmu,
-  'lower': lowerEmu,
-  'map': mapEmu,
-  'max': maxEmu,
-  'min': minEmu,
-  'next': nextEmu,
-  'oct': octEmu,
-  'ord': ordEmu,
-  'pow': powEmu,
-  'print': printEmu,
-  'range': rangeEmu,
-  'replace': replaceEmu,
-  'repr': reprEmu,
-  'reversed': reversedEmu,
-  'round': roundEmu,
-  'rstrip': rstripEmu,
-  'set-add': setAddEmu,
-  'set-clear': setClearEmu,
-  'set-copy': setCopyEmu,
-  'set-difference': setDifferenceEmu,
-  'set-difference_update': setDifference_updateEmu,
-  'set-discard': setDiscardEmu,
-  'set-intersection': setIntersectionEmu,
-  'set-intersection_update': setIntersection_updateEmu,
-  'set-isdisjoint': setIsdisjointEmu,
-  'set-issubset': setIssubsetEmu,
-  'set-issuperset': setIssupersetEmu,
-  'set-pop': setPopEmu,
-  'set-remove': setRemoveEmu,
-  'set-symmetric_difference': setSymmetric_differenceEmu,
-  'set-symmetric_difference_update': setSymmetric_difference_updateEmu,
-  'set-union': setUnionEmu,
-  'set-update': setUpdateEmu,
-  'setattr': setattrEmu,
-  'setdefault': setdefaultEmu,
-  'slice': sliceEmu,
-  'sorted': sortedEmu,
-  'split': splitEmu,
-  'startswith': startswithEmu,
-  'staticmethod': staticmethodEmu,
-  'str-casefold': strCasefoldEmu,
-  'str-center': strCenterEmu,
-  'str-count': strCountEmu,
-  'str-encode': strEncodeEmu,
-  'str-expandtabs': strExpandtabsEmu,
-  'str-format': strFormatEmu,
-  'str-isalnum': strIsalnumEmu,
-  'str-isalpha': strIsalphaEmu,
-  'str-isascii': strIsasciiEmu,
-  'str-isdecimal': strIsdecimalEmu,
-  'str-isidentifier': strIsidentifierEmu,
-  'str-islower': strIslowerEmu,
-  'str-isnumeric': strIsnumericEmu,
-  'str-isprintable': strIsprintableEmu,
-  'str-isspace': strIsspaceEmu,
-  'str-istitle': strIstitleEmu,
-  'str-isupper': strIsupperEmu,
-  'str-ljust': strLjustEmu,
-  'str-lstrip': strLstripEmu,
-  'str-maketrans': strMaketransEmu,
-  'str-partition': strPartitionEmu,
-  'str-removeprefix': strRemoveprefixEmu,
-  'str-removesuffix': strRemovesuffixEmu,
-  'str-rfind': strRfindEmu,
-  'str-rjust': strRjustEmu,
-  'str-rpartition': strRpartitionEmu,
-  'str-rsplit': strRsplitEmu,
-  'str-splitlines': strSplitlinesEmu,
-  'str-swapcase': strSwapcaseEmu,
-  'str-translate': strTranslateEmu,
-  'str': strEmu,
-  'strip': stripEmu,
-  'sum': sumEmu,
-  'super': superEmu,
-  'title': titleEmu,
-  'type': typeEmu,
-  'upper': upperEmu,
-  'vars': varsEmu,
-  'zfill': zfillEmu,
-  'zip': zipEmu,
+  'functions/abs': functionsAbsEmu,
+  'functions/all': functionsAllEmu,
+  'functions/any': functionsAnyEmu,
+  'functions/append': functionsAppendEmu,
+  'functions/ascii': functionsAsciiEmu,
+  'functions/bin': functionsBinEmu,
+  'functions/bool': functionsBoolEmu,
+  'functions/bytearray': functionsBytearrayEmu,
+  'functions/bytes': functionsBytesEmu,
+  'functions/capitalize': functionsCapitalizeEmu,
+  'functions/chr': functionsChrEmu,
+  'functions/complex': functionsComplexEmu,
+  'functions/dict-clear': functionsDictClearEmu,
+  'functions/dict-copy': functionsDictCopyEmu,
+  'functions/dict-fromkeys': functionsDictFromkeysEmu,
+  'functions/dict-items': functionsDictItemsEmu,
+  'functions/dict-keys': functionsDictKeysEmu,
+  'functions/dict-pop': functionsDictPopEmu,
+  'functions/dict-update': functionsDictUpdateEmu,
+  'functions/dict-values': functionsDictValuesEmu,
+  'functions/divmod': functionsDivmodEmu,
+  'functions/endswith': functionsEndswithEmu,
+  'functions/enumerate': functionsEnumerateEmu,
+  'functions/find': functionsFindEmu,
+  'functions/float': functionsFloatEmu,
+  'functions/format': functionsFormatEmu,
+  'functions/frozenset': functionsFrozensetEmu,
+  'functions/get': functionsGetEmu,
+  'functions/hash': functionsHashEmu,
+  'functions/hex': functionsHexEmu,
+  'functions/int': functionsIntEmu,
+  'functions/isdigit': functionsIsdigitEmu,
+  'functions/join': functionsJoinEmu,
+  'functions/len': functionsLenEmu,
+  'functions/list-copy': functionsListCopyEmu,
+  'functions/list-count': functionsListCountEmu,
+  'functions/list-extend': functionsListExtendEmu,
+  'functions/list-index': functionsListIndexEmu,
+  'functions/list-insert': functionsListInsertEmu,
+  'functions/list-pop': functionsListPopEmu,
+  'functions/list-remove': functionsListRemoveEmu,
+  'functions/list-reverse': functionsListReverseEmu,
+  'functions/list-sort': functionsListSortEmu,
+  'functions/lower': functionsLowerEmu,
+  'functions/max': functionsMaxEmu,
+  'functions/min': functionsMinEmu,
+  'functions/oct': functionsOctEmu,
+  'functions/ord': functionsOrdEmu,
+  'functions/pow': functionsPowEmu,
+  'functions/range': functionsRangeEmu,
+  'functions/replace': functionsReplaceEmu,
+  'functions/repr': functionsReprEmu,
+  'functions/reversed': functionsReversedEmu,
+  'functions/round': functionsRoundEmu,
+  'functions/rstrip': functionsRstripEmu,
+  'functions/set-add': functionsSetAddEmu,
+  'functions/set-clear': functionsSetClearEmu,
+  'functions/set-copy': functionsSetCopyEmu,
+  'functions/set-difference': functionsSetDifferenceEmu,
+  'functions/set-difference_update': functionsSetDifference_updateEmu,
+  'functions/set-discard': functionsSetDiscardEmu,
+  'functions/set-intersection': functionsSetIntersectionEmu,
+  'functions/set-intersection_update': functionsSetIntersection_updateEmu,
+  'functions/set-isdisjoint': functionsSetIsdisjointEmu,
+  'functions/set-issubset': functionsSetIssubsetEmu,
+  'functions/set-issuperset': functionsSetIssupersetEmu,
+  'functions/set-pop': functionsSetPopEmu,
+  'functions/set-remove': functionsSetRemoveEmu,
+  'functions/set-symmetric_difference': functionsSetSymmetric_differenceEmu,
+  'functions/set-symmetric_difference_update': functionsSetSymmetric_difference_updateEmu,
+  'functions/set-union': functionsSetUnionEmu,
+  'functions/set-update': functionsSetUpdateEmu,
+  'functions/setattr': functionsSetattrEmu,
+  'functions/setdefault': functionsSetdefaultEmu,
+  'functions/slice': functionsSliceEmu,
+  'functions/sorted': functionsSortedEmu,
+  'functions/split': functionsSplitEmu,
+  'functions/startswith': functionsStartswithEmu,
+  'functions/str-casefold': functionsStrCasefoldEmu,
+  'functions/str-center': functionsStrCenterEmu,
+  'functions/str-count': functionsStrCountEmu,
+  'functions/str-encode': functionsStrEncodeEmu,
+  'functions/str-expandtabs': functionsStrExpandtabsEmu,
+  'functions/str-format': functionsStrFormatEmu,
+  'functions/str-isalnum': functionsStrIsalnumEmu,
+  'functions/str-isalpha': functionsStrIsalphaEmu,
+  'functions/str-isascii': functionsStrIsasciiEmu,
+  'functions/str-isdecimal': functionsStrIsdecimalEmu,
+  'functions/str-isidentifier': functionsStrIsidentifierEmu,
+  'functions/str-islower': functionsStrIslowerEmu,
+  'functions/str-isnumeric': functionsStrIsnumericEmu,
+  'functions/str-isprintable': functionsStrIsprintableEmu,
+  'functions/str-isspace': functionsStrIsspaceEmu,
+  'functions/str-istitle': functionsStrIstitleEmu,
+  'functions/str-isupper': functionsStrIsupperEmu,
+  'functions/str-ljust': functionsStrLjustEmu,
+  'functions/str-lstrip': functionsStrLstripEmu,
+  'functions/str-maketrans': functionsStrMaketransEmu,
+  'functions/str-partition': functionsStrPartitionEmu,
+  'functions/str-removeprefix': functionsStrRemoveprefixEmu,
+  'functions/str-removesuffix': functionsStrRemovesuffixEmu,
+  'functions/str-rfind': functionsStrRfindEmu,
+  'functions/str-rjust': functionsStrRjustEmu,
+  'functions/str-rpartition': functionsStrRpartitionEmu,
+  'functions/str-rsplit': functionsStrRsplitEmu,
+  'functions/str-splitlines': functionsStrSplitlinesEmu,
+  'functions/str-swapcase': functionsStrSwapcaseEmu,
+  'functions/str-translate': functionsStrTranslateEmu,
+  'functions/str': functionsStrEmu,
+  'functions/strip': functionsStripEmu,
+  'functions/sum': functionsSumEmu,
+  'functions/super': functionsSuperEmu,
+  'functions/title': functionsTitleEmu,
+  'functions/upper': functionsUpperEmu,
+  'functions/vars': functionsVarsEmu,
+  'functions/zfill': functionsZfillEmu,
+  'functions/zip': functionsZipEmu,
+  'operators/add': operatorsAddEmu,
+  'operators/and': operatorsAndEmu,
+  'operators/bitwise-and': operatorsBitwiseAndEmu,
+  'operators/bitwise-or': operatorsBitwiseOrEmu,
+  'operators/bitwise-xor': operatorsBitwiseXorEmu,
+  'operators/eq': operatorsEqEmu,
+  'operators/floordiv': operatorsFloordivEmu,
+  'operators/ge': operatorsGeEmu,
+  'operators/gt': operatorsGtEmu,
+  'operators/in': operatorsInEmu,
+  'operators/invert': operatorsInvertEmu,
+  'operators/le': operatorsLeEmu,
+  'operators/lshift': operatorsLshiftEmu,
+  'operators/lt': operatorsLtEmu,
+  'operators/mod': operatorsModEmu,
+  'operators/mul': operatorsMulEmu,
+  'operators/ne': operatorsNeEmu,
+  'operators/not-in': operatorsNotInEmu,
+  'operators/not': operatorsNotEmu,
+  'operators/or': operatorsOrEmu,
+  'operators/pow': operatorsPowEmu,
+  'operators/rshift': operatorsRshiftEmu,
+  'operators/sub': operatorsSubEmu,
+  'operators/truediv': operatorsTruedivEmu,
 };
 
-export function getEmulator(slug) {
-  return emulators[slug];
+export function getEmulator(category, slug) {
+  return emulators[category + '/' + slug];
 }

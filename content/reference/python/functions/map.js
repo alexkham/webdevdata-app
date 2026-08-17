@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'Apply a function to every item — lazily, and across multiple iterables in parallel.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 1.0+',
   searchTerms: 'map apply function transform each item lazy iterator functional list comprehension',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 1.0+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'Apply a function to every item — lazily. The functional cousin of a list comprehension.',
 

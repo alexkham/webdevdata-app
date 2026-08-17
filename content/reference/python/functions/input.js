@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'Read a line from stdin — always returns str, trailing newline stripped.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 1.0+',
   searchTerms: 'input read stdin prompt line user readline string always str raw_input',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 1.0+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'Read one line from stdin. Always str — cast if you need a number. Not for interactive apps.',
 

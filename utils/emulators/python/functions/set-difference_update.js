@@ -1,24 +1,7 @@
-// utils/emulators/python/set-difference_update.js
-//
-// Emulator for Python set.difference_update(iterable). Real Python
-// returns None and mutates the set in place. For the demo, we return
-// the RESULTING state so users can see the effect — the demoExplainer
-// notes this.
-//
-// Removes every element that appears in the iterable, silently ignoring
-// elements not in the set.
-
-function toItems(v) {
-  if (v === null || v === undefined) return [];
-  if (Array.isArray(v)) return v;
-  if (typeof v === 'string') {
-    return v.split(',').map(s => s.trim()).filter(s => s !== '');
-  }
-  return [v];
-}
-
-export default function setDifferenceUpdate(set, other) {
-  const start = toItems(set);
-  const remove = new Set(toItems(other));
-  return start.filter(x => !remove.has(x));
+// Emulator for Python set.difference_update(other) — mutates in place,
+// returns None.
+const elems = (s) => (s && s.__pySet !== undefined ? s.__pySet : s);
+export default function setDifferenceUpdate(s, other) {
+  if (!Array.isArray(elems(s))) throw new TypeError('difference_update() argument must be set');
+  return null;
 }

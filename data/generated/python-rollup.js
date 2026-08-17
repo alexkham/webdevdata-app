@@ -6,13 +6,13 @@
 // featured picks (live-demo items, discovery order).
 
 export const pythonRollup = {
-  generatedAt: "2026-08-05T14:00:33.054Z",
-  total: 135,
-  liveTotal: 135,
+  generatedAt: "2026-08-17T08:08:24.316Z",
+  total: 143,
+  liveTotal: 117,
   types: [
   {
     "type": "builtin",
-    "count": 54
+    "count": 62
   },
   {
     "type": "list",
@@ -34,7 +34,7 @@ export const pythonRollup = {
   categories: [
   {
     "category": "builtin",
-    "count": 54
+    "count": 62
   },
   {
     "category": "list",
@@ -120,5 +120,9 @@ export const pythonRollup = {
     "version": "Python 2.6+",
     "searchTerms": "bin binary base 2 convert integer string representation prefix 0b bits"
   }
-]
+],
+  operators: {
+    total: 27,
+    liveTotal: 24
+  }
 };

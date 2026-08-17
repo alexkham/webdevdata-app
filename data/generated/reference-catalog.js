@@ -6,18 +6,18 @@
 // file under content/reference/.
 
 export const referenceCatalog = {
-  generatedAt: "2026-08-05T14:00:33.049Z",
+  generatedAt: "2026-08-17T08:08:24.314Z",
   languages: [
   {
     "id": "python",
     "href": "/reference/python",
-    "count": 135,
+    "count": 170,
     "categories": [
       {
         "id": "functions",
         "href": "/reference/python/functions",
-        "count": 135,
-        "liveCount": 135,
+        "count": 143,
+        "liveCount": 117,
         "items": [
           {
             "slug": "abs",
@@ -125,7 +125,7 @@ export const referenceCatalog = {
             "blurb": "True if the object can be called — functions, methods, classes, and objects with __call__.",
             "category": "builtin",
             "type": "builtin",
-            "hasLiveDemo": true,
+            "hasLiveDemo": false,
             "version": "Python 1.0+",
             "searchTerms": "callable check function method class lambda __call__ invokable reflection"
           },
@@ -158,9 +158,20 @@ export const referenceCatalog = {
             "blurb": "Transform a method so its first argument is the CLASS (`cls`), not the instance.",
             "category": "builtin",
             "type": "builtin",
-            "hasLiveDemo": true,
+            "hasLiveDemo": false,
             "version": "Python 2.2+",
             "searchTerms": "classmethod decorator cls class method alternative constructor factory from_string bound"
+          },
+          {
+            "slug": "compile",
+            "name": "compile",
+            "signature": "compile(source, filename, mode, flags=0, dont_inherit=False, optimize=-1)",
+            "blurb": "Compile Python source into a reusable code object — the precursor to eval / exec.",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": false,
+            "version": "Python 1.0+",
+            "searchTerms": "compile code object bytecode eval exec ast parse mode single expression"
           },
           {
             "slug": "complex",
@@ -180,7 +191,7 @@ export const referenceCatalog = {
             "blurb": "Delete an attribute by name — the runtime-string equivalent of `del object.name`.",
             "category": "builtin",
             "type": "builtin",
-            "hasLiveDemo": true,
+            "hasLiveDemo": false,
             "version": "Python 1.0+",
             "searchTerms": "delattr attribute delete remove dynamic reflection immutable type object"
           },
@@ -279,7 +290,7 @@ export const referenceCatalog = {
             "blurb": "List names in the local scope or on an object — introspection with sorted output.",
             "category": "builtin",
             "type": "builtin",
-            "hasLiveDemo": true,
+            "hasLiveDemo": false,
             "version": "Python 1.0+",
             "searchTerms": "dir list attributes methods introspection scope names discover explore instance class"
           },
@@ -317,13 +328,35 @@ export const referenceCatalog = {
             "searchTerms": "enumerate index counter pair position numbered loop iteration for"
           },
           {
+            "slug": "eval",
+            "name": "eval",
+            "signature": "eval(source, globals=None, locals=None)",
+            "blurb": "Evaluate a Python EXPRESSION from a string — powerful, dangerous, usually the wrong tool.",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": false,
+            "version": "Python 1.0+",
+            "searchTerms": "eval evaluate expression dynamic security danger literal untrusted parse ast"
+          },
+          {
+            "slug": "exec",
+            "name": "exec",
+            "signature": "exec(source, globals=None, locals=None)",
+            "blurb": "Execute Python STATEMENTS from a string — even more dangerous than eval, almost never the right tool.",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": false,
+            "version": "Python 3.0+",
+            "searchTerms": "exec execute dynamic statements security danger untrusted code injection"
+          },
+          {
             "slug": "filter",
             "name": "filter",
             "signature": "filter(predicate, iterable)",
             "blurb": "Keep items where the predicate returns truthy — lazily.",
             "category": "builtin",
             "type": "builtin",
-            "hasLiveDemo": true,
+            "hasLiveDemo": false,
             "version": "Python 1.0+",
             "searchTerms": "filter predicate keep items iterator lazy functional truthy false none"
           },
@@ -389,7 +422,7 @@ export const referenceCatalog = {
             "blurb": "Get an attribute by name — with an optional default to avoid AttributeError.",
             "category": "builtin",
             "type": "builtin",
-            "hasLiveDemo": true,
+            "hasLiveDemo": false,
             "version": "Python 1.0+",
             "searchTerms": "getattr attribute get default reflection dynamic access method property"
           },
@@ -400,7 +433,7 @@ export const referenceCatalog = {
             "blurb": "The module-level namespace dict — the same dict every top-level assignment writes to.",
             "category": "builtin",
             "type": "builtin",
-            "hasLiveDemo": true,
+            "hasLiveDemo": false,
             "version": "Python 1.0+",
             "searchTerms": "globals namespace module scope dict variables reflection top-level names"
           },
@@ -411,7 +444,7 @@ export const referenceCatalog = {
             "blurb": "True if the object has the named attribute — equivalent to getattr-with-try-except.",
             "category": "builtin",
             "type": "builtin",
-            "hasLiveDemo": true,
+            "hasLiveDemo": false,
             "version": "Python 1.0+",
             "searchTerms": "hasattr attribute check exists reflection duck typing getattr method property"
           },
@@ -444,7 +477,7 @@ export const referenceCatalog = {
             "blurb": "Return a unique-per-lifetime integer identifier for the object.",
             "category": "builtin",
             "type": "builtin",
-            "hasLiveDemo": true,
+            "hasLiveDemo": false,
             "version": "Python 1.0+",
             "searchTerms": "id identity memory address unique object is operator interned pointer"
           },
@@ -455,7 +488,7 @@ export const referenceCatalog = {
             "blurb": "Read a line from stdin — always returns str, trailing newline stripped.",
             "category": "builtin",
             "type": "builtin",
-            "hasLiveDemo": true,
+            "hasLiveDemo": false,
             "version": "Python 1.0+",
             "searchTerms": "input read stdin prompt line user readline string always str raw_input"
           },
@@ -488,9 +521,20 @@ export const referenceCatalog = {
             "blurb": "Check whether an object is an instance of a class — subclasses count.",
             "category": "builtin",
             "type": "builtin",
-            "hasLiveDemo": true,
+            "hasLiveDemo": false,
             "version": "Python 1.5+",
             "searchTerms": "isinstance instance type check class subclass duck typing typecheck reflection"
+          },
+          {
+            "slug": "issubclass",
+            "name": "issubclass",
+            "signature": "issubclass(class, classinfo)",
+            "blurb": "Check whether one class is a subclass of another (or a tuple of others).",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": false,
+            "version": "Python 1.0+",
+            "searchTerms": "issubclass subclass class inheritance check type isinstance mro derived hierarchy"
           },
           {
             "slug": "iter",
@@ -499,7 +543,7 @@ export const referenceCatalog = {
             "blurb": "Get an iterator from any iterable — the entry point to Python&apos;s iteration protocol.",
             "category": "builtin",
             "type": "builtin",
-            "hasLiveDemo": true,
+            "hasLiveDemo": false,
             "version": "Python 1.5+",
             "searchTerms": "iter iterator iterable protocol next generator stopiteration sentinel callable"
           },
@@ -631,7 +675,7 @@ export const referenceCatalog = {
             "blurb": "The current local namespace dict — behavior differs by context (module / function / class).",
             "category": "builtin",
             "type": "builtin",
-            "hasLiveDemo": true,
+            "hasLiveDemo": false,
             "version": "Python 1.0+",
             "searchTerms": "locals namespace scope local variables function class dict reflection frame"
           },
@@ -653,7 +697,7 @@ export const referenceCatalog = {
             "blurb": "Apply a function to every item — lazily, and across multiple iterables in parallel.",
             "category": "builtin",
             "type": "builtin",
-            "hasLiveDemo": true,
+            "hasLiveDemo": false,
             "version": "Python 1.0+",
             "searchTerms": "map apply function transform each item lazy iterator functional list comprehension"
           },
@@ -667,6 +711,17 @@ export const referenceCatalog = {
             "hasLiveDemo": true,
             "version": "Python 1.0+",
             "searchTerms": "max maximum largest biggest highest greatest"
+          },
+          {
+            "slug": "memoryview",
+            "name": "memoryview",
+            "signature": "memoryview(object)",
+            "blurb": "A zero-copy view over a bytes-like object — slice, index, or hand off without allocating.",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": false,
+            "version": "Python 2.7+",
+            "searchTerms": "memoryview buffer protocol zero copy bytes bytearray slice view mmap array"
           },
           {
             "slug": "min",
@@ -686,9 +741,20 @@ export const referenceCatalog = {
             "blurb": "Advance an iterator by one — with an optional default to avoid StopIteration.",
             "category": "builtin",
             "type": "builtin",
-            "hasLiveDemo": true,
+            "hasLiveDemo": false,
             "version": "Python 2.6+",
             "searchTerms": "next iterator advance stopiteration default first item peek generator"
+          },
+          {
+            "slug": "object",
+            "name": "object",
+            "signature": "object()",
+            "blurb": "The base class of every Python class — and a common sentinel value when called directly.",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": false,
+            "version": "Python 2.2+",
+            "searchTerms": "object base class root sentinel unique instance mro type hierarchy inheritance"
           },
           {
             "slug": "oct",
@@ -700,6 +766,17 @@ export const referenceCatalog = {
             "hasLiveDemo": true,
             "version": "Python 1.0+",
             "searchTerms": "oct octal base 8 convert integer string representation prefix 0o file permissions chmod"
+          },
+          {
+            "slug": "open",
+            "name": "open",
+            "signature": "open(file, mode=&apos;r&apos;, encoding=None, ...)",
+            "blurb": "Open a file — the standard entry point for reading and writing.",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": false,
+            "version": "Python 1.0+",
+            "searchTerms": "open file read write text binary mode encoding context manager with utf-8 close"
           },
           {
             "slug": "ord",
@@ -730,9 +807,20 @@ export const referenceCatalog = {
             "blurb": "Write objects to stdout — customize the separator, the ending, the destination, and the flush.",
             "category": "builtin",
             "type": "builtin",
-            "hasLiveDemo": true,
+            "hasLiveDemo": false,
             "version": "Python 2.0+",
             "searchTerms": "print output stdout write display sep end file flush newline space multiple arguments"
+          },
+          {
+            "slug": "property",
+            "name": "property",
+            "signature": "property(fget=None, fset=None, fdel=None, doc=None)",
+            "blurb": "Turn a method into a computed attribute — with optional setter and deleter.",
+            "category": "builtin",
+            "type": "builtin",
+            "hasLiveDemo": false,
+            "version": "Python 2.2+",
+            "searchTerms": "property decorator getter setter deleter computed attribute descriptor read-only encapsulation"
           },
           {
             "slug": "range",
@@ -1060,7 +1148,7 @@ export const referenceCatalog = {
             "blurb": "Attach a plain function to a class — no `self`, no `cls`, no magic.",
             "category": "builtin",
             "type": "builtin",
-            "hasLiveDemo": true,
+            "hasLiveDemo": false,
             "version": "Python 2.2+",
             "searchTerms": "staticmethod decorator no self no cls utility class function nested class scope namespace"
           },
@@ -1456,7 +1544,7 @@ export const referenceCatalog = {
             "blurb": "Get an object&apos;s type, or create a new class dynamically.",
             "category": "builtin",
             "type": "builtin",
-            "hasLiveDemo": true,
+            "hasLiveDemo": false,
             "version": "Python 1.0+",
             "searchTerms": "type class introspection instance check reflection metaclass isinstance object"
           },
@@ -1503,6 +1591,311 @@ export const referenceCatalog = {
             "hasLiveDemo": true,
             "version": "Python 2.0+",
             "searchTerms": "zip pair combine parallel iterate together lockstep tuples merge"
+          }
+        ]
+      },
+      {
+        "id": "operators",
+        "href": "/reference/python/operators",
+        "count": 27,
+        "liveCount": 24,
+        "items": [
+          {
+            "slug": "add",
+            "name": "+",
+            "signature": "a + b",
+            "blurb": "Addition — and sequence concatenation.",
+            "category": "arithmetic",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "plus add addition sum concatenate operator"
+          },
+          {
+            "slug": "and",
+            "name": "and",
+            "signature": "a and b",
+            "blurb": "Logical AND — short-circuits and returns an operand, not a bool.",
+            "category": "logical",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "and logical boolean short circuit conjunction operator"
+          },
+          {
+            "slug": "bitwise-and",
+            "name": "&",
+            "signature": "a & b",
+            "blurb": "Bitwise AND — and set intersection.",
+            "category": "bitwise",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "ampersand bitwise and mask bits flags intersection operator"
+          },
+          {
+            "slug": "bitwise-or",
+            "name": "|",
+            "signature": "a | b",
+            "blurb": "Bitwise OR — set union, and dict merge since 3.9.",
+            "category": "bitwise",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "pipe bitwise or flags union merge dict operator"
+          },
+          {
+            "slug": "bitwise-xor",
+            "name": "^",
+            "signature": "a ^ b",
+            "blurb": "Bitwise XOR — the caret is NOT exponentiation.",
+            "category": "bitwise",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "caret xor exclusive or toggle bits symmetric difference operator"
+          },
+          {
+            "slug": "eq",
+            "name": "==",
+            "signature": "a == b",
+            "blurb": "Equality by value — not identity.",
+            "category": "comparison",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "equals equality double equals compare operator"
+          },
+          {
+            "slug": "floordiv",
+            "name": "//",
+            "signature": "a // b",
+            "blurb": "Floor division — rounds toward negative infinity, not zero.",
+            "category": "arithmetic",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 2.2+",
+            "searchTerms": "floor division integer divide double slash quotient operator"
+          },
+          {
+            "slug": "ge",
+            "name": ">=",
+            "signature": "a >= b",
+            "blurb": "Greater than or equal — the inclusive upper comparison.",
+            "category": "comparison",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "greater equal at least inclusive ordering compare operator"
+          },
+          {
+            "slug": "gt",
+            "name": ">",
+            "signature": "a > b",
+            "blurb": "Greater than — strict ordering.",
+            "category": "comparison",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "greater than bigger larger ordering compare operator"
+          },
+          {
+            "slug": "in",
+            "name": "in",
+            "signature": "item in container",
+            "blurb": "Membership test — substring test for strings.",
+            "category": "membership",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "in membership contains element substring operator"
+          },
+          {
+            "slug": "invert",
+            "name": "~",
+            "signature": "~a",
+            "blurb": "Bitwise NOT — always equals -a - 1.",
+            "category": "bitwise",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "tilde invert bitwise not complement negate bits operator"
+          },
+          {
+            "slug": "is-not",
+            "name": "is not",
+            "signature": "a is not b",
+            "blurb": "Negated identity — different objects.",
+            "category": "identity",
+            "type": "operator",
+            "hasLiveDemo": false,
+            "version": "Python 1.0+",
+            "searchTerms": "is not identity different object none check operator"
+          },
+          {
+            "slug": "is",
+            "name": "is",
+            "signature": "a is b",
+            "blurb": "Identity test — same object, not same value.",
+            "category": "identity",
+            "type": "operator",
+            "hasLiveDemo": false,
+            "version": "Python 1.0+",
+            "searchTerms": "is identity same object none check operator"
+          },
+          {
+            "slug": "le",
+            "name": "<=",
+            "signature": "a <= b",
+            "blurb": "Less than or equal — the inclusive lower comparison.",
+            "category": "comparison",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "less equal at most inclusive ordering compare operator"
+          },
+          {
+            "slug": "lshift",
+            "name": "<<",
+            "signature": "a << n",
+            "blurb": "Left shift — multiply by 2ⁿ, no overflow ever.",
+            "category": "bitwise",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "left shift bits multiply power two operator"
+          },
+          {
+            "slug": "lt",
+            "name": "<",
+            "signature": "a < b",
+            "blurb": "Less than — strict ordering, raises on unrelated types.",
+            "category": "comparison",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "less than smaller ordering compare chain operator"
+          },
+          {
+            "slug": "mod",
+            "name": "%",
+            "signature": "a % b",
+            "blurb": "Modulo — the remainder, with its sign following the divisor.",
+            "category": "arithmetic",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "modulo remainder percent mod operator wrap"
+          },
+          {
+            "slug": "mul",
+            "name": "*",
+            "signature": "a * b",
+            "blurb": "Multiplication — and sequence repetition.",
+            "category": "arithmetic",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "times multiply multiplication repeat operator star"
+          },
+          {
+            "slug": "ne",
+            "name": "!=",
+            "signature": "a != b",
+            "blurb": "Inequality by value — the negation of ==.",
+            "category": "comparison",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "not equal inequality bang equals compare operator"
+          },
+          {
+            "slug": "not-in",
+            "name": "not in",
+            "signature": "item not in container",
+            "blurb": "Negated membership — one operator, not two.",
+            "category": "membership",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "not in membership absent missing exclude operator"
+          },
+          {
+            "slug": "not",
+            "name": "not",
+            "signature": "not a",
+            "blurb": "Logical negation — always returns a real bool.",
+            "category": "logical",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "not negation invert boolean truthiness operator"
+          },
+          {
+            "slug": "or",
+            "name": "or",
+            "signature": "a or b",
+            "blurb": "Logical OR — short-circuits and returns an operand; the default-value idiom.",
+            "category": "logical",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "or logical boolean short circuit default fallback operator"
+          },
+          {
+            "slug": "pow",
+            "name": "**",
+            "signature": "a ** b",
+            "blurb": "Exponentiation — right-associative, and ^ is NOT this.",
+            "category": "arithmetic",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "power exponent exponentiation squared cube double star operator"
+          },
+          {
+            "slug": "rshift",
+            "name": ">>",
+            "signature": "a >> n",
+            "blurb": "Right shift — floor-divide by 2ⁿ, sign preserved.",
+            "category": "bitwise",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "right shift bits divide halve arithmetic shift operator"
+          },
+          {
+            "slug": "sub",
+            "name": "-",
+            "signature": "a - b",
+            "blurb": "Subtraction — and set difference.",
+            "category": "arithmetic",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 1.0+",
+            "searchTerms": "minus subtract subtraction difference operator"
+          },
+          {
+            "slug": "truediv",
+            "name": "/",
+            "signature": "a / b",
+            "blurb": "True division — always returns a float, even for ints.",
+            "category": "arithmetic",
+            "type": "operator",
+            "hasLiveDemo": true,
+            "version": "Python 3.0+",
+            "searchTerms": "divide division slash true division float operator"
+          },
+          {
+            "slug": "walrus",
+            "name": ":=",
+            "signature": "(name := expression)",
+            "blurb": "Assignment expression — assign and use a value in one place.",
+            "category": "assignment",
+            "type": "operator",
+            "hasLiveDemo": false,
+            "version": "Python 3.8+",
+            "searchTerms": "walrus assignment expression colon equals named operator"
           }
         ]
       }

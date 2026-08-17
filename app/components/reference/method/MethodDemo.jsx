@@ -47,6 +47,18 @@ function coerce(raw, param) {
             const f = parseFloat(x.trim());
             return Number.isNaN(f) ? 0 : f;
           });
+    case 'csv-set':
+      return {
+        __pySet: s.trim() === '' ? [] : [...new Set(s.split(',').map((x) => x.trim()))],
+      };
+    case 'auto': {
+      // int-looking → int, float-looking → float, else string (for
+      // functions like format() whose Python behavior depends on the type)
+      const t = s.trim();
+      if (/^[+-]?\d+$/.test(t)) return parseInt(t, 10);
+      if (/^[+-]?(\d+\.\d*|\.\d+|\d+)([eE][+-]?\d+)?$/.test(t) && /[.eE]/.test(t)) return parseFloat(t);
+      return s;
+    }
     case 'kv': {
       const obj = {};
       if (s.trim() === '') return obj;
@@ -98,8 +110,27 @@ export default function MethodDemo({ method, emulator }) {
   while (lastShown >= 0 && callParts[lastShown].isDefault) lastShown -= 1;
   const shownArgs = callParts.slice(0, lastShown + 1).map((p) => p.text);
 
-  const methodName = method.name.includes('.') ? method.name.split('.').pop() : method.name;
-  const callText = `${pyRepr(args[0])}.${methodName}(${shownArgs.join(', ')})`;
+  const reprOf = (v) => (typeof v === 'number' ? String(v) : pyRepr(v));
+
+  // Call preview shape:
+  //   demoTemplate ('{a} + {b}')     → operators
+  //   dotted name  (str.replace)     → receiver.method(args)
+  //   plain name   (len, sorted)     → name(all args)
+  let callText;
+  if (method.demoTemplate) {
+    callText = method.demoTemplate.replace(/\{(\w+)\}/g, (_, name) => {
+      const i = demoParams.findIndex((p) => p.name === name);
+      return i === -1 ? `{${name}}` : reprOf(args[i]);
+    });
+  } else if (method.name.includes('.')) {
+    const methodName = method.name.split('.').pop();
+    callText = `${pyRepr(args[0])}.${methodName}(${shownArgs.join(', ')})`;
+  } else {
+    callText = `${method.name}(${[reprOf(args[0]), ...shownArgs].join(', ')})`;
+  }
+  // demoWrap: 'list' → display and compute list(range(...)) — honest lazy
+  // sequences: the shown expression matches the shown output
+  if (method.demoWrap) callText = `${method.demoWrap}(${callText})`;
 
   let output;
   let failed = false;

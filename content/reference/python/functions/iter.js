@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'Get an iterator from any iterable — the entry point to Python&apos;s iteration protocol.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 1.5+',
   searchTerms: 'iter iterator iterable protocol next generator stopiteration sentinel callable',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 1.5+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'Turn any iterable into an iterator you can advance with next() — or wrap a callable in a stop-at-sentinel loop.',
 

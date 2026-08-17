@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'Get an object&apos;s type, or create a new class dynamically.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 1.0+',
   searchTerms: 'type class introspection instance check reflection metaclass isinstance object',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 1.0+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'Two very different jobs behind one name — reflection with one argument, class creation with three.',
 

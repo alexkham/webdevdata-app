@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'Write objects to stdout — customize the separator, the ending, the destination, and the flush.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 2.0+',
   searchTerms: 'print output stdout write display sep end file flush newline space multiple arguments',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 2.0+ (as statement) / 3.0+ (as function)',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'The everyday output tool — customize the separator, the ending, or the file. Not for formatted logging.',
 

@@ -36,7 +36,7 @@ export const method = {
   ],
 
   demoParams: [
-    { name: 'items', type: 'list', hint: 'comma-separated items', input: 'csv' },
+    { name: 'items', type: 'list', hint: 'comma-separated items', input: 'csv-set' },
   ],
   cases: [
     { id: 'basic',   label: 'basic',           values: { items: 'a,b,c' } },

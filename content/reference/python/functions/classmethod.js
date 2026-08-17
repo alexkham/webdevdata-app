@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'Transform a method so its first argument is the CLASS (`cls`), not the instance.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 2.2+',
   searchTerms: 'classmethod decorator cls class method alternative constructor factory from_string bound',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function / decorator',
   version:     'Python 2.2+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'The &quot;alternative constructor&quot; decorator — bound to the CLASS, so subclasses get their own type when they call it.',
 

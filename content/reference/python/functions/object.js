@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'The base class of every Python class — and a common sentinel value when called directly.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 2.2+',
   searchTerms: 'object base class root sentinel unique instance mro type hierarchy inheritance',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function / type',
   version:     'Python 2.2+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'The root of the type hierarchy. Everything inherits from it; calling it gives a unique sentinel.',
 

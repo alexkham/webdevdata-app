@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'Return a unique-per-lifetime integer identifier for the object.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 1.0+',
   searchTerms: 'id identity memory address unique object is operator interned pointer',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 1.0+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'The identity of an object as an integer. `x is y` is faster and safer than `id(x) == id(y)`.',
 

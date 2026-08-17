@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'Execute Python STATEMENTS from a string — even more dangerous than eval, almost never the right tool.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 3.0+',
   searchTerms: 'exec execute dynamic statements security danger untrusted code injection',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 3.0+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'Execute arbitrary Python STATEMENTS from a string. Never on untrusted input. Rarely the right tool.',
 

@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'A zero-copy view over a bytes-like object — slice, index, or hand off without allocating.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 2.7+',
   searchTerms: 'memoryview buffer protocol zero copy bytes bytearray slice view mmap array',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function / type',
   version:     'Python 2.7+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'Zero-copy view over bytes-like data. Slicing a memoryview does not allocate.',
 

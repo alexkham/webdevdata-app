@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'Get an attribute by name — with an optional default to avoid AttributeError.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 1.0+',
   searchTerms: 'getattr attribute get default reflection dynamic access method property',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 1.0+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'Dot access when the attribute name is a string — with an optional default that replaces try/except AttributeError.',
 

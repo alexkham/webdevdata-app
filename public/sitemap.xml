@@ -26,11 +26,11 @@
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/examples/array</loc>
-    <lastmod>2026-08-01T05:15:32.459Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.826Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/examples/string</loc>
-    <lastmod>2026-08-01T05:15:32.469Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.566Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions</loc>
@@ -38,1099 +38,1099 @@
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/abort</loc>
-    <lastmod>2026-08-01T05:15:30.537Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.147Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/abs</loc>
-    <lastmod>2026-08-01T05:15:30.472Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.294Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/acos</loc>
-    <lastmod>2026-08-01T05:15:30.472Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.387Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/asctime</loc>
-    <lastmod>2026-08-01T05:15:30.402Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.286Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/asctime_r</loc>
-    <lastmod>2026-08-01T05:15:29.748Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.403Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/asin</loc>
-    <lastmod>2026-08-01T05:15:29.922Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.271Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/assert</loc>
-    <lastmod>2026-08-01T05:15:30.247Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.638Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/atan</loc>
-    <lastmod>2026-08-01T05:15:30.428Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.213Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/atan2</loc>
-    <lastmod>2026-08-01T05:15:29.756Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.241Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/atexit</loc>
-    <lastmod>2026-08-01T05:15:30.436Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.329Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/atof</loc>
-    <lastmod>2026-08-01T05:15:30.360Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.255Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/atoi</loc>
-    <lastmod>2026-08-01T05:15:28.356Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.292Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/atol</loc>
-    <lastmod>2026-08-01T05:15:30.397Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.267Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/bsearch</loc>
-    <lastmod>2026-08-01T05:15:29.998Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.230Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/btowc</loc>
-    <lastmod>2026-08-01T05:15:30.464Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.306Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/calloc</loc>
-    <lastmod>2026-08-01T05:15:30.403Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.269Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/catclose</loc>
-    <lastmod>2026-08-01T05:15:30.010Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.764Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/catgets</loc>
-    <lastmod>2026-08-01T05:15:30.511Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.273Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/catopen</loc>
-    <lastmod>2026-08-01T05:15:27.698Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.323Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/ceil</loc>
-    <lastmod>2026-08-01T05:15:30.324Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.840Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/clearerr</loc>
-    <lastmod>2026-08-01T05:15:30.472Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.984Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/clock</loc>
-    <lastmod>2026-08-01T05:15:30.537Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.209Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/cos</loc>
-    <lastmod>2026-08-01T05:15:30.536Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.078Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/cosh</loc>
-    <lastmod>2026-08-01T05:15:30.611Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.161Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/ctime</loc>
-    <lastmod>2026-08-01T05:15:30.544Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.275Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/ctime_r</loc>
-    <lastmod>2026-08-01T05:15:30.553Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.306Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/difftime</loc>
-    <lastmod>2026-08-01T05:15:30.649Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.466Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/div</loc>
-    <lastmod>2026-08-01T05:15:27.869Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.521Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/erf</loc>
-    <lastmod>2026-08-01T05:15:28.082Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.507Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/erfc</loc>
-    <lastmod>2026-08-01T05:15:28.473Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.525Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/exit</loc>
-    <lastmod>2026-08-01T05:15:28.679Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.620Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/exp</loc>
-    <lastmod>2026-08-01T05:15:28.752Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.567Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/fabs</loc>
-    <lastmod>2026-08-01T05:15:29.219Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.565Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/fclose</loc>
-    <lastmod>2026-08-01T05:15:29.235Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.655Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/fdopen</loc>
-    <lastmod>2026-08-01T05:15:29.447Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.658Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/feof</loc>
-    <lastmod>2026-08-01T05:15:29.444Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.899Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/ferror</loc>
-    <lastmod>2026-08-01T05:15:29.720Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.705Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/fflush</loc>
-    <lastmod>2026-08-01T05:15:29.698Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.727Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/fgetc</loc>
-    <lastmod>2026-08-01T05:15:30.323Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.745Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/fgetpos</loc>
-    <lastmod>2026-08-01T05:15:29.882Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.034Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/fgets</loc>
-    <lastmod>2026-08-01T05:15:29.911Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.794Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/fgetwc</loc>
-    <lastmod>2026-08-01T05:15:30.085Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.780Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/fgetws</loc>
-    <lastmod>2026-08-01T05:15:30.062Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.840Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/fopen</loc>
-    <lastmod>2026-08-01T05:15:30.098Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.859Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/fprintf</loc>
-    <lastmod>2026-08-01T05:15:30.069Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.856Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/fputc</loc>
-    <lastmod>2026-08-01T05:15:30.102Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.207Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/fputws</loc>
-    <lastmod>2026-08-01T05:15:30.228Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.931Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/fread</loc>
-    <lastmod>2026-08-01T05:15:30.260Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.209Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/free</loc>
-    <lastmod>2026-08-01T05:15:30.421Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.089Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/freopen</loc>
-    <lastmod>2026-08-01T05:15:30.406Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.199Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/frexp</loc>
-    <lastmod>2026-08-01T05:15:30.398Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.931Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/fscanf</loc>
-    <lastmod>2026-08-01T05:15:30.398Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.929Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/fseek</loc>
-    <lastmod>2026-08-01T05:15:30.403Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.012Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/fsetpos</loc>
-    <lastmod>2026-08-01T05:15:30.440Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.014Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/ftell</loc>
-    <lastmod>2026-08-01T05:15:30.427Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.010Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/fwide</loc>
-    <lastmod>2026-08-01T05:15:30.494Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.292Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/fwprintf</loc>
-    <lastmod>2026-08-01T05:15:30.684Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.074Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/fwrite</loc>
-    <lastmod>2026-08-01T05:15:30.685Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.074Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/fwscanf</loc>
-    <lastmod>2026-08-01T05:15:30.689Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.076Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/getc</loc>
-    <lastmod>2026-08-01T05:15:30.672Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.144Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/getchar</loc>
-    <lastmod>2026-08-01T05:15:30.685Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.142Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/getenv</loc>
-    <lastmod>2026-08-01T05:15:30.669Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.144Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/getwc</loc>
-    <lastmod>2026-08-01T05:15:30.689Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.295Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/getwchar</loc>
-    <lastmod>2026-08-01T05:15:30.689Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.178Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/gmtime</loc>
-    <lastmod>2026-08-01T05:15:30.656Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.204Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/gmtime_r</loc>
-    <lastmod>2026-08-01T05:15:30.652Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.207Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/hypot</loc>
-    <lastmod>2026-08-01T05:15:30.661Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.209Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/isalnum</loc>
-    <lastmod>2026-08-01T05:15:30.685Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.213Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/isalpha</loc>
-    <lastmod>2026-08-01T05:15:30.698Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.277Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/isascii</loc>
-    <lastmod>2026-08-01T05:15:30.685Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.267Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/isblank</loc>
-    <lastmod>2026-08-01T05:15:30.689Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.269Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/iscntrl</loc>
-    <lastmod>2026-08-01T05:15:30.699Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.267Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/isdigit</loc>
-    <lastmod>2026-08-01T05:15:30.699Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.279Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/isgraph</loc>
-    <lastmod>2026-08-01T05:15:30.675Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.277Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/islower</loc>
-    <lastmod>2026-08-01T05:15:30.704Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.503Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/isprint</loc>
-    <lastmod>2026-08-01T05:15:30.689Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.505Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/ispunct</loc>
-    <lastmod>2026-08-01T05:15:30.698Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.507Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/isspace</loc>
-    <lastmod>2026-08-01T05:15:30.685Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.505Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/isupper</loc>
-    <lastmod>2026-08-01T05:15:30.675Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.513Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/iswalnum</loc>
-    <lastmod>2026-08-01T05:15:30.681Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.505Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/iswalpha</loc>
-    <lastmod>2026-08-01T05:15:30.694Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.509Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/iswblank</loc>
-    <lastmod>2026-08-01T05:15:30.684Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.507Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/iswcntrl</loc>
-    <lastmod>2026-08-01T05:15:30.744Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.507Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/iswctype</loc>
-    <lastmod>2026-08-01T05:15:30.744Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.507Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/iswdigit</loc>
-    <lastmod>2026-08-01T05:15:30.752Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.507Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/iswgraph</loc>
-    <lastmod>2026-08-01T05:15:30.736Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.505Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/iswlower</loc>
-    <lastmod>2026-08-01T05:15:30.740Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.509Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/iswprint</loc>
-    <lastmod>2026-08-01T05:15:30.756Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.511Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/iswpunct</loc>
-    <lastmod>2026-08-01T05:15:30.749Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.509Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/iswspace</loc>
-    <lastmod>2026-08-01T05:15:30.743Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.511Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/iswupper</loc>
-    <lastmod>2026-08-01T05:15:30.907Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.511Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/iswxdigit</loc>
-    <lastmod>2026-08-01T05:15:30.895Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.509Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/isxdigit</loc>
-    <lastmod>2026-08-01T05:15:30.931Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.509Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/j0</loc>
-    <lastmod>2026-08-01T05:15:30.910Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.507Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/j1</loc>
-    <lastmod>2026-08-01T05:15:30.923Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.459Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/jn</loc>
-    <lastmod>2026-08-01T05:15:30.917Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.603Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/labs</loc>
-    <lastmod>2026-08-01T05:15:30.924Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.557Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/ldexp</loc>
-    <lastmod>2026-08-01T05:15:30.949Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.575Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/ldiv</loc>
-    <lastmod>2026-08-01T05:15:30.911Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.557Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/localeconv</loc>
-    <lastmod>2026-08-01T05:15:30.927Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.572Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/localtime</loc>
-    <lastmod>2026-08-01T05:15:30.927Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.572Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/localtime_r</loc>
-    <lastmod>2026-08-01T05:15:30.902Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.572Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/log</loc>
-    <lastmod>2026-08-01T05:15:30.957Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.577Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/log10</loc>
-    <lastmod>2026-08-01T05:15:30.911Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.564Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/longjmp</loc>
-    <lastmod>2026-08-01T05:15:30.949Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.572Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/malloc</loc>
-    <lastmod>2026-08-01T05:15:30.911Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.603Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/mblen</loc>
-    <lastmod>2026-08-01T05:15:30.936Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.580Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/mbrlen</loc>
-    <lastmod>2026-08-01T05:15:30.953Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.601Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/mbrtowc</loc>
-    <lastmod>2026-08-01T05:15:30.940Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.580Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/mbsinit</loc>
-    <lastmod>2026-08-01T05:15:30.907Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.580Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/mbsrtowcs</loc>
-    <lastmod>2026-08-01T05:15:30.933Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.601Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/mbstowcs</loc>
-    <lastmod>2026-08-01T05:15:30.917Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.597Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/mbtowc</loc>
-    <lastmod>2026-08-01T05:15:30.940Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.603Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/memchr</loc>
-    <lastmod>2026-08-01T05:15:30.933Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.582Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/memcmp</loc>
-    <lastmod>2026-08-01T05:15:30.933Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.593Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/memcpy</loc>
-    <lastmod>2026-08-01T05:15:30.907Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.607Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/memmove</loc>
-    <lastmod>2026-08-01T05:15:30.928Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.603Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/memset</loc>
-    <lastmod>2026-08-01T05:15:30.945Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.605Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/mktime</loc>
-    <lastmod>2026-08-01T05:15:30.981Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.607Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/modf</loc>
-    <lastmod>2026-08-01T05:15:30.973Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.609Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/nextafter</loc>
-    <lastmod>2026-08-01T05:15:30.973Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.607Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/nextafterl</loc>
-    <lastmod>2026-08-01T05:15:31.069Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.605Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/nexttoward</loc>
-    <lastmod>2026-08-01T05:15:31.056Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.669Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/nexttowardl</loc>
-    <lastmod>2026-08-01T05:15:31.056Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.673Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/nl_langinfo</loc>
-    <lastmod>2026-08-01T05:15:31.061Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.679Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/perror</loc>
-    <lastmod>2026-08-01T05:15:31.069Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.675Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/pow</loc>
-    <lastmod>2026-08-01T05:15:31.076Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.673Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/printf</loc>
-    <lastmod>2026-08-01T05:15:31.076Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.675Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/putc</loc>
-    <lastmod>2026-08-01T05:15:31.056Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.679Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/putchar</loc>
-    <lastmod>2026-08-01T05:15:31.073Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.675Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/putenv</loc>
-    <lastmod>2026-08-01T05:15:31.078Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.675Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/puts</loc>
-    <lastmod>2026-08-01T05:15:31.028Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.675Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/putwc</loc>
-    <lastmod>2026-08-01T05:15:31.078Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.677Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/putwchar</loc>
-    <lastmod>2026-08-01T05:15:31.080Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.681Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/qsort</loc>
-    <lastmod>2026-08-01T05:15:31.036Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.679Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/quantexpd128</loc>
-    <lastmod>2026-08-01T05:15:31.078Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.675Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/quantexpd32</loc>
-    <lastmod>2026-08-01T05:15:31.076Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.677Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/quantexpd64</loc>
-    <lastmod>2026-08-01T05:15:31.056Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.679Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/quantized128</loc>
-    <lastmod>2026-08-01T05:15:31.065Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.681Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/quantized32</loc>
-    <lastmod>2026-08-01T05:15:31.081Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.675Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/quantized64</loc>
-    <lastmod>2026-08-01T05:15:31.078Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.679Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/raise</loc>
-    <lastmod>2026-08-01T05:15:31.081Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.730Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/rand</loc>
-    <lastmod>2026-08-01T05:15:31.081Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.768Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/rand_r</loc>
-    <lastmod>2026-08-01T05:15:31.081Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.739Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/realloc</loc>
-    <lastmod>2026-08-01T05:15:31.093Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.768Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/regcomp</loc>
-    <lastmod>2026-08-01T05:15:31.081Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.771Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/regerror</loc>
-    <lastmod>2026-08-01T05:15:31.085Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.762Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/regexec</loc>
-    <lastmod>2026-08-01T05:15:31.093Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.760Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/regfree</loc>
-    <lastmod>2026-08-01T05:15:31.185Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.768Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/remove</loc>
-    <lastmod>2026-08-01T05:15:31.181Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.768Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/rename</loc>
-    <lastmod>2026-08-01T05:15:31.181Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.771Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/rewind</loc>
-    <lastmod>2026-08-01T05:15:31.185Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.768Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/samequantumd32</loc>
-    <lastmod>2026-08-01T05:15:31.081Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.677Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/scanf</loc>
-    <lastmod>2026-08-01T05:15:31.181Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.771Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/setbuf</loc>
-    <lastmod>2026-08-01T05:15:31.181Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.768Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/setjmp</loc>
-    <lastmod>2026-08-01T05:15:31.189Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.768Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/setlocale</loc>
-    <lastmod>2026-08-01T05:15:31.169Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.776Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/setvbuf</loc>
-    <lastmod>2026-08-01T05:15:31.189Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.773Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/signal</loc>
-    <lastmod>2026-08-01T05:15:31.181Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.776Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/sin</loc>
-    <lastmod>2026-08-01T05:15:31.177Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.768Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/sinh</loc>
-    <lastmod>2026-08-01T05:15:31.189Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.773Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/snprintf</loc>
-    <lastmod>2026-08-01T05:15:31.201Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.775Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/sprintf</loc>
-    <lastmod>2026-08-01T05:15:31.181Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.512Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/sqrt</loc>
-    <lastmod>2026-08-01T05:15:31.193Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.835Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/srand</loc>
-    <lastmod>2026-08-01T05:15:31.195Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.839Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/sscanf</loc>
-    <lastmod>2026-08-01T05:15:31.193Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.839Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strcasecmp</loc>
-    <lastmod>2026-08-01T05:15:31.189Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.839Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strcat</loc>
-    <lastmod>2026-08-01T05:15:31.193Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.835Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strchr</loc>
-    <lastmod>2026-08-01T05:15:31.195Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.839Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strcmp</loc>
-    <lastmod>2026-08-01T05:15:31.198Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.841Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strcoll</loc>
-    <lastmod>2026-08-01T05:15:31.198Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.842Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strcpy</loc>
-    <lastmod>2026-08-01T05:15:31.219Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.854Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strcspn</loc>
-    <lastmod>2026-08-01T05:15:31.198Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.839Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strerror</loc>
-    <lastmod>2026-08-01T05:15:31.189Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.838Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strfmon</loc>
-    <lastmod>2026-08-01T05:15:31.185Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.842Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strftime</loc>
-    <lastmod>2026-08-01T05:15:31.290Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.842Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strlen</loc>
-    <lastmod>2026-08-01T05:15:31.294Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.844Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strncasecmp</loc>
-    <lastmod>2026-08-01T05:15:31.318Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.842Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strncat</loc>
-    <lastmod>2026-08-01T05:15:31.297Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.859Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strncmp</loc>
-    <lastmod>2026-08-01T05:15:31.312Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.844Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strncpy</loc>
-    <lastmod>2026-08-01T05:15:31.307Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.848Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strpbrk</loc>
-    <lastmod>2026-08-01T05:15:31.324Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.844Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strptime</loc>
-    <lastmod>2026-08-01T05:15:31.297Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.861Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strrchr</loc>
-    <lastmod>2026-08-01T05:15:31.318Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.519Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strspn</loc>
-    <lastmod>2026-08-01T05:15:31.319Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.911Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strstr</loc>
-    <lastmod>2026-08-01T05:15:31.304Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.913Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strtod</loc>
-    <lastmod>2026-08-01T05:15:31.315Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.913Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strtod128</loc>
-    <lastmod>2026-08-01T05:15:31.310Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.915Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strtod32</loc>
-    <lastmod>2026-08-01T05:15:31.324Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.913Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strtod64</loc>
-    <lastmod>2026-08-01T05:15:31.306Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.911Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strtof</loc>
-    <lastmod>2026-08-01T05:15:31.294Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.915Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strtok</loc>
-    <lastmod>2026-08-01T05:15:31.319Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.915Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strtok_r</loc>
-    <lastmod>2026-08-01T05:15:31.318Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.915Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strtol</loc>
-    <lastmod>2026-08-01T05:15:31.327Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.917Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strtold</loc>
-    <lastmod>2026-08-01T05:15:31.301Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.917Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strtoul</loc>
-    <lastmod>2026-08-01T05:15:31.307Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.917Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/strxfrm</loc>
-    <lastmod>2026-08-01T05:15:31.318Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.917Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/swprintf</loc>
-    <lastmod>2026-08-01T05:15:31.315Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.917Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/swscanf</loc>
-    <lastmod>2026-08-01T05:15:31.307Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.917Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/system</loc>
-    <lastmod>2026-08-01T05:15:31.319Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.917Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/tan</loc>
-    <lastmod>2026-08-01T05:15:31.319Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.917Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/tanh</loc>
-    <lastmod>2026-08-01T05:15:31.324Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.915Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/time</loc>
-    <lastmod>2026-08-01T05:15:31.327Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.927Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/time64</loc>
-    <lastmod>2026-08-01T05:15:31.435Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.929Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/tmpfile</loc>
-    <lastmod>2026-08-01T05:15:31.435Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.032Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/tmpnam</loc>
-    <lastmod>2026-08-01T05:15:31.444Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.030Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/toascii</loc>
-    <lastmod>2026-08-01T05:15:31.444Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.028Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/tolower</loc>
-    <lastmod>2026-08-01T05:15:31.433Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.024Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/toupper</loc>
-    <lastmod>2026-08-01T05:15:31.431Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.028Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/towctrans</loc>
-    <lastmod>2026-08-01T05:15:31.435Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.028Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/towlower</loc>
-    <lastmod>2026-08-01T05:15:31.435Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.030Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/towupper</loc>
-    <lastmod>2026-08-01T05:15:31.450Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.034Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/ungetc</loc>
-    <lastmod>2026-08-01T05:15:31.450Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.034Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/ungetwc</loc>
-    <lastmod>2026-08-01T05:15:31.450Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.032Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/va_arg</loc>
-    <lastmod>2026-08-01T05:15:31.435Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.030Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/va_copy</loc>
-    <lastmod>2026-08-01T05:15:31.433Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.028Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/va_end</loc>
-    <lastmod>2026-08-01T05:15:31.444Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.030Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/va_start</loc>
-    <lastmod>2026-08-01T05:15:31.444Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.030Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/vfprintf</loc>
-    <lastmod>2026-08-01T05:15:31.450Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.032Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/vfscanf</loc>
-    <lastmod>2026-08-01T05:15:31.435Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.030Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/vfwprintf</loc>
-    <lastmod>2026-08-01T05:15:31.450Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.030Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/vfwscanf</loc>
-    <lastmod>2026-08-01T05:15:31.427Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.032Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/vprintf</loc>
-    <lastmod>2026-08-01T05:15:31.394Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.030Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/vscanf</loc>
-    <lastmod>2026-08-01T05:15:31.458Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.030Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/vsnprintf</loc>
-    <lastmod>2026-08-01T05:15:31.443Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.054Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/vsprintf</loc>
-    <lastmod>2026-08-01T05:15:31.435Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.032Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/vsscanf</loc>
-    <lastmod>2026-08-01T05:15:31.441Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.054Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/vswprintf</loc>
-    <lastmod>2026-08-01T05:15:31.452Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.057Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/vswscanf</loc>
-    <lastmod>2026-08-01T05:15:31.435Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.077Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/vwprintf</loc>
-    <lastmod>2026-08-01T05:15:31.456Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.070Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/vwscanf</loc>
-    <lastmod>2026-08-01T05:15:31.447Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.170Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcrtomb</loc>
-    <lastmod>2026-08-01T05:15:31.467Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.145Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcscat</loc>
-    <lastmod>2026-08-01T05:15:31.573Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.175Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcschr</loc>
-    <lastmod>2026-08-01T05:15:31.583Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.150Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcscmp</loc>
-    <lastmod>2026-08-01T05:15:31.597Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.150Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcscoll</loc>
-    <lastmod>2026-08-01T05:15:31.583Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.150Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcscpy</loc>
-    <lastmod>2026-08-01T05:15:31.594Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.166Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcsftime</loc>
-    <lastmod>2026-08-01T05:15:31.594Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.150Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcslen</loc>
-    <lastmod>2026-08-01T05:15:31.590Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.150Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcsncat</loc>
-    <lastmod>2026-08-01T05:15:31.594Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.145Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcsncmp</loc>
-    <lastmod>2026-08-01T05:15:31.593Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.152Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcsncpy</loc>
-    <lastmod>2026-08-01T05:15:31.586Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.183Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcspbrk</loc>
-    <lastmod>2026-08-01T05:15:31.586Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.181Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcsptime</loc>
-    <lastmod>2026-08-01T05:15:31.590Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.150Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcsrchr</loc>
-    <lastmod>2026-08-01T05:15:31.531Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.152Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcsrtombs</loc>
-    <lastmod>2026-08-01T05:15:31.573Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.195Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcsspn</loc>
-    <lastmod>2026-08-01T05:15:31.597Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.158Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcsstr</loc>
-    <lastmod>2026-08-01T05:15:31.589Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.166Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcstod</loc>
-    <lastmod>2026-08-01T05:15:31.594Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.179Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcstod128</loc>
-    <lastmod>2026-08-01T05:15:31.591Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.162Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcstod32</loc>
-    <lastmod>2026-08-01T05:15:31.586Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.170Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcstod64</loc>
-    <lastmod>2026-08-01T05:15:31.578Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.164Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcstof</loc>
-    <lastmod>2026-08-01T05:15:31.594Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.197Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcstok</loc>
-    <lastmod>2026-08-01T05:15:31.594Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.197Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcstol</loc>
-    <lastmod>2026-08-01T05:15:31.586Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.201Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcstold</loc>
-    <lastmod>2026-08-01T05:15:31.594Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.197Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcstombs</loc>
-    <lastmod>2026-08-01T05:15:31.548Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.195Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcstoul</loc>
-    <lastmod>2026-08-01T05:15:31.586Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.195Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcsxfrm</loc>
-    <lastmod>2026-08-01T05:15:31.597Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.197Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wctob</loc>
-    <lastmod>2026-08-01T05:15:31.594Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.197Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wctomb</loc>
-    <lastmod>2026-08-01T05:15:31.694Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.197Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wctrans</loc>
-    <lastmod>2026-08-01T05:15:31.698Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.197Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wctype</loc>
-    <lastmod>2026-08-01T05:15:31.685Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.201Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wcwidth</loc>
-    <lastmod>2026-08-01T05:15:31.694Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.201Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wmemchr</loc>
-    <lastmod>2026-08-01T05:15:31.685Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.201Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wmemcmp</loc>
-    <lastmod>2026-08-01T05:15:31.682Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.203Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wmemcpy</loc>
-    <lastmod>2026-08-01T05:15:31.694Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.203Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wmemmove</loc>
-    <lastmod>2026-08-01T05:15:31.682Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.205Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wmemset</loc>
-    <lastmod>2026-08-01T05:15:31.685Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.201Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wprintf</loc>
-    <lastmod>2026-08-01T05:15:31.706Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.207Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/wscanf</loc>
-    <lastmod>2026-08-01T05:15:31.685Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.232Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/y0</loc>
-    <lastmod>2026-08-01T05:15:31.694Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.209Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/y1</loc>
-    <lastmod>2026-08-01T05:15:31.685Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.209Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/functions/yn</loc>
-    <lastmod>2026-08-01T05:15:31.685Z</lastmod>
+    <lastmod>2026-08-16T02:13:01.229Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/operators</loc>
@@ -1142,43 +1142,43 @@
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/things-not-to-do/arrays</loc>
-    <lastmod>2026-08-01T05:15:32.402Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.499Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/things-not-to-do/binary_trees</loc>
-    <lastmod>2026-08-01T05:15:32.406Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.670Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/things-not-to-do/characters</loc>
-    <lastmod>2026-08-01T05:15:31.722Z</lastmod>
+    <lastmod>2026-08-16T02:13:00.047Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/things-not-to-do/files</loc>
-    <lastmod>2026-08-01T05:15:32.408Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.662Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/things-not-to-do/hash_tables</loc>
-    <lastmod>2026-08-01T05:15:31.731Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.851Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/things-not-to-do/integers</loc>
-    <lastmod>2026-08-01T05:15:32.424Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.698Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/things-not-to-do/linked_lists</loc>
-    <lastmod>2026-08-01T05:15:32.432Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.976Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/things-not-to-do/pointers</loc>
-    <lastmod>2026-08-01T05:15:32.415Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.836Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/things-not-to-do/queues</loc>
-    <lastmod>2026-08-01T05:15:31.731Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.597Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/things-not-to-do/stacks</loc>
-    <lastmod>2026-08-01T05:15:32.381Z</lastmod>
+    <lastmod>2026-08-16T02:12:59.788Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/c-programming/variables</loc>
@@ -1202,7 +1202,7 @@
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python</loc>
-    <lastmod>2026-07-31T02:11:45.491Z</lastmod>
+    <lastmod>2026-08-16T02:03:29.131Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions</loc>
@@ -1210,127 +1210,687 @@
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/abs</loc>
-    <lastmod>2026-08-01T05:15:27.370Z</lastmod>
+    <lastmod>2026-08-16T02:12:57.891Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/all</loc>
+    <lastmod>2026-08-16T02:12:57.878Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/any</loc>
+    <lastmod>2026-08-16T02:12:57.873Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/append</loc>
-    <lastmod>2026-08-01T05:15:27.378Z</lastmod>
+    <lastmod>2026-08-16T02:12:57.893Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/ascii</loc>
+    <lastmod>2026-08-16T02:12:57.893Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/bin</loc>
+    <lastmod>2026-08-16T02:12:57.897Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/bool</loc>
+    <lastmod>2026-08-16T02:12:58.023Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/bytearray</loc>
+    <lastmod>2026-08-16T02:12:57.891Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/bytes</loc>
+    <lastmod>2026-08-16T02:12:57.893Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/callable</loc>
+    <lastmod>2026-08-16T02:12:58.044Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/capitalize</loc>
-    <lastmod>2026-08-01T05:15:27.391Z</lastmod>
+    <lastmod>2026-08-16T02:12:57.864Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/chr</loc>
+    <lastmod>2026-08-16T02:12:57.889Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/classmethod</loc>
+    <lastmod>2026-08-16T02:12:57.897Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/compile</loc>
+    <lastmod>2026-08-16T02:12:58.038Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/complex</loc>
+    <lastmod>2026-08-16T02:12:57.889Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/delattr</loc>
+    <lastmod>2026-08-16T02:12:57.913Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/dict-clear</loc>
+    <lastmod>2026-08-16T02:12:57.884Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/dict-copy</loc>
+    <lastmod>2026-08-16T02:12:57.925Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/dict-fromkeys</loc>
+    <lastmod>2026-08-16T02:12:57.993Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/dict-items</loc>
+    <lastmod>2026-08-16T02:12:57.949Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/dict-keys</loc>
+    <lastmod>2026-08-16T02:12:58.044Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/dict-pop</loc>
-    <lastmod>2026-08-01T05:15:27.387Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.047Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/dict-update</loc>
+    <lastmod>2026-08-16T02:12:58.161Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/dict-values</loc>
+    <lastmod>2026-08-16T02:12:58.047Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/dir</loc>
+    <lastmod>2026-08-16T02:12:58.026Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/divmod</loc>
+    <lastmod>2026-08-16T02:12:58.023Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/endswith</loc>
-    <lastmod>2026-08-01T05:15:27.374Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.026Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/enumerate</loc>
+    <lastmod>2026-08-16T02:12:58.028Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/eval</loc>
+    <lastmod>2026-08-16T02:12:58.024Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/exec</loc>
+    <lastmod>2026-08-16T02:12:58.047Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/filter</loc>
+    <lastmod>2026-08-16T02:12:58.028Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/find</loc>
-    <lastmod>2026-08-01T05:15:27.385Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.021Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/float</loc>
+    <lastmod>2026-08-16T02:12:58.024Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/format</loc>
+    <lastmod>2026-08-16T02:12:58.023Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/frozenset</loc>
+    <lastmod>2026-08-16T02:12:58.024Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/get</loc>
-    <lastmod>2026-08-01T05:15:27.382Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.024Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/getattr</loc>
+    <lastmod>2026-08-16T02:12:58.023Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/globals</loc>
+    <lastmod>2026-08-16T02:12:58.023Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/hasattr</loc>
+    <lastmod>2026-08-16T02:12:58.024Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/hash</loc>
+    <lastmod>2026-08-16T02:12:58.028Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/hex</loc>
+    <lastmod>2026-08-16T02:12:58.090Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/id</loc>
+    <lastmod>2026-08-16T02:12:58.146Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/input</loc>
+    <lastmod>2026-08-16T02:12:58.156Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/int</loc>
-    <lastmod>2026-08-01T05:15:27.382Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.153Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/isdigit</loc>
-    <lastmod>2026-08-01T05:15:27.327Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.151Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/isinstance</loc>
+    <lastmod>2026-08-16T02:12:58.155Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/issubclass</loc>
+    <lastmod>2026-08-16T02:12:58.153Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/iter</loc>
+    <lastmod>2026-08-16T02:12:58.153Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/join</loc>
-    <lastmod>2026-08-01T05:15:27.360Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.146Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/len</loc>
-    <lastmod>2026-08-01T05:15:27.387Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.121Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/list-copy</loc>
-    <lastmod>2026-08-01T05:15:27.387Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.121Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/list-count</loc>
-    <lastmod>2026-08-01T05:15:27.395Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.119Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/list-extend</loc>
+    <lastmod>2026-08-16T02:12:58.153Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/list-index</loc>
-    <lastmod>2026-08-01T05:15:27.365Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.146Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/list-insert</loc>
+    <lastmod>2026-08-16T02:12:58.158Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/list-pop</loc>
-    <lastmod>2026-08-01T05:15:27.349Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.148Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/list-remove</loc>
+    <lastmod>2026-08-16T02:12:58.151Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/list-reverse</loc>
+    <lastmod>2026-08-16T02:12:58.159Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/list-sort</loc>
+    <lastmod>2026-08-16T02:12:58.156Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/locals</loc>
+    <lastmod>2026-08-16T02:12:58.158Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/lower</loc>
-    <lastmod>2026-08-01T05:15:27.387Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.143Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/map</loc>
+    <lastmod>2026-08-16T02:12:58.161Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/max</loc>
-    <lastmod>2026-08-01T05:15:27.381Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.159Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/memoryview</loc>
+    <lastmod>2026-08-16T02:12:58.159Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/min</loc>
-    <lastmod>2026-08-01T05:15:27.387Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.159Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/next</loc>
+    <lastmod>2026-08-16T02:12:58.224Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/object</loc>
+    <lastmod>2026-08-16T02:12:58.206Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/oct</loc>
+    <lastmod>2026-08-16T02:12:58.276Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/open</loc>
+    <lastmod>2026-08-16T02:12:58.278Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/ord</loc>
+    <lastmod>2026-08-16T02:12:58.276Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/pow</loc>
+    <lastmod>2026-08-16T02:12:58.276Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/print</loc>
+    <lastmod>2026-08-16T02:12:58.264Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/property</loc>
+    <lastmod>2026-08-16T02:12:58.278Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/range</loc>
+    <lastmod>2026-08-16T02:12:58.282Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/replace</loc>
-    <lastmod>2026-08-01T05:15:27.360Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.278Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/repr</loc>
+    <lastmod>2026-08-16T02:12:58.272Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/reversed</loc>
+    <lastmod>2026-08-16T02:12:58.272Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/round</loc>
-    <lastmod>2026-08-01T05:15:27.336Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.278Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/rstrip</loc>
-    <lastmod>2026-08-01T05:15:27.374Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.274Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/set-add</loc>
+    <lastmod>2026-08-16T02:12:58.278Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/set-clear</loc>
+    <lastmod>2026-08-16T02:12:58.282Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/set-copy</loc>
+    <lastmod>2026-08-16T02:12:58.282Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/set-difference</loc>
+    <lastmod>2026-08-16T02:12:58.282Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/set-difference_update</loc>
+    <lastmod>2026-08-16T02:12:58.278Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/set-discard</loc>
+    <lastmod>2026-08-16T02:12:58.274Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/set-intersection</loc>
+    <lastmod>2026-08-16T02:12:58.278Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/set-intersection_update</loc>
+    <lastmod>2026-08-16T02:12:58.278Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/set-isdisjoint</loc>
+    <lastmod>2026-08-16T02:12:58.274Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/set-issubset</loc>
+    <lastmod>2026-08-16T02:12:58.278Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/set-issuperset</loc>
+    <lastmod>2026-08-16T02:12:58.282Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/set-pop</loc>
+    <lastmod>2026-08-16T02:12:58.282Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/set-remove</loc>
+    <lastmod>2026-08-16T02:12:58.308Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/set-symmetric_difference</loc>
+    <lastmod>2026-08-16T02:12:58.300Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/set-symmetric_difference_update</loc>
+    <lastmod>2026-08-16T02:12:58.363Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/set-union</loc>
+    <lastmod>2026-08-16T02:12:58.355Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/set-update</loc>
+    <lastmod>2026-08-16T02:12:58.351Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/setattr</loc>
+    <lastmod>2026-08-16T02:12:58.308Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/setdefault</loc>
-    <lastmod>2026-08-01T05:15:27.416Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.349Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/slice</loc>
+    <lastmod>2026-08-16T02:12:58.369Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/sorted</loc>
-    <lastmod>2026-08-01T05:15:27.481Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.355Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/split</loc>
-    <lastmod>2026-08-01T05:15:27.507Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.355Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/startswith</loc>
-    <lastmod>2026-08-01T05:15:27.540Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.351Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/staticmethod</loc>
+    <lastmod>2026-08-16T02:12:58.363Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str</loc>
+    <lastmod>2026-08-16T02:12:58.454Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-casefold</loc>
+    <lastmod>2026-08-16T02:12:58.353Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-center</loc>
+    <lastmod>2026-08-16T02:12:58.353Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/str-count</loc>
-    <lastmod>2026-08-01T05:15:27.507Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.353Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-encode</loc>
+    <lastmod>2026-08-16T02:12:58.359Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-expandtabs</loc>
+    <lastmod>2026-08-16T02:12:58.363Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-format</loc>
+    <lastmod>2026-08-16T02:12:58.363Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-isalnum</loc>
+    <lastmod>2026-08-16T02:12:58.353Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-isalpha</loc>
+    <lastmod>2026-08-16T02:12:58.355Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-isascii</loc>
+    <lastmod>2026-08-16T02:12:58.353Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-isdecimal</loc>
+    <lastmod>2026-08-16T02:12:58.373Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-isidentifier</loc>
+    <lastmod>2026-08-16T02:12:58.373Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-islower</loc>
+    <lastmod>2026-08-16T02:12:58.353Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-isnumeric</loc>
+    <lastmod>2026-08-16T02:12:58.373Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-isprintable</loc>
+    <lastmod>2026-08-16T02:12:58.377Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-isspace</loc>
+    <lastmod>2026-08-16T02:12:58.379Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-istitle</loc>
+    <lastmod>2026-08-16T02:12:58.381Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-isupper</loc>
+    <lastmod>2026-08-16T02:12:58.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-ljust</loc>
+    <lastmod>2026-08-16T02:12:58.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-lstrip</loc>
+    <lastmod>2026-08-16T02:12:58.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-maketrans</loc>
+    <lastmod>2026-08-16T02:12:58.394Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-partition</loc>
+    <lastmod>2026-08-16T02:12:58.398Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-removeprefix</loc>
+    <lastmod>2026-08-16T02:12:58.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-removesuffix</loc>
+    <lastmod>2026-08-16T02:12:58.402Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-rfind</loc>
+    <lastmod>2026-08-16T02:12:58.400Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-rjust</loc>
+    <lastmod>2026-08-16T02:12:58.405Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-rpartition</loc>
+    <lastmod>2026-08-16T02:12:58.402Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-rsplit</loc>
+    <lastmod>2026-08-16T02:12:58.394Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-splitlines</loc>
+    <lastmod>2026-08-16T02:12:58.398Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-swapcase</loc>
+    <lastmod>2026-08-16T02:12:58.440Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/str-translate</loc>
+    <lastmod>2026-08-16T02:12:58.454Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/strip</loc>
-    <lastmod>2026-08-01T05:15:27.524Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.446Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/sum</loc>
-    <lastmod>2026-08-01T05:15:27.499Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.452Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/super</loc>
+    <lastmod>2026-08-16T02:12:58.440Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/title</loc>
-    <lastmod>2026-08-01T05:15:27.503Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.440Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/type</loc>
+    <lastmod>2026-08-16T02:12:58.454Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/upper</loc>
-    <lastmod>2026-08-01T05:15:27.495Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.446Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/vars</loc>
+    <lastmod>2026-08-16T02:12:58.452Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/reference/python/functions/zfill</loc>
-    <lastmod>2026-08-01T05:15:27.484Z</lastmod>
+    <lastmod>2026-08-16T02:12:58.468Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/functions/zip</loc>
+    <lastmod>2026-08-16T02:12:58.468Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators</loc>
+    <lastmod>2026-08-15T18:23:56.880Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/add</loc>
+    <lastmod>2026-08-16T02:12:57.613Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/and</loc>
+    <lastmod>2026-08-16T02:12:57.626Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/bitwise-and</loc>
+    <lastmod>2026-08-16T02:12:57.630Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/bitwise-or</loc>
+    <lastmod>2026-08-16T02:12:57.621Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/bitwise-xor</loc>
+    <lastmod>2026-08-16T02:12:57.630Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/eq</loc>
+    <lastmod>2026-08-16T02:12:57.630Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/floordiv</loc>
+    <lastmod>2026-08-16T02:12:57.612Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/ge</loc>
+    <lastmod>2026-08-16T02:12:57.628Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/gt</loc>
+    <lastmod>2026-08-16T02:12:57.600Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/in</loc>
+    <lastmod>2026-08-16T02:12:57.623Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/invert</loc>
+    <lastmod>2026-08-16T02:12:57.623Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/is</loc>
+    <lastmod>2026-08-16T02:12:57.612Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/is-not</loc>
+    <lastmod>2026-08-16T02:12:57.618Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/le</loc>
+    <lastmod>2026-08-16T02:12:57.630Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/lshift</loc>
+    <lastmod>2026-08-16T02:12:57.630Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/lt</loc>
+    <lastmod>2026-08-16T02:12:57.634Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/mod</loc>
+    <lastmod>2026-08-16T02:12:57.623Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/mul</loc>
+    <lastmod>2026-08-16T02:12:57.623Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/ne</loc>
+    <lastmod>2026-08-16T02:12:57.634Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/not</loc>
+    <lastmod>2026-08-16T02:12:57.634Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/not-in</loc>
+    <lastmod>2026-08-16T02:12:57.623Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/or</loc>
+    <lastmod>2026-08-16T02:12:57.796Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/pow</loc>
+    <lastmod>2026-08-16T02:12:57.803Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/rshift</loc>
+    <lastmod>2026-08-16T02:12:57.803Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/sub</loc>
+    <lastmod>2026-08-16T02:12:57.802Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/truediv</loc>
+    <lastmod>2026-08-16T02:12:57.804Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.webdevdata.net/reference/python/operators/walrus</loc>
+    <lastmod>2026-08-16T02:12:57.785Z</lastmod>
   </url>
   <url>
     <loc>https://www.webdevdata.net/sql</loc>

@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'Turn a method into a computed attribute — with optional setter and deleter.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 2.2+',
   searchTerms: 'property decorator getter setter deleter computed attribute descriptor read-only encapsulation',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function / decorator',
   version:     'Python 2.2+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'The controlled-attribute pattern — expose a method as if it were a plain attribute.',
 

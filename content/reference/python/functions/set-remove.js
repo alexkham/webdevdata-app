@@ -38,7 +38,7 @@ export const method = {
   ],
 
   demoParams: [
-    { name: 'set',  type: 'set', hint: 'starting set (comma-separated)', input: 'csv' },
+    { name: 'set',  type: 'set', hint: 'starting set (comma-separated)', input: 'csv-set' },
     { name: 'elem', type: 'Any', hint: 'element to remove',              input: 'text' },
   ],
   cases: [

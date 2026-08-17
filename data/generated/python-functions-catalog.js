@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/functions explorer.
 
 export const pythonFunctionsCatalog = {
-  generatedAt: "2026-08-05T14:00:33.052Z",
+  generatedAt: "2026-08-17T08:08:24.315Z",
   items: [
   {
     "slug": "abs",
@@ -113,7 +113,7 @@ export const pythonFunctionsCatalog = {
     "blurb": "True if the object can be called — functions, methods, classes, and objects with __call__.",
     "category": "builtin",
     "type": "builtin",
-    "hasLiveDemo": true,
+    "hasLiveDemo": false,
     "version": "Python 1.0+",
     "searchTerms": "callable check function method class lambda __call__ invokable reflection"
   },
@@ -146,9 +146,20 @@ export const pythonFunctionsCatalog = {
     "blurb": "Transform a method so its first argument is the CLASS (`cls`), not the instance.",
     "category": "builtin",
     "type": "builtin",
-    "hasLiveDemo": true,
+    "hasLiveDemo": false,
     "version": "Python 2.2+",
     "searchTerms": "classmethod decorator cls class method alternative constructor factory from_string bound"
+  },
+  {
+    "slug": "compile",
+    "name": "compile",
+    "signature": "compile(source, filename, mode, flags=0, dont_inherit=False, optimize=-1)",
+    "blurb": "Compile Python source into a reusable code object — the precursor to eval / exec.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": false,
+    "version": "Python 1.0+",
+    "searchTerms": "compile code object bytecode eval exec ast parse mode single expression"
   },
   {
     "slug": "complex",
@@ -168,7 +179,7 @@ export const pythonFunctionsCatalog = {
     "blurb": "Delete an attribute by name — the runtime-string equivalent of `del object.name`.",
     "category": "builtin",
     "type": "builtin",
-    "hasLiveDemo": true,
+    "hasLiveDemo": false,
     "version": "Python 1.0+",
     "searchTerms": "delattr attribute delete remove dynamic reflection immutable type object"
   },
@@ -267,7 +278,7 @@ export const pythonFunctionsCatalog = {
     "blurb": "List names in the local scope or on an object — introspection with sorted output.",
     "category": "builtin",
     "type": "builtin",
-    "hasLiveDemo": true,
+    "hasLiveDemo": false,
     "version": "Python 1.0+",
     "searchTerms": "dir list attributes methods introspection scope names discover explore instance class"
   },
@@ -305,13 +316,35 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "enumerate index counter pair position numbered loop iteration for"
   },
   {
+    "slug": "eval",
+    "name": "eval",
+    "signature": "eval(source, globals=None, locals=None)",
+    "blurb": "Evaluate a Python EXPRESSION from a string — powerful, dangerous, usually the wrong tool.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": false,
+    "version": "Python 1.0+",
+    "searchTerms": "eval evaluate expression dynamic security danger literal untrusted parse ast"
+  },
+  {
+    "slug": "exec",
+    "name": "exec",
+    "signature": "exec(source, globals=None, locals=None)",
+    "blurb": "Execute Python STATEMENTS from a string — even more dangerous than eval, almost never the right tool.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": false,
+    "version": "Python 3.0+",
+    "searchTerms": "exec execute dynamic statements security danger untrusted code injection"
+  },
+  {
     "slug": "filter",
     "name": "filter",
     "signature": "filter(predicate, iterable)",
     "blurb": "Keep items where the predicate returns truthy — lazily.",
     "category": "builtin",
     "type": "builtin",
-    "hasLiveDemo": true,
+    "hasLiveDemo": false,
     "version": "Python 1.0+",
     "searchTerms": "filter predicate keep items iterator lazy functional truthy false none"
   },
@@ -377,7 +410,7 @@ export const pythonFunctionsCatalog = {
     "blurb": "Get an attribute by name — with an optional default to avoid AttributeError.",
     "category": "builtin",
     "type": "builtin",
-    "hasLiveDemo": true,
+    "hasLiveDemo": false,
     "version": "Python 1.0+",
     "searchTerms": "getattr attribute get default reflection dynamic access method property"
   },
@@ -388,7 +421,7 @@ export const pythonFunctionsCatalog = {
     "blurb": "The module-level namespace dict — the same dict every top-level assignment writes to.",
     "category": "builtin",
     "type": "builtin",
-    "hasLiveDemo": true,
+    "hasLiveDemo": false,
     "version": "Python 1.0+",
     "searchTerms": "globals namespace module scope dict variables reflection top-level names"
   },
@@ -399,7 +432,7 @@ export const pythonFunctionsCatalog = {
     "blurb": "True if the object has the named attribute — equivalent to getattr-with-try-except.",
     "category": "builtin",
     "type": "builtin",
-    "hasLiveDemo": true,
+    "hasLiveDemo": false,
     "version": "Python 1.0+",
     "searchTerms": "hasattr attribute check exists reflection duck typing getattr method property"
   },
@@ -432,7 +465,7 @@ export const pythonFunctionsCatalog = {
     "blurb": "Return a unique-per-lifetime integer identifier for the object.",
     "category": "builtin",
     "type": "builtin",
-    "hasLiveDemo": true,
+    "hasLiveDemo": false,
     "version": "Python 1.0+",
     "searchTerms": "id identity memory address unique object is operator interned pointer"
   },
@@ -443,7 +476,7 @@ export const pythonFunctionsCatalog = {
     "blurb": "Read a line from stdin — always returns str, trailing newline stripped.",
     "category": "builtin",
     "type": "builtin",
-    "hasLiveDemo": true,
+    "hasLiveDemo": false,
     "version": "Python 1.0+",
     "searchTerms": "input read stdin prompt line user readline string always str raw_input"
   },
@@ -476,9 +509,20 @@ export const pythonFunctionsCatalog = {
     "blurb": "Check whether an object is an instance of a class — subclasses count.",
     "category": "builtin",
     "type": "builtin",
-    "hasLiveDemo": true,
+    "hasLiveDemo": false,
     "version": "Python 1.5+",
     "searchTerms": "isinstance instance type check class subclass duck typing typecheck reflection"
+  },
+  {
+    "slug": "issubclass",
+    "name": "issubclass",
+    "signature": "issubclass(class, classinfo)",
+    "blurb": "Check whether one class is a subclass of another (or a tuple of others).",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": false,
+    "version": "Python 1.0+",
+    "searchTerms": "issubclass subclass class inheritance check type isinstance mro derived hierarchy"
   },
   {
     "slug": "iter",
@@ -487,7 +531,7 @@ export const pythonFunctionsCatalog = {
     "blurb": "Get an iterator from any iterable — the entry point to Python&apos;s iteration protocol.",
     "category": "builtin",
     "type": "builtin",
-    "hasLiveDemo": true,
+    "hasLiveDemo": false,
     "version": "Python 1.5+",
     "searchTerms": "iter iterator iterable protocol next generator stopiteration sentinel callable"
   },
@@ -619,7 +663,7 @@ export const pythonFunctionsCatalog = {
     "blurb": "The current local namespace dict — behavior differs by context (module / function / class).",
     "category": "builtin",
     "type": "builtin",
-    "hasLiveDemo": true,
+    "hasLiveDemo": false,
     "version": "Python 1.0+",
     "searchTerms": "locals namespace scope local variables function class dict reflection frame"
   },
@@ -641,7 +685,7 @@ export const pythonFunctionsCatalog = {
     "blurb": "Apply a function to every item — lazily, and across multiple iterables in parallel.",
     "category": "builtin",
     "type": "builtin",
-    "hasLiveDemo": true,
+    "hasLiveDemo": false,
     "version": "Python 1.0+",
     "searchTerms": "map apply function transform each item lazy iterator functional list comprehension"
   },
@@ -655,6 +699,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 1.0+",
     "searchTerms": "max maximum largest biggest highest greatest"
+  },
+  {
+    "slug": "memoryview",
+    "name": "memoryview",
+    "signature": "memoryview(object)",
+    "blurb": "A zero-copy view over a bytes-like object — slice, index, or hand off without allocating.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": false,
+    "version": "Python 2.7+",
+    "searchTerms": "memoryview buffer protocol zero copy bytes bytearray slice view mmap array"
   },
   {
     "slug": "min",
@@ -674,9 +729,20 @@ export const pythonFunctionsCatalog = {
     "blurb": "Advance an iterator by one — with an optional default to avoid StopIteration.",
     "category": "builtin",
     "type": "builtin",
-    "hasLiveDemo": true,
+    "hasLiveDemo": false,
     "version": "Python 2.6+",
     "searchTerms": "next iterator advance stopiteration default first item peek generator"
+  },
+  {
+    "slug": "object",
+    "name": "object",
+    "signature": "object()",
+    "blurb": "The base class of every Python class — and a common sentinel value when called directly.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": false,
+    "version": "Python 2.2+",
+    "searchTerms": "object base class root sentinel unique instance mro type hierarchy inheritance"
   },
   {
     "slug": "oct",
@@ -688,6 +754,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 1.0+",
     "searchTerms": "oct octal base 8 convert integer string representation prefix 0o file permissions chmod"
+  },
+  {
+    "slug": "open",
+    "name": "open",
+    "signature": "open(file, mode=&apos;r&apos;, encoding=None, ...)",
+    "blurb": "Open a file — the standard entry point for reading and writing.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": false,
+    "version": "Python 1.0+",
+    "searchTerms": "open file read write text binary mode encoding context manager with utf-8 close"
   },
   {
     "slug": "ord",
@@ -718,9 +795,20 @@ export const pythonFunctionsCatalog = {
     "blurb": "Write objects to stdout — customize the separator, the ending, the destination, and the flush.",
     "category": "builtin",
     "type": "builtin",
-    "hasLiveDemo": true,
+    "hasLiveDemo": false,
     "version": "Python 2.0+",
     "searchTerms": "print output stdout write display sep end file flush newline space multiple arguments"
+  },
+  {
+    "slug": "property",
+    "name": "property",
+    "signature": "property(fget=None, fset=None, fdel=None, doc=None)",
+    "blurb": "Turn a method into a computed attribute — with optional setter and deleter.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": false,
+    "version": "Python 2.2+",
+    "searchTerms": "property decorator getter setter deleter computed attribute descriptor read-only encapsulation"
   },
   {
     "slug": "range",
@@ -1048,7 +1136,7 @@ export const pythonFunctionsCatalog = {
     "blurb": "Attach a plain function to a class — no `self`, no `cls`, no magic.",
     "category": "builtin",
     "type": "builtin",
-    "hasLiveDemo": true,
+    "hasLiveDemo": false,
     "version": "Python 2.2+",
     "searchTerms": "staticmethod decorator no self no cls utility class function nested class scope namespace"
   },
@@ -1444,7 +1532,7 @@ export const pythonFunctionsCatalog = {
     "blurb": "Get an object&apos;s type, or create a new class dynamically.",
     "category": "builtin",
     "type": "builtin",
-    "hasLiveDemo": true,
+    "hasLiveDemo": false,
     "version": "Python 1.0+",
     "searchTerms": "type class introspection instance check reflection metaclass isinstance object"
   },

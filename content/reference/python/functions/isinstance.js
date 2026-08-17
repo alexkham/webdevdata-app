@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'Check whether an object is an instance of a class — subclasses count.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 1.5+',
   searchTerms: 'isinstance instance type check class subclass duck typing typecheck reflection',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 1.5+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'The subclass-aware type check — the tool you almost always want instead of `type(x) is C`.',
 

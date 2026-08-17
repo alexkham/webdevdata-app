@@ -15,8 +15,34 @@ const SITE_NAME = 'WebDevData';
 const DEFAULT_OG_IMAGE = '/og-images/default.png';
 const FUNCTIONS_PATH = '/reference/python/functions';
 
+// Editorial featured picks — resolved against the generated catalogs in
+// getStaticProps, so a missing slug silently drops instead of dead-linking.
+const FEATURED_PICKS = [
+  { category: 'functions', slug: 'replace' },
+  { category: 'functions', slug: 'split' },
+  { category: 'functions', slug: 'sorted' },
+  { category: 'operators', slug: 'mod' },
+  { category: 'operators', slug: 'and' },
+  { category: 'functions', slug: 'get' },
+];
+
 export async function getStaticProps() {
   const { pythonRollup } = require('@/data/generated/python-rollup');
+  const { pythonFunctionsCatalog } = require('@/data/generated/python-functions-catalog');
+  const { pythonOperatorsCatalog } = require('@/data/generated/python-operators-catalog');
+
+  const catalogs = {
+    functions: pythonFunctionsCatalog.items,
+    operators: pythonOperatorsCatalog.items,
+  };
+  const featured = FEATURED_PICKS
+    .map((pick) => {
+      const m = (catalogs[pick.category] || []).find((x) => x.slug === pick.slug);
+      return m
+        ? { name: m.name, live: m.hasLiveDemo, href: `/reference/python/${pick.category}/${m.slug}` }
+        : null;
+    })
+    .filter(Boolean);
 
   const seoData = {
     title:       `Python Reference — Functions, Methods & Live Demos | ${SITE_NAME}`,
@@ -49,17 +75,18 @@ export async function getStaticProps() {
     props: {
       seoData,
       schemas,
+      featured,
       rollup: {
         total:     pythonRollup.total,
         liveTotal: pythonRollup.liveTotal,
         types:     pythonRollup.types,
-        featured:  pythonRollup.featured,
+        operators: pythonRollup.operators || { total: 0, liveTotal: 0 },
       },
     },
   };
 }
 
-export default function PythonReferencePage({ seoData, schemas, rollup }) {
+export default function PythonReferencePage({ seoData, schemas, rollup, featured }) {
   const canonical = `${SITE_URL}${seoData.url}`;
   const ogImage = `${SITE_URL}${DEFAULT_OG_IMAGE}`;
 
@@ -121,12 +148,22 @@ export default function PythonReferencePage({ seoData, schemas, rollup }) {
             count={`${rollup.total} ${rollup.total === 1 ? 'entry' : 'entries'} →`}
             href={FUNCTIONS_PATH}
           />
-          <CategoryTile
-            name="Operators"
-            badge="SOON"
-            blurb="Arithmetic, comparison, logical, bitwise, walrus."
-            count="planned"
-          />
+          {rollup.operators.total > 0 ? (
+            <CategoryTile
+              name="Operators"
+              badge="LIVE"
+              blurb="Arithmetic, comparison, logical, bitwise, walrus."
+              count={`${rollup.operators.total} ${rollup.operators.total === 1 ? 'entry' : 'entries'} →`}
+              href="/reference/python/operators"
+            />
+          ) : (
+            <CategoryTile
+              name="Operators"
+              badge="SOON"
+              blurb="Arithmetic, comparison, logical, bitwise, walrus."
+              count="planned"
+            />
+          )}
           <CategoryTile
             name="Errors &amp; exceptions"
             badge="SOON"
@@ -158,15 +195,15 @@ export default function PythonReferencePage({ seoData, schemas, rollup }) {
           </section>
         )}
 
-        {rollup.featured.length > 0 && (
+        {featured.length > 0 && (
           <>
             <div className="section-hdr">Featured — try the live demos</div>
             <div className="searched">
-              {rollup.featured.map((m, i) => (
-                <a className="searched-card" key={m.slug} href={`${FUNCTIONS_PATH}/${m.slug}`}>
+              {featured.map((m, i) => (
+                <a className="searched-card" key={m.href} href={m.href}>
                   <span className="searched-rank">{String(i + 1).padStart(2, '0')}</span>
                   <span className="searched-name">{m.name}</span>
-                  <span className="searched-hits">LIVE</span>
+                  {m.live && <span className="searched-hits">LIVE</span>}
                 </a>
               ))}
             </div>

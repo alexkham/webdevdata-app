@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'True if the object has the named attribute — equivalent to getattr-with-try-except.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 1.0+',
   searchTerms: 'hasattr attribute check exists reflection duck typing getattr method property',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 1.0+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'Check whether an object has an attribute — often the wrong tool. Prefer try/except or duck typing when the attribute might be a property with side effects.',
 

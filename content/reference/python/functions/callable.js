@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'True if the object can be called — functions, methods, classes, and objects with __call__.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 1.0+',
   searchTerms: 'callable check function method class lambda __call__ invokable reflection',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 1.0+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'Reflection check for the &quot;can I put ()&quot; question — but not a guarantee the call will succeed.',
 
