@@ -218,6 +218,15 @@ import { renderContent } from '@/utils/renderContent';
 import '../../../pages.css';
 import '../../../../app/globals.css';
 
+// Mirrors the <Head> tags below; read by generate-home-catalog.mjs.
+const seoData = {
+  title:       'SELECT SQL Clause - Learn SQL',
+  description: 'Master the SELECT clause in SQL with comprehensive examples and explanations.',
+  name:        'SELECT Clause',
+  url:         '/sql/clause/select',
+  keywords:    'sql language, sql programming, sql query, learn sql, sql select',
+};
+
 export default function SelectPage({ tocItemsData ,keyWords}) {
   const tocItems = tocItemsData.map(item => ({
     ...item,
@@ -234,11 +243,11 @@ export default function SelectPage({ tocItemsData ,keyWords}) {
         <meta property="og:title" content="Select SQL Clause - Learn SQL" />
         <meta property="og:description" content="Master the SELECT clause in SQL with comprehensive examples and explanations." />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://webdevdata.net/sql/clause/select" />
+        <meta property="og:url" content="https://www.webdevdata.net/sql/clause/select" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Select SQL Clause - Learn SQL" />
         <meta name="twitter:description" content="Master the SELECT clause in SQL with comprehensive examples and explanations." />
-        <link rel="canonical" href="https://webdevdata.net/sql/clause/select" />
+        <link rel="canonical" href="https://www.webdevdata.net/sql/clause/select" />
       </Head>
       
       <br />

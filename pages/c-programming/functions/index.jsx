@@ -5,6 +5,15 @@ import '../../../pages/pages.css'
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton'
 import Head from 'next/head'
 
+// Mirrors the <Head> tags below; read by generate-home-catalog.mjs.
+const seoData = {
+  title:       'C Standard Library Functions Reference | WebDevData',
+  description: 'Comprehensive reference for C Standard Library functions. Explore detailed explanations, syntax, and usage examples for C programming.',
+  name:        'C Functions Reference',
+  url:         '/c-programming/functions',
+  keywords:    'C functions, standard library, programming reference, C programming',
+};
+
 export default function FunctionsPage({ functionData }) {
   return (
     <>

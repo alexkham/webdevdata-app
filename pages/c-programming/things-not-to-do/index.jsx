@@ -1,7 +1,22 @@
 import React from 'react';
+import Head from 'next/head';
 import LinkTextGroup from '@/app/components/link-group/LinkTextGroup';
 import styles from '../../../app/components/link-group/LinkGroup.module.css';
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton';
+
+const SITE_URL = 'https://www.webdevdata.net';
+
+const keyWords = [
+  'c pitfalls', 'c common mistakes', 'unsafe c code', 'c programming', 'c language',
+];
+
+const seoData = {
+  title:       'Things Not To Do in C: Common Pitfalls | WebDevData',
+  description: 'Common C mistakes and unsafe practices across arrays, pointers, characters, files, integers, linked lists, stacks, queues, hash tables and binary trees.',
+  name:        'Things We Never Do in C',
+  url:         '/c-programming/things-not-to-do',
+  keywords:    keyWords.join(', '),
+};
 
 export default function ThingsNotToDo() {
   const things = [
@@ -19,6 +34,19 @@ export default function ThingsNotToDo() {
 
   return (
     <>
+    <Head>
+      <title>{seoData.title}</title>
+      <meta name="description" content={seoData.description} />
+      <meta name="keywords" content={seoData.keywords} />
+      <meta property="og:title" content={seoData.title} />
+      <meta property="og:description" content={seoData.description} />
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content={`${SITE_URL}${seoData.url}`} />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:title" content={seoData.title} />
+      <meta name="twitter:description" content={seoData.description} />
+      <link rel="canonical" href={`${SITE_URL}${seoData.url}`} />
+    </Head>
     <br></br>
     <br></br>
     <br></br>

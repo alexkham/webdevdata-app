@@ -24,8 +24,10 @@ import functionsDictFromkeysEmu from './emulators/python/functions/dict-fromkeys
 import functionsDictItemsEmu from './emulators/python/functions/dict-items';
 import functionsDictKeysEmu from './emulators/python/functions/dict-keys';
 import functionsDictPopEmu from './emulators/python/functions/dict-pop';
+import functionsDictPopitemEmu from './emulators/python/functions/dict-popitem';
 import functionsDictUpdateEmu from './emulators/python/functions/dict-update';
 import functionsDictValuesEmu from './emulators/python/functions/dict-values';
+import functionsDictEmu from './emulators/python/functions/dict';
 import functionsDivmodEmu from './emulators/python/functions/divmod';
 import functionsEndswithEmu from './emulators/python/functions/endswith';
 import functionsEnumerateEmu from './emulators/python/functions/enumerate';
@@ -35,10 +37,18 @@ import functionsFormatEmu from './emulators/python/functions/format';
 import functionsFrozensetEmu from './emulators/python/functions/frozenset';
 import functionsGetEmu from './emulators/python/functions/get';
 import functionsHexEmu from './emulators/python/functions/hex';
+import functionsIntAs_integer_ratioEmu from './emulators/python/functions/int-as_integer_ratio';
+import functionsIntBit_countEmu from './emulators/python/functions/int-bit_count';
+import functionsIntBit_lengthEmu from './emulators/python/functions/int-bit_length';
+import functionsIntConjugateEmu from './emulators/python/functions/int-conjugate';
+import functionsIntFrom_bytesEmu from './emulators/python/functions/int-from_bytes';
+import functionsIntIs_integerEmu from './emulators/python/functions/int-is_integer';
+import functionsIntTo_bytesEmu from './emulators/python/functions/int-to_bytes';
 import functionsIntEmu from './emulators/python/functions/int';
 import functionsIsdigitEmu from './emulators/python/functions/isdigit';
 import functionsJoinEmu from './emulators/python/functions/join';
 import functionsLenEmu from './emulators/python/functions/len';
+import functionsListClearEmu from './emulators/python/functions/list-clear';
 import functionsListCopyEmu from './emulators/python/functions/list-copy';
 import functionsListCountEmu from './emulators/python/functions/list-count';
 import functionsListExtendEmu from './emulators/python/functions/list-extend';
@@ -48,6 +58,7 @@ import functionsListPopEmu from './emulators/python/functions/list-pop';
 import functionsListRemoveEmu from './emulators/python/functions/list-remove';
 import functionsListReverseEmu from './emulators/python/functions/list-reverse';
 import functionsListSortEmu from './emulators/python/functions/list-sort';
+import functionsListEmu from './emulators/python/functions/list';
 import functionsLowerEmu from './emulators/python/functions/lower';
 import functionsMaxEmu from './emulators/python/functions/max';
 import functionsMinEmu from './emulators/python/functions/min';
@@ -77,6 +88,7 @@ import functionsSetSymmetric_differenceEmu from './emulators/python/functions/se
 import functionsSetSymmetric_difference_updateEmu from './emulators/python/functions/set-symmetric_difference_update';
 import functionsSetUnionEmu from './emulators/python/functions/set-union';
 import functionsSetUpdateEmu from './emulators/python/functions/set-update';
+import functionsSetEmu from './emulators/python/functions/set';
 import functionsSetdefaultEmu from './emulators/python/functions/setdefault';
 import functionsSliceEmu from './emulators/python/functions/slice';
 import functionsSortedEmu from './emulators/python/functions/sorted';
@@ -88,6 +100,8 @@ import functionsStrCountEmu from './emulators/python/functions/str-count';
 import functionsStrEncodeEmu from './emulators/python/functions/str-encode';
 import functionsStrExpandtabsEmu from './emulators/python/functions/str-expandtabs';
 import functionsStrFormatEmu from './emulators/python/functions/str-format';
+import functionsStrFormat_mapEmu from './emulators/python/functions/str-format_map';
+import functionsStrIndexEmu from './emulators/python/functions/str-index';
 import functionsStrIsalnumEmu from './emulators/python/functions/str-isalnum';
 import functionsStrIsalphaEmu from './emulators/python/functions/str-isalpha';
 import functionsStrIsasciiEmu from './emulators/python/functions/str-isascii';
@@ -106,6 +120,7 @@ import functionsStrPartitionEmu from './emulators/python/functions/str-partition
 import functionsStrRemoveprefixEmu from './emulators/python/functions/str-removeprefix';
 import functionsStrRemovesuffixEmu from './emulators/python/functions/str-removesuffix';
 import functionsStrRfindEmu from './emulators/python/functions/str-rfind';
+import functionsStrRindexEmu from './emulators/python/functions/str-rindex';
 import functionsStrRjustEmu from './emulators/python/functions/str-rjust';
 import functionsStrRpartitionEmu from './emulators/python/functions/str-rpartition';
 import functionsStrRsplitEmu from './emulators/python/functions/str-rsplit';
@@ -116,6 +131,9 @@ import functionsStrEmu from './emulators/python/functions/str';
 import functionsStripEmu from './emulators/python/functions/strip';
 import functionsSumEmu from './emulators/python/functions/sum';
 import functionsTitleEmu from './emulators/python/functions/title';
+import functionsTupleCountEmu from './emulators/python/functions/tuple-count';
+import functionsTupleIndexEmu from './emulators/python/functions/tuple-index';
+import functionsTupleEmu from './emulators/python/functions/tuple';
 import functionsUpperEmu from './emulators/python/functions/upper';
 import functionsZfillEmu from './emulators/python/functions/zfill';
 import functionsZipEmu from './emulators/python/functions/zip';
@@ -163,8 +181,10 @@ const emulators = {
   'functions/dict-items': functionsDictItemsEmu,
   'functions/dict-keys': functionsDictKeysEmu,
   'functions/dict-pop': functionsDictPopEmu,
+  'functions/dict-popitem': functionsDictPopitemEmu,
   'functions/dict-update': functionsDictUpdateEmu,
   'functions/dict-values': functionsDictValuesEmu,
+  'functions/dict': functionsDictEmu,
   'functions/divmod': functionsDivmodEmu,
   'functions/endswith': functionsEndswithEmu,
   'functions/enumerate': functionsEnumerateEmu,
@@ -174,10 +194,18 @@ const emulators = {
   'functions/frozenset': functionsFrozensetEmu,
   'functions/get': functionsGetEmu,
   'functions/hex': functionsHexEmu,
+  'functions/int-as_integer_ratio': functionsIntAs_integer_ratioEmu,
+  'functions/int-bit_count': functionsIntBit_countEmu,
+  'functions/int-bit_length': functionsIntBit_lengthEmu,
+  'functions/int-conjugate': functionsIntConjugateEmu,
+  'functions/int-from_bytes': functionsIntFrom_bytesEmu,
+  'functions/int-is_integer': functionsIntIs_integerEmu,
+  'functions/int-to_bytes': functionsIntTo_bytesEmu,
   'functions/int': functionsIntEmu,
   'functions/isdigit': functionsIsdigitEmu,
   'functions/join': functionsJoinEmu,
   'functions/len': functionsLenEmu,
+  'functions/list-clear': functionsListClearEmu,
   'functions/list-copy': functionsListCopyEmu,
   'functions/list-count': functionsListCountEmu,
   'functions/list-extend': functionsListExtendEmu,
@@ -187,6 +215,7 @@ const emulators = {
   'functions/list-remove': functionsListRemoveEmu,
   'functions/list-reverse': functionsListReverseEmu,
   'functions/list-sort': functionsListSortEmu,
+  'functions/list': functionsListEmu,
   'functions/lower': functionsLowerEmu,
   'functions/max': functionsMaxEmu,
   'functions/min': functionsMinEmu,
@@ -216,6 +245,7 @@ const emulators = {
   'functions/set-symmetric_difference_update': functionsSetSymmetric_difference_updateEmu,
   'functions/set-union': functionsSetUnionEmu,
   'functions/set-update': functionsSetUpdateEmu,
+  'functions/set': functionsSetEmu,
   'functions/setdefault': functionsSetdefaultEmu,
   'functions/slice': functionsSliceEmu,
   'functions/sorted': functionsSortedEmu,
@@ -227,6 +257,8 @@ const emulators = {
   'functions/str-encode': functionsStrEncodeEmu,
   'functions/str-expandtabs': functionsStrExpandtabsEmu,
   'functions/str-format': functionsStrFormatEmu,
+  'functions/str-format_map': functionsStrFormat_mapEmu,
+  'functions/str-index': functionsStrIndexEmu,
   'functions/str-isalnum': functionsStrIsalnumEmu,
   'functions/str-isalpha': functionsStrIsalphaEmu,
   'functions/str-isascii': functionsStrIsasciiEmu,
@@ -245,6 +277,7 @@ const emulators = {
   'functions/str-removeprefix': functionsStrRemoveprefixEmu,
   'functions/str-removesuffix': functionsStrRemovesuffixEmu,
   'functions/str-rfind': functionsStrRfindEmu,
+  'functions/str-rindex': functionsStrRindexEmu,
   'functions/str-rjust': functionsStrRjustEmu,
   'functions/str-rpartition': functionsStrRpartitionEmu,
   'functions/str-rsplit': functionsStrRsplitEmu,
@@ -255,6 +288,9 @@ const emulators = {
   'functions/strip': functionsStripEmu,
   'functions/sum': functionsSumEmu,
   'functions/title': functionsTitleEmu,
+  'functions/tuple-count': functionsTupleCountEmu,
+  'functions/tuple-index': functionsTupleIndexEmu,
+  'functions/tuple': functionsTupleEmu,
   'functions/upper': functionsUpperEmu,
   'functions/zfill': functionsZfillEmu,
   'functions/zip': functionsZipEmu,

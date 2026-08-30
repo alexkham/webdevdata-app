@@ -10,6 +10,15 @@ import { renderContent } from '@/utils/renderContent';
 import '../pages.css';
 import '../../app/globals.css';
 
+// Mirrors the <Head> tags below; read by generate-home-catalog.mjs.
+const seoData = {
+  title:       'SQL Language: Learning Guide',
+  description: 'Comprehensive guide to learning SQL language, covering clauses, keywords, functions, joins, set operations, subqueries, operators, and wildcards.',
+  name:        'SQL',
+  url:         '/sql',
+  keywords:    'SQL language, SQL programming, SQL query, learn SQL',
+};
+
 export default function SQLPage({ tocItemsData, sql }) {
   const tocItems = tocItemsData.map(item => ({
     ...item,

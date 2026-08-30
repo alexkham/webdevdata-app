@@ -3,8 +3,23 @@ import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton'
 import SectionLinkGroup from '@/app/components/section-link-group/SectionLinkGroup';
 import React from 'react'
 import '../../pages/pages.css'
+import Head from 'next/head';
 import Link from 'next/link';
 import Breadcrumb from '@/app/components/breadcrumb/Breadcrumb';
+
+const SITE_URL = 'https://www.webdevdata.net';
+
+const keyWords = [
+  'c programming', 'c language', 'learn c', 'c tutorial', 'c reference',
+];
+
+const seoData = {
+  title:       'C Programming Reference & Guides | WebDevData',
+  description: 'C programming resource hub: the C Standard Library function explorer, data types, variables, operators, code examples and common pitfalls to avoid.',
+  name:        'C Programming',
+  url:         '/c-programming',
+  keywords:    keyWords.join(', '),
+};
 
 export default function CProgrammingPage() {
     
@@ -49,6 +64,19 @@ export default function CProgrammingPage() {
 
   return (
    <>
+   <Head>
+     <title>{seoData.title}</title>
+     <meta name="description" content={seoData.description} />
+     <meta name="keywords" content={seoData.keywords} />
+     <meta property="og:title" content={seoData.title} />
+     <meta property="og:description" content={seoData.description} />
+     <meta property="og:type" content="website" />
+     <meta property="og:url" content={`${SITE_URL}${seoData.url}`} />
+     <meta name="twitter:card" content="summary" />
+     <meta name="twitter:title" content={seoData.title} />
+     <meta name="twitter:description" content={seoData.description} />
+     <link rel="canonical" href={`${SITE_URL}${seoData.url}`} />
+   </Head>
    {/* <MyNavbar></MyNavbar> */}
    <br></br>
    <br></br>

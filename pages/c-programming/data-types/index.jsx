@@ -8,6 +8,15 @@ import ContentBlock from '@/app/components/page-components/ContentBlock';
 import NavigationButtons from '@/app/components/page-components/NavigationButtons';
 import Head from 'next/head';
 
+// Mirrors the <Head> tags below; read by generate-home-catalog.mjs.
+const seoData = {
+  title:       'Data Types in C - WebDevData.net',
+  description: 'Learn about data types in C programming, including core types, memory types, pointer types, and special types. Comprehensive guide for beginners and advanced programmers.',
+  name:        'Data Types in C',
+  url:         '/c-programming/data-types',
+  keywords:    'data types, data types in c, c language, c programming',
+};
+
 export default function DataTypesPage({ content, types }) {
  
   const keyWords=[

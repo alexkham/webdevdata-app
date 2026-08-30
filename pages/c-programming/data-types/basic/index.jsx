@@ -580,7 +580,21 @@ import '../../../pages.css'
 import '../../variables/styles.css'
 // import './new.css'
 import { processContent } from '@/utils/contentProcessor'
+import Head from 'next/head'
 
+const SITE_URL = 'https://www.webdevdata.net';
+
+const keyWords = [
+  'basic data types in c', 'c int char float double', 'signed unsigned c', 'c programming', 'c language',
+];
+
+const seoData = {
+  title:       'Basic Data Types in C: int, char, float, double | WebDevData',
+  description: 'The basic C data types and their sign and length modifiers — int, char, float, double, short, long and long long — with sizes, ranges and usage notes.',
+  name:        'Basic Data Types in C',
+  url:         '/c-programming/data-types/basic',
+  keywords:    keyWords.join(', '),
+};
 
 export default function BasicDataTypesPage() {
   const tableData = {
@@ -756,7 +770,20 @@ In many ways, int is the building block that bridges the gap between primitive s
 
 return (
     <>
-      
+      <Head>
+        <title>{seoData.title}</title>
+        <meta name="description" content={seoData.description} />
+        <meta name="keywords" content={seoData.keywords} />
+        <meta property="og:title" content={seoData.title} />
+        <meta property="og:description" content={seoData.description} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`${SITE_URL}${seoData.url}`} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={seoData.title} />
+        <meta name="twitter:description" content={seoData.description} />
+        <link rel="canonical" href={`${SITE_URL}${seoData.url}`} />
+      </Head>
+
       <br/>
       <br/>
       <br/>

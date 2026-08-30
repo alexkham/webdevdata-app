@@ -6,51 +6,67 @@
 // featured picks (live-demo items, discovery order).
 
 export const pythonRollup = {
-  generatedAt: "2026-08-30T13:22:37.798Z",
-  total: 143,
-  liveTotal: 113,
+  generatedAt: "2026-08-30T14:54:48.848Z",
+  total: 165,
+  liveTotal: 131,
   types: [
   {
     "type": "builtin",
-    "count": 62
+    "count": 70
   },
   {
     "type": "list",
-    "count": 10
+    "count": 11
   },
   {
     "type": "str",
-    "count": 44
+    "count": 47
   },
   {
     "type": "dict",
-    "count": 10
+    "count": 11
+  },
+  {
+    "type": "int",
+    "count": 7
   },
   {
     "type": "set",
     "count": 17
+  },
+  {
+    "type": "tuple",
+    "count": 2
   }
 ],
   categories: [
   {
     "category": "builtin",
-    "count": 62
+    "count": 70
   },
   {
     "category": "list",
-    "count": 10
+    "count": 11
   },
   {
     "category": "string",
-    "count": 44
+    "count": 47
   },
   {
     "category": "dict",
-    "count": 10
+    "count": 11
+  },
+  {
+    "category": "integer",
+    "count": 7
   },
   {
     "category": "set",
     "count": 17
+  },
+  {
+    "category": "tuple",
+    "count": 2
   }
 ],
   featured: [

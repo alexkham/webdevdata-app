@@ -10,6 +10,15 @@ import { renderContent } from '@/utils/renderContent';
 import '../../../pages.css';
 import '../../../../app/globals.css';
 
+// Mirrors the <Head> tags below; read by generate-home-catalog.mjs.
+const seoData = {
+  title:       'WHERE SQL Clause - Learn SQL',
+  description: 'Master the WHERE clause in SQL with comprehensive examples and explanations.',
+  name:        'WHERE Clause',
+  url:         '/sql/clause/where',
+  keywords:    'sql language, sql programming, sql query, learn sql, sql where',
+};
+
 export default function WherePage({ tocItemsData ,keyWords}) {
   const tocItems = tocItemsData.map(item => ({
     ...item,
@@ -26,11 +35,11 @@ export default function WherePage({ tocItemsData ,keyWords}) {
         <meta property="og:title" content=" Where SQL Clause - Learn SQL" />
         <meta property="og:description" content="Master the WHERE clause in SQL with comprehensive examples and explanations." />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://webdevdata.net/sql/clause/where" />
+        <meta property="og:url" content="https://www.webdevdata.net/sql/clause/where" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="WHERE SQL Clause - Learn SQL" />
         <meta name="twitter:description" content="Master the WHERE clause in SQL with comprehensive examples and explanations." />
-        <link rel="canonical" href="https://webdevdata.net/sql/clause/where" />
+        <link rel="canonical" href="https://www.webdevdata.net/sql/clause/where" />
       </Head>
       
       <br />

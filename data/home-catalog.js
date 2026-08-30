@@ -7,8 +7,86 @@
 // Contains the COMPLETE page list per pillar — nothing truncated.
 
 export const homeCatalog = {
-  generatedAt: "2026-08-30T13:22:37.659Z",
+  generatedAt: "2026-08-30T14:54:48.909Z",
   pillars: [
+  {
+    "id": "c-programming",
+    "title": "C Programming",
+    "href": "/c-programming",
+    "blurb": "C programming resource hub: the C Standard Library function explorer, data types, variables, operators, code examples and common pitfalls to avoid.",
+    "ctaLabel": "Browse C Programming",
+    "stats": [
+      {
+        "n": "7",
+        "label": "Pages"
+      },
+      {
+        "n": "2",
+        "label": "Categories"
+      }
+    ],
+    "breakdown": [
+      {
+        "label": "General",
+        "count": 6
+      },
+      {
+        "label": "Data Types",
+        "count": 1
+      }
+    ],
+    "pages": [
+      {
+        "name": "Basic Data Types in C",
+        "desc": "The basic C data types and their sign and length modifiers — int, char, float, double, short, long and long long — with sizes, ranges and usage notes.",
+        "href": "/c-programming/data-types/basic",
+        "category": "Data Types",
+        "subCategory": null
+      },
+      {
+        "name": "Data Types in C",
+        "desc": "Learn about data types in C programming, including core types, memory types, pointer types, and special types. Comprehensive guide for beginners and advanced programmers.",
+        "href": "/c-programming/data-types",
+        "category": "General",
+        "subCategory": null
+      },
+      {
+        "name": "Code Examples",
+        "desc": "Practical C code examples for string manipulation and array operations — substring extraction, formatting, searching, tokenization, sorting and dynamic memory.",
+        "href": "/c-programming/examples",
+        "category": "General",
+        "subCategory": null
+      },
+      {
+        "name": "C Functions Reference",
+        "desc": "Comprehensive reference for C Standard Library functions. Explore detailed explanations, syntax, and usage examples for C programming.",
+        "href": "/c-programming/functions",
+        "category": "General",
+        "subCategory": null
+      },
+      {
+        "name": "Operators in C",
+        "desc": "C operator precedence and associativity as a visual hierarchy — primary, unary, multiplicative, additive, shift, relational, bitwise, logical, assignment and comma operators.",
+        "href": "/c-programming/operators",
+        "category": "General",
+        "subCategory": null
+      },
+      {
+        "name": "Things We Never Do in C",
+        "desc": "Common C mistakes and unsafe practices across arrays, pointers, characters, files, integers, linked lists, stacks, queues, hash tables and binary trees.",
+        "href": "/c-programming/things-not-to-do",
+        "category": "General",
+        "subCategory": null
+      },
+      {
+        "name": "Variables in C Language",
+        "desc": "How C variables differ by scope and lifetime — block, function, file and program scope paired with automatic, static and dynamic storage, shown as a visual matrix.",
+        "href": "/c-programming/variables",
+        "category": "General",
+        "subCategory": null
+      }
+    ]
+  },
   {
     "id": "reference",
     "title": "Reference",
@@ -55,6 +133,63 @@ export const homeCatalog = {
         "desc": "Browse Python operators: arithmetic, comparison, logical, bitwise, membership, identity and the walrus — with examples, pitfalls and live demos.",
         "href": "/reference/python/operators",
         "category": "Python",
+        "subCategory": null
+      }
+    ]
+  },
+  {
+    "id": "sql",
+    "title": "SQL",
+    "href": "/sql",
+    "blurb": "Comprehensive guide to learning SQL language, covering clauses, keywords, functions, joins, set operations, subqueries, operators, and wildcards.",
+    "ctaLabel": "Browse SQL",
+    "stats": [
+      {
+        "n": "4",
+        "label": "Pages"
+      },
+      {
+        "n": "2",
+        "label": "Categories"
+      }
+    ],
+    "breakdown": [
+      {
+        "label": "Clause",
+        "count": 3
+      },
+      {
+        "label": "General",
+        "count": 1
+      }
+    ],
+    "pages": [
+      {
+        "name": "FROM Clause",
+        "desc": "Learn about the FROM clause in SQL, its usage, and advanced techniques.",
+        "href": "/sql/clause/from",
+        "category": "Clause",
+        "subCategory": null
+      },
+      {
+        "name": "SQL Clauses",
+        "desc": "Explore SQL clauses: SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY, and LIMIT. Learn their uses and interactions in database queries.",
+        "href": "/sql/clause",
+        "category": "General",
+        "subCategory": null
+      },
+      {
+        "name": "SELECT Clause",
+        "desc": "Master the SELECT clause in SQL with comprehensive examples and explanations.",
+        "href": "/sql/clause/select",
+        "category": "Clause",
+        "subCategory": null
+      },
+      {
+        "name": "WHERE Clause",
+        "desc": "Master the WHERE clause in SQL with comprehensive examples and explanations.",
+        "href": "/sql/clause/where",
+        "category": "Clause",
         "subCategory": null
       }
     ]

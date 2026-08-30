@@ -165,12 +165,40 @@ import NavigationButtons from '@/app/components/page-components/NavigationButton
 import MyList from '@/app/components/page-components/lists/MyList';
 import ContentBlock from '@/app/components/page-components/ContentBlock';
 import CodeIllustration from '@/app/components/code-example/code-illustration/CodeIllustration';
+import Head from 'next/head';
 
-export default function VariablesPage({ tableData, scopeList, scopePyramid, 
+const SITE_URL = 'https://www.webdevdata.net';
+
+const keyWords = [
+  'variables in c', 'c variable scope', 'c variable lifetime', 'c programming', 'c language',
+];
+
+const seoData = {
+  title:       'Variables in C: Scope and Lifetime | WebDevData',
+  description: 'How C variables differ by scope and lifetime — block, function, file and program scope paired with automatic, static and dynamic storage, shown as a visual matrix.',
+  name:        'Variables in C Language',
+  url:         '/c-programming/variables',
+  keywords:    keyWords.join(', '),
+};
+
+export default function VariablesPage({ tableData, scopeList, scopePyramid,
   lifeSpan, scopeTarget,blockScopeExample ,lifetimeList}) {
  return (
    <>
-     
+     <Head>
+       <title>{seoData.title}</title>
+       <meta name="description" content={seoData.description} />
+       <meta name="keywords" content={seoData.keywords} />
+       <meta property="og:title" content={seoData.title} />
+       <meta property="og:description" content={seoData.description} />
+       <meta property="og:type" content="article" />
+       <meta property="og:url" content={`${SITE_URL}${seoData.url}`} />
+       <meta name="twitter:card" content="summary" />
+       <meta name="twitter:title" content={seoData.title} />
+       <meta name="twitter:description" content={seoData.description} />
+       <link rel="canonical" href={`${SITE_URL}${seoData.url}`} />
+     </Head>
+
      <br/>
      <br/>
      <br/>

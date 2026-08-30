@@ -6,6 +6,20 @@ import ExamplesPage from '@/app/components/accordion/code-example-accordion/Exam
 import ScrollUpButton from '@/app/components/scroll-up-button/ScrollUpButton';
 import Head from 'next/head';
 
+const SITE_URL = 'https://www.webdevdata.net';
+
+const keyWords = [
+  'c code examples', 'c string examples', 'c array examples', 'c programming', 'c language',
+];
+
+const seoData = {
+  title:       'C Code Examples: Strings and Arrays | WebDevData',
+  description: 'Practical C code examples for string manipulation and array operations — substring extraction, formatting, searching, tokenization, sorting and dynamic memory.',
+  name:        'Code Examples',
+  url:         '/c-programming/examples',
+  keywords:    keyWords.join(', '),
+};
+
 export default function ExamplesPagePage() {
    
     const categoriesData = [
@@ -92,7 +106,17 @@ export default function ExamplesPagePage() {
   return (
     <>
     <Head>
-    <link rel="canonical" href="https://www.webdevdata.net/c-programming/examples" />
+    <title>{seoData.title}</title>
+    <meta name="description" content={seoData.description} />
+    <meta name="keywords" content={seoData.keywords} />
+    <meta property="og:title" content={seoData.title} />
+    <meta property="og:description" content={seoData.description} />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content={`${SITE_URL}${seoData.url}`} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={seoData.title} />
+    <meta name="twitter:description" content={seoData.description} />
+    <link rel="canonical" href={`${SITE_URL}${seoData.url}`} />
     </Head>
     
     <br></br>

@@ -150,6 +150,15 @@ import '../../../pages.css';
 import '../../../../app/globals.css';
 import { renderContent } from '@/utils/renderContent';
 
+// Mirrors the <Head> tags below; read by generate-home-catalog.mjs.
+const seoData = {
+  title:       'From SQL Clause - Learn SQL',
+  description: 'Learn about the FROM clause in SQL, its usage, and advanced techniques.',
+  name:        'FROM Clause',
+  url:         '/sql/clause/from',
+  keywords:    'sql language, sql programming, sql query, learn sql, sql from',
+};
+
 export default function FromPage({ tocItemsData, keyWords }) {
 //   const renderContent = (content) => {
 //     return content.map((item, index) => {
@@ -186,11 +195,11 @@ export default function FromPage({ tocItemsData, keyWords }) {
         <meta property="og:title" content="From SQL Clause - Learn SQL" />
         <meta property="og:description" content="Learn about the FROM clause in SQL, its usage, and advanced techniques." />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://webdevdata.net/sql/clause/from" />
+        <meta property="og:url" content="https://www.webdevdata.net/sql/clause/from" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="From SQL Clause - Learn SQL" />
         <meta name="twitter:description" content="Learn about the FROM clause in SQL, its usage, and advanced techniques." />
-        <link rel="canonical" href="https://webdevdata.net/sql/clause/from" />
+        <link rel="canonical" href="https://www.webdevdata.net/sql/clause/from" />
         </Head>
       
       <br />

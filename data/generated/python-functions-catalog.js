@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/functions explorer.
 
 export const pythonFunctionsCatalog = {
-  generatedAt: "2026-08-30T13:22:37.797Z",
+  generatedAt: "2026-08-30T14:54:48.847Z",
   items: [
   {
     "slug": "abs",
@@ -19,6 +19,17 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "abs absolute value magnitude negative positive"
   },
   {
+    "slug": "aiter",
+    "name": "aiter",
+    "signature": "aiter(async_iterable)",
+    "blurb": "The async counterpart of iter — get an async iterator from an async iterable.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": false,
+    "version": "Python 3.10+",
+    "searchTerms": "aiter async iterator asynchronous aiter anext await async for coroutine"
+  },
+  {
     "slug": "all",
     "name": "all",
     "signature": "all(iterable)",
@@ -28,6 +39,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.5+",
     "searchTerms": "all every truthy boolean iterable short-circuit and universal check"
+  },
+  {
+    "slug": "anext",
+    "name": "anext",
+    "signature": "anext(async_iterator[, default])",
+    "blurb": "The async counterpart of next — await the next item from an async iterator.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": false,
+    "version": "Python 3.10+",
+    "searchTerms": "anext async next await asynchronous iterator StopAsyncIteration default aiter"
   },
   {
     "slug": "any",
@@ -83,6 +105,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.3+",
     "searchTerms": "bool boolean true false truthy falsy convert if test cast"
+  },
+  {
+    "slug": "breakpoint",
+    "name": "breakpoint",
+    "signature": "breakpoint(*args, **kwargs)",
+    "blurb": "Drop into the debugger here — configurable through PYTHONBREAKPOINT.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": false,
+    "version": "Python 3.7+",
+    "searchTerms": "breakpoint debugger pdb set_trace debug pause inspect PYTHONBREAKPOINT"
   },
   {
     "slug": "bytearray",
@@ -250,6 +283,17 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "pop remove key dictionary delete return value"
   },
   {
+    "slug": "dict-popitem",
+    "name": "dict.popitem",
+    "signature": "dict.popitem()",
+    "blurb": "Remove and return the LAST inserted (key, value) pair — LIFO since 3.7.",
+    "category": "dict",
+    "type": "dict",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "popitem pop last item remove pair lifo stack drain dict keyerror empty"
+  },
+  {
     "slug": "dict-update",
     "name": "dict.update",
     "signature": "dict.update([other])",
@@ -270,6 +314,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.2+",
     "searchTerms": "values view dict iterate for loop payload data"
+  },
+  {
+    "slug": "dict",
+    "name": "dict",
+    "signature": "dict(**kwargs) | dict(mapping) | dict(iterable)",
+    "blurb": "Build a key-value mapping from a mapping, pairs, or keyword arguments.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "dict constructor mapping hash map key value convert pairs kwargs copy dictionary"
   },
   {
     "slug": "dir",
@@ -448,6 +503,17 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "hash hashable dict set key hash randomization pythonhashseed unhashable typeerror int"
   },
   {
+    "slug": "help",
+    "name": "help",
+    "signature": "help([object])",
+    "blurb": "Open the built-in documentation browser for an object, or start interactive help.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": false,
+    "version": "Python 2.2+",
+    "searchTerms": "help docs documentation docstring interactive pydoc manual explain repl"
+  },
+  {
     "slug": "hex",
     "name": "hex",
     "signature": "hex(x)",
@@ -479,6 +545,83 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": false,
     "version": "Python 1.0+",
     "searchTerms": "input read stdin prompt line user readline string always str raw_input"
+  },
+  {
+    "slug": "int-as_integer_ratio",
+    "name": "int.as_integer_ratio",
+    "signature": "int.as_integer_ratio()",
+    "blurb": "The number as a (numerator, denominator) pair — always with denominator 1.",
+    "category": "integer",
+    "type": "int",
+    "hasLiveDemo": true,
+    "version": "Python 3.8+",
+    "searchTerms": "as integer ratio fraction numerator denominator rational int float duck typing"
+  },
+  {
+    "slug": "int-bit_count",
+    "name": "int.bit_count",
+    "signature": "int.bit_count()",
+    "blurb": "How many bits are set to 1 in the number, ignoring the sign.",
+    "category": "integer",
+    "type": "int",
+    "hasLiveDemo": true,
+    "version": "Python 3.10+",
+    "searchTerms": "bit count popcount population count ones set bits hamming weight int"
+  },
+  {
+    "slug": "int-bit_length",
+    "name": "int.bit_length",
+    "signature": "int.bit_length()",
+    "blurb": "How many bits it takes to write the number in binary, ignoring the sign.",
+    "category": "integer",
+    "type": "int",
+    "hasLiveDemo": true,
+    "version": "Python 3.1+",
+    "searchTerms": "bit length binary bits width size int how many bits msb magnitude"
+  },
+  {
+    "slug": "int-conjugate",
+    "name": "int.conjugate",
+    "signature": "int.conjugate()",
+    "blurb": "Returns the number unchanged — the complex conjugate of a real number is itself.",
+    "category": "integer",
+    "type": "int",
+    "hasLiveDemo": true,
+    "version": "Python 2.6+",
+    "searchTerms": "conjugate complex conjugate numeric tower real imaginary int identity"
+  },
+  {
+    "slug": "int-from_bytes",
+    "name": "int.from_bytes",
+    "signature": "int.from_bytes(bytes, byteorder, *, signed=False)",
+    "blurb": "Read an integer back out of a bytes object, big- or little-endian.",
+    "category": "integer",
+    "type": "int",
+    "hasLiveDemo": true,
+    "version": "Python 3.2+",
+    "searchTerms": "from bytes unpack deserialize parse endian big little binary decode int bytes to int"
+  },
+  {
+    "slug": "int-is_integer",
+    "name": "int.is_integer",
+    "signature": "int.is_integer()",
+    "blurb": "Always True — it exists so int and float answer the same question.",
+    "category": "integer",
+    "type": "int",
+    "hasLiveDemo": true,
+    "version": "Python 3.12+",
+    "searchTerms": "is integer whole number check int float duck typing always true"
+  },
+  {
+    "slug": "int-to_bytes",
+    "name": "int.to_bytes",
+    "signature": "int.to_bytes(length, byteorder, *, signed=False)",
+    "blurb": "Pack an integer into a fixed number of bytes, big- or little-endian.",
+    "category": "integer",
+    "type": "int",
+    "hasLiveDemo": true,
+    "version": "Python 3.2+",
+    "searchTerms": "to bytes pack serialize endian big little binary struct int convert network order"
   },
   {
     "slug": "int",
@@ -556,6 +699,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 1.0+",
     "searchTerms": "len length size count items number of elements"
+  },
+  {
+    "slug": "list-clear",
+    "name": "list.clear",
+    "signature": "list.clear()",
+    "blurb": "Empty the list in place, keeping every existing reference to it valid.",
+    "category": "list",
+    "type": "list",
+    "hasLiveDemo": true,
+    "version": "Python 3.3+",
+    "searchTerms": "clear empty remove all delete reset list mutate in place truncate"
   },
   {
     "slug": "list-copy",
@@ -655,6 +809,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 1.0+",
     "searchTerms": "sort in-place mutate order list timsort stable ascending descending reverse"
+  },
+  {
+    "slug": "list",
+    "name": "list",
+    "signature": "list([iterable])",
+    "blurb": "Build a mutable sequence from any iterable — or an empty one from nothing.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "list constructor convert iterable to list array sequence mutable copy materialize"
   },
   {
     "slug": "locals",
@@ -1064,6 +1229,17 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "update set add union merge many iterable in place mutate none extend"
   },
   {
+    "slug": "set",
+    "name": "set",
+    "signature": "set([iterable])",
+    "blurb": "Build a mutable collection of unique elements — duplicates collapse, order is not kept.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 2.4+",
+    "searchTerms": "set constructor unique deduplicate distinct remove duplicates membership convert iterable"
+  },
+  {
     "slug": "setattr",
     "name": "setattr",
     "signature": "setattr(object, name, value)",
@@ -1205,6 +1381,28 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.6+",
     "searchTerms": "format string template placeholder braces positional keyword f-string mini language spec"
+  },
+  {
+    "slug": "str-format_map",
+    "name": "str.format_map",
+    "signature": "str.format_map(mapping)",
+    "blurb": "Like format(**mapping), but without copying the mapping first.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 3.2+",
+    "searchTerms": "format map mapping template substitute placeholder dict defaultdict missing key str"
+  },
+  {
+    "slug": "str-index",
+    "name": "str.index",
+    "signature": "str.index(sub[, start[, end]])",
+    "blurb": "Position of the first occurrence — raises ValueError instead of returning -1.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "index find position locate substring search first occurrence valueerror str"
   },
   {
     "slug": "str-isalnum",
@@ -1405,6 +1603,17 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "rfind reverse find last index position locate search substring right file extension"
   },
   {
+    "slug": "str-rindex",
+    "name": "str.rindex",
+    "signature": "str.rindex(sub[, start[, end]])",
+    "blurb": "Position of the LAST occurrence — raises ValueError instead of returning -1.",
+    "category": "string",
+    "type": "str",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "rindex rfind last occurrence reverse search from right position substring str"
+  },
+  {
     "slug": "str-rjust",
     "name": "str.rjust",
     "signature": "str.rjust(width, fillchar=\" \")",
@@ -1524,6 +1733,39 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.0+",
     "searchTerms": "title titlecase capitalize words headline case"
+  },
+  {
+    "slug": "tuple-count",
+    "name": "tuple.count",
+    "signature": "tuple.count(value)",
+    "blurb": "How many times a value appears in the tuple — one of only two tuple methods.",
+    "category": "tuple",
+    "type": "tuple",
+    "hasLiveDemo": true,
+    "version": "Python 2.6+",
+    "searchTerms": "tuple count occurrences how many times frequency tally immutable sequence"
+  },
+  {
+    "slug": "tuple-index",
+    "name": "tuple.index",
+    "signature": "tuple.index(value[, start[, stop]])",
+    "blurb": "Position of the first matching element — raises ValueError if absent.",
+    "category": "tuple",
+    "type": "tuple",
+    "hasLiveDemo": true,
+    "version": "Python 2.6+",
+    "searchTerms": "tuple index position find locate first occurrence valueerror immutable sequence"
+  },
+  {
+    "slug": "tuple",
+    "name": "tuple",
+    "signature": "tuple([iterable])",
+    "blurb": "Build an immutable, hashable sequence — usable as a dict key.",
+    "category": "builtin",
+    "type": "builtin",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "tuple constructor immutable hashable dict key convert iterable fixed sequence freeze"
   },
   {
     "slug": "type",

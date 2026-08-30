@@ -231,6 +231,15 @@ import { renderContent } from '@/utils/renderContent';
 import '../../pages.css';
 import '../../../app/globals.css';
 
+// Mirrors the <Head> tags below; read by generate-home-catalog.mjs.
+const seoData = {
+  title:       'SQL Clauses - Comprehensive Guide',
+  description: 'Explore SQL clauses: SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY, and LIMIT. Learn their uses and interactions in database queries.',
+  name:        'SQL Clauses',
+  url:         '/sql/clause',
+  keywords:    'SQL clauses, SELECT clause, FROM clause, WHERE clause, learn SQL',
+};
+
 export default function SQLClausePage({ tocItemsData ,keyWords }) {
   const tocItems = tocItemsData.map(item => ({
     ...item,
@@ -247,11 +256,11 @@ export default function SQLClausePage({ tocItemsData ,keyWords }) {
         <meta property="og:title" content="SQL Clauses - Comprehensive Guide" />
         <meta property="og:description" content="Explore SQL clauses: SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY, and LIMIT. Learn their uses and interactions in database queries." />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://webdevdata.net/sql/clauses" />
+        <meta property="og:url" content="https://www.webdevdata.net/sql/clause" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="SQL Clauses - Comprehensive Guide" />
         <meta name="twitter:description" content="Explore SQL clauses: SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY, and LIMIT. Learn their uses and interactions in database queries." />
-        <link rel="canonical" href="https://webdevdata.net/sql/clauses" />
+        <link rel="canonical" href="https://www.webdevdata.net/sql/clause" />
       </Head>
       
       <br />
