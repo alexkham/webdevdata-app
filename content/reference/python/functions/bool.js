@@ -4,7 +4,7 @@ export const meta = {
   slug:        'bool',
   name:        'bool',
   signature:   'bool(x=False)',
-  blurb:       'Convert any value to True or False using Python&apos;s truthiness rules.',
+  blurb:       'Convert any value to True or False using Python\'s truthiness rules.',
   category:    'builtin',
   type:        'builtin',
   hasLiveDemo: true,
@@ -58,13 +58,13 @@ export const method = {
     },
     {
       name: 'Filter truthy items',
-      desc: 'filter(None, iterable) is idiomatic for &quot;keep truthy items&quot;.',
+      desc: 'filter(None, iterable) is idiomatic for \"keep truthy items\".',
       code: 'kept = list(filter(None, items))',
     },
     {
       name: 'Custom __bool__ on a class',
       desc: 'Objects can define their own truthiness — falls back to __len__ if absent.',
-      code: 'class Cart:\n    def __bool__(self):\n        return self.total &gt; 0',
+      code: 'class Cart:\n    def __bool__(self):\n        return self.total > 0',
     },
   ],
 
@@ -96,7 +96,7 @@ export const method = {
       name: 'bool is a subclass of int — True == 1, False == 0',
       desc: 'True and False are literal integers under the hood. Arithmetic with bools works — sometimes usefully (sum a list of bools for a count), sometimes surprisingly.',
       wrong: { label: 'Weird types', code: 'True + True + False', output: '2  # integer arithmetic' },
-      fix:   { label: 'Use it deliberately', code: 'count = sum(x &gt; 0 for x in items)', output: 'idiomatic count of matches' },
+      fix:   { label: 'Use it deliberately', code: 'count = sum(x > 0 for x in items)', output: 'idiomatic count of matches' },
     },
     {
       name: '`is True` and `is False` almost never match user expectations',
@@ -110,7 +110,7 @@ export const method = {
     use: [
       'Storing a strict True/False in place of an arbitrary truthy/falsy value',
       'Filtering truthy items — filter(None, iterable) or bool() in a comprehension',
-      'Testing a custom object&apos;s __bool__ method explicitly',
+      'Testing a custom object\'s __bool__ method explicitly',
       'Counting matches — `sum(cond(x) for x in items)` relies on True == 1',
     ],
     avoid: [
@@ -124,7 +124,7 @@ export const method = {
   notes: {
     complexity: 'O(1) for most types; O(n) if __len__ walks a collection',
     return:     'bool — always the True or False singleton',
-    cpython:    'Objects/boolobject.c :: bool_new — dispatches to type&apos;s __bool__ then __len__',
+    cpython:    'Objects/boolobject.c :: bool_new — dispatches to type\'s __bool__ then __len__',
     memory:     'No allocation — True and False are singletons',
     threadSafe: 'Yes — a pure computation',
   },

@@ -32,14 +32,14 @@ export const method = {
   },
 
   parameters: [
-    { name: 'start', type: 'int | None', required: false, default: 'None', desc: 'The first index (inclusive). None means &quot;from the beginning&quot;. In the one-arg form (`slice(stop)`), start defaults to None.' },
-    { name: 'stop',  type: 'int | None', required: true,  default: null,   desc: 'The upper bound (exclusive). None means &quot;to the end&quot;. The only argument in the one-arg form.' },
+    { name: 'start', type: 'int | None', required: false, default: 'None', desc: 'The first index (inclusive). None means \"from the beginning\". In the one-arg form (`slice(stop)`), start defaults to None.' },
+    { name: 'stop',  type: 'int | None', required: true,  default: null,   desc: 'The upper bound (exclusive). None means \"to the end\". The only argument in the one-arg form.' },
     { name: 'step',  type: 'int | None', required: false, default: 'None', desc: 'The stride. None means 1. Negative values step backward.' },
   ],
 
   demoParams: [
     { name: 'start', type: 'int', hint: 'start index (empty = None)', input: 'number-or-none' },
-    { name: 'stop',  type: 'int', hint: 'stop index (exclusive)',      input: 'number' },
+    { name: 'stop',  type: 'int', hint: 'stop index (exclusive)',      input: 'number-or-none' },
     { name: 'step',  type: 'int', hint: 'step (empty = 1)',              input: 'number-or-none' },
   ],
   cases: [
@@ -51,7 +51,7 @@ export const method = {
     { id: 'all',       label: 'all',             values: { start: '',  stop: '',  step: '' } },
     { id: 'skip-first',label: 'skip first',       values: { start: 1,   stop: '',  step: '' } },
   ],
-  demoExplainer: 'slice() builds a slice object — the same thing that `x[i:j:k]` syntax creates. The demo shows the slice object AND how it would apply to a demo list. Any argument can be omitted (None) — for &quot;from the start&quot; use start=None; for &quot;to the end&quot; use stop=None. Negative indices count from the end of the sequence. Negative step counts down.',
+  demoExplainer: 'slice() builds a slice object — the same thing that `x[i:j:k]` syntax creates. The demo shows the slice object AND how it would apply to a demo list. Any argument can be omitted (None) — for \"from the start\" use start=None; for \"to the end\" use stop=None. Negative indices count from the end of the sequence. Negative step counts down.',
 
   patterns: [
     {
@@ -94,9 +94,9 @@ export const method = {
     },
     {
       name: 'None is the default — do NOT confuse with 0',
-      desc: '`slice(None, 5)` is not the same as `slice(0, 5)` — they behave the same for positive stops but differ subtly in some __getitem__ implementations. Use None to signal &quot;default&quot;.',
+      desc: '`slice(None, 5)` is not the same as `slice(0, 5)` — they behave the same for positive stops but differ subtly in some __getitem__ implementations. Use None to signal \"default\".',
       wrong: { label: 'Zero as default', code: 'slice(0, 5, 1)', output: 'explicit start' },
-      fix:   { label: 'None as default', code: 'slice(None, 5, None)', output: 'canonical &quot;default&quot; form' },
+      fix:   { label: 'None as default', code: 'slice(None, 5, None)', output: 'canonical \"default\" form' },
     },
     {
       name: 'slice is a TYPE — its constructor returns a slice object',
@@ -147,7 +147,7 @@ export const method = {
     },
     {
       q: 'What does the : mean in x[i:j:k]?',
-      a: 'Nothing special about the colons — they are the syntax that tells the parser &quot;this is a slice&quot;. Python translates i:j:k into slice(i, j, k) and passes it to x.__getitem__.',
+      a: 'Nothing special about the colons — they are the syntax that tells the parser \"this is a slice\". Python translates i:j:k into slice(i, j, k) and passes it to x.__getitem__.',
     },
     {
       q: 'How do I get the concrete indices for a slice?',

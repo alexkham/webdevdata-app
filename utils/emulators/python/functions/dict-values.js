@@ -1,14 +1,8 @@
-// utils/emulators/python/dict-values.js
-//
-// Emulator for Python dict.values(). Returns an array of values,
-// preserving insertion order (matching Python 3.7+ behavior).
-
-export default function dictValues(dict) {
-  if (dict === null || dict === undefined) {
-    throw new TypeError("'NoneType' object has no attribute 'values'");
+// Emulator for Python dict.values() — a dict_values view of the values.
+const q = (s) => "'" + String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'") + "'";
+export default function dictValues(d) {
+  if (d === null || typeof d !== 'object' || Array.isArray(d)) {
+    throw new TypeError('values() argument must be dict');
   }
-  if (typeof dict !== 'object' || Array.isArray(dict)) {
-    throw new TypeError("descriptor 'values' requires a 'dict' object");
-  }
-  return Object.values(dict);
+  return { __pyRaw: 'dict_values([' + Object.values(d).map(q).join(', ') + '])' };
 }

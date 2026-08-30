@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'Return the hash of a hashable value — the key mechanism behind dicts and sets.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 1.0+',
   searchTerms: 'hash hashable dict set key hash randomization pythonhashseed unhashable typeerror int',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 1.0+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'The engine of dict and set lookups. Equal values give equal hashes; unhashable types raise.',
 
@@ -82,7 +82,7 @@ export const method = {
   pitfalls: [
     {
       name: 'Lists, dicts, and sets are UNHASHABLE',
-      desc: 'Mutable containers cannot be dict keys or set elements. Their hash would change if you mutated them, breaking the container&apos;s invariants. Convert to tuple / frozenset / immutable form first.',
+      desc: 'Mutable containers cannot be dict keys or set elements. Their hash would change if you mutated them, breaking the container\'s invariants. Convert to tuple / frozenset / immutable form first.',
       wrong: { label: 'List rejected', code: 'hash([1, 2])', output: "TypeError: unhashable type: 'list'" },
       fix:   { label: 'Convert to tuple', code: 'hash((1, 2))', output: 'valid hash' },
     },
@@ -94,7 +94,7 @@ export const method = {
     },
     {
       name: 'hash(-1) returns -2',
-      desc: 'CPython internally reserves -1 as an &quot;error&quot; sentinel for hash. If a value would naturally hash to -1, Python returns -2 instead. `hash(-1)` and `hash(-2)` both return -2.',
+      desc: 'CPython internally reserves -1 as an \"error\" sentinel for hash. If a value would naturally hash to -1, Python returns -2 instead. `hash(-1)` and `hash(-2)` both return -2.',
       wrong: { label: 'Assumed identity', code: 'hash(-1)', output: '-2' },
       fix:   { label: 'Read the docs — a small implementation detail', code: '', output: '' },
     },
@@ -144,7 +144,7 @@ export const method = {
   faq: [
     {
       q: 'Why are lists not hashable?',
-      a: 'Because lists are mutable. If a list were a dict key, mutating it would invalidate the dict&apos;s lookup structure. Immutable containers (tuple, frozenset) are hashable and can serve as keys.',
+      a: 'Because lists are mutable. If a list were a dict key, mutating it would invalidate the dict\'s lookup structure. Immutable containers (tuple, frozenset) are hashable and can serve as keys.',
     },
     {
       q: 'Is hash() secure enough for passwords?',

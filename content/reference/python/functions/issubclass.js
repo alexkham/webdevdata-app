@@ -63,7 +63,7 @@ export const method = {
       code: 'def register(cls):\n    if not issubclass(cls, Serializable):\n        raise TypeError("must inherit from Serializable")',
     },
     {
-      name: 'Tuple form for &quot;any of&quot;',
+      name: 'Tuple form for \"any of\"',
       desc: 'Match against a set of allowed base classes in one call.',
       code: 'if issubclass(cls, (Exception, Warning)):\n    ...',
     },
@@ -87,7 +87,7 @@ export const method = {
     },
     {
       name: 'A class IS considered a subclass of itself',
-      desc: 'issubclass(C, C) is True. Reflexive by design. If you need &quot;strictly a subclass&quot;, check inequality separately.',
+      desc: 'issubclass(C, C) is True. Reflexive by design. If you need \"strictly a subclass\", check inequality separately.',
       wrong: { label: 'Strict expected', code: 'issubclass(int, int)', output: 'True  # strict? No' },
       fix:   { label: 'For strict',       code: 'cls is not Base and issubclass(cls, Base)', output: 'strict subclass' },
     },
@@ -140,11 +140,11 @@ export const method = {
     },
     {
       q: 'Why is bool a subclass of int?',
-      a: 'Historical — Python added bool late (2.2) and reused int&apos;s implementation. True and False are the ints 1 and 0. This is why `True + 1 == 2` and why `issubclass(bool, int)` is True.',
+      a: 'Historical — Python added bool late (2.2) and reused int\'s implementation. True and False are the ints 1 and 0. This is why `True + 1 == 2` and why `issubclass(bool, int)` is True.',
     },
     {
       q: 'Is every class a subclass of object?',
-      a: 'In Python 3, yes. Every class implicitly inherits from object. In Python 2 you had &quot;old-style&quot; classes that did not; Python 3 removed that distinction.',
+      a: 'In Python 3, yes. Every class implicitly inherits from object. In Python 2 you had \"old-style\" classes that did not; Python 3 removed that distinction.',
     },
   ],
 

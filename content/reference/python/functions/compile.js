@@ -25,7 +25,7 @@ export const method = {
   subtitle: 'Precompile source once; execute many times. Also the entry point for AST-based code transformation.',
 
   cheat: {
-    commonCall: 'code = compile(src, "&lt;str&gt;", "exec")',
+    commonCall: 'code = compile(src, "<str>", "exec")',
     returns:    'a code object',
     replaces:   'passing raw source to eval/exec every time',
     watchOut:   'the same security warnings as eval/exec — the code object still runs arbitrary Python',
@@ -33,7 +33,7 @@ export const method = {
 
   parameters: [
     { name: 'source',       type: 'str | bytes | ast', required: true,  default: null,    desc: 'The source code. String, bytes, or an ast.AST object (for AST-based tools).' },
-    { name: 'filename',     type: 'str',               required: true,  default: null,    desc: 'The filename used in error messages and tracebacks. Use "&lt;str&gt;" or "&lt;stdin&gt;" when the source is not from a file.' },
+    { name: 'filename',     type: 'str',               required: true,  default: null,    desc: 'The filename used in error messages and tracebacks. Use "<str>" or "<stdin>" when the source is not from a file.' },
     { name: 'mode',         type: 'str',               required: true,  default: null,    desc: '"exec" for statements (any code), "eval" for a single expression, "single" for interactive single-statement mode.' },
     { name: 'flags',        type: 'int',               required: false, default: '0',     desc: 'Compilation flags. Rarely set directly; the ast module uses this for feature flags like PyCF_ONLY_AST.' },
     { name: 'dont_inherit', type: 'bool',              required: false, default: 'False', desc: 'Whether to inherit __future__ flags from the caller.' },
@@ -152,7 +152,7 @@ export const method = {
     },
     {
       q: 'What is "single" mode for?',
-      a: 'Interactive-style: compile ONE statement. Used by REPLs — it treats a lone expression at top level as &quot;print the value&quot;, which is how the REPL echoes results.',
+      a: 'Interactive-style: compile ONE statement. Used by REPLs — it treats a lone expression at top level as \"print the value\", which is how the REPL echoes results.',
     },
   ],
 

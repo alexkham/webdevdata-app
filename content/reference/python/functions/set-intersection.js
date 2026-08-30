@@ -27,10 +27,10 @@ export const method = {
   subtitle: 'Find elements common to two or more collections — a fresh set, no mutation.',
 
   cheat: {
-    commonCall: 's1 &amp; s2',
+    commonCall: 's1 & s2',
     returns:    'a NEW set — self and others untouched',
     replaces:   'a filter + membership-check loop',
-    watchOut:   'others can be any iterable — but the `&amp;` operator requires sets on both sides',
+    watchOut:   'others can be any iterable — but the `&` operator requires sets on both sides',
   },
 
   parameters: [
@@ -55,8 +55,8 @@ export const method = {
   patterns: [
     {
       name: 'Common tags across posts',
-      desc: 'The operator form reads like &quot;a AND b&quot;.',
-      code: 'shared = post_a.tags &amp; post_b.tags',
+      desc: 'The operator form reads like \"a AND b\".',
+      code: 'shared = post_a.tags & post_b.tags',
     },
     {
       name: 'Intersect many',
@@ -66,34 +66,34 @@ export const method = {
     {
       name: 'Test disjointness',
       desc: 'Empty intersection means the two sets share nothing — but isdisjoint is more direct.',
-      code: 'if not a &amp; b:\n    ...     # disjoint\nif a.isdisjoint(b):\n    ...     # clearer',
+      code: 'if not a & b:\n    ...     # disjoint\nif a.isdisjoint(b):\n    ...     # clearer',
     },
   ],
 
   examples: [
-    { title: 'Partial overlap',    code: '{1, 2, 3} &amp; {2, 3, 4}',                returns: '{2, 3}' },
+    { title: 'Partial overlap',    code: '{1, 2, 3} & {2, 3, 4}',                returns: '{2, 3}' },
     { title: 'Iterable other',     code: '{1, 2, 3}.intersection([2, 3, 4])',      returns: '{2, 3}' },
     { title: 'Multiple others',    code: '{1, 2, 3}.intersection({2, 3}, [3, 4])', returns: '{3}' },
-    { title: 'Disjoint gives empty',code: '{1, 2} &amp; {3, 4}',                    returns: 'set()' },
+    { title: 'Disjoint gives empty',code: '{1, 2} & {3, 4}',                    returns: 'set()' },
     { title: 'Zero others is self',code: '{1, 2, 3}.intersection()',                returns: '{1, 2, 3}' },
   ],
 
   pitfalls: [
     {
-      name: 'The `&amp;` operator requires sets on both sides',
-      desc: 'intersection() accepts any iterable. The `&amp;` operator does NOT — it needs a set on both sides.',
-      wrong: { label: 'Type error', code: '{1, 2, 3} &amp; [2, 3]', output: "TypeError: unsupported operand type(s) for &amp;: 'set' and 'list'" },
+      name: 'The `&` operator requires sets on both sides',
+      desc: 'intersection() accepts any iterable. The `&` operator does NOT — it needs a set on both sides.',
+      wrong: { label: 'Type error', code: '{1, 2, 3} & [2, 3]', output: "TypeError: unsupported operand type(s) for &: 'set' and 'list'" },
       fix:   { label: 'Method form', code: '{1, 2, 3}.intersection([2, 3])', output: '{2, 3}' },
     },
     {
       name: 'intersection() is NOT intersection_update() — it returns a new set',
       desc: 'intersection leaves both inputs alone and returns a fresh set. intersection_update mutates the left one and returns None. Same class of confusion as sort vs sorted.',
       wrong: { label: 'Original untouched', code: 'a = {1, 2, 3}\na.intersection({2, 3})\na', output: '{1, 2, 3}  # nothing removed' },
-      fix:   { label: 'Two options', code: 'a = a &amp; {2, 3}                # new set, replace name\n# or\na.intersection_update({2, 3})   # mutate in place', output: '{2, 3}' },
+      fix:   { label: 'Two options', code: 'a = a & {2, 3}                # new set, replace name\n# or\na.intersection_update({2, 3})   # mutate in place', output: '{2, 3}' },
     },
     {
       name: 'String iterables explode into characters',
-      desc: 'Same footgun as union — a string passed as an &quot;other&quot; is iterated as characters, so nothing bigger than one char can match.',
+      desc: 'Same footgun as union — a string passed as an \"other\" is iterated as characters, so nothing bigger than one char can match.',
       wrong: { label: 'Only chars match', code: '{"Ann", "Bob"}.intersection("BobAnn")', output: 'set()  # no whole-name matches' },
       fix:   { label: 'Wrap it',           code: '{"Ann", "Bob"}.intersection({"Bob"})', output: '{"Bob"}' },
     },
@@ -110,12 +110,12 @@ export const method = {
       'Elements common to two or more collections',
       'Filter-by-membership without a manual loop',
       'Access-control style checks — required roles vs granted roles',
-      'Chaining with other pure set operations (|, &amp;, -)',
+      'Chaining with other pure set operations (|, &, -)',
     ],
     avoid: [
-      'You want to mutate in place → intersection_update or &amp;=',
+      'You want to mutate in place → intersection_update or &=',
       'Preserving order → use dict.fromkeys and filter',
-      'Just checking &quot;is there any overlap?&quot; → isdisjoint (clearer, may short-circuit)',
+      'Just checking \"is there any overlap?\" → isdisjoint (clearer, may short-circuit)',
       'Unhashable elements → use a list-comprehension with the `in` operator',
     ],
   },
@@ -136,21 +136,21 @@ export const method = {
 
   faq: [
     {
-      q: 'What is the difference between intersection() and the `&amp;` operator?',
-      a: 'They compute the same thing, but intersection() accepts ANY iterable (list, tuple, generator, string). The `&amp;` operator requires both sides to be sets. Method: flexible. Operator: strict.',
+      q: 'What is the difference between intersection() and the `&` operator?',
+      a: 'They compute the same thing, but intersection() accepts ANY iterable (list, tuple, generator, string). The `&` operator requires both sides to be sets. Method: flexible. Operator: strict.',
     },
     {
       q: 'What is the difference between intersection() and intersection_update()?',
       a: 'intersection returns a NEW set and leaves both inputs alone. intersection_update mutates the left set in place and returns None. Pick based on whether you want a fresh result or in-place shrink.',
     },
     {
-      q: 'Is there a &quot;symmetric&quot; version?',
+      q: 'Is there a \"symmetric\" version?',
       a: 'Yes — `symmetric_difference` (or the `^` operator) returns elements in one set OR the other but not both. Complement to intersection at the opposite end.',
     },
   ],
 
   history: [
-    { version: '2.3', note: 'set type added; intersection available as `&amp;` operator.' },
+    { version: '2.3', note: 'set type added; intersection available as `&` operator.' },
     { version: '2.6', note: 'intersection() method accepts multiple iterable arguments (variadic).' },
   ],
 

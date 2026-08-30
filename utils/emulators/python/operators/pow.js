@@ -17,5 +17,9 @@ export default function pyPow(a, b) {
   if (a === 0 && b < 0) {
     throw new ZeroDivisionErrorLike('0.0 cannot be raised to a negative power');
   }
-  return Math.pow(a, b);
+  const r = Math.pow(a, b);
+  // float operands or negative/fractional exponents give floats in Python
+  const isFloat = !Number.isInteger(a) || !Number.isInteger(b) || b < 0;
+  if (isFloat && Number.isInteger(r) && Math.abs(r) < 1e16) return { __pyRaw: r + '.0' };
+  return r;
 }

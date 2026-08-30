@@ -15,5 +15,8 @@ export default function truediv(a, b) {
     throw new TypeError("unsupported operand type(s) for /");
   }
   if (b === 0) throw new ZeroDivisionErrorLike('division by zero');
-  return a / b;
+  const r = a / b;
+  // Python / always yields a float — show 4.0, not 4
+  if (Number.isInteger(r) && Math.abs(r) < 1e16) return { __pyRaw: r + '.0' };
+  return r;
 }

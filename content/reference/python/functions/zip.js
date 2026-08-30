@@ -33,14 +33,14 @@ export const method = {
 
   parameters: [
     { name: '*iterables', type: 'iterable', required: true,  default: null,    desc: 'Any number of iterables. Each contributes one item per position.' },
-    { name: 'strict',     type: 'bool',     required: false, default: 'False', desc: 'If True, raise ValueError when lengths differ. Added in Python 3.10.' },
+    { name: 'strict', type: 'bool', required: false, default: 'False', desc: 'Keyword-only (3.10+): raise ValueError instead of truncating when the iterables differ in length.' },
   ],
 
   demoParams: [
     { name: 'a',      type: 'list', hint: 'first iterable',    input: 'csv' },
     { name: 'b',      type: 'list', hint: 'second iterable',   input: 'csv' },
-    { name: 'strict', type: 'int',  hint: '1 = strict, empty = off', input: 'number-or-none' },
   ],
+  demoWrap: 'list',
   cases: [
     { id: 'equal',      label: 'equal lengths',   values: { a: '1,2,3', b: 'a,b,c',   strict: '' } },
     { id: 'a-shorter',  label: 'a shorter',       values: { a: '1,2',   b: 'a,b,c,d', strict: '' } },

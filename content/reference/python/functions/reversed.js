@@ -38,6 +38,7 @@ export const method = {
   demoParams: [
     { name: 'items', type: 'list', hint: 'comma-separated items', input: 'csv' },
   ],
+  demoWrap: 'list',
   cases: [
     { id: 'basic',   label: 'basic',    values: { items: 'a,b,c,d' } },
     { id: 'numbers', label: 'numbers',  values: { items: '1,2,3,4,5' } },
@@ -65,7 +66,7 @@ export const method = {
     },
     {
       name: 'Bottom-up processing',
-      desc: 'Iterating a sorted list in reverse is common for &quot;largest first&quot; workflows.',
+      desc: 'Iterating a sorted list in reverse is common for \"largest first\" workflows.',
       code: 'for score, name in reversed(sorted(scores)):\n    print(name, score)',
     },
   ],
@@ -100,7 +101,7 @@ export const method = {
     {
       name: '[::-1] is often the right tool instead',
       desc: 'reversed is lazy but returns an iterator. `xs[::-1]` returns a fully-materialized reversed copy. Pick based on whether you need laziness or a real sequence.',
-      wrong: { label: 'When you need a list', code: 'reversed(xs)  # object, not indexable', output: "&lt;list_reverseiterator object&gt;" },
+      wrong: { label: 'When you need a list', code: 'reversed(xs)  # object, not indexable', output: "<list_reverseiterator object>" },
       fix:   { label: 'Slice returns a list', code: 'xs[::-1]', output: '[..., 3, 2, 1]  # ordinary list' },
     },
   ],

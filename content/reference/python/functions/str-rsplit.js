@@ -29,7 +29,7 @@ export const method = {
   cheat: {
     commonCall: 'user, host = email.rsplit("@", 1)',
     returns:    'a list of strings, length ≤ maxsplit + 1',
-    replaces:   'the rfind + slice pattern for &quot;keep the head intact, split the tail&quot;',
+    replaces:   'the rfind + slice pattern for \"keep the head intact, split the tail\"',
     watchOut:   'sep=None collapses runs of whitespace AND strips ends; sep="" raises ValueError',
   },
 
@@ -85,13 +85,13 @@ export const method = {
   pitfalls: [
     {
       name: 'Without maxsplit, rsplit is a no-op vs split',
-      desc: 'Reaching for rsplit &quot;because I want to split from the right&quot; without passing maxsplit gives you the same list as split. The value is in the maxsplit case.',
+      desc: 'Reaching for rsplit \"because I want to split from the right\" without passing maxsplit gives you the same list as split. The value is in the maxsplit case.',
       wrong: { label: 'No difference', code: '"a,b,c".rsplit(",")\n"a,b,c".split(",")', output: '["a", "b", "c"]  # identical' },
       fix:   { label: 'With maxsplit', code: '"a,b,c".rsplit(",", 1)', output: '["a,b", "c"]  # tail split off' },
     },
     {
       name: 'Empty sep raises ValueError',
-      desc: 'Same rule as split — cannot split by an empty separator. sep=None (default) is fine and means &quot;any whitespace runs&quot;.',
+      desc: 'Same rule as split — cannot split by an empty separator. sep=None (default) is fine and means \"any whitespace runs\".',
       wrong: { label: 'Runtime error', code: '"hello".rsplit("")', output: 'ValueError: empty separator' },
       fix:   { label: 'Use None for whitespace', code: '"hello world".rsplit(None, 1)', output: '["hello", "world"]' },
     },
@@ -113,7 +113,7 @@ export const method = {
     use: [
       'Splitting off the last N fields while keeping the head intact',
       'Splitting emails, URLs, or paths where the trailing part matters',
-      'Any &quot;head + tail&quot; parsing where the delimiter appears earlier in the head too',
+      'Any \"head + tail\" parsing where the delimiter appears earlier in the head too',
     ],
     avoid: [
       'No maxsplit → just use split, they are identical',
@@ -145,7 +145,7 @@ export const method = {
     },
     {
       q: 'Why does rsplit(None) work but rsplit("") fail?',
-      a: 'None is a sentinel meaning &quot;split on any whitespace runs and strip ends&quot;. An explicit empty string is a delimiter of length zero, which is undefined for splitting.',
+      a: 'None is a sentinel meaning \"split on any whitespace runs and strip ends\". An explicit empty string is a delimiter of length zero, which is undefined for splitting.',
     },
     {
       q: 'Is rsplit faster than split?',

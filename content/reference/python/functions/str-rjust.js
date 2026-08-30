@@ -83,7 +83,7 @@ export const method = {
   pitfalls: [
     {
       name: 'Never truncates',
-      desc: 'width ≤ len returns the original unchanged, not a shortened version. Great as a &quot;pad only if needed&quot; primitive; wrong when you actually want a fixed length.',
+      desc: 'width ≤ len returns the original unchanged, not a shortened version. Great as a \"pad only if needed\" primitive; wrong when you actually want a fixed length.',
       wrong: { label: 'Overflow', code: '"long text".rjust(3)', output: '"long text"  # 9 chars, not 3' },
       fix:   { label: 'Slice first', code: 's[:width].rjust(width)', output: 'true fixed width' },
     },
@@ -112,7 +112,7 @@ export const method = {
       'Right-aligned numeric columns in text output',
       'Line numbers and index labels in printouts',
       'Money and quantity columns where the ones digit should align',
-      '&quot;Pad only if needed&quot; workflows where truncation would be wrong',
+      '\"Pad only if needed\" workflows where truncation would be wrong',
     ],
     avoid: [
       'Zero-padding numbers with a possible sign → zfill (sign-aware)',
@@ -139,8 +139,8 @@ export const method = {
 
   faq: [
     {
-      q: 'What is the difference between rjust and format &quot;&gt;&quot;?',
-      a: 'The `&gt;` alignment in format() and f-strings does the same thing. `f"{s:&gt;10}"` right-aligns in a field of 10, with space fill by default. Use format when you compose with other spec fields (fill, sign, precision).',
+      q: 'What is the difference between rjust and format \">\"?',
+      a: 'The `>` alignment in format() and f-strings does the same thing. `f"{s:>10}"` right-aligns in a field of 10, with space fill by default. Use format when you compose with other spec fields (fill, sign, precision).',
     },
     {
       q: 'What is the difference between rjust(width, "0") and zfill(width)?',

@@ -22,7 +22,7 @@ export const method = {
   version:     'Python 1.0+',
   hasLiveDemo: false,
 
-  subtitle: 'Direct access to the module&apos;s namespace dict — the layer just below the language.',
+  subtitle: 'Direct access to the module\'s namespace dict — the layer just below the language.',
 
   cheat: {
     commonCall: 'globals()',
@@ -58,7 +58,7 @@ export const method = {
     },
     {
       name: 'List everything defined at module level',
-      desc: 'Filter to non-dunder, non-imported names for a &quot;public&quot; summary.',
+      desc: 'Filter to non-dunder, non-imported names for a \"public\" summary.',
       code: '[n for n in globals() if not n.startswith("_")]',
     },
     {
@@ -79,7 +79,7 @@ export const method = {
   pitfalls: [
     {
       name: 'globals() is the MODULE dict, even inside a function',
-      desc: 'A common surprise. Inside a function, globals() does NOT give you the function&apos;s local variables — for that, use locals(). globals() always gives the enclosing module&apos;s namespace.',
+      desc: 'A common surprise. Inside a function, globals() does NOT give you the function\'s local variables — for that, use locals(). globals() always gives the enclosing module\'s namespace.',
       wrong: { label: 'Not local vars', code: 'def f():\n    x = 1\n    return globals()', output: 'module dict — no x' },
       fix:   { label: 'Use locals()',    code: 'def f():\n    x = 1\n    return locals()', output: "{'x': 1}" },
     },
@@ -91,13 +91,13 @@ export const method = {
     },
     {
       name: 'globals() at REPL vs module — same idea, different content',
-      desc: 'At the interactive REPL, globals() returns the __main__ module&apos;s namespace. In a module file, it returns that module&apos;s namespace. Both are &quot;the module dict&quot; but their contents differ dramatically.',
-      wrong: { label: 'Confused expectation', code: 'globals() at REPL vs in a script', output: 'different keys, both &quot;module dicts&quot;' },
+      desc: 'At the interactive REPL, globals() returns the __main__ module\'s namespace. In a module file, it returns that module\'s namespace. Both are \"the module dict\" but their contents differ dramatically.',
+      wrong: { label: 'Confused expectation', code: 'globals() at REPL vs in a script', output: 'different keys, both \"module dicts\"' },
       fix:   { label: 'Same concept — different modules', code: '# each module has its own globals()', output: '' },
     },
     {
       name: 'Not the same as __builtins__',
-      desc: 'globals() gives you the module&apos;s namespace, which is separate from the builtins namespace (print, len, etc.). __builtins__ appears IN globals() as a reference — do not confuse the two.',
+      desc: 'globals() gives you the module\'s namespace, which is separate from the builtins namespace (print, len, etc.). __builtins__ appears IN globals() as a reference — do not confuse the two.',
       wrong: { label: 'Assumed same', code: '"print" in globals()', output: 'False  # print is in __builtins__' },
       fix:   { label: 'Look in builtins', code: 'import builtins\n"print" in dir(builtins)', output: 'True' },
     },
@@ -108,7 +108,7 @@ export const method = {
       'Dispatch by name in dynamic code (parsers, plugins)',
       'Introspection of module-level definitions',
       'Rare: guard-and-set for optional imports',
-      'Debugging &quot;why can&apos;t Python find this name?&quot;',
+      'Debugging \"why can\'t Python find this name?\"',
     ],
     avoid: [
       'Local variables in a function → locals()',
@@ -119,16 +119,16 @@ export const method = {
   },
 
   notes: {
-    complexity: 'O(1) — direct reference to the module&apos;s dict',
+    complexity: 'O(1) — direct reference to the module\'s dict',
     return:     'A LIVE dict — same object each call from the same module',
-    cpython:    'Python/bltinmodule.c :: builtin_globals — reads the current frame&apos;s globals',
+    cpython:    'Python/bltinmodule.c :: builtin_globals — reads the current frame\'s globals',
     memory:     'No allocation',
     threadSafe: 'Depends on whether the module dict is safe from concurrent mutation',
   },
 
   related: [
     { name: 'locals',    slug: 'locals',    when: 'Function or class local namespace' },
-    { name: 'vars',      slug: 'vars',      when: 'An object&apos;s __dict__' },
+    { name: 'vars',      slug: 'vars',      when: 'An object\'s __dict__' },
     { name: 'dir',       slug: 'dir',       when: 'All names accessible from a scope' },
     { name: 'getattr',   slug: 'getattr',   when: 'Read a specific name by string' },
   ],
@@ -136,7 +136,7 @@ export const method = {
   faq: [
     {
       q: 'What is the difference between globals() and locals()?',
-      a: 'globals() always returns the enclosing module&apos;s namespace dict. locals() returns the current LOCAL scope — the same as globals() at module level, but function locals inside a function, and class attributes inside a class body.',
+      a: 'globals() always returns the enclosing module\'s namespace dict. locals() returns the current LOCAL scope — the same as globals() at module level, but function locals inside a function, and class attributes inside a class body.',
     },
     {
       q: 'Can I write to globals()?',
@@ -144,7 +144,7 @@ export const method = {
     },
     {
       q: 'What are __name__, __builtins__, __doc__ doing in globals()?',
-      a: 'They are the module&apos;s dunder attributes — automatically populated by the import machinery. __name__ is the module&apos;s import name; __builtins__ is a reference to the builtins module; __doc__ is the module docstring.',
+      a: 'They are the module\'s dunder attributes — automatically populated by the import machinery. __name__ is the module\'s import name; __builtins__ is a reference to the builtins module; __doc__ is the module docstring.',
     },
   ],
 

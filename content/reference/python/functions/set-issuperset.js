@@ -27,7 +27,7 @@ export const method = {
   subtitle: 'Test set containment from the other side — does self contain every element of other?',
 
   cheat: {
-    commonCall: 'granted &gt;= required',
+    commonCall: 'granted >= required',
     returns:    'True or False',
     replaces:   '`all(x in self for x in other)` in one call',
     watchOut:   'any set is a superset of the empty set — including empty (vacuous truth)',
@@ -56,53 +56,53 @@ export const method = {
   patterns: [
     {
       name: 'Permission check from the granting side',
-      desc: 'Reads more naturally as &quot;granted covers required&quot;.',
-      code: 'if granted_perms &gt;= required_perms:\n    allow()',
+      desc: 'Reads more naturally as \"granted covers required\".',
+      code: 'if granted_perms >= required_perms:\n    allow()',
     },
     {
       name: 'Whitelist check',
       desc: 'Is the input a subset of what we accept? Same test from the other side.',
-      code: 'if allowed_options &gt;= set(user_selection):\n    apply(user_selection)',
+      code: 'if allowed_options >= set(user_selection):\n    apply(user_selection)',
     },
     {
       name: 'Sanity check on a required-fields set',
       desc: 'The dict must contain every required key.',
-      code: 'if set(payload) &gt;= required_fields:\n    process(payload)',
+      code: 'if set(payload) >= required_fields:\n    process(payload)',
     },
   ],
 
   examples: [
-    { title: 'Proper superset',    code: '{1, 2, 3} &gt;= {1, 2}',                    returns: 'True' },
-    { title: 'Equal is superset',  code: '{1, 2, 3} &gt;= {1, 2, 3}',                 returns: 'True' },
-    { title: 'Missing element',    code: '{1, 2} &gt;= {1, 2, 3}',                    returns: 'False' },
-    { title: 'Universal empty',    code: '{1, 2, 3} &gt;= set()',                     returns: 'True' },
-    { title: 'Empty vs empty',     code: 'set() &gt;= set()',                         returns: 'True' },
+    { title: 'Proper superset',    code: '{1, 2, 3} >= {1, 2}',                    returns: 'True' },
+    { title: 'Equal is superset',  code: '{1, 2, 3} >= {1, 2, 3}',                 returns: 'True' },
+    { title: 'Missing element',    code: '{1, 2} >= {1, 2, 3}',                    returns: 'False' },
+    { title: 'Universal empty',    code: '{1, 2, 3} >= set()',                     returns: 'True' },
+    { title: 'Empty vs empty',     code: 'set() >= set()',                         returns: 'True' },
     { title: 'Iterable other',     code: '{1, 2, 3, 4}.issuperset([1, 2])',          returns: 'True' },
-    { title: 'Strict superset',    code: '{1, 2, 3} &gt; {1, 2}',                     returns: 'True (strict, not equal)' },
+    { title: 'Strict superset',    code: '{1, 2, 3} > {1, 2}',                     returns: 'True (strict, not equal)' },
   ],
 
   pitfalls: [
     {
       name: 'Any set is a superset of set()',
-      desc: 'The mirror of issubset&apos;s vacuous case. There is no element in the empty other that could fail — so the answer is always True.',
+      desc: 'The mirror of issubset\'s vacuous case. There is no element in the empty other that could fail — so the answer is always True.',
       wrong: { label: 'Unexpected True', code: '{1, 2, 3}.issuperset(set())', output: 'True' },
-      fix:   { label: 'Guard for empty', code: 'if other and self &gt;= other:\n    ...     # non-trivial superset', output: 'other non-empty AND superset' },
+      fix:   { label: 'Guard for empty', code: 'if other and self >= other:\n    ...     # non-trivial superset', output: 'other non-empty AND superset' },
     },
     {
       name: 'issuperset != strict superset',
       desc: '`a >= b` and `a.issuperset(b)` allow equality. For strict superset use `a > b` (self is superset AND not equal to other).',
       wrong: { label: 'Equal returns True', code: '{1, 2, 3}.issuperset({1, 2, 3})', output: 'True  # equal counts' },
-      fix:   { label: 'Strict operator',    code: '{1, 2, 3} &gt; {1, 2, 3}', output: 'False' },
+      fix:   { label: 'Strict operator',    code: '{1, 2, 3} > {1, 2, 3}', output: 'False' },
     },
     {
       name: 'The `>=` operator requires sets on both sides',
       desc: 'issuperset() accepts any iterable. `>=` does NOT — it needs a set on both sides.',
-      wrong: { label: 'Type error', code: '{1, 2, 3} &gt;= [1, 2]', output: "TypeError: '&gt;=' not supported between instances of 'set' and 'list'" },
+      wrong: { label: 'Type error', code: '{1, 2, 3} >= [1, 2]', output: "TypeError: '>=' not supported between instances of 'set' and 'list'" },
       fix:   { label: 'Method form', code: '{1, 2, 3}.issuperset([1, 2])', output: 'True' },
     },
     {
-      name: 'Direction confusion — a &gt;= b vs a &lt;= b',
-      desc: 'issuperset is &quot;self contains other&quot;. issubset is &quot;self is contained in other&quot;. Same relation, different sides. Getting the sides backwards silently returns a different answer.',
+      name: 'Direction confusion — a >= b vs a <= b',
+      desc: 'issuperset is \"self contains other\". issubset is \"self is contained in other\". Same relation, different sides. Getting the sides backwards silently returns a different answer.',
       wrong: { label: 'Wrong side', code: '{1, 2}.issuperset({1, 2, 3})   # expected True?', output: 'False  # {1,2} does not contain 3' },
       fix:   { label: 'Right side', code: '{1, 2, 3}.issuperset({1, 2})', output: 'True' },
     },
@@ -110,14 +110,14 @@ export const method = {
 
   when: {
     use: [
-      '&quot;Do we have everything they need?&quot; — permission or capability grants',
+      '\"Do we have everything they need?\" — permission or capability grants',
       'Whitelist / allow-list checks',
       'Required-fields presence tests',
-      'Any &quot;self contains all of other&quot; predicate',
+      'Any \"self contains all of other\" predicate',
     ],
     avoid: [
       'Strict superset needed → `>` operator',
-      '&quot;No overlap at all&quot; → set.isdisjoint',
+      '\"No overlap at all\" → set.isdisjoint',
       'Ordered containment → convert to sorted tuples and compare',
       'When issubset reads more naturally — pick the direction that matches the domain language',
     ],
@@ -141,7 +141,7 @@ export const method = {
   faq: [
     {
       q: 'What is the difference between issuperset and issubset?',
-      a: 'Direction. `a.issuperset(b)` asks &quot;does a contain everything in b?&quot;; `a.issubset(b)` asks &quot;is a contained inside b?&quot;. Same relation from opposite sides. Pick whichever reads clearest for the domain.',
+      a: 'Direction. `a.issuperset(b)` asks \"does a contain everything in b?\"; `a.issubset(b)` asks \"is a contained inside b?\". Same relation from opposite sides. Pick whichever reads clearest for the domain.',
     },
     {
       q: 'Is issuperset commutative?',
@@ -150,7 +150,7 @@ export const method = {
     {
       q: 'How do I test strict (proper) superset?',
       a: 'Use `>` instead of `>=`. Strict superset means self is a superset AND self != other.',
-      code: '{1, 2, 3} &gt; {1, 2}       # True\n{1, 2, 3} &gt; {1, 2, 3}    # False (equal)',
+      code: '{1, 2, 3} > {1, 2}       # True\n{1, 2, 3} > {1, 2, 3}    # False (equal)',
     },
   ],
 

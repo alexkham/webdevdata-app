@@ -145,7 +145,7 @@ export const method = {
     },
     {
       q: 'Why cannot I use a set as a dict key?',
-      a: 'Because set is mutable. Python requires dict keys to be hashable — meaning their hash cannot change over their lifetime. A mutable object could change and break the dict&apos;s invariants. frozenset is the immutable, hashable alternative.',
+      a: 'Because set is mutable. Python requires dict keys to be hashable — meaning their hash cannot change over their lifetime. A mutable object could change and break the dict\'s invariants. frozenset is the immutable, hashable alternative.',
     },
     {
       q: 'Do set operations on frozensets work?',

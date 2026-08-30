@@ -69,7 +69,7 @@ export const method = {
       code: 'if hasattr(obj, name) and not force:\n    raise ValueError(f"{name} already exists")',
     },
     {
-      name: 'Prefer try/except for &quot;probably has it&quot; cases',
+      name: 'Prefer try/except for \"probably has it\" cases',
       desc: 'When you expect the attribute to exist, EAFP style is cleaner and faster.',
       code: 'try:\n    result = obj.method()\nexcept AttributeError:\n    result = fallback',
     },
@@ -88,7 +88,7 @@ export const method = {
     {
       name: 'A property that RAISES AttributeError silently returns False',
       desc: 'The classic hasattr gotcha. If a property (or __getattr__) internally raises AttributeError — for any reason, even a bug — hasattr returns False rather than letting you see the real error.',
-      wrong: { label: 'Bug hidden', code: '@property\ndef expensive(self):\n    return self.does_not_exist   # AttributeError\n\nhasattr(obj, "expensive")', output: 'False  # bug looks like &quot;attribute missing&quot;' },
+      wrong: { label: 'Bug hidden', code: '@property\ndef expensive(self):\n    return self.does_not_exist   # AttributeError\n\nhasattr(obj, "expensive")', output: 'False  # bug looks like \"attribute missing\"' },
       fix:   { label: 'Try/except with logging', code: 'try:\n    val = obj.expensive\nexcept AttributeError as e:\n    log.warning("no expensive: %s", e)', output: 'error visible' },
     },
     {

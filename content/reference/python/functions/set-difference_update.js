@@ -98,7 +98,7 @@ export const method = {
     },
     {
       name: 'Silent on missing elements — no KeyError',
-      desc: 'Unlike set.remove(), difference_update silently ignores elements not in the set. This is usually the desired behavior for &quot;bulk remove&quot; but can hide bugs when you expected the element to be present.',
+      desc: 'Unlike set.remove(), difference_update silently ignores elements not in the set. This is usually the desired behavior for \"bulk remove\" but can hide bugs when you expected the element to be present.',
       wrong: { label: 'Silent skip', code: '{"a"}.difference_update(["z"])', output: '{"a"}  # z was not there, ignored' },
       fix:   { label: 'Check before if you care', code: 'missing = set(target) - s\nif missing:\n    log.warning(...)', output: '' },
     },
@@ -114,7 +114,7 @@ export const method = {
     use: [
       'Removing many elements from a set given an iterable',
       'Subtracting multiple sources in one call',
-      'Building a &quot;keep&quot; state by removing everything else',
+      'Building a \"keep\" state by removing everything else',
       'When silence on missing elements is desired (unlike remove())',
     ],
     avoid: [
@@ -147,11 +147,11 @@ export const method = {
     },
     {
       q: 'Does difference_update raise on missing elements?',
-      a: 'No. Missing elements are silently ignored — same behavior as discard(). This is often what you want for &quot;bulk remove&quot; workflows.',
+      a: 'No. Missing elements are silently ignored — same behavior as discard(). This is often what you want for \"bulk remove\" workflows.',
     },
     {
       q: 'What is the pattern shared by all the *_update methods?',
-      a: 'Every set operator has an in-place *_update variant: update (union), difference_update, intersection_update, symmetric_difference_update. All accept any iterable, return None, and mutate the set. The `_update` suffix consistently means &quot;in place, returns None&quot;.',
+      a: 'Every set operator has an in-place *_update variant: update (union), difference_update, intersection_update, symmetric_difference_update. All accept any iterable, return None, and mutate the set. The `_update` suffix consistently means \"in place, returns None\".',
     },
   ],
 

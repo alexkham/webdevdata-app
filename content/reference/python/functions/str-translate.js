@@ -38,19 +38,18 @@ export const method = {
   ],
 
   demoParams: [
-    { name: 'string', type: 'str', hint: 'the source',                 input: 'text' },
-    { name: 'from',   type: 'str', hint: 'characters to replace',       input: 'text' },
-    { name: 'to',     type: 'str', hint: 'replacement chars, same length', input: 'text' },
+    { name: 'string', type: 'str', hint: 'the source',                    input: 'text' },
+    { name: 'frm',    type: 'str', hint: 'characters to replace',         input: 'text' },
+    { name: 'to',     type: 'str', hint: 'replacements, same length',     input: 'text' },
   ],
+  demoTemplate: '{string}.translate(str.maketrans({frm}, {to}))',
   cases: [
-    { id: 'rot',        label: 'ROT-style',       values: { string: 'hello',  from: 'abc', to: 'xyz' } },
-    { id: 'digits',     label: 'digits swap',     values: { string: 'phone 555-1234', from: '0123456789', to: '9876543210' } },
-    { id: 'quotes',     label: 'smart quotes',   values: { string: '&quot;hi&quot;', from: '&quot;', to: '&apos;' } },
-    { id: 'accents',    label: 'strip accents',   values: { string: 'café résumé', from: 'éà', to: 'ea' } },
-    { id: 'no-match',   label: 'no matches',      values: { string: 'hello',  from: 'xyz', to: 'abc' } },
-    { id: 'empty-src',  label: 'empty source',    values: { string: '',       from: 'a', to: 'x' } },
+    { id: 'basic',   label: 'default',    values: { string: 'hello',          frm: 'l',          to: 'L' } },
+    { id: 'digits',  label: 'digit swap', values: { string: 'phone 555-1234', frm: '0123456789', to: '9876543210' } },
+    { id: 'nomatch', label: 'no matches', values: { string: 'hello',          frm: 'xyz',        to: 'XYZ' } },
+    { id: 'empty',   label: 'empty maps', values: { string: 'hello',          frm: '',           to: '' } },
   ],
-  demoExplainer: 'The demo builds a table from your &quot;from&quot; and &quot;to&quot; strings (like str.maketrans("abc", "xyz")) — each character in &quot;from&quot; maps to the same-position character in &quot;to&quot;. Characters not in &quot;from&quot; are passed through. Both strings must be the same length. Real code usually builds tables with str.maketrans, which also accepts a dict form and a &quot;delete these chars&quot; third argument.',
+  demoExplainer: 'The demo builds a table from your \"from\" and \"to\" strings (like str.maketrans("abc", "xyz")) — each character in \"from\" maps to the same-position character in \"to\". Characters not in \"from\" are passed through. Both strings must be the same length. Real code usually builds tables with str.maketrans, which also accepts a dict form and a \"delete these chars\" third argument.',
 
   patterns: [
     {
@@ -71,7 +70,7 @@ export const method = {
     {
       name: 'Replace a character with multiple characters',
       desc: 'Table values can be strings, not just single characters.',
-      code: 'text.translate({ord("&amp;"): "and"})',
+      code: 'text.translate({ord("&"): "and"})',
     },
   ],
 
@@ -79,7 +78,7 @@ export const method = {
     { title: 'Basic swap',         code: '"hello".translate(str.maketrans("l", "L"))',    returns: '"heLLo"' },
     { title: 'Multi-char swap',    code: '"abc".translate(str.maketrans("abc", "xyz"))',  returns: '"xyz"' },
     { title: 'Delete chars',       code: '"hello".translate(str.maketrans("", "", "l"))', returns: '"heo"' },
-    { title: 'Table with strings', code: '"a&amp;b".translate({ord("&amp;"): "and"})',    returns: '"aandb"' },
+    { title: 'Table with strings', code: '"a&b".translate({ord("&"): "and"})',    returns: '"aandb"' },
     { title: 'None deletes',       code: '"hello".translate({ord("l"): None})',            returns: '"heo"' },
     { title: 'No matches',         code: '"hello".translate(str.maketrans("xyz", "abc"))', returns: '"hello"' },
   ],
@@ -93,7 +92,7 @@ export const method = {
     },
     {
       name: 'None deletes; empty string does not exist',
-      desc: 'A value of None removes the character from the output. The empty string as a value would leave an empty string (which happens to look the same). Some people expect "" to be the &quot;delete&quot; sentinel — it is not; None is.',
+      desc: 'A value of None removes the character from the output. The empty string as a value would leave an empty string (which happens to look the same). Some people expect "" to be the \"delete\" sentinel — it is not; None is.',
       wrong: { label: 'Empty string keeps position', code: '"abc".translate({ord("b"): ""})', output: '"ac"  # actually works — empty string joins fine' },
       fix:   { label: 'None is canonical',           code: '"abc".translate({ord("b"): None})', output: '"ac"' },
     },

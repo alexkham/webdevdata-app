@@ -95,7 +95,8 @@ function pyLit(v) {
       .replace(/'/g, "\\'")
       .replace(/\n/g, '\\n')
       .replace(/\r/g, '\\r')
-      .replace(/\t/g, '\\t') + "'";
+      .replace(/\t/g, '\\t')
+      .replace(/[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]/g, (c) => '\\x' + c.charCodeAt(0).toString(16).padStart(2, '0')) + "'";
   }
   if (Array.isArray(v)) return '[' + v.map(pyLit).join(', ') + ']';
   if (typeof v === 'object') {

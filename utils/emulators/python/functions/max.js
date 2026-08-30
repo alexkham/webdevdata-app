@@ -14,7 +14,7 @@ class ValueErrorLike extends Error {
 
 export default function pyMax(iterable) {
   if (!Array.isArray(iterable)) throw new TypeError('max() argument must be iterable');
-  if (iterable.length === 0) throw new ValueErrorLike('max() arg is an empty sequence');
+  if (iterable.length === 0) throw new ValueErrorLike('max() iterable argument is empty');
   let best = iterable[0];
   for (const item of iterable) {
     if (item > best) best = item;

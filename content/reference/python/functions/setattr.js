@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'Set an attribute by name — the runtime-string equivalent of `object.name = value`.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 1.0+',
   searchTerms: 'setattr attribute set write assign dynamic reflection immutable type object',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 1.0+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'Dot assignment when the attribute name is a string — useful for dynamic dispatch and configuration.',
 
@@ -101,7 +101,7 @@ export const method = {
       name: 'Name must be a string',
       desc: 'A common typo — passing a non-string as the attribute name. Python rejects it up front.',
       wrong: { label: 'Non-string name', code: 'setattr(obj, 42, "x")', output: "TypeError: attribute name must be string, not 'int'" },
-      fix:   { label: 'Quote the name',   code: 'setattr(obj, "42", "x")', output: 'works — sets attr &quot;42&quot;' },
+      fix:   { label: 'Quote the name',   code: 'setattr(obj, "42", "x")', output: 'works — sets attr \"42\"' },
     },
     {
       name: 'Silently overwrites — no warning',

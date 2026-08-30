@@ -27,7 +27,7 @@ export const method = {
   subtitle: 'Test set containment — is every element of self already in other?',
 
   cheat: {
-    commonCall: 'required &lt;= granted',
+    commonCall: 'required <= granted',
     returns:    'True or False',
     replaces:   '`all(x in other for x in self)` in one call',
     watchOut:   'empty set is a subset of ANY set — including empty (vacuous truth)',
@@ -57,12 +57,12 @@ export const method = {
     {
       name: 'Permission check',
       desc: 'Every required permission must be present.',
-      code: 'if required_perms &lt;= granted_perms:\n    allow()',
+      code: 'if required_perms <= granted_perms:\n    allow()',
     },
     {
       name: 'Required fields present',
       desc: 'Fold keys into sets and compare.',
-      code: 'if required_fields &lt;= set(payload.keys()):\n    process(payload)\nelse:\n    missing = required_fields - set(payload.keys())',
+      code: 'if required_fields <= set(payload.keys()):\n    process(payload)\nelse:\n    missing = required_fields - set(payload.keys())',
     },
     {
       name: 'Test against any iterable',
@@ -72,32 +72,32 @@ export const method = {
   ],
 
   examples: [
-    { title: 'Proper subset',       code: '{1, 2} &lt;= {1, 2, 3}',                    returns: 'True' },
-    { title: 'Equal is subset',     code: '{1, 2, 3} &lt;= {1, 2, 3}',                 returns: 'True' },
-    { title: 'Missing element',     code: '{1, 2, 4} &lt;= {1, 2, 3}',                 returns: 'False' },
-    { title: 'Empty is universal',  code: 'set() &lt;= {1, 2, 3}',                     returns: 'True' },
-    { title: 'Empty subset of empty', code: 'set() &lt;= set()',                        returns: 'True' },
+    { title: 'Proper subset',       code: '{1, 2} <= {1, 2, 3}',                    returns: 'True' },
+    { title: 'Equal is subset',     code: '{1, 2, 3} <= {1, 2, 3}',                 returns: 'True' },
+    { title: 'Missing element',     code: '{1, 2, 4} <= {1, 2, 3}',                 returns: 'False' },
+    { title: 'Empty is universal',  code: 'set() <= {1, 2, 3}',                     returns: 'True' },
+    { title: 'Empty subset of empty', code: 'set() <= set()',                        returns: 'True' },
     { title: 'Iterable other',      code: '{1, 2}.issubset([1, 2, 3, 4])',            returns: 'True' },
-    { title: 'Strict subset',       code: '{1, 2} &lt; {1, 2, 3}',                     returns: 'True (strict, not equal)' },
+    { title: 'Strict subset',       code: '{1, 2} < {1, 2, 3}',                     returns: 'True (strict, not equal)' },
   ],
 
   pitfalls: [
     {
       name: 'set() is a subset of EVERYTHING — including set()',
-      desc: 'The vacuously-true case surprises everyone once. There is no element in the empty set that could fail the &quot;every element is in other&quot; test, so the answer is True.',
+      desc: 'The vacuously-true case surprises everyone once. There is no element in the empty set that could fail the \"every element is in other\" test, so the answer is True.',
       wrong: { label: 'Unexpected True', code: 'set().issubset(set())', output: 'True' },
-      fix:   { label: 'Guard for empty',  code: 'if a and a &lt;= b:\n    ...     # non-trivial subset', output: 'both non-empty AND subset' },
+      fix:   { label: 'Guard for empty',  code: 'if a and a <= b:\n    ...     # non-trivial subset', output: 'both non-empty AND subset' },
     },
     {
       name: 'issubset != strict subset',
       desc: '`a <= b` and `a.issubset(b)` allow equality. For strict subset use `a < b` (self is subset AND not equal to other).',
       wrong: { label: 'Equal returns True', code: '{1, 2, 3}.issubset({1, 2, 3})', output: 'True  # equal counts' },
-      fix:   { label: 'Strict operator',    code: '{1, 2, 3} &lt; {1, 2, 3}', output: 'False' },
+      fix:   { label: 'Strict operator',    code: '{1, 2, 3} < {1, 2, 3}', output: 'False' },
     },
     {
       name: 'The `<=` operator requires sets on both sides',
       desc: 'issubset() accepts any iterable. `<=` does NOT — it needs a set on both sides.',
-      wrong: { label: 'Type error', code: '{1, 2} &lt;= [1, 2, 3]', output: "TypeError: '<=' not supported between instances of 'set' and 'list'" },
+      wrong: { label: 'Type error', code: '{1, 2} <= [1, 2, 3]', output: "TypeError: '<=' not supported between instances of 'set' and 'list'" },
       fix:   { label: 'Method form', code: '{1, 2}.issubset([1, 2, 3])', output: 'True' },
     },
     {
@@ -110,14 +110,14 @@ export const method = {
 
   when: {
     use: [
-      'Permission / capability checks (&quot;every required X is present&quot;)',
+      'Permission / capability checks (\"every required X is present\")',
       'Validating required-fields presence',
       'Testing whether one collection is contained within another',
       'Composing with other set operations for readable filter logic',
     ],
     avoid: [
       'Strict subset needed → `<` operator',
-      'Just testing overlap → set.isdisjoint (or `&amp;` and check emptiness)',
+      'Just testing overlap → set.isdisjoint (or `&` and check emptiness)',
       'Ordered containment → convert to sorted tuples and compare',
       'Very large sets where a linear all() check is more memory-efficient than materializing both as sets',
     ],
@@ -150,7 +150,7 @@ export const method = {
     {
       q: 'How do I test strict (proper) subset?',
       a: 'Use `<` instead of `<=`. Strict subset means self is a subset AND self != other.',
-      code: '{1, 2} &lt; {1, 2, 3}    # True\n{1, 2, 3} &lt; {1, 2, 3} # False (equal)',
+      code: '{1, 2} < {1, 2, 3}    # True\n{1, 2, 3} < {1, 2, 3} # False (equal)',
     },
   ],
 

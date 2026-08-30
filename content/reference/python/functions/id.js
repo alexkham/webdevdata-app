@@ -32,7 +32,7 @@ export const method = {
   },
 
   parameters: [
-    { name: 'object', type: 'Any', required: true, default: null, desc: 'Any object. id() returns an integer identifier that stays constant for the object&apos;s lifetime.' },
+    { name: 'object', type: 'Any', required: true, default: null, desc: 'Any object. id() returns an integer identifier that stays constant for the object\'s lifetime.' },
   ],
 
   demoParams: [
@@ -104,7 +104,7 @@ export const method = {
 
   when: {
     use: [
-      'Sentinel object() pattern for &quot;distinct from all values&quot;',
+      'Sentinel object() pattern for \"distinct from all values\"',
       'Debugging aliasing (rare, but useful when it happens)',
       'Weak-reference bookkeeping in advanced code',
       'Rarely: as a hashable identity when the object cannot define __hash__',

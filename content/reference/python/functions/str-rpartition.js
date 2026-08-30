@@ -29,7 +29,7 @@ export const method = {
   cheat: {
     commonCall: 'name, _, ext = "archive.tar.gz".rpartition(".")',
     returns:    '3-tuple, always — sep preserved in the middle',
-    replaces:   'the rfind + slice + guard pattern for &quot;split at last delimiter&quot;',
+    replaces:   'the rfind + slice + guard pattern for \"split at last delimiter\"',
     watchOut:   'not-found puts the original in slot 2 (not slot 0 like partition!); empty sep raises ValueError',
   },
 
@@ -46,11 +46,11 @@ export const method = {
     { id: 'kv',         label: 'key=value',       values: { string: 'user=alice',     sep: '=' } },
     { id: 'kv-eq',      label: 'value has sep',   values: { string: 'query=a=b',      sep: '=' } },
     { id: 'missing',    label: 'sep missing',     values: { string: 'no-dot-here',    sep: '.' } },
-    { id: 'multi',      label: 'multi-char sep',  values: { string: 'a-&gt;b-&gt;c',   sep: '-&gt;' } },
+    { id: 'multi',      label: 'multi-char sep',  values: { string: 'a->b->c',   sep: '->' } },
     { id: 'at-end',     label: 'sep at end',      values: { string: 'trail=',         sep: '=' } },
     { id: 'empty-sep',  label: 'empty sep',       values: { string: 'hello',          sep: '' } },
   ],
-  demoExplainer: 'rpartition splits at the LAST occurrence of sep — the mirror of partition. Always returns exactly three strings. When the separator is not found, the &quot;original&quot; slot moves: partition puts it at index 0, rpartition puts it at index 2. That asymmetry matches the direction each method scans from.',
+  demoExplainer: 'rpartition splits at the LAST occurrence of sep — the mirror of partition. Always returns exactly three strings. When the separator is not found, the \"original\" slot moves: partition puts it at index 0, rpartition puts it at index 2. That asymmetry matches the direction each method scans from.',
 
   patterns: [
     {
@@ -76,14 +76,14 @@ export const method = {
     { title: 'Last of many',          code: '"a=b=c".rpartition("=")',            returns: '("a=b", "=", "c")' },
     { title: 'Not found → slot 2',    code: '"hello".rpartition(".")',            returns: '("", "", "hello")' },
     { title: 'Separator at end',      code: '"trail=".rpartition("=")',           returns: '("trail", "=", "")' },
-    { title: 'Multi-char separator',  code: '"a-&gt;b".rpartition("-&gt;")',      returns: '("a", "-&gt;", "b")' },
+    { title: 'Multi-char separator',  code: '"a->b".rpartition("->")',      returns: '("a", "->", "b")' },
     { title: 'Empty sep raises',      code: '"hello".rpartition("")',             returns: 'ValueError: empty separator' },
   ],
 
   pitfalls: [
     {
       name: 'Not-found puts the original in slot 2 — the OPPOSITE of partition',
-      desc: 'partition and rpartition both return 3-tuples with the original when nothing matches, but they put it in different slots. Wired backwards, an rpartition user reading the &quot;before&quot; slot will always get an empty string on misses.',
+      desc: 'partition and rpartition both return 3-tuples with the original when nothing matches, but they put it in different slots. Wired backwards, an rpartition user reading the \"before\" slot will always get an empty string on misses.',
       wrong: { label: 'Wrong slot', code: 'before, _, _ = "hello".rpartition("=")\n# before is ""', output: 'before = ""' },
       fix:   { label: 'Check sep',  code: 'before, sep, after = s.rpartition("=")\nvalue = after if sep else before', output: 'explicit fallback' },
     },
@@ -101,7 +101,7 @@ export const method = {
     },
     {
       name: 'Splitting a filename with rpartition eats the dot',
-      desc: 'rpartition returns (stem, sep, ext) — the extension is WITHOUT the leading dot. If you need &quot;.gz&quot; not &quot;gz&quot;, add it back.',
+      desc: 'rpartition returns (stem, sep, ext) — the extension is WITHOUT the leading dot. If you need \".gz\" not \"gz\", add it back.',
       wrong: { label: 'No leading dot', code: '"a.tar.gz".rpartition(".")[2]', output: '"gz"  # no leading "."' },
       fix:   { label: 'Rebuild',        code: 'stem, sep, ext = s.rpartition(".")\nfull_ext = sep + ext  # ".gz"', output: '".gz"' },
     },
@@ -111,14 +111,14 @@ export const method = {
     use: [
       'Splitting a filename at its final dot',
       'Extracting basename from a path (rpartition("/") or ("\\\\"))',
-      '&quot;Take the tail&quot; parsing where the delimiter may appear multiple times',
+      '\"Take the tail\" parsing where the delimiter may appear multiple times',
       'Getting a fixed-shape return you can always unpack into three names',
     ],
     avoid: [
       'Full N-way split → split',
       'First-occurrence split → partition',
       'Regex-based splits → re.split',
-      'Filename splits where you care about ".tar.gz" as a compound → use pathlib&apos;s suffixes',
+      'Filename splits where you care about ".tar.gz" as a compound → use pathlib\'s suffixes',
     ],
   },
 
@@ -144,7 +144,7 @@ export const method = {
     },
     {
       q: 'Why does rpartition put the original in the LAST slot on a miss?',
-      a: 'By design, so the &quot;after&quot; slot is always what would follow the separator — including the not-found case where the entire input is &quot;after&quot; a hypothetical separator at position 0.',
+      a: 'By design, so the \"after\" slot is always what would follow the separator — including the not-found case where the entire input is \"after\" a hypothetical separator at position 0.',
     },
     {
       q: 'Which is faster, rpartition or rfind + slicing?',

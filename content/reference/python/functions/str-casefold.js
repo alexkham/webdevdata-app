@@ -18,7 +18,7 @@ export const method = {
   slug:      'str-casefold',
   name:      'str.casefold',
   signature: 'str.casefold()',
-  returns:   { type: 'str', desc: 'A casefolded copy of the string — Unicode&apos;s "fold" mapping, designed for locale-neutral case-insensitive comparison. Similar to lower() but handles special cases like German ß → "ss".' },
+  returns:   { type: 'str', desc: 'A casefolded copy of the string — Unicode\'s "fold" mapping, designed for locale-neutral case-insensitive comparison. Similar to lower() but handles special cases like German ß → "ss".' },
 
   category:    'String method',
   version:     'Python 3.3+',
@@ -123,7 +123,7 @@ export const method = {
   notes: {
     complexity: 'O(n)',
     return:     'A new string; length may exceed the original due to expansions like ß → ss',
-    cpython:    'Objects/unicodeobject.c :: unicode_casefold — applies Unicode&apos;s CaseFolding table',
+    cpython:    'Objects/unicodeobject.c :: unicode_casefold — applies Unicode\'s CaseFolding table',
     memory:     'Allocates one new string',
     threadSafe: 'Yes — strings are immutable',
   },
@@ -137,7 +137,7 @@ export const method = {
   faq: [
     {
       q: 'What is the difference between casefold and lower?',
-      a: 'lower() applies Unicode&apos;s simple lowercase mapping — one code point in, one out. casefold applies the Unicode case-folding mapping, which is designed for caseless comparison and handles special cases like ß → ss and Greek final sigma. Use lower for display; use casefold for equality.',
+      a: 'lower() applies Unicode\'s simple lowercase mapping — one code point in, one out. casefold applies the Unicode case-folding mapping, which is designed for caseless comparison and handles special cases like ß → ss and Greek final sigma. Use lower for display; use casefold for equality.',
     },
     {
       q: 'When does casefold actually differ from lower?',

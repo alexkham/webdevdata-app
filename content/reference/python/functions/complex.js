@@ -4,7 +4,7 @@ export const meta = {
   slug:        'complex',
   name:        'complex',
   signature:   'complex(real=0, imag=0) / complex(string)',
-  blurb:       'Construct a complex number — from two floats, or from a Python-style string like &quot;3+4j&quot;.',
+  blurb:       'Construct a complex number — from two floats, or from a Python-style string like \"3+4j\".',
   category:    'builtin',
   type:        'builtin',
   hasLiveDemo: true,
@@ -16,7 +16,7 @@ export const method = {
   slug:      'complex',
   name:      'complex',
   signature: 'complex(real=0, imag=0) / complex(string)',
-  returns:   { type: 'complex', desc: 'A complex number with real and imaginary parts. Two call forms: `complex(a, b)` for real=a and imag=b; `complex(&quot;3+4j&quot;)` to parse a string in Python&apos;s notation.' },
+  returns:   { type: 'complex', desc: 'A complex number with real and imaginary parts. Two call forms: `complex(a, b)` for real=a and imag=b; `complex(\"3+4j\")` to parse a string in Python\'s notation.' },
 
   category:    'Built-in function / type',
   version:     'Python 1.0+',
@@ -32,13 +32,13 @@ export const method = {
   },
 
   parameters: [
-    { name: 'real',   type: 'float | str', required: false, default: '0', desc: 'The real part. Also accepts a string; when a string is given, imag must be omitted. String form: Python-style like &quot;3+4j&quot; or &quot;-1.5j&quot;.' },
+    { name: 'real',   type: 'float | str', required: false, default: '0', desc: 'The real part. Also accepts a string; when a string is given, imag must be omitted. String form: Python-style like \"3+4j\" or \"-1.5j\".' },
     { name: 'imag',   type: 'float',       required: false, default: '0', desc: 'The imaginary part. Only usable when real is a number. Default 0 gives a purely real complex.' },
   ],
 
   demoParams: [
-    { name: 'real', type: 'str', hint: 'real part or full "a+bj"', input: 'text' },
-    { name: 'imag', type: 'str', hint: 'imag (leave empty for string form)', input: 'text-or-none' },
+    { name: 'real', type: 'str', hint: 'real part or full "a+bj"', input: 'float' },
+    { name: 'imag', type: 'str', hint: 'imag (leave empty for string form)', input: 'float' },
   ],
   cases: [
     { id: 'both',      label: 'two-arg form',   values: { real: '3',      imag: '4' } },
@@ -50,7 +50,7 @@ export const method = {
     { id: 'neg-str',   label: 'negative string',  values: { real: '-1.5j',  imag: '' } },
     { id: 'zero',      label: 'zero',             values: { real: '0',      imag: '0' } },
   ],
-  demoExplainer: 'complex has two call forms. NUMERIC form: complex(a, b) gives real=a and imaginary=b. STRING form: complex(&quot;3+4j&quot;) parses a Python-style literal — no spaces allowed around the `+`. Python uses `j` for the imaginary unit (engineering convention), not `i` (math convention). Displayed as `(a+bj)` for non-zero imaginary parts.',
+  demoExplainer: 'complex has two call forms. NUMERIC form: complex(a, b) gives real=a and imaginary=b. STRING form: complex(\"3+4j\") parses a Python-style literal — no spaces allowed around the `+`. Python uses `j` for the imaginary unit (engineering convention), not `i` (math convention). Displayed as `(a+bj)` for non-zero imaginary parts.',
 
   patterns: [
     {
@@ -95,7 +95,7 @@ export const method = {
     },
     {
       name: 'String form REJECTS spaces around the operator',
-      desc: 'complex(&quot;3+4j&quot;) works. complex(&quot;3 + 4j&quot;) fails. Python is strict about the string form — for numeric args, use the two-arg form instead.',
+      desc: 'complex(\"3+4j\") works. complex(\"3 + 4j\") fails. Python is strict about the string form — for numeric args, use the two-arg form instead.',
       wrong: { label: 'Space fails',   code: 'complex("3 + 4j")', output: 'ValueError: complex() arg is a malformed string' },
       fix:   { label: 'No spaces',      code: 'complex("3+4j")\n# or: complex(3, 4)', output: '(3+4j)' },
     },
@@ -150,7 +150,7 @@ export const method = {
     },
     {
       q: 'Can I use complex numbers in comparisons?',
-      a: 'Only equality (==, !=). Ordering (&lt;, &gt;, ...) raises TypeError — there is no natural total ordering on complex numbers.',
+      a: 'Only equality (==, !=). Ordering (<, >, ...) raises TypeError — there is no natural total ordering on complex numbers.',
     },
     {
       q: 'What is the difference between complex(3, 4) and 3+4j?',

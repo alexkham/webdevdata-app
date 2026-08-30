@@ -22,13 +22,13 @@ export const method = {
   version:     'Python 1.0+',
   hasLiveDemo: false,
 
-  subtitle: 'The introspection escape hatch — &quot;what can I do with this thing?&quot;',
+  subtitle: 'The introspection escape hatch — \"what can I do with this thing?\"',
 
   cheat: {
     commonCall: 'dir(obj)',
     returns:    'a sorted list of names',
     replaces:   'staring at the docs when you just want to see what is available',
-    watchOut:   'includes dunder names — filter with a comprehension if you want the &quot;public&quot; surface',
+    watchOut:   'includes dunder names — filter with a comprehension if you want the \"public\" surface',
   },
 
   parameters: [
@@ -62,8 +62,8 @@ export const method = {
     },
     {
       name: 'Discover interactively in the REPL',
-      desc: 'The canonical &quot;what is this?&quot; workflow.',
-      code: '>>> dir(some_object)\n[&apos;__class__&apos;, &apos;__init__&apos;, ...]',
+      desc: 'The canonical \"what is this?\" workflow.',
+      code: '>>> dir(some_object)\n[\'__class__\', \'__init__\', ...]',
     },
     {
       name: 'For rich info, use help() instead',
@@ -83,7 +83,7 @@ export const method = {
   pitfalls: [
     {
       name: 'Result includes ALL attributes — dunders too',
-      desc: 'The output can be overwhelming. Every dunder method (__init__, __repr__, __eq__, ...) appears. Filter with a comprehension when you want just the &quot;public&quot; API.',
+      desc: 'The output can be overwhelming. Every dunder method (__init__, __repr__, __eq__, ...) appears. Filter with a comprehension when you want just the \"public\" API.',
       wrong: { label: 'Overwhelming list', code: 'dir(obj)', output: 'includes ~30 dunders per object' },
       fix:   { label: 'Filter dunders',    code: '[n for n in dir(obj) if not n.startswith("_")]', output: 'public surface only' },
     },
@@ -101,7 +101,7 @@ export const method = {
     },
     {
       name: 'dir() with no argument uses the CURRENT scope',
-      desc: 'Not the caller&apos;s scope, not the module scope — the current local scope. Inside a function, that means local variables only.',
+      desc: 'Not the caller\'s scope, not the module scope — the current local scope. Inside a function, that means local variables only.',
       wrong: { label: 'Assumed globals', code: 'def f():\n    x = 1\n    return dir()', output: "['x']  # only local x" },
       fix:   { label: 'Use globals()',    code: 'def f():\n    return list(globals())', output: 'module-level names' },
     },
@@ -109,10 +109,10 @@ export const method = {
 
   when: {
     use: [
-      'REPL exploration — &quot;what methods does this have?&quot;',
+      'REPL exploration — \"what methods does this have?\"',
       'Programmatic introspection with filtering',
       'Building documentation or discovering public API',
-      'Debugging &quot;why does this attribute not exist?&quot;',
+      'Debugging \"why does this attribute not exist?\"',
     ],
     avoid: [
       'You need docstrings → help()',

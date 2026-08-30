@@ -22,7 +22,7 @@ export const method = {
   version:     'Python 1.0+',
   hasLiveDemo: false,
 
-  subtitle: 'Reflection check for the &quot;can I put ()&quot; question — but not a guarantee the call will succeed.',
+  subtitle: 'Reflection check for the \"can I put ()\" question — but not a guarantee the call will succeed.',
 
   cheat: {
     commonCall: 'if callable(handler):',
@@ -50,7 +50,7 @@ export const method = {
     { id: 'bool-value',  label: 'boolean',         values: { x: 'True' } },
     { id: 'none-value',  label: 'None',            values: { x: 'None' } },
   ],
-  demoExplainer: 'The demo infers what your input REFERS to — a type/function/value — and checks whether it would be callable. Types (str, list, int) are callable because calling them constructs an instance: `str(42)` gives &quot;42&quot;. Built-in functions (print, len) are obviously callable. Instances of most built-in types (42, &quot;hello&quot;, True, None) are NOT callable — trying to call them raises TypeError.',
+  demoExplainer: 'The demo infers what your input REFERS to — a type/function/value — and checks whether it would be callable. Types (str, list, int) are callable because calling them constructs an instance: `str(42)` gives \"42\". Built-in functions (print, len) are obviously callable. Instances of most built-in types (42, \"hello\", True, None) are NOT callable — trying to call them raises TypeError.',
 
   patterns: [
     {
@@ -90,15 +90,15 @@ export const method = {
   pitfalls: [
     {
       name: 'callable(x) is True does NOT guarantee x() will succeed',
-      desc: 'The check is surface-level — it says &quot;the type has a __call__&quot;. The actual call may still raise TypeError (wrong arity), NotImplementedError, or anything else the callable chooses.',
+      desc: 'The check is surface-level — it says \"the type has a __call__\". The actual call may still raise TypeError (wrong arity), NotImplementedError, or anything else the callable chooses.',
       wrong: { label: 'Assumed safety', code: 'if callable(func):\n    func()   # may still raise', output: 'TypeError: ... missing required arg' },
       fix:   { label: 'Try/except',      code: 'try:\n    result = func()\nexcept TypeError as e:\n    ...', output: 'catches wrong-arity' },
     },
     {
       name: 'Classes are ALWAYS callable — calling constructs an instance',
-      desc: 'A class is a callable that returns a new instance. This surprises people who assume &quot;callable&quot; means &quot;function&quot;.',
+      desc: 'A class is a callable that returns a new instance. This surprises people who assume \"callable\" means \"function\".',
       wrong: { label: 'Assumed False', code: 'callable(list)', output: 'True  # list() returns a new empty list' },
-      fix:   { label: 'Read as &quot;constructor&quot;', code: 'x = list()   # calling the class constructs', output: '[]' },
+      fix:   { label: 'Read as \"constructor\"', code: 'x = list()   # calling the class constructs', output: '[]' },
     },
     {
       name: 'Instances of user classes ARE callable if the class defines __call__',
@@ -119,7 +119,7 @@ export const method = {
       'Guarding before invoking a possibly-missing callback',
       'Filtering a registry to callable entries',
       'Validating decorator arguments',
-      'Reflection code that dispatches based on &quot;is this a function?&quot;',
+      'Reflection code that dispatches based on \"is this a function?\"',
     ],
     avoid: [
       'You know it is callable → skip the check, catch TypeError if needed',
@@ -146,21 +146,21 @@ export const method = {
   faq: [
     {
       q: 'Why are classes callable?',
-      a: 'Because calling a class INVOKES its constructor: `MyClass(...)` returns a new instance. Under the hood the class type has a __call__ method that runs __new__ + __init__. So classes are the ubiquitous case of &quot;callable&quot; that people forget.',
+      a: 'Because calling a class INVOKES its constructor: `MyClass(...)` returns a new instance. Under the hood the class type has a __call__ method that runs __new__ + __init__. So classes are the ubiquitous case of \"callable\" that people forget.',
     },
     {
       q: 'Does callable check that the call would succeed?',
       a: 'No — only that the type has a __call__ method. Wrong-arity calls, calls that raise inside, or calls that check argument types will still fail. Wrap the actual call in try/except if failures are possible.',
     },
     {
-      q: 'What is the difference between callable(x) and hasattr(x, &quot;__call__&quot;)?',
+      q: 'What is the difference between callable(x) and hasattr(x, \"__call__\")?',
       a: 'Both check for __call__ on the type, but callable is a direct builtin — a few percent faster and clearer at the read site. Use callable in modern code (Python 3.2+); use hasattr for portability to 3.0 and 3.1.',
     },
   ],
 
   history: [
     { version: '1.0', note: 'callable() has been a builtin since Python 1.0.' },
-    { version: '3.0', note: 'REMOVED in a &quot;cleanup&quot; that was widely disliked.' },
+    { version: '3.0', note: 'REMOVED in a \"cleanup\" that was widely disliked.' },
     { version: '3.2', note: 'REINSTATED — the removal was reversed by popular demand.' },
   ],
 

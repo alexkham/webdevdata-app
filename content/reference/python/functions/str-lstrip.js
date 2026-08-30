@@ -83,7 +83,7 @@ export const method = {
   pitfalls: [
     {
       name: 'chars is a SET of characters, NOT a prefix',
-      desc: 'The single most common lstrip bug. Passing "https://" strips any leading &quot;h&quot;, &quot;t&quot;, &quot;p&quot;, &quot;s&quot;, &quot;:&quot;, or &quot;/&quot; — in any order and any quantity — until it hits something else. It does NOT strip the string &quot;https://&quot; specifically.',
+      desc: 'The single most common lstrip bug. Passing "https://" strips any leading \"h\", \"t\", \"p\", \"s\", \":\", or \"/\" — in any order and any quantity — until it hits something else. It does NOT strip the string \"https://\" specifically.',
       wrong: { label: 'Ate too much', code: '"https://python.org".lstrip("https://")', output: '"python.org"  # or worse — chars matched greedily' },
       fix:   { label: 'Use removeprefix', code: '"https://python.org".removeprefix("https://")', output: '"python.org"  # exact prefix, no character-set surprise' },
     },

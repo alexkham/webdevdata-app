@@ -107,7 +107,7 @@ export const method = {
       'Resetting a shared / module-level / cache dict without rebinding',
       'Preparing a container between test runs or workflow stages',
       'Emptying a nested dict without breaking outer references',
-      'Any &quot;empty this and keep the identity&quot; requirement',
+      'Any \"empty this and keep the identity\" requirement',
     ],
     avoid: [
       'You want a fresh, independent empty dict → `d = {}`',

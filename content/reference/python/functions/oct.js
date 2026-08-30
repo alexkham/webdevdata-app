@@ -71,7 +71,7 @@ export const method = {
     { title: 'Zero',             code: 'oct(0)',         returns: '"0o0"' },
     { title: 'Unix chmod 755',   code: 'oct(0o755)',     returns: '"0o755"' },
     { title: 'Negative',         code: 'oct(-8)',        returns: '"-0o10"' },
-    { title: 'Float raises',     code: 'oct(1.5)',       returns: 'TypeError: &apos;float&apos; object cannot be interpreted as an integer' },
+    { title: 'Float raises',     code: 'oct(1.5)',       returns: 'TypeError: \'float\' object cannot be interpreted as an integer' },
   ],
 
   pitfalls: [

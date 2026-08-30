@@ -32,7 +32,7 @@ export const method = {
   },
 
   parameters: [
-    { name: 'object',    type: 'Any',            required: true, default: null, desc: 'Any value. isinstance walks its type&apos;s MRO (method resolution order) looking for a match with classinfo.' },
+    { name: 'object',    type: 'Any',            required: true, default: null, desc: 'Any value. isinstance walks its type\'s MRO (method resolution order) looking for a match with classinfo.' },
     { name: 'classinfo', type: 'type | tuple[type]', required: true, default: null, desc: 'A class, or a tuple of classes. Tuple form is True if any element matches — equivalent to `isinstance(x, A) or isinstance(x, B)` but faster and cleaner.' },
   ],
 
@@ -64,7 +64,7 @@ export const method = {
     },
     {
       name: 'Duck typing hint — prefer behavior over class',
-      desc: 'Sometimes the right check is &quot;does it have this method?&quot;, not &quot;is it this class?&quot;.',
+      desc: 'Sometimes the right check is \"does it have this method?\", not \"is it this class?\".',
       code: 'if hasattr(x, "__iter__"):\n    for item in x:\n        ...',
     },
     {
@@ -88,7 +88,7 @@ export const method = {
   pitfalls: [
     {
       name: 'bool is a subclass of int',
-      desc: 'The single most surprising isinstance result. Historically booleans came from integers, so True and False satisfy isinstance(x, int). If you specifically want &quot;an int but not a bool&quot;, filter out bools explicitly.',
+      desc: 'The single most surprising isinstance result. Historically booleans came from integers, so True and False satisfy isinstance(x, int). If you specifically want \"an int but not a bool\", filter out bools explicitly.',
       wrong: { label: 'Accepts True',   code: 'isinstance(True, int)', output: 'True' },
       fix:   { label: 'Filter bool out', code: 'isinstance(x, int) and not isinstance(x, bool)', output: 'True only for real int' },
     },
@@ -147,7 +147,7 @@ export const method = {
       a: 'isinstance is subclass-aware — True if the object is an instance of the class OR any subclass. type() checks EXACT class. Use isinstance for most runtime checks; use type() only for exact-class dispatch.',
     },
     {
-      q: 'How do I check for &quot;int but not bool&quot;?',
+      q: 'How do I check for \"int but not bool\"?',
       a: 'Chain isinstance with a not-bool check: `isinstance(x, int) and not isinstance(x, bool)`. Verbose but the standard idiom.',
     },
     {

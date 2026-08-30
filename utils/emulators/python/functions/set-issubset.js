@@ -1,21 +1,9 @@
-// utils/emulators/python/set-issubset.js
-//
-// Emulator for Python set.issubset(other). Returns true iff every element
-// of self appears in other. Empty self returns true for any other,
-// including empty (vacuously true).
-
-function toIterable(v) {
-  if (v === null || v === undefined) return [];
-  if (Array.isArray(v)) return v;
-  if (typeof v === 'string') return [...v];
-  throw new TypeError("'" + typeof v + "' object is not iterable");
-}
-
-export default function setIsSubset(a, b) {
-  const ai = toIterable(a);
-  const bSet = new Set(toIterable(b));
-  for (const x of ai) {
-    if (!bSet.has(x)) return false;
-  }
-  return true;
+// Emulator for Python set.issubset(other) — every element of a is in b.
+const elems = (s) => (s && s.__pySet !== undefined ? s.__pySet : s);
+export default function setIssubset(a, b) {
+  const A = elems(a);
+  const B = elems(b);
+  if (!Array.isArray(A) || !Array.isArray(B)) throw new TypeError('issubset() arguments must be sets');
+  const bset = new Set(B);
+  return A.every((x) => bset.has(x));
 }

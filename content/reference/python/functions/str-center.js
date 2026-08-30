@@ -85,11 +85,11 @@ export const method = {
       name: 'Odd padding leans LEFT, not right',
       desc: 'When (width - len) is odd, the extra padding character goes on the LEFT side. Consistent, but surprising if you expected symmetric-visual bias toward right.',
       wrong: { label: 'Not centered visually', code: '"hi".center(5)', output: '"  hi "  # left has one more space than right' },
-      fix:   { label: 'Read as: ceil left, floor right', code: 'right = (width - len(s)) // 2\nleft  = width - len(s) - right', output: 'left &gt;= right' },
+      fix:   { label: 'Read as: ceil left, floor right', code: 'right = (width - len(s)) // 2\nleft  = width - len(s) - right', output: 'left >= right' },
     },
     {
       name: 'Never truncates',
-      desc: 'width ≤ len returns the original unchanged, not a shortened version. Great as a &quot;pad only if needed&quot; primitive; wrong when you actually want a fixed length.',
+      desc: 'width ≤ len returns the original unchanged, not a shortened version. Great as a \"pad only if needed\" primitive; wrong when you actually want a fixed length.',
       wrong: { label: 'Overflow', code: '"long text".center(3)', output: '"long text"  # 9 chars, not 3' },
       fix:   { label: 'Slice first', code: 's[:width].center(width)', output: 'true fixed width' },
     },
@@ -142,7 +142,7 @@ export const method = {
       a: 'CPython uses floor(padding / 2) on the right and ceil(padding / 2) on the left. This makes center() deterministic — Python has consistently biased extra padding toward the left since the method was introduced.',
     },
     {
-      q: 'What is the difference between center and format &quot;^&quot;?',
+      q: 'What is the difference between center and format \"^\"?',
       a: 'The `^` alignment in format() and f-strings does the same thing. `f"{s:^10}"` centers in a field of 10, with space fill by default. Use format when you compose with other spec fields (fill, sign, precision).',
     },
     {

@@ -16,7 +16,7 @@ export const method = {
   slug:      'exec',
   name:      'exec',
   signature: 'exec(source, globals=None, locals=None)',
-  returns:   { type: 'None', desc: 'Always returns None. exec RUNS Python statements — assignment, def, class, import, control flow — with side effects in the given namespace. If globals / locals are omitted, uses the caller&apos;s scope.' },
+  returns:   { type: 'None', desc: 'Always returns None. exec RUNS Python statements — assignment, def, class, import, control flow — with side effects in the given namespace. If globals / locals are omitted, uses the caller\'s scope.' },
 
   category:    'Built-in function',
   version:     'Python 3.0+',
@@ -28,12 +28,12 @@ export const method = {
     commonCall: 'exec("x = 1")',
     returns:    'None — side effects only',
     replaces:   'nothing — usually you should NOT reach for exec',
-    watchOut:   'runs ARBITRARY Python; side effects on the caller&apos;s scope; no return value',
+    watchOut:   'runs ARBITRARY Python; side effects on the caller\'s scope; no return value',
   },
 
   parameters: [
     { name: 'source',  type: 'str | code', required: true,  default: null,   desc: 'A string containing Python statements (or a compiled code object). Can be a multi-line block — assignments, def, class, import, control flow.' },
-    { name: 'globals', type: 'dict',       required: false, default: 'None', desc: 'Optional globals dict for execution. If None, uses the caller&apos;s globals.' },
+    { name: 'globals', type: 'dict',       required: false, default: 'None', desc: 'Optional globals dict for execution. If None, uses the caller\'s globals.' },
     { name: 'locals',  type: 'dict',       required: false, default: 'None', desc: 'Optional locals dict. Defaults to the globals dict.' },
   ],
 
@@ -48,7 +48,7 @@ export const method = {
     { id: 'import',   label: 'an import',         values: { code: 'import math' } },
     { id: 'print',    label: 'print (side effect)',values: { code: 'print("hello")' } },
   ],
-  demoExplainer: 'exec runs Python STATEMENTS. Unlike eval, it can do anything — assign, define, import, loop, print. It ALWAYS returns None; the effect is on the namespace passed in (or on the caller&apos;s scope by default). The demo describes what each snippet would do. Do NOT call exec on untrusted input — this is arbitrary code execution by design.',
+  demoExplainer: 'exec runs Python STATEMENTS. Unlike eval, it can do anything — assign, define, import, loop, print. It ALWAYS returns None; the effect is on the namespace passed in (or on the caller\'s scope by default). The demo describes what each snippet would do. Do NOT call exec on untrusted input — this is arbitrary code execution by design.',
 
   patterns: [
     {
@@ -58,7 +58,7 @@ export const method = {
     },
     {
       name: 'Trusted config that includes Python',
-      desc: 'Some tools (Django settings, IPython config) are Python files exec&apos;d as a config.',
+      desc: 'Some tools (Django settings, IPython config) are Python files exec\'d as a config.',
       code: 'with open("settings.py") as f:\n    exec(f.read(), config_globals)',
     },
     {
@@ -85,19 +85,19 @@ export const method = {
   pitfalls: [
     {
       name: 'exec is ARBITRARY CODE EXECUTION — never on untrusted input',
-      desc: 'Everything eval&apos;s warning says goes double for exec. eval at least tries to be an expression evaluator; exec runs anything. On user input, you have handed the attacker a Python interpreter.',
-      wrong: { label: 'Attacker&apos;s dream', code: 'exec(request.form["config"])', output: 'the attacker owns your process' },
+      desc: 'Everything eval\'s warning says goes double for exec. eval at least tries to be an expression evaluator; exec runs anything. On user input, you have handed the attacker a Python interpreter.',
+      wrong: { label: 'Attacker\'s dream', code: 'exec(request.form["config"])', output: 'the attacker owns your process' },
       fix:   { label: 'Never do this',       code: 'use a real config format', output: '' },
     },
     {
       name: 'exec ALWAYS returns None',
-      desc: 'A common expectation from other languages: &quot;the last expression is the return&quot;. Not in Python. exec returns None; get results by reading the namespace it wrote into.',
+      desc: 'A common expectation from other languages: \"the last expression is the return\". Not in Python. exec returns None; get results by reading the namespace it wrote into.',
       wrong: { label: 'Assumed return', code: 'x = exec("42")', output: 'x is None' },
       fix:   { label: 'Read the namespace', code: 'ns = {}\nexec("result = 42", ns)\nx = ns["result"]', output: '42' },
     },
     {
       name: 'Inside a function, exec cannot modify local variables directly',
-      desc: 'Python compiles function locals into a fixed slot layout. exec writes into a namespace dict; the compiler does not know about it, so the function&apos;s named locals are unaffected.',
+      desc: 'Python compiles function locals into a fixed slot layout. exec writes into a namespace dict; the compiler does not know about it, so the function\'s named locals are unaffected.',
       wrong: { label: 'Locals unchanged', code: 'def f():\n    exec("x = 1")\n    return x', output: 'NameError: name x is not defined' },
       fix:   { label: 'Use a namespace',    code: 'def f():\n    ns = {}\n    exec("x = 1", ns)\n    return ns["x"]', output: '1' },
     },

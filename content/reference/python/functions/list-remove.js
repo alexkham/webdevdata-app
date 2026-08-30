@@ -57,7 +57,7 @@ export const method = {
       code: 'if item in items:\n    items.remove(item)',
     },
     {
-      name: 'Try / except for &quot;maybe present&quot;',
+      name: 'Try / except for \"maybe present\"',
       desc: 'When absence is expected and cheap to swallow.',
       code: 'try:\n    items.remove(item)\nexcept ValueError:\n    pass',
     },
@@ -78,7 +78,7 @@ export const method = {
   pitfalls: [
     {
       name: 'Only removes the first match',
-      desc: 'A single call kills exactly one item. Callers who expect &quot;wipe all&quot; get surprised.',
+      desc: 'A single call kills exactly one item. Callers who expect \"wipe all\" get surprised.',
       wrong: { label: 'Leaves duplicates', code: 'xs = [1, 2, 1, 3, 1]\nxs.remove(1)\nxs', output: '[2, 1, 3, 1]' },
       fix:   { label: 'Filter for all',    code: 'xs = [x for x in xs if x != 1]',        output: '[2, 3]' },
     },

@@ -4,7 +4,7 @@ export const meta = {
   slug:        'type',
   name:        'type',
   signature:   'type(object) / type(name, bases, dict)',
-  blurb:       'Get an object&apos;s type, or create a new class dynamically.',
+  blurb:       'Get an object\'s type, or create a new class dynamically.',
   category:    'builtin',
   type:        'builtin',
   hasLiveDemo: false,
@@ -16,7 +16,7 @@ export const method = {
   slug:      'type',
   name:      'type',
   signature: 'type(object) / type(name, bases, dict)',
-  returns:   { type: 'type', desc: 'One-arg form: the object&apos;s type (its class). Three-arg form: a NEW class with the given name, bases, and attribute dict — this is the metaclass used to build classes.' },
+  returns:   { type: 'type', desc: 'One-arg form: the object\'s type (its class). Three-arg form: a NEW class with the given name, bases, and attribute dict — this is the metaclass used to build classes.' },
 
   category:    'Built-in function',
   version:     'Python 1.0+',
@@ -50,7 +50,7 @@ export const method = {
     { id: 'empty',     label: 'empty',       values: { x: '' } },
     { id: 'unicode',   label: 'unicode',     values: { x: 'café' } },
   ],
-  demoExplainer: 'The demo passes text through and shows the type Python would infer if you fed the same input to eval() or a coerce step. The interesting builtin types you will see: str, int, float, bool, NoneType. type() itself is a class — its type is also &quot;type&quot; (it is its own metaclass, a small twist to Python&apos;s object model).',
+  demoExplainer: 'The demo passes text through and shows the type Python would infer if you fed the same input to eval() or a coerce step. The interesting builtin types you will see: str, int, float, bool, NoneType. type() itself is a class — its type is also \"type\" (it is its own metaclass, a small twist to Python\'s object model).',
 
   patterns: [
     {
@@ -115,7 +115,7 @@ export const method = {
 
   when: {
     use: [
-      'Debugging / diagnostic output — &quot;what type is this?&quot;',
+      'Debugging / diagnostic output — \"what type is this?\"',
       'Exact-class checks where subclasses should NOT count',
       'Reading `x.__class__` more idiomatically',
       'Dispatch tables keyed by exact class',
@@ -154,7 +154,7 @@ export const method = {
     },
     {
       q: 'What is type(type)?',
-      a: '`type(type) is type` returns True. type is its own metaclass — the concept sits at the top of Python&apos;s class hierarchy. It is a deep detail that only metaclass authors need to think about.',
+      a: '`type(type) is type` returns True. type is its own metaclass — the concept sits at the top of Python\'s class hierarchy. It is a deep detail that only metaclass authors need to think about.',
     },
   ],
 

@@ -73,7 +73,7 @@ export const method = {
     { title: 'One',              code: 'bin(1)',        returns: '"0b1"' },
     { title: 'Negative',         code: 'bin(-10)',      returns: '"-0b1010"' },
     { title: 'Byte max',         code: 'bin(255)',      returns: '"0b11111111"' },
-    { title: 'Float raises',     code: 'bin(1.5)',      returns: 'TypeError: &apos;float&apos; object cannot be interpreted as an integer' },
+    { title: 'Float raises',     code: 'bin(1.5)',      returns: 'TypeError: \'float\' object cannot be interpreted as an integer' },
   ],
 
   pitfalls: [
@@ -90,10 +90,10 @@ export const method = {
       fix:   { label: 'Truncate first', code: 'bin(int(1.5))', output: '"0b1"' },
     },
     {
-      name: 'Negatives are sign-magnitude, not two&apos;s complement',
-      desc: 'bin(-10) is "-0b1010", not a two&apos;s complement fixed-width form. Python integers are unbounded — there is no fixed width to complement against.',
-      wrong: { label: 'Not two&apos;s comp', code: 'bin(-10)', output: '"-0b1010"' },
-      fix:   { label: 'Mask to a width', code: 'format(-10 &amp; 0xFF, "08b")', output: '"11110110"  # 8-bit two&apos;s complement' },
+      name: 'Negatives are sign-magnitude, not two\'s complement',
+      desc: 'bin(-10) is "-0b1010", not a two\'s complement fixed-width form. Python integers are unbounded — there is no fixed width to complement against.',
+      wrong: { label: 'Not two\'s comp', code: 'bin(-10)', output: '"-0b1010"' },
+      fix:   { label: 'Mask to a width', code: 'format(-10 & 0xFF, "08b")', output: '"11110110"  # 8-bit two\'s complement' },
     },
     {
       name: 'Result is a str, not a number',
@@ -112,7 +112,7 @@ export const method = {
     avoid: [
       'Fixed-width bit pattern → format(n, "0Nb")',
       'No prefix → format(n, "b")',
-      'Two&apos;s complement view → mask first (n &amp; 0xFF)',
+      'Two\'s complement view → mask first (n & 0xFF)',
       'Bit count → int.bit_count() (3.10+) is faster than counting the string',
     ],
   },
@@ -132,7 +132,7 @@ export const method = {
 
   faq: [
     {
-      q: 'How do I get binary WITHOUT the &quot;0b&quot; prefix?',
+      q: 'How do I get binary WITHOUT the \"0b\" prefix?',
       a: 'Use format() or an f-string with the "b" spec — cleaner and lets you pad.',
       code: 'format(5, "b")       # "101"\nformat(5, "08b")     # "00000101"\nf"{5:08b}"           # "00000101"',
     },
@@ -141,8 +141,8 @@ export const method = {
       a: 'Same shape, different base — bin gives base 2 with "0b" prefix; hex gives base 16 with "0x" prefix. Both are formatters that return strings; neither changes the value.',
     },
     {
-      q: 'Why does bin(-10) not use two&apos;s complement?',
-      a: 'Python integers are arbitrary precision — there is no fixed width to complement against. bin uses a sign-magnitude form: "-0b1010". Mask first if you need a two&apos;s complement view: `format(-10 &amp; 0xFF, "08b")`.',
+      q: 'Why does bin(-10) not use two\'s complement?',
+      a: 'Python integers are arbitrary precision — there is no fixed width to complement against. bin uses a sign-magnitude form: "-0b1010". Mask first if you need a two\'s complement view: `format(-10 & 0xFF, "08b")`.',
     },
   ],
 

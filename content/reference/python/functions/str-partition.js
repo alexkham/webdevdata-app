@@ -45,7 +45,7 @@ export const method = {
     { id: 'kv',       label: 'key=value',       values: { string: 'user=alice', sep: '=' } },
     { id: 'kv-with', label: 'value contains sep', values: { string: 'query=a=b', sep: '=' } },
     { id: 'missing',  label: 'sep missing',      values: { string: 'no-equals-here', sep: '=' } },
-    { id: 'multi',    label: 'multi-char sep',   values: { string: 'a-&gt;b-&gt;c', sep: '-&gt;' } },
+    { id: 'multi',    label: 'multi-char sep',   values: { string: 'a->b->c', sep: '->' } },
     { id: 'at-start', label: 'sep at start',     values: { string: '=alone', sep: '=' } },
     { id: 'empty-sep',label: 'empty sep',        values: { string: 'hello', sep: '' } },
   ],
@@ -74,7 +74,7 @@ export const method = {
     { title: 'Multiple separators',   code: '"a=b=c".partition("=")',              returns: '("a", "=", "b=c")' },
     { title: 'Not found',             code: '"hello".partition("=")',              returns: '("hello", "", "")' },
     { title: 'Separator at start',    code: '"=alone".partition("=")',             returns: '("", "=", "alone")' },
-    { title: 'Multi-char separator',  code: '"a-&gt;b".partition("-&gt;")',           returns: '("a", "-&gt;", "b")' },
+    { title: 'Multi-char separator',  code: '"a->b".partition("->")',           returns: '("a", "->", "b")' },
     { title: 'Empty sep raises',      code: '"hello".partition("")',               returns: 'ValueError: empty separator' },
   ],
 
@@ -102,7 +102,7 @@ export const method = {
   when: {
     use: [
       'Key-value strings where the value may contain the separator',
-      '&quot;Split if present, keep original otherwise&quot; in one call',
+      '\"Split if present, keep original otherwise\" in one call',
       'Head + tail extraction without materializing an N-way split',
       'Getting a fixed-shape return you can always unpack into three names',
     ],
@@ -130,7 +130,7 @@ export const method = {
   faq: [
     {
       q: 'What is the difference between partition and split?',
-      a: 'partition splits at the FIRST occurrence only and always returns three items (before, sep, after). split can split every occurrence and does not preserve the separators. partition is safer for &quot;take one, leave the rest&quot; parsing.',
+      a: 'partition splits at the FIRST occurrence only and always returns three items (before, sep, after). split can split every occurrence and does not preserve the separators. partition is safer for \"take one, leave the rest\" parsing.',
     },
     {
       q: 'Is there a right-hand version?',
@@ -138,8 +138,8 @@ export const method = {
       code: '"a.b.c".rpartition(".")\n# ("a.b", ".", "c")',
     },
     {
-      q: 'Why does &quot;no match&quot; put the string in slot 0, not slot 2?',
-      a: 'By design, so the &quot;before&quot; slot is always what you started with. Iterating along partition results is symmetric with what you had — including the not-found case.',
+      q: 'Why does \"no match\" put the string in slot 0, not slot 2?',
+      a: 'By design, so the \"before\" slot is always what you started with. Iterating along partition results is symmetric with what you had — including the not-found case.',
     },
   ],
 

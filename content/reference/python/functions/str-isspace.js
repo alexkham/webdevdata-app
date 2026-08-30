@@ -59,12 +59,12 @@ export const method = {
     },
     {
       name: 'Guard against blank input',
-      desc: 'Empty AND all-whitespace both signal &quot;nothing meaningful&quot;.',
+      desc: 'Empty AND all-whitespace both signal \"nothing meaningful\".',
       code: 'if not text or text.isspace():\n    return None',
     },
     {
       name: 'Preserve intentional blanks',
-      desc: 'Distinguish &quot;blank line&quot; from &quot;end of input&quot; when parsing.',
+      desc: 'Distinguish \"blank line\" from \"end of input\" when parsing.',
       code: 'for line in lines:\n    if line.isspace():\n        emit("blank")\n    elif not line:\n        break\n    else:\n        emit(line.strip())',
     },
   ],
@@ -87,7 +87,7 @@ export const method = {
     },
     {
       name: 'Non-breaking space DOES count as whitespace',
-      desc: 'U+00A0 (from HTML `&amp;nbsp;` or Word processors) is Unicode whitespace, so isspace returns True on it. This surprises anyone who thinks &quot;only these characters look like spaces&quot;.',
+      desc: 'U+00A0 (from HTML `&nbsp;` or Word processors) is Unicode whitespace, so isspace returns True on it. This surprises anyone who thinks \"only these characters look like spaces\".',
       wrong: { label: 'Passes silently', code: '"\\u00a0".isspace()', output: 'True' },
       fix:   { label: 'Explicit filter',   code: 'if s and all(c in " \\t\\n\\r" for c in s):\n    ...', output: 'ASCII whitespace only' },
     },
@@ -99,7 +99,7 @@ export const method = {
     },
     {
       name: 'A single visible character mixed in flips the result',
-      desc: 'One non-whitespace character makes the whole string non-whitespace. There is no &quot;mostly whitespace&quot; middle ground.',
+      desc: 'One non-whitespace character makes the whole string non-whitespace. There is no \"mostly whitespace\" middle ground.',
       wrong: { label: 'Assumed True', code: '"  x  ".isspace()', output: 'False' },
       fix:   { label: 'Strip and re-check', code: 's.strip() == ""', output: 'True when only whitespace present' },
     },
@@ -108,7 +108,7 @@ export const method = {
   when: {
     use: [
       'Detecting blank lines in text processing pipelines',
-      'Guarding against &quot;whitespace only&quot; user input',
+      'Guarding against \"whitespace only\" user input',
       'Preserving the distinction between blank lines and empty input',
       'Combined with startswith / endswith for indentation checks',
     ],
@@ -141,8 +141,8 @@ export const method = {
       a: 'Any character Unicode classifies with the White_Space property — spaces, tabs, newlines, carriage returns, form feeds, vertical tabs, non-breaking space, and a handful of exotic Unicode spaces. Zero-width and format characters do NOT count.',
     },
     {
-      q: 'Why does &quot;&quot;.isspace() return False?',
-      a: 'Python defines the empty case as False across the is* family — isspace requires at least one character. Use `not s or s.isspace()` for &quot;empty OR whitespace&quot;.',
+      q: 'Why does \"\".isspace() return False?',
+      a: 'Python defines the empty case as False across the is* family — isspace requires at least one character. Use `not s or s.isspace()` for \"empty OR whitespace\".',
     },
     {
       q: 'Does isspace recognize non-breaking space?',

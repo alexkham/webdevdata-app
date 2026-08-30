@@ -49,7 +49,7 @@ export const method = {
     { id: 'empty-other',label: 'other empty',   values: { set: 'a,b,c',   other: '' } },
     { id: 'empty-self', label: 'self empty',    values: { set: '',        other: 'x,y,z' } },
   ],
-  demoExplainer: 'symmetric_difference_update mutates the set in place. Real Python returns None; the demo shows the RESULTING state so the effect is visible. Elements present in both are REMOVED; elements present in only one are KEPT. Identical sets XOR to the empty set. Empty other means &quot;keep everything in the set&quot; (no change). Unlike the other *_update methods, this takes ONLY ONE iterable.',
+  demoExplainer: 'symmetric_difference_update mutates the set in place. Real Python returns None; the demo shows the RESULTING state so the effect is visible. Elements present in both are REMOVED; elements present in only one are KEPT. Identical sets XOR to the empty set. Empty other means \"keep everything in the set\" (no change). Unlike the other *_update methods, this takes ONLY ONE iterable.',
 
   patterns: [
     {
@@ -59,7 +59,7 @@ export const method = {
     },
     {
       name: 'Detect changes between two snapshots',
-      desc: 'Symmetric difference is the &quot;what changed&quot; set — added and removed items together.',
+      desc: 'Symmetric difference is the \"what changed\" set — added and removed items together.',
       code: 'changed = snapshot_a.copy()\nchanged.symmetric_difference_update(snapshot_b)',
     },
     {
@@ -93,7 +93,7 @@ export const method = {
     },
     {
       name: 'Identical sets XOR to empty',
-      desc: 'When the two sets are identical, everything is shared, so the result is empty. Sometimes forgotten when using XOR as a &quot;combine unique&quot; operation.',
+      desc: 'When the two sets are identical, everything is shared, so the result is empty. Sometimes forgotten when using XOR as a \"combine unique\" operation.',
       wrong: { label: 'Assumed union', code: '{1, 2}.symmetric_difference_update({1, 2})', output: 'set()  # not {1, 2}' },
       fix:   { label: 'Union for that',  code: 's.update(other)', output: 'union — every element' },
     },
@@ -109,7 +109,7 @@ export const method = {
     use: [
       'Toggling membership: add absent, remove present',
       'Computing changes between two snapshots',
-      '&quot;Only in one&quot; queries against a moving target',
+      '\"Only in one\" queries against a moving target',
       'Iterative diff building — apply many small XORs',
     ],
     avoid: [
@@ -146,7 +146,7 @@ export const method = {
     },
     {
       q: 'What is the pattern shared by all the *_update methods?',
-      a: 'Every set operator has an in-place *_update variant: update (union), difference_update, intersection_update, symmetric_difference_update. All accept any iterable, return None, and mutate the set. The `_update` suffix consistently means &quot;in place, returns None&quot;.',
+      a: 'Every set operator has an in-place *_update variant: update (union), difference_update, intersection_update, symmetric_difference_update. All accept any iterable, return None, and mutate the set. The `_update` suffix consistently means \"in place, returns None\".',
     },
   ],
 

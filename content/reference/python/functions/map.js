@@ -118,7 +118,7 @@ export const method = {
     avoid: [
       '`map(lambda ...` — use a comprehension instead',
       'Need to iterate multiple times → wrap in list()',
-      'Need &quot;stop at longest&quot; semantics → itertools.zip_longest first',
+      'Need \"stop at longest\" semantics → itertools.zip_longest first',
       'Need to modify in place — use a for-loop',
     ],
   },
@@ -135,7 +135,6 @@ export const method = {
     { name: 'filter',    slug: 'filter',    when: 'Keep items by a predicate instead of transforming them' },
     { name: 'zip',       slug: 'zip',       when: 'Pair up multiple iterables without applying a function' },
     { name: 'enumerate', slug: 'enumerate', when: 'Get index and value pairs' },
-    { name: 'list',      slug: 'list',      when: 'Materialize the map iterator into a list' },
   ],
 
   faq: [

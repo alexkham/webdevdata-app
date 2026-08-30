@@ -3,7 +3,7 @@
 export const meta = {
   slug:        'open',
   name:        'open',
-  signature:   'open(file, mode=&apos;r&apos;, encoding=None, ...)',
+  signature:   'open(file, mode=\'r\', encoding=None, ...)',
   blurb:       'Open a file — the standard entry point for reading and writing.',
   category:    'builtin',
   type:        'builtin',
@@ -15,7 +15,7 @@ export const meta = {
 export const method = {
   slug:      'open',
   name:      'open',
-  signature: 'open(file, mode=&apos;r&apos;, buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)',
+  signature: 'open(file, mode=\'r\', buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)',
   returns:   { type: 'file object', desc: 'A file object supporting read / write / iteration / seek. In TEXT mode returns a TextIOWrapper (str); in BINARY mode returns a BufferedReader / BufferedWriter (bytes). Always use `with open(...) as f:` so the file is closed on exit.' },
 
   category:    'Built-in function',
@@ -28,7 +28,7 @@ export const method = {
     commonCall: 'with open(path, "r", encoding="utf-8") as f:\n    text = f.read()',
     returns:    'a file object — str in text mode, bytes in binary mode',
     replaces:   'the older os.open + os.read + os.close low-level API',
-    watchOut:   'use `with` to guarantee close; specify encoding on text mode; &quot;w&quot; truncates',
+    watchOut:   'use `with` to guarantee close; specify encoding on text mode; \"w\" truncates',
   },
 
   parameters: [
@@ -36,7 +36,7 @@ export const method = {
     { name: 'mode',      type: 'str',              required: false, default: '"r"',  desc: 'Mode string. Combinations of r (read) / w (write, truncates) / a (append) / x (create-exclusive) / + (read AND write) and b (binary) / t (text, default).' },
     { name: 'encoding',  type: 'str',              required: false, default: 'None', desc: 'Text mode only. utf-8 is a good default; None uses the locale-dependent default which is fragile.' },
     { name: 'errors',    type: 'str',              required: false, default: 'None', desc: 'How to handle encoding errors: strict (default), ignore, replace, backslashreplace, ...' },
-    { name: 'newline',   type: 'str',              required: false, default: 'None', desc: 'Newline handling. None enables universal newlines; &quot;&quot; disables translation.' },
+    { name: 'newline',   type: 'str',              required: false, default: 'None', desc: 'Newline handling. None enables universal newlines; \"\" disables translation.' },
     { name: 'buffering', type: 'int',              required: false, default: '-1',   desc: 'Buffering policy. -1 uses the default; 0 for unbuffered (binary only); 1 for line-buffered.' },
   ],
 
@@ -61,7 +61,7 @@ export const method = {
     },
     {
       name: 'Write a text file',
-      desc: '&quot;w&quot; TRUNCATES on open — be sure you meant it.',
+      desc: '\"w\" TRUNCATES on open — be sure you meant it.',
       code: 'with open("out.txt", "w", encoding="utf-8") as f:\n    f.write("hello\\n")',
     },
     {
@@ -81,7 +81,7 @@ export const method = {
     },
     {
       name: 'Create-if-missing, refuse-if-exists',
-      desc: '&quot;x&quot; mode — safer than &quot;w&quot; when you must not overwrite.',
+      desc: '\"x\" mode — safer than \"w\" when you must not overwrite.',
       code: 'with open("unique.txt", "x", encoding="utf-8") as f:\n    ...',
     },
   ],
@@ -104,20 +104,20 @@ export const method = {
       fix:   { label: 'Use with', code: 'with open("data.txt") as f:\n    text = f.read()', output: 'closed on exit' },
     },
     {
-      name: '&quot;w&quot; TRUNCATES on open — before you write anything',
-      desc: 'The truncation happens the moment open() returns. Even if your subsequent write fails, the original data is gone. Use &quot;a&quot; for append, &quot;r+&quot; for read-then-modify, &quot;x&quot; to refuse-if-exists.',
+      name: '\"w\" TRUNCATES on open — before you write anything',
+      desc: 'The truncation happens the moment open() returns. Even if your subsequent write fails, the original data is gone. Use \"a\" for append, \"r+\" for read-then-modify, \"x\" to refuse-if-exists.',
       wrong: { label: 'Data loss',    code: 'with open("valuable.txt", "w") as f:\n    raise SomeError()   # file now empty', output: 'file truncated' },
       fix:   { label: 'Match intent', code: 'open(path, "a")   # or "r+" or "x"', output: 'preserves data' },
     },
     {
       name: 'Text mode uses the LOCALE encoding by default — fragile',
-      desc: 'On some systems the default is cp1252 or ANSI; on Linux it is often UTF-8. If you don&apos;t specify encoding, the same code reads differently on different machines. ALWAYS pass encoding.',
+      desc: 'On some systems the default is cp1252 or ANSI; on Linux it is often UTF-8. If you don\'t specify encoding, the same code reads differently on different machines. ALWAYS pass encoding.',
       wrong: { label: 'Locale-dependent', code: 'open("data.txt")   # what encoding?', output: 'varies by OS/locale' },
       fix:   { label: 'Explicit UTF-8',    code: 'open("data.txt", encoding="utf-8")', output: 'portable' },
     },
     {
       name: 'Binary mode returns BYTES, text mode returns STR',
-      desc: 'Mixing them causes TypeErrors. Reading a text file in &quot;rb&quot; gives bytes; writing str to a &quot;wb&quot; file fails. Pick the mode that matches the data.',
+      desc: 'Mixing them causes TypeErrors. Reading a text file in \"rb\" gives bytes; writing str to a \"wb\" file fails. Pick the mode that matches the data.',
       wrong: { label: 'Type mismatch', code: 'with open("f", "wb") as f:\n    f.write("hi")', output: "TypeError: a bytes-like object is required, not 'str'" },
       fix:   { label: 'Match the mode', code: 'f.write(b"hi")', output: 'or open in text mode' },
     },
@@ -160,18 +160,18 @@ export const method = {
     },
     {
       q: 'What is the default encoding?',
-      a: 'On Python &lt; 3.15, the &quot;locale-preferred&quot; encoding — varies by OS. This is a portability trap: always pass `encoding=&quot;utf-8&quot;` (or whatever your data actually uses). PEP 686 makes UTF-8 the default in newer Python versions.',
+      a: 'On Python < 3.15, the \"locale-preferred\" encoding — varies by OS. This is a portability trap: always pass `encoding=\"utf-8\"` (or whatever your data actually uses). PEP 686 makes UTF-8 the default in newer Python versions.',
     },
     {
-      q: 'What is the difference between &quot;r&quot; and &quot;rb&quot;?',
-      a: '&quot;r&quot; is TEXT mode — returns str, applies encoding, and does newline translation. &quot;rb&quot; is BINARY mode — returns bytes, no encoding, no translation. Use binary for anything not text.',
+      q: 'What is the difference between \"r\" and \"rb\"?',
+      a: '\"r\" is TEXT mode — returns str, applies encoding, and does newline translation. \"rb\" is BINARY mode — returns bytes, no encoding, no translation. Use binary for anything not text.',
     },
   ],
 
   history: [
     { version: '1.0', note: 'open() has been a builtin since Python 1.0.' },
     { version: '3.0', note: 'Text vs binary mode enforced; text returns str, binary returns bytes.' },
-    { version: '3.3', note: '&quot;x&quot; mode added for exclusive creation.' },
+    { version: '3.3', note: '\"x\" mode added for exclusive creation.' },
     { version: '3.15', note: 'PEP 686 — UTF-8 becomes the default encoding.' },
   ],
 

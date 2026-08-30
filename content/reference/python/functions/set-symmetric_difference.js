@@ -26,12 +26,12 @@ export const method = {
   version:     'Python 2.6+',
   hasLiveDemo: true,
 
-  subtitle: 'Elements unique to one side or the other — the &quot;xor&quot; of set operations.',
+  subtitle: 'Elements unique to one side or the other — the \"xor\" of set operations.',
 
   cheat: {
     commonCall: 's1 ^ s2',
     returns:    'a NEW set — self and other untouched',
-    replaces:   '`(a | b) - (a &amp; b)` in one call',
+    replaces:   '`(a | b) - (a & b)` in one call',
     watchOut:   'takes EXACTLY ONE other — no variadic form (unlike union/intersection/difference)',
   },
 
@@ -56,8 +56,8 @@ export const method = {
 
   patterns: [
     {
-      name: '&quot;What changed&quot; between two sets',
-      desc: 'The operator form reads like &quot;a xor b&quot;.',
+      name: '\"What changed\" between two sets',
+      desc: 'The operator form reads like \"a xor b\".',
       code: 'changes = old_tags ^ new_tags',
     },
     {
@@ -101,7 +101,7 @@ export const method = {
     },
     {
       name: 'String iterables explode into characters',
-      desc: 'Same footgun as union/intersection/difference — a string passed as &quot;other&quot; is iterated as characters.',
+      desc: 'Same footgun as union/intersection/difference — a string passed as \"other\" is iterated as characters.',
       wrong: { label: 'Char explosion', code: '{"Ann", "Bob"}.symmetric_difference("Bob")', output: '{"Ann", "B", "o", "b"}' },
       fix:   { label: 'Wrap it',        code: '{"Ann", "Bob"}.symmetric_difference({"Bob"})', output: '{"Ann"}' },
     },
@@ -109,7 +109,7 @@ export const method = {
 
   when: {
     use: [
-      'Comparing two collections for &quot;what differs&quot; without direction',
+      'Comparing two collections for \"what differs\" without direction',
       'Flag toggling (XOR with a singleton set)',
       'Diff-style reports across two snapshots',
       'Composing exclusive-or logic with other pure set operations',
@@ -144,7 +144,7 @@ export const method = {
     },
     {
       q: 'Why can I chain `a ^ b ^ c` but not `a.symmetric_difference(b, c)`?',
-      a: 'The operator applies pairwise: `a ^ b ^ c` = `(a ^ b) ^ c`, which is well-defined. The method insists on exactly two inputs — a design consistency choice. Chain the operator when you need a &quot;multi-way xor&quot;.',
+      a: 'The operator applies pairwise: `a ^ b ^ c` = `(a ^ b) ^ c`, which is well-defined. The method insists on exactly two inputs — a design consistency choice. Chain the operator when you need a \"multi-way xor\".',
     },
     {
       q: 'Is symmetric_difference commutative?',

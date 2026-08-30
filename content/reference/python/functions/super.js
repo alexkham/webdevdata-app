@@ -7,7 +7,7 @@ export const meta = {
   blurb:       'Return a proxy that dispatches method calls to a parent class — the cooperative-inheritance escape hatch.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 2.2+',
   searchTerms: 'super parent class inheritance mro method delegate cooperative diamond super() init',
 };
@@ -20,9 +20,9 @@ export const method = {
 
   category:    'Built-in function / type',
   version:     'Python 2.2+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
-  subtitle: 'Cooperative multiple inheritance — call the parent&apos;s method without hard-coding the class name.',
+  subtitle: 'Cooperative multiple inheritance — call the parent\'s method without hard-coding the class name.',
 
   cheat: {
     commonCall: 'super().__init__(...)',
@@ -45,12 +45,12 @@ export const method = {
     { id: 'diamond', label: 'diamond MRO',         values: { scenario: 'diamond' } },
     { id: 'method',  label: 'method override',     values: { scenario: 'method' } },
   ],
-  demoExplainer: 'super() is a proxy for the NEXT class in the MRO (method resolution order). The demo shows three common scenarios. INIT: subclass __init__ calls super().__init__() to run parent initialization. SINGLE: an override calls super().method() to extend the parent&apos;s behavior. DIAMOND: with multiple inheritance, super() follows the linearized MRO — critical for cooperative multiple inheritance.',
+  demoExplainer: 'super() is a proxy for the NEXT class in the MRO (method resolution order). The demo shows three common scenarios. INIT: subclass __init__ calls super().__init__() to run parent initialization. SINGLE: an override calls super().method() to extend the parent\'s behavior. DIAMOND: with multiple inheritance, super() follows the linearized MRO — critical for cooperative multiple inheritance.',
 
   patterns: [
     {
       name: 'Extend __init__ in a subclass',
-      desc: 'The most common super() use — run the parent&apos;s initializer.',
+      desc: 'The most common super() use — run the parent\'s initializer.',
       code: 'class Employee(Person):\n    def __init__(self, name, salary):\n        super().__init__(name)\n        self.salary = salary',
     },
     {
@@ -86,14 +86,14 @@ export const method = {
       fix:   { label: 'Two-arg form',           code: 'super(SomeClass, instance)', output: 'works anywhere' },
     },
     {
-      name: 'super() does NOT mean &quot;parent class&quot; — it means &quot;next in MRO&quot;',
-      desc: 'A single-inheritance mental model breaks with multiple inheritance. With diamond inheritance, super() may dispatch to a SIBLING class, not the &quot;parent&quot; you had in mind.',
+      name: 'super() does NOT mean \"parent class\" — it means \"next in MRO\"',
+      desc: 'A single-inheritance mental model breaks with multiple inheritance. With diamond inheritance, super() may dispatch to a SIBLING class, not the \"parent\" you had in mind.',
       wrong: { label: 'Assumed parent', code: '# in D(B, C):\n# super() in B goes to A, right?', output: 'no — goes to C, then A' },
       fix:   { label: 'Read the MRO',    code: 'D.__mro__', output: '(D, B, C, A, object)' },
     },
     {
       name: 'Must be a cooperative hierarchy — every class calls super()',
-      desc: 'If one class in the chain forgets to call super(), the MRO walk stops there. This is subtle in multi-inheritance code; the common convention is &quot;every class calls super() for methods it might share&quot;.',
+      desc: 'If one class in the chain forgets to call super(), the MRO walk stops there. This is subtle in multi-inheritance code; the common convention is \"every class calls super() for methods it might share\".',
       wrong: { label: 'One class breaks chain', code: 'class B(A):\n    def do(self):\n        print("B")   # no super() — stops here', output: 'A.do never runs' },
       fix:   { label: 'Always call super()',    code: 'class B(A):\n    def do(self):\n        print("B")\n        super().do()', output: 'A.do runs after B' },
     },
@@ -116,7 +116,7 @@ export const method = {
       'Complete replacement of a parent method — do not call super()',
       'Naming ambiguity — if the parent method is unclear, refactor',
       'Deep hierarchies — often a sign that composition would be clearer',
-      'When you truly want a specific class&apos;s method regardless of MRO — use ParentClass.method(self)',
+      'When you truly want a specific class\'s method regardless of MRO — use ParentClass.method(self)',
     ],
   },
 

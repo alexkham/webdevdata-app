@@ -35,7 +35,7 @@ export const method = {
     { name: 'fget', type: 'callable', required: false, default: 'None', desc: 'The getter function. Called when the attribute is READ. Takes self, returns the value.' },
     { name: 'fset', type: 'callable', required: false, default: 'None', desc: 'The setter function. Called when the attribute is ASSIGNED. Takes self and value. Without one, the property is read-only.' },
     { name: 'fdel', type: 'callable', required: false, default: 'None', desc: 'The deleter function. Called when the attribute is DELETED. Takes self.' },
-    { name: 'doc',  type: 'str',      required: false, default: 'None', desc: 'Docstring. If omitted, uses fget&apos;s docstring.' },
+    { name: 'doc',  type: 'str',      required: false, default: 'None', desc: 'Docstring. If omitted, uses fget\'s docstring.' },
   ],
 
   demoParams: [
@@ -148,7 +148,7 @@ export const method = {
     },
     {
       q: 'Can I inherit and override a property?',
-      a: 'Yes — the subclass can redefine the property. To extend rather than replace, access the parent&apos;s property via super() or the descriptor protocol, though the latter can get intricate.',
+      a: 'Yes — the subclass can redefine the property. To extend rather than replace, access the parent\'s property via super() or the descriptor protocol, though the latter can get intricate.',
     },
   ],
 

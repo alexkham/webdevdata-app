@@ -24,13 +24,13 @@ export const method = {
   version:     'Python 1.0+',
   hasLiveDemo: true,
 
-  subtitle: 'Check that a string matches str.title()&apos;s output — a very strict definition that trips even short apostrophes.',
+  subtitle: 'Check that a string matches str.title()\'s output — a very strict definition that trips even short apostrophes.',
 
   cheat: {
     commonCall: 'if headline.istitle():',
     returns:    'True or False',
     replaces:   '`s == s.title()` — but istitle is stricter about ambiguous cases',
-    watchOut:   'Python&apos;s title case treats apostrophes as WORD BREAKS — "Don&apos;t" fails; "Don&apos;T" passes',
+    watchOut:   'Python\'s title case treats apostrophes as WORD BREAKS — "Don\'t" fails; "Don\'T" passes',
   },
 
   parameters: [
@@ -45,12 +45,12 @@ export const method = {
     { id: 'lower',      label: 'all lower',         values: { string: 'hello world' } },
     { id: 'upper',      label: 'all upper',         values: { string: 'HELLO WORLD' } },
     { id: 'single',     label: 'single word',        values: { string: 'Hello' } },
-    { id: 'apostrophe', label: 'apostrophe surprise',values: { string: "Don&apos;t" } },
-    { id: 'quirk',      label: 'quirky title',       values: { string: "Don&apos;T" } },
+    { id: 'apostrophe', label: 'apostrophe surprise',values: { string: "Don\'t" } },
+    { id: 'quirk',      label: 'quirky title',       values: { string: "Don\'T" } },
     { id: 'digits',     label: 'title + digits',    values: { string: 'Chapter 1 Introduction' } },
     { id: 'empty',      label: 'empty',             values: { string: '' } },
   ],
-  demoExplainer: 'istitle() applies Python&apos;s strict title-case definition: every uppercase character may ONLY follow a non-cased character (space, punctuation, digit, start of string). Every lowercase character may ONLY follow a cased character. The classic surprise: the apostrophe in "Don&apos;t" is non-cased, so the "t" after it should be uppercase — meaning "Don&apos;t" is NOT title case per Python, but "Don&apos;T" is. This matches str.title() but rarely matches human intuition.',
+  demoExplainer: 'istitle() applies Python\'s strict title-case definition: every uppercase character may ONLY follow a non-cased character (space, punctuation, digit, start of string). Every lowercase character may ONLY follow a cased character. The classic surprise: the apostrophe in "Don\'t" is non-cased, so the "t" after it should be uppercase — meaning "Don\'t" is NOT title case per Python, but "Don\'T" is. This matches str.title() but rarely matches human intuition.',
 
   patterns: [
     {
@@ -75,8 +75,8 @@ export const method = {
     { title: 'All lower',           code: '"hello world".istitle()',   returns: 'False' },
     { title: 'All upper',           code: '"HELLO WORLD".istitle()',   returns: 'False' },
     { title: 'Single word',         code: '"Hello".istitle()',         returns: 'True' },
-    { title: 'Apostrophe surprise', code: '"Don\\&apos;t".istitle()',  returns: "False  # 't' should be 'T' after apostrophe" },
-    { title: 'Quirky title',        code: '"Don\\&apos;T".istitle()',  returns: 'True  # ...but this is title case!' },
+    { title: 'Apostrophe surprise', code: '"Don\\\'t".istitle()',  returns: "False  # 't' should be 'T' after apostrophe" },
+    { title: 'Quirky title',        code: '"Don\\\'T".istitle()',  returns: 'True  # ...but this is title case!' },
     { title: 'Title + digits',      code: '"Chapter 1 Introduction".istitle()', returns: 'True' },
     { title: 'Empty is False',      code: '"".istitle()',             returns: 'False' },
   ],
@@ -84,9 +84,9 @@ export const method = {
   pitfalls: [
     {
       name: 'Apostrophes count as word breaks',
-      desc: 'The single most surprising istitle result. Python treats the apostrophe as non-cased, so what looks like a normal contraction fails title-case: "Don&apos;t" is NOT title case, but "Don&apos;T" IS. Matches str.title() behavior — both are strict in the same way.',
-      wrong: { label: 'Common contraction', code: '"Don\\&apos;t Stop".istitle()', output: 'False' },
-      fix:   { label: 'Weird but true',     code: '"Don\\&apos;T Stop".istitle()', output: 'True' },
+      desc: 'The single most surprising istitle result. Python treats the apostrophe as non-cased, so what looks like a normal contraction fails title-case: "Don\'t" is NOT title case, but "Don\'T" IS. Matches str.title() behavior — both are strict in the same way.',
+      wrong: { label: 'Common contraction', code: '"Don\\\'t Stop".istitle()', output: 'False' },
+      fix:   { label: 'Weird but true',     code: '"Don\\\'T Stop".istitle()', output: 'True' },
     },
     {
       name: 'CamelCase identifiers are NOT title case',
@@ -101,7 +101,7 @@ export const method = {
       fix:   { label: 'Guard first',        code: 's and s.istitle()', output: 'covers the empty case' },
     },
     {
-      name: 'Digits and punctuation are &quot;word separators&quot;',
+      name: 'Digits and punctuation are \"word separators\"',
       desc: 'Any non-cased character resets the case expectation. "Chapter1Intro" is NOT title case (the 1 acts as a word separator, so the "I" should be preceded by lowercase, but it is preceded by a digit which resets).',
       wrong: { label: 'Assumed pass', code: '"Chapter1Intro".istitle()', output: 'True  # actually True — digits reset the state' },
       fix:   { label: 'Read the docs — digits behave as non-cased', code: '', output: '' },
@@ -113,13 +113,13 @@ export const method = {
       'Validating that a headline has been passed through str.title()',
       'Detecting non-normalized formatted text',
       'Composing with capitalize / title / isupper / islower for finer checks',
-      'Confirming a string matches Python&apos;s specific title-case convention',
+      'Confirming a string matches Python\'s specific title-case convention',
     ],
     avoid: [
       'Human-friendly title case (which allows apostrophes) → custom regex',
       'Detecting camelCase or PascalCase → different pattern entirely',
       'Locale-aware title case → third-party library',
-      'You need &quot;is capitalized&quot; not &quot;is title case&quot; → check first char via s[0].isupper()',
+      'You need \"is capitalized\" not \"is title case\" → check first char via s[0].isupper()',
     ],
   },
 
@@ -140,16 +140,16 @@ export const method = {
 
   faq: [
     {
-      q: 'Why does &quot;Don&apos;t&quot;.istitle() return False?',
-      a: 'Because Python treats the apostrophe as a word break. After a word break, the next cased character should be uppercase — but &quot;t&quot; is lowercase. This matches str.title() output, which produces &quot;Don&apos;T&quot;.',
+      q: 'Why does \"Don\'t\".istitle() return False?',
+      a: 'Because Python treats the apostrophe as a word break. After a word break, the next cased character should be uppercase — but \"t\" is lowercase. This matches str.title() output, which produces \"Don\'T\".',
     },
     {
       q: 'Is `s.istitle()` the same as `s == s.title()`?',
       a: 'Very close, but not always. Both apply the same title-case definition; some edge cases (specifically around characters with special Unicode case mapping) can differ. For ASCII text they always agree.',
     },
     {
-      q: 'How do I check for &quot;human&quot; title case that allows contractions?',
-      a: 'You cannot with istitle. Write a custom check: uppercase the first letter of each word (split on whitespace only) and compare, or use a regex like `^([A-Z][a-z\\&apos;]*\\s?)+$` for simple ASCII cases.',
+      q: 'How do I check for \"human\" title case that allows contractions?',
+      a: 'You cannot with istitle. Write a custom check: uppercase the first letter of each word (split on whitespace only) and compare, or use a regex like `^([A-Z][a-z\\\']*\\s?)+$` for simple ASCII cases.',
     },
   ],
 

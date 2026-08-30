@@ -42,11 +42,11 @@ export const method = {
     { name: 'keepends', type: 'int', hint: '1 = keep terminators, empty = strip', input: 'number-or-none' },
   ],
   cases: [
-    { id: 'basic',       label: 'lines',            values: { string: 'ab\\ncd\\nef',   keepends: '' } },
-    { id: 'trailing',    label: 'trailing newline', values: { string: 'ab\\ncd\\n',     keepends: '' } },
-    { id: 'crlf',        label: 'CRLF',             values: { string: 'ab\\r\\ncd\\r\\nef', keepends: '' } },
-    { id: 'mixed',       label: 'mixed endings',    values: { string: 'a\\nb\\r\\nc\\rd', keepends: '' } },
-    { id: 'keepends',    label: 'keep terminators', values: { string: 'ab\\ncd\\nef',   keepends: 1 } },
+    { id: 'basic',       label: 'lines',            values: { string: 'ab\ncd\nef',   keepends: '' } },
+    { id: 'trailing',    label: 'trailing newline', values: { string: 'ab\ncd\n',     keepends: '' } },
+    { id: 'crlf',        label: 'CRLF',             values: { string: 'ab\r\ncd\r\nef', keepends: '' } },
+    { id: 'mixed',       label: 'mixed endings',    values: { string: 'a\nb\r\nc\rd', keepends: '' } },
+    { id: 'keepends',    label: 'keep terminators', values: { string: 'ab\ncd\nef',   keepends: 1 } },
     { id: 'empty',       label: 'empty',            values: { string: '',                keepends: '' } },
     { id: 'one-line',    label: 'no newline',       values: { string: 'hello',           keepends: '' } },
   ],
@@ -55,7 +55,7 @@ export const method = {
   patterns: [
     {
       name: 'Iterate lines from any text',
-      desc: 'The safe way to walk lines regardless of the source&apos;s line-ending convention.',
+      desc: 'The safe way to walk lines regardless of the source\'s line-ending convention.',
       code: 'for line in text.splitlines():\n    process(line)',
     },
     {
@@ -133,7 +133,7 @@ export const method = {
     { name: 'split',        slug: 'split',        when: 'Split by an arbitrary delimiter, not just line endings' },
     { name: 'join',         slug: 'join',         when: 'Reassemble the lines afterward' },
     { name: 'str.partition',slug: 'str-partition',when: 'Split just at the first occurrence' },
-    { name: 'endswith',     slug: 'endswith',     when: 'Test a single line&apos;s trailing content' },
+    { name: 'endswith',     slug: 'endswith',     when: 'Test a single line\'s trailing content' },
   ],
 
   faq: [
@@ -148,7 +148,7 @@ export const method = {
     },
     {
       q: 'What is the full list of universal newlines?',
-      a: '\\n, \\r, \\r\\n, \\v (\\x0b), \\f (\\x0c), \\x1c, \\x1d, \\x1e, \\x85 (NEL), \\u2028 (line sep), \\u2029 (paragraph sep). The docs call this &quot;universal newlines&quot;.',
+      a: '\\n, \\r, \\r\\n, \\v (\\x0b), \\f (\\x0c), \\x1c, \\x1d, \\x1e, \\x85 (NEL), \\u2028 (line sep), \\u2029 (paragraph sep). The docs call this \"universal newlines\".',
     },
   ],
 

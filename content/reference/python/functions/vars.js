@@ -4,10 +4,10 @@ export const meta = {
   slug:        'vars',
   name:        'vars',
   signature:   'vars([object])',
-  blurb:       'Return an object&apos;s __dict__ — instance-only attributes, in declaration order.',
+  blurb:       'Return an object\'s __dict__ — instance-only attributes, in declaration order.',
   category:    'builtin',
   type:        'builtin',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
   version:     'Python 1.0+',
   searchTerms: 'vars dict attribute instance __dict__ introspection namespace object module',
 };
@@ -20,7 +20,7 @@ export const method = {
 
   category:    'Built-in function',
   version:     'Python 1.0+',
-  hasLiveDemo: true,
+  hasLiveDemo: false,
 
   subtitle: 'The direct pointer to __dict__ — instance-only attributes, declaration order, live view.',
 
@@ -49,7 +49,7 @@ export const method = {
 
   patterns: [
     {
-      name: 'Inspect an instance&apos;s data',
+      name: 'Inspect an instance\'s data',
       desc: 'Quick way to see all instance attributes without printing methods.',
       code: 'print(vars(user))\n# {"name": "Alice", "age": 30}',
     },
@@ -109,8 +109,8 @@ export const method = {
   when: {
     use: [
       'Inspecting instance state during debugging',
-      'Serializing simple &quot;data bag&quot; objects to JSON or repr',
-      'Iterating over an object&apos;s writable attributes',
+      'Serializing simple \"data bag\" objects to JSON or repr',
+      'Iterating over an object\'s writable attributes',
       'Building an equality check based on instance state',
     ],
     avoid: [

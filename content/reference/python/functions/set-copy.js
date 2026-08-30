@@ -90,7 +90,7 @@ export const method = {
     },
     {
       name: 'Three ways to shallow-copy — pick one for consistency',
-      desc: '`s.copy()`, `set(s)`, and `{*s}` all produce shallow copies. They differ in the reader&apos;s intent and in some subclass edge cases: set(s) always returns a plain set; s.copy() preserves the subclass in most cases.',
+      desc: '`s.copy()`, `set(s)`, and `{*s}` all produce shallow copies. They differ in the reader\'s intent and in some subclass edge cases: set(s) always returns a plain set; s.copy() preserves the subclass in most cases.',
       wrong: { label: 'Random mix', code: 'a = s.copy()\nb = set(s)\nc = {*s}\n# same result, three styles', output: 'inconsistent house style' },
       fix:   { label: 'Pick one',   code: 'copy_of_s = s.copy()   # or {*s}, whichever your style guide picks', output: 'consistent' },
     },
@@ -106,7 +106,7 @@ export const method = {
     use: [
       'Snapshotting a set before mutating for rollback or diff',
       'Giving each caller its own set to mutate freely',
-      'Any &quot;same members, different object&quot; workflow',
+      'Any \"same members, different object\" workflow',
       'Composing with update() or `-=` to build modified copies without touching the source',
     ],
     avoid: [

@@ -3,7 +3,7 @@
 export const meta = {
   slug:        'input',
   name:        'input',
-  signature:   'input(prompt=&apos;&apos;)',
+  signature:   'input(prompt=\'\')',
   blurb:       'Read a line from stdin — always returns str, trailing newline stripped.',
   category:    'builtin',
   type:        'builtin',
@@ -15,8 +15,8 @@ export const meta = {
 export const method = {
   slug:      'input',
   name:      'input',
-  signature: 'input(prompt=&apos;&apos;)',
-  returns:   { type: 'str', desc: 'The user&apos;s input as a string. Reads until newline; the trailing newline is stripped. ALWAYS returns str — even if the user types a number. Cast with int() / float() if you need a number.' },
+  signature: 'input(prompt=\'\')',
+  returns:   { type: 'str', desc: 'The user\'s input as a string. Reads until newline; the trailing newline is stripped. ALWAYS returns str — even if the user types a number. Cast with int() / float() if you need a number.' },
 
   category:    'Built-in function',
   version:     'Python 1.0+',
@@ -37,7 +37,7 @@ export const method = {
 
   demoParams: [
     { name: 'prompt', type: 'str', hint: 'prompt to show',           input: 'text' },
-    { name: 'typed',  type: 'str', hint: 'what the user &quot;typed&quot;', input: 'text' },
+    { name: 'typed',  type: 'str', hint: 'what the user \"typed\"', input: 'text' },
   ],
   cases: [
     { id: 'name',   label: 'get a name',      values: { prompt: 'Your name: ',  typed: 'Alice' } },
@@ -47,7 +47,7 @@ export const method = {
     { id: 'empty',  label: 'blank input',     values: { prompt: 'Anything: ',    typed: '' } },
     { id: 'trail',  label: 'trailing space',  values: { prompt: 'Path: ',        typed: '/tmp/foo ' } },
   ],
-  demoExplainer: 'input() writes the prompt (if any), then reads one line from stdin. The trailing newline is stripped; internal whitespace is preserved. The return type is ALWAYS str — the user typing 42 gives &quot;42&quot; (a string), NOT the integer 42. To get a number, cast with int() or float(). The demo simulates the &quot;typed&quot; input to show what would be returned.',
+  demoExplainer: 'input() writes the prompt (if any), then reads one line from stdin. The trailing newline is stripped; internal whitespace is preserved. The return type is ALWAYS str — the user typing 42 gives \"42\" (a string), NOT the integer 42. To get a number, cast with int() or float(). The demo simulates the \"typed\" input to show what would be returned.',
 
   patterns: [
     {
@@ -95,8 +95,8 @@ export const method = {
     },
     {
       name: 'The int() cast raises ValueError on non-numeric input',
-      desc: 'A user typing &quot;forty-two&quot; instead of &quot;42&quot; will crash your program if int() is unguarded. Wrap in try/except or validate first.',
-      wrong: { label: 'Uncaught error', code: 'int(input("Age: "))   # user types &quot;abc&quot;', output: "ValueError: invalid literal for int() with base 10: 'abc'" },
+      desc: 'A user typing \"forty-two\" instead of \"42\" will crash your program if int() is unguarded. Wrap in try/except or validate first.',
+      wrong: { label: 'Uncaught error', code: 'int(input("Age: "))   # user types \"abc\"', output: "ValueError: invalid literal for int() with base 10: 'abc'" },
       fix:   { label: 'Guarded cast',   code: 'try:\n    age = int(input("Age: "))\nexcept ValueError:\n    ...', output: 'handled' },
     },
     {
@@ -117,12 +117,12 @@ export const method = {
     use: [
       'Interactive prompts in scripts and prototypes',
       'REPL-like tools where the user types responses',
-      'Quick one-off &quot;ask the user&quot; questions',
-      'Learning material — input is the canonical &quot;get user data&quot; teaching tool',
+      'Quick one-off \"ask the user\" questions',
+      'Learning material — input is the canonical \"get user data\" teaching tool',
     ],
     avoid: [
       'Command-line arguments → argparse',
-      'GUI applications → the GUI framework&apos;s dialogs',
+      'GUI applications → the GUI framework\'s dialogs',
       'Web apps → the HTTP request',
       'Batch processing → read from a file or stdin non-interactively',
     ],

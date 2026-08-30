@@ -8,6 +8,6 @@ const elems = (s) => (s && s.__pySet !== undefined ? s.__pySet : s);
 export default function setPop(s) {
   const items = elems(s);
   if (!Array.isArray(items)) throw new TypeError('pop() argument must be set');
-  if (items.length === 0) throw new KeyErrorLike('pop from an empty set');
+  if (items.length === 0) throw new KeyErrorLike("'pop from an empty set'");
   return items[0];
 }

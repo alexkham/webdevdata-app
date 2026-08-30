@@ -48,7 +48,7 @@ export const method = {
     { id: 'empty-src', label: 'from empty',        values: { dict: '',           other: 'a: 1, b: 2' } },
     { id: 'empty-oth', label: 'with empty',        values: { dict: 'a: 1, b: 2', other: '' } },
   ],
-  demoExplainer: 'The demo shows the DICT STATE after updating. Python actually returns None; the meaningful effect is mutation. When a key exists in both, the value from `other` wins — silently. There is no built-in &quot;fail on collision&quot; mode.',
+  demoExplainer: 'The demo shows the DICT STATE after updating. Python actually returns None; the meaningful effect is mutation. When a key exists in both, the value from `other` wins — silently. There is no built-in \"fail on collision\" mode.',
 
   patterns: [
     {

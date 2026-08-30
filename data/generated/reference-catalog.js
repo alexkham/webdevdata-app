@@ -6,7 +6,7 @@
 // file under content/reference/.
 
 export const referenceCatalog = {
-  generatedAt: "2026-08-17T08:08:24.314Z",
+  generatedAt: "2026-08-30T13:22:37.796Z",
   languages: [
   {
     "id": "python",
@@ -17,7 +17,7 @@ export const referenceCatalog = {
         "id": "functions",
         "href": "/reference/python/functions",
         "count": 143,
-        "liveCount": 117,
+        "liveCount": 113,
         "items": [
           {
             "slug": "abs",
@@ -89,7 +89,7 @@ export const referenceCatalog = {
             "slug": "bool",
             "name": "bool",
             "signature": "bool(x=False)",
-            "blurb": "Convert any value to True or False using Python&apos;s truthiness rules.",
+            "blurb": "Convert any value to True or False using Python's truthiness rules.",
             "category": "builtin",
             "type": "builtin",
             "hasLiveDemo": true,
@@ -177,7 +177,7 @@ export const referenceCatalog = {
             "slug": "complex",
             "name": "complex",
             "signature": "complex(real=0, imag=0) / complex(string)",
-            "blurb": "Construct a complex number — from two floats, or from a Python-style string like &quot;3+4j&quot;.",
+            "blurb": "Construct a complex number — from two floats, or from a Python-style string like \"3+4j\".",
             "category": "builtin",
             "type": "builtin",
             "hasLiveDemo": true,
@@ -243,7 +243,7 @@ export const referenceCatalog = {
             "slug": "dict-keys",
             "name": "dict.keys",
             "signature": "dict.keys()",
-            "blurb": "A live view of the dict&apos;s keys.",
+            "blurb": "A live view of the dict's keys.",
             "category": "dict",
             "type": "dict",
             "hasLiveDemo": true,
@@ -276,7 +276,7 @@ export const referenceCatalog = {
             "slug": "dict-values",
             "name": "dict.values",
             "signature": "dict.values()",
-            "blurb": "A live view of the dict&apos;s values.",
+            "blurb": "A live view of the dict's values.",
             "category": "dict",
             "type": "dict",
             "hasLiveDemo": true,
@@ -385,7 +385,7 @@ export const referenceCatalog = {
           {
             "slug": "format",
             "name": "format",
-            "signature": "format(value, format_spec=&apos;&apos;)",
+            "signature": "format(value, format_spec='')",
             "blurb": "Apply a format spec to a value — the engine behind f-strings and str.format.",
             "category": "builtin",
             "type": "builtin",
@@ -455,7 +455,7 @@ export const referenceCatalog = {
             "blurb": "Return the hash of a hashable value — the key mechanism behind dicts and sets.",
             "category": "builtin",
             "type": "builtin",
-            "hasLiveDemo": true,
+            "hasLiveDemo": false,
             "version": "Python 1.0+",
             "searchTerms": "hash hashable dict set key hash randomization pythonhashseed unhashable typeerror int"
           },
@@ -484,7 +484,7 @@ export const referenceCatalog = {
           {
             "slug": "input",
             "name": "input",
-            "signature": "input(prompt=&apos;&apos;)",
+            "signature": "input(prompt='')",
             "blurb": "Read a line from stdin — always returns str, trailing newline stripped.",
             "category": "builtin",
             "type": "builtin",
@@ -540,7 +540,7 @@ export const referenceCatalog = {
             "slug": "iter",
             "name": "iter",
             "signature": "iter(iterable) / iter(callable, sentinel)",
-            "blurb": "Get an iterator from any iterable — the entry point to Python&apos;s iteration protocol.",
+            "blurb": "Get an iterator from any iterable — the entry point to Python's iteration protocol.",
             "category": "builtin",
             "type": "builtin",
             "hasLiveDemo": false,
@@ -770,7 +770,7 @@ export const referenceCatalog = {
           {
             "slug": "open",
             "name": "open",
-            "signature": "open(file, mode=&apos;r&apos;, encoding=None, ...)",
+            "signature": "open(file, mode='r', encoding=None, ...)",
             "blurb": "Open a file — the standard entry point for reading and writing.",
             "category": "builtin",
             "type": "builtin",
@@ -803,7 +803,7 @@ export const referenceCatalog = {
           {
             "slug": "print",
             "name": "print",
-            "signature": "print(*objects, sep=&apos; &apos;, end=&apos;\\n&apos;, file=sys.stdout, flush=False)",
+            "signature": "print(*objects, sep=' ', end='\\n', file=sys.stdout, flush=False)",
             "blurb": "Write objects to stdout — customize the separator, the ending, the destination, and the flush.",
             "category": "builtin",
             "type": "builtin",
@@ -892,7 +892,7 @@ export const referenceCatalog = {
             "slug": "set-add",
             "name": "set.add",
             "signature": "set.add(elem)",
-            "blurb": "Add an element — silently no-ops if it&apos;s already there.",
+            "blurb": "Add an element — silently no-ops if it's already there.",
             "category": "set",
             "type": "set",
             "hasLiveDemo": true,
@@ -947,7 +947,7 @@ export const referenceCatalog = {
             "slug": "set-discard",
             "name": "set.discard",
             "signature": "set.discard(elem)",
-            "blurb": "Remove an element — silently no-ops if it&apos;s not there.",
+            "blurb": "Remove an element — silently no-ops if it's not there.",
             "category": "set",
             "type": "set",
             "hasLiveDemo": true,
@@ -1024,7 +1024,7 @@ export const referenceCatalog = {
             "slug": "set-remove",
             "name": "set.remove",
             "signature": "set.remove(elem)",
-            "blurb": "Remove an element — raises KeyError if it&apos;s not there.",
+            "blurb": "Remove an element — raises KeyError if it's not there.",
             "category": "set",
             "type": "set",
             "hasLiveDemo": true,
@@ -1082,7 +1082,7 @@ export const referenceCatalog = {
             "blurb": "Set an attribute by name — the runtime-string equivalent of `object.name = value`.",
             "category": "builtin",
             "type": "builtin",
-            "hasLiveDemo": true,
+            "hasLiveDemo": false,
             "version": "Python 1.0+",
             "searchTerms": "setattr attribute set write assign dynamic reflection immutable type object"
           },
@@ -1485,7 +1485,7 @@ export const referenceCatalog = {
           {
             "slug": "str",
             "name": "str",
-            "signature": "str(object=&apos;&apos;, encoding=&apos;utf-8&apos;, errors=&apos;strict&apos;)",
+            "signature": "str(object='', encoding='utf-8', errors='strict')",
             "blurb": "Convert any object to a string via __str__ (or decode bytes).",
             "category": "builtin",
             "type": "builtin",
@@ -1522,7 +1522,7 @@ export const referenceCatalog = {
             "blurb": "Return a proxy that dispatches method calls to a parent class — the cooperative-inheritance escape hatch.",
             "category": "builtin",
             "type": "builtin",
-            "hasLiveDemo": true,
+            "hasLiveDemo": false,
             "version": "Python 2.2+",
             "searchTerms": "super parent class inheritance mro method delegate cooperative diamond super() init"
           },
@@ -1541,7 +1541,7 @@ export const referenceCatalog = {
             "slug": "type",
             "name": "type",
             "signature": "type(object) / type(name, bases, dict)",
-            "blurb": "Get an object&apos;s type, or create a new class dynamically.",
+            "blurb": "Get an object's type, or create a new class dynamically.",
             "category": "builtin",
             "type": "builtin",
             "hasLiveDemo": false,
@@ -1563,10 +1563,10 @@ export const referenceCatalog = {
             "slug": "vars",
             "name": "vars",
             "signature": "vars([object])",
-            "blurb": "Return an object&apos;s __dict__ — instance-only attributes, in declaration order.",
+            "blurb": "Return an object's __dict__ — instance-only attributes, in declaration order.",
             "category": "builtin",
             "type": "builtin",
-            "hasLiveDemo": true,
+            "hasLiveDemo": false,
             "version": "Python 1.0+",
             "searchTerms": "vars dict attribute instance __dict__ introspection namespace object module"
           },

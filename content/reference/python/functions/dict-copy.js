@@ -90,14 +90,14 @@ export const method = {
     },
     {
       name: 'Three ways to shallow-copy — pick one for consistency',
-      desc: '`d.copy()`, `dict(d)`, and `{**d}` all produce shallow copies. They differ in the reader&apos;s intent and in some subclass edge cases: dict(d) always returns a plain dict; d.copy() and {**d} may preserve subclass type in most cases.',
+      desc: '`d.copy()`, `dict(d)`, and `{**d}` all produce shallow copies. They differ in the reader\'s intent and in some subclass edge cases: dict(d) always returns a plain dict; d.copy() and {**d} may preserve subclass type in most cases.',
       wrong: { label: 'Random mix', code: 'a = d.copy()\nb = dict(d)\nc = {**d}\n# same result, three styles', output: 'inconsistent house style' },
       fix:   { label: 'Pick one',   code: 'copy_of_d = d.copy()   # or {**d}, whichever your style guide picks', output: 'consistent' },
     },
     {
       name: 'Shared references also affect view objects',
-      desc: 'A shallow copy shares the values but has its own view objects. Iterating the ORIGINAL&apos;s items sees updates the copy makes to nested mutables — not because the views are shared, but because the values are.',
-      wrong: { label: 'Not the views', code: 'd = {"n": []}\ne = d.copy()\ne["n"].append(1)\nlist(d.values())', output: '[[1]]  # d&apos;s value list saw the change' },
+      desc: 'A shallow copy shares the values but has its own view objects. Iterating the ORIGINAL\'s items sees updates the copy makes to nested mutables — not because the views are shared, but because the values are.',
+      wrong: { label: 'Not the views', code: 'd = {"n": []}\ne = d.copy()\ne["n"].append(1)\nlist(d.values())', output: '[[1]]  # d\'s value list saw the change' },
       fix:   { label: 'Deep for independence', code: 'e = deepcopy(d)', output: 'no leakage' },
     },
   ],
@@ -106,7 +106,7 @@ export const method = {
     use: [
       'Snapshotting a dict before mutating for rollback or diff',
       'Giving each caller its own dict to mutate freely',
-      'Any &quot;same shape, different object&quot; workflow with immutable values',
+      'Any \"same shape, different object\" workflow with immutable values',
       'Composing with update() to layer overrides without touching the source',
     ],
     avoid: [
@@ -129,7 +129,7 @@ export const method = {
     { name: 'dict.update',     slug: 'dict-update', when: 'Layer overrides onto a copy without touching the original' },
     { name: 'dict.items',      slug: 'dict-items',  when: 'Snapshot the pairs directly for iteration' },
     { name: 'list.copy',       slug: 'list-copy',   when: 'Same shallow-copy pattern for lists' },
-    { name: 'setdefault',      slug: 'setdefault',  when: 'Compose with a copy for &quot;read-or-store&quot; on the duplicate' },
+    { name: 'setdefault',      slug: 'setdefault',  when: 'Compose with a copy for \"read-or-store\" on the duplicate' },
   ],
 
   faq: [

@@ -6,7 +6,7 @@ export const meta = {
   slug:        'set-add',
   name:        'set.add',
   signature:   'set.add(elem)',
-  blurb:       'Add an element — silently no-ops if it&apos;s already there.',
+  blurb:       'Add an element — silently no-ops if it\'s already there.',
   category:    'set',
   type:        'set',
   hasLiveDemo: true,
@@ -48,7 +48,7 @@ export const method = {
     { id: 'numbers',    label: 'numbers',        values: { set: '1,2,3',   elem: '4' } },
     { id: 'dup-input',  label: 'dupes in input', values: { set: 'a,a,b,b', elem: 'c' } },
   ],
-  demoExplainer: 'The demo shows the SET STATE after adding. Python actually returns None; the meaningful effect is mutation. add() silently ignores duplicates — that is the point of sets. In the demo, duplicates in the starting CSV collapse first, then the new element is added (or not, if it&apos;s already there). Order shown is not meaningful; Python sets are unordered.',
+  demoExplainer: 'The demo shows the SET STATE after adding. Python actually returns None; the meaningful effect is mutation. add() silently ignores duplicates — that is the point of sets. In the demo, duplicates in the starting CSV collapse first, then the new element is added (or not, if it\'s already there). Order shown is not meaningful; Python sets are unordered.',
 
   patterns: [
     {
@@ -62,7 +62,7 @@ export const method = {
       code: 'visited = set()\nqueue = [start]\nwhile queue:\n    node = queue.pop()\n    if node not in visited:\n        visited.add(node)\n        queue.extend(node.neighbors)',
     },
     {
-      name: '&quot;Add if new&quot; no-branch',
+      name: '\"Add if new\" no-branch',
       desc: 'add() is already idempotent — no `if not in` needed.',
       code: 'seen.add(x)   # no branch; safe to call whether x is there or not',
     },
@@ -108,7 +108,7 @@ export const method = {
       'Building a set incrementally from a loop or stream',
       'Tracking visited / seen items in traversals',
       'De-duplicating items as you encounter them',
-      '&quot;Add if new&quot; without branching — idempotent by design',
+      '\"Add if new\" without branching — idempotent by design',
     ],
     avoid: [
       'Adding many items at once → update() or the `|=` operator',
@@ -141,7 +141,7 @@ export const method = {
     {
       q: 'How do I check if an element was actually added?',
       a: 'add() gives no signal — check membership BEFORE calling.',
-      code: 'if x not in s:\n    s.add(x)\n    # do &quot;first sighting&quot; work here',
+      code: 'if x not in s:\n    s.add(x)\n    # do \"first sighting\" work here',
     },
     {
       q: 'Can I add an element to a frozenset?',

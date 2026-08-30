@@ -50,7 +50,7 @@ export const method = {
     { id: 'empty-suf',  label: 'empty suffix',    values: { string: 'hello',       suffix: '' } },
     { id: 'empty-str',  label: 'empty string',    values: { string: '',            suffix: 'x' } },
   ],
-  demoExplainer: 'removesuffix strips an EXACT substring from the end — at most once. If the string does not end with the suffix, the original is returned unchanged. Unlike rstrip, the argument is a substring, not a character set — ".py" removes exactly ".py" once, not any trailing &quot;.&quot;, &quot;p&quot;, or &quot;y&quot; characters in any order.',
+  demoExplainer: 'removesuffix strips an EXACT substring from the end — at most once. If the string does not end with the suffix, the original is returned unchanged. Unlike rstrip, the argument is a substring, not a character set — ".py" removes exactly ".py" once, not any trailing \".\", \"p\", or \"y\" characters in any order.',
 
   patterns: [
     {
@@ -94,7 +94,7 @@ export const method = {
     },
     {
       name: 'Different from rstrip — exact match, not character set',
-      desc: 'This is the whole point of the method. rstrip(".py") strips any trailing &quot;.&quot;, &quot;p&quot;, or &quot;y&quot; in any order and any repetition. removesuffix(".py") only matches the literal suffix &quot;.py&quot;.',
+      desc: 'This is the whole point of the method. rstrip(".py") strips any trailing \".\", \"p\", or \"y\" in any order and any repetition. removesuffix(".py") only matches the literal suffix \".py\".',
       wrong: { label: 'rstrip over-strips', code: '"happy.py".rstrip(".py")', output: '"ha"  # ate every trailing "y", "p", "."' },
       fix:   { label: 'removesuffix is precise', code: '"happy.py".removesuffix(".py")', output: '"happy"  # just the last three chars' },
     },

@@ -17,7 +17,7 @@ export const method = {
   slug:      'staticmethod',
   name:      'staticmethod',
   signature: 'staticmethod(function)',
-  returns:   { type: 'staticmethod', desc: 'A descriptor that, when accessed on the class or an instance, returns the wrapped function UNBOUND. No implicit first argument is passed. Useful for utility functions that logically belong to the class&apos;s namespace but do not need the class or instance.' },
+  returns:   { type: 'staticmethod', desc: 'A descriptor that, when accessed on the class or an instance, returns the wrapped function UNBOUND. No implicit first argument is passed. Useful for utility functions that logically belong to the class\'s namespace but do not need the class or instance.' },
 
   category:    'Built-in function / decorator',
   version:     'Python 2.2+',
@@ -59,7 +59,7 @@ export const method = {
       code: 'class TextUtils:\n    @staticmethod\n    def slugify(s): ...\n    @staticmethod\n    def word_count(s): ...',
     },
     {
-      name: 'When you don&apos;t need the class',
+      name: 'When you don\'t need the class',
       desc: 'If cls is unused, staticmethod is more honest about it than classmethod.',
       code: '# BAD:  @classmethod\n#         def add(cls, a, b): return a + b   # cls unused\n# GOOD: @staticmethod\n#         def add(a, b): return a + b',
     },
@@ -107,10 +107,10 @@ export const method = {
 
   when: {
     use: [
-      'Utility functions logically tied to a class&apos;s namespace',
+      'Utility functions logically tied to a class\'s namespace',
       'Helpers used inside class methods that need no state',
       'Namespacing related helpers for discoverability',
-      'When you would say &quot;this belongs to the class, but not the instance&quot;',
+      'When you would say \"this belongs to the class, but not the instance\"',
     ],
     avoid: [
       'You need cls → classmethod',

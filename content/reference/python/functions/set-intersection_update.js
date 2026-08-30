@@ -92,13 +92,13 @@ export const method = {
     },
     {
       name: 'Empty iterable ⇒ empty set',
-      desc: 'An empty other means &quot;keep only elements in nothing&quot; — which is nothing. The set becomes empty. Sometimes surprising if you thought empty meant &quot;no filter&quot;.',
+      desc: 'An empty other means \"keep only elements in nothing\" — which is nothing. The set becomes empty. Sometimes surprising if you thought empty meant \"no filter\".',
       wrong: { label: 'Assumed no-op', code: '{"a", "b"}.intersection_update([])', output: 'set()' },
       fix:   { label: 'Guard if needed', code: 'if other:\n    s.intersection_update(other)', output: 'no change on empty' },
     },
     {
       name: 'Multiple iterables narrow FURTHER — they AND together',
-      desc: 'Passing two iterables keeps only elements in the set AND in both. Not &quot;in either&quot; — that would be a union.',
+      desc: 'Passing two iterables keeps only elements in the set AND in both. Not \"in either\" — that would be a union.',
       wrong: { label: 'Assumed OR',    code: 'set.intersection_update([1,2], [3,4])   # each restricts', output: 'set() unless something in all three' },
       fix:   { label: 'Union for OR',   code: 's.intersection_update(set(iterable1) | set(iterable2))', output: 'items in either' },
     },
@@ -114,7 +114,7 @@ export const method = {
     use: [
       'Narrowing a set to an allowlist',
       'Progressive filtering through multiple constraints',
-      'Building a &quot;kept&quot; state from a candidate pool',
+      'Building a \"kept\" state from a candidate pool',
       'In-place refinement without allocating a new set',
     ],
     avoid: [

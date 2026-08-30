@@ -45,7 +45,7 @@ export const method = {
     { id: 'upper',      label: 'all upper',      values: { string: 'HELLO' } },
     { id: 'lower',      label: 'all lower',      values: { string: 'hello' } },
     { id: 'with-digits',label: 'letters+digits', values: { string: 'Hello123' } },
-    { id: 'punct',      label: 'punctuation',    values: { string: "Don&apos;t Stop!" } },
+    { id: 'punct',      label: 'punctuation',    values: { string: "Don\'t Stop!" } },
     { id: 'unicode',    label: 'unicode',        values: { string: 'Café' } },
     { id: 'empty',      label: 'empty',          values: { string: '' } },
   ],
@@ -74,7 +74,7 @@ export const method = {
     { title: 'All upper',           code: '"HELLO".swapcase()',           returns: '"hello"' },
     { title: 'All lower',           code: '"hello".swapcase()',           returns: '"HELLO"' },
     { title: 'Digits unchanged',    code: '"Abc123".swapcase()',          returns: '"aBC123"' },
-    { title: 'Punctuation unchanged', code: '"Don\\&apos;t Stop!".swapcase()', returns: '"dON\\&apos;T sTOP!"' },
+    { title: 'Punctuation unchanged', code: '"Don\\\'t Stop!".swapcase()', returns: '"dON\\\'T sTOP!"' },
     { title: 'Unicode accents',     code: '"Café".swapcase()',            returns: '"cAFÉ"' },
     { title: 'Empty is empty',      code: '"".swapcase()',                returns: '""' },
   ],
@@ -82,7 +82,7 @@ export const method = {
   pitfalls: [
     {
       name: 'NOT round-trippable for some Unicode characters',
-      desc: 'The Python docs say &quot;It is not necessarily true that s.swapcase().swapcase() == s&quot;. Special-case characters like German ß (lowercase) map to SS (uppercase), and SS swapcased maps to ss — you lost the ß.',
+      desc: 'The Python docs say \"It is not necessarily true that s.swapcase().swapcase() == s\". Special-case characters like German ß (lowercase) map to SS (uppercase), and SS swapcased maps to ss — you lost the ß.',
       wrong: { label: 'ß round-trip fails', code: '"Straße".swapcase().swapcase()', output: '"strasse"  # not "Straße"' },
       fix:   { label: 'Do not rely on parity', code: '# swapcase is for display effects — do NOT use it for identity round-trips', output: '' },
     },

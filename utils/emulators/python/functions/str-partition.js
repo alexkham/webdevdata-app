@@ -1,23 +1,14 @@
-// utils/emulators/python/str-partition.js
-//
-// Emulator for Python str.partition(sep). Always returns a 3-tuple
-// [before, sep, after] (array stands in for tuple). If sep is not found,
-// returns [original, "", ""]. Empty sep raises ValueError, matching CPython.
-
+// Emulator for Python str.partition(sep) — (before, sep, after); when
+// sep is absent: (s, '', '').
 class ValueErrorLike extends Error {
-  constructor(message) {
-    super(message);
-    this.name = 'ValueError';
-  }
+  constructor(message) { super(message); this.name = 'ValueError'; }
 }
-
-export default function strPartition(string, sep) {
-  const s = String(string == null ? '' : string);
-  const p = String(sep == null ? '' : sep);
-  if (p === '') {
-    throw new ValueErrorLike('empty separator');
+export default function strPartition(s, sep) {
+  if (typeof s !== 'string' || typeof sep !== 'string') {
+    throw new TypeError('partition() argument must be str');
   }
-  const i = s.indexOf(p);
-  if (i === -1) return [s, '', ''];
-  return [s.slice(0, i), p, s.slice(i + p.length)];
+  if (sep === '') throw new ValueErrorLike('empty separator');
+  const i = s.indexOf(sep);
+  if (i === -1) return { __pyTuple: [s, '', ''] };
+  return { __pyTuple: [s.slice(0, i), sep, s.slice(i + sep.length)] };
 }

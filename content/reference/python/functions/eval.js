@@ -16,7 +16,7 @@ export const method = {
   slug:      'eval',
   name:      'eval',
   signature: 'eval(source, globals=None, locals=None)',
-  returns:   { type: 'Any', desc: 'The result of evaluating the given Python EXPRESSION string. Only an expression — not a statement (no assignment, no def, no import at top level). Uses the caller&apos;s globals and locals unless explicit dicts are passed.' },
+  returns:   { type: 'Any', desc: 'The result of evaluating the given Python EXPRESSION string. Only an expression — not a statement (no assignment, no def, no import at top level). Uses the caller\'s globals and locals unless explicit dicts are passed.' },
 
   category:    'Built-in function',
   version:     'Python 1.0+',
@@ -33,7 +33,7 @@ export const method = {
 
   parameters: [
     { name: 'source',  type: 'str | code', required: true,  default: null,   desc: 'A string containing a Python EXPRESSION. Not a statement — no assignment, no def / class / import at top level. A compiled code object is also accepted.' },
-    { name: 'globals', type: 'dict',       required: false, default: 'None', desc: 'Optional globals dict for the evaluation. If None, uses the caller&apos;s globals. If provided without __builtins__, Python inserts one automatically.' },
+    { name: 'globals', type: 'dict',       required: false, default: 'None', desc: 'Optional globals dict for the evaluation. If None, uses the caller\'s globals. If provided without __builtins__, Python inserts one automatically.' },
     { name: 'locals',  type: 'dict',       required: false, default: 'None', desc: 'Optional locals dict. Defaults to the globals dict.' },
   ],
 
@@ -103,7 +103,7 @@ export const method = {
     },
     {
       name: 'Silent scope pollution',
-      desc: 'Without explicit globals / locals, eval reads and writes the CALLER&apos;S scope. Even if you did not intend to mutate anything, an eval&apos;d expression can call methods with side effects on your variables.',
+      desc: 'Without explicit globals / locals, eval reads and writes the CALLER\'S scope. Even if you did not intend to mutate anything, an eval\'d expression can call methods with side effects on your variables.',
       wrong: { label: 'Reads caller scope', code: 'secret = "hunter2"\neval("open(secret)")', output: 'reads secret' },
       fix:   { label: 'Explicit scope',      code: 'eval(source, {"__builtins__": None}, {})', output: 'still risky, but bounded' },
     },
@@ -126,7 +126,7 @@ export const method = {
 
   notes: {
     complexity: 'Compile + execution — variable',
-    return:     'The expression&apos;s value',
+    return:     'The expression\'s value',
     cpython:    'Python/bltinmodule.c :: builtin_eval — compiles and runs',
     memory:     'Allocates code objects and result',
     threadSafe: 'Depends entirely on the evaluated expression',

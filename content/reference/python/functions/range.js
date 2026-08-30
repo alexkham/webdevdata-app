@@ -22,13 +22,13 @@ export const method = {
   version:     'Python 1.0+',
   hasLiveDemo: true,
 
-  subtitle: 'A memory-efficient arithmetic progression — the standard tool for &quot;iterate N times&quot; or &quot;count from a to b&quot;.',
+  subtitle: 'A memory-efficient arithmetic progression — the standard tool for \"iterate N times\" or \"count from a to b\".',
 
   cheat: {
     commonCall: 'for i in range(n):',
     returns:    'range object — iterable, sized, indexable, sliceable — but NOT a list',
     replaces:   'the manual `while i < n: i += 1` pattern',
-    watchOut:   'stop is EXCLUSIVE; step of 0 raises; negative step needs start &gt; stop or you get empty',
+    watchOut:   'stop is EXCLUSIVE; step of 0 raises; negative step needs start > stop or you get empty',
   },
 
   parameters: [
@@ -38,20 +38,21 @@ export const method = {
   ],
 
   demoParams: [
-    { name: 'start', type: 'int', hint: 'inclusive start (empty = 0)', input: 'number-or-none' },
-    { name: 'stop',  type: 'int', hint: 'exclusive end',                input: 'number' },
-    { name: 'step',  type: 'int', hint: 'step (empty = 1)',             input: 'number-or-none' },
+    { name: 'start', type: 'int', hint: 'inclusive start', input: 'number' },
+    { name: 'stop',  type: 'int', hint: 'exclusive end',   input: 'number' },
+    { name: 'step',  type: 'int', hint: 'step, not zero',  input: 'number' },
   ],
+  demoWrap: 'list',
   cases: [
-    { id: 'basic',     label: 'basic (0..N)',   values: { start: '',  stop: 5,   step: '' } },
-    { id: 'from-2',    label: 'from 2',         values: { start: 2,   stop: 10,  step: '' } },
-    { id: 'even',      label: 'even numbers',   values: { start: 0,   stop: 20,  step: 2 } },
-    { id: 'countdown', label: 'countdown',      values: { start: 10,  stop: 0,   step: -1 } },
-    { id: 'negatives', label: 'negatives',      values: { start: -5,  stop: 5,   step: '' } },
-    { id: 'empty',     label: 'empty (start≥stop)', values: { start: 5, stop: 5, step: '' } },
-    { id: 'reverse-empty', label: 'wrong direction', values: { start: 0, stop: 5, step: -1 } },
+    { id: 'basic',     label: 'default',   values: { start: 0,  stop: 5,  step: 1 } },
+    { id: 'from-2',    label: 'from 2',    values: { start: 2,  stop: 10, step: 1 } },
+    { id: 'even',      label: 'step 2',    values: { start: 0,  stop: 20, step: 2 } },
+    { id: 'countdown', label: 'countdown', values: { start: 10, stop: 0,  step: -1 } },
+    { id: 'negatives', label: 'negatives', values: { start: -5, stop: 5,  step: 1 } },
+    { id: 'empty',     label: 'empty',     values: { start: 5,  stop: 5,  step: 1 } },
+    { id: 'zero-step', label: 'step 0',    values: { start: 0,  stop: 5,  step: 0 } },
   ],
-  demoExplainer: 'range produces the sequence start, start+step, start+2*step, ... stopping BEFORE it reaches stop. That half-open interval matches slicing conventions. Positive step counts up until stop is reached or exceeded; negative step counts down; a step in the wrong direction (say, negative when start &lt; stop) produces an empty range. The demo shows the values as a list for clarity — real code iterates a range object directly.',
+  demoExplainer: 'range produces the sequence start, start+step, start+2*step, ... stopping BEFORE it reaches stop. That half-open interval matches slicing conventions. Positive step counts up until stop is reached or exceeded; negative step counts down; a step in the wrong direction (say, negative when start < stop) produces an empty range. The demo shows the values as a list for clarity — real code iterates a range object directly.',
 
   patterns: [
     {
@@ -122,7 +123,7 @@ export const method = {
 
   when: {
     use: [
-      '&quot;Do this N times&quot; — the fixed-count loop',
+      '\"Do this N times\" — the fixed-count loop',
       'Counting up or down with a fixed step',
       'Slicing indices you will later apply to a sequence',
       'Memory-efficient iteration over arithmetic progressions',

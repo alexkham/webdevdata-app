@@ -24,7 +24,7 @@ export const method = {
   version:     'Python 1.0+',
   hasLiveDemo: true,
 
-  subtitle: 'The strictest &quot;is this a base-10 integer literal&quot; check — the narrowest of the numeric-check trio.',
+  subtitle: 'The strictest \"is this a base-10 integer literal\" check — the narrowest of the numeric-check trio.',
 
   cheat: {
     commonCall: 'if s.isdecimal():',
@@ -66,7 +66,7 @@ export const method = {
       code: '"²".isdecimal()      # False (superscript)\n"²".isdigit()        # True\n"²".isnumeric()      # True',
     },
     {
-      name: '&quot;Can I safely call int() on this?&quot;',
+      name: '\"Can I safely call int() on this?\"',
       desc: 'isdecimal is a necessary but not sufficient condition — int() also accepts leading whitespace and a sign.',
       code: '# safe int() if isdecimal is True (no whitespace or sign)\nif s.isdecimal():\n    value = int(s)   # will not raise',
     },
@@ -86,7 +86,7 @@ export const method = {
 
   pitfalls: [
     {
-      name: 'isdecimal, isdigit, isnumeric — three widths of &quot;numeric&quot;',
+      name: 'isdecimal, isdigit, isnumeric — three widths of \"numeric\"',
       desc: 'The three checks nest. isdecimal is narrowest (Unicode category Nd only). isdigit adds a few more (like superscripts). isnumeric is widest (Roman numerals, fractions, everything numeric).',
       wrong: { label: 'Wrong tool for the job', code: '"²".isdecimal()   # want True?', output: 'False — need isdigit or isnumeric' },
       fix:   { label: 'Match the tool to the input', code: '"²".isdigit()\n"½".isnumeric()', output: 'True' },
@@ -105,7 +105,7 @@ export const method = {
     },
     {
       name: 'Non-ASCII decimal digits still pass',
-      desc: 'isdecimal accepts ANY Unicode decimal digit — not just ASCII 0-9. This is usually fine for validation but might be surprising if you strictly meant &quot;ASCII digits only&quot;.',
+      desc: 'isdecimal accepts ANY Unicode decimal digit — not just ASCII 0-9. This is usually fine for validation but might be surprising if you strictly meant \"ASCII digits only\".',
       wrong: { label: 'Non-Latin passes',   code: '"٥٦٧".isdecimal()', output: 'True' },
       fix:   { label: 'ASCII-only',          code: 's.isascii() and s.isdecimal()', output: 'False on "٥٦٧"' },
     },
@@ -116,7 +116,7 @@ export const method = {
       'Strict base-10 integer literal validation',
       'When you want to call int() safely without a try/except',
       'Filtering tokens to just decimal-digit sequences',
-      '&quot;Is this a simple number?&quot; questions where signs and decimals are separate',
+      '\"Is this a simple number?\" questions where signs and decimals are separate',
     ],
     avoid: [
       'Signed or decimal-pointed numbers → use float() with try/except',
@@ -138,7 +138,7 @@ export const method = {
     { name: 'isdigit',        slug: 'isdigit',        when: 'Accepts superscripts too — middle width' },
     { name: 'str.isnumeric',  slug: 'str-isnumeric',  when: 'Accepts Roman numerals and fractions — widest' },
     { name: 'int',            slug: 'int',            when: 'Actually parse to an integer' },
-    { name: 'str.isalnum',    slug: 'str-isalnum',    when: 'Letters or digits (widest possible &quot;alphanumeric&quot;)' },
+    { name: 'str.isalnum',    slug: 'str-isalnum',    when: 'Letters or digits (widest possible \"alphanumeric\")' },
   ],
 
   faq: [

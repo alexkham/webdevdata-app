@@ -3,7 +3,7 @@
 export const meta = {
   slug:        'format',
   name:        'format',
-  signature:   'format(value, format_spec=&apos;&apos;)',
+  signature:   'format(value, format_spec=\'\')',
   blurb:       'Apply a format spec to a value — the engine behind f-strings and str.format.',
   category:    'builtin',
   type:        'builtin',
@@ -15,14 +15,14 @@ export const meta = {
 export const method = {
   slug:      'format',
   name:      'format',
-  signature: 'format(value, format_spec=&apos;&apos;)',
+  signature: 'format(value, format_spec=\'\')',
   returns:   { type: 'str', desc: 'The value formatted per the format spec. The same spec syntax used in f-strings and str.format braces — `format(x, spec)` is equivalent to `f"{x:{spec}}"`.' },
 
   category:    'Built-in function',
   version:     'Python 2.6+',
   hasLiveDemo: true,
 
-  subtitle: 'The bare-function form of Python&apos;s format spec — useful when the spec itself is a variable, or when you want one-shot formatting without an f-string.',
+  subtitle: 'The bare-function form of Python\'s format spec — useful when the spec itself is a variable, or when you want one-shot formatting without an f-string.',
 
   cheat: {
     commonCall: 'format(3.14159, ".2f")',
@@ -37,8 +37,8 @@ export const method = {
   ],
 
   demoParams: [
-    { name: 'value', type: 'Any', hint: 'any value', input: 'text' },
-    { name: 'spec',  type: 'str', hint: 'format spec (e.g. "&gt;10", ".2f", "08b")', input: 'text' },
+    { name: 'value', type: 'Any', hint: 'any value', input: 'auto' },
+    { name: 'spec',  type: 'str', hint: 'format spec (e.g. ">10", ".2f", "08b")', input: 'text' },
   ],
   cases: [
     { id: 'pad-right', label: 'right-align',     values: { value: '42',      spec: '>10' } },
@@ -51,7 +51,7 @@ export const method = {
     { id: 'center',    label: 'center with fill', values: { value: 'hi',      spec: '*^10' } },
     { id: 'no-spec',   label: 'no spec = str()', values: { value: 'hello',   spec: '' } },
   ],
-  demoExplainer: 'format applies the Format Specification Mini-Language to a value. The general shape is [[fill]align][sign][#][0][width][,_][.precision][type]. Common atoms: &quot;.2f&quot; keeps 2 decimals; &quot;08d&quot; zero-pads to width 8; &quot;X&quot; is uppercase hex; &quot;,&quot; adds thousands separators; &quot;%&quot; multiplies by 100 and appends &quot;%&quot;. Empty spec is the same as str(value). The whole spec is what appears after the colon in f-strings.',
+  demoExplainer: 'format applies the Format Specification Mini-Language to a value. The general shape is [[fill]align][sign][#][0][width][,_][.precision][type]. Common atoms: \".2f\" keeps 2 decimals; \"08d\" zero-pads to width 8; \"X\" is uppercase hex; \",\" adds thousands separators; \"%\" multiplies by 100 and appends \"%\". Empty spec is the same as str(value). The whole spec is what appears after the colon in f-strings.',
 
   patterns: [
     {
@@ -66,12 +66,12 @@ export const method = {
     },
     {
       name: 'Percentage with precision',
-      desc: 'The &quot;%&quot; spec multiplies by 100 and appends a percent sign.',
+      desc: 'The \"%\" spec multiplies by 100 and appends a percent sign.',
       code: 'label = format(rate, ".1%")   # 0.756 → "75.6%"',
     },
     {
       name: 'Thousands separators',
-      desc: 'Use &quot;,&quot; for commas, &quot;_&quot; for underscores.',
+      desc: 'Use \",\" for commas, \"_\" for underscores.',
       code: 'format(1_000_000, ",")     # "1,000,000"\nformat(1_000_000, "_")      # "1_000_000"',
     },
   ],
@@ -103,13 +103,13 @@ export const method = {
     },
     {
       name: 'Percent (%) multiplies by 100',
-      desc: 'The &quot;%&quot; type converts the value to a percentage — it multiplies by 100 and appends a &quot;%&quot; sign. Passing a value already in percent form gives you 100x the number you wanted.',
+      desc: 'The \"%\" type converts the value to a percentage — it multiplies by 100 and appends a \"%\" sign. Passing a value already in percent form gives you 100x the number you wanted.',
       wrong: { label: 'Assumed literal %', code: 'format(75, ".1%")   # meant 75%', output: '"7500.0%"' },
       fix:   { label: 'Divide by 100',      code: 'format(75 / 100, ".1%")', output: '"75.0%"' },
     },
     {
       name: 'Precision (.N) means different things for different types',
-      desc: 'For float f-spec: digits after the decimal point. For &quot;g&quot; spec: total significant digits. For strings: MAXIMUM length — the string is TRUNCATED.',
+      desc: 'For float f-spec: digits after the decimal point. For \"g\" spec: total significant digits. For strings: MAXIMUM length — the string is TRUNCATED.',
       wrong: { label: 'String truncated', code: 'format("Hello world", ".5")', output: '"Hello"  # truncated!' },
       fix:   { label: 'Read the spec docs — precision changes meaning by type', code: '', output: '' },
     },
@@ -133,7 +133,7 @@ export const method = {
   notes: {
     complexity: 'O(n) in the output length',
     return:     'str — always',
-    cpython:    'Python/bltinmodule.c :: builtin_format — dispatches to type&apos;s __format__',
+    cpython:    'Python/bltinmodule.c :: builtin_format — dispatches to type\'s __format__',
     memory:     'Allocates one string',
     threadSafe: 'Yes for immutable inputs',
   },

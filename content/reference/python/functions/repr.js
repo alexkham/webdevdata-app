@@ -16,7 +16,7 @@ export const method = {
   slug:      'repr',
   name:      'repr',
   signature: 'repr(x)',
-  returns:   { type: 'str', desc: 'The &quot;official&quot; string representation of the object, produced by calling __repr__(). For built-in types this is typically a valid Python literal that would recreate the object when passed to eval(). Never falls back to __str__.' },
+  returns:   { type: 'str', desc: 'The \"official\" string representation of the object, produced by calling __repr__(). For built-in types this is typically a valid Python literal that would recreate the object when passed to eval(). Never falls back to __str__.' },
 
   category:    'Built-in function',
   version:     'Python 1.0+',
@@ -61,9 +61,9 @@ export const method = {
       code: 'class Point:\n    def __repr__(self):\n        return f"Point({self.x!r}, {self.y!r})"',
     },
     {
-      name: 'See through &quot;which quote&quot; ambiguity',
+      name: 'See through \"which quote\" ambiguity',
       desc: 'When a string could contain either kind of quote, repr picks and escapes.',
-      code: 'print(repr("say &quot;hi&quot;"))\n# "say &quot;hi&quot;"  or  \'say "hi"\'',
+      code: 'print(repr("say \"hi\""))\n# "say \"hi\""  or  \'say "hi"\'',
     },
   ],
 
@@ -71,7 +71,7 @@ export const method = {
     { title: 'String gets quotes',  code: 'repr("hello")',     returns: '"\'hello\'"' },
     { title: 'Newline shown',       code: 'repr("a\\nb")',     returns: '"\'a\\\\nb\'"  # backslash + n' },
     { title: 'Tab escaped',         code: 'repr("a\\tb")',     returns: '"\'a\\\\tb\'"' },
-    { title: 'Contains a quote',    code: 'repr("don\\&apos;t")', returns: '\'"don\\\'t"\'  # switches to double quotes' },
+    { title: 'Contains a quote',    code: 'repr("don\\\'t")', returns: '\'"don\\\'t"\'  # switches to double quotes' },
     { title: 'Integer',             code: 'repr(42)',          returns: '"42"' },
     { title: 'None',                code: 'repr(None)',        returns: '"None"' },
     { title: 'List',                code: 'repr([1, 2])',      returns: '"[1, 2]"' },
@@ -87,7 +87,7 @@ export const method = {
     },
     {
       name: 'repr() is NOT always eval-able',
-      desc: 'For built-in scalar types and simple containers it usually is. For objects, class instances, and file handles it typically is not — the docstring says &quot;typically&quot;, and CPython honors that phrase.',
+      desc: 'For built-in scalar types and simple containers it usually is. For objects, class instances, and file handles it typically is not — the docstring says \"typically\", and CPython honors that phrase.',
       wrong: { label: 'Assumed round-trip', code: 'eval(repr(user))', output: 'NameError: name User is not defined  # or worse' },
       fix:   { label: 'Never eval untrusted repr', code: '# repr is for HUMANS to read, not for machines to parse', output: '' },
     },
@@ -145,7 +145,7 @@ export const method = {
     },
     {
       q: 'Should I define __repr__ or __str__ on my class?',
-      a: 'Define __repr__ first — Python falls back to it for str() if __str__ is missing. Add __str__ only when human display differs from debug display. A good __repr__ is unambiguous and would ideally recreate the object if eval&apos;d.',
+      a: 'Define __repr__ first — Python falls back to it for str() if __str__ is missing. Add __str__ only when human display differs from debug display. A good __repr__ is unambiguous and would ideally recreate the object if eval\'d.',
     },
   ],
 

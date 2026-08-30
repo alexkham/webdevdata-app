@@ -78,15 +78,19 @@ export function highlightPython(code) {
 //   { __pyRaw: "b'hi'" }    → b'hi'           (pre-formatted repr, verbatim)
 export function pyRepr(value) {
   if (typeof value === 'string') {
-    const body = value
+    // Python's quote rule: single quotes, unless the string contains a
+    // single quote and no double quote — then double quotes.
+    const useDouble = value.includes("'") && !value.includes('"');
+    let body = value
       .replace(/\\/g, '\\\\')
-      .replace(/'/g, "\\'")
       .replace(/\n/g, '\\n')
       .replace(/\r/g, '\\r')
       .replace(/\t/g, '\\t')
       // other C0 controls the way Python repr shows them
       .replace(/[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]/g, (c) => '\\x' + c.charCodeAt(0).toString(16).padStart(2, '0'));
-    return "'" + body + "'";
+    if (!useDouble) body = body.replace(/'/g, "\\'");
+    const q = useDouble ? '"' : "'";
+    return q + body + q;
   }
   if (value === null || value === undefined) return 'None';
   if (value === true) return 'True';

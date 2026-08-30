@@ -40,19 +40,17 @@ export const method = {
   ],
 
   demoParams: [
-    { name: 'from', type: 'str', hint: 'characters to replace', input: 'text' },
-    { name: 'to',   type: 'str', hint: 'replacements, same length', input: 'text' },
-    { name: 'del',  type: 'str', hint: 'characters to delete (optional)', input: 'text-or-none' },
+    { name: 'frm', type: 'str', hint: 'characters to replace',     input: 'text' },
+    { name: 'to',  type: 'str', hint: 'replacements, same length', input: 'text' },
   ],
+  demoTemplate: 'str.maketrans({frm}, {to})',
   cases: [
-    { id: 'basic',    label: 'basic swap',    values: { from: 'abc',        to: 'xyz',        del: '' } },
-    { id: 'digits',   label: 'digit shift',   values: { from: '0123456789', to: '9876543210', del: '' } },
-    { id: 'quotes',   label: 'smart quotes',  values: { from: '&quot;',     to: '&apos;',     del: '' } },
-    { id: 'del',      label: 'with delete',   values: { from: '',           to: '',           del: 'aeiou' } },
-    { id: 'both',     label: 'swap + delete', values: { from: 'ab',         to: 'xy',         del: 'z' } },
-    { id: 'no-op',    label: 'empty',         values: { from: '',           to: '',           del: '' } },
+    { id: 'basic',    label: 'default',      values: { frm: 'abc', to: 'xyz' } },
+    { id: 'digits',   label: 'digit swap',   values: { frm: '05',  to: '50' } },
+    { id: 'unequal',  label: 'length error', values: { frm: 'xy',  to: 'z' } },
+    { id: 'empty',    label: 'empty',        values: { frm: '',    to: '' } },
   ],
-  demoExplainer: 'The demo shows the RESULTING TABLE as a dict from ordinal to replacement. Real code feeds it into str.translate. The two-string form (from + to) requires equal lengths — a mismatch raises ValueError. The optional third argument &quot;del&quot; is a set of characters to DELETE (mapped to None). Passing empty strings for from + to with a non-empty del is a valid &quot;delete only&quot; call.',
+  demoExplainer: 'The demo shows the RESULTING TABLE as a dict from ordinal to replacement. Real code feeds it into str.translate. The two-string form (from + to) requires equal lengths — a mismatch raises ValueError. The optional third argument \"del\" is a set of characters to DELETE (mapped to None). Passing empty strings for from + to with a non-empty del is a valid \"delete only\" call.',
 
   patterns: [
     {
@@ -68,7 +66,7 @@ export const method = {
     {
       name: 'Explicit dict form for multi-char replacements',
       desc: 'The dict form allows string values (not just single characters).',
-      code: 'table = str.maketrans({"&amp;": "and", "@": " at "})',
+      code: 'table = str.maketrans({"&": "and", "@": " at "})',
     },
     {
       name: 'Swap AND delete in one call',
@@ -81,8 +79,8 @@ export const method = {
     { title: 'Basic two-string',   code: 'str.maketrans("abc", "xyz")',    returns: '{97: 120, 98: 121, 99: 122}  # ordinals!' },
     { title: 'Delete-only',        code: 'str.maketrans("", "", "aeiou")', returns: '{97: None, 101: None, 105: None, ...}' },
     { title: 'Two-string + delete', code: 'str.maketrans("ab", "xy", "z")', returns: '{97: 120, 98: 121, 122: None}' },
-    { title: 'Dict form',          code: 'str.maketrans({"&amp;": "and"})',  returns: '{38: "and"}' },
-    { title: 'Feed to translate',  code: '"a&amp;b".translate(str.maketrans({"&amp;": "and"}))', returns: '"aandb"' },
+    { title: 'Dict form',          code: 'str.maketrans({"&": "and"})',  returns: '{38: "and"}' },
+    { title: 'Feed to translate',  code: '"a&b".translate(str.maketrans({"&": "and"}))', returns: '"aandb"' },
   ],
 
   pitfalls: [

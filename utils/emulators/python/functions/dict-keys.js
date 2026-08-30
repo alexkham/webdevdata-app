@@ -1,15 +1,8 @@
-// utils/emulators/python/dict-keys.js
-//
-// Emulator for Python dict.keys(). Returns an array of keys, preserving
-// insertion order (matching Python 3.7+ behavior — the demo input arrives
-// as an insertion-ordered object).
-
-export default function dictKeys(dict) {
-  if (dict === null || dict === undefined) {
-    throw new TypeError("'NoneType' object has no attribute 'keys'");
+// Emulator for Python dict.keys() — a dict_keys view of the keys.
+const q = (s) => "'" + String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'") + "'";
+export default function dictKeys(d) {
+  if (d === null || typeof d !== 'object' || Array.isArray(d)) {
+    throw new TypeError('keys() argument must be dict');
   }
-  if (typeof dict !== 'object' || Array.isArray(dict)) {
-    throw new TypeError("descriptor 'keys' requires a 'dict' object");
-  }
-  return Object.keys(dict);
+  return { __pyRaw: 'dict_keys([' + Object.keys(d).map(q).join(', ') + '])' };
 }

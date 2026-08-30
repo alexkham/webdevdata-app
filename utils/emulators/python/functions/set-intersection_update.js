@@ -1,23 +1,9 @@
-// utils/emulators/python/set-intersection_update.js
-//
-// Emulator for Python set.intersection_update(iterable). Real Python
-// returns None and mutates the set in place. For the demo, we return
-// the RESULTING state so users can see the effect — the demoExplainer
-// notes this.
-//
-// Keeps only elements found in BOTH the set and the iterable.
-
-function toItems(v) {
-  if (v === null || v === undefined) return [];
-  if (Array.isArray(v)) return v;
-  if (typeof v === 'string') {
-    return v.split(',').map(s => s.trim()).filter(s => s !== '');
+// Emulator for Python set.intersection_update(other) — mutates in
+// place, returns None.
+const elems = (s) => (s && s.__pySet !== undefined ? s.__pySet : s);
+export default function setIntersectionUpdate(a, b) {
+  if (!Array.isArray(elems(a)) || !Array.isArray(elems(b))) {
+    throw new TypeError('intersection_update() arguments must be sets');
   }
-  return [v];
-}
-
-export default function setIntersectionUpdate(set, other) {
-  const start = toItems(set);
-  const keep = new Set(toItems(other));
-  return start.filter(x => keep.has(x));
+  return null;
 }

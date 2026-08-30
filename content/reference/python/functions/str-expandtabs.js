@@ -51,7 +51,7 @@ export const method = {
     { id: 'no-tabs',   label: 'no tabs',           values: { string: 'hello',        tabsize: 4 } },
     { id: 'zero',      label: 'tabsize=0 removes', values: { string: 'a\tb\tc',      tabsize: 0 } },
   ],
-  demoExplainer: 'Each tab expands to enough spaces to reach the next TAB STOP — a multiple of tabsize. That means the number of spaces inserted DEPENDS on the current column. In &quot;ab\\tc&quot; with tabsize=4, the tab inserts 2 spaces (columns 2,3) to reach column 4. In &quot;a\\tc&quot; with tabsize=4, the tab inserts 3 spaces. Newlines (\\n) and carriage returns (\\r) RESET the column counter to 0. tabsize=0 removes tabs entirely.',
+  demoExplainer: 'Each tab expands to enough spaces to reach the next TAB STOP — a multiple of tabsize. That means the number of spaces inserted DEPENDS on the current column. In \"ab\\tc\" with tabsize=4, the tab inserts 2 spaces (columns 2,3) to reach column 4. In \"a\\tc\" with tabsize=4, the tab inserts 3 spaces. Newlines (\\n) and carriage returns (\\r) RESET the column counter to 0. tabsize=0 removes tabs entirely.',
 
   patterns: [
     {
@@ -121,7 +121,7 @@ export const method = {
       'Preparing content for a rendering context that does not support tabs',
     ],
     avoid: [
-      '&quot;Insert N spaces where a tab was&quot; → str.replace is simpler',
+      '\"Insert N spaces where a tab was\" → str.replace is simpler',
       'Visual-width alignment with wide characters → use wcwidth',
       'Tab-to-tab spacing (not fill) → do it manually',
       'Regex-based tab handling → probably overkill',
@@ -137,7 +137,7 @@ export const method = {
   },
 
   related: [
-    { name: 'replace',       slug: 'replace',       when: '&quot;Insert N spaces where a tab was&quot; — no alignment' },
+    { name: 'replace',       slug: 'replace',       when: '\"Insert N spaces where a tab was\" — no alignment' },
     { name: 'str.ljust',     slug: 'str-ljust',     when: 'Pad on the right to a fixed column' },
     { name: 'str.rjust',     slug: 'str-rjust',     when: 'Pad on the left to a fixed column' },
     { name: 'str.splitlines',slug: 'str-splitlines',when: 'Split before applying line-by-line expansion' },
@@ -146,7 +146,7 @@ export const method = {
   faq: [
     {
       q: 'What is the difference between expandtabs and replace?',
-      a: 'replace inserts a FIXED number of characters everywhere a tab appears. expandtabs inserts a VARIABLE count that aligns the next character to the next tab stop. Only expandtabs preserves the &quot;tab stop&quot; alignment property.',
+      a: 'replace inserts a FIXED number of characters everywhere a tab appears. expandtabs inserts a VARIABLE count that aligns the next character to the next tab stop. Only expandtabs preserves the \"tab stop\" alignment property.',
     },
     {
       q: 'Why does the default tabsize is 8?',

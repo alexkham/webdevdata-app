@@ -132,10 +132,9 @@ export const method = {
 
   related: [
     { name: 'str.split',        slug: 'split',        when: 'When you also need the pieces' },
-    { name: 'str.translate',    slug: 'translate',    when: 'Many char-level replacements at once' },
-    { name: 're.sub',           slug: 're-sub',       when: 'Regex or case-insensitive' },
-    { name: 'str.removeprefix', slug: 'removeprefix', when: 'Strip a known start' },
-    { name: 'str.removesuffix', slug: 'removesuffix', when: 'Strip a known end' },
+    { name: 'str.translate',    slug: 'str-translate',    when: 'Many char-level replacements at once' },
+    { name: 'str.removeprefix', slug: 'str-removeprefix', when: 'Strip a known start' },
+    { name: 'str.removesuffix', slug: 'str-removesuffix', when: 'Strip a known end' },
     { name: 'str.format',       slug: 'format',       when: 'Template with named fields' },
   ],
 

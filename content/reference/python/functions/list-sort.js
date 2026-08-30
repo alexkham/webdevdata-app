@@ -24,7 +24,7 @@ export const method = {
   version:     'Python 1.0+',
   hasLiveDemo: true,
 
-  subtitle: 'Reorder the list in place using Python&apos;s stable Timsort. Returns None on purpose — the API pushes you toward `sorted()` when you want a new list.',
+  subtitle: 'Reorder the list in place using Python\'s stable Timsort. Returns None on purpose — the API pushes you toward `sorted()` when you want a new list.',
 
   cheat: {
     commonCall: 'items.sort()',
@@ -35,22 +35,20 @@ export const method = {
 
   parameters: [
     { name: 'key',     type: 'callable', required: false, default: 'None',  desc: 'Function of one argument used to extract a comparison key from each item. Keyword-only.' },
-    { name: 'reverse', type: 'bool',     required: false, default: 'False', desc: 'If True, sort descending. Stability is preserved either way. Keyword-only.' },
+    { name: 'reverse', type: 'bool', required: false, default: 'False', desc: 'Keyword-only: True sorts descending.' },
   ],
 
   demoParams: [
     { name: 'items',   type: 'list', hint: 'comma-separated items', input: 'csv' },
-    { name: 'reverse', type: 'int',  hint: '1 = descending, empty = ascending', input: 'number-or-none' },
   ],
   cases: [
     { id: 'asc',       label: 'ascending',    values: { items: 'banana,apple,cherry', reverse: '' } },
-    { id: 'desc',      label: 'descending',   values: { items: 'banana,apple,cherry', reverse: 1 } },
     { id: 'numbers',   label: 'numbers',      values: { items: '3,1,4,1,5,9,2,6',     reverse: '' } },
     { id: 'mixed-case',label: 'case matters', values: { items: 'apple,Banana,cherry', reverse: '' } },
     { id: 'already',   label: 'already sorted', values: { items: '1,2,3,4,5',         reverse: '' } },
     { id: 'empty',     label: 'empty',        values: { items: '',                    reverse: '' } },
   ],
-  demoExplainer: 'The demo shows the LIST STATE after sorting. Python actually returns None; the meaningful effect is mutation. Sort is stable — equal items keep their original relative order. The demo input arrives as strings, so numeric cases sort lexicographically ("10" &lt; "2") unless you convert first — a classic footgun documented in the pitfalls.',
+  demoExplainer: 'The demo shows the LIST STATE after sorting. Python actually returns None; the meaningful effect is mutation. Sort is stable — equal items keep their original relative order. The demo input arrives as strings, so numeric cases sort lexicographically ("10" < "2") unless you convert first — a classic footgun documented in the pitfalls.',
 
   patterns: [
     {
@@ -100,7 +98,7 @@ export const method = {
     {
       name: 'Mixed types raise TypeError (Python 3)',
       desc: 'Comparing incompatible types is disallowed in Python 3 — sorting a list of mixed types blows up mid-scan.',
-      wrong: { label: 'Runtime error', code: 'xs = [1, "a", 2]\nxs.sort()', output: "TypeError: '&lt;' not supported between instances of 'str' and 'int'" },
+      wrong: { label: 'Runtime error', code: 'xs = [1, "a", 2]\nxs.sort()', output: "TypeError: '<' not supported between instances of 'str' and 'int'" },
       fix:   { label: 'Use a key',     code: 'xs.sort(key=str)  # coerce for comparison', output: 'compares as strings' },
     },
   ],
@@ -145,7 +143,7 @@ export const method = {
     },
     {
       q: 'What is Timsort?',
-      a: 'Python&apos;s hybrid sort — merges runs of already-ordered data, then merges those runs. Great on real-world &quot;mostly ordered&quot; input. Invented for Python; later adopted by Java, Android, and V8.',
+      a: 'Python\'s hybrid sort — merges runs of already-ordered data, then merges those runs. Great on real-world \"mostly ordered\" input. Invented for Python; later adopted by Java, Android, and V8.',
     },
     {
       q: 'How do I sort in descending order by a key?',

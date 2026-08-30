@@ -58,7 +58,7 @@ export const method = {
       code: 'if not username.isascii():\n    raise ValueError("username must be ASCII")',
     },
     {
-      name: 'Combine with isalnum for &quot;ASCII alphanumeric&quot;',
+      name: 'Combine with isalnum for \"ASCII alphanumeric\"',
       desc: 'A stricter version of isalnum that excludes non-Latin letters and digits.',
       code: 'if s.isascii() and s.isalnum():\n    ...   # ASCII letters and digits only',
     },
@@ -81,7 +81,7 @@ export const method = {
   pitfalls: [
     {
       name: 'Empty string returns TRUE — the exception to the family',
-      desc: 'Every other is* method (isalpha, isdigit, isalnum, isspace, isupper, islower, ...) returns False on empty. isascii is the exception: it returns True. The reason is that all zero characters trivially satisfy &quot;every character is ASCII&quot;.',
+      desc: 'Every other is* method (isalpha, isdigit, isalnum, isspace, isupper, islower, ...) returns False on empty. isascii is the exception: it returns True. The reason is that all zero characters trivially satisfy \"every character is ASCII\".',
       wrong: { label: 'Assumed False',   code: '"".isascii()', output: 'True  # UNLIKE the rest of is*' },
       fix:   { label: 'Guard if you need non-empty', code: 's and s.isascii()', output: 'True only for non-empty ASCII' },
     },
@@ -92,7 +92,7 @@ export const method = {
       fix:   { label: 'Combine with isprintable', code: 's.isascii() and s.isprintable()', output: 'False on NUL' },
     },
     {
-      name: 'NOT the same as &quot;in the Latin alphabet&quot;',
+      name: 'NOT the same as \"in the Latin alphabet\"',
       desc: 'isascii tests the CODEPOINT range, not whether characters are Latin letters. Punctuation, digits, spaces, and control characters all pass; anything above U+007F fails.',
       wrong: { label: 'Assumed alphabet', code: '"12345".isascii()', output: 'True  # digits are ASCII' },
       fix:   { label: 'Combine with isalpha', code: 's.isascii() and s.isalpha()', output: 'True only for ASCII letters' },
@@ -137,12 +137,12 @@ export const method = {
 
   faq: [
     {
-      q: 'Why does &quot;&quot;.isascii() return True but &quot;&quot;.isalpha() returns False?',
-      a: 'isascii tests &quot;every character has codepoint &lt; 128&quot;. For the empty string, this is vacuously true — no character can violate the rule. The rest of the is* family also requires &quot;at least one character&quot;, but isascii does not.',
+      q: 'Why does \"\".isascii() return True but \"\".isalpha() returns False?',
+      a: 'isascii tests \"every character has codepoint < 128\". For the empty string, this is vacuously true — no character can violate the rule. The rest of the is* family also requires \"at least one character\", but isascii does not.',
     },
     {
       q: 'Is isascii available in Python 3.6?',
-      a: 'No — it was added in 3.7. On 3.6 use `s == s.encode("ascii", "ignore").decode()` or `all(ord(c) &lt; 128 for c in s)`.',
+      a: 'No — it was added in 3.7. On 3.6 use `s == s.encode("ascii", "ignore").decode()` or `all(ord(c) < 128 for c in s)`.',
     },
     {
       q: 'Does isascii cover ALL of the ASCII range including control chars?',

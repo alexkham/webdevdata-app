@@ -71,7 +71,7 @@ export const method = {
     { title: 'Zero',             code: 'hex(0)',         returns: '"0x0"' },
     { title: 'Negative',         code: 'hex(-255)',      returns: '"-0xff"' },
     { title: 'Big number',       code: 'hex(16 ** 5)',   returns: '"0x100000"' },
-    { title: 'Float raises',     code: 'hex(1.5)',       returns: 'TypeError: &apos;float&apos; object cannot be interpreted as an integer' },
+    { title: 'Float raises',     code: 'hex(1.5)',       returns: 'TypeError: \'float\' object cannot be interpreted as an integer' },
   ],
 
   pitfalls: [
@@ -118,7 +118,7 @@ export const method = {
   notes: {
     complexity: 'O(log n) in the number of digits',
     return:     'str — always lowercase, always prefixed with "0x" (or "-0x")',
-    cpython:    'Python/bltinmodule.c :: builtin_hex — delegates to type&apos;s __index__ then formats',
+    cpython:    'Python/bltinmodule.c :: builtin_hex — delegates to type\'s __index__ then formats',
     memory:     'Allocates one small string',
     threadSafe: 'Yes — a pure computation',
   },
@@ -130,7 +130,7 @@ export const method = {
 
   faq: [
     {
-      q: 'How do I get hex WITHOUT the &quot;0x&quot; prefix?',
+      q: 'How do I get hex WITHOUT the \"0x\" prefix?',
       a: 'Use format() or f-string with the "x" spec — cleaner and lets you pad.',
       code: 'format(255, "x")     # "ff"\nformat(255, "04x")   # "00ff"\nf"{255:x}"           # "ff"',
     },
@@ -139,8 +139,8 @@ export const method = {
       a: 'hex() is always lowercase. Use format(n, "X") for uppercase — capital X in the spec.',
     },
     {
-      q: 'Does hex(-15) return two&apos;s complement?',
-      a: 'No. Python uses arbitrary-precision integers and represents negatives as sign-magnitude in text: "-0xf". If you want two&apos;s complement for a fixed width, mask first: `format(-15 &amp; 0xff, "02x")`.',
+      q: 'Does hex(-15) return two\'s complement?',
+      a: 'No. Python uses arbitrary-precision integers and represents negatives as sign-magnitude in text: "-0xf". If you want two\'s complement for a fixed width, mask first: `format(-15 & 0xff, "02x")`.',
     },
   ],
 

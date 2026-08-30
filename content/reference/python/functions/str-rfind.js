@@ -24,7 +24,7 @@ export const method = {
   version:     'Python 2.0+',
   hasLiveDemo: true,
 
-  subtitle: 'Locate a substring&apos;s LAST occurrence: highest index, or -1 when absent. The right-scanning mirror of str.find.',
+  subtitle: 'Locate a substring\'s LAST occurrence: highest index, or -1 when absent. The right-scanning mirror of str.find.',
 
   cheat: {
     commonCall: 'filename.rfind(".")',
@@ -84,7 +84,7 @@ export const method = {
   pitfalls: [
     {
       name: 'The -1 sentinel is TRUTHY',
-      desc: 'A missing substring returns -1 — which is truthy in Python. `if s.rfind(x):` treats &quot;not found&quot; as a positive signal. Same bug as find.',
+      desc: 'A missing substring returns -1 — which is truthy in Python. `if s.rfind(x):` treats \"not found\" as a positive signal. Same bug as find.',
       wrong: { label: 'Wrong branch', code: 'if line.rfind("ERROR"):\n    log_error()  # runs on -1 too', output: 'runs even when ERROR is missing' },
       fix:   { label: 'Compare explicitly', code: 'if line.rfind("ERROR") != -1:\n    log_error()', output: 'runs only on hit' },
     },
@@ -96,13 +96,13 @@ export const method = {
     },
     {
       name: 'start / end are applied FIRST — then search runs backward',
-      desc: 'You are not asking &quot;search backward from end&quot;, you are asking &quot;search the slice s[start:end] and return the highest index in the original string&quot;. If you slice out the target, rfind returns -1.',
-      wrong: { label: 'Assumed direction', code: '"hello world".rfind("o", 8, 11)', output: '-1  # &quot;o&quot; not in "orl"' },
+      desc: 'You are not asking \"search backward from end\", you are asking \"search the slice s[start:end] and return the highest index in the original string\". If you slice out the target, rfind returns -1.',
+      wrong: { label: 'Assumed direction', code: '"hello world".rfind("o", 8, 11)', output: '-1  # \"o\" not in "orl"' },
       fix:   { label: 'Full slice',        code: '"hello world".rfind("o", 0, 11)', output: '7' },
     },
     {
       name: 'Empty substring returns end (or len)',
-      desc: 'Every position matches the empty string, and rfind returns the highest one — which is the slice&apos;s end. Handy for &quot;no-op&quot; edge cases; surprising if you were probing for real content.',
+      desc: 'Every position matches the empty string, and rfind returns the highest one — which is the slice\'s end. Handy for \"no-op\" edge cases; surprising if you were probing for real content.',
       wrong: { label: 'Assumed -1', code: '"hello".rfind("")', output: '5  # not -1' },
       fix:   { label: 'Guard against empty', code: 'if sub and s.rfind(sub) != -1:\n    ...', output: 'safer intent' },
     },
@@ -113,7 +113,7 @@ export const method = {
       'Splitting a filename at the last dot',
       'Extracting the tail after the last delimiter',
       'Finding the last occurrence of any substring in a search-and-replace tool',
-      'When &quot;not found&quot; should be handled silently, not with an exception',
+      'When \"not found\" should be handled silently, not with an exception',
     ],
     avoid: [
       'You want an exception on missing → str.rindex',
@@ -145,7 +145,7 @@ export const method = {
     },
     {
       q: 'Why does rfind return end when sub is empty?',
-      a: 'By convention: every position &quot;contains&quot; the empty string, and rfind returns the highest such position — which is end (or len when end is default). It mirrors find, which returns start for the empty case.',
+      a: 'By convention: every position \"contains\" the empty string, and rfind returns the highest such position — which is end (or len when end is default). It mirrors find, which returns start for the empty case.',
     },
     {
       q: 'Does rfind search backward or forward?',

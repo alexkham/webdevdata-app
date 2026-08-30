@@ -3,7 +3,7 @@
 export const meta = {
   slug:        'str',
   name:        'str',
-  signature:   'str(object=&apos;&apos;, encoding=&apos;utf-8&apos;, errors=&apos;strict&apos;)',
+  signature:   'str(object=\'\', encoding=\'utf-8\', errors=\'strict\')',
   blurb:       'Convert any object to a string via __str__ (or decode bytes).',
   category:    'builtin',
   type:        'builtin',
@@ -15,7 +15,7 @@ export const meta = {
 export const method = {
   slug:      'str',
   name:      'str',
-  signature: 'str(object=&apos;&apos;, encoding=&apos;utf-8&apos;, errors=&apos;strict&apos;)',
+  signature: 'str(object=\'\', encoding=\'utf-8\', errors=\'strict\')',
   returns:   { type: 'str', desc: 'A string representation of object. For most types this calls __str__(); for bytes it decodes using the given encoding. No argument returns the empty string.' },
 
   category:    'Built-in function',
@@ -65,7 +65,7 @@ export const method = {
     {
       name: 'Human-readable dict / list',
       desc: 'str() on collections gives a Python-literal display — good for logs, wrong for JSON.',
-      code: 'print("state:", str(config))   # {&apos;host&apos;: &apos;dev&apos;}',
+      code: 'print("state:", str(config))   # {\'host\': \'dev\'}',
     },
   ],
 
@@ -83,13 +83,13 @@ export const method = {
   pitfalls: [
     {
       name: 'str(bytes) WITHOUT encoding gives the repr',
-      desc: 'The single-arg form does not decode — it wraps the bytes as `b&apos;...&apos;` text. To decode, always pass encoding.',
+      desc: 'The single-arg form does not decode — it wraps the bytes as `b\'...\'` text. To decode, always pass encoding.',
       wrong: { label: 'Wrapped repr', code: 'str(b"hello")', output: '"b\'hello\'"  # not "hello"' },
       fix:   { label: 'Decode',       code: 'str(b"hello", "utf-8")', output: '"hello"' },
     },
     {
       name: 'str(None) is "None", not "" or an error',
-      desc: 'Handy for logging, but confusing when a nullable field ends up rendered as the four-letter word &quot;None&quot; in your UI.',
+      desc: 'Handy for logging, but confusing when a nullable field ends up rendered as the four-letter word \"None\" in your UI.',
       wrong: { label: 'Ugly UI', code: 'label = "user: " + str(user_id)   # user_id is None', output: '"user: None"' },
       fix:   { label: 'Guard first', code: 'label = "user: " + (str(user_id) if user_id is not None else "?")', output: '"user: ?"' },
     },
@@ -117,7 +117,7 @@ export const method = {
     avoid: [
       'JSON output → json.dumps',
       'Number formatting with control (padding, precision) → f-string or format spec',
-      'User-facing text where None should not appear as &quot;None&quot; → guard first',
+      'User-facing text where None should not appear as \"None\" → guard first',
       'Serializing objects for storage → pickle or json',
     ],
   },

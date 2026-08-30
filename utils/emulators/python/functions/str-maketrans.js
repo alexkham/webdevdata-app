@@ -1,35 +1,25 @@
-// utils/emulators/python/str-maketrans.js
-//
-// Emulator for Python str.maketrans(x, y=None, z=None). Two/three-string
-// form only — the dict form is documented in the content file but not
-// exposed to the demo (which uses three text inputs).
-//
-// Returns a plain object keyed by codepoint number (Unicode ordinal),
-// mirroring what CPython returns. Values are either integer codepoints
-// (from y) or the JavaScript `null` value standing in for Python None
-// (from z, the delete set).
-
+// Emulator for Python str.maketrans(x, y) — the two-string form: a dict
+// mapping each character's code point in x to the code point in y.
 class ValueErrorLike extends Error {
   constructor(message) { super(message); this.name = 'ValueError'; }
 }
-
-export default function strMakeTrans(from, to, del) {
-  const f = String(from == null ? '' : from);
-  const t = String(to   == null ? '' : to);
-  const d = String(del  == null ? '' : del);
-
-  const fromChars = [...f];
-  const toChars   = [...t];
-  if (fromChars.length !== toChars.length) {
+export default function strMaketrans(frm, to) {
+  if (typeof frm !== 'string' || typeof to !== 'string') {
+    throw new TypeError('maketrans() arguments must be str');
+  }
+  if (frm.length !== to.length) {
     throw new ValueErrorLike('the first two maketrans arguments must have equal length');
   }
-
-  const out = {};
-  for (let i = 0; i < fromChars.length; i++) {
-    out[fromChars[i].codePointAt(0)] = toChars[i].codePointAt(0);
+  const pairs = [];
+  const seen = new Set();
+  for (let i = 0; i < frm.length; i += 1) {
+    const k = frm.codePointAt(i);
+    if (seen.has(k)) continue; // later duplicates win in Python; keep last
+    pairs.push([k, to.codePointAt(i)]);
   }
-  for (const ch of [...d]) {
-    out[ch.codePointAt(0)] = null;
-  }
-  return out;
+  // Python keeps the LAST mapping for duplicate keys
+  const map = new Map();
+  for (let i = 0; i < frm.length; i += 1) map.set(frm.codePointAt(i), to.codePointAt(i));
+  const body = [...map.entries()].map(([k, v]) => k + ': ' + v).join(', ');
+  return { __pyRaw: '{' + body + '}' };
 }

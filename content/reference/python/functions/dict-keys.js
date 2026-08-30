@@ -6,7 +6,7 @@ export const meta = {
   slug:        'dict-keys',
   name:        'dict.keys',
   signature:   'dict.keys()',
-  blurb:       'A live view of the dict&apos;s keys.',
+  blurb:       'A live view of the dict\'s keys.',
   category:    'dict',
   type:        'dict',
   hasLiveDemo: true,
@@ -18,13 +18,13 @@ export const method = {
   slug:      'dict-keys',
   name:      'dict.keys',
   signature: 'dict.keys()',
-  returns:   { type: 'dict_keys', desc: 'A view object over the dict&apos;s keys. Live — reflects changes to the underlying dict. Iterable, sized, and set-like (supports union/intersection/difference).' },
+  returns:   { type: 'dict_keys', desc: 'A view object over the dict\'s keys. Live — reflects changes to the underlying dict. Iterable, sized, and set-like (supports union/intersection/difference).' },
 
   category:    'Dict method',
   version:     'Python 2.2+',
   hasLiveDemo: true,
 
-  subtitle: 'Iterate the dict&apos;s keys as a live view — not a copy. Insertion order preserved (3.7+).',
+  subtitle: 'Iterate the dict\'s keys as a live view — not a copy. Insertion order preserved (3.7+).',
 
   cheat: {
     commonCall: 'for k in d.keys():',
@@ -52,13 +52,13 @@ export const method = {
   patterns: [
     {
       name: 'Iterate keys explicitly',
-      desc: 'When the code needs to say &quot;keys&quot; out loud for readability, use .keys(). `for k in d:` does the same thing.',
+      desc: 'When the code needs to say \"keys\" out loud for readability, use .keys(). `for k in d:` does the same thing.',
       code: 'for k in d.keys():\n    process(k)',
     },
     {
-      name: 'Compare two dicts&apos; keys',
+      name: 'Compare two dicts\' keys',
       desc: 'keys() views are set-like — union, intersection, and difference all work.',
-      code: 'shared    = d1.keys() &amp; d2.keys()\nonly_in_1 = d1.keys() - d2.keys()',
+      code: 'shared    = d1.keys() & d2.keys()\nonly_in_1 = d1.keys() - d2.keys()',
     },
     {
       name: 'Snapshot for concurrent mutation',
@@ -71,7 +71,7 @@ export const method = {
     { title: 'Iterate keys',        code: 'list({"a": 1, "b": 2}.keys())',           returns: '["a", "b"]' },
     { title: 'Empty dict',          code: 'list({}.keys())',                          returns: '[]' },
     { title: 'Insertion order',     code: 'list({"z": 1, "a": 2}.keys())',           returns: '["z", "a"]' },
-    { title: 'Set-like intersection', code: '{"a": 1, "b": 2}.keys() &amp; {"b", "c"}', returns: '{"b"}' },
+    { title: 'Set-like intersection', code: '{"a": 1, "b": 2}.keys() & {"b", "c"}', returns: '{"b"}' },
     { title: 'View reflects updates', code: 'd = {"a": 1}\nk = d.keys()\nd["b"] = 2\nlist(k)', returns: '["a", "b"]' },
   ],
 
@@ -84,7 +84,7 @@ export const method = {
     },
     {
       name: 'Modifying the dict during iteration raises',
-      desc: 'Changing the dict&apos;s size while iterating over its keys view is a RuntimeError. Read-only iteration is safe; add/remove keys — take a snapshot first.',
+      desc: 'Changing the dict\'s size while iterating over its keys view is a RuntimeError. Read-only iteration is safe; add/remove keys — take a snapshot first.',
       wrong: { label: 'Runtime error', code: 'for k in d.keys():\n    if d[k] is None:\n        del d[k]', output: 'RuntimeError: dictionary changed size during iteration' },
       fix:   { label: 'Snapshot first',code: 'for k in list(d.keys()):\n    if d[k] is None:\n        del d[k]', output: 'safe' },
     },
@@ -104,7 +104,7 @@ export const method = {
 
   when: {
     use: [
-      'Explicitly reading &quot;keys&quot; for code clarity',
+      'Explicitly reading \"keys\" for code clarity',
       'Set-like operations across two dicts (keys views are set-like)',
       'Feeding sorted / filter / any / all with just the keys',
       'Membership tests: `k in d.keys()` is equivalent to `k in d`',
@@ -135,12 +135,12 @@ export const method = {
   faq: [
     {
       q: 'What is the difference between `for k in d.keys()` and `for k in d`?',
-      a: 'Nothing — iterating a dict yields its keys by default. `d.keys()` is only needed when you want set-like operations (`&amp;`, `|`, `-`) between two dicts&apos; key sets, or when the extra noun helps readability.',
+      a: 'Nothing — iterating a dict yields its keys by default. `d.keys()` is only needed when you want set-like operations (`&`, `|`, `-`) between two dicts\' key sets, or when the extra noun helps readability.',
     },
     {
       q: 'Can I compare keys() from two dicts?',
       a: 'Yes — keys views are set-like. Union, intersection, and difference all work.',
-      code: 'common = d1.keys() &amp; d2.keys()\nonly1  = d1.keys() - d2.keys()',
+      code: 'common = d1.keys() & d2.keys()\nonly1  = d1.keys() - d2.keys()',
     },
     {
       q: 'Is the order guaranteed?',

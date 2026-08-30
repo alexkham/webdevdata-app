@@ -69,7 +69,7 @@ export const method = {
       code: 'method = getattr(obj, name)\nresult = method(*args, **kwargs)',
     },
     {
-      name: 'Sentinel for the &quot;None is a real value&quot; case',
+      name: 'Sentinel for the \"None is a real value\" case',
       desc: 'When None could be legitimate, an object() sentinel disambiguates.',
       code: '_missing = object()\nval = getattr(obj, name, _missing)\nif val is _missing:\n    ...   # truly absent',
     },
@@ -92,9 +92,9 @@ export const method = {
       fix:   { label: 'Default it',     code: 'getattr(obj, "missing", None)', output: 'None' },
     },
     {
-      name: 'A property that raises AttributeError looks &quot;missing&quot;',
+      name: 'A property that raises AttributeError looks \"missing\"',
       desc: 'If a @property internally raises AttributeError, getattr returns the DEFAULT — the bug looks like the attribute is absent. Use try/except and log the error for properties with side effects.',
-      wrong: { label: 'Bug hidden', code: '@property\ndef x(self):\n    return self.does_not_exist\n\ngetattr(obj, "x", None)', output: 'None  # bug looks like &quot;missing&quot;' },
+      wrong: { label: 'Bug hidden', code: '@property\ndef x(self):\n    return self.does_not_exist\n\ngetattr(obj, "x", None)', output: 'None  # bug looks like \"missing\"' },
       fix:   { label: 'Try/except with logging', code: 'try:\n    val = obj.x\nexcept AttributeError as e:\n    log.warning("no x: %s", e)', output: 'error visible' },
     },
     {

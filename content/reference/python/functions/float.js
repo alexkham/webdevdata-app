@@ -79,7 +79,7 @@ export const method = {
     { title: 'Infinity',           code: 'float("inf")',         returns: 'inf' },
     { title: 'NaN',                code: 'float("nan")',         returns: 'nan' },
     { title: 'No argument',        code: 'float()',              returns: '0.0' },
-    { title: 'Invalid raises',     code: 'float("abc")',         returns: "ValueError: could not convert string to float: &apos;abc&apos;" },
+    { title: 'Invalid raises',     code: 'float("abc")',         returns: "ValueError: could not convert string to float: \'abc\'" },
   ],
 
   pitfalls: [
@@ -103,7 +103,7 @@ export const method = {
     },
     {
       name: 'Trailing junk is a ValueError, not a partial parse',
-      desc: 'float() is strict — "3.14abc" does not parse to 3.14 with a warning. It raises. Use a regex or a proper parser for &quot;pull the number out&quot; scenarios.',
+      desc: 'float() is strict — "3.14abc" does not parse to 3.14 with a warning. It raises. Use a regex or a proper parser for \"pull the number out\" scenarios.',
       wrong: { label: 'Strict parse', code: 'float("3.14abc")', output: "ValueError: could not convert string to float: '3.14abc'" },
       fix:   { label: 'Extract first', code: 'import re\nm = re.search(r"[-+]?\\d+(\\.\\d+)?", raw)\nvalue = float(m.group()) if m else default', output: 'extract then parse' },
     },
@@ -142,7 +142,7 @@ export const method = {
   faq: [
     {
       q: 'How do I check if a string is a valid float without try/except?',
-      a: 'There is no builtin str.isfloat. Convention is try/except — Python code embraces &quot;easier to ask forgiveness than permission&quot;.',
+      a: 'There is no builtin str.isfloat. Convention is try/except — Python code embraces \"easier to ask forgiveness than permission\".',
       code: 'def is_float(s):\n    try:\n        float(s)\n        return True\n    except ValueError:\n        return False',
     },
     {
@@ -152,7 +152,7 @@ export const method = {
     },
     {
       q: 'What is float("inf") for?',
-      a: 'A sentinel &quot;larger than any real number&quot;. Common in algorithms that seed a minimum with +inf and compare downward, or as an upper bound in comparisons. Beware — arithmetic with inf produces inf; float("nan") is even more contagious.',
+      a: 'A sentinel \"larger than any real number\". Common in algorithms that seed a minimum with +inf and compare downward, or as an upper bound in comparisons. Beware — arithmetic with inf produces inf; float("nan") is even more contagious.',
     },
   ],
 

@@ -27,7 +27,7 @@ export const method = {
   cheat: {
     commonCall: 'chr(65)  # "A"',
     returns:    'a str of length 1',
-    replaces:   'the &quot;what character is codepoint N?&quot; lookup',
+    replaces:   'the \"what character is codepoint N?\" lookup',
     watchOut:   'range is 0..0x10FFFF; anything outside raises ValueError',
   },
 
@@ -82,13 +82,13 @@ export const method = {
       name: 'ValueError on out-of-range',
       desc: 'The valid range is 0..0x10FFFF (inclusive). Negatives or values larger than 0x10FFFF raise ValueError — not a silent truncation.',
       wrong: { label: 'Runtime error', code: 'chr(-1)\nchr(0x110000)', output: 'ValueError: chr() arg not in range(0x110000)' },
-      fix:   { label: 'Guard the range', code: 'if 0 &lt;= i &lt;= 0x10FFFF:\n    ch = chr(i)', output: 'safe lookup' },
+      fix:   { label: 'Guard the range', code: 'if 0 <= i <= 0x10FFFF:\n    ch = chr(i)', output: 'safe lookup' },
     },
     {
-      name: 'Some codepoints are &quot;lone surrogates&quot;',
+      name: 'Some codepoints are \"lone surrogates\"',
       desc: 'The range 0xD800..0xDFFF holds UTF-16 surrogate halves. chr() will happily return them, but they are not valid Unicode characters — encoding them to bytes usually errors.',
       wrong: { label: 'Encoding fails', code: 's = chr(0xD800)\ns.encode("utf-8")', output: 'UnicodeEncodeError: surrogates not allowed' },
-      fix:   { label: 'Stay outside the surrogate range', code: 'if not 0xD800 &lt;= i &lt;= 0xDFFF:\n    ch = chr(i)', output: 'safe codepoint' },
+      fix:   { label: 'Stay outside the surrogate range', code: 'if not 0xD800 <= i <= 0xDFFF:\n    ch = chr(i)', output: 'safe codepoint' },
     },
     {
       name: 'Not the same as int → digit character',

@@ -50,7 +50,7 @@ export const method = {
     { id: 'empty-pref', label: 'empty prefix',    values: { string: 'hello',   prefix: '' } },
     { id: 'empty-str',  label: 'empty string',    values: { string: '',        prefix: 'x' } },
   ],
-  demoExplainer: 'removeprefix strips an EXACT substring from the start — at most once. If the string does not start with the prefix, the original is returned unchanged. Unlike lstrip, the argument is a substring, not a character set — "un" removes exactly "un" once, not any leading &quot;u&quot; and &quot;n&quot; characters in any order.',
+  demoExplainer: 'removeprefix strips an EXACT substring from the start — at most once. If the string does not start with the prefix, the original is returned unchanged. Unlike lstrip, the argument is a substring, not a character set — "un" removes exactly "un" once, not any leading \"u\" and \"n\" characters in any order.',
 
   patterns: [
     {
@@ -94,7 +94,7 @@ export const method = {
     },
     {
       name: 'Different from lstrip — exact match, not character set',
-      desc: 'This is the whole point of the method. lstrip("un") strips any leading &quot;u&quot; and &quot;n&quot; in any order and any repetition. removeprefix("un") only matches the literal prefix &quot;un&quot;.',
+      desc: 'This is the whole point of the method. lstrip("un") strips any leading \"u\" and \"n\" in any order and any repetition. removeprefix("un") only matches the literal prefix \"un\".',
       wrong: { label: 'lstrip over-strips', code: '"unnnnhappy".lstrip("un")', output: '"happy"  # ate every leading "u" and "n"' },
       fix:   { label: 'removeprefix is precise', code: '"unnnnhappy".removeprefix("un")', output: '"nnnnhappy"  # just the first two chars' },
     },

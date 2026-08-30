@@ -22,7 +22,7 @@ export const method = {
   version:     'Python 2.5+',
   hasLiveDemo: true,
 
-  subtitle: 'Short-circuit &quot;is anything truthy?&quot; over any iterable.',
+  subtitle: 'Short-circuit \"is anything truthy?\" over any iterable.',
 
   cheat: {
     commonCall: 'if any(x.is_ready for x in jobs):',
@@ -45,7 +45,7 @@ export const method = {
     { id: 'empty',      label: 'empty',        values: { items: '' } },
     { id: 'mixed',      label: 'strings',      values: { items: ',hello,' } },
   ],
-  demoExplainer: 'any walks the iterable and stops the moment it sees a truthy item — a generator input would not be consumed past that point. Empty iterables return False by convention: there is no truthy item, so &quot;does any exist?&quot; is False. Falsy values in Python: 0, 0.0, "", [], {}, None, False.',
+  demoExplainer: 'any walks the iterable and stops the moment it sees a truthy item — a generator input would not be consumed past that point. Empty iterables return False by convention: there is no truthy item, so \"does any exist?\" is False. Falsy values in Python: 0, 0.0, "", [], {}, None, False.',
 
   patterns: [
     {
@@ -75,7 +75,7 @@ export const method = {
   pitfalls: [
     {
       name: 'any([]) is False, not True',
-      desc: 'A common surprise — &quot;nothing is anything&quot; sounds like it could be True, but Python defines the empty case as False. Mirrors mathematical convention (existential over empty set).',
+      desc: 'A common surprise — \"nothing is anything\" sounds like it could be True, but Python defines the empty case as False. Mirrors mathematical convention (existential over empty set).',
       wrong: { label: 'Wrong expectation', code: 'if any([]):\n    print("truthy")\nelse:\n    print("falsy")', output: 'falsy' },
       fix:   { label: 'Read the contract', code: 'any([])   # False\nall([])   # True', output: 'documented behaviour' },
     },
@@ -95,12 +95,12 @@ export const method = {
 
   when: {
     use: [
-      '&quot;Does at least one item satisfy X?&quot;',
+      '\"Does at least one item satisfy X?\"',
       'Short-circuit checks over large iterables',
       'Generator expressions where you do not want to build a list',
     ],
     avoid: [
-      '&quot;Do all items satisfy X?&quot; → all',
+      '\"Do all items satisfy X?\" → all',
       'Counting matches → sum(cond for x in xs)',
       'Finding the item itself → next() with a generator',
     ],
@@ -115,7 +115,7 @@ export const method = {
   },
 
   related: [
-    { name: 'all',       slug: 'all',       when: '&quot;Do ALL items satisfy X?&quot;' },
+    { name: 'all',       slug: 'all',       when: '\"Do ALL items satisfy X?\"' },
     { name: 'sum',       slug: 'sum',       when: 'Count matches instead of a yes/no' },
     { name: 'enumerate', slug: 'enumerate', when: 'You also want the index of the first hit' },
   ],
@@ -123,7 +123,7 @@ export const method = {
   faq: [
     {
       q: 'Why does any([]) return False?',
-      a: 'It matches the existential quantifier: &quot;does there exist an x in [] such that x is truthy?&quot; — no, because there is no x at all. all([]) is True by the mirror convention.',
+      a: 'It matches the existential quantifier: \"does there exist an x in [] such that x is truthy?\" — no, because there is no x at all. all([]) is True by the mirror convention.',
     },
     {
       q: 'How do I get the first truthy item, not just True/False?',

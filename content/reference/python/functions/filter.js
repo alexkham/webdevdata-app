@@ -28,11 +28,11 @@ export const method = {
     commonCall: 'list(filter(None, items))',
     returns:    'a lazy filter iterator — wrap in list() to materialize',
     replaces:   'a comprehension: `[x for x in items if pred(x)]`',
-    watchOut:   'None as predicate means &quot;keep truthy items&quot;; iterator is consumed on first pass',
+    watchOut:   'None as predicate means \"keep truthy items\"; iterator is consumed on first pass',
   },
 
   parameters: [
-    { name: 'predicate', type: 'callable | None', required: true, default: null, desc: 'A function returning True/False (or truthy/falsy) per item. Special case: None means &quot;keep items that are themselves truthy&quot;.' },
+    { name: 'predicate', type: 'callable | None', required: true, default: null, desc: 'A function returning True/False (or truthy/falsy) per item. Special case: None means \"keep items that are themselves truthy\".' },
     { name: 'iterable',  type: 'iterable',        required: true, default: null, desc: 'The source items. Any iterable works.' },
   ],
 
@@ -47,7 +47,7 @@ export const method = {
     { id: 'empty',    label: 'empty',           values: { items: '' } },
     { id: 'decimals', label: 'decimals',        values: { items: '-1.5,0,1.5' } },
   ],
-  demoExplainer: 'The demo uses a fixed predicate — KEEP POSITIVE items (x &gt; 0) — because the demo cannot accept a callable through a text input. In real code you pass any callable: `filter(str.isdigit, tokens)`, `filter(lambda x: x.startswith("_"), names)`, or `filter(None, items)` to keep only truthy values. Result is a lazy iterator — wrap in list() to see values.',
+  demoExplainer: 'The demo uses a fixed predicate — KEEP POSITIVE items (x > 0) — because the demo cannot accept a callable through a text input. In real code you pass any callable: `filter(str.isdigit, tokens)`, `filter(lambda x: x.startswith("_"), names)`, or `filter(None, items)` to keep only truthy values. Result is a lazy iterator — wrap in list() to see values.',
 
   patterns: [
     {
@@ -68,7 +68,7 @@ export const method = {
     {
       name: 'When a comprehension reads better',
       desc: 'For non-trivial predicates, a comprehension is often clearer.',
-      code: '# instead of: filter(lambda x: x % 2 == 0 and x &gt; 0, xs)\npositives_even = [x for x in xs if x % 2 == 0 and x &gt; 0]',
+      code: '# instead of: filter(lambda x: x % 2 == 0 and x > 0, xs)\npositives_even = [x for x in xs if x % 2 == 0 and x > 0]',
     },
   ],
 
@@ -95,8 +95,8 @@ export const method = {
       fix:   { label: 'Materialize once',  code: 'result = list(filter(None, items))', output: 'reusable' },
     },
     {
-      name: 'predicate=None means &quot;keep truthy&quot;, NOT &quot;keep everything&quot;',
-      desc: 'Newcomer trap. `filter(None, items)` does NOT return items untouched — it drops every falsy item (0, "", [], None, False). If you truly want &quot;keep everything&quot;, you did not need filter at all.',
+      name: 'predicate=None means \"keep truthy\", NOT \"keep everything\"',
+      desc: 'Newcomer trap. `filter(None, items)` does NOT return items untouched — it drops every falsy item (0, "", [], None, False). If you truly want \"keep everything\", you did not need filter at all.',
       wrong: { label: 'Assumed identity', code: 'list(filter(None, [0, 1, 2]))', output: '[1, 2]  # 0 dropped' },
       fix:   { label: 'Use lambda',       code: 'list(filter(lambda x: True, [0, 1, 2]))', output: '[0, 1, 2]  # actually keep all' },
     },
@@ -135,7 +135,6 @@ export const method = {
     { name: 'map',       slug: 'map',       when: 'Transform every item instead of keeping some' },
     { name: 'any',       slug: 'any',       when: 'Just check whether any item passes the predicate' },
     { name: 'all',       slug: 'all',       when: 'Check whether every item passes' },
-    { name: 'list',      slug: 'list',      when: 'Materialize the filter iterator into a list' },
   ],
 
   faq: [
@@ -145,7 +144,7 @@ export const method = {
     },
     {
       q: 'Why does filter(None, items) drop zeros?',
-      a: 'Because 0 is falsy in Python — the None predicate is defined as &quot;keep truthy items&quot;. If you want to keep zeros but drop None, filter with `lambda x: x is not None` instead.',
+      a: 'Because 0 is falsy in Python — the None predicate is defined as \"keep truthy items\". If you want to keep zeros but drop None, filter with `lambda x: x is not None` instead.',
     },
     {
       q: 'When would I use filter over a comprehension?',

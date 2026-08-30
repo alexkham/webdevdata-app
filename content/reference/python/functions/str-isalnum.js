@@ -50,7 +50,7 @@ export const method = {
     { id: 'empty',     label: 'empty',          values: { string: '' } },
     { id: 'punct',     label: 'punctuation',    values: { string: 'a.b' } },
   ],
-  demoExplainer: 'isalnum() returns True when EVERY character is either a letter or a digit AND the string is non-empty. Spaces, underscores, hyphens, dots, and any other punctuation all break it. &quot;Letter&quot; and &quot;digit&quot; are Unicode-aware — accented letters and non-Latin scripts pass, but so do numeric characters from other systems. The empty string returns False by convention.',
+  demoExplainer: 'isalnum() returns True when EVERY character is either a letter or a digit AND the string is non-empty. Spaces, underscores, hyphens, dots, and any other punctuation all break it. \"Letter\" and \"digit\" are Unicode-aware — accented letters and non-Latin scripts pass, but so do numeric characters from other systems. The empty string returns False by convention.',
 
   patterns: [
     {
@@ -64,7 +64,7 @@ export const method = {
       code: 'if not code.isalnum():\n    return False',
     },
     {
-      name: 'Combine with isdigit for &quot;has at least one letter&quot;',
+      name: 'Combine with isdigit for \"has at least one letter\"',
       desc: 'A common validation shape.',
       code: 'if token.isalnum() and not token.isdigit():\n    ...    # has letters, may have digits',
     },
@@ -101,7 +101,7 @@ export const method = {
       fix:   { label: 'Per token', code: 'all(t.isalnum() for t in text.split())', output: 'True' },
     },
     {
-      name: 'Unicode &quot;digits&quot; include surprising code points',
+      name: 'Unicode \"digits\" include surprising code points',
       desc: 'Roman numerals, superscripts, and fractions pass isnumeric AND isalnum — a quirk if you expected ASCII digits only. Combine with .isascii() when that matters.',
       wrong: { label: 'Too permissive', code: '"Ⅳ".isalnum()', output: 'True  # Roman numeral' },
       fix:   { label: 'ASCII only',      code: 'name.isascii() and name.isalnum()', output: 'True only for ASCII letters/digits' },
@@ -111,7 +111,7 @@ export const method = {
   when: {
     use: [
       'Quick validation that a token has no punctuation or whitespace',
-      'Loose &quot;letters or digits, that&apos;s it&quot; check on short codes',
+      'Loose \"letters or digits, that\'s it\" check on short codes',
       'Combined with .split() for word-by-word validation',
       'Composing with isalpha / isdigit / isspace for finer checks',
     ],
@@ -140,7 +140,7 @@ export const method = {
 
   faq: [
     {
-      q: 'Why does &quot;user_name&quot;.isalnum() return False?',
+      q: 'Why does \"user_name\".isalnum() return False?',
       a: 'Underscore is punctuation, not a letter or digit. For identifier-shaped strings (which include underscores), use str.isidentifier() instead.',
     },
     {

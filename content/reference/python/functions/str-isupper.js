@@ -96,7 +96,7 @@ export const method = {
     },
     {
       name: 'Empty string returns False, not True',
-      desc: 'Same rule across the is* family — empty is always False. Ignoring the &quot;at least one&quot; requirement gives you a bug that manifests only on edge cases.',
+      desc: 'Same rule across the is* family — empty is always False. Ignoring the \"at least one\" requirement gives you a bug that manifests only on edge cases.',
       wrong: { label: 'Wrong expectation', code: '"".isupper()', output: 'False' },
       fix:   { label: 'Guard first',        code: 's and s.isupper()', output: 'covers the empty case' },
     },
@@ -140,16 +140,16 @@ export const method = {
 
   faq: [
     {
-      q: 'Why does &quot;12345&quot;.isupper() return False?',
-      a: 'Because digits are not cased characters. isupper() requires at least one cased character AND every cased character to be uppercase. With no cased characters, the &quot;at least one&quot; condition fails.',
+      q: 'Why does \"12345\".isupper() return False?',
+      a: 'Because digits are not cased characters. isupper() requires at least one cased character AND every cased character to be uppercase. With no cased characters, the \"at least one\" condition fails.',
     },
     {
       q: 'Is `s.isupper()` the same as `s == s.upper()`?',
-      a: 'Almost — but `s == s.upper()` returns True for &quot;12345&quot; (no letters to change), while `s.isupper()` returns False. Pick based on whether digits-only should count.',
+      a: 'Almost — but `s == s.upper()` returns True for \"12345\" (no letters to change), while `s.isupper()` returns False. Pick based on whether digits-only should count.',
     },
     {
       q: 'What is the difference between isupper and istitle?',
-      a: 'isupper: every cased character is uppercase. istitle: the string is in title case — first character of each &quot;word&quot; uppercase, rest lowercase. Very different intents.',
+      a: 'isupper: every cased character is uppercase. istitle: the string is in title case — first character of each \"word\" uppercase, rest lowercase. Very different intents.',
     },
   ],
 

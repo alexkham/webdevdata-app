@@ -1,15 +1,10 @@
-// utils/emulators/python/dict-items.js
-//
-// Emulator for Python dict.items(). Returns an array of [key, value] pairs,
-// preserving insertion order (matching Python 3.7+ behavior — the demo input
-// arrives as an insertion-ordered object).
-
-export default function dictItems(dict) {
-  if (dict === null || dict === undefined) {
-    throw new TypeError("'NoneType' object has no attribute 'items'");
+// Emulator for Python dict.items() — a dict_items view of (key, value)
+// pairs.
+const q = (s) => "'" + String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'") + "'";
+export default function dictItems(d) {
+  if (d === null || typeof d !== 'object' || Array.isArray(d)) {
+    throw new TypeError('items() argument must be dict');
   }
-  if (typeof dict !== 'object' || Array.isArray(dict)) {
-    throw new TypeError("descriptor 'items' requires a 'dict' object");
-  }
-  return Object.entries(dict);
+  const pairs = Object.entries(d).map(([k, v]) => '(' + q(k) + ', ' + q(v) + ')');
+  return { __pyRaw: 'dict_items([' + pairs.join(', ') + '])' };
 }

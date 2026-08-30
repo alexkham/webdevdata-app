@@ -29,7 +29,7 @@ export const method = {
   cheat: {
     commonCall: 'items.insert(0, first)',
     returns:    'None — the list itself grows by one at position i',
-    replaces:   'the &quot;shift everything and set&quot; index-manipulation pattern',
+    replaces:   'the \"shift everything and set\" index-manipulation pattern',
     watchOut:   'out-of-range i does NOT raise — it clamps to 0 or len(list)',
   },
 
@@ -68,7 +68,7 @@ export const method = {
     {
       name: 'Guarded insert',
       desc: 'Bounds checking is up to you — insert never raises for a bad index.',
-      code: 'if 0 &lt;= i &lt;= len(items):\n    items.insert(i, x)\nelse:\n    raise IndexError(i)',
+      code: 'if 0 <= i <= len(items):\n    items.insert(i, x)\nelse:\n    raise IndexError(i)',
     },
   ],
 
@@ -86,7 +86,7 @@ export const method = {
       name: 'Out-of-range indexes DO NOT raise',
       desc: 'Unlike subscript access or delete, insert clamps silently — huge index means append, huge negative means prepend. Fine for expected behavior; a silent bug when you thought the index was validated.',
       wrong: { label: 'Silent clamp',  code: 'xs = [1, 2, 3]\nxs.insert(999, "X")\nxs', output: '[1, 2, 3, "X"]  # no error' },
-      fix:   { label: 'Validate first', code: 'if 0 &lt;= i &lt;= len(xs):\n    xs.insert(i, "X")\nelse:\n    raise IndexError(i)', output: 'explicit error on bad index' },
+      fix:   { label: 'Validate first', code: 'if 0 <= i <= len(xs):\n    xs.insert(i, "X")\nelse:\n    raise IndexError(i)', output: 'explicit error on bad index' },
     },
     {
       name: 'The `xs = xs.insert(...)` bug',
@@ -135,7 +135,7 @@ export const method = {
     { name: 'append',      slug: 'append',      when: 'Add to the end — no shift, O(1)' },
     { name: 'list.extend', slug: 'list-extend', when: 'Add many items to the end' },
     { name: 'list.pop',    slug: 'list-pop',    when: 'Remove by index' },
-    { name: 'list.index',  slug: 'list-index',  when: 'Find a value&apos;s position before inserting next to it' },
+    { name: 'list.index',  slug: 'list-index',  when: 'Find a value\'s position before inserting next to it' },
   ],
 
   faq: [
@@ -146,7 +146,7 @@ export const method = {
     },
     {
       q: 'Why does insert(999, x) not raise?',
-      a: 'By design — insert clamps to the ends rather than error. Convenient when the index comes from arithmetic that might overshoot; annoying when you wanted validation. The Python docs say: &quot;insert inserts before the item at that index.&quot;',
+      a: 'By design — insert clamps to the ends rather than error. Convenient when the index comes from arithmetic that might overshoot; annoying when you wanted validation. The Python docs say: \"insert inserts before the item at that index.\"',
     },
     {
       q: 'What is the difference between insert(0, x) and [x] + xs?',

@@ -71,7 +71,7 @@ export const method = {
     },
     {
       name: 'Powers of two',
-      desc: 'Common enough that 1 &lt;&lt; n or 2**n often reads as well as pow(2, n).',
+      desc: 'Common enough that 1 << n or 2**n often reads as well as pow(2, n).',
       code: 'byte_max = pow(2, 8) - 1',
     },
   ],
@@ -122,7 +122,7 @@ export const method = {
     ],
     avoid: [
       'Simple constant powers → the ** operator is clearer',
-      'Powers of two → `1 &lt;&lt; n` is idiomatic',
+      'Powers of two → `1 << n` is idiomatic',
       'Cases where operator overloading matters (e.g. numpy) → operator preserves broadcasting',
     ],
   },
@@ -144,7 +144,7 @@ export const method = {
   faq: [
     {
       q: 'Why is pow(0, 0) equal to 1?',
-      a: 'Python follows the &quot;combinatorial&quot; convention: 0**0 = 1. This matches how empty products and Taylor series expansions are defined, and how most math libraries behave. It is a choice — some mathematicians prefer &quot;undefined&quot; — but Python commits to 1.',
+      a: 'Python follows the \"combinatorial\" convention: 0**0 = 1. This matches how empty products and Taylor series expansions are defined, and how most math libraries behave. It is a choice — some mathematicians prefer \"undefined\" — but Python commits to 1.',
     },
     {
       q: 'What is the difference between pow(a, b) and a**b?',

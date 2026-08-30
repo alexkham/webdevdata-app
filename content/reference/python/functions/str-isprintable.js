@@ -18,7 +18,7 @@ export const method = {
   slug:      'str-isprintable',
   name:      'str.isprintable',
   signature: 'str.isprintable()',
-  returns:   { type: 'bool', desc: 'True if every character in the string is printable, i.e. not in Unicode category Cc (control). Space (U+0020) counts as printable. Tab, newline, carriage return, and other control characters return False. Empty string returns TRUE — joining isascii as the &quot;empty is True&quot; exception.' },
+  returns:   { type: 'bool', desc: 'True if every character in the string is printable, i.e. not in Unicode category Cc (control). Space (U+0020) counts as printable. Tab, newline, carriage return, and other control characters return False. Empty string returns TRUE — joining isascii as the \"empty is True\" exception.' },
 
   category:    'String method',
   version:     'Python 3.0+',
@@ -51,7 +51,7 @@ export const method = {
     { id: 'space-only', label: 'just space',        values: { string: '   ' } },
     { id: 'empty',      label: 'empty (True!)',     values: { string: '' } },
   ],
-  demoExplainer: 'isprintable() returns True when the string contains no control characters and the empty string. SPACE (U+0020) counts as printable — this surprises people who assumed &quot;printable&quot; meant &quot;visible.&quot; TAB (U+0009), NEWLINE (U+000A), CARRIAGE RETURN (U+000D), and NUL (U+0000) are all control characters and return False. Emojis and accented letters pass. Empty string returns True — joining isascii as the &quot;empty is True&quot; exception to the is* family.',
+  demoExplainer: 'isprintable() returns True when the string contains no control characters and the empty string. SPACE (U+0020) counts as printable — this surprises people who assumed \"printable\" meant \"visible.\" TAB (U+0009), NEWLINE (U+000A), CARRIAGE RETURN (U+000D), and NUL (U+0000) are all control characters and return False. Emojis and accented letters pass. Empty string returns True — joining isascii as the \"empty is True\" exception to the is* family.',
 
   patterns: [
     {
@@ -65,7 +65,7 @@ export const method = {
       code: 'if raw.isprintable():\n    display(raw)\nelse:\n    display(repr(raw))',
     },
     {
-      name: 'Combine with isascii for &quot;safe simple string&quot;',
+      name: 'Combine with isascii for \"safe simple string\"',
       desc: 'Only ASCII, only printable — no non-Latin, no control, no exotic.',
       code: 'if s.isascii() and s.isprintable():\n    ...   # display-safe simple string',
     },
@@ -84,13 +84,13 @@ export const method = {
   pitfalls: [
     {
       name: 'Empty string returns TRUE',
-      desc: 'Only isascii and isprintable in the is* family return True on empty. All others return False. Vacuous truth: no character can violate the &quot;every character is printable&quot; rule.',
+      desc: 'Only isascii and isprintable in the is* family return True on empty. All others return False. Vacuous truth: no character can violate the \"every character is printable\" rule.',
       wrong: { label: 'Assumed False',   code: '"".isprintable()', output: 'True' },
       fix:   { label: 'Guard for non-empty', code: 's and s.isprintable()', output: 'True only for non-empty printable' },
     },
     {
       name: 'Space is PRINTABLE but TAB and NEWLINE are NOT',
-      desc: 'Python distinguishes &quot;printable&quot; from &quot;visible&quot;. Space (U+0020) is a printable character — you can print it and something (a gap) appears. Tab, newline, and carriage return are CONTROL characters — they change the cursor position and return False.',
+      desc: 'Python distinguishes \"printable\" from \"visible\". Space (U+0020) is a printable character — you can print it and something (a gap) appears. Tab, newline, and carriage return are CONTROL characters — they change the cursor position and return False.',
       wrong: { label: 'Assumed all whitespace fails', code: '" ".isprintable()', output: 'True  # space is printable' },
       fix:   { label: 'Tab and newline fail',         code: '"\\t".isprintable()\n"\\n".isprintable()', output: 'False\nFalse' },
     },
@@ -112,7 +112,7 @@ export const method = {
     use: [
       'Safety check before writing to a log line or terminal',
       'Detecting damaged binary data mixed into text',
-      'Combining with isascii for &quot;simple safe display&quot; validation',
+      'Combining with isascii for \"simple safe display\" validation',
       'Filtering strings that would move the cursor or corrupt output',
     ],
     avoid: [
@@ -132,7 +132,7 @@ export const method = {
   },
 
   related: [
-    { name: 'str.isascii',    slug: 'str-isascii',    when: 'The other &quot;empty is True&quot; exception; different rule (ASCII range)' },
+    { name: 'str.isascii',    slug: 'str-isascii',    when: 'The other \"empty is True\" exception; different rule (ASCII range)' },
     { name: 'str.isspace',    slug: 'str-isspace',    when: 'All whitespace — includes control chars like TAB and NEWLINE' },
     { name: 'repr',           slug: 'repr',           when: 'Get a display-safe representation of arbitrary content' },
   ],
@@ -143,12 +143,12 @@ export const method = {
       a: 'Because Python follows the Unicode categorization: space (U+0020) is in category Zs (space separator), while tab (U+0009) is in category Cc (control). Space is a character that prints as a visible gap; tab moves the cursor. The distinction matters more than it looks.',
     },
     {
-      q: 'Why does &quot;&quot;.isprintable() return True but &quot;&quot;.isalpha() returns False?',
-      a: 'Two rules of thumb in the is* family. Most methods require &quot;at least one character&quot; on top of the per-character check. isascii and isprintable are the two exceptions — the per-character rule vacuously holds for the empty string.',
+      q: 'Why does \"\".isprintable() return True but \"\".isalpha() returns False?',
+      a: 'Two rules of thumb in the is* family. Most methods require \"at least one character\" on top of the per-character check. isascii and isprintable are the two exceptions — the per-character rule vacuously holds for the empty string.',
     },
     {
       q: 'Is repr() safe when isprintable() is False?',
-      a: 'Yes — repr escapes control characters into visible form: &quot;\\t&quot;, &quot;\\n&quot;, &quot;\\x00&quot;. That is why repr is the go-to for showing arbitrary strings in logs and diagnostics.',
+      a: 'Yes — repr escapes control characters into visible form: \"\\t\", \"\\n\", \"\\x00\". That is why repr is the go-to for showing arbitrary strings in logs and diagnostics.',
     },
   ],
 

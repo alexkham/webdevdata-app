@@ -30,7 +30,7 @@ export const method = {
     commonCall: 'if s.isnumeric():',
     returns:    'True or False',
     replaces:   'isdigit when you also want Roman numerals, fractions, or superscripts',
-    watchOut:   'does NOT mean &quot;can be converted with int() or float()&quot;; decimals ("3.14") return False',
+    watchOut:   'does NOT mean \"can be converted with int() or float()\"; decimals ("3.14") return False',
   },
 
   parameters: [
@@ -61,7 +61,7 @@ export const method = {
     },
     {
       name: 'Widest reject-on-non-number',
-      desc: 'Combine with isalpha for a &quot;something meaningful&quot; check.',
+      desc: 'Combine with isalpha for a \"something meaningful\" check.',
       code: 'if not (s.isnumeric() or s.isalpha()):\n    reject(s)',
     },
     {
@@ -84,7 +84,7 @@ export const method = {
 
   pitfalls: [
     {
-      name: 'isnumeric does NOT mean &quot;can be converted to a number&quot;',
+      name: 'isnumeric does NOT mean \"can be converted to a number\"',
       desc: 'The most common misconception. isnumeric accepts fractions and Roman numerals but rejects decimals and signs. int("3.14") raises; float("½") also raises. isnumeric is about Unicode categorization, not parseability.',
       wrong: { label: 'Decimal misleadingly rejected', code: '"3.14".isnumeric()', output: 'False  # not "3" plus digit — the dot fails' },
       fix:   { label: 'Try/except to test parseability', code: 'def is_parseable_number(s):\n    try:\n        float(s)\n        return True\n    except ValueError:\n        return False', output: 'True on "3.14"' },
@@ -103,7 +103,7 @@ export const method = {
     },
     {
       name: 'Signs and separators are NOT numeric characters',
-      desc: 'The minus sign, plus sign, decimal point, thousands separator, and currency symbols all count as punctuation or symbols — not numeric. Even &quot;-42&quot;, which looks numeric to a human, returns False.',
+      desc: 'The minus sign, plus sign, decimal point, thousands separator, and currency symbols all count as punctuation or symbols — not numeric. Even \"-42\", which looks numeric to a human, returns False.',
       wrong: { label: 'Sign rejected', code: '"-42".isnumeric()', output: 'False' },
       fix:   { label: 'Strip sign first', code: 's.lstrip("-+").isnumeric()', output: 'True on "-42"' },
     },
@@ -114,7 +114,7 @@ export const method = {
       'Accepting a wide range of Unicode number-shaped strings',
       'Filtering tokens that consist entirely of numeric characters',
       'Detecting non-ASCII numbers (Arabic-Indic, Devanagari, Roman)',
-      'Combining with isalpha for &quot;is this a meaningful token?&quot; checks',
+      'Combining with isalpha for \"is this a meaningful token?\" checks',
     ],
     avoid: [
       'You want to know if it PARSES to a number → try int()/float() with try/except',
@@ -143,11 +143,11 @@ export const method = {
   faq: [
     {
       q: 'What is the difference between isdigit, isnumeric, and isdecimal?',
-      a: 'Three widths of &quot;numeric character&quot;. isdecimal is narrowest — only characters that could be part of a base-10 integer literal. isdigit adds superscripts and a few decimal-like forms. isnumeric is widest — fractions, Roman numerals, and every Unicode-classified numeric character.',
+      a: 'Three widths of \"numeric character\". isdecimal is narrowest — only characters that could be part of a base-10 integer literal. isdigit adds superscripts and a few decimal-like forms. isnumeric is widest — fractions, Roman numerals, and every Unicode-classified numeric character.',
     },
     {
-      q: 'Why does &quot;3.14&quot;.isnumeric() return False?',
-      a: 'The decimal point is not a numeric character — it is punctuation. isnumeric checks per-character Unicode categorization, not whether the whole string parses. Use `float()` inside try/except for a &quot;parseable&quot; check.',
+      q: 'Why does \"3.14\".isnumeric() return False?',
+      a: 'The decimal point is not a numeric character — it is punctuation. isnumeric checks per-character Unicode categorization, not whether the whole string parses. Use `float()` inside try/except for a \"parseable\" check.',
     },
     {
       q: 'Does isnumeric accept Roman numerals?',

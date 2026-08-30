@@ -28,7 +28,7 @@ export const method = {
     commonCall: 'bytes(text, "utf-8")',
     returns:    'a bytes object — immutable',
     replaces:   'raw byte-array construction; bytearray is the mutable sibling',
-    watchOut:   'bytes(5) does NOT mean &quot;the digit 5&quot; — it is FIVE zero bytes',
+    watchOut:   'bytes(5) does NOT mean \"the digit 5\" — it is FIVE zero bytes',
   },
 
   parameters: [
@@ -45,12 +45,9 @@ export const method = {
     { id: 'string',    label: 'from string',        values: { source: 'hello',         encoding: 'utf-8' } },
     { id: 'accent',    label: 'accented string',    values: { source: 'café',          encoding: 'utf-8' } },
     { id: 'ascii',     label: 'string ascii',       values: { source: 'hello',         encoding: 'ascii' } },
-    { id: 'from-ints', label: 'from int list',      values: { source: '65,66,67',      encoding: '' } },
-    { id: 'size',      label: 'from size (int)',    values: { source: '5',             encoding: '' } },
-    { id: 'zero',      label: 'zero size',          values: { source: '0',             encoding: '' } },
     { id: 'empty',     label: 'empty',              values: { source: '',              encoding: '' } },
   ],
-  demoExplainer: 'bytes() has THREE call shapes. Passing a STRING plus an encoding calls str.encode — the most common use. Passing an INT gives that many zero bytes: `bytes(5)` = five zero bytes (NOT the digit 5). Passing a comma-separated LIST of ints creates bytes from those values (each 0..255). The demo displays results in Python&apos;s b&apos;...&apos; literal form.',
+  demoExplainer: 'bytes() has THREE call shapes. Passing a STRING plus an encoding calls str.encode — the most common use. Passing an INT gives that many zero bytes: `bytes(5)` = five zero bytes (NOT the digit 5). Passing a comma-separated LIST of ints creates bytes from those values (each 0..255). The demo displays results in Python\'s b\'...\' literal form.',
 
   patterns: [
     {
@@ -88,7 +85,7 @@ export const method = {
   pitfalls: [
     {
       name: 'bytes(5) is NOT b"5" — it is FIVE zero bytes',
-      desc: 'The single most common bytes() surprise. Passing an int means &quot;that many zero bytes&quot;, not &quot;the digit as a byte&quot;. If you want to write &quot;5&quot; as a byte, wrap it in a list or use a bytes literal.',
+      desc: 'The single most common bytes() surprise. Passing an int means \"that many zero bytes\", not \"the digit as a byte\". If you want to write \"5\" as a byte, wrap it in a list or use a bytes literal.',
       wrong: { label: 'Assumed digit', code: 'bytes(5)', output: "b'\\x00\\x00\\x00\\x00\\x00'" },
       fix:   { label: 'For the digit', code: 'bytes([5])   # b\'\\x05\'\nb"5"           # b\'5\'', output: 'literal vs digit vs char' },
     },
@@ -153,7 +150,7 @@ export const method = {
     },
     {
       q: 'When would I use bytes(5) instead of bytes([5])?',
-      a: 'Almost never — they mean different things. bytes(5) creates FIVE zero bytes for use as a buffer. bytes([5]) creates ONE byte with value 5. If you want the digit character &quot;5&quot;, use b&quot;5&quot; or bytes([ord(&quot;5&quot;)]).',
+      a: 'Almost never — they mean different things. bytes(5) creates FIVE zero bytes for use as a buffer. bytes([5]) creates ONE byte with value 5. If you want the digit character \"5\", use b\"5\" or bytes([ord(\"5\")]).',
     },
   ],
 
@@ -169,7 +166,7 @@ export const method = {
   },
 
   tryInTool: [
-    { name: 'Base64 Encoder',  href: '/base64',         meta: 'Encode/decode base64' },
-    { name: 'JSON Formatter',  href: '/json-formatter', meta: 'Inspect binary data' },
+    { name: 'Base64 Encoder',  href: '/tools/base64',         meta: 'Encode/decode base64' },
+    { name: 'JSON Formatter',  href: '/tools/json-formatter', meta: 'Inspect binary data' },
   ],
 };

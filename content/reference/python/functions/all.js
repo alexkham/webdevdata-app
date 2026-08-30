@@ -22,7 +22,7 @@ export const method = {
   version:     'Python 2.5+',
   hasLiveDemo: true,
 
-  subtitle: 'Short-circuit &quot;is every item truthy?&quot; over any iterable. Empty is True by convention.',
+  subtitle: 'Short-circuit \"is every item truthy?\" over any iterable. Empty is True by convention.',
 
   cheat: {
     commonCall: 'if all(x.is_valid for x in rows):',
@@ -45,7 +45,7 @@ export const method = {
     { id: 'empty',     label: 'empty',        values: { items: '' } },
     { id: 'strings',   label: 'mixed strings',values: { items: 'hello,,world' } },
   ],
-  demoExplainer: 'all walks the iterable and stops the moment it sees a falsy item — a generator input would not be consumed past that point. Empty iterables return True by convention: there is no falsy item, so &quot;are all truthy?&quot; is vacuously true. Falsy values in Python: 0, 0.0, "", [], {}, None, False.',
+  demoExplainer: 'all walks the iterable and stops the moment it sees a falsy item — a generator input would not be consumed past that point. Empty iterables return True by convention: there is no falsy item, so \"are all truthy?\" is vacuously true. Falsy values in Python: 0, 0.0, "", [], {}, None, False.',
 
   patterns: [
     {
@@ -56,7 +56,7 @@ export const method = {
     {
       name: 'All match a predicate',
       desc: 'One all call replaces a for-loop with a flag.',
-      code: 'is_sorted = all(a &lt;= b for a, b in zip(xs, xs[1:]))',
+      code: 'is_sorted = all(a <= b for a, b in zip(xs, xs[1:]))',
     },
     {
       name: 'Guard: all keys present',
@@ -69,19 +69,19 @@ export const method = {
     { title: 'All truthy',                code: 'all([1, 2, 3])',                 returns: 'True' },
     { title: 'One falsy loses',           code: 'all([1, 0, 3])',                 returns: 'False' },
     { title: 'Empty is True',             code: 'all([])',                        returns: 'True' },
-    { title: 'Generator + short-circuit', code: 'all(x &gt; 0 for x in nums)',     returns: 'True or False; stops at first non-positive' },
+    { title: 'Generator + short-circuit', code: 'all(x > 0 for x in nums)',     returns: 'True or False; stops at first non-positive' },
   ],
 
   pitfalls: [
     {
       name: 'all([]) is True, not False',
-      desc: 'The empty case flips the intuitive answer. Python follows math: &quot;every element of the empty set satisfies X&quot; is vacuously true. Mirrors any([]) which is False for the same reason.',
+      desc: 'The empty case flips the intuitive answer. Python follows math: \"every element of the empty set satisfies X\" is vacuously true. Mirrors any([]) which is False for the same reason.',
       wrong: { label: 'Wrong expectation', code: 'if all([]):\n    print("truthy")\nelse:\n    print("falsy")', output: 'truthy' },
       fix:   { label: 'Guard for empty',   code: 'if items and all(items):\n    ...', output: 'explicit intent' },
     },
     {
       name: 'Falsy is not the same as False',
-      desc: 'all treats 0, "", None and [] as falsy — not just literal False. Silent failures if you meant &quot;all values are True&quot; strictly.',
+      desc: 'all treats 0, "", None and [] as falsy — not just literal False. Silent failures if you meant \"all values are True\" strictly.',
       wrong: { label: 'Surprising False', code: 'all([True, 1, ""])', output: 'False  # empty string is falsy' },
       fix:   { label: 'Explicit equality', code: 'all(x is True for x in items)', output: 'only literal True passes' },
     },
@@ -95,14 +95,14 @@ export const method = {
 
   when: {
     use: [
-      '&quot;Do all items satisfy X?&quot;',
+      '\"Do all items satisfy X?\"',
       'Validation over rows, records, batch items',
       'Short-circuit checks on large or generated iterables',
     ],
     avoid: [
-      '&quot;Does at least one satisfy X?&quot; → any',
+      '\"Does at least one satisfy X?\" → any',
       'Counting matches → sum(cond for x in xs)',
-      'Strict &quot;every value equals True&quot; → `all(x is True for x in xs)`',
+      'Strict \"every value equals True\" → `all(x is True for x in xs)`',
     ],
   },
 
@@ -115,7 +115,7 @@ export const method = {
   },
 
   related: [
-    { name: 'any',       slug: 'any',       when: '&quot;Does at least one item satisfy X?&quot;' },
+    { name: 'any',       slug: 'any',       when: '\"Does at least one item satisfy X?\"' },
     { name: 'sum',       slug: 'sum',       when: 'Count matches instead of a yes/no' },
     { name: 'enumerate', slug: 'enumerate', when: 'You also want the index of the first failure' },
   ],
@@ -123,7 +123,7 @@ export const method = {
   faq: [
     {
       q: 'Why does all([]) return True?',
-      a: 'It matches the universal quantifier: &quot;for every x in [], x is truthy&quot; — trivially true, because there is no x that could disprove it. any([]) is False by the mirror convention.',
+      a: 'It matches the universal quantifier: \"for every x in [], x is truthy\" — trivially true, because there is no x that could disprove it. any([]) is False by the mirror convention.',
     },
     {
       q: 'How do I find WHICH item failed?',

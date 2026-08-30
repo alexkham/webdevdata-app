@@ -22,7 +22,7 @@ export const method = {
   version:     'Python 2.2+',
   hasLiveDemo: false,
 
-  subtitle: 'The &quot;alternative constructor&quot; decorator — bound to the CLASS, so subclasses get their own type when they call it.',
+  subtitle: 'The \"alternative constructor\" decorator — bound to the CLASS, so subclasses get their own type when they call it.',
 
   cheat: {
     commonCall: '@classmethod\ndef from_str(cls, s): ...',

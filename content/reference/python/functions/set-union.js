@@ -55,7 +55,7 @@ export const method = {
   patterns: [
     {
       name: 'Merge two sets',
-      desc: 'The operator form is the idiomatic one — reads like &quot;a or b&quot;.',
+      desc: 'The operator form is the idiomatic one — reads like \"a or b\".',
       code: 'combined = a | b',
     },
     {
@@ -93,7 +93,7 @@ export const method = {
     },
     {
       name: 'String iterables explode into characters',
-      desc: 'Passing a string as an &quot;other&quot; adds every character as its own element, exactly like list.extend&apos;s classic footgun.',
+      desc: 'Passing a string as an \"other\" adds every character as its own element, exactly like list.extend\'s classic footgun.',
       wrong: { label: 'Char explosion', code: '{"Ann"}.union("Bob")', output: '{"Ann", "B", "o", "b"}' },
       fix:   { label: 'Wrap it',        code: '{"Ann"}.union({"Bob"})\n# or\n{"Ann"}.union(["Bob"])', output: '{"Ann", "Bob"}' },
     },
@@ -110,7 +110,7 @@ export const method = {
       'Combining sets without mutating either',
       'Deduplicating an iterable in one call',
       'Composing multiple sources into a single set',
-      'Chaining with other pure set operations (|, &amp;, -)',
+      'Chaining with other pure set operations (|, &, -)',
     ],
     avoid: [
       'You want to mutate in place → set.update or |= ',

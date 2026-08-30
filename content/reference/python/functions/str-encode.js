@@ -52,7 +52,7 @@ export const method = {
     { id: 'latin1-fail', label: 'latin-1 fails emoji', values: { string: 'hi 😀', encoding: 'latin-1' } },
     { id: 'empty',       label: 'empty string',    values: { string: '',         encoding: 'utf-8' } },
   ],
-  demoExplainer: 'encode() converts str → bytes using the named encoding. UTF-8 handles ALL Unicode — the safe default. ASCII only handles codepoints 0..127 — any accented letter or emoji raises UnicodeEncodeError. Latin-1 handles the first 256 codepoints (adds Western European letters), still not enough for emoji. The demo uses errors=&quot;strict&quot;, so mismatches raise the error message you would see in real code.',
+  demoExplainer: 'encode() converts str → bytes using the named encoding. UTF-8 handles ALL Unicode — the safe default. ASCII only handles codepoints 0..127 — any accented letter or emoji raises UnicodeEncodeError. Latin-1 handles the first 256 codepoints (adds Western European letters), still not enough for emoji. The demo uses errors=\"strict\", so mismatches raise the error message you would see in real code.',
 
   patterns: [
     {
@@ -97,13 +97,13 @@ export const method = {
     },
     {
       name: 'Default is UTF-8 in Python 3 (was ASCII in Python 2)',
-      desc: 'A porting trap. Python 2&apos;s str.encode() defaulted to ASCII and often silently produced weird bytes. Python 3&apos;s default is UTF-8 and behavior is different — be explicit about encoding for portable code.',
+      desc: 'A porting trap. Python 2\'s str.encode() defaulted to ASCII and often silently produced weird bytes. Python 3\'s default is UTF-8 and behavior is different — be explicit about encoding for portable code.',
       wrong: { label: 'Assumed ASCII', code: 'text.encode()   # Python 2 default was ASCII', output: 'behavior differed by version' },
       fix:   { label: 'Explicit encoding', code: 'text.encode("utf-8")', output: 'unambiguous everywhere' },
     },
     {
       name: 'errors="ignore" silently DROPS characters',
-      desc: 'Convenient but dangerous. A field like &quot;José&quot; becomes &quot;Jos&quot; with ignore + ASCII — silent data loss. If the data matters, log or reject; do not just ignore.',
+      desc: 'Convenient but dangerous. A field like \"José\" becomes \"Jos\" with ignore + ASCII — silent data loss. If the data matters, log or reject; do not just ignore.',
       wrong: { label: 'Silent loss', code: '"José".encode("ascii", errors="ignore")', output: "b'Jos'  # lost é" },
       fix:   { label: 'Log or fail',   code: 'try:\n    text.encode("ascii")\nexcept UnicodeEncodeError as e:\n    log.warning(...)', output: 'error visible' },
     },
@@ -155,8 +155,8 @@ export const method = {
       a: 'encode: str → bytes. decode: bytes → str. Both need an encoding name. They are inverses when the encoding is valid and the data round-trips cleanly.',
     },
     {
-      q: 'Why does &quot;café&quot;.encode(&quot;utf-8&quot;) give &quot;b\'caf\\xc3\\xa9\'&quot;?',
-      a: 'Because &quot;é&quot; (codepoint U+00E9) is encoded as two bytes in UTF-8: 0xC3 0xA9. The escapes are how bytes are displayed. Latin-1 would give a single byte (0xE9) for the same character.',
+      q: 'Why does \"café\".encode(\"utf-8\") give \"b\'caf\\xc3\\xa9\'\"?',
+      a: 'Because \"é\" (codepoint U+00E9) is encoded as two bytes in UTF-8: 0xC3 0xA9. The escapes are how bytes are displayed. Latin-1 would give a single byte (0xE9) for the same character.',
     },
   ],
 
@@ -172,7 +172,7 @@ export const method = {
   },
 
   tryInTool: [
-    { name: 'Base64 Encoder',  href: '/base64',         meta: 'Encode bytes to base64' },
-    { name: 'JSON Formatter',  href: '/json-formatter', meta: 'Inspect string / byte data' },
+    { name: 'Base64 Encoder',  href: '/tools/base64',         meta: 'Encode bytes to base64' },
+    { name: 'JSON Formatter',  href: '/tools/json-formatter', meta: 'Inspect string / byte data' },
   ],
 };

@@ -41,11 +41,8 @@ export const method = {
     { name: 'set', type: 'set', hint: 'starting set (comma-separated)', input: 'csv-set' },
   ],
   cases: [
-    { id: 'basic',      label: 'basic',         values: { set: 'a,b,c' } },
-    { id: 'numbers',    label: 'numbers',       values: { set: '1,2,3,4' } },
-    { id: 'single',     label: 'single element',values: { set: 'only' } },
-    { id: 'empty',      label: 'empty (raises)',values: { set: '' } },
-    { id: 'dup-input',  label: 'dupes in input',values: { set: 'a,a,b,b,c' } },
+    { id: 'single', label: 'one element', values: { set: 'only' } },
+    { id: 'empty',  label: 'empty set',   values: { set: '' } },
   ],
   demoExplainer: 'pop removes and returns ONE element — but the demo shows only the REMAINING set state so you can see the mutation. In real code the returned element is what you work with. WHICH element gets popped is implementation-defined; treat it as arbitrary. Empty set raises KeyError.',
 
@@ -84,13 +81,13 @@ export const method = {
     },
     {
       name: 'Empty set raises KeyError',
-      desc: 'Not None, not a sentinel — a KeyError with the message &quot;pop from an empty set&quot;. Guard with truthiness or catch.',
+      desc: 'Not None, not a sentinel — a KeyError with the message \"pop from an empty set\". Guard with truthiness or catch.',
       wrong: { label: 'Blows up', code: 'while True:\n    x = s.pop()\n    ...', output: "KeyError: 'pop from an empty set' at end" },
       fix:   { label: 'Truthy guard', code: 'while s:\n    x = s.pop()\n    ...', output: 'stops cleanly' },
     },
     {
       name: 'pop() has NO index argument — unlike list.pop',
-      desc: 'list.pop(0) removes the first item; list.pop() removes the last. set.pop() takes NO arguments — the concept of &quot;position&quot; does not apply to sets.',
+      desc: 'list.pop(0) removes the first item; list.pop() removes the last. set.pop() takes NO arguments — the concept of \"position\" does not apply to sets.',
       wrong: { label: 'Wrong shape', code: 's.pop(0)', output: 'TypeError: pop() takes no arguments (1 given)' },
       fix:   { label: 'Right shape', code: 's.pop()', output: 'some element' },
     },
@@ -139,7 +136,7 @@ export const method = {
     },
     {
       q: 'Why does set.pop raise KeyError on empty?',
-      a: 'Consistency with the rest of the set removal methods. remove and discard both operate on named elements; when there is nothing to pop, there is no valid element to return, and KeyError is the family&apos;s error class.',
+      a: 'Consistency with the rest of the set removal methods. remove and discard both operate on named elements; when there is nothing to pop, there is no valid element to return, and KeyError is the family\'s error class.',
     },
     {
       q: 'What is the difference between set.pop and list.pop?',

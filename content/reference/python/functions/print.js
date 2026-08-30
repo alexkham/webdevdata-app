@@ -3,7 +3,7 @@
 export const meta = {
   slug:        'print',
   name:        'print',
-  signature:   'print(*objects, sep=&apos; &apos;, end=&apos;\\n&apos;, file=sys.stdout, flush=False)',
+  signature:   'print(*objects, sep=\' \', end=\'\\n\', file=sys.stdout, flush=False)',
   blurb:       'Write objects to stdout — customize the separator, the ending, the destination, and the flush.',
   category:    'builtin',
   type:        'builtin',
@@ -15,7 +15,7 @@ export const meta = {
 export const method = {
   slug:      'print',
   name:      'print',
-  signature: 'print(*objects, sep=&apos; &apos;, end=&apos;\\n&apos;, file=sys.stdout, flush=False)',
+  signature: 'print(*objects, sep=\' \', end=\'\\n\', file=sys.stdout, flush=False)',
   returns:   { type: 'None', desc: 'Returns None. The output is written to the file (default stdout). Objects are converted via str(); joined with sep between them; end is appended after the last one.' },
 
   category:    'Built-in function',
@@ -28,7 +28,7 @@ export const method = {
     commonCall: 'print("hello", name)',
     returns:    'None; text goes to stdout with a trailing newline',
     replaces:   'the Python 2 `print` statement',
-    watchOut:   'sep is BETWEEN objects (default space); end is AFTER the last (default newline); pass end=&quot;&quot; to suppress the newline',
+    watchOut:   'sep is BETWEEN objects (default space); end is AFTER the last (default newline); pass end=\"\" to suppress the newline',
   },
 
   parameters: [
@@ -53,7 +53,7 @@ export const method = {
     { id: 'csv-line',  label: 'csv style',       values: { objects: '1,2,3,4',            sep: ',',    end: '\\n' } },
     { id: 'pipe-sep',  label: 'pipe separator',  values: { objects: '42,3.14,True,None',  sep: ' | ',  end: '\\n' } },
   ],
-  demoExplainer: 'print writes each object separated by sep and terminates with end. In real code the DEFAULT sep is a single space and DEFAULT end is a newline (&quot;\\n&quot;). The demo makes both parameters explicit so you can see exactly what the output looks like. To print with no newline, set end=&quot;&quot;. Objects are stringified with str() before printing — non-strings (numbers, None, True/False) are converted automatically. Backslash escapes like \\n and \\t are interpreted.',
+  demoExplainer: 'print writes each object separated by sep and terminates with end. In real code the DEFAULT sep is a single space and DEFAULT end is a newline (\"\\n\"). The demo makes both parameters explicit so you can see exactly what the output looks like. To print with no newline, set end=\"\". Objects are stringified with str() before printing — non-strings (numbers, None, True/False) are converted automatically. Backslash escapes like \\n and \\t are interpreted.',
 
   patterns: [
     {
@@ -96,7 +96,7 @@ export const method = {
   pitfalls: [
     {
       name: 'sep goes BETWEEN, end goes AFTER',
-      desc: 'The most common print-parameter confusion. sep is what separates multiple objects; end is what terminates the whole call. `print("a", "b", sep=" - ", end="!")` produces &quot;a - b!&quot; with no newline.',
+      desc: 'The most common print-parameter confusion. sep is what separates multiple objects; end is what terminates the whole call. `print("a", "b", sep=" - ", end="!")` produces \"a - b!\" with no newline.',
       wrong: { label: 'Confused roles', code: 'print("a", "b", sep="!")', output: '"a!b\\n"  # newline still added' },
       fix:   { label: 'end suppresses newline', code: 'print("a", "b", sep=" ", end="!")', output: '"a b!"  # no newline' },
     },
@@ -108,7 +108,7 @@ export const method = {
     },
     {
       name: 'flush=False by default; output may buffer',
-      desc: 'When writing to a pipe (or when Python decides to buffer), print output can lag behind. Progress indicators, prompts, and any &quot;show now&quot; use case need flush=True.',
+      desc: 'When writing to a pipe (or when Python decides to buffer), print output can lag behind. Progress indicators, prompts, and any \"show now\" use case need flush=True.',
       wrong: { label: 'Delayed output', code: 'for i in range(5):\n    print(".", end="")\n    time.sleep(1)   # may print nothing until end', output: '.....' },
       fix:   { label: 'Flush each dot', code: 'print(".", end="", flush=True)', output: 'appears immediately' },
     },
@@ -157,7 +157,7 @@ export const method = {
     },
     {
       q: 'How do I print to stderr?',
-      a: 'Pass file=sys.stderr. `import sys` first. Useful for error messages, diagnostics, and progress that should not mix with the tool&apos;s real output.',
+      a: 'Pass file=sys.stderr. `import sys` first. Useful for error messages, diagnostics, and progress that should not mix with the tool\'s real output.',
     },
     {
       q: 'What is the difference between print(x) and repr(x)?',

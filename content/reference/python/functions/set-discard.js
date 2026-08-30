@@ -6,7 +6,7 @@ export const meta = {
   slug:        'set-discard',
   name:        'set.discard',
   signature:   'set.discard(elem)',
-  blurb:       'Remove an element — silently no-ops if it&apos;s not there.',
+  blurb:       'Remove an element — silently no-ops if it\'s not there.',
   category:    'set',
   type:        'set',
   hasLiveDemo: true,
@@ -52,7 +52,7 @@ export const method = {
 
   patterns: [
     {
-      name: '&quot;Remove if present&quot; no-branch',
+      name: '\"Remove if present\" no-branch',
       desc: 'discard is already idempotent — no `if in` needed.',
       code: 'seen.discard(x)   # no branch; safe whether x is there or not',
     },
@@ -104,7 +104,7 @@ export const method = {
 
   when: {
     use: [
-      'Removing an element that may or may not be there — the &quot;idempotent delete&quot; pattern',
+      'Removing an element that may or may not be there — the \"idempotent delete\" pattern',
       'Resetting flags in a flag set',
       'Cleanup where duplicate discards should not cause errors',
       'Any code where the caller cannot guarantee the element is present',
@@ -135,7 +135,7 @@ export const method = {
   faq: [
     {
       q: 'What is the difference between discard() and remove()?',
-      a: 'discard silently does nothing when the element is missing; remove raises KeyError. Pick discard for &quot;remove if present&quot; workflows and remove for &quot;this element MUST be there — raise if it is not&quot;.',
+      a: 'discard silently does nothing when the element is missing; remove raises KeyError. Pick discard for \"remove if present\" workflows and remove for \"this element MUST be there — raise if it is not\".',
     },
     {
       q: 'What is the difference between discard() and pop()?',

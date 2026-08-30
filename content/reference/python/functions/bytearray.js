@@ -28,7 +28,7 @@ export const method = {
     commonCall: 'buf = bytearray(1024)',
     returns:    'a mutable bytearray',
     replaces:   'the pattern of building a new bytes object by concatenation',
-    watchOut:   'bytearray(5) is FIVE zero bytes, not b&quot;5&quot; — same trap as bytes()',
+    watchOut:   'bytearray(5) is FIVE zero bytes, not b\"5\" — same trap as bytes()',
   },
 
   parameters: [
@@ -44,12 +44,9 @@ export const method = {
   cases: [
     { id: 'string',    label: 'from string',        values: { source: 'hello',         encoding: 'utf-8' } },
     { id: 'accent',    label: 'accented string',    values: { source: 'café',          encoding: 'utf-8' } },
-    { id: 'from-ints', label: 'from int list',      values: { source: '65,66,67',      encoding: '' } },
-    { id: 'size',      label: 'from size (int)',    values: { source: '5',             encoding: '' } },
-    { id: 'zero',      label: 'zero size',          values: { source: '0',             encoding: '' } },
     { id: 'empty',     label: 'empty',              values: { source: '',              encoding: '' } },
   ],
-  demoExplainer: 'bytearray has the same THREE call shapes as bytes. The demo shows the constructed value in Python&apos;s bytearray(b&apos;...&apos;) display form. In real code the difference from bytes is what you can DO with the result: bytearray supports append(), extend(), pop(), item assignment (buf[0] = 255), and slice assignment. bytes is read-only.',
+  demoExplainer: 'bytearray has the same THREE call shapes as bytes. The demo shows the constructed value in Python\'s bytearray(b\'...\') display form. In real code the difference from bytes is what you can DO with the result: bytearray supports append(), extend(), pop(), item assignment (buf[0] = 255), and slice assignment. bytes is read-only.',
 
   patterns: [
     {
@@ -87,7 +84,7 @@ export const method = {
   pitfalls: [
     {
       name: 'bytearray(5) is FIVE zero bytes — same trap as bytes()',
-      desc: 'The single most common bytearray constructor surprise. Passing an int means &quot;that many zero bytes&quot;, not &quot;the digit as a byte&quot;.',
+      desc: 'The single most common bytearray constructor surprise. Passing an int means \"that many zero bytes\", not \"the digit as a byte\".',
       wrong: { label: 'Assumed digit', code: 'bytearray(5)', output: "bytearray(b'\\x00\\x00\\x00\\x00\\x00')" },
       fix:   { label: 'For the digit', code: 'bytearray([5])   # bytearray(b\'\\x05\')\nbytearray(b"5")   # bytearray(b\'5\')', output: 'literal vs digit' },
     },
@@ -120,7 +117,7 @@ export const method = {
     ],
     avoid: [
       'Read-only data → bytes is smaller and hashable',
-      'Very short bytes constants → b&quot;...&quot; literal is clearer',
+      'Very short bytes constants → b\"...\" literal is clearer',
       'You want the result as bytes at the end → convert with bytes(buf)',
       'You need dict / set membership → not hashable, use bytes',
     ],

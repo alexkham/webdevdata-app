@@ -143,7 +143,7 @@ export const method = {
     {
       q: 'Can I compare items() from two dicts?',
       a: 'Yes — items views are set-like (their entries must be hashable). Intersection, union, difference all work like sets.',
-      code: 'common = d1.items() &amp; d2.items()',
+      code: 'common = d1.items() & d2.items()',
     },
   ],
 

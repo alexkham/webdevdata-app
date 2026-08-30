@@ -48,7 +48,7 @@ export const method = {
     { id: 'quote',      label: 'has quote',       values: { x: "don't" } },
     { id: 'empty',      label: 'empty',           values: { x: '' } },
   ],
-  demoExplainer: 'ascii() is repr() with a filter: every character with codepoint &gt;= 128 becomes an escape sequence (\\xHH, \\uXXXX, or \\UXXXXXXXX). This produces output that is safe for ASCII-only sinks — old log formats, some file systems, protocols that mangle non-ASCII. In modern UTF-8 environments repr() is usually more readable.',
+  demoExplainer: 'ascii() is repr() with a filter: every character with codepoint >= 128 becomes an escape sequence (\\xHH, \\uXXXX, or \\UXXXXXXXX). This produces output that is safe for ASCII-only sinks — old log formats, some file systems, protocols that mangle non-ASCII. In modern UTF-8 environments repr() is usually more readable.',
 
   patterns: [
     {
@@ -91,8 +91,8 @@ export const method = {
       fix:   { label: 'Use repr in UTF-8',    code: 'repr("😀")', output: "'😀'" },
     },
     {
-      name: 'Not the same as encode(&quot;ascii&quot;, errors=&quot;backslashreplace&quot;)',
-      desc: 'ascii() returns a str — a repr-shaped string with escapes. encode(&quot;ascii&quot;, errors=&quot;backslashreplace&quot;) returns bytes and does NOT add the surrounding quotes.',
+      name: 'Not the same as encode(\"ascii\", errors=\"backslashreplace\")',
+      desc: 'ascii() returns a str — a repr-shaped string with escapes. encode(\"ascii\", errors=\"backslashreplace\") returns bytes and does NOT add the surrounding quotes.',
       wrong: { label: 'Wrong output type', code: '"café".encode("ascii", errors="backslashreplace")', output: "b'caf\\\\xe9'  # bytes, no quotes" },
       fix:   { label: 'ascii() for str',   code: 'ascii("café")', output: "'\\'caf\\\\xe9\\''  # str with quotes" },
     },
@@ -144,7 +144,7 @@ export const method = {
   ],
 
   history: [
-    { version: '3.0', note: 'ascii() introduced to fill the gap left by Python 2&apos;s bytes-oriented repr behavior.' },
+    { version: '3.0', note: 'ascii() introduced to fill the gap left by Python 2\'s bytes-oriented repr behavior.' },
   ],
 
   officialDocs: {

@@ -16,18 +16,18 @@ export const method = {
   slug:      'locals',
   name:      'locals',
   signature: 'locals()',
-  returns:   { type: 'dict', desc: 'The current local scope&apos;s namespace as a dict. At MODULE level or REPL, same as globals(). Inside a FUNCTION, a snapshot of local variables (may not be live). Inside a CLASS body, the developing class attributes.' },
+  returns:   { type: 'dict', desc: 'The current local scope\'s namespace as a dict. At MODULE level or REPL, same as globals(). Inside a FUNCTION, a snapshot of local variables (may not be live). Inside a CLASS body, the developing class attributes.' },
 
   category:    'Built-in function',
   version:     'Python 1.0+',
   hasLiveDemo: false,
 
-  subtitle: 'The local scope&apos;s namespace — but the semantics change with context, and function locals are often a SNAPSHOT.',
+  subtitle: 'The local scope\'s namespace — but the semantics change with context, and function locals are often a SNAPSHOT.',
 
   cheat: {
     commonCall: 'locals()',
     returns:    'the current local namespace — semantics depend on context',
-    replaces:   'the CPython &quot;get the current frame&apos;s locals&quot; internal API',
+    replaces:   'the CPython \"get the current frame\'s locals\" internal API',
     watchOut:   'in a function, mutating locals() does NOT change the actual locals — it is a snapshot',
   },
 
@@ -79,7 +79,7 @@ export const method = {
   pitfalls: [
     {
       name: 'In a function, locals() is a SNAPSHOT — not live',
-      desc: 'The single most important locals() detail. Inside a function, locals() returns a dict that Python populated from the frame — but WRITING to it does not affect the frame&apos;s actual variables. Every call gives a fresh snapshot.',
+      desc: 'The single most important locals() detail. Inside a function, locals() returns a dict that Python populated from the frame — but WRITING to it does not affect the frame\'s actual variables. Every call gives a fresh snapshot.',
       wrong: { label: 'Write not seen', code: 'def f():\n    x = 1\n    locals()["x"] = 99\n    return x', output: '1  # x still 1' },
       fix:   { label: 'Just assign',     code: 'def f():\n    x = 99\n    return x', output: '99' },
     },
@@ -128,14 +128,14 @@ export const method = {
 
   related: [
     { name: 'globals',    slug: 'globals',    when: 'Module-level namespace' },
-    { name: 'vars',       slug: 'vars',       when: 'An object&apos;s __dict__' },
+    { name: 'vars',       slug: 'vars',       when: 'An object\'s __dict__' },
     { name: 'dir',        slug: 'dir',        when: 'All names accessible from a scope' },
   ],
 
   faq: [
     {
       q: 'What is the difference between locals() and globals()?',
-      a: 'Inside a function, locals() is a snapshot of the function&apos;s local variables; globals() is the enclosing module&apos;s namespace. Inside a class body, locals() is the developing class attributes. At module level, they are the same dict.',
+      a: 'Inside a function, locals() is a snapshot of the function\'s local variables; globals() is the enclosing module\'s namespace. Inside a class body, locals() is the developing class attributes. At module level, they are the same dict.',
     },
     {
       q: 'Why does modifying locals() not change my variables?',

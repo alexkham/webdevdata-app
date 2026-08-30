@@ -6,7 +6,7 @@ export const meta = {
   slug:        'dict-values',
   name:        'dict.values',
   signature:   'dict.values()',
-  blurb:       'A live view of the dict&apos;s values.',
+  blurb:       'A live view of the dict\'s values.',
   category:    'dict',
   type:        'dict',
   hasLiveDemo: true,
@@ -18,13 +18,13 @@ export const method = {
   slug:      'dict-values',
   name:      'dict.values',
   signature: 'dict.values()',
-  returns:   { type: 'dict_values', desc: 'A view object over the dict&apos;s values. Live — reflects changes to the underlying dict. Iterable and sized. NOT set-like (values may be unhashable and may repeat).' },
+  returns:   { type: 'dict_values', desc: 'A view object over the dict\'s values. Live — reflects changes to the underlying dict. Iterable and sized. NOT set-like (values may be unhashable and may repeat).' },
 
   category:    'Dict method',
   version:     'Python 2.2+',
   hasLiveDemo: true,
 
-  subtitle: 'Iterate the dict&apos;s values as a live view — not a copy. Insertion order preserved (3.7+).',
+  subtitle: 'Iterate the dict\'s values as a live view — not a copy. Insertion order preserved (3.7+).',
 
   cheat: {
     commonCall: 'for v in d.values():',
@@ -86,8 +86,8 @@ export const method = {
     {
       name: 'NOT set-like — unlike keys() and items()',
       desc: 'Values may be unhashable and may repeat, so `d.values()` does not support union/intersection/difference. Only keys() and items() are set-like.',
-      wrong: { label: 'Type error', code: '{"a": 1}.values() &amp; {1, 2}', output: "TypeError: unsupported operand type(s) for &amp;: 'dict_values' and 'set'" },
-      fix:   { label: 'Convert first', code: 'set({"a": 1}.values()) &amp; {1, 2}', output: '{1}' },
+      wrong: { label: 'Type error', code: '{"a": 1}.values() & {1, 2}', output: "TypeError: unsupported operand type(s) for &: 'dict_values' and 'set'" },
+      fix:   { label: 'Convert first', code: 'set({"a": 1}.values()) & {1, 2}', output: '{1}' },
     },
     {
       name: '`x in d.values()` is O(n)',
@@ -97,7 +97,7 @@ export const method = {
     },
     {
       name: 'Modifying the dict during iteration raises',
-      desc: 'Changing the dict&apos;s size while iterating over its values view is a RuntimeError. Add/remove keys mid-loop — take a snapshot first.',
+      desc: 'Changing the dict\'s size while iterating over its values view is a RuntimeError. Add/remove keys mid-loop — take a snapshot first.',
       wrong: { label: 'Runtime error', code: 'for v in d.values():\n    if v is None:\n        del d[find_key(d, v)]', output: 'RuntimeError: dictionary changed size during iteration' },
       fix:   { label: 'Snapshot first',code: 'for k in list(d):\n    if d[k] is None:\n        del d[k]', output: 'safe' },
     },
@@ -108,7 +108,7 @@ export const method = {
       'Aggregating values with sum / max / min / mean',
       'Membership testing (`x in d.values()`) on small dicts',
       'Feeding statistics / iteration pipelines with just the values',
-      '&quot;What values appear anywhere?&quot; questions',
+      '\"What values appear anywhere?\" questions',
     ],
     avoid: [
       'Set-like operations → keys() or items() (values are not set-like)',

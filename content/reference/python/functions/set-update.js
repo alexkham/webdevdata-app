@@ -147,7 +147,7 @@ export const method = {
     },
     {
       q: 'Why does update() return None?',
-      a: 'Consistent with every Python mutation method (list.append, list.sort, dict.update, ...). Returning None signals &quot;side effect only&quot; and prevents chaining bugs.',
+      a: 'Consistent with every Python mutation method (list.append, list.sort, dict.update, ...). Returning None signals \"side effect only\" and prevents chaining bugs.',
     },
     {
       q: 'Can I chain update() calls?',

@@ -102,7 +102,7 @@ export const method = {
     use: [
       'Both quotient and remainder needed together',
       'Cascading unit breakdowns (time, base conversion, coordinates)',
-      'Making the &quot;both at once&quot; intent explicit in the code',
+      'Making the \"both at once\" intent explicit in the code',
     ],
     avoid: [
       'Only need one → use // or %',
@@ -128,7 +128,7 @@ export const method = {
   faq: [
     {
       q: 'Why does divmod(-7, 2) return (-4, 1) instead of (-3, -1)?',
-      a: 'Python uses floor division: the quotient is rounded toward negative infinity so the identity `q * b + r == a` holds with `0 &lt;= r &lt; b` (when b is positive). C-style truncation breaks that identity for negatives.',
+      a: 'Python uses floor division: the quotient is rounded toward negative infinity so the identity `q * b + r == a` holds with `0 <= r < b` (when b is positive). C-style truncation breaks that identity for negatives.',
     },
     {
       q: 'Is divmod faster than // and % separately?',

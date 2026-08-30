@@ -1,136 +1,58 @@
-// utils/emulators/python/format.js
-//
-// Emulator for Python format(value, format_spec). Covers the atoms
-// exercised in the demo:
-//   - fill + align: e.g. "*^10", ">10", "<10", "^10"
-//   - width: ">10", "10"
-//   - .precision: ".2f", ".1%", ".5" (string truncation)
-//   - type: d, b, o, x, X, f, %, s
-//   - "0" flag: "08d", "08b"
-//   - "," thousands separator (for numeric types)
-//
-// Not a full CPython format-spec parser — covers the common cases in the
-// demo. Deeper edge cases (sign flags, "#" prefix, exponent styles) can
-// be added if the demo needs them.
-
+// Emulator for Python format(value, spec) covering the common spec
+// mini-language: fill/align, 0-pad, width, grouping, precision, and the
+// b/d/o/x/X/f/% presentation types.
 class ValueErrorLike extends Error {
   constructor(message) { super(message); this.name = 'ValueError'; }
 }
-
-function parseSpec(spec) {
-  // Format spec: [[fill]align][sign][#][0][width][,_][.precision][type]
-  const out = {
-    fill: ' ',
-    align: null,
-    zero: false,
-    width: 0,
-    comma: false,
-    precision: null,
-    type: '',
-  };
-  if (spec === '') return out;
-
-  const re = /^(?:(.)?([<>=^]))?([+\- ])?(#)?(0)?(\d+)?([,_])?(?:\.(\d+))?([bcdeEfFgGnosxX%])?$/;
-  const m = spec.match(re);
+const group = (digits) => digits.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+export default function pyFormat(value, spec = '') {
+  const m = String(spec).match(/^(?:(.)?([<>^]))?([+\- ])?(0)?(\d+)?([,])?(?:\.(\d+))?([bdoxXfeEgGs%])?$/);
   if (!m) throw new ValueErrorLike('Invalid format specifier');
-  out.fill = m[1] !== undefined ? m[1] : (m[5] ? '0' : ' ');
-  out.align = m[2] || null;
-  out.sign = m[3] || null;
-  out.hash = !!m[4];
-  out.zero = !!m[5];
-  out.width = m[6] ? parseInt(m[6], 10) : 0;
-  out.comma = m[7] === ',';
-  out.underscore = m[7] === '_';
-  out.precision = m[8] !== undefined ? parseInt(m[8], 10) : null;
-  out.type = m[9] || '';
-  return out;
-}
+  const fill = m[1];
+  const align = m[2];
+  const zero = m[4];
+  const width = m[5];
+  const comma = m[6];
+  const prec = m[7];
+  const type = m[8];
+  const isNum = typeof value === 'number';
 
-function pad(str, width, fill, align, isNumeric) {
-  if (str.length >= width) return str;
-  const delta = width - str.length;
-  const eff = align || (isNumeric ? '>' : '<');
-  if (eff === '>') return fill.repeat(delta) + str;
-  if (eff === '<') return str + fill.repeat(delta);
-  if (eff === '^') {
-    const right = Math.floor(delta / 2);
-    const left = delta - right;
-    return fill.repeat(left) + str + fill.repeat(right);
+  if (type && 'bdoxX'.includes(type) && (!isNum || !Number.isInteger(value))) {
+    throw new ValueErrorLike("Unknown format code '" + type + "' for object of type '" + (isNum ? 'float' : 'str') + "'");
   }
-  return str + fill.repeat(delta);
-}
-
-function insertSeparator(intStr, sep) {
-  const neg = intStr.startsWith('-') ? '-' : '';
-  const digits = neg ? intStr.slice(1) : intStr;
-  const withSep = digits.replace(/\B(?=(\d{3})+(?!\d))/g, sep);
-  return neg + withSep;
-}
-
-export default function pyFormat(value, spec) {
-  const p = parseSpec(String(spec == null ? '' : spec));
-
-  const t = p.type;
-  const asNumber = t === 'd' || t === 'b' || t === 'o' || t === 'x' || t === 'X' ||
-                   t === 'f' || t === 'F' || t === '%' || t === 'e' || t === 'E' ||
-                   t === 'g' || t === 'G';
-
-  let str;
-
-  if (t === '' || t === 's') {
-    // When comma/underscore is specified and value is numeric, treat as implicit 'd'.
-    if ((p.comma || p.underscore) && typeof value === 'number') {
-      let s = Math.trunc(value).toString();
-      s = insertSeparator(s, p.comma ? ',' : '_');
-      str = s;
-    } else {
-      str = String(value == null ? '' : value);
-      if (p.precision !== null) str = str.slice(0, p.precision);
-    }
-  } else {
-    const n = Number(value);
-    if (!Number.isFinite(n) && (t === 'd' || t === 'b' || t === 'o' || t === 'x' || t === 'X')) {
-      throw new ValueErrorLike('Unknown format code for object');
-    }
-
-    if (t === 'd') {
-      let s = Math.trunc(n).toString();
-      if (p.comma) s = insertSeparator(s, ',');
-      if (p.underscore) s = insertSeparator(s, '_');
-      str = s;
-    } else if (t === 'b') {
-      const abs = Math.abs(Math.trunc(n));
-      str = (n < 0 ? '-' : '') + abs.toString(2);
-    } else if (t === 'o') {
-      const abs = Math.abs(Math.trunc(n));
-      str = (n < 0 ? '-' : '') + abs.toString(8);
-    } else if (t === 'x') {
-      const abs = Math.abs(Math.trunc(n));
-      str = (n < 0 ? '-' : '') + abs.toString(16);
-    } else if (t === 'X') {
-      const abs = Math.abs(Math.trunc(n));
-      str = (n < 0 ? '-' : '') + abs.toString(16).toUpperCase();
-    } else if (t === 'f' || t === 'F') {
-      const prec = p.precision === null ? 6 : p.precision;
-      let s = n.toFixed(prec);
-      if (p.comma) {
-        const [i, d] = s.split('.');
-        s = insertSeparator(i, ',') + (d !== undefined ? '.' + d : '');
-      }
-      str = s;
-    } else if (t === '%') {
-      const prec = p.precision === null ? 6 : p.precision;
-      str = (n * 100).toFixed(prec) + '%';
-    } else {
-      str = String(value);
-    }
+  if (type && 'f%eEgG'.includes(type) && !isNum) {
+    throw new ValueErrorLike("Unknown format code '" + type + "' for object of type 'str'");
   }
+  if (comma && !isNum) throw new ValueErrorLike("Cannot specify ',' with 's'.");
 
-  // Zero-padding for numeric with 0 flag and no explicit align.
-  if (p.zero && asNumber && !p.align) {
-    p.fill = '0';
-    p.align = '>';
+  let body;
+  const neg = isNum && value < 0;
+  const av = isNum ? Math.abs(value) : value;
+  if (!isNum) body = String(value);
+  else if (type === 'b') body = av.toString(2);
+  else if (type === 'o') body = av.toString(8);
+  else if (type === 'x') body = av.toString(16);
+  else if (type === 'X') body = av.toString(16).toUpperCase();
+  else if (type === 'f') body = av.toFixed(prec !== undefined ? Number(prec) : 6);
+  else if (type === '%') body = (av * 100).toFixed(prec !== undefined ? Number(prec) : 6) + '%';
+  else if (type === 'e' || type === 'E') {
+    body = av.toExponential(prec !== undefined ? Number(prec) : 6);
+    if (type === 'E') body = body.toUpperCase();
+  } else body = String(av);
+  if (comma) body = body.replace(/^\d+/, group);
+  if (neg) body = '-' + body;
+
+  const w = width ? Number(width) : 0;
+  if (body.length >= w) return body;
+  if (zero && isNum && !align) {
+    const sign2 = body[0] === '-' ? '-' : '';
+    return sign2 + body.slice(sign2.length).padStart(w - sign2.length, '0');
   }
-
-  return pad(str, p.width, p.fill, p.align, asNumber);
+  const f2 = fill || ' ';
+  const a2 = align || (isNum ? '>' : '<');
+  const pad = w - body.length;
+  if (a2 === '>') return f2.repeat(pad) + body;
+  if (a2 === '<') return body + f2.repeat(pad);
+  const left = Math.floor(pad / 2);
+  return f2.repeat(left) + body + f2.repeat(pad - left);
 }

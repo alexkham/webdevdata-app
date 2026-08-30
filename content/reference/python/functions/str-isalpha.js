@@ -48,7 +48,7 @@ export const method = {
     { id: 'unicode',    label: 'unicode',        values: { string: 'café' } },
     { id: 'cyrillic',   label: 'cyrillic',       values: { string: 'Привет' } },
     { id: 'empty',      label: 'empty',          values: { string: '' } },
-    { id: 'punct',      label: 'punctuation',    values: { string: "don&apos;t" } },
+    { id: 'punct',      label: 'punctuation',    values: { string: "don\'t" } },
   ],
   demoExplainer: 'isalpha() returns True only when EVERY character is alphabetic AND the string is not empty. Alphabetic means letters from any script — Latin, Cyrillic, Greek, CJK — as classified by the Unicode standard. Digits, spaces, punctuation, and emojis all break it. The empty string returns False by convention (same as isdigit).',
 
@@ -60,7 +60,7 @@ export const method = {
     },
     {
       name: 'Composite check',
-      desc: 'Combine with isdigit for &quot;letters or digits, but no punctuation&quot;.',
+      desc: 'Combine with isdigit for \"letters or digits, but no punctuation\".',
       code: 'if s.isalnum() and not s.isdigit():\n    ...    # has at least one letter',
     },
     {
@@ -77,13 +77,13 @@ export const method = {
     { title: 'Unicode accents',     code: '"café".isalpha()',       returns: 'True' },
     { title: 'Cyrillic',            code: '"Привет".isalpha()',     returns: 'True' },
     { title: 'Empty is False',      code: '"".isalpha()',           returns: 'False' },
-    { title: 'Punctuation breaks',  code: '"don\\&apos;t".isalpha()', returns: 'False' },
+    { title: 'Punctuation breaks',  code: '"don\\\'t".isalpha()', returns: 'False' },
   ],
 
   pitfalls: [
     {
       name: 'Empty string returns False, not True',
-      desc: 'A common surprise — you might expect &quot;all zero characters are letters&quot; to be vacuously true. Python defines it the other way: isalpha requires at least one character AND every one must be a letter.',
+      desc: 'A common surprise — you might expect \"all zero characters are letters\" to be vacuously true. Python defines it the other way: isalpha requires at least one character AND every one must be a letter.',
       wrong: { label: 'Wrong expectation', code: '"".isalpha()', output: 'False' },
       fix:   { label: 'Read the contract', code: '"".isalpha()   # always False\n"".isdigit()   # always False\n"".isspace()   # always False', output: 'documented behaviour' },
     },
@@ -95,7 +95,7 @@ export const method = {
     },
     {
       name: 'Digits are NOT alphabetic',
-      desc: 'For &quot;letters or digits&quot; use isalnum instead. Numeric-looking letter forms (Roman numerals, superscripts) can be surprising — they may pass isnumeric but not isdigit.',
+      desc: 'For \"letters or digits\" use isalnum instead. Numeric-looking letter forms (Roman numerals, superscripts) can be surprising — they may pass isnumeric but not isdigit.',
       wrong: { label: 'Mixed fails', code: '"user1".isalpha()', output: 'False' },
       fix:   { label: 'Use isalnum', code: '"user1".isalnum()', output: 'True' },
     },
@@ -139,7 +139,7 @@ export const method = {
 
   faq: [
     {
-      q: 'Why does &quot;&quot;.isalpha() return False?',
+      q: 'Why does \"\".isalpha() return False?',
       a: 'Python defines the empty case as False: isalpha requires at least one character. It mirrors the isdigit / isspace / isalnum family — all False on the empty string.',
     },
     {

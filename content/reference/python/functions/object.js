@@ -48,8 +48,8 @@ export const method = {
 
   patterns: [
     {
-      name: 'Sentinel to distinguish &quot;not provided&quot; from None',
-      desc: 'When None is a valid argument value, you need a different sentinel to detect &quot;caller did not pass anything&quot;.',
+      name: 'Sentinel to distinguish \"not provided\" from None',
+      desc: 'When None is a valid argument value, you need a different sentinel to detect \"caller did not pass anything\".',
       code: '_MISSING = object()\n\ndef fetch(key, default=_MISSING):\n    if key in cache:\n        return cache[key]\n    if default is _MISSING:\n        raise KeyError(key)\n    return default',
     },
     {
@@ -82,7 +82,7 @@ export const method = {
     },
     {
       name: 'None as a sentinel is often ambiguous',
-      desc: 'If your API accepts None as a real value (e.g. &quot;set to None to clear&quot;), you cannot use None to mean &quot;caller did not pass anything&quot;. A unique object() gives you an unambiguous sentinel.',
+      desc: 'If your API accepts None as a real value (e.g. \"set to None to clear\"), you cannot use None to mean \"caller did not pass anything\". A unique object() gives you an unambiguous sentinel.',
       wrong: { label: 'Ambiguous None', code: 'def f(x=None):\n    if x is None: ...   # caller passed None or nothing?', output: 'ambiguous' },
       fix:   { label: 'Sentinel',        code: '_MISSING = object()\ndef f(x=_MISSING):\n    if x is _MISSING: ...', output: 'clear' },
     },
@@ -109,7 +109,7 @@ export const method = {
     avoid: [
       'You need attributes → use a bare `class C: pass` instead',
       'You need equality by value → use a dataclass or explicit class',
-      'You want to see if it&apos;s an object → isinstance(x, object) is always True',
+      'You want to see if it\'s an object → isinstance(x, object) is always True',
       'Explicit inheritance from object in Python 3 code — clean it up',
     ],
   },
@@ -145,7 +145,7 @@ export const method = {
   ],
 
   history: [
-    { version: '2.2', note: 'object introduced as the root of the &quot;new-style&quot; class hierarchy.' },
+    { version: '2.2', note: 'object introduced as the root of the \"new-style\" class hierarchy.' },
     { version: '3.0', note: 'All classes implicitly inherit from object; the old-style class system was removed.' },
   ],
 

@@ -40,6 +40,7 @@ export const method = {
     { name: 'items', type: 'list', hint: 'comma-separated items',    input: 'csv' },
     { name: 'start', type: 'int',  hint: 'first index (empty = 0)',  input: 'number-or-none' },
   ],
+  demoWrap: 'list',
   cases: [
     { id: 'basic',     label: 'basic',      values: { items: 'apple,pear,plum', start: '' } },
     { id: 'start-1',   label: 'start=1',    values: { items: 'apple,pear,plum', start: 1 } },

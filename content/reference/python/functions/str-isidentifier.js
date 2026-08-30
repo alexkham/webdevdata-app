@@ -52,7 +52,7 @@ export const method = {
     { id: 'unicode',     label: 'unicode letters',  values: { string: 'café' } },
     { id: 'empty',       label: 'empty',            values: { string: '' } },
   ],
-  demoExplainer: 'isidentifier() checks the SHAPE of a Python identifier: starts with a Unicode letter or underscore, followed by letters, digits, or underscores. Empty returns False. THE surprise: reserved keywords like &quot;for&quot;, &quot;class&quot;, &quot;def&quot; all pass because they have identifier shape — but assigning to them would be a SyntaxError. For a full &quot;can I use this as a variable name&quot; test, combine with keyword.iskeyword().',
+  demoExplainer: 'isidentifier() checks the SHAPE of a Python identifier: starts with a Unicode letter or underscore, followed by letters, digits, or underscores. Empty returns False. THE surprise: reserved keywords like \"for\", \"class\", \"def\" all pass because they have identifier shape — but assigning to them would be a SyntaxError. For a full \"can I use this as a variable name\" test, combine with keyword.iskeyword().',
 
   patterns: [
     {
@@ -61,7 +61,7 @@ export const method = {
       code: 'if not name.isidentifier():\n    raise ValueError("must be a valid Python identifier")',
     },
     {
-      name: 'Full &quot;can I use this as a variable?&quot; check',
+      name: 'Full \"can I use this as a variable?\" check',
       desc: 'Combine with keyword.iskeyword to exclude reserved words.',
       code: 'import keyword\ndef is_usable_name(s):\n    return s.isidentifier() and not keyword.iskeyword(s)',
     },
@@ -88,7 +88,7 @@ export const method = {
   pitfalls: [
     {
       name: 'Reserved keywords PASS isidentifier',
-      desc: 'The most common surprise. `"for".isidentifier()` returns True — the string HAS identifier shape. Python enforces the keyword restriction at parse time, not at method call. For a &quot;could I use this as a variable name&quot; check, combine with keyword.iskeyword().',
+      desc: 'The most common surprise. `"for".isidentifier()` returns True — the string HAS identifier shape. Python enforces the keyword restriction at parse time, not at method call. For a \"could I use this as a variable name\" check, combine with keyword.iskeyword().',
       wrong: { label: 'Accepts keyword', code: '"class".isidentifier()', output: 'True' },
       fix:   { label: 'Filter keywords', code: 'import keyword\n"class".isidentifier() and not keyword.iskeyword("class")', output: 'False' },
     },
@@ -106,7 +106,7 @@ export const method = {
     },
     {
       name: 'Unicode identifiers are allowed — sometimes surprisingly',
-      desc: 'Python 3 allows Unicode letters in identifiers. Names like &quot;café&quot; and &quot;π&quot; are valid identifiers. This can be a security or readability concern in shared codebases.',
+      desc: 'Python 3 allows Unicode letters in identifiers. Names like \"café\" and \"π\" are valid identifiers. This can be a security or readability concern in shared codebases.',
       wrong: { label: 'Unicode passes', code: '"π".isidentifier()', output: 'True' },
       fix:   { label: 'ASCII-only check', code: 'name.isascii() and name.isidentifier()', output: 'False on non-ASCII' },
     },
@@ -117,7 +117,7 @@ export const method = {
       'Validating user-provided field or attribute names',
       'Safety check before dynamic attribute access',
       'Config-file key validation',
-      'Combining with keyword.iskeyword for full &quot;usable name&quot; check',
+      'Combining with keyword.iskeyword for full \"usable name\" check',
     ],
     avoid: [
       'You need to reject reserved words → also check keyword.iskeyword',
@@ -143,11 +143,11 @@ export const method = {
 
   faq: [
     {
-      q: 'Why does &quot;for&quot;.isidentifier() return True?',
-      a: 'Because isidentifier tests the SHAPE — starts with a letter or underscore, followed by letters, digits, or underscores. &quot;for&quot; matches that shape. Python rejects it as a variable name at parse time, not at method-call time. For a &quot;usable as a variable name&quot; check, add `keyword.iskeyword` to the test.',
+      q: 'Why does \"for\".isidentifier() return True?',
+      a: 'Because isidentifier tests the SHAPE — starts with a letter or underscore, followed by letters, digits, or underscores. \"for\" matches that shape. Python rejects it as a variable name at parse time, not at method-call time. For a \"usable as a variable name\" check, add `keyword.iskeyword` to the test.',
     },
     {
-      q: 'How do I check for &quot;could be a variable name in real code&quot;?',
+      q: 'How do I check for \"could be a variable name in real code\"?',
       a: 'Combine with keyword.iskeyword.',
       code: 'import keyword\ndef is_usable(s):\n    return s.isidentifier() and not keyword.iskeyword(s)',
     },

@@ -16,7 +16,7 @@ export const method = {
   slug:      'memoryview',
   name:      'memoryview',
   signature: 'memoryview(object)',
-  returns:   { type: 'memoryview', desc: 'A view over the underlying object&apos;s memory buffer. Reads and slices are ZERO-COPY — no data is duplicated. Supports the buffer protocol, so C extensions can access the same memory directly.' },
+  returns:   { type: 'memoryview', desc: 'A view over the underlying object\'s memory buffer. Reads and slices are ZERO-COPY — no data is duplicated. Supports the buffer protocol, so C extensions can access the same memory directly.' },
 
   category:    'Built-in function / type',
   version:     'Python 2.7+',
@@ -47,7 +47,7 @@ export const method = {
     { id: 'ascii',    label: 'ASCII bytes',       values: { source: '72,101,108,108,111', slice: '' } },
     { id: 'empty',    label: 'empty buffer',      values: { source: '',                 slice: '' } },
   ],
-  demoExplainer: 'memoryview wraps a bytes-like buffer with zero copying. Reading, iterating, and slicing all operate on the ORIGINAL memory. The demo shows the view&apos;s .tobytes() representation and its length. In real Python, slicing a memoryview returns another memoryview — no data is duplicated. Slicing bytes / bytearray directly copies.',
+  demoExplainer: 'memoryview wraps a bytes-like buffer with zero copying. Reading, iterating, and slicing all operate on the ORIGINAL memory. The demo shows the view\'s .tobytes() representation and its length. In real Python, slicing a memoryview returns another memoryview — no data is duplicated. Slicing bytes / bytearray directly copies.',
 
   patterns: [
     {
@@ -85,7 +85,7 @@ export const method = {
   pitfalls: [
     {
       name: 'str is NOT bytes-like — encode first',
-      desc: 'A common mistake for beginners coming from string slicing. memoryview needs the buffer protocol; str does not support it. Call `.encode(&quot;utf-8&quot;)` first.',
+      desc: 'A common mistake for beginners coming from string slicing. memoryview needs the buffer protocol; str does not support it. Call `.encode(\"utf-8\")` first.',
       wrong: { label: 'str rejected', code: 'memoryview("hello")', output: 'TypeError: memoryview: a bytes-like object is required, not str' },
       fix:   { label: 'Encode first', code: 'memoryview("hello".encode("utf-8"))', output: 'valid view' },
     },
@@ -120,7 +120,7 @@ export const method = {
       'Small buffers or one-off reads → bytes slice is simpler',
       'Text data → work with str',
       'You need immutable data with hashability → bytes',
-      'You do not know what &quot;buffer protocol&quot; means yet — often you do not need this',
+      'You do not know what \"buffer protocol\" means yet — often you do not need this',
     ],
   },
 
@@ -144,7 +144,7 @@ export const method = {
       a: 'When copying would be expensive — large buffers where you slice or hand off sub-regions. If you are working with small data or one-off reads, plain bytes / bytearray is simpler.',
     },
     {
-      q: 'What is the &quot;buffer protocol&quot;?',
+      q: 'What is the \"buffer protocol\"?',
       a: 'A CPython C-level interface for sharing raw memory between objects without copying. bytes, bytearray, array.array, mmap, and numpy arrays all implement it — memoryview lets Python code interact with that shared memory.',
     },
     {

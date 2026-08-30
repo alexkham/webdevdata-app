@@ -51,7 +51,7 @@ export const method = {
     { id: 'both-emp',  label: 'both empty',          values: { a: '',        b: '' } },
     { id: 'one-share', label: 'single shared',       values: { a: 'a,b,c',   b: 'x,y,c' } },
   ],
-  demoExplainer: 'isdisjoint returns True when the two sets share no elements — the intersection is empty. Empty vs anything is always True (an empty set cannot share anything). Neither input is modified. Unlike issubset / issuperset, there is no operator form: no `!&amp;` or similar. The method is the only way.',
+  demoExplainer: 'isdisjoint returns True when the two sets share no elements — the intersection is empty. Empty vs anything is always True (an empty set cannot share anything). Neither input is modified. Unlike issubset / issuperset, there is no operator form: no `!&` or similar. The method is the only way.',
 
   patterns: [
     {
@@ -60,8 +60,8 @@ export const method = {
       code: 'if not user_tags.isdisjoint(blocked_tags):\n    deny()',
     },
     {
-      name: '&quot;Any overlap&quot; early exit',
-      desc: 'isdisjoint short-circuits on the first shared element — cheaper than materializing `a &amp; b`.',
+      name: '\"Any overlap\" early exit',
+      desc: 'isdisjoint short-circuits on the first shared element — cheaper than materializing `a & b`.',
       code: 'if not required.isdisjoint(current):\n    log("at least one required item is already present")',
     },
     {
@@ -84,7 +84,7 @@ export const method = {
     {
       name: 'No operator form — it is a method only',
       desc: 'issubset has `<=`, issuperset has `>=`, but isdisjoint has NO equivalent operator. The method is the only way to express it directly.',
-      wrong: { label: 'No operator',    code: 'a &amp;! b   # not a thing', output: 'SyntaxError' },
+      wrong: { label: 'No operator',    code: 'a &! b   # not a thing', output: 'SyntaxError' },
       fix:   { label: 'Use the method', code: 'a.isdisjoint(b)', output: 'True or False' },
     },
     {
@@ -94,9 +94,9 @@ export const method = {
       fix:   { label: 'Guard for empty', code: 'if a and b and a.isdisjoint(b):\n    ...   # both non-empty AND disjoint', output: 'non-trivial disjoint' },
     },
     {
-      name: 'isdisjoint is CHEAPER than checking `not (a &amp; b)`',
+      name: 'isdisjoint is CHEAPER than checking `not (a & b)`',
       desc: 'The intersection form materializes the whole intersection before checking emptiness. isdisjoint iterates one side and short-circuits on the first shared element — no allocation, faster on hits.',
-      wrong: { label: 'Materializes intersection', code: 'if not (a &amp; b):\n    ...   # builds a &amp; b, then checks', output: 'allocates a set' },
+      wrong: { label: 'Materializes intersection', code: 'if not (a & b):\n    ...   # builds a & b, then checks', output: 'allocates a set' },
       fix:   { label: 'Short-circuits',            code: 'if a.isdisjoint(b):\n    ...   # no allocation', output: 'faster on hits' },
     },
     {
@@ -109,15 +109,15 @@ export const method = {
 
   when: {
     use: [
-      'Access-control &quot;no blocked tags&quot; checks',
-      '&quot;Any overlap&quot; questions where you do not need the overlap itself',
+      'Access-control \"no blocked tags\" checks',
+      '\"Any overlap\" questions where you do not need the overlap itself',
       'Short-circuiting on the first common element — cheaper than materializing the intersection',
       'Filtering compatible items via list comprehension',
     ],
     avoid: [
       'You need the shared elements → set.intersection',
-      '&quot;Every element of self is in other&quot; → set.issubset',
-      '&quot;Self contains every element of other&quot; → set.issuperset',
+      '\"Every element of self is in other\" → set.issubset',
+      '\"Self contains every element of other\" → set.issuperset',
       'One-liner readability when the intersection is the point → `not (a & b)` is more direct',
     ],
   },
@@ -143,7 +143,7 @@ export const method = {
       a: 'No. issubset has `<=`, issuperset has `>=`, but isdisjoint has no operator. The method is the direct expression — for a compound form, use `not (a & b)` (but that is slower and allocates).',
     },
     {
-      q: 'Is isdisjoint always faster than `not (a &amp; b)`?',
+      q: 'Is isdisjoint always faster than `not (a & b)`?',
       a: 'Usually yes on non-trivial inputs — isdisjoint short-circuits on the first shared element and does not allocate a result set. `a & b` builds the full intersection before checking emptiness.',
     },
     {

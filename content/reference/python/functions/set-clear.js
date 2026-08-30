@@ -51,7 +51,7 @@ export const method = {
 
   patterns: [
     {
-      name: 'Reset a &quot;seen&quot; set between passes',
+      name: 'Reset a \"seen\" set between passes',
       desc: 'Every consumer holding a reference to `seen` sees the empty state immediately.',
       code: 'def run(passes):\n    for _ in range(passes):\n        seen.clear()\n        process(seen)',
     },
@@ -96,7 +96,7 @@ export const method = {
     },
     {
       name: 'frozenset has NO clear() — it is immutable',
-      desc: 'frozenset is the read-only sibling. Calling clear on a frozenset raises AttributeError. To &quot;clear&quot; a frozenset, replace it with an empty frozenset.',
+      desc: 'frozenset is the read-only sibling. Calling clear on a frozenset raises AttributeError. To \"clear\" a frozenset, replace it with an empty frozenset.',
       wrong: { label: 'AttributeError', code: 'frozenset([1, 2]).clear()', output: "AttributeError: 'frozenset' object has no attribute 'clear'" },
       fix:   { label: 'Rebind',         code: 'fs = frozenset()', output: 'a fresh empty frozenset' },
     },
@@ -107,7 +107,7 @@ export const method = {
       'Resetting a shared / module-level / cache set without rebinding',
       'Preparing a container between test runs or workflow stages',
       'Emptying a nested set without breaking outer references',
-      'Any &quot;empty this and keep the identity&quot; requirement',
+      'Any \"empty this and keep the identity\" requirement',
     ],
     avoid: [
       'You want a fresh, independent empty set → `s = set()`',

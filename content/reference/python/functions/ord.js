@@ -27,7 +27,7 @@ export const method = {
   cheat: {
     commonCall: 'ord("A")  # 65',
     returns:    'an int',
-    replaces:   'the &quot;what codepoint is this character?&quot; lookup',
+    replaces:   'the \"what codepoint is this character?\" lookup',
     watchOut:   'input must be exactly one character — not empty, not multiple',
   },
 
@@ -86,9 +86,9 @@ export const method = {
       fix:   { label: 'One at a time', code: 'for ch in "AB":\n    print(ord(ch))', output: '65 66' },
     },
     {
-      name: 'Grapheme clusters can be more than one &quot;character&quot;',
-      desc: 'A visible glyph may consist of multiple codepoints (e.g., emoji + skin-tone modifier, or a letter + combining accent). Python counts codepoints, not graphemes — such strings have len &gt; 1 and ord() rejects them.',
-      wrong: { label: 'Length &gt; 1', code: 'ord("👨🏽")   # emoji + skin tone', output: "TypeError: ord() expected a character, but string of length 2 found" },
+      name: 'Grapheme clusters can be more than one \"character\"',
+      desc: 'A visible glyph may consist of multiple codepoints (e.g., emoji + skin-tone modifier, or a letter + combining accent). Python counts codepoints, not graphemes — such strings have len > 1 and ord() rejects them.',
+      wrong: { label: 'Length > 1', code: 'ord("👨🏽")   # emoji + skin tone', output: "TypeError: ord() expected a character, but string of length 2 found" },
       fix:   { label: 'Iterate codepoints', code: '[ord(c) for c in "👨🏽"]', output: '[128104, 127997]' },
     },
     {
@@ -134,7 +134,7 @@ export const method = {
       a: 'ord expects one character, not a string. To get all codepoints of a string, use a list comprehension: `[ord(c) for c in s]`.',
     },
     {
-      q: 'Is ord(&quot;A&quot;) always 65?',
+      q: 'Is ord(\"A\") always 65?',
       a: 'Yes. Python 3 strings are Unicode; codepoint 65 is fixed by the Unicode standard as U+0041 LATIN CAPITAL LETTER A. ASCII is a subset of Unicode.',
     },
     {

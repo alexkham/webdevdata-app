@@ -52,7 +52,7 @@ export const method = {
   patterns: [
     {
       name: 'Get the first item with a default',
-      desc: 'The idiomatic &quot;first item if any&quot; pattern.',
+      desc: 'The idiomatic \"first item if any\" pattern.',
       code: 'first = next(iter(items), None)',
     },
     {
@@ -126,7 +126,7 @@ export const method = {
   notes: {
     complexity: 'O(1) per call — plus whatever the iterator does under the hood',
     return:     'The next item, or the default value',
-    cpython:    'Python/bltinmodule.c :: builtin_next — calls the iterator&apos;s tp_iternext slot',
+    cpython:    'Python/bltinmodule.c :: builtin_next — calls the iterator\'s tp_iternext slot',
     memory:     'No allocation beyond the returned value',
     threadSafe: 'Not safe under concurrent advancement of the same iterator',
   },
@@ -147,8 +147,8 @@ export const method = {
       a: 'When you omit the default, exhaustion raises StopIteration — an exception you must catch. When you provide a default, exhaustion returns that value cleanly. In modern code, default is almost always the safer choice.',
     },
     {
-      q: 'What is the &quot;sentinel object&quot; pattern in next() defaults?',
-      a: 'When None or "" could be a legitimate value, using them as a default confuses &quot;exhausted&quot; with &quot;got a real None/empty&quot;. Create a unique object() and check with `is` — an unmistakable sentinel.',
+      q: 'What is the \"sentinel object\" pattern in next() defaults?',
+      a: 'When None or "" could be a legitimate value, using them as a default confuses \"exhausted\" with \"got a real None/empty\". Create a unique object() and check with `is` — an unmistakable sentinel.',
     },
   ],
 

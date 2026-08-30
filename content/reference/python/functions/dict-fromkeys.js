@@ -40,8 +40,9 @@ export const method = {
 
   demoParams: [
     { name: 'keys',  type: 'list', hint: 'comma-separated keys', input: 'csv' },
-    { name: 'value', type: 'Any',  hint: 'default value',        input: 'text' },
+    { name: 'value', type: 'Any',  hint: 'default value',        input: 'text-or-none' },
   ],
+  demoTemplate: 'dict.fromkeys({keys}, {value})',
   cases: [
     { id: 'basic',    label: 'basic',       values: { keys: 'a,b,c',     value: '0' } },
     { id: 'none',     label: 'None default',values: { keys: 'x,y,z',     value: '' } },
@@ -81,7 +82,7 @@ export const method = {
   pitfalls: [
     {
       name: 'Mutable default is SHARED across all keys',
-      desc: 'The single most-copied footgun with fromkeys. The value is not copied — every key points at the SAME object. Appending to one key&apos;s list appears at every key.',
+      desc: 'The single most-copied footgun with fromkeys. The value is not copied — every key points at the SAME object. Appending to one key\'s list appears at every key.',
       wrong: { label: 'Same list everywhere', code: 'd = dict.fromkeys(["a", "b"], [])\nd["a"].append(1)\nd', output: '{"a": [1], "b": [1]}  # both keys see the append' },
       fix:   { label: 'Comprehension makes copies', code: 'd = {k: [] for k in ["a", "b"]}\nd["a"].append(1)\nd', output: '{"a": [1], "b": []}' },
     },
@@ -110,7 +111,7 @@ export const method = {
       'Initializing counters or flags with an immutable default (0, None, "")',
       'Order-preserving deduplication of a list',
       'Building a skeleton dict where the caller will populate values',
-      'Creating a &quot;set with values&quot; where every entry has the same tag',
+      'Creating a \"set with values\" where every entry has the same tag',
     ],
     avoid: [
       'Mutable default value → use a dict comprehension instead',

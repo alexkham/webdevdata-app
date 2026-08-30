@@ -34,7 +34,6 @@ import functionsFloatEmu from './emulators/python/functions/float';
 import functionsFormatEmu from './emulators/python/functions/format';
 import functionsFrozensetEmu from './emulators/python/functions/frozenset';
 import functionsGetEmu from './emulators/python/functions/get';
-import functionsHashEmu from './emulators/python/functions/hash';
 import functionsHexEmu from './emulators/python/functions/hex';
 import functionsIntEmu from './emulators/python/functions/int';
 import functionsIsdigitEmu from './emulators/python/functions/isdigit';
@@ -78,7 +77,6 @@ import functionsSetSymmetric_differenceEmu from './emulators/python/functions/se
 import functionsSetSymmetric_difference_updateEmu from './emulators/python/functions/set-symmetric_difference_update';
 import functionsSetUnionEmu from './emulators/python/functions/set-union';
 import functionsSetUpdateEmu from './emulators/python/functions/set-update';
-import functionsSetattrEmu from './emulators/python/functions/setattr';
 import functionsSetdefaultEmu from './emulators/python/functions/setdefault';
 import functionsSliceEmu from './emulators/python/functions/slice';
 import functionsSortedEmu from './emulators/python/functions/sorted';
@@ -117,10 +115,8 @@ import functionsStrTranslateEmu from './emulators/python/functions/str-translate
 import functionsStrEmu from './emulators/python/functions/str';
 import functionsStripEmu from './emulators/python/functions/strip';
 import functionsSumEmu from './emulators/python/functions/sum';
-import functionsSuperEmu from './emulators/python/functions/super';
 import functionsTitleEmu from './emulators/python/functions/title';
 import functionsUpperEmu from './emulators/python/functions/upper';
-import functionsVarsEmu from './emulators/python/functions/vars';
 import functionsZfillEmu from './emulators/python/functions/zfill';
 import functionsZipEmu from './emulators/python/functions/zip';
 import operatorsAddEmu from './emulators/python/operators/add';
@@ -177,7 +173,6 @@ const emulators = {
   'functions/format': functionsFormatEmu,
   'functions/frozenset': functionsFrozensetEmu,
   'functions/get': functionsGetEmu,
-  'functions/hash': functionsHashEmu,
   'functions/hex': functionsHexEmu,
   'functions/int': functionsIntEmu,
   'functions/isdigit': functionsIsdigitEmu,
@@ -221,7 +216,6 @@ const emulators = {
   'functions/set-symmetric_difference_update': functionsSetSymmetric_difference_updateEmu,
   'functions/set-union': functionsSetUnionEmu,
   'functions/set-update': functionsSetUpdateEmu,
-  'functions/setattr': functionsSetattrEmu,
   'functions/setdefault': functionsSetdefaultEmu,
   'functions/slice': functionsSliceEmu,
   'functions/sorted': functionsSortedEmu,
@@ -260,10 +254,8 @@ const emulators = {
   'functions/str': functionsStrEmu,
   'functions/strip': functionsStripEmu,
   'functions/sum': functionsSumEmu,
-  'functions/super': functionsSuperEmu,
   'functions/title': functionsTitleEmu,
   'functions/upper': functionsUpperEmu,
-  'functions/vars': functionsVarsEmu,
   'functions/zfill': functionsZfillEmu,
   'functions/zip': functionsZipEmu,
   'operators/add': operatorsAddEmu,

@@ -6,7 +6,7 @@ export const meta = {
   slug:        'set-remove',
   name:        'set.remove',
   signature:   'set.remove(elem)',
-  blurb:       'Remove an element — raises KeyError if it&apos;s not there.',
+  blurb:       'Remove an element — raises KeyError if it\'s not there.',
   category:    'set',
   type:        'set',
   hasLiveDemo: true,
@@ -62,7 +62,7 @@ export const method = {
       code: 'try:\n    s.remove(x)\nexcept KeyError:\n    log.warning("expected %s in set", x)',
     },
     {
-      name: 'Prefer discard for &quot;maybe present&quot;',
+      name: 'Prefer discard for \"maybe present\"',
       desc: 'The whole point of choosing set.remove over set.discard is the exception on missing.',
       code: 'if x is required_to_be_present:\n    s.remove(x)\nelse:\n    s.discard(x)',
     },
@@ -110,7 +110,7 @@ export const method = {
       'Wrapping in try/except to detect and log unexpected absences',
     ],
     avoid: [
-      '&quot;Remove if present&quot; workflows → set.discard is idempotent',
+      '\"Remove if present\" workflows → set.discard is idempotent',
       'You want to remove ANY element (not a specific one) → set.pop',
       'Removing many at once → set.difference_update or `-=`',
       'Iterating and removing from the same set → iterate a snapshot',
@@ -139,7 +139,7 @@ export const method = {
     },
     {
       q: 'Why remove() over discard()?',
-      a: 'The exception. When your code invariant says &quot;this element MUST be here&quot;, remove tripping is the loud signal that something upstream broke — better than the silent skip discard would give you.',
+      a: 'The exception. When your code invariant says \"this element MUST be here\", remove tripping is the loud signal that something upstream broke — better than the silent skip discard would give you.',
     },
     {
       q: 'Is remove() faster than discard()?',

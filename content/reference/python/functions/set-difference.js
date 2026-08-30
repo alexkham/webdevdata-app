@@ -50,16 +50,16 @@ export const method = {
     { id: 'empty-b',    label: 'subtract empty',     values: { a: '1,2,3',   b: '' } },
     { id: 'empty-a',    label: 'from empty',         values: { a: '',        b: '1,2,3' } },
   ],
-  demoExplainer: 'difference returns a NEW set — self is untouched. An element is kept only if it does NOT appear in any of the &quot;others&quot;. Unlike union and intersection, order matters: try the &quot;a - b vs b - a&quot; case above, then swap the inputs and see the different result.',
+  demoExplainer: 'difference returns a NEW set — self is untouched. An element is kept only if it does NOT appear in any of the \"others\". Unlike union and intersection, order matters: try the \"a - b vs b - a\" case above, then swap the inputs and see the different result.',
 
   patterns: [
     {
       name: 'Remove blocked items',
-      desc: 'The operator form reads like &quot;a WITHOUT b&quot;.',
+      desc: 'The operator form reads like \"a WITHOUT b\".',
       code: 'allowed = all_options - blocked',
     },
     {
-      name: 'What&apos;s missing',
+      name: 'What\'s missing',
       desc: 'Find items expected but not delivered.',
       code: 'missing = required - present',
     },
@@ -99,7 +99,7 @@ export const method = {
     },
     {
       name: 'String iterables explode into characters',
-      desc: 'Same footgun as union and intersection — a string passed as an &quot;other&quot; is iterated as characters.',
+      desc: 'Same footgun as union and intersection — a string passed as an \"other\" is iterated as characters.',
       wrong: { label: 'Char removal', code: '{"Ann", "B", "o"}.difference("Bob")', output: '{"Ann"}  # B and o removed as CHARS' },
       fix:   { label: 'Wrap it',      code: '{"Ann", "B", "o"}.difference({"Bob"})', output: '{"Ann", "B", "o"}' },
     },
@@ -108,9 +108,9 @@ export const method = {
   when: {
     use: [
       'Filtering out members of one set from another',
-      '&quot;Missing&quot; / &quot;extra&quot; comparisons between expected and actual',
+      '\"Missing\" / \"extra\" comparisons between expected and actual',
       'Set-based access control (allowed = all - blocked)',
-      'Chaining with other pure set operations (|, &amp;, -)',
+      'Chaining with other pure set operations (|, &, -)',
     ],
     avoid: [
       'You want to mutate in place → difference_update or -=',
@@ -142,7 +142,7 @@ export const method = {
     },
     {
       q: 'What is symmetric_difference?',
-      a: 'symmetric_difference (or the `^` operator) returns elements in EITHER set BUT NOT both — the &quot;exclusive or&quot; of set operations. It is commutative, unlike plain difference.',
+      a: 'symmetric_difference (or the `^` operator) returns elements in EITHER set BUT NOT both — the \"exclusive or\" of set operations. It is commutative, unlike plain difference.',
       code: '{1, 2, 3} ^ {2, 3, 4}\n# {1, 4}',
     },
     {

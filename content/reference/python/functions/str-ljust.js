@@ -81,7 +81,7 @@ export const method = {
   pitfalls: [
     {
       name: 'Never truncates',
-      desc: 'width ≤ len returns the original unchanged, not a shortened version. Great as a &quot;pad only if needed&quot; primitive; wrong when you actually want a fixed length.',
+      desc: 'width ≤ len returns the original unchanged, not a shortened version. Great as a \"pad only if needed\" primitive; wrong when you actually want a fixed length.',
       wrong: { label: 'Overflow', code: '"long text".ljust(3)', output: '"long text"  # 9 chars, not 3' },
       fix:   { label: 'Slice first', code: 's[:width].ljust(width)', output: 'true fixed width' },
     },
@@ -110,7 +110,7 @@ export const method = {
       'Left-aligned labels in text UIs and CLI output',
       'Dotted / dashed table-of-contents layouts',
       'Fixed-width name or ID columns',
-      '&quot;Pad only if needed&quot; workflows where truncation would be wrong',
+      '\"Pad only if needed\" workflows where truncation would be wrong',
     ],
     avoid: [
       'Numeric columns → rjust reads better for right-aligned numbers',
@@ -136,8 +136,8 @@ export const method = {
 
   faq: [
     {
-      q: 'What is the difference between ljust and format &quot;&lt;&quot;?',
-      a: 'The `&lt;` alignment in format() and f-strings does the same thing. `f"{s:&lt;10}"` left-aligns in a field of 10, with space fill by default. Use format when you compose with other spec fields (fill, sign, precision).',
+      q: 'What is the difference between ljust and format \"<\"?',
+      a: 'The `<` alignment in format() and f-strings does the same thing. `f"{s:<10}"` left-aligns in a field of 10, with space fill by default. Use format when you compose with other spec fields (fill, sign, precision).',
     },
     {
       q: 'How do I pad on both sides but keep left-aligned overall?',

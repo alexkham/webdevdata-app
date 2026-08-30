@@ -79,7 +79,7 @@ export const method = {
   pitfalls: [
     {
       name: 'Extending with a string appends each character',
-      desc: 'A string IS an iterable — of single characters. extend(&quot;abc&quot;) adds "a", "b", "c", not the string as a whole. Probably the most-copied bug in the language after the `xs = xs.sort()` one.',
+      desc: 'A string IS an iterable — of single characters. extend(\"abc\") adds "a", "b", "c", not the string as a whole. Probably the most-copied bug in the language after the `xs = xs.sort()` one.',
       wrong: { label: 'Char explosion', code: 'names = ["Ann", "Bob"]\nnames.extend("Cara")\nnames', output: '["Ann", "Bob", "C", "a", "r", "a"]' },
       fix:   { label: 'Wrap it',        code: 'names.append("Cara")\n# or\nnames.extend(["Cara"])', output: '["Ann", "Bob", "Cara"]' },
     },

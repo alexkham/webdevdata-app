@@ -41,13 +41,13 @@ export const method = {
 
   demoParams: [
     { name: 'template', type: 'str', hint: 'string with {} placeholders', input: 'text' },
-    { name: 'arg',      type: 'str', hint: 'a single value to fill in',   input: 'text' },
+    { name: 'arg',      type: 'str', hint: 'a single value to fill in',   input: 'auto' },
   ],
   cases: [
     { id: 'auto',     label: 'auto placeholder',   values: { template: 'Hello, {}!',              arg: 'world' } },
     { id: 'indexed',  label: 'indexed twice',      values: { template: '{0} and {0} again',       arg: 'echo' } },
     { id: 'padded',   label: 'right-aligned',      values: { template: '[{:>10}]',                arg: 'hi' } },
-    { id: 'numeric',  label: 'decimal precision',  values: { template: 'pi &asymp; {:.4f}',       arg: '3.14159' } },
+    { id: 'numeric',  label: 'decimal precision',  values: { template: 'pi ≈ {:.4f}',       arg: '3.14159' } },
     { id: 'zero-pad', label: 'zero-pad integer',   values: { template: 'id: {:04d}',              arg: '42' } },
     { id: 'hex',      label: 'hex',                values: { template: 'byte: {:02X}',            arg: '255' } },
     { id: 'literal',  label: 'literal braces',     values: { template: 'set: {{ {} }}',           arg: 'items' } },
@@ -92,7 +92,7 @@ export const method = {
     {
       name: 'Literal `{` and `}` need doubling',
       desc: 'A single brace is a placeholder marker. To output a literal brace, write `{{` or `}}`. A common bug in templates that mix real placeholders with JSON-like literal braces.',
-      wrong: { label: 'Placeholder confusion', code: '"a set is {x, y}".format(x=1, y=2)', output: 'KeyError: &apos;x, y&apos;  # brace treated as placeholder' },
+      wrong: { label: 'Placeholder confusion', code: '"a set is {x, y}".format(x=1, y=2)', output: 'KeyError: \'x, y\'  # brace treated as placeholder' },
       fix:   { label: 'Doubled braces',        code: '"a set is {{{}, {}}}".format(1, 2)', output: '"a set is {1, 2}"' },
     },
     {

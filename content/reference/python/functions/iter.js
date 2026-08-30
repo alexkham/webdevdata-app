@@ -4,7 +4,7 @@ export const meta = {
   slug:        'iter',
   name:        'iter',
   signature:   'iter(iterable) / iter(callable, sentinel)',
-  blurb:       'Get an iterator from any iterable — the entry point to Python&apos;s iteration protocol.',
+  blurb:       'Get an iterator from any iterable — the entry point to Python\'s iteration protocol.',
   category:    'builtin',
   type:        'builtin',
   hasLiveDemo: false,
@@ -16,7 +16,7 @@ export const method = {
   slug:      'iter',
   name:      'iter',
   signature: 'iter(iterable) / iter(callable, sentinel)',
-  returns:   { type: 'iterator', desc: 'Single-arg: an iterator over the iterable — calls __iter__() on the object. Two-arg: a &quot;call until sentinel&quot; iterator that invokes callable() repeatedly until it returns the sentinel value.' },
+  returns:   { type: 'iterator', desc: 'Single-arg: an iterator over the iterable — calls __iter__() on the object. Two-arg: a \"call until sentinel\" iterator that invokes callable() repeatedly until it returns the sentinel value.' },
 
   category:    'Built-in function',
   version:     'Python 1.5+',
@@ -47,7 +47,7 @@ export const method = {
     { id: 'empty',    label: 'empty',           values: { items: '' } },
     { id: 'dupes',    label: 'has duplicates',  values: { items: 'a,a,b,b,c' } },
   ],
-  demoExplainer: 'iter() returns an ITERATOR — a stateful object you advance with next(). The demo shows the values the iterator would yield (in order). Notably iterators PRESERVE duplicates (unlike sets); an iterator over "a,a,b,b,c" yields all five items. The two-arg form (iter(callable, sentinel)) is rare but useful: it wraps a callable into &quot;call until it returns sentinel&quot;, handy for reading a stream until EOF.',
+  demoExplainer: 'iter() returns an ITERATOR — a stateful object you advance with next(). The demo shows the values the iterator would yield (in order). Notably iterators PRESERVE duplicates (unlike sets); an iterator over "a,a,b,b,c" yields all five items. The two-arg form (iter(callable, sentinel)) is rare but useful: it wraps a callable into \"call until it returns sentinel\", handy for reading a stream until EOF.',
 
   patterns: [
     {
@@ -84,7 +84,7 @@ export const method = {
   pitfalls: [
     {
       name: 'Iterators are ONE-SHOT',
-      desc: 'Once exhausted, an iterator yields nothing. Trying to iterate again gives an empty sequence — a common source of &quot;why is my second loop empty?&quot; bugs.',
+      desc: 'Once exhausted, an iterator yields nothing. Trying to iterate again gives an empty sequence — a common source of \"why is my second loop empty?\" bugs.',
       wrong: { label: 'Empty second time', code: 'it = iter([1, 2, 3])\nlist(it)   # [1,2,3]\nlist(it)   # []', output: 'exhausted' },
       fix:   { label: 'Store the source', code: 'items = [1, 2, 3]\nlist(items); list(items)', output: '[1,2,3] both times' },
     },
@@ -149,7 +149,7 @@ export const method = {
     },
     {
       q: 'What is the two-arg iter form useful for?',
-      a: 'Reading a stream in chunks until EOF, polling a queue until it returns a sentinel, or any &quot;call this until it says stop&quot; loop. It converts imperative call-with-check code into a lazy iterator you can pass around.',
+      a: 'Reading a stream in chunks until EOF, polling a queue until it returns a sentinel, or any \"call this until it says stop\" loop. It converts imperative call-with-check code into a lazy iterator you can pass around.',
     },
   ],
 
