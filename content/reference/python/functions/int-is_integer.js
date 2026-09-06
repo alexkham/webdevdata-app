@@ -11,7 +11,7 @@ export const meta = {
   type:        'int',
   hasLiveDemo: true,
   version:     'Python 3.12+',
-  searchTerms: 'is integer whole number check int float duck typing always true',
+  searchTerms: 'is integer whole number check int float duck typing always true bool bool.is_integer',
 };
 
 export const method = {

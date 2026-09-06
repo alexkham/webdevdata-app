@@ -11,7 +11,7 @@ export const meta = {
   type:        'set',
   hasLiveDemo: true,
   version:     'Python 2.6+',
-  searchTerms: 'issubset contains contained within all elements subset of set less than equal',
+  searchTerms: 'issubset contains contained within all elements subset of set less than equal frozenset frozenset.issubset',
 };
 
 export const method = {

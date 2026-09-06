@@ -52,7 +52,7 @@ export const method = {
     { id: 'very-neg',   label: 'very negative',    values: { list: 'a,b,c',   index: -99, item: 'z' } },
     { id: 'empty',      label: 'into empty',       values: { list: '',        index: 0,  item: 'x' } },
   ],
-  demoExplainer: 'The demo shows the LIST STATE after inserting. Python actually returns None; the meaningful effect is mutation. Insert places the item BEFORE index i. Out-of-range indexes clamp silently — insert(99, x) is the same as append(x); insert(-99, x) is the same as insert(0, x). Negative indexes count from the end, but insert(-1, x) goes BEFORE the last element, not after.',
+  demoExplainer: 'The demo output is None, and that is the real return value — insert mutates the list and gives nothing back. Insert places the item BEFORE index i. Out-of-range indexes clamp silently — insert(99, x) is the same as append(x); insert(-99, x) is the same as insert(0, x). Negative indexes count from the end, but insert(-1, x) goes BEFORE the last element, not after.',
 
   patterns: [
     {

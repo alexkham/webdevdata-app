@@ -9,7 +9,7 @@ export const meta = {
   type:        'builtin',
   hasLiveDemo: true,
   version:     'Python 2.4+',
-  searchTerms: 'frozenset immutable hashable set constant readonly dict key element unique',
+  searchTerms: 'frozenset immutable hashable set constant readonly dict key element unique frozenset.union frozenset.intersection frozenset.difference frozenset.symmetric_difference frozenset.issubset frozenset.issuperset frozenset.isdisjoint frozenset.copy',
 };
 
 export const method = {
@@ -142,6 +142,11 @@ export const method = {
     {
       q: 'What is the difference between set and frozenset?',
       a: 'set is mutable — supports add, discard, clear, update. frozenset is immutable — no mutation methods. frozenset is hashable (usable as dict key or set element); set is not. Both share all read operations and set-algebra methods.',
+    },
+    {
+      q: 'Where are the frozenset methods documented?',
+      a: 'On the set pages. frozenset has exactly eight methods — union, intersection, difference, symmetric_difference, issubset, issuperset, isdisjoint and copy — and each behaves identically to its set counterpart, so they are documented once under set rather than duplicated. The only difference is the return type: frozenset.union returns a frozenset. Everything set has beyond those eight mutates, which is why frozenset does not have it.',
+      code: "sorted(m for m in dir(frozenset) if not m.startswith('_'))\n# ['copy', 'difference', 'intersection', 'isdisjoint',\n#  'issubset', 'issuperset', 'symmetric_difference', 'union']",
     },
     {
       q: 'Why cannot I use a set as a dict key?',

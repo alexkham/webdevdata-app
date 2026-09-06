@@ -11,7 +11,7 @@ export const meta = {
   type:        'int',
   hasLiveDemo: true,
   version:     'Python 2.6+',
-  searchTerms: 'conjugate complex conjugate numeric tower real imaginary int identity',
+  searchTerms: 'conjugate complex conjugate numeric tower real imaginary int identity bool bool.conjugate',
 };
 
 export const method = {

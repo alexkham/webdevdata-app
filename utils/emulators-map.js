@@ -13,10 +13,34 @@ import functionsAppendEmu from './emulators/python/functions/append';
 import functionsAsciiEmu from './emulators/python/functions/ascii';
 import functionsBinEmu from './emulators/python/functions/bin';
 import functionsBoolEmu from './emulators/python/functions/bool';
+import functionsBytearrayAppendEmu from './emulators/python/functions/bytearray-append';
+import functionsBytearrayClearEmu from './emulators/python/functions/bytearray-clear';
+import functionsBytearrayCopyEmu from './emulators/python/functions/bytearray-copy';
+import functionsBytearrayExtendEmu from './emulators/python/functions/bytearray-extend';
+import functionsBytearrayInsertEmu from './emulators/python/functions/bytearray-insert';
+import functionsBytearrayPopEmu from './emulators/python/functions/bytearray-pop';
+import functionsBytearrayRemoveEmu from './emulators/python/functions/bytearray-remove';
+import functionsBytearrayReverseEmu from './emulators/python/functions/bytearray-reverse';
 import functionsBytearrayEmu from './emulators/python/functions/bytearray';
+import functionsBytesCountEmu from './emulators/python/functions/bytes-count';
+import functionsBytesDecodeEmu from './emulators/python/functions/bytes-decode';
+import functionsBytesEndswithEmu from './emulators/python/functions/bytes-endswith';
+import functionsBytesFindEmu from './emulators/python/functions/bytes-find';
+import functionsBytesFromhexEmu from './emulators/python/functions/bytes-fromhex';
+import functionsBytesHexEmu from './emulators/python/functions/bytes-hex';
+import functionsBytesIndexEmu from './emulators/python/functions/bytes-index';
+import functionsBytesIsMethodsEmu from './emulators/python/functions/bytes-is-methods';
+import functionsBytesJoinEmu from './emulators/python/functions/bytes-join';
+import functionsBytesPartitionEmu from './emulators/python/functions/bytes-partition';
+import functionsBytesReplaceEmu from './emulators/python/functions/bytes-replace';
+import functionsBytesSplitEmu from './emulators/python/functions/bytes-split';
+import functionsBytesStartswithEmu from './emulators/python/functions/bytes-startswith';
+import functionsBytesStripEmu from './emulators/python/functions/bytes-strip';
+import functionsBytesTranslateEmu from './emulators/python/functions/bytes-translate';
 import functionsBytesEmu from './emulators/python/functions/bytes';
 import functionsCapitalizeEmu from './emulators/python/functions/capitalize';
 import functionsChrEmu from './emulators/python/functions/chr';
+import functionsComplexConjugateEmu from './emulators/python/functions/complex-conjugate';
 import functionsComplexEmu from './emulators/python/functions/complex';
 import functionsDictClearEmu from './emulators/python/functions/dict-clear';
 import functionsDictCopyEmu from './emulators/python/functions/dict-copy';
@@ -32,6 +56,11 @@ import functionsDivmodEmu from './emulators/python/functions/divmod';
 import functionsEndswithEmu from './emulators/python/functions/endswith';
 import functionsEnumerateEmu from './emulators/python/functions/enumerate';
 import functionsFindEmu from './emulators/python/functions/find';
+import functionsFloatAs_integer_ratioEmu from './emulators/python/functions/float-as_integer_ratio';
+import functionsFloatConjugateEmu from './emulators/python/functions/float-conjugate';
+import functionsFloatFromhexEmu from './emulators/python/functions/float-fromhex';
+import functionsFloatHexEmu from './emulators/python/functions/float-hex';
+import functionsFloatIs_integerEmu from './emulators/python/functions/float-is_integer';
 import functionsFloatEmu from './emulators/python/functions/float';
 import functionsFormatEmu from './emulators/python/functions/format';
 import functionsFrozensetEmu from './emulators/python/functions/frozenset';
@@ -61,10 +90,15 @@ import functionsListSortEmu from './emulators/python/functions/list-sort';
 import functionsListEmu from './emulators/python/functions/list';
 import functionsLowerEmu from './emulators/python/functions/lower';
 import functionsMaxEmu from './emulators/python/functions/max';
+import functionsMemoryviewHexEmu from './emulators/python/functions/memoryview-hex';
+import functionsMemoryviewTobytesEmu from './emulators/python/functions/memoryview-tobytes';
+import functionsMemoryviewTolistEmu from './emulators/python/functions/memoryview-tolist';
 import functionsMinEmu from './emulators/python/functions/min';
 import functionsOctEmu from './emulators/python/functions/oct';
 import functionsOrdEmu from './emulators/python/functions/ord';
 import functionsPowEmu from './emulators/python/functions/pow';
+import functionsRangeCountEmu from './emulators/python/functions/range-count';
+import functionsRangeIndexEmu from './emulators/python/functions/range-index';
 import functionsRangeEmu from './emulators/python/functions/range';
 import functionsReplaceEmu from './emulators/python/functions/replace';
 import functionsReprEmu from './emulators/python/functions/repr';
@@ -90,6 +124,7 @@ import functionsSetUnionEmu from './emulators/python/functions/set-union';
 import functionsSetUpdateEmu from './emulators/python/functions/set-update';
 import functionsSetEmu from './emulators/python/functions/set';
 import functionsSetdefaultEmu from './emulators/python/functions/setdefault';
+import functionsSliceIndicesEmu from './emulators/python/functions/slice-indices';
 import functionsSliceEmu from './emulators/python/functions/slice';
 import functionsSortedEmu from './emulators/python/functions/sorted';
 import functionsSplitEmu from './emulators/python/functions/split';
@@ -154,12 +189,15 @@ import operatorsLtEmu from './emulators/python/operators/lt';
 import operatorsModEmu from './emulators/python/operators/mod';
 import operatorsMulEmu from './emulators/python/operators/mul';
 import operatorsNeEmu from './emulators/python/operators/ne';
+import operatorsNegEmu from './emulators/python/operators/neg';
 import operatorsNotInEmu from './emulators/python/operators/not-in';
 import operatorsNotEmu from './emulators/python/operators/not';
 import operatorsOrEmu from './emulators/python/operators/or';
+import operatorsPosEmu from './emulators/python/operators/pos';
 import operatorsPowEmu from './emulators/python/operators/pow';
 import operatorsRshiftEmu from './emulators/python/operators/rshift';
 import operatorsSubEmu from './emulators/python/operators/sub';
+import operatorsTernaryEmu from './emulators/python/operators/ternary';
 import operatorsTruedivEmu from './emulators/python/operators/truediv';
 
 const emulators = {
@@ -170,10 +208,34 @@ const emulators = {
   'functions/ascii': functionsAsciiEmu,
   'functions/bin': functionsBinEmu,
   'functions/bool': functionsBoolEmu,
+  'functions/bytearray-append': functionsBytearrayAppendEmu,
+  'functions/bytearray-clear': functionsBytearrayClearEmu,
+  'functions/bytearray-copy': functionsBytearrayCopyEmu,
+  'functions/bytearray-extend': functionsBytearrayExtendEmu,
+  'functions/bytearray-insert': functionsBytearrayInsertEmu,
+  'functions/bytearray-pop': functionsBytearrayPopEmu,
+  'functions/bytearray-remove': functionsBytearrayRemoveEmu,
+  'functions/bytearray-reverse': functionsBytearrayReverseEmu,
   'functions/bytearray': functionsBytearrayEmu,
+  'functions/bytes-count': functionsBytesCountEmu,
+  'functions/bytes-decode': functionsBytesDecodeEmu,
+  'functions/bytes-endswith': functionsBytesEndswithEmu,
+  'functions/bytes-find': functionsBytesFindEmu,
+  'functions/bytes-fromhex': functionsBytesFromhexEmu,
+  'functions/bytes-hex': functionsBytesHexEmu,
+  'functions/bytes-index': functionsBytesIndexEmu,
+  'functions/bytes-is-methods': functionsBytesIsMethodsEmu,
+  'functions/bytes-join': functionsBytesJoinEmu,
+  'functions/bytes-partition': functionsBytesPartitionEmu,
+  'functions/bytes-replace': functionsBytesReplaceEmu,
+  'functions/bytes-split': functionsBytesSplitEmu,
+  'functions/bytes-startswith': functionsBytesStartswithEmu,
+  'functions/bytes-strip': functionsBytesStripEmu,
+  'functions/bytes-translate': functionsBytesTranslateEmu,
   'functions/bytes': functionsBytesEmu,
   'functions/capitalize': functionsCapitalizeEmu,
   'functions/chr': functionsChrEmu,
+  'functions/complex-conjugate': functionsComplexConjugateEmu,
   'functions/complex': functionsComplexEmu,
   'functions/dict-clear': functionsDictClearEmu,
   'functions/dict-copy': functionsDictCopyEmu,
@@ -189,6 +251,11 @@ const emulators = {
   'functions/endswith': functionsEndswithEmu,
   'functions/enumerate': functionsEnumerateEmu,
   'functions/find': functionsFindEmu,
+  'functions/float-as_integer_ratio': functionsFloatAs_integer_ratioEmu,
+  'functions/float-conjugate': functionsFloatConjugateEmu,
+  'functions/float-fromhex': functionsFloatFromhexEmu,
+  'functions/float-hex': functionsFloatHexEmu,
+  'functions/float-is_integer': functionsFloatIs_integerEmu,
   'functions/float': functionsFloatEmu,
   'functions/format': functionsFormatEmu,
   'functions/frozenset': functionsFrozensetEmu,
@@ -218,10 +285,15 @@ const emulators = {
   'functions/list': functionsListEmu,
   'functions/lower': functionsLowerEmu,
   'functions/max': functionsMaxEmu,
+  'functions/memoryview-hex': functionsMemoryviewHexEmu,
+  'functions/memoryview-tobytes': functionsMemoryviewTobytesEmu,
+  'functions/memoryview-tolist': functionsMemoryviewTolistEmu,
   'functions/min': functionsMinEmu,
   'functions/oct': functionsOctEmu,
   'functions/ord': functionsOrdEmu,
   'functions/pow': functionsPowEmu,
+  'functions/range-count': functionsRangeCountEmu,
+  'functions/range-index': functionsRangeIndexEmu,
   'functions/range': functionsRangeEmu,
   'functions/replace': functionsReplaceEmu,
   'functions/repr': functionsReprEmu,
@@ -247,6 +319,7 @@ const emulators = {
   'functions/set-update': functionsSetUpdateEmu,
   'functions/set': functionsSetEmu,
   'functions/setdefault': functionsSetdefaultEmu,
+  'functions/slice-indices': functionsSliceIndicesEmu,
   'functions/slice': functionsSliceEmu,
   'functions/sorted': functionsSortedEmu,
   'functions/split': functionsSplitEmu,
@@ -311,12 +384,15 @@ const emulators = {
   'operators/mod': operatorsModEmu,
   'operators/mul': operatorsMulEmu,
   'operators/ne': operatorsNeEmu,
+  'operators/neg': operatorsNegEmu,
   'operators/not-in': operatorsNotInEmu,
   'operators/not': operatorsNotEmu,
   'operators/or': operatorsOrEmu,
+  'operators/pos': operatorsPosEmu,
   'operators/pow': operatorsPowEmu,
   'operators/rshift': operatorsRshiftEmu,
   'operators/sub': operatorsSubEmu,
+  'operators/ternary': operatorsTernaryEmu,
   'operators/truediv': operatorsTruedivEmu,
 };
 

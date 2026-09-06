@@ -11,7 +11,7 @@ export const meta = {
   type:        'set',
   hasLiveDemo: true,
   version:     'Python 2.6+',
-  searchTerms: 'union set combine merge or pipe operator new elements distinct unique',
+  searchTerms: 'union set combine merge or pipe operator new elements distinct unique frozenset frozenset.union',
 };
 
 export const method = {

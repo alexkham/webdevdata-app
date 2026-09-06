@@ -11,7 +11,7 @@ export const meta = {
   type:        'int',
   hasLiveDemo: true,
   version:     'Python 3.1+',
-  searchTerms: 'bit length binary bits width size int how many bits msb magnitude',
+  searchTerms: 'bit length binary bits width size int how many bits msb magnitude bool bool.bit_length',
 };
 
 export const method = {

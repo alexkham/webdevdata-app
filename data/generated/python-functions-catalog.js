@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/functions explorer.
 
 export const pythonFunctionsCatalog = {
-  generatedAt: "2026-08-30T14:54:48.847Z",
+  generatedAt: "2026-09-06T18:10:09.242Z",
   items: [
   {
     "slug": "abs",
@@ -104,7 +104,7 @@ export const pythonFunctionsCatalog = {
     "type": "builtin",
     "hasLiveDemo": true,
     "version": "Python 2.3+",
-    "searchTerms": "bool boolean true false truthy falsy convert if test cast"
+    "searchTerms": "bool boolean true false truthy falsy convert if test cast bool.bit_length bool.bit_count bool.to_bytes bool.from_bytes bool.as_integer_ratio bool.is_integer bool.conjugate"
   },
   {
     "slug": "breakpoint",
@@ -118,6 +118,94 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "breakpoint debugger pdb set_trace debug pause inspect PYTHONBREAKPOINT"
   },
   {
+    "slug": "bytearray-append",
+    "name": "bytearray.append",
+    "signature": "bytearray.append(byte)",
+    "blurb": "Add one byte to the end — takes an int from 0 to 255, not a bytes object.",
+    "category": "bytearray",
+    "type": "bytearray",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytearray append add byte mutable buffer grow build binary int range 256"
+  },
+  {
+    "slug": "bytearray-clear",
+    "name": "bytearray.clear",
+    "signature": "bytearray.clear()",
+    "blurb": "Empty the buffer in place, keeping the same object and every reference to it.",
+    "category": "bytearray",
+    "type": "bytearray",
+    "hasLiveDemo": true,
+    "version": "Python 3.3+",
+    "searchTerms": "bytearray clear empty reset truncate mutable buffer reuse in place binary"
+  },
+  {
+    "slug": "bytearray-copy",
+    "name": "bytearray.copy",
+    "signature": "bytearray.copy()",
+    "blurb": "A new, independent bytearray with the same contents.",
+    "category": "bytearray",
+    "type": "bytearray",
+    "hasLiveDemo": true,
+    "version": "Python 3.3+",
+    "searchTerms": "bytearray copy duplicate clone independent snapshot mutable buffer shallow"
+  },
+  {
+    "slug": "bytearray-extend",
+    "name": "bytearray.extend",
+    "signature": "bytearray.extend(iterable)",
+    "blurb": "Append every byte from an iterable of ints — or from another bytes object.",
+    "category": "bytearray",
+    "type": "bytearray",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytearray extend append many bytes iterable concat grow buffer mutable binary"
+  },
+  {
+    "slug": "bytearray-insert",
+    "name": "bytearray.insert",
+    "signature": "bytearray.insert(index, byte)",
+    "blurb": "Insert one byte before a position — out-of-range indexes clamp instead of raising.",
+    "category": "bytearray",
+    "type": "bytearray",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytearray insert position index byte prepend shift mutable buffer clamp binary"
+  },
+  {
+    "slug": "bytearray-pop",
+    "name": "bytearray.pop",
+    "signature": "bytearray.pop([index])",
+    "blurb": "Remove a byte and return it as an int — defaults to the last one.",
+    "category": "bytearray",
+    "type": "bytearray",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytearray pop remove last byte stack lifo index indexerror mutable buffer"
+  },
+  {
+    "slug": "bytearray-remove",
+    "name": "bytearray.remove",
+    "signature": "bytearray.remove(byte)",
+    "blurb": "Delete the FIRST occurrence of a byte value — by value, not by position.",
+    "category": "bytearray",
+    "type": "bytearray",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytearray remove delete byte value first occurrence valueerror mutable buffer"
+  },
+  {
+    "slug": "bytearray-reverse",
+    "name": "bytearray.reverse",
+    "signature": "bytearray.reverse()",
+    "blurb": "Reverse the bytes in place — which destroys any multi-byte characters.",
+    "category": "bytearray",
+    "type": "bytearray",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytearray reverse in place flip order endian mutable buffer binary utf-8"
+  },
+  {
     "slug": "bytearray",
     "name": "bytearray",
     "signature": "bytearray(source=..., encoding=..., errors=...)",
@@ -126,7 +214,183 @@ export const pythonFunctionsCatalog = {
     "type": "builtin",
     "hasLiveDemo": true,
     "version": "Python 3.0+",
-    "searchTerms": "bytearray mutable bytes buffer binary append extend modify in place assignment"
+    "searchTerms": "bytearray mutable bytes buffer binary append extend modify in place assignment bytearray.split bytearray.find bytearray.count bytearray.index bytearray.replace bytearray.strip bytearray.join bytearray.decode bytearray.hex bytearray.startswith bytearray.endswith bytearray.partition bytearray.translate bytearray.upper bytearray.lower"
+  },
+  {
+    "slug": "bytes-count",
+    "name": "bytes.count",
+    "signature": "bytes.count(sub[, start[, end]])",
+    "blurb": "Count non-overlapping occurrences of a byte sequence.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes count occurrences tally substring subsection binary non-overlapping bytearray bytearray.count"
+  },
+  {
+    "slug": "bytes-decode",
+    "name": "bytes.decode",
+    "signature": "bytes.decode(encoding='utf-8', errors='strict')",
+    "blurb": "Turn bytes into text — the step where the wrong encoding produces mojibake.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes decode utf-8 unicode text encoding mojibake latin-1 ascii unicodedecodeerror bytearray bytearray.decode"
+  },
+  {
+    "slug": "bytes-endswith",
+    "name": "bytes.endswith",
+    "signature": "bytes.endswith(suffix[, start[, end]])",
+    "blurb": "Does the buffer end with these bytes? Accepts a tuple of alternatives.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes endswith suffix trailer terminator extension check tuple binary footer bytearray bytearray.endswith"
+  },
+  {
+    "slug": "bytes-find",
+    "name": "bytes.find",
+    "signature": "bytes.find(sub[, start[, end]])",
+    "blurb": "Byte offset of the first match, or -1 when absent.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes find search locate offset position first occurrence binary minus one bytearray bytearray.find"
+  },
+  {
+    "slug": "bytes-fromhex",
+    "name": "bytes.fromhex",
+    "signature": "bytes.fromhex(string)",
+    "blurb": "Parse a hex string into bytes — spaces allowed, everything else rejected.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes fromhex parse hexadecimal string classmethod decode hex binary convert bytearray bytearray.fromhex"
+  },
+  {
+    "slug": "bytes-hex",
+    "name": "bytes.hex",
+    "signature": "bytes.hex([sep[, bytes_per_sep]])",
+    "blurb": "Bytes as a plain hex string — the readable form of binary data.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.5+",
+    "searchTerms": "bytes hex hexadecimal dump digest checksum string separator binary readable bytearray bytearray.hex"
+  },
+  {
+    "slug": "bytes-index",
+    "name": "bytes.index",
+    "signature": "bytes.index(sub[, start[, end]])",
+    "blurb": "Byte offset of the first match — raises ValueError instead of returning -1.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes index position locate subsection not found valueerror binary offset bytearray bytearray.index"
+  },
+  {
+    "slug": "bytes-is-methods",
+    "name": "bytes.isalpha and the is* family",
+    "signature": "bytes.isalnum() | isalpha() | isascii() | isdigit() | islower() | isspace() | istitle() | isupper()",
+    "blurb": "The eight byte predicates — ASCII-only, and all False for empty input except isascii.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes isalpha isdigit isalnum isascii islower isupper isspace istitle predicate validate ascii bytearray bytearray.isalpha bytearray.isdigit bytearray.isalnum bytearray.isascii bytearray.islower bytearray.isupper bytearray.isspace bytearray.istitle"
+  },
+  {
+    "slug": "bytes-join",
+    "name": "bytes.join",
+    "signature": "bytes.join(iterable)",
+    "blurb": "Concatenate bytes objects with a separator — called ON the separator.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes join concatenate separator glue combine parts binary build buffer bytearray bytearray.join"
+  },
+  {
+    "slug": "bytes-maketrans",
+    "name": "bytes.maketrans",
+    "signature": "bytes.maketrans(from, to)",
+    "blurb": "Build the 256-byte translation table that bytes.translate consumes.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": false,
+    "version": "Python 3.1+",
+    "searchTerms": "bytes maketrans translation table static method translate mapping 256 build bytearray bytearray.maketrans"
+  },
+  {
+    "slug": "bytes-partition",
+    "name": "bytes.partition",
+    "signature": "bytes.partition(sep)",
+    "blurb": "Split once into exactly three parts — head, separator, tail.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes partition split once three parts head tail separator unpack safe binary bytearray bytearray.partition"
+  },
+  {
+    "slug": "bytes-replace",
+    "name": "bytes.replace",
+    "signature": "bytes.replace(old, new[, count])",
+    "blurb": "Swap one byte sequence for another, returning a new bytes object.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes replace substitute swap patch binary immutable new object count bytearray bytearray.replace"
+  },
+  {
+    "slug": "bytes-split",
+    "name": "bytes.split",
+    "signature": "bytes.split(sep=None, maxsplit=-1)",
+    "blurb": "Break a buffer apart on a separator, giving a list of bytes objects.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes split separator delimiter parse tokens records lines binary maxsplit bytearray bytearray.split"
+  },
+  {
+    "slug": "bytes-startswith",
+    "name": "bytes.startswith",
+    "signature": "bytes.startswith(prefix[, start[, end]])",
+    "blurb": "Does the buffer begin with these bytes? Accepts a tuple of alternatives.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes startswith prefix magic number signature file format detect header tuple bytearray bytearray.startswith"
+  },
+  {
+    "slug": "bytes-strip",
+    "name": "bytes.strip",
+    "signature": "bytes.strip([chars])",
+    "blurb": "Trim leading and trailing bytes — chars is a SET, not a sequence.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes strip trim whitespace lstrip rstrip remove leading trailing set binary bytearray bytearray.strip"
+  },
+  {
+    "slug": "bytes-translate",
+    "name": "bytes.translate",
+    "signature": "bytes.translate(table, /, delete=b'')",
+    "blurb": "Map many single bytes in one pass, using a 256-entry table.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes translate maketrans table substitute map delete bytes rot13 cipher bytearray bytearray.translate"
   },
   {
     "slug": "bytes",
@@ -193,6 +457,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": false,
     "version": "Python 1.0+",
     "searchTerms": "compile code object bytecode eval exec ast parse mode single expression"
+  },
+  {
+    "slug": "complex-conjugate",
+    "name": "complex.conjugate",
+    "signature": "complex.conjugate()",
+    "blurb": "Flip the sign of the imaginary part — the one type where conjugate does something.",
+    "category": "complex",
+    "type": "complex",
+    "hasLiveDemo": true,
+    "version": "Python 1.4+",
+    "searchTerms": "complex conjugate imaginary part negate magnitude modulus signal processing j"
   },
   {
     "slug": "complex",
@@ -415,6 +690,61 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "find index position locate search substring where"
   },
   {
+    "slug": "float-as_integer_ratio",
+    "name": "float.as_integer_ratio",
+    "signature": "float.as_integer_ratio()",
+    "blurb": "The exact fraction the float actually stores — which is rarely the one you typed.",
+    "category": "float",
+    "type": "float",
+    "hasLiveDemo": true,
+    "version": "Python 2.6+",
+    "searchTerms": "as integer ratio fraction numerator denominator exact float precision binary rounding"
+  },
+  {
+    "slug": "float-conjugate",
+    "name": "float.conjugate",
+    "signature": "float.conjugate()",
+    "blurb": "Returns the number unchanged — a real number is its own conjugate.",
+    "category": "float",
+    "type": "float",
+    "hasLiveDemo": true,
+    "version": "Python 2.6+",
+    "searchTerms": "conjugate complex conjugate numeric tower real imaginary float identity"
+  },
+  {
+    "slug": "float-fromhex",
+    "name": "float.fromhex",
+    "signature": "float.fromhex(string)",
+    "blurb": "Read a float back from its exact hexadecimal form — the inverse of float.hex.",
+    "category": "float",
+    "type": "float",
+    "hasLiveDemo": true,
+    "version": "Python 2.6+",
+    "searchTerms": "float fromhex parse hexadecimal exact round trip classmethod convert string"
+  },
+  {
+    "slug": "float-hex",
+    "name": "float.hex",
+    "signature": "float.hex()",
+    "blurb": "Exact hexadecimal form of a float — every bit preserved, unlike str().",
+    "category": "float",
+    "type": "float",
+    "hasLiveDemo": true,
+    "version": "Python 2.6+",
+    "searchTerms": "float hex hexadecimal exact representation round trip binary precision serialize"
+  },
+  {
+    "slug": "float-is_integer",
+    "name": "float.is_integer",
+    "signature": "float.is_integer()",
+    "blurb": "True when the float has no fractional part — 4.0 yes, 4.5 no.",
+    "category": "float",
+    "type": "float",
+    "hasLiveDemo": true,
+    "version": "Python 2.6+",
+    "searchTerms": "is integer whole number check float fractional part decimal round trip"
+  },
+  {
     "slug": "float",
     "name": "float",
     "signature": "float(x=0.0)",
@@ -445,7 +775,7 @@ export const pythonFunctionsCatalog = {
     "type": "builtin",
     "hasLiveDemo": true,
     "version": "Python 2.4+",
-    "searchTerms": "frozenset immutable hashable set constant readonly dict key element unique"
+    "searchTerms": "frozenset immutable hashable set constant readonly dict key element unique frozenset.union frozenset.intersection frozenset.difference frozenset.symmetric_difference frozenset.issubset frozenset.issuperset frozenset.isdisjoint frozenset.copy"
   },
   {
     "slug": "get",
@@ -555,7 +885,7 @@ export const pythonFunctionsCatalog = {
     "type": "int",
     "hasLiveDemo": true,
     "version": "Python 3.8+",
-    "searchTerms": "as integer ratio fraction numerator denominator rational int float duck typing"
+    "searchTerms": "as integer ratio fraction numerator denominator rational int float duck typing bool bool.as_integer_ratio"
   },
   {
     "slug": "int-bit_count",
@@ -566,7 +896,7 @@ export const pythonFunctionsCatalog = {
     "type": "int",
     "hasLiveDemo": true,
     "version": "Python 3.10+",
-    "searchTerms": "bit count popcount population count ones set bits hamming weight int"
+    "searchTerms": "bit count popcount population count ones set bits hamming weight int bool bool.bit_count"
   },
   {
     "slug": "int-bit_length",
@@ -577,7 +907,7 @@ export const pythonFunctionsCatalog = {
     "type": "int",
     "hasLiveDemo": true,
     "version": "Python 3.1+",
-    "searchTerms": "bit length binary bits width size int how many bits msb magnitude"
+    "searchTerms": "bit length binary bits width size int how many bits msb magnitude bool bool.bit_length"
   },
   {
     "slug": "int-conjugate",
@@ -588,7 +918,7 @@ export const pythonFunctionsCatalog = {
     "type": "int",
     "hasLiveDemo": true,
     "version": "Python 2.6+",
-    "searchTerms": "conjugate complex conjugate numeric tower real imaginary int identity"
+    "searchTerms": "conjugate complex conjugate numeric tower real imaginary int identity bool bool.conjugate"
   },
   {
     "slug": "int-from_bytes",
@@ -599,7 +929,7 @@ export const pythonFunctionsCatalog = {
     "type": "int",
     "hasLiveDemo": true,
     "version": "Python 3.2+",
-    "searchTerms": "from bytes unpack deserialize parse endian big little binary decode int bytes to int"
+    "searchTerms": "from bytes unpack deserialize parse endian big little binary decode int bytes to int bool bool.from_bytes"
   },
   {
     "slug": "int-is_integer",
@@ -610,7 +940,7 @@ export const pythonFunctionsCatalog = {
     "type": "int",
     "hasLiveDemo": true,
     "version": "Python 3.12+",
-    "searchTerms": "is integer whole number check int float duck typing always true"
+    "searchTerms": "is integer whole number check int float duck typing always true bool bool.is_integer"
   },
   {
     "slug": "int-to_bytes",
@@ -621,7 +951,7 @@ export const pythonFunctionsCatalog = {
     "type": "int",
     "hasLiveDemo": true,
     "version": "Python 3.2+",
-    "searchTerms": "to bytes pack serialize endian big little binary struct int convert network order"
+    "searchTerms": "to bytes pack serialize endian big little binary struct int convert network order bool bool.to_bytes"
   },
   {
     "slug": "int",
@@ -866,6 +1196,72 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "max maximum largest biggest highest greatest"
   },
   {
+    "slug": "memoryview-cast",
+    "name": "memoryview.cast",
+    "signature": "memoryview.cast(format[, shape])",
+    "blurb": "Reinterpret the same bytes as a different element type — without copying.",
+    "category": "memoryview",
+    "type": "memoryview",
+    "hasLiveDemo": false,
+    "version": "Python 3.3+",
+    "searchTerms": "memoryview cast format reinterpret struct type shape reshape zero copy endian"
+  },
+  {
+    "slug": "memoryview-hex",
+    "name": "memoryview.hex",
+    "signature": "memoryview.hex([sep[, bytes_per_sep]])",
+    "blurb": "The buffer as a plain hex string — two lowercase digits per byte, no prefix.",
+    "category": "memoryview",
+    "type": "memoryview",
+    "hasLiveDemo": true,
+    "version": "Python 3.5+",
+    "searchTerms": "memoryview hex hexadecimal dump string bytes separator debug binary inspect"
+  },
+  {
+    "slug": "memoryview-release",
+    "name": "memoryview.release",
+    "signature": "memoryview.release()",
+    "blurb": "Let go of the buffer early — an open view blocks its bytearray from being resized.",
+    "category": "memoryview",
+    "type": "memoryview",
+    "hasLiveDemo": false,
+    "version": "Python 3.2+",
+    "searchTerms": "memoryview release free buffer export context manager with bufferror resize"
+  },
+  {
+    "slug": "memoryview-tobytes",
+    "name": "memoryview.tobytes",
+    "signature": "memoryview.tobytes(order=None)",
+    "blurb": "Copy the view out into a real bytes object — the point where zero-copy ends.",
+    "category": "memoryview",
+    "type": "memoryview",
+    "hasLiveDemo": true,
+    "version": "Python 2.7+",
+    "searchTerms": "memoryview tobytes copy buffer zero copy convert bytes materialize slice"
+  },
+  {
+    "slug": "memoryview-tolist",
+    "name": "memoryview.tolist",
+    "signature": "memoryview.tolist()",
+    "blurb": "The buffer as a list of Python ints — one per element, not per character.",
+    "category": "memoryview",
+    "type": "memoryview",
+    "hasLiveDemo": true,
+    "version": "Python 2.7+",
+    "searchTerms": "memoryview tolist list ints bytes values inspect buffer elements convert"
+  },
+  {
+    "slug": "memoryview-toreadonly",
+    "name": "memoryview.toreadonly",
+    "signature": "memoryview.toreadonly()",
+    "blurb": "A read-only view over the same memory — hand out data without handing out write access.",
+    "category": "memoryview",
+    "type": "memoryview",
+    "hasLiveDemo": false,
+    "version": "Python 3.8+",
+    "searchTerms": "memoryview toreadonly read only immutable protect write access share buffer safe"
+  },
+  {
     "slug": "memoryview",
     "name": "memoryview",
     "signature": "memoryview(object)",
@@ -976,6 +1372,28 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "property decorator getter setter deleter computed attribute descriptor read-only encapsulation"
   },
   {
+    "slug": "range-count",
+    "name": "range.count",
+    "signature": "range.count(value)",
+    "blurb": "How many times a value appears in the range — only ever 0 or 1.",
+    "category": "range",
+    "type": "range",
+    "hasLiveDemo": true,
+    "version": "Python 3.2+",
+    "searchTerms": "range count occurrences membership sequence protocol contains zero one"
+  },
+  {
+    "slug": "range-index",
+    "name": "range.index",
+    "signature": "range.index(value)",
+    "blurb": "Position of a value within the range — computed by arithmetic, not by scanning.",
+    "category": "range",
+    "type": "range",
+    "hasLiveDemo": true,
+    "version": "Python 3.2+",
+    "searchTerms": "range index position offset sequence protocol valueerror not in range arithmetic"
+  },
+  {
     "slug": "range",
     "name": "range",
     "signature": "range(stop) / range(start, stop[, step])",
@@ -1072,7 +1490,7 @@ export const pythonFunctionsCatalog = {
     "type": "set",
     "hasLiveDemo": true,
     "version": "Python 2.3+",
-    "searchTerms": "copy set shallow duplicate clone new independent references"
+    "searchTerms": "copy set shallow duplicate clone new independent references frozenset frozenset.copy"
   },
   {
     "slug": "set-difference",
@@ -1083,7 +1501,7 @@ export const pythonFunctionsCatalog = {
     "type": "set",
     "hasLiveDemo": true,
     "version": "Python 2.6+",
-    "searchTerms": "difference set subtract minus remove not in exclude leftover complement without"
+    "searchTerms": "difference set subtract minus remove not in exclude leftover complement without frozenset frozenset.difference"
   },
   {
     "slug": "set-difference_update",
@@ -1116,7 +1534,7 @@ export const pythonFunctionsCatalog = {
     "type": "set",
     "hasLiveDemo": true,
     "version": "Python 2.6+",
-    "searchTerms": "intersection set common shared and ampersand overlap both contains all"
+    "searchTerms": "intersection set common shared and ampersand overlap both contains all frozenset frozenset.intersection"
   },
   {
     "slug": "set-intersection_update",
@@ -1138,7 +1556,7 @@ export const pythonFunctionsCatalog = {
     "type": "set",
     "hasLiveDemo": true,
     "version": "Python 2.6+",
-    "searchTerms": "isdisjoint no overlap disjoint separate share nothing empty intersection none common"
+    "searchTerms": "isdisjoint no overlap disjoint separate share nothing empty intersection none common frozenset frozenset.isdisjoint"
   },
   {
     "slug": "set-issubset",
@@ -1149,7 +1567,7 @@ export const pythonFunctionsCatalog = {
     "type": "set",
     "hasLiveDemo": true,
     "version": "Python 2.6+",
-    "searchTerms": "issubset contains contained within all elements subset of set less than equal"
+    "searchTerms": "issubset contains contained within all elements subset of set less than equal frozenset frozenset.issubset"
   },
   {
     "slug": "set-issuperset",
@@ -1160,7 +1578,7 @@ export const pythonFunctionsCatalog = {
     "type": "set",
     "hasLiveDemo": true,
     "version": "Python 2.6+",
-    "searchTerms": "issuperset contains all elements superset of set greater than equal has every"
+    "searchTerms": "issuperset contains all elements superset of set greater than equal has every frozenset frozenset.issuperset"
   },
   {
     "slug": "set-pop",
@@ -1193,7 +1611,7 @@ export const pythonFunctionsCatalog = {
     "type": "set",
     "hasLiveDemo": true,
     "version": "Python 2.6+",
-    "searchTerms": "symmetric difference xor either or exclusive set both not shared unique caret"
+    "searchTerms": "symmetric difference xor either or exclusive set both not shared unique caret frozenset frozenset.symmetric_difference"
   },
   {
     "slug": "set-symmetric_difference_update",
@@ -1215,7 +1633,7 @@ export const pythonFunctionsCatalog = {
     "type": "set",
     "hasLiveDemo": true,
     "version": "Python 2.6+",
-    "searchTerms": "union set combine merge or pipe operator new elements distinct unique"
+    "searchTerms": "union set combine merge or pipe operator new elements distinct unique frozenset frozenset.union"
   },
   {
     "slug": "set-update",
@@ -1260,6 +1678,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.0+",
     "searchTerms": "setdefault insert default missing key initialize grouping"
+  },
+  {
+    "slug": "slice-indices",
+    "name": "slice.indices",
+    "signature": "slice.indices(length)",
+    "blurb": "Resolve a slice against a length into concrete start, stop and step values.",
+    "category": "slice",
+    "type": "slice",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "slice indices resolve normalize start stop step negative clamp getitem custom sequence"
   },
   {
     "slug": "slice",
@@ -1766,6 +2195,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 1.0+",
     "searchTerms": "tuple constructor immutable hashable dict key convert iterable fixed sequence freeze"
+  },
+  {
+    "slug": "type-mro",
+    "name": "type.mro",
+    "signature": "type.mro(cls)",
+    "blurb": "The method resolution order — the exact chain Python searches for an attribute.",
+    "category": "type",
+    "type": "type",
+    "hasLiveDemo": false,
+    "version": "Python 2.2+",
+    "searchTerms": "mro method resolution order inheritance c3 linearization super diamond multiple bases"
   },
   {
     "slug": "type",

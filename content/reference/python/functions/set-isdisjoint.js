@@ -11,7 +11,7 @@ export const meta = {
   type:        'set',
   hasLiveDemo: true,
   version:     'Python 2.6+',
-  searchTerms: 'isdisjoint no overlap disjoint separate share nothing empty intersection none common',
+  searchTerms: 'isdisjoint no overlap disjoint separate share nothing empty intersection none common frozenset frozenset.isdisjoint',
 };
 
 export const method = {

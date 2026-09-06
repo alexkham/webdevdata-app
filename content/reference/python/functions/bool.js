@@ -9,7 +9,7 @@ export const meta = {
   type:        'builtin',
   hasLiveDemo: true,
   version:     'Python 2.3+',
-  searchTerms: 'bool boolean true false truthy falsy convert if test cast',
+  searchTerms: 'bool boolean true false truthy falsy convert if test cast bool.bit_length bool.bit_count bool.to_bytes bool.from_bytes bool.as_integer_ratio bool.is_integer bool.conjugate',
 };
 
 export const method = {
@@ -137,6 +137,11 @@ export const method = {
   ],
 
   faq: [
+    {
+      q: 'Does bool have any methods of its own?',
+      a: 'None at all. bool is a SUBCLASS of int, and it adds nothing — every method you can call on True or False is int\'s: bit_length, bit_count, to_bytes, from_bytes, as_integer_ratio, is_integer and conjugate. They are documented on the int pages, and they behave exactly as they would on 1 and 0. Note that they return ints, not bools, so True.conjugate() is 1 rather than True.',
+      code: "[m for m in dir(bool) if not m.startswith('_') and m not in dir(int)]\n# []  — bool adds nothing\nTrue.bit_length()   # 1",
+    },
     {
       q: 'How do I parse "true" / "false" strings?',
       a: 'Explicit mapping — bool() would treat both as truthy since they are non-empty strings.',

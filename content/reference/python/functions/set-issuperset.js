@@ -11,7 +11,7 @@ export const meta = {
   type:        'set',
   hasLiveDemo: true,
   version:     'Python 2.6+',
-  searchTerms: 'issuperset contains all elements superset of set greater than equal has every',
+  searchTerms: 'issuperset contains all elements superset of set greater than equal has every frozenset frozenset.issuperset',
 };
 
 export const method = {

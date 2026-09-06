@@ -11,7 +11,7 @@ export const meta = {
   type:        'int',
   hasLiveDemo: true,
   version:     'Python 3.2+',
-  searchTerms: 'to bytes pack serialize endian big little binary struct int convert network order',
+  searchTerms: 'to bytes pack serialize endian big little binary struct int convert network order bool bool.to_bytes',
 };
 
 export const method = {

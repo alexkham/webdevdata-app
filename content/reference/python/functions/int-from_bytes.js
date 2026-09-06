@@ -11,7 +11,7 @@ export const meta = {
   type:        'int',
   hasLiveDemo: true,
   version:     'Python 3.2+',
-  searchTerms: 'from bytes unpack deserialize parse endian big little binary decode int bytes to int',
+  searchTerms: 'from bytes unpack deserialize parse endian big little binary decode int bytes to int bool bool.from_bytes',
 };
 
 export const method = {

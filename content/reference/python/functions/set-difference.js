@@ -11,7 +11,7 @@ export const meta = {
   type:        'set',
   hasLiveDemo: true,
   version:     'Python 2.6+',
-  searchTerms: 'difference set subtract minus remove not in exclude leftover complement without',
+  searchTerms: 'difference set subtract minus remove not in exclude leftover complement without frozenset frozenset.difference',
 };
 
 export const method = {

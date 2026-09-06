@@ -9,7 +9,7 @@ export const meta = {
   type:        'builtin',
   hasLiveDemo: true,
   version:     'Python 3.0+',
-  searchTerms: 'bytearray mutable bytes buffer binary append extend modify in place assignment',
+  searchTerms: 'bytearray mutable bytes buffer binary append extend modify in place assignment bytearray.split bytearray.find bytearray.count bytearray.index bytearray.replace bytearray.strip bytearray.join bytearray.decode bytearray.hex bytearray.startswith bytearray.endswith bytearray.partition bytearray.translate bytearray.upper bytearray.lower',
 };
 
 export const method = {
@@ -141,6 +141,11 @@ export const method = {
     {
       q: 'What is the difference between bytes and bytearray?',
       a: 'bytes is IMMUTABLE and hashable — usable as a dict key or set element. bytearray is MUTABLE — supports append, extend, item and slice assignment. Both share all reading operations; bytearray adds mutation.',
+    },
+    {
+      q: 'Where are the rest of the bytearray methods documented?',
+      a: 'On the bytes pages. bytearray has every method bytes has — split, find, count, index, replace, strip, join, decode, hex, startswith, endswith, partition, translate, upper, lower and the is* predicates — with identical behaviour, so they are documented once under bytes rather than duplicated. The only difference is the RESULT type: bytearray.split gives a list of bytearray, and bytearray.upper gives a bytearray. On top of those, bytearray adds eight mutation methods of its own: append, extend, insert, pop, remove, reverse, clear and copy.',
+      code: "b = bytearray(b'a,b')\nb.split(b',')\n# [bytearray(b'a'), bytearray(b'b')]",
     },
     {
       q: 'When should I use bytearray over bytes?',

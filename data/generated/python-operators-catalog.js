@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/operators explorer.
 
 export const pythonOperatorsCatalog = {
-  generatedAt: "2026-08-30T14:54:48.848Z",
+  generatedAt: "2026-09-06T18:10:09.242Z",
   items: [
   {
     "slug": "add",
@@ -28,6 +28,17 @@ export const pythonOperatorsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 1.0+",
     "searchTerms": "and logical boolean short circuit conjunction operator"
+  },
+  {
+    "slug": "augmented-assignment",
+    "name": "+= -= *= /=",
+    "signature": "a op= b",
+    "blurb": "In-place assignment — and the reason lists and tuples behave so strangely under it.",
+    "category": "assignment",
+    "type": "operator",
+    "hasLiveDemo": false,
+    "version": "Python 1.0+",
+    "searchTerms": "augmented assignment plus equals in place iadd increment decrement mutate rebind operator"
   },
   {
     "slug": "bitwise-and",
@@ -184,6 +195,17 @@ export const pythonOperatorsCatalog = {
     "searchTerms": "less than smaller ordering compare chain operator"
   },
   {
+    "slug": "matmul",
+    "name": "@",
+    "signature": "a @ b",
+    "blurb": "Matrix multiplication — an operator with no built-in implementation at all.",
+    "category": "arithmetic",
+    "type": "operator",
+    "hasLiveDemo": false,
+    "version": "Python 3.5+",
+    "searchTerms": "matmul matrix multiply at operator numpy dot product linear algebra pep 465"
+  },
+  {
     "slug": "mod",
     "name": "%",
     "signature": "a % b",
@@ -215,6 +237,17 @@ export const pythonOperatorsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 1.0+",
     "searchTerms": "not equal inequality bang equals compare operator"
+  },
+  {
+    "slug": "neg",
+    "name": "-x",
+    "signature": "-a",
+    "blurb": "Unary minus — negation, not subtraction.",
+    "category": "arithmetic",
+    "type": "operator",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "unary minus negate negation opposite sign flip neg operator prefix"
   },
   {
     "slug": "not-in",
@@ -250,6 +283,17 @@ export const pythonOperatorsCatalog = {
     "searchTerms": "or logical boolean short circuit default fallback operator"
   },
   {
+    "slug": "pos",
+    "name": "+x",
+    "signature": "+a",
+    "blurb": "Unary plus — a no-op on numbers, but not on everything.",
+    "category": "arithmetic",
+    "type": "operator",
+    "hasLiveDemo": true,
+    "version": "Python 1.0+",
+    "searchTerms": "unary plus positive sign no-op pos operator prefix decimal counter identity"
+  },
+  {
     "slug": "pow",
     "name": "**",
     "signature": "a ** b",
@@ -281,6 +325,17 @@ export const pythonOperatorsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 1.0+",
     "searchTerms": "minus subtract subtraction difference operator"
+  },
+  {
+    "slug": "ternary",
+    "name": "a if cond else b",
+    "signature": "value_if_true if condition else value_if_false",
+    "blurb": "The conditional expression — an if that produces a value instead of running statements.",
+    "category": "conditional",
+    "type": "operator",
+    "hasLiveDemo": true,
+    "version": "Python 2.5+",
+    "searchTerms": "ternary conditional expression inline if else one line shorthand value branch"
   },
   {
     "slug": "truediv",

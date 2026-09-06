@@ -13,7 +13,7 @@ export const meta = {
   type:        'set',
   hasLiveDemo: true,
   version:     'Python 2.6+',
-  searchTerms: 'symmetric difference xor either or exclusive set both not shared unique caret',
+  searchTerms: 'symmetric difference xor either or exclusive set both not shared unique caret frozenset frozenset.symmetric_difference',
 };
 
 export const method = {

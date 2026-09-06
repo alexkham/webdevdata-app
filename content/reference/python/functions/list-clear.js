@@ -44,7 +44,7 @@ export const method = {
     { id: 'empty',   label: 'already empty', values: { list: '' } },
     { id: 'numbers', label: 'numeric-ish',   values: { list: '1,2,3' } },
   ],
-  demoExplainer: 'The demo shows the LIST STATE after clearing — Python actually returns None. clear removes every element from the existing list object rather than making a new empty one, so the identity of the list never changes. Clearing an already-empty list is a no-op and never raises.',
+  demoExplainer: 'The demo output is None, and that is the real return value — clear mutates the list and gives nothing back. The effect you care about is invisible in the result: every element is removed from the EXISTING list object rather than a new empty one being made, so the list keeps its identity and every other reference to it sees the change. Clearing an already-empty list is a no-op and never raises.',
 
   patterns: [
     {

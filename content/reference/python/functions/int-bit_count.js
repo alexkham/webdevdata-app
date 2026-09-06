@@ -11,7 +11,7 @@ export const meta = {
   type:        'int',
   hasLiveDemo: true,
   version:     'Python 3.10+',
-  searchTerms: 'bit count popcount population count ones set bits hamming weight int',
+  searchTerms: 'bit count popcount population count ones set bits hamming weight int bool bool.bit_count',
 };
 
 export const method = {

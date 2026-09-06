@@ -11,7 +11,7 @@ export const meta = {
   type:        'int',
   hasLiveDemo: true,
   version:     'Python 3.8+',
-  searchTerms: 'as integer ratio fraction numerator denominator rational int float duck typing',
+  searchTerms: 'as integer ratio fraction numerator denominator rational int float duck typing bool bool.as_integer_ratio',
 };
 
 export const method = {

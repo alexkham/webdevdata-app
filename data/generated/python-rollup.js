@@ -6,9 +6,9 @@
 // featured picks (live-demo items, discovery order).
 
 export const pythonRollup = {
-  generatedAt: "2026-08-30T14:54:48.848Z",
-  total: 165,
-  liveTotal: 131,
+  generatedAt: "2026-09-06T18:10:09.243Z",
+  total: 205,
+  liveTotal: 166,
   types: [
   {
     "type": "builtin",
@@ -19,24 +19,56 @@ export const pythonRollup = {
     "count": 11
   },
   {
+    "type": "bytearray",
+    "count": 8
+  },
+  {
+    "type": "bytes",
+    "count": 16
+  },
+  {
     "type": "str",
     "count": 47
+  },
+  {
+    "type": "complex",
+    "count": 1
   },
   {
     "type": "dict",
     "count": 11
   },
   {
+    "type": "float",
+    "count": 5
+  },
+  {
     "type": "int",
     "count": 7
+  },
+  {
+    "type": "memoryview",
+    "count": 6
+  },
+  {
+    "type": "range",
+    "count": 2
   },
   {
     "type": "set",
     "count": 17
   },
   {
+    "type": "slice",
+    "count": 1
+  },
+  {
     "type": "tuple",
     "count": 2
+  },
+  {
+    "type": "type",
+    "count": 1
   }
 ],
   categories: [
@@ -49,24 +81,56 @@ export const pythonRollup = {
     "count": 11
   },
   {
+    "category": "bytearray",
+    "count": 8
+  },
+  {
+    "category": "bytes",
+    "count": 16
+  },
+  {
     "category": "string",
     "count": 47
+  },
+  {
+    "category": "complex",
+    "count": 1
   },
   {
     "category": "dict",
     "count": 11
   },
   {
+    "category": "float",
+    "count": 5
+  },
+  {
     "category": "integer",
     "count": 7
+  },
+  {
+    "category": "memoryview",
+    "count": 6
+  },
+  {
+    "category": "range",
+    "count": 2
   },
   {
     "category": "set",
     "count": 17
   },
   {
+    "category": "slice",
+    "count": 1
+  },
+  {
     "category": "tuple",
     "count": 2
+  },
+  {
+    "category": "type",
+    "count": 1
   }
 ],
   featured: [
@@ -138,7 +202,7 @@ export const pythonRollup = {
   }
 ],
   operators: {
-    total: 27,
-    liveTotal: 24
+    total: 32,
+    liveTotal: 27
   }
 };

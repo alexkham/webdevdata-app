@@ -11,7 +11,7 @@ export const meta = {
   type:        'set',
   hasLiveDemo: true,
   version:     'Python 2.3+',
-  searchTerms: 'copy set shallow duplicate clone new independent references',
+  searchTerms: 'copy set shallow duplicate clone new independent references frozenset frozenset.copy',
 };
 
 export const method = {

@@ -11,7 +11,7 @@ export const meta = {
   type:        'set',
   hasLiveDemo: true,
   version:     'Python 2.6+',
-  searchTerms: 'intersection set common shared and ampersand overlap both contains all',
+  searchTerms: 'intersection set common shared and ampersand overlap both contains all frozenset frozenset.intersection',
 };
 
 export const method = {
