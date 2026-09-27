@@ -7,7 +7,7 @@
 // Contains the COMPLETE page list per pillar — nothing truncated.
 
 export const homeCatalog = {
-  generatedAt: "2026-09-06T18:10:09.300Z",
+  generatedAt: "2026-09-26T22:05:25.824Z",
   pillars: [
   {
     "id": "c-programming",
@@ -95,25 +95,47 @@ export const homeCatalog = {
     "ctaLabel": "Browse Reference",
     "stats": [
       {
-        "n": "3",
+        "n": "5",
         "label": "Pages"
       },
       {
-        "n": "2",
+        "n": "3",
         "label": "Categories"
+      },
+      {
+        "n": "400",
+        "label": "Entries"
       }
     ],
     "breakdown": [
+      {
+        "label": "General",
+        "count": 2
+      },
       {
         "label": "Python",
         "count": 2
       },
       {
-        "label": "General",
+        "label": "JavaScript",
         "count": 1
       }
     ],
     "pages": [
+      {
+        "name": "JavaScript",
+        "desc": "JavaScript reference with live in-browser demos: Array, String, Object, Number, Map, Set, Promise, Date and the global functions — signatures, examples, pitfalls.",
+        "href": "/reference/javascript",
+        "category": "General",
+        "subCategory": null
+      },
+      {
+        "name": "JavaScript methods",
+        "desc": "Browse JavaScript methods on Array, String, Object, Number, Map, Set, Promise, Date and the global functions: signatures, parameters, examples, pitfalls and live in-browser demos.",
+        "href": "/reference/javascript/methods",
+        "category": "JavaScript",
+        "subCategory": null
+      },
       {
         "name": "Python functions",
         "desc": "Browse Python built-in functions and type methods: signatures, parameters, examples, pitfalls and live in-browser demos.",

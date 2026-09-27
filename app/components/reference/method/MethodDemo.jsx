@@ -12,6 +12,7 @@
 
 import { useMemo, useState } from 'react';
 import { pyRepr } from '@/utils/code-highlight';
+import { jsRepr } from '@/utils/js-repr';
 
 // Turn the raw form value into the emulator argument. Input kinds:
 //   'text'           string as-is
@@ -74,7 +75,10 @@ function coerce(raw, param) {
   }
 }
 
-export default function MethodDemo({ method, emulator }) {
+export default function MethodDemo({ method, emulator, language = 'python' }) {
+  // Values are rendered the way the target language writes them: pyRepr for
+  // Python, jsRepr for JavaScript. Everything below goes through `repr`.
+  const repr = language === 'javascript' ? jsRepr : pyRepr;
   const demoParams = method.demoParams || [];
   const cases = method.cases || [];
   const defaults = cases.length > 0 ? cases[0].values : {};
@@ -97,7 +101,7 @@ export default function MethodDemo({ method, emulator }) {
   // Call preview: receiver.method(arg, ...) — trailing args that equal the
   // declared parameter default are omitted, the way you would write the call.
   const callParts = demoParams.slice(1).map((p, i) => ({
-    text: typeof args[i + 1] === 'number' ? String(args[i + 1]) : pyRepr(args[i + 1]),
+    text: typeof args[i + 1] === 'number' ? String(args[i + 1]) : repr(args[i + 1]),
     isDefault: (() => {
       const decl = byName.get(p.name);
       if (!decl || decl.required) return false;
@@ -110,7 +114,7 @@ export default function MethodDemo({ method, emulator }) {
   while (lastShown >= 0 && callParts[lastShown].isDefault) lastShown -= 1;
   const shownArgs = callParts.slice(0, lastShown + 1).map((p) => p.text);
 
-  const reprOf = (v) => (typeof v === 'number' ? String(v) : pyRepr(v));
+  const reprOf = (v) => (typeof v === 'number' ? String(v) : repr(v));
 
   // Call preview shape:
   //   demoTemplate ('{a} + {b}')     → operators
@@ -124,7 +128,7 @@ export default function MethodDemo({ method, emulator }) {
     });
   } else if (method.name.includes('.')) {
     const methodName = method.name.split('.').pop();
-    callText = `${pyRepr(args[0])}.${methodName}(${shownArgs.join(', ')})`;
+    callText = `${repr(args[0])}.${methodName}(${shownArgs.join(', ')})`;
   } else {
     callText = `${method.name}(${[reprOf(args[0]), ...shownArgs].join(', ')})`;
   }
@@ -135,7 +139,7 @@ export default function MethodDemo({ method, emulator }) {
   let output;
   let failed = false;
   try {
-    output = pyRepr(emulator(...args));
+    output = repr(emulator(...args));
   } catch (e) {
     failed = true;
     output = `${e.name || 'Error'}: ${e.message}`;

@@ -1077,6 +1077,36 @@ function main() {
     });
   }
 
+  // ── Extra stats from generated catalogs ───────────────────
+  // Some pillars serve most of their content from a DYNAMIC route
+  // ([name].jsx), which collectPages deliberately skips because it has no
+  // static seoData. Counting only static pages would advertise /reference as
+  // 5 pages when it is really 400 indexed entries, so those pillars get an
+  // extra "Entries" stat read from the catalog that generates them.
+  //
+  // Keyed by pillar slug. A pillar with no entry here is unaffected.
+  // main() is synchronous, and the catalog is an ES module, so it cannot be
+  // require()d. Counting the content files directly is both simpler and more
+  // honest than parsing the generated catalog: one file under
+  // content/reference/<language>/<category>/ IS one entry page.
+  const EXTRA_PILLAR_STATS = {
+    reference: () => {
+      const root = path.join(__dirname, 'content', 'reference');
+      if (!fs.existsSync(root)) return null;
+      let total = 0;
+      for (const lang of fs.readdirSync(root)) {
+        const langDir = path.join(root, lang);
+        if (!fs.statSync(langDir).isDirectory()) continue;
+        for (const cat of fs.readdirSync(langDir)) {
+          const catDir = path.join(langDir, cat);
+          if (!fs.statSync(catDir).isDirectory()) continue;
+          total += fs.readdirSync(catDir).filter((f) => f.endsWith('.js')).length;
+        }
+      }
+      return total ? { n: String(total), label: 'Entries' } : null;
+    },
+  };
+
   // ── Group into pillars ────────────────────────────────────
   const byPillar = new Map();
   for (const e of entries) {
@@ -1115,6 +1145,10 @@ function main() {
       { n: String(contentPages.length), label: 'Pages' },
       { n: String(breakdown.length), label: 'Categories' },
     ];
+
+    // Pillars whose real content sits on a dynamic route get an extra count.
+    const extra = EXTRA_PILLAR_STATS[slug] && EXTRA_PILLAR_STATS[slug]();
+    if (extra) stats.push(extra);
 
     // Full page list — every page, full description, nothing cut.
     // Category: declared seoData.category wins; folder-derived fallback.

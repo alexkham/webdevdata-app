@@ -22,7 +22,7 @@ const LANGUAGE_EDITORIAL = {
   },
   javascript: {
     title: 'JavaScript',
-    blurb: 'Prototype methods on Array, String, Object, Number, Date, Map, Set, and Promise.',
+    blurb: 'Methods on Array, String, Object, Number, Map, Set, Promise and Date, plus the global functions. Entries marked LIVE have an editable in-browser demo.',
   },
 };
 
@@ -69,7 +69,7 @@ export async function getStaticProps() {
     name:        'Reference',
     subtitle:    `Function and method references for ${languages.map((l) => l.title).join(', ')}.`,
     url:         '/reference',
-    keywords:    'developer reference, python reference, function reference, method reference',
+    keywords:    'developer reference, python reference, javascript reference, function reference, method reference',
     breadcrumb: [
       { label: 'Home',      href: '/' },
       { label: 'Reference', href: '/reference' },

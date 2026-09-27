@@ -1,13 +1,14 @@
 // audit-content.mjs
 //
-// QA tool — static audit of all reference content files:
+// QA tool — static audit of ALL reference content, every language:
 //   - required meta fields present, meta.slug matches filename
 //   - meta.hasLiveDemo consistent with method.hasLiveDemo
 //   - live entries have demoParams + cases (and an emulator file)
 //   - related[] slugs resolve to real content files (cross-category via
-//     the optional category field)
+//     the optional `category` field, cross-language via `language`)
 //   - tryInTool hrefs point at real pages under pages/
-//   - officialDocs href is a well-formed https URL
+//   - officialDocs href is a well-formed https URL on the language's
+//     canonical docs host (docs.python.org, developer.mozilla.org, …)
 //   - no HTML entities leaking into plain-text fields
 //
 // Usage: node audit-content.mjs
@@ -17,25 +18,39 @@ import path from 'path';
 import { pathToFileURL, fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const CONTENT = path.join(__dirname, 'content', 'reference', 'python');
-const EMUS = path.join(__dirname, 'utils', 'emulators', 'python');
+const CONTENT = path.join(__dirname, 'content', 'reference');
+const EMUS = path.join(__dirname, 'utils', 'emulators');
 const PAGES = path.join(__dirname, 'pages');
+
+// Canonical documentation host per language. A new language must be added
+// here, which is deliberate — it stops a typo'd docs link slipping through.
+const DOCS_HOST = {
+  python:     /^https:\/\/docs\.python\.org\//,
+  javascript: /^https:\/\/developer\.mozilla\.org\//,
+};
 
 const problems = [];
 const warn = (id, msg) => problems.push(`${id}: ${msg}`);
 
-// collect all slugs per category first, for related-resolution
-const all = {}; // category → Set(slugs)
-const mods = []; // { category, slug, meta, method }
-for (const category of fs.readdirSync(CONTENT)) {
-  const dir = path.join(CONTENT, category);
-  if (!fs.statSync(dir).isDirectory()) continue;
-  all[category] = new Set();
-  for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.js'))) {
-    const slug = f.replace(/\.js$/, '');
-    all[category].add(slug);
-    const mod = await import(pathToFileURL(path.join(dir, f)).href);
-    mods.push({ category, slug, meta: mod.meta, method: mod.method });
+// Collect every item first, so related[] can resolve across categories
+// and languages.
+const all = {}; // 'language/category' → Set(slugs)
+const mods = []; // { language, category, slug, meta, method }
+
+for (const lang of fs.readdirSync(CONTENT)) {
+  const langDir = path.join(CONTENT, lang);
+  if (!fs.statSync(langDir).isDirectory()) continue;
+  for (const category of fs.readdirSync(langDir)) {
+    const dir = path.join(langDir, category);
+    if (!fs.statSync(dir).isDirectory()) continue;
+    const key = `${lang}/${category}`;
+    all[key] = new Set();
+    for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.js'))) {
+      const slug = f.replace(/\.js$/, '');
+      all[key].add(slug);
+      const mod = await import(pathToFileURL(path.join(dir, f)).href);
+      mods.push({ language: lang, category, slug, meta: mod.meta, method: mod.method });
+    }
   }
 }
 
@@ -49,8 +64,8 @@ const pageExists = (href) => {
 
 const ENTITY_RE = /&(quot|apos|amp|lt|gt|mdash|rarr|larr|hellip|asymp|middot|nbsp);/;
 
-for (const { category, slug, meta, method } of mods) {
-  const id = `${category}/${slug}`;
+for (const { language, category, slug, meta, method } of mods) {
+  const id = `${language}/${category}/${slug}`;
 
   if (!meta) { warn(id, 'no meta export'); continue; }
   if (!method) { warn(id, 'no method export'); continue; }
@@ -69,15 +84,17 @@ for (const { category, slug, meta, method } of mods) {
   if (meta.hasLiveDemo) {
     if (!Array.isArray(method.demoParams) || method.demoParams.length === 0) warn(id, 'live but no demoParams');
     if (!Array.isArray(method.cases) || method.cases.length === 0) warn(id, 'live but no cases');
-    if (!fs.existsSync(path.join(EMUS, category, `${slug}.js`))) warn(id, 'live but no emulator file');
+    if (!fs.existsSync(path.join(EMUS, language, category, `${slug}.js`))) warn(id, 'live but no emulator file');
   } else {
-    if (fs.existsSync(path.join(EMUS, category, `${slug}.js`))) warn(id, 'doc-only but emulator file exists');
+    if (fs.existsSync(path.join(EMUS, language, category, `${slug}.js`))) warn(id, 'doc-only but emulator file exists');
   }
 
   for (const r of method.related || []) {
+    const lang = r.language || language;
     const cat = r.category || category;
-    if (!all[cat] || !all[cat].has(r.slug)) {
-      warn(id, `related '${r.name}' → ${cat}/${r.slug} does not exist`);
+    const key = `${lang}/${cat}`;
+    if (!all[key] || !all[key].has(r.slug)) {
+      warn(id, `related '${r.name}' → ${key}/${r.slug} does not exist`);
     }
   }
 
@@ -86,8 +103,11 @@ for (const { category, slug, meta, method } of mods) {
   }
 
   const docs = method.officialDocs;
-  if (!docs || !/^https:\/\/docs\.python\.org\//.test(docs.href || '')) {
-    warn(id, `officialDocs missing or not docs.python.org: ${docs && docs.href}`);
+  const hostRe = DOCS_HOST[language];
+  if (!hostRe) {
+    warn(id, `no canonical docs host configured for language '${language}' — add one to DOCS_HOST`);
+  } else if (!docs || !hostRe.test(docs.href || '')) {
+    warn(id, `officialDocs missing or not on the expected host: ${docs && docs.href}`);
   }
 
   // entity leaks in plain-text fields
@@ -105,7 +125,12 @@ for (const { category, slug, meta, method } of mods) {
   }
 }
 
-console.log(`\n=== Content audit: ${mods.length} files ===`);
+// ── Report ───────────────────────────────────────────────────
+const byLang = new Map();
+for (const m of mods) byLang.set(m.language, (byLang.get(m.language) || 0) + 1);
+const breakdown = [...byLang.entries()].sort().map(([l, n]) => `${l} ${n}`).join(', ');
+
+console.log(`\n=== Content audit: ${mods.length} files (${breakdown}) ===`);
 if (problems.length === 0) {
   console.log('CLEAN — no problems found');
 } else {

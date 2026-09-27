@@ -118,7 +118,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function OperatorPage({ seoData, meta, method, siblings, siblingsTitle, schemas, frameOptions }) {
-  const emulator = getEmulator('operators', meta.slug);
+  const emulator = getEmulator('python', 'operators', meta.slug);
   const canonical = `${SITE_URL}${seoData.url}`;
   const ogImage = `${SITE_URL}${DEFAULT_OG_IMAGE}`;
 

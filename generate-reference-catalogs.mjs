@@ -157,7 +157,7 @@ function collectContent(warnings) {
 
 function checkEmulators(items, warnings) {
   const withEmulator = []; // { language, category, slug }
-  const seenKeys = new Map(); // 'category/slug' → language
+  const seenKeys = new Set(); // 'language/category/slug'
 
   for (const item of items) {
     if (!item.meta.hasLiveDemo) continue;
@@ -166,16 +166,30 @@ function checkEmulators(items, warnings) {
       warnings.push(`[warn] hasLiveDemo:true but no emulator at utils/emulators/${item.language}/${item.category}/${item.slug}.js`);
       continue;
     }
-    const key = `${item.category}/${item.slug}`;
+    // Keys are LANGUAGE-scoped, so python functions/map and javascript
+    // methods/map can coexist without one shadowing the other.
+    const key = `${item.language}/${item.category}/${item.slug}`;
     if (seenKeys.has(key)) {
-      warnings.push(`[warn] emulator key collision: "${key}" in ${item.language} and ${seenKeys.get(key)} — map keeps the first`);
+      warnings.push(`[warn] duplicate emulator key "${key}" — map keeps the first`);
       continue;
     }
-    seenKeys.set(key, item.language);
+    seenKeys.add(key);
     withEmulator.push({ language: item.language, category: item.category, slug: item.slug });
   }
   return withEmulator;
 }
+
+// ─────────────────────────────────────────────────────────────
+// Naming helpers for the per-language generated files
+// ─────────────────────────────────────────────────────────────
+
+// 'python', 'functions' → 'pythonFunctionsCatalog'
+const catalogExportName = (lang, cat) =>
+  (lang + '-' + cat + '-catalog').replace(/-([a-z0-9])/g, (_, c) => c.toUpperCase());
+
+// 'python' → 'pythonRollup'
+const rollupExportName = (lang) =>
+  (lang + '-rollup').replace(/-([a-z0-9])/g, (_, c) => c.toUpperCase());
 
 // ─────────────────────────────────────────────────────────────
 // Emitters
@@ -215,92 +229,113 @@ export const referenceCatalog = {
   return languages;
 }
 
-function emitPythonFunctionsCatalog(items) {
-  const metas = items
-    .filter((it) => it.language === 'python' && it.category === 'functions')
-    .map((it) => it.meta);
+// One flat catalog per language+category, e.g.
+//   data/generated/python-functions-catalog.js  → pythonFunctionsCatalog
+//   data/generated/javascript-methods-catalog.js → javascriptMethodsCatalog
+// Returns a Map of 'language/category' → metas.
+function emitCategoryCatalogs(items) {
+  const byLangCat = new Map();
+  for (const it of items) {
+    const key = `${it.language}/${it.category}`;
+    if (!byLangCat.has(key)) byLangCat.set(key, []);
+    byLangCat.get(key).push(it.meta);
+  }
 
-  const out = `${AUTO_HEADER('generate-reference-catalogs.mjs')}//
-// Flat list for the /reference/python/functions explorer.
+  for (const [key, metas] of byLangCat.entries()) {
+    const [lang, cat] = key.split('/');
+    const exportName = catalogExportName(lang, cat);
+    const out = `${AUTO_HEADER('generate-reference-catalogs.mjs')}//
+// Flat list for the /reference/${lang}/${cat} explorer.
 
-export const pythonFunctionsCatalog = {
+export const ${exportName} = {
   generatedAt: ${JSON.stringify(new Date().toISOString())},
   items: ${JSON.stringify(metas, null, 2)}
 };
 `;
-  fs.writeFileSync(path.join(GENERATED_DIR, 'python-functions-catalog.js'), out);
-  return metas;
+    fs.writeFileSync(path.join(GENERATED_DIR, `${lang}-${cat}-catalog.js`), out);
+  }
+  return byLangCat;
 }
 
-function emitPythonOperatorsCatalog(items) {
-  const metas = items
-    .filter((it) => it.language === 'python' && it.category === 'operators')
-    .map((it) => it.meta);
-
-  const out = `${AUTO_HEADER('generate-reference-catalogs.mjs')}//
-// Flat list for the /reference/python/operators explorer.
-
-export const pythonOperatorsCatalog = {
-  generatedAt: ${JSON.stringify(new Date().toISOString())},
-  items: ${JSON.stringify(metas, null, 2)}
-};
-`;
-  fs.writeFileSync(path.join(GENERATED_DIR, 'python-operators-catalog.js'), out);
-  return metas;
-}
-
-function emitPythonRollup(metas, operatorMetas = []) {
-  const byType = new Map();
-  for (const m of metas) {
-    const t = m.type || 'other';
-    byType.set(t, (byType.get(t) || 0) + 1);
+// One rollup per language, driven by its PRIMARY category (the first in
+// alphabetical order — `functions` for python, `methods` for javascript).
+// `byCategory` generalises the old python-only `operators` key, which is
+// still emitted so the existing python landing page keeps working.
+function emitLanguageRollups(byLangCat) {
+  const byLang = new Map();
+  for (const [key, metas] of byLangCat.entries()) {
+    const [lang, cat] = key.split('/');
+    if (!byLang.has(lang)) byLang.set(lang, new Map());
+    byLang.get(lang).set(cat, metas);
   }
-  const types = [...byType.entries()].map(([type, count]) => ({ type, count }));
 
-  const byCategory = new Map();
-  for (const m of metas) {
-    const c = m.category || 'other';
-    byCategory.set(c, (byCategory.get(c) || 0) + 1);
-  }
-  const categories = [...byCategory.entries()].map(([category, count]) => ({ category, count }));
+  for (const [lang, cats] of byLang.entries()) {
+    const catNames = [...cats.keys()].sort();
+    const primary = catNames[0];
+    const metas = cats.get(primary) || [];
 
-  const featured = metas.filter((m) => m.hasLiveDemo).slice(0, 6);
+    const byType = new Map();
+    for (const m of metas) {
+      const t = m.type || 'other';
+      byType.set(t, (byType.get(t) || 0) + 1);
+    }
+    const types = [...byType.entries()].map(([type, count]) => ({ type, count }));
 
-  const out = `${AUTO_HEADER('generate-reference-catalogs.mjs')}//
-// Rollup for the /reference/python landing: counts by type/category,
-// featured picks (live-demo items, discovery order).
+    const byCategoryCount = new Map();
+    for (const m of metas) {
+      const c = m.category || 'other';
+      byCategoryCount.set(c, (byCategoryCount.get(c) || 0) + 1);
+    }
+    const categories = [...byCategoryCount.entries()].map(([category, count]) => ({ category, count }));
 
-export const pythonRollup = {
+    const featured = metas.filter((m) => m.hasLiveDemo).slice(0, 6);
+
+    // Every category of this language, for landing tiles.
+    const byCategory = {};
+    for (const [cat, ms] of cats.entries()) {
+      byCategory[cat] = { total: ms.length, liveTotal: ms.filter((m) => m.hasLiveDemo).length };
+    }
+
+    const out = `${AUTO_HEADER('generate-reference-catalogs.mjs')}//
+// Rollup for the /reference/${lang} landing: counts by type/category,
+// featured picks (live-demo items, discovery order). Primary category:
+// ${primary}. byCategory covers every category of this language.
+
+export const ${rollupExportName(lang)} = {
   generatedAt: ${JSON.stringify(new Date().toISOString())},
+  primaryCategory: ${JSON.stringify(primary)},
   total: ${metas.length},
   liveTotal: ${metas.filter((m) => m.hasLiveDemo).length},
   types: ${JSON.stringify(types, null, 2)},
   categories: ${JSON.stringify(categories, null, 2)},
   featured: ${JSON.stringify(featured, null, 2)},
-  operators: {
-    total: ${operatorMetas.length},
-    liveTotal: ${operatorMetas.filter((m) => m.hasLiveDemo).length}
-  }
+  byCategory: ${JSON.stringify(byCategory, null, 2)},
+  operators: ${JSON.stringify(byCategory.operators || { total: 0, liveTotal: 0 }, null, 2)}
 };
 `;
-  fs.writeFileSync(path.join(GENERATED_DIR, 'python-rollup.js'), out);
+    fs.writeFileSync(path.join(GENERATED_DIR, `${lang}-rollup.js`), out);
+  }
 }
 
 function emitEmulatorsMap(withEmulator) {
-  const ident = ({ category, slug }) =>
-    (category + '-' + slug).replace(/-([a-z0-9])/g, (_, c) => c.toUpperCase()) + 'Emu';
+  const ident = ({ language, category, slug }) =>
+    (language + '-' + category + '-' + slug).replace(/-([a-z0-9])/g, (_, c) => c.toUpperCase()) + 'Emu';
 
   const imports = withEmulator
     .map((e) => `import ${ident(e)} from './emulators/${e.language}/${e.category}/${e.slug}';`)
     .join('\n');
   const entries = withEmulator
-    .map((e) => `  '${e.category}/${e.slug}': ${ident(e)},`)
+    .map((e) => `  '${e.language}/${e.category}/${e.slug}': ${ident(e)},`)
     .join('\n');
 
   const out = `${AUTO_HEADER('generate-reference-catalogs.mjs')}//
-// category/slug → emulator function, for every content item with
+// language/category/slug → emulator function, for every content item with
 // hasLiveDemo:true whose emulator file exists. Static imports —
 // predictable bundling.
+//
+// Keys are LANGUAGE-scoped: python functions/map and javascript methods/map
+// are distinct entries, so adding a language can never shadow another's
+// emulator.
 
 ${imports}
 
@@ -308,8 +343,8 @@ const emulators = {
 ${entries}
 };
 
-export function getEmulator(category, slug) {
-  return emulators[category + '/' + slug];
+export function getEmulator(language, category, slug) {
+  return emulators[language + '/' + category + '/' + slug];
 }
 `;
   fs.writeFileSync(EMULATORS_MAP_FILE, out);
@@ -327,9 +362,8 @@ function main() {
 
   fs.mkdirSync(GENERATED_DIR, { recursive: true });
   const languages = emitReferenceCatalog(items);
-  const pyFunctions = emitPythonFunctionsCatalog(items);
-  const pyOperators = emitPythonOperatorsCatalog(items);
-  emitPythonRollup(pyFunctions, pyOperators);
+  const byLangCat = emitCategoryCatalogs(items);
+  emitLanguageRollups(byLangCat);
   emitEmulatorsMap(withEmulator);
 
   warnings.forEach((w) => console.warn(`  ${w}`));

@@ -3,12 +3,14 @@
 // Do NOT edit by hand — changes here are overwritten.
 //
 // Rollup for the /reference/python landing: counts by type/category,
-// featured picks (live-demo items, discovery order).
+// featured picks (live-demo items, discovery order). Primary category:
+// functions. byCategory covers every category of this language.
 
 export const pythonRollup = {
-  generatedAt: "2026-09-06T18:10:09.243Z",
-  total: 205,
-  liveTotal: 166,
+  generatedAt: "2026-09-26T22:05:25.744Z",
+  primaryCategory: "functions",
+  total: 224,
+  liveTotal: 185,
   types: [
   {
     "type": "builtin",
@@ -24,7 +26,7 @@ export const pythonRollup = {
   },
   {
     "type": "bytes",
-    "count": 16
+    "count": 35
   },
   {
     "type": "str",
@@ -86,7 +88,7 @@ export const pythonRollup = {
   },
   {
     "category": "bytes",
-    "count": 16
+    "count": 35
   },
   {
     "category": "string",
@@ -201,8 +203,18 @@ export const pythonRollup = {
     "searchTerms": "bin binary base 2 convert integer string representation prefix 0b bits"
   }
 ],
-  operators: {
-    total: 32,
-    liveTotal: 27
+  byCategory: {
+  "functions": {
+    "total": 224,
+    "liveTotal": 185
+  },
+  "operators": {
+    "total": 32,
+    "liveTotal": 27
   }
+},
+  operators: {
+  "total": 32,
+  "liveTotal": 27
+}
 };

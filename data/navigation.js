@@ -18,6 +18,7 @@ const navItems = [
     label: "Reference",
     href: "/reference",
     children: [
+      { label: "Javascript", href: "/reference/javascript" },
       { label: "Python", href: "/reference/python" }
     ]
   },

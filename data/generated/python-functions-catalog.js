@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/functions explorer.
 
 export const pythonFunctionsCatalog = {
-  generatedAt: "2026-09-06T18:10:09.242Z",
+  generatedAt: "2026-09-26T22:05:25.743Z",
   items: [
   {
     "slug": "abs",
@@ -217,6 +217,28 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "bytearray mutable bytes buffer binary append extend modify in place assignment bytearray.split bytearray.find bytearray.count bytearray.index bytearray.replace bytearray.strip bytearray.join bytearray.decode bytearray.hex bytearray.startswith bytearray.endswith bytearray.partition bytearray.translate bytearray.upper bytearray.lower"
   },
   {
+    "slug": "bytes-capitalize",
+    "name": "bytes.capitalize",
+    "signature": "bytes.capitalize()",
+    "blurb": "First byte uppercased, everything else lowercased — ASCII only.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes capitalize capitalise first letter sentence case ascii binary bytearray bytearray.capitalize"
+  },
+  {
+    "slug": "bytes-center",
+    "name": "bytes.center",
+    "signature": "bytes.center(width[, fillbyte])",
+    "blurb": "Pad both sides to a width — with a parity rule for where the odd byte goes.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes center centre pad align width fill both sides parity odd binary bytearray bytearray.center"
+  },
+  {
     "slug": "bytes-count",
     "name": "bytes.count",
     "signature": "bytes.count(sub[, start[, end]])",
@@ -248,6 +270,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 3.0+",
     "searchTerms": "bytes endswith suffix trailer terminator extension check tuple binary footer bytearray bytearray.endswith"
+  },
+  {
+    "slug": "bytes-expandtabs",
+    "name": "bytes.expandtabs",
+    "signature": "bytes.expandtabs(tabsize=8)",
+    "blurb": "Replace tabs with spaces — to the next tab STOP, not a fixed count.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes expandtabs tab spaces tabstop column align convert whitespace binary bytearray bytearray.expandtabs"
   },
   {
     "slug": "bytes-find",
@@ -316,6 +349,39 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "bytes join concatenate separator glue combine parts binary build buffer bytearray bytearray.join"
   },
   {
+    "slug": "bytes-ljust",
+    "name": "bytes.ljust",
+    "signature": "bytes.ljust(width[, fillbyte])",
+    "blurb": "Left-justify — pad on the RIGHT to a width. Never truncates.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes ljust left justify pad right align width fill column fixed binary bytearray bytearray.ljust"
+  },
+  {
+    "slug": "bytes-lower",
+    "name": "bytes.lower",
+    "signature": "bytes.lower()",
+    "blurb": "Lowercase the ASCII letters — and only the ASCII letters.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes lower lowercase letters ascii case convert normalise binary bytearray bytearray.lower"
+  },
+  {
+    "slug": "bytes-lstrip",
+    "name": "bytes.lstrip",
+    "signature": "bytes.lstrip([chars])",
+    "blurb": "Trim the LEFT end only — chars is a set of bytes, not a prefix.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes lstrip left strip trim leading whitespace set prefix binary bytearray bytearray.lstrip"
+  },
+  {
     "slug": "bytes-maketrans",
     "name": "bytes.maketrans",
     "signature": "bytes.maketrans(from, to)",
@@ -338,6 +404,28 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "bytes partition split once three parts head tail separator unpack safe binary bytearray bytearray.partition"
   },
   {
+    "slug": "bytes-removeprefix",
+    "name": "bytes.removeprefix",
+    "signature": "bytes.removeprefix(prefix)",
+    "blurb": "Remove an exact prefix if present — the fix for the lstrip trap.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.9+",
+    "searchTerms": "bytes removeprefix strip prefix remove start exact sequence lstrip alternative binary bytearray bytearray.removeprefix"
+  },
+  {
+    "slug": "bytes-removesuffix",
+    "name": "bytes.removesuffix",
+    "signature": "bytes.removesuffix(suffix)",
+    "blurb": "Remove an exact suffix if present — the fix for the rstrip trap.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.9+",
+    "searchTerms": "bytes removesuffix strip suffix remove end extension exact sequence rstrip alternative binary bytearray bytearray.removesuffix"
+  },
+  {
     "slug": "bytes-replace",
     "name": "bytes.replace",
     "signature": "bytes.replace(old, new[, count])",
@@ -349,6 +437,72 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "bytes replace substitute swap patch binary immutable new object count bytearray bytearray.replace"
   },
   {
+    "slug": "bytes-rfind",
+    "name": "bytes.rfind",
+    "signature": "bytes.rfind(sub[, start[, end]])",
+    "blurb": "Byte offset of the LAST match, or -1 — the offset still counts from the left.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes rfind reverse find last occurrence search from right offset minus one binary bytearray bytearray.rfind"
+  },
+  {
+    "slug": "bytes-rindex",
+    "name": "bytes.rindex",
+    "signature": "bytes.rindex(sub[, start[, end]])",
+    "blurb": "Byte offset of the LAST match — raises ValueError instead of returning -1.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes rindex reverse index last occurrence subsection not found valueerror binary bytearray bytearray.rindex"
+  },
+  {
+    "slug": "bytes-rjust",
+    "name": "bytes.rjust",
+    "signature": "bytes.rjust(width[, fillbyte])",
+    "blurb": "Right-justify — pad on the LEFT to a width. Never truncates.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes rjust right justify pad left align width fill column numbers binary bytearray bytearray.rjust"
+  },
+  {
+    "slug": "bytes-rpartition",
+    "name": "bytes.rpartition",
+    "signature": "bytes.rpartition(sep)",
+    "blurb": "Split once at the LAST separator — and when absent, everything lands in the TAIL.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes rpartition split last separator three parts head tail extension path unpack binary bytearray bytearray.rpartition"
+  },
+  {
+    "slug": "bytes-rsplit",
+    "name": "bytes.rsplit",
+    "signature": "bytes.rsplit(sep=None, maxsplit=-1)",
+    "blurb": "split from the right — only matters when maxsplit limits it.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes rsplit right split maxsplit last fields from end separator binary bytearray bytearray.rsplit"
+  },
+  {
+    "slug": "bytes-rstrip",
+    "name": "bytes.rstrip",
+    "signature": "bytes.rstrip([chars])",
+    "blurb": "Trim the RIGHT end only — the usual way to drop a line ending.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes rstrip right strip trim trailing newline line ending whitespace set binary bytearray bytearray.rstrip"
+  },
+  {
     "slug": "bytes-split",
     "name": "bytes.split",
     "signature": "bytes.split(sep=None, maxsplit=-1)",
@@ -358,6 +512,17 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 3.0+",
     "searchTerms": "bytes split separator delimiter parse tokens records lines binary maxsplit bytearray bytearray.split"
+  },
+  {
+    "slug": "bytes-splitlines",
+    "name": "bytes.splitlines",
+    "signature": "bytes.splitlines(keepends=False)",
+    "blurb": "Split on line endings — but ONLY \\n, \\r and \\r\\n, unlike the str version.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes splitlines lines newline crlf line ending universal keepends binary bytearray bytearray.splitlines"
   },
   {
     "slug": "bytes-startswith",
@@ -382,6 +547,28 @@ export const pythonFunctionsCatalog = {
     "searchTerms": "bytes strip trim whitespace lstrip rstrip remove leading trailing set binary bytearray bytearray.strip"
   },
   {
+    "slug": "bytes-swapcase",
+    "name": "bytes.swapcase",
+    "signature": "bytes.swapcase()",
+    "blurb": "Flip the case of every ASCII letter — lowercase up, uppercase down.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes swapcase invert flip toggle case letters ascii binary bytearray bytearray.swapcase"
+  },
+  {
+    "slug": "bytes-title",
+    "name": "bytes.title",
+    "signature": "bytes.title()",
+    "blurb": "Capitalise the first letter of every word — with a loose definition of \"word\".",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes title case headline capitalise words apostrophe ascii binary bytearray bytearray.title"
+  },
+  {
     "slug": "bytes-translate",
     "name": "bytes.translate",
     "signature": "bytes.translate(table, /, delete=b'')",
@@ -391,6 +578,28 @@ export const pythonFunctionsCatalog = {
     "hasLiveDemo": true,
     "version": "Python 3.0+",
     "searchTerms": "bytes translate maketrans table substitute map delete bytes rot13 cipher bytearray bytearray.translate"
+  },
+  {
+    "slug": "bytes-upper",
+    "name": "bytes.upper",
+    "signature": "bytes.upper()",
+    "blurb": "Uppercase the ASCII letters — and only the ASCII letters.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes upper uppercase capital letters ascii case convert binary bytearray bytearray.upper"
+  },
+  {
+    "slug": "bytes-zfill",
+    "name": "bytes.zfill",
+    "signature": "bytes.zfill(width)",
+    "blurb": "Left-pad with ASCII zeros to a width — keeping a leading sign in front.",
+    "category": "bytes",
+    "type": "bytes",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "bytes zfill zero fill pad leading zeros width sign numeric fixed width binary bytearray bytearray.zfill"
   },
   {
     "slug": "bytes",
