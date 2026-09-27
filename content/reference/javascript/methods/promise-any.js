@@ -1,6 +1,7 @@
 // content/reference/javascript/methods/promise-any.js
 //
-// Doc-only — see the FAQ. Examples run and awaited in a real runtime.
+// Live async demo (demoAsync): the page shows `await <expr>` and renders
+// the settled value. Every case is checked by audit-emulators-js.mjs.
 
 export const meta = {
   slug:        'promise-any',
@@ -9,7 +10,7 @@ export const meta = {
   blurb:       'First to SUCCEED — rejections are ignored until every one has failed.',
   category:    'promise',
   type:        'promise',
-  hasLiveDemo: false,
+  hasLiveDemo: true,
   version:     'ES2020',
   searchTerms: 'Promise.any first success AggregateError errors redundancy mirrors fallback race difference es2020 javascript',
 };
@@ -22,7 +23,7 @@ export const method = {
 
   category:    'Promise static method',
   version:     'ES2020',
-  hasLiveDemo: false,
+  hasLiveDemo: true,
 
   subtitle: 'The redundancy combinator. Where race settles on the first thing to finish, any waits for something to actually work — which is what you almost always mean when you have several equivalent sources.',
 
@@ -36,6 +37,18 @@ export const method = {
   parameters: [
     { name: 'iterable', type: 'iterable', required: true, default: null, desc: 'Any iterable of promises. An empty iterable rejects immediately with an AggregateError — unlike race, which would hang.' },
   ],
+
+  demoAsync: true,
+  demoParams: [
+    { name: 'json', type: 'string', hint: 'JSON list of [outcome, value, ms]', input: 'text' },
+  ],
+  demoTemplate: "Promise.any(JSON.parse({json}).map(([k, v, ms]) => new Promise((res, rej) => setTimeout(() => k === 'ok' ? res(v) : rej(new Error(v)), ms))))",
+  cases: [
+    { id: 'skip',   label: 'early failure is ignored', values: { json: '[["err","a",10],["ok","ok",30]]' } },
+    { id: 'allbad', label: 'all fail → AggregateError', values: { json: '[["err","a",10],["err","b",20]]' } },
+    { id: 'empty',  label: 'empty → rejects at once',   values: { json: '[]' } },
+  ],
+  demoExplainer: "Each input is [outcome, value, delay in ms]: 'ok' fulfils with the value, anything else rejects with an Error carrying it. The first case is the contrast with race: the rejection at 10ms does not end the wait, and the success at 30ms wins. Only when EVERY input rejects does any reject, with an AggregateError whose own message is generic — the real reasons are in its errors array. An empty list rejects immediately, which is the sensible opposite of Promise.race([]), which hangs forever.",
 
   patterns: [
     {
@@ -121,10 +134,6 @@ export const method = {
   ],
 
   faq: [
-    {
-      q: 'Why is there no live demo on this page?',
-      a: 'Because the outcome depends on which input settles first, asynchronously, and this site demo harness is synchronous. A fixed answer would hide the very thing the method does. The examples above were run and awaited in a real runtime.',
-    },
     {
       q: 'any or race?',
       a: 'any for redundancy — first thing that WORKS. race for timeouts — first thing that FINISHES. The distinction only shows up when something fails quickly, which is exactly the case you are guarding against.',

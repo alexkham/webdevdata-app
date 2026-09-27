@@ -1,6 +1,7 @@
 // content/reference/javascript/methods/promise-then.js
 //
-// Doc-only — see the FAQ. Examples run and awaited in a real runtime.
+// Live async demo (demoAsync): the page shows `await <expr>` and renders
+// the settled value. Every case is checked by audit-emulators-js.mjs.
 
 export const meta = {
   slug:        'promise-then',
@@ -9,7 +10,7 @@ export const meta = {
   blurb:       'Returns a NEW promise — and its second argument cannot catch its first.',
   category:    'promise',
   type:        'promise',
-  hasLiveDemo: false,
+  hasLiveDemo: true,
   version:     'ES2015',
   searchTerms: 'Promise then onFulfilled onRejected chain flatten new promise await catch second argument javascript',
 };
@@ -22,7 +23,7 @@ export const method = {
 
   category:    'Promise method',
   version:     'ES2015',
-  hasLiveDemo: false,
+  hasLiveDemo: true,
 
   subtitle: 'The primitive everything else is built on, including await. Two facts carry most of its behaviour: it always returns a new promise, and returning a promise from the callback flattens instead of nesting.',
 
@@ -37,6 +38,18 @@ export const method = {
     { name: 'onFulfilled', type: 'Function', required: false, default: 'identity', desc: 'Called with the resolved value. Its return value resolves the new promise; a promise returned here is flattened. Omitted, the value passes through.' },
     { name: 'onRejected',  type: 'Function', required: false, default: 'rethrow',  desc: 'Called if the ORIGINAL promise rejected. It does NOT see errors thrown by onFulfilled — that is the difference from a following catch.' },
   ],
+
+  demoAsync: true,
+  demoParams: [
+    { name: 'n', type: 'number', hint: 'a number (negative throws)', input: 'number' },
+  ],
+  demoTemplate: "Promise.resolve({n}).then(v => { if (v < 0) throw new Error('negative'); return v * 2; })",
+  cases: [
+    { id: 'double', label: 'the callback transforms', values: { n: 5 } },
+    { id: 'zero',   label: 'zero',                    values: { n: 0 } },
+    { id: 'throw',  label: 'a throw REJECTS (!)',     values: { n: -1 } },
+  ],
+  demoExplainer: "then returns a new promise resolved with whatever the callback returns, so 5 becomes 10. The third case is the part people underestimate: a throw inside the callback does not escape as an exception — it becomes a rejection of the promise then returned, which only a catch AFTER this then will see. A second argument to the same then would not.",
 
   patterns: [
     {
@@ -122,10 +135,6 @@ export const method = {
   ],
 
   faq: [
-    {
-      q: 'Why is there no live demo on this page?',
-      a: 'Because then callbacks run as microtasks, after the synchronous code that attached them — and this site demo harness renders its result synchronously. There is genuinely nothing to show at that moment. The examples above were run and awaited in a real runtime.',
-    },
     {
       q: 'then(fn, handler) or then(fn).catch(handler)?',
       a: 'Almost always the second. The two-argument form only handles rejections from the ORIGINAL promise, so an error in fn escapes it. A following catch covers both, which is what people expect from the name.',

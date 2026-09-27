@@ -1,5 +1,10 @@
 // content/reference/javascript/methods/string-at.js
 //
+// NOTE: literals containing ${"\\"}u… are deliberate. Next 14.2.4's SWC
+// compiles the TEXT "\\uD83D" into a real lone surrogate, which breaks
+// hydration. Injecting the backslash through a template expression is the
+// only form verified to survive both its transform and its minifier.
+//
 // charAt is consolidated here: same job, two differences (no negatives, and
 // '' instead of undefined when out of range), best shown side by side.
 
@@ -95,7 +100,7 @@ export const method = {
     {
       name: 'It reads a code unit, not a character',
       desc: 'Like every index-based string operation, at works in UTF-16. The first "character" of a string starting with an emoji is half a surrogate pair, which renders as a replacement glyph.',
-      wrong: { label: 'Half an emoji', code: "'\\u{1F600}a'.at(0)", output: "'\\ud83d'" },
+      wrong: { label: 'Half an emoji', code: "'\\u{1F600}a'.at(0)", output: `'${"\\"}ud83d'` },
       fix:   { label: 'Spread first',  code: "[...'\\u{1F600}a'].at(0)", output: "'\\u{1F600}'" },
     },
     {

@@ -1,7 +1,8 @@
 // content/reference/javascript/methods/global-queuemicrotask.js
 //
-// Doc-only: the callback runs after the current task, and the demo harness
-// renders synchronously.
+// Doc-only: the ordering this function exists to demonstrate — sync code,
+// then microtasks, then timers — is fixed by the event loop, so a demo would
+// print the same array for every input. The examples show that ordering.
 
 export const meta = {
   slug:        'global-queuemicrotask',
@@ -125,7 +126,7 @@ export const method = {
   faq: [
     {
       q: 'Why is there no live demo on this page?',
-      a: 'Because the callback runs after the current task finishes and this site demo harness renders synchronously — nothing has happened by the time the output is drawn. The examples above show the ordering, which is the whole point of the function.',
+      a: 'Because the thing worth demonstrating is an ORDERING, and that ordering is fixed by the event loop: synchronous code, then every queued microtask, then timers. A demo would print the same array whatever you typed, which is a constant pretending to be a computation. The examples above show the ordering directly.',
     },
     {
       q: 'queueMicrotask or Promise.resolve().then()?',

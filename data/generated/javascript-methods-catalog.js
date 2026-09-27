@@ -5,7 +5,7 @@
 // Flat list for the /reference/javascript/methods explorer.
 
 export const javascriptMethodsCatalog = {
-  generatedAt: "2026-09-26T22:05:25.742Z",
+  generatedAt: "2026-09-27T14:20:44.962Z",
   items: [
   {
     "slug": "array-at",
@@ -157,7 +157,7 @@ export const javascriptMethodsCatalog = {
     "blurb": "Array.from for async iterables — and the await-in-order counterpart to Promise.all.",
     "category": "array",
     "type": "array",
-    "hasLiveDemo": false,
+    "hasLiveDemo": true,
     "version": "ES2024",
     "searchTerms": "Array.fromAsync async iterable await for await promise all collect stream sequential es2024 javascript"
   },
@@ -619,7 +619,7 @@ export const javascriptMethodsCatalog = {
     "blurb": "A MINIMUM delay, not a guarantee — and setInterval drifts where a chained timeout does not.",
     "category": "global",
     "type": "global",
-    "hasLiveDemo": false,
+    "hasLiveDemo": true,
     "version": "HTML standard",
     "searchTerms": "setTimeout setInterval clearTimeout clearInterval delay event loop drift throttling 4ms nested this javascript"
   },
@@ -1059,7 +1059,7 @@ export const javascriptMethodsCatalog = {
     "blurb": "All of them, in order — and it rejects on the first failure without cancelling the rest.",
     "category": "promise",
     "type": "promise",
-    "hasLiveDemo": false,
+    "hasLiveDemo": true,
     "version": "ES2015",
     "searchTerms": "Promise.all parallel concurrent await array order reject fail fast allSettled cancel es2015 javascript"
   },
@@ -1070,7 +1070,7 @@ export const javascriptMethodsCatalog = {
     "blurb": "Every outcome, never a rejection — you get status objects instead of values.",
     "category": "promise",
     "type": "promise",
-    "hasLiveDemo": false,
+    "hasLiveDemo": true,
     "version": "ES2020",
     "searchTerms": "Promise.allSettled status fulfilled rejected reason value partial success never rejects es2020 javascript"
   },
@@ -1081,7 +1081,7 @@ export const javascriptMethodsCatalog = {
     "blurb": "First to SUCCEED — rejections are ignored until every one has failed.",
     "category": "promise",
     "type": "promise",
-    "hasLiveDemo": false,
+    "hasLiveDemo": true,
     "version": "ES2020",
     "searchTerms": "Promise.any first success AggregateError errors redundancy mirrors fallback race difference es2020 javascript"
   },
@@ -1092,7 +1092,7 @@ export const javascriptMethodsCatalog = {
     "blurb": "Handling a rejection RESOLVES the chain — recovery, not just reporting.",
     "category": "promise",
     "type": "promise",
-    "hasLiveDemo": false,
+    "hasLiveDemo": true,
     "version": "ES2015",
     "searchTerms": "Promise catch onRejected error handling rethrow recover unhandled rejection then second argument javascript"
   },
@@ -1103,7 +1103,7 @@ export const javascriptMethodsCatalog = {
     "blurb": "Cleanup that passes the result STRAIGHT THROUGH — its return value is ignored.",
     "category": "promise",
     "type": "promise",
-    "hasLiveDemo": false,
+    "hasLiveDemo": true,
     "version": "ES2018",
     "searchTerms": "Promise finally cleanup pass through ignored return value loading spinner throw replaces es2018 javascript"
   },
@@ -1114,7 +1114,7 @@ export const javascriptMethodsCatalog = {
     "blurb": "First to SETTLE wins — including first to fail, which is why it works for timeouts.",
     "category": "promise",
     "type": "promise",
-    "hasLiveDemo": false,
+    "hasLiveDemo": true,
     "version": "ES2015",
     "searchTerms": "Promise.race timeout first settle reject any difference empty array hangs abort es2015 javascript"
   },
@@ -1147,7 +1147,7 @@ export const javascriptMethodsCatalog = {
     "blurb": "Returns a NEW promise — and its second argument cannot catch its first.",
     "category": "promise",
     "type": "promise",
-    "hasLiveDemo": false,
+    "hasLiveDemo": true,
     "version": "ES2015",
     "searchTerms": "Promise then onFulfilled onRejected chain flatten new promise await catch second argument javascript"
   },

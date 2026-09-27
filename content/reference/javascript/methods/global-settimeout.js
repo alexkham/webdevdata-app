@@ -1,8 +1,8 @@
 // content/reference/javascript/methods/global-settimeout.js
 //
-// Doc-only: the callback runs on a later turn of the event loop, and the
-// demo harness renders synchronously. setInterval, clearTimeout and
-// clearInterval are consolidated here — one family, one set of traps.
+// Live async demo (demoAsync): two timers race and the settled log is
+// shown. setInterval, clearTimeout and clearInterval are consolidated
+// here — one family, one set of traps.
 
 export const meta = {
   slug:        'global-settimeout',
@@ -11,7 +11,7 @@ export const meta = {
   blurb:       'A MINIMUM delay, not a guarantee — and setInterval drifts where a chained timeout does not.',
   category:    'global',
   type:        'global',
-  hasLiveDemo: false,
+  hasLiveDemo: true,
   version:     'HTML standard',
   searchTerms: 'setTimeout setInterval clearTimeout clearInterval delay event loop drift throttling 4ms nested this javascript',
 };
@@ -24,7 +24,7 @@ export const method = {
 
   category:    'Global functions',
   version:     'HTML standard',
-  hasLiveDemo: false,
+  hasLiveDemo: true,
 
   subtitle: 'The delay is the earliest the callback may run, never the exact moment. Everything awkward about these functions follows from that, plus the fact that setInterval does not wait for your work to finish.',
 
@@ -40,6 +40,20 @@ export const method = {
     { name: 'delay',    type: 'number',   required: false, default: '0',  desc: 'Milliseconds to wait at minimum. 0 means "as soon as the current task finishes", not immediately. Nested timeouts are clamped to 4ms after five levels.' },
     { name: '...args',  type: 'any',      required: false, default: 'none', desc: 'Extra arguments passed to the callback — cleaner than wrapping it in another closure.' },
   ],
+
+  demoAsync: true,
+  demoParams: [
+    { name: 'a', type: 'number', hint: 'delay for A (ms)', input: 'number' },
+    { name: 'b', type: 'number', hint: 'delay for B (ms)', input: 'number' },
+  ],
+  demoTemplate: "new Promise(done => { const log = []; setTimeout(() => log.push('A'), {a}); setTimeout(() => log.push('B'), {b}); setTimeout(() => done(log), Math.max({a}, {b}) + 5); })",
+  cases: [
+    { id: 'afirst', label: 'A is shorter',                values: { a: 10, b: 30 } },
+    { id: 'bfirst', label: 'B is shorter',                values: { a: 30, b: 10 } },
+    { id: 'tie',    label: 'equal → registration order', values: { a: 20, b: 20 } },
+    { id: 'zero',   label: 'both zero',                   values: { a: 0, b: 0 } },
+  ],
+  demoExplainer: "Timers fire in order of their delay, and when two delays are equal they fire in the order they were registered — so the tie and the zero case both give A first. Now try delays only one millisecond apart, such as 5 and 4: run it a few times and the order can flip. That is the page's central point made visible — the delay is a minimum, not a schedule, and timers that close together are not reliably ordered.",
 
   patterns: [
     {
@@ -126,10 +140,6 @@ export const method = {
   ],
 
   faq: [
-    {
-      q: 'Why is there no live demo on this page?',
-      a: 'Because the callback runs on a later turn of the event loop and this site demo harness renders its result synchronously — at that moment nothing has happened yet. The examples above describe the ordering, which is the part that matters.',
-    },
     {
       q: 'Why does setTimeout(fn, 0) not run immediately?',
       a: 'Because it queues a task for after the current one completes, and all pending microtasks run before any task. So a promise callback queued later still runs first. Zero means "soon", not "now".',

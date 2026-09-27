@@ -1,6 +1,7 @@
 // content/reference/javascript/methods/promise-finally.js
 //
-// Doc-only — see the FAQ. Examples run and awaited in a real runtime.
+// Live async demo (demoAsync): the page shows `await <expr>` and renders
+// the settled value. Every case is checked by audit-emulators-js.mjs.
 
 export const meta = {
   slug:        'promise-finally',
@@ -9,7 +10,7 @@ export const meta = {
   blurb:       'Cleanup that passes the result STRAIGHT THROUGH — its return value is ignored.',
   category:    'promise',
   type:        'promise',
-  hasLiveDemo: false,
+  hasLiveDemo: true,
   version:     'ES2018',
   searchTerms: 'Promise finally cleanup pass through ignored return value loading spinner throw replaces es2018 javascript',
 };
@@ -22,7 +23,7 @@ export const method = {
 
   category:    'Promise method',
   version:     'ES2018',
-  hasLiveDemo: false,
+  hasLiveDemo: true,
 
   subtitle: 'For work that must happen either way and should not affect the answer. Its callback receives no arguments, precisely because it is not supposed to care whether things went well.',
 
@@ -36,6 +37,19 @@ export const method = {
   parameters: [
     { name: 'onFinally', type: 'Function', required: true, default: null, desc: 'Called with NO arguments when the promise settles, either way. Its return value is ignored — unless it returns a promise, which is awaited before the chain continues.' },
   ],
+
+  demoAsync: true,
+  demoParams: [
+    { name: 'n',    type: 'number', hint: 'the value to resolve with',   input: 'number' },
+    { name: 'boom', type: 'number', hint: '1 = throw inside finally',     input: 'number' },
+  ],
+  demoTemplate: "Promise.resolve({n}).finally(() => { if ({boom}) throw new Error('from finally'); return 999; })",
+  cases: [
+    { id: 'through', label: 'value passes through',      values: { n: 42, boom: 0 } },
+    { id: 'ignored', label: 'return 999 is IGNORED (!)', values: { n: 7, boom: 0 } },
+    { id: 'throw',   label: 'a throw REPLACES it (!)',   values: { n: 42, boom: 1 } },
+  ],
+  demoExplainer: "The callback returns 999 in every case, and in the first two that return is simply discarded — the original value comes out unchanged. That is the design: cleanup must not be able to alter the answer. The third case is the one exception: a throw inside finally replaces the outcome with a rejection, which is how a failing cleanup step can mask the error that actually mattered.",
 
   patterns: [
     {
@@ -122,10 +136,6 @@ export const method = {
   ],
 
   faq: [
-    {
-      q: 'Why is there no live demo on this page?',
-      a: 'Because the callback runs when the promise settles, on the microtask queue, and this site demo harness renders synchronously. The examples above were run and awaited in a real runtime.',
-    },
     {
       q: 'Does finally catch the error?',
       a: 'No. It observes the settlement and passes it on unchanged, so a rejection remains a rejection. You still need a catch — finally is about cleanup, not handling.',

@@ -23,6 +23,7 @@ import javascriptMethodsArrayFlatEmu from './emulators/javascript/methods/array-
 import javascriptMethodsArrayFlatmapEmu from './emulators/javascript/methods/array-flatmap';
 import javascriptMethodsArrayForeachEmu from './emulators/javascript/methods/array-foreach';
 import javascriptMethodsArrayFromEmu from './emulators/javascript/methods/array-from';
+import javascriptMethodsArrayFromasyncEmu from './emulators/javascript/methods/array-fromasync';
 import javascriptMethodsArrayIncludesEmu from './emulators/javascript/methods/array-includes';
 import javascriptMethodsArrayIndexofEmu from './emulators/javascript/methods/array-indexof';
 import javascriptMethodsArrayIsarrayEmu from './emulators/javascript/methods/array-isarray';
@@ -61,6 +62,7 @@ import javascriptMethodsGlobalBtoaEmu from './emulators/javascript/methods/globa
 import javascriptMethodsGlobalDecodeuricomponentEmu from './emulators/javascript/methods/global-decodeuricomponent';
 import javascriptMethodsGlobalEncodeuricomponentEmu from './emulators/javascript/methods/global-encodeuricomponent';
 import javascriptMethodsGlobalEscapeEmu from './emulators/javascript/methods/global-escape';
+import javascriptMethodsGlobalSettimeoutEmu from './emulators/javascript/methods/global-settimeout';
 import javascriptMethodsGlobalStructuredcloneEmu from './emulators/javascript/methods/global-structuredclone';
 import javascriptMethodsMapDeleteEmu from './emulators/javascript/methods/map-delete';
 import javascriptMethodsMapGetEmu from './emulators/javascript/methods/map-get';
@@ -100,6 +102,13 @@ import javascriptMethodsObjectPropertyisenumerableEmu from './emulators/javascri
 import javascriptMethodsObjectSealEmu from './emulators/javascript/methods/object-seal';
 import javascriptMethodsObjectTostringEmu from './emulators/javascript/methods/object-tostring';
 import javascriptMethodsObjectValuesEmu from './emulators/javascript/methods/object-values';
+import javascriptMethodsPromiseAllEmu from './emulators/javascript/methods/promise-all';
+import javascriptMethodsPromiseAllsettledEmu from './emulators/javascript/methods/promise-allsettled';
+import javascriptMethodsPromiseAnyEmu from './emulators/javascript/methods/promise-any';
+import javascriptMethodsPromiseCatchEmu from './emulators/javascript/methods/promise-catch';
+import javascriptMethodsPromiseFinallyEmu from './emulators/javascript/methods/promise-finally';
+import javascriptMethodsPromiseRaceEmu from './emulators/javascript/methods/promise-race';
+import javascriptMethodsPromiseThenEmu from './emulators/javascript/methods/promise-then';
 import javascriptMethodsSetAddEmu from './emulators/javascript/methods/set-add';
 import javascriptMethodsSetDeleteEmu from './emulators/javascript/methods/set-delete';
 import javascriptMethodsSetDifferenceEmu from './emulators/javascript/methods/set-difference';
@@ -364,6 +373,7 @@ const emulators = {
   'javascript/methods/array-flatmap': javascriptMethodsArrayFlatmapEmu,
   'javascript/methods/array-foreach': javascriptMethodsArrayForeachEmu,
   'javascript/methods/array-from': javascriptMethodsArrayFromEmu,
+  'javascript/methods/array-fromasync': javascriptMethodsArrayFromasyncEmu,
   'javascript/methods/array-includes': javascriptMethodsArrayIncludesEmu,
   'javascript/methods/array-indexof': javascriptMethodsArrayIndexofEmu,
   'javascript/methods/array-isarray': javascriptMethodsArrayIsarrayEmu,
@@ -402,6 +412,7 @@ const emulators = {
   'javascript/methods/global-decodeuricomponent': javascriptMethodsGlobalDecodeuricomponentEmu,
   'javascript/methods/global-encodeuricomponent': javascriptMethodsGlobalEncodeuricomponentEmu,
   'javascript/methods/global-escape': javascriptMethodsGlobalEscapeEmu,
+  'javascript/methods/global-settimeout': javascriptMethodsGlobalSettimeoutEmu,
   'javascript/methods/global-structuredclone': javascriptMethodsGlobalStructuredcloneEmu,
   'javascript/methods/map-delete': javascriptMethodsMapDeleteEmu,
   'javascript/methods/map-get': javascriptMethodsMapGetEmu,
@@ -441,6 +452,13 @@ const emulators = {
   'javascript/methods/object-seal': javascriptMethodsObjectSealEmu,
   'javascript/methods/object-tostring': javascriptMethodsObjectTostringEmu,
   'javascript/methods/object-values': javascriptMethodsObjectValuesEmu,
+  'javascript/methods/promise-all': javascriptMethodsPromiseAllEmu,
+  'javascript/methods/promise-allsettled': javascriptMethodsPromiseAllsettledEmu,
+  'javascript/methods/promise-any': javascriptMethodsPromiseAnyEmu,
+  'javascript/methods/promise-catch': javascriptMethodsPromiseCatchEmu,
+  'javascript/methods/promise-finally': javascriptMethodsPromiseFinallyEmu,
+  'javascript/methods/promise-race': javascriptMethodsPromiseRaceEmu,
+  'javascript/methods/promise-then': javascriptMethodsPromiseThenEmu,
   'javascript/methods/set-add': javascriptMethodsSetAddEmu,
   'javascript/methods/set-delete': javascriptMethodsSetDeleteEmu,
   'javascript/methods/set-difference': javascriptMethodsSetDifferenceEmu,

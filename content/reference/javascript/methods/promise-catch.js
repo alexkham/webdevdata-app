@@ -1,6 +1,7 @@
 // content/reference/javascript/methods/promise-catch.js
 //
-// Doc-only — see the FAQ. Examples run and awaited in a real runtime.
+// Live async demo (demoAsync): the page shows `await <expr>` and renders
+// the settled value. Every case is checked by audit-emulators-js.mjs.
 
 export const meta = {
   slug:        'promise-catch',
@@ -9,7 +10,7 @@ export const meta = {
   blurb:       'Handling a rejection RESOLVES the chain — recovery, not just reporting.',
   category:    'promise',
   type:        'promise',
-  hasLiveDemo: false,
+  hasLiveDemo: true,
   version:     'ES2015',
   searchTerms: 'Promise catch onRejected error handling rethrow recover unhandled rejection then second argument javascript',
 };
@@ -22,7 +23,7 @@ export const method = {
 
   category:    'Promise method',
   version:     'ES2015',
-  hasLiveDemo: false,
+  hasLiveDemo: true,
 
   subtitle: 'Exactly then(undefined, onRejected), with one consequence people miss: a handler that merely logs turns a failure into a success, and the rest of the chain carries on with undefined.',
 
@@ -36,6 +37,18 @@ export const method = {
   parameters: [
     { name: 'onRejected', type: 'Function', required: true, default: null, desc: 'Called with the rejection reason. Returning a value fulfils the chain; throwing, or returning a rejected promise, keeps it rejected.' },
   ],
+
+  demoAsync: true,
+  demoParams: [
+    { name: 'msg',     type: 'string', hint: 'error message',               input: 'text' },
+    { name: 'rethrow', type: 'number', hint: '0 = return, 1 = rethrow',       input: 'number' },
+  ],
+  demoTemplate: "Promise.reject(new Error({msg})).catch(e => { if ({rethrow}) throw e; return 'recovered: ' + e.message; })",
+  cases: [
+    { id: 'recover', label: 'handler returns → RECOVERS (!)', values: { msg: 'boom', rethrow: 0 } },
+    { id: 'rethrow', label: 'handler rethrows → still rejected', values: { msg: 'boom', rethrow: 1 } },
+  ],
+  demoExplainer: "The first case is the behaviour behind most swallowed errors: because the handler returns, the chain is FULFILLED with that value, and everything downstream carries on as though nothing failed. A handler that only logs does exactly the same, returning undefined. The second case rethrows, so the promise stays rejected and the error keeps propagating — which is what a logging handler almost always should do.",
 
   patterns: [
     {
@@ -122,10 +135,6 @@ export const method = {
   ],
 
   faq: [
-    {
-      q: 'Why is there no live demo on this page?',
-      a: 'Because a rejection is delivered asynchronously, on the microtask queue, and this site demo harness renders synchronously. The examples above were run and awaited in a real runtime.',
-    },
     {
       q: 'Why did my code continue after an error?',
       a: 'Because the catch handler returned. Returning from a rejection handler is how you RECOVER — it fulfils the chain with that return value. A handler that only logs returns undefined, so the chain succeeds with undefined. Rethrow if you meant to propagate.',

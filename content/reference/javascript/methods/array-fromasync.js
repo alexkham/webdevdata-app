@@ -1,8 +1,7 @@
 // content/reference/javascript/methods/array-fromasync.js
 //
-// Doc-only page: the result is a Promise, and async iteration needs a
-// running event loop, which the synchronous demo harness cannot provide.
-// Same rule as the Python aiter/anext pages.
+// Live async demo (demoAsync): the page shows `await <expr>` and renders
+// the settled value. Every case is checked by audit-emulators-js.mjs.
 
 export const meta = {
   slug:        'array-fromasync',
@@ -11,7 +10,7 @@ export const meta = {
   blurb:       'Array.from for async iterables — and the await-in-order counterpart to Promise.all.',
   category:    'array',
   type:        'array',
-  hasLiveDemo: false,
+  hasLiveDemo: true,
   version:     'ES2024',
   searchTerms: 'Array.fromAsync async iterable await for await promise all collect stream sequential es2024 javascript',
 };
@@ -24,7 +23,7 @@ export const method = {
 
   category:    'Array static method',
   version:     'ES2024',
-  hasLiveDemo: false,
+  hasLiveDemo: true,
 
   subtitle: 'The async sibling of Array.from. It accepts async iterables, awaits every element, and — unlike Promise.all — pulls them strictly in order.',
 
@@ -40,6 +39,18 @@ export const method = {
     { name: 'mapFn',   type: 'Function', required: false, default: 'none',      desc: 'Called as mapFn(element, index) after the element is awaited. May itself be async — its result is awaited too.' },
     { name: 'thisArg', type: 'any',      required: false, default: 'undefined', desc: 'Value of `this` inside mapFn.' },
   ],
+
+  demoAsync: true,
+  demoParams: [
+    { name: 'json', type: 'string', hint: 'JSON list of [outcome, value, ms]', input: 'text' },
+  ],
+  demoTemplate: "Array.fromAsync(JSON.parse({json}).map(([k, v, ms]) => new Promise((res, rej) => setTimeout(() => k === 'ok' ? res(v) : rej(new Error(v)), ms))))",
+  cases: [
+    { id: 'order',  label: 'values, in input order',  values: { json: '[["ok",1,30],["ok",2,10]]' } },
+    { id: 'reject', label: 'a rejection propagates',   values: { json: '[["ok",1,10],["err","boom",20]]' } },
+    { id: 'empty',  label: 'empty list',               values: { json: '[]' } },
+  ],
+  demoExplainer: "Each input is [outcome, value, delay in ms]: 'ok' fulfils with the value, anything else rejects with an Error carrying it. Every element is awaited and the resolved values are collected in input order — where plain Array.from would hand back the promises themselves, unawaited. A rejection anywhere rejects the whole call. Because these promises were all created up front they run concurrently; with a lazy source such as an async generator, fromAsync would pull them strictly one at a time.",
 
   patterns: [
     {
@@ -146,10 +157,6 @@ export const method = {
       q: 'Can I polyfill it?',
       a: 'Yes, and the polyfill is the reason the method is a convenience rather than a necessity — a for-await loop pushing into an array does the same job in three lines. The static exists mainly to make the common case an expression instead of a statement.',
       code: 'async function fromAsync(src, fn) {\n  const out = [];\n  let i = 0;\n  for await (const x of src) out.push(fn ? await fn(x, i++) : x);\n  return out;\n}',
-    },
-    {
-      q: 'Why is there no live demo on this page?',
-      a: 'Because the result is a Promise and async iteration needs a running event loop. A demo could only show a resolved value by pretending the await already happened, which would misrepresent the method. The examples above are run against a real runtime instead.',
     },
   ],
 

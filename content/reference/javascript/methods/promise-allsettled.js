@@ -1,6 +1,7 @@
 // content/reference/javascript/methods/promise-allsettled.js
 //
-// Doc-only — see the FAQ. Examples run and awaited in a real runtime.
+// Live async demo (demoAsync): the page shows `await <expr>` and renders
+// the settled value. Every case is checked by audit-emulators-js.mjs.
 
 export const meta = {
   slug:        'promise-allsettled',
@@ -9,7 +10,7 @@ export const meta = {
   blurb:       'Every outcome, never a rejection — you get status objects instead of values.',
   category:    'promise',
   type:        'promise',
-  hasLiveDemo: false,
+  hasLiveDemo: true,
   version:     'ES2020',
   searchTerms: 'Promise.allSettled status fulfilled rejected reason value partial success never rejects es2020 javascript',
 };
@@ -22,7 +23,7 @@ export const method = {
 
   category:    'Promise static method',
   version:     'ES2020',
-  hasLiveDemo: false,
+  hasLiveDemo: true,
 
   subtitle: 'The method for when partial success is a real outcome. Because it never rejects, the try/catch around it is dead code — the failures arrive as data instead.',
 
@@ -36,6 +37,18 @@ export const method = {
   parameters: [
     { name: 'iterable', type: 'iterable', required: true, default: null, desc: 'Any iterable of promises or plain values. Non-promises are reported as fulfilled.' },
   ],
+
+  demoAsync: true,
+  demoParams: [
+    { name: 'json', type: 'string', hint: 'JSON list of [outcome, value, ms]', input: 'text' },
+  ],
+  demoTemplate: "Promise.allSettled(JSON.parse({json}).map(([k, v, ms]) => new Promise((res, rej) => setTimeout(() => k === 'ok' ? res(v) : rej(new Error(v)), ms))))",
+  cases: [
+    { id: 'mixed',  label: 'mixed outcomes',          values: { json: '[["ok",1,10],["err","boom",20]]' } },
+    { id: 'allbad', label: 'all fail — still RESOLVES', values: { json: '[["err","a",10],["err","b",20]]' } },
+    { id: 'empty',  label: 'empty list',              values: { json: '[]' } },
+  ],
+  demoExplainer: "Each input is [outcome, value, delay in ms]: 'ok' fulfils with the value, anything else rejects with an Error carrying it. Every input produces a status object, in input order, and the combined promise never rejects — even the second case, where everything failed, resolves normally with two 'rejected' entries. That is why a try/catch around allSettled is dead code: failures arrive as data. Note the values are nested under value and reason, not returned bare as Promise.all would.",
 
   patterns: [
     {
@@ -122,10 +135,6 @@ export const method = {
   ],
 
   faq: [
-    {
-      q: 'Why is there no live demo on this page?',
-      a: 'Because the result only exists after the microtask queue drains and this site demo harness is synchronous. Showing a pre-baked array would misrepresent how the method works. The examples above were run and awaited in a real runtime.',
-    },
     {
       q: 'allSettled or all?',
       a: 'all when every task must succeed for the outcome to mean anything — a transaction, a multi-step save. allSettled when the tasks are independent and knowing which ones failed is more useful than aborting.',

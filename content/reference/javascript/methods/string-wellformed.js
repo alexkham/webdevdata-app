@@ -1,5 +1,10 @@
 // content/reference/javascript/methods/string-wellformed.js
 //
+// NOTE: literals containing ${"\\"}u… are deliberate. Next 14.2.4's SWC
+// compiles the TEXT "\\uD83D" into a real lone surrogate, which breaks
+// hydration. Injecting the backslash through a template expression is the
+// only form verified to survive both its transform and its minifier.
+//
 // toWellFormed is consolidated here: the two were added together in the same
 // proposal and only make sense as a pair — one detects, the other repairs.
 //
@@ -73,9 +78,9 @@ export const method = {
   examples: [
     { title: 'Ordinary text',     code: "'abc'.isWellFormed()",              returns: 'true' },
     { title: 'A whole emoji',     code: "'\\u{1F600}'.isWellFormed()",       returns: 'true' },
-    { title: 'Half of one',       code: "'\\ud83d'.isWellFormed()",          returns: 'false' },
-    { title: 'Repaired',          code: "'\\ud83d'.toWellFormed()",          returns: "'\\ufffd'" },
-    { title: 'The replacement char', code: "'\\ud83d'.toWellFormed().charCodeAt(0).toString(16)", returns: "'fffd'" },
+    { title: 'Half of one',       code: `'${"\\"}ud83d'.isWellFormed()`,          returns: 'false' },
+    { title: 'Repaired',          code: `'${"\\"}ud83d'.toWellFormed()`,          returns: "'\\ufffd'" },
+    { title: 'The replacement char', code: `'${"\\"}ud83d'.toWellFormed().charCodeAt(0).toString(16)`, returns: "'fffd'" },
     { title: 'Created by slicing',code: "'\\u{1F600}'.slice(0, 1).isWellFormed()", returns: 'false' },
   ],
 
@@ -89,20 +94,20 @@ export const method = {
     {
       name: 'Repair is lossy and irreversible',
       desc: 'toWellFormed replaces each lone surrogate with U+FFFD, the replacement character. The original code unit is gone, so repairing is a last resort at a boundary — better to avoid creating the damage at all.',
-      wrong: { label: 'Original lost', code: "'\\ud83d'.toWellFormed().charCodeAt(0).toString(16)", output: "'fffd'" },
+      wrong: { label: 'Original lost', code: `'${"\\"}ud83d'.toWellFormed().charCodeAt(0).toString(16)`, output: "'fffd'" },
       fix:   { label: 'Do not split pairs', code: "[...s].slice(0, n).join('')", output: 'nothing to repair' },
     },
     {
       name: 'The failure surfaces far from its cause',
       desc: 'A malformed string moves through your program without complaint until it reaches something that must encode it — encodeURIComponent, TextEncoder, JSON sent over the wire. The stack trace points at the encoder, not at the slice that caused it.',
-      wrong: { label: 'Throws later', code: "encodeURIComponent('\\ud83d')", output: 'URIError: URI malformed' },
-      fix:   { label: 'Check at the boundary', code: "encodeURIComponent('\\ud83d'.toWellFormed())", output: "'%EF%BF%BD'" },
+      wrong: { label: 'Throws later', code: `encodeURIComponent('${"\\"}ud83d')`, output: 'URIError: URI malformed' },
+      fix:   { label: 'Check at the boundary', code: `encodeURIComponent('${"\\"}ud83d'.toWellFormed())`, output: "'%EF%BF%BD'" },
     },
     {
       name: 'ES2024 — check your runtime',
       desc: 'Node 20+ and 2023-era browsers. Before that, detection meant a regex over the surrogate ranges, which is easy to get subtly wrong.',
       wrong: { label: 'Missing', code: 's.isWellFormed()', output: 'TypeError: s.isWellFormed is not a function' },
-      fix:   { label: 'Regex fallback', code: '!/[\\ud800-\\udbff](?![\\udc00-\\udfff])|(?:[^\\ud800-\\udbff]|^)[\\udc00-\\udfff]/.test(s)', output: 'equivalent, fiddly' },
+      fix:   { label: 'Regex fallback', code: `!/[${"\\"}ud800-${"\\"}udbff](?![${"\\"}udc00-${"\\"}udfff])|(?:[^${"\\"}ud800-${"\\"}udbff]|^)[${"\\"}udc00-${"\\"}udfff]/.test(s)`, output: 'equivalent, fiddly' },
     },
   ],
 

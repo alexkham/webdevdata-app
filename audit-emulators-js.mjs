@@ -92,6 +92,7 @@ function buildExpression(method, demoParams, args) {
     callText = `${method.name}(${args.map(reprOf).join(', ')})`;
   }
   if (method.demoWrap) callText = `${method.demoWrap}(${callText})`;
+  if (method.demoAsync) callText = `await ${callText}`; // mirrors MethodDemo
   return callText;
 }
 
@@ -125,6 +126,7 @@ for (const category of fs.readdirSync(CONTENT_DIR)) {
         slug,
         expr: buildExpression(method, demoParams, args),
         args,
+        isAsync: Boolean(method.demoAsync),
       });
     }
   }
@@ -141,22 +143,42 @@ async function getEmu(category, slug) {
   return emuCache.get(key);
 }
 
-const run = (fn) => {
+// Awaiting is harmless for synchronous results (they pass straight through),
+// so one runner serves both paths — but a sync demo that accidentally returns
+// a promise would be masked, so async-ness must match the content flag.
+const run = async (fn) => {
   try {
-    return { ok: true, text: jsRepr(fn()) };
+    return { ok: true, text: jsRepr(await fn()) };
   } catch (e) {
     return { ok: false, text: `${e.name || 'Error'}: ${e.message}`, name: e.name || 'Error' };
   }
 };
+const isThenable = (v) => v !== null && typeof v === 'object' && typeof v.then === 'function';
 
-const buckets = { VALUE: [], ERRTYPE: [], ERROR: [] };
+const buckets = { VALUE: [], ERRTYPE: [], ERROR: [], ASYNCFLAG: [] };
 let pass = 0;
 
 for (const chk of checks) {
   const emuFn = await getEmu(chk.category, chk.slug);
+
+  // The async flag must be truthful in both directions: a demoAsync page whose
+  // emulator returns a plain value, or a sync page whose emulator returns a
+  // promise (which the page would render as '{}'), are both bugs.
+  let probe;
+  try { probe = emuFn(...chk.args); } catch { probe = undefined; }
+  if (isThenable(probe) !== chk.isAsync) {
+    if (isThenable(probe)) probe.catch(() => {}); // avoid an unhandled rejection
+    buckets.ASYNCFLAG.push({ id: chk.id, expr: chk.expr, shown: `demoAsync=${chk.isAsync}`, emulator: `returns ${isThenable(probe) ? 'a promise' : 'a plain value'}` });
+    continue;
+  }
+  if (isThenable(probe)) probe.catch(() => {});
+
+  // Async expressions contain `await`, so they are evaluated inside an async
+  // arrow; sync expressions are evaluated exactly as before.
+  const source = chk.isAsync ? `(async () => (${chk.expr}))()` : chk.expr;
   // eslint-disable-next-line no-eval
-  const shown = run(() => (0, eval)(chk.expr));
-  const emu = run(() => emuFn(...chk.args));
+  const shown = await run(() => (0, eval)(source));
+  const emu = await run(() => emuFn(...chk.args));
 
   if (shown.text === emu.text) { pass += 1; continue; }
 

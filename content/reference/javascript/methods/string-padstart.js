@@ -1,4 +1,9 @@
 // content/reference/javascript/methods/string-padstart.js
+//
+// NOTE: literals containing ${"\\"}u… are deliberate. Next 14.2.4's SWC
+// compiles the TEXT "\\uD83D" into a real lone surrogate, which breaks
+// hydration. Injecting the backslash through a template expression is the
+// only form verified to survive both its transform and its minifier.
 
 export const meta = {
   slug:        'string-padstart',
@@ -94,7 +99,7 @@ export const method = {
     {
       name: 'A multi-character pad is cut mid-character',
       desc: 'Truncation happens by code unit, so padding with an emoji or other astral character can leave half a surrogate pair at the join. Stick to single-code-unit pad characters unless you have checked the arithmetic.',
-      wrong: { label: 'Broken half', code: "'x'.padStart(4, '\\u{1F600}')", output: "'\\u{1F600}\\ud83dx'" },
+      wrong: { label: 'Broken half', code: "'x'.padStart(4, '\\u{1F600}')", output: `'\\u{1F600}${"\\"}ud83dx'` },
       fix:   { label: 'Plain pad',   code: "'x'.padStart(4, '-')", output: "'---x'" },
     },
     {

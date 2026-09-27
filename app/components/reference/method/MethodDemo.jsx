@@ -9,8 +9,12 @@
 //                       [{ name, type, hint, input: 'text'|'number' }]
 //   method.cases      — seed values keyed by param name
 //   emulator(...args) — args in demoParams order; throws like Python would
+//   method.demoAsync  — OPT-IN. The emulator returns a promise; the demo
+//                       shows `await <expr>` and renders the settled value.
+//                       Pages without the flag take the original synchronous
+//                       path, untouched.
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { pyRepr } from '@/utils/code-highlight';
 import { jsRepr } from '@/utils/js-repr';
 
@@ -136,13 +140,47 @@ export default function MethodDemo({ method, emulator, language = 'python' }) {
   // sequences: the shown expression matches the shown output
   if (method.demoWrap) callText = `${method.demoWrap}(${callText})`;
 
+  // Async demos show the expression the way you would actually write it,
+  // so the displayed output is honestly what `await <expr>` produces.
+  const isAsync = Boolean(method.demoAsync);
+  if (isAsync) callText = `await ${callText}`;
+
   let output;
   let failed = false;
-  try {
-    output = repr(emulator(...args));
-  } catch (e) {
-    failed = true;
-    output = `${e.name || 'Error'}: ${e.message}`;
+  if (!isAsync) {
+    try {
+      output = repr(emulator(...args));
+    } catch (e) {
+      failed = true;
+      output = `${e.name || 'Error'}: ${e.message}`;
+    }
+  }
+
+  // Async path: settle the emulator's promise after render. Results are
+  // tagged with the args they were computed for, so a slow promise from an
+  // earlier input can never overwrite the output for the current one.
+  const argsKey = isAsync ? JSON.stringify(args) : '';
+  const [asyncResult, setAsyncResult] = useState(null);
+  useEffect(() => {
+    if (!isAsync || !emulator) return undefined;
+    let cancelled = false;
+    Promise.resolve()
+      .then(() => emulator(...args)) // a synchronous throw becomes a rejection
+      .then(
+        (v) => { if (!cancelled) setAsyncResult({ key: argsKey, output: repr(v), failed: false }); },
+        (e) => { if (!cancelled) setAsyncResult({ key: argsKey, output: `${(e && e.name) || 'Error'}: ${e && e.message}`, failed: true }); },
+      );
+    return () => { cancelled = true; };
+    // args is fully described by argsKey; emulator and repr are stable per page.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isAsync, argsKey]);
+  if (isAsync) {
+    if (asyncResult && asyncResult.key === argsKey) {
+      output = asyncResult.output;
+      failed = asyncResult.failed;
+    } else {
+      output = 'Pending…';
+    }
   }
 
   const applyCase = (c) => {

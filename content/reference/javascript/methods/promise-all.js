@@ -1,8 +1,7 @@
 // content/reference/javascript/methods/promise-all.js
 //
-// Doc-only, like every Promise page: the result only exists after the
-// microtask queue drains, and the demo harness is synchronous. Every example
-// below was run and awaited in a real runtime.
+// Live async demo (demoAsync): the page shows `await <expr>` and renders
+// the settled value. Every case is checked by audit-emulators-js.mjs.
 
 export const meta = {
   slug:        'promise-all',
@@ -11,7 +10,7 @@ export const meta = {
   blurb:       'All of them, in order — and it rejects on the first failure without cancelling the rest.',
   category:    'promise',
   type:        'promise',
-  hasLiveDemo: false,
+  hasLiveDemo: true,
   version:     'ES2015',
   searchTerms: 'Promise.all parallel concurrent await array order reject fail fast allSettled cancel es2015 javascript',
 };
@@ -24,7 +23,7 @@ export const method = {
 
   category:    'Promise static method',
   version:     'ES2015',
-  hasLiveDemo: false,
+  hasLiveDemo: true,
 
   subtitle: 'The standard way to run several async operations at once. Its fail-fast behaviour is the right default and the source of its two traps: you lose the successful results, and the other operations keep running.',
 
@@ -38,6 +37,19 @@ export const method = {
   parameters: [
     { name: 'iterable', type: 'iterable', required: true, default: null, desc: 'Any iterable, usually an array. Non-promise values are passed through as if already resolved, so a mixed array works.' },
   ],
+
+  demoAsync: true,
+  demoParams: [
+    { name: 'json', type: 'string', hint: 'JSON list of [outcome, value, ms]', input: 'text' },
+  ],
+  demoTemplate: "Promise.all(JSON.parse({json}).map(([k, v, ms]) => new Promise((res, rej) => setTimeout(() => k === 'ok' ? res(v) : rej(new Error(v)), ms))))",
+  cases: [
+    { id: 'order',  label: 'input order, not finish order', values: { json: '[["ok",1,30],["ok",2,10]]' } },
+    { id: 'reject', label: 'one rejection → all rejects',   values: { json: '[["ok",1,10],["err","boom",20]]' } },
+    { id: 'fast',   label: 'fails FAST (!)',                 values: { json: '[["ok",1,50],["err","early",10]]' } },
+    { id: 'empty',  label: 'empty → [] at once',             values: { json: '[]' } },
+  ],
+  demoExplainer: "Each input is [outcome, value, delay in ms]: 'ok' fulfils with the value, anything else rejects with an Error carrying it. The first case finishes the second input first, yet the result is [1, 2] — input order, which is what makes destructuring safe. The third case is the fail-fast rule: the rejection after 10ms settles the whole thing, and the success still pending at 50ms is simply discarded — not cancelled, just ignored. An empty list resolves immediately with an empty array.",
 
   patterns: [
     {
@@ -123,10 +135,6 @@ export const method = {
   ],
 
   faq: [
-    {
-      q: 'Why is there no live demo on this page?',
-      a: 'Because a Promise result only exists after the microtask queue drains, and this site demo harness is synchronous — it renders whatever the emulator returns immediately, which for a Promise is an empty object. Faking a resolved value would misrepresent the method. Every example above was run and awaited in a real runtime instead.',
-    },
     {
       q: 'Does Promise.all run things in parallel?',
       a: 'It runs them CONCURRENTLY, which for I/O is what matters — the requests overlap. JavaScript is single-threaded, so nothing is parallel in the CPU sense. The promises must also already be in flight; Promise.all only waits.',

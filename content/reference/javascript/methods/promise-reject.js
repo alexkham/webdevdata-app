@@ -1,6 +1,8 @@
 // content/reference/javascript/methods/promise-reject.js
 //
-// Doc-only, like the rest of the Promise family.
+// Doc-only: awaiting Promise.reject(x) always throws x, so a demo would just
+// echo its input back as an error. The interesting behaviour — no
+// unwrapping, unhandled-rejection timing — is shown in the examples.
 
 export const meta = {
   slug:        'promise-reject',
@@ -124,7 +126,7 @@ export const method = {
   faq: [
     {
       q: 'Why is there no live demo on this page?',
-      a: 'Because a rejection is delivered on the microtask queue, and this site demo harness renders synchronously — there is nothing observable at that moment except that a Promise exists. The examples above were run and awaited in a real runtime.',
+      a: 'Because awaiting Promise.reject(x) always throws x — a demo would simply echo whatever you typed back as an error, which demonstrates nothing. The behaviour worth knowing is that it does NOT unwrap a promise passed to it, and that an unhandled rejection is reported when the microtask queue drains; both are shown in the examples above, run in a real runtime.',
     },
     {
       q: 'Why does reject not unwrap a promise when resolve does?',

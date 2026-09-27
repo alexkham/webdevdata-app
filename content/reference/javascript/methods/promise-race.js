@@ -1,6 +1,7 @@
 // content/reference/javascript/methods/promise-race.js
 //
-// Doc-only — see the FAQ. Examples run and awaited in a real runtime.
+// Live async demo (demoAsync): the page shows `await <expr>` and renders
+// the settled value. Every case is checked by audit-emulators-js.mjs.
 
 export const meta = {
   slug:        'promise-race',
@@ -9,7 +10,7 @@ export const meta = {
   blurb:       'First to SETTLE wins — including first to fail, which is why it works for timeouts.',
   category:    'promise',
   type:        'promise',
-  hasLiveDemo: false,
+  hasLiveDemo: true,
   version:     'ES2015',
   searchTerms: 'Promise.race timeout first settle reject any difference empty array hangs abort es2015 javascript',
 };
@@ -22,7 +23,7 @@ export const method = {
 
   category:    'Promise static method',
   version:     'ES2015',
-  hasLiveDemo: false,
+  hasLiveDemo: true,
 
   subtitle: 'Settled, not succeeded. A fast rejection beats a slow success, which makes race the natural way to impose a timeout and the wrong way to ask for the first working result.',
 
@@ -36,6 +37,18 @@ export const method = {
   parameters: [
     { name: 'iterable', type: 'iterable', required: true, default: null, desc: 'Any iterable. A non-promise value counts as already settled, so including one makes race resolve immediately with it.' },
   ],
+
+  demoAsync: true,
+  demoParams: [
+    { name: 'json', type: 'string', hint: 'JSON list of [outcome, value, ms]', input: 'text' },
+  ],
+  demoTemplate: "Promise.race(JSON.parse({json}).map(([k, v, ms]) => new Promise((res, rej) => setTimeout(() => k === 'ok' ? res(v) : rej(new Error(v)), ms))))",
+  cases: [
+    { id: 'fast',     label: 'fastest wins',                values: { json: '[["ok","slow",50],["ok","fast",10]]' } },
+    { id: 'failfast', label: 'a fast FAILURE wins (!)',     values: { json: '[["ok","slow",50],["err","early",10]]' } },
+    { id: 'late',     label: 'a slow failure loses',        values: { json: '[["err","late",50],["ok","fast",10]]' } },
+  ],
+  demoExplainer: "Each input is [outcome, value, delay in ms]: 'ok' fulfils with the value, anything else rejects with an Error carrying it. Whatever settles first decides the outcome, win or lose. The second case is the one that matters: a rejection at 10ms beats a success at 50ms, so race is the right tool for a timeout and the wrong one for \"try several sources and take whichever works\" — that is Promise.any. One case is deliberately missing from this demo: an EMPTY list never settles at all, and a demo that waits forever is not a demo.",
 
   patterns: [
     {
@@ -121,10 +134,6 @@ export const method = {
   ],
 
   faq: [
-    {
-      q: 'Why is there no live demo on this page?',
-      a: 'Because settlement happens asynchronously and this site demo harness renders the emulator return value synchronously — for a Promise that is an empty object. Showing a fixed winner would misrepresent the timing that race is entirely about. The examples above were run and awaited in a real runtime.',
-    },
     {
       q: 'race or any?',
       a: 'race settles on the first to FINISH either way; any resolves on the first to SUCCEED and only rejects if all of them fail. Use race for timeouts, any for redundancy.',

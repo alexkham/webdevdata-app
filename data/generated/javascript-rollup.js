@@ -7,10 +7,10 @@
 // methods. byCategory covers every category of this language.
 
 export const javascriptRollup = {
-  generatedAt: "2026-09-26T22:05:25.744Z",
+  generatedAt: "2026-09-27T14:20:44.964Z",
   primaryCategory: "methods",
   total: 144,
-  liveTotal: 127,
+  liveTotal: 136,
   types: [
   {
     "type": "array",
@@ -158,7 +158,7 @@ export const javascriptRollup = {
   byCategory: {
   "methods": {
     "total": 144,
-    "liveTotal": 127
+    "liveTotal": 136
   }
 },
   operators: {

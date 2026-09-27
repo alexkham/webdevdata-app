@@ -1,5 +1,10 @@
 // content/reference/javascript/methods/global-encodeuricomponent.js
 //
+// NOTE: literals containing ${"\\"}u… are deliberate. Next 14.2.4's SWC
+// compiles the TEXT "\\uD83D" into a real lone surrogate, which breaks
+// hydration. Injecting the backslash through a template expression is the
+// only form verified to survive both its transform and its minifier.
+//
 // encodeURI is consolidated here: the two differ only in which characters
 // they leave alone, and choosing between them is the whole question.
 
@@ -75,7 +80,7 @@ export const method = {
     { title: 'It destroys a URL',  code: "encodeURIComponent('https://x.com/a')", returns: "'https%3A%2F%2Fx.com%2Fa'" },
     { title: 'UTF-8 for non-ASCII',code: "encodeURIComponent('é')",       returns: "'%C3%A9'" },
     { title: "!'()* survive",      code: "encodeURIComponent(\"!'()*\")", returns: `"!'()*"` },
-    { title: 'A lone surrogate throws', code: "encodeURIComponent('\\ud83d')", returns: 'URIError: URI malformed' },
+    { title: 'A lone surrogate throws', code: `encodeURIComponent('${"\\"}ud83d')`, returns: 'URIError: URI malformed' },
   ],
 
   pitfalls: [

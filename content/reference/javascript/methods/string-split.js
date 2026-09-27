@@ -1,4 +1,9 @@
 // content/reference/javascript/methods/string-split.js
+//
+// NOTE: literals containing ${"\\"}u… are deliberate. Next 14.2.4's SWC
+// compiles the TEXT "\\uD83D" into a real lone surrogate, which breaks
+// hydration. Injecting the backslash through a template expression is the
+// only form verified to survive both its transform and its minifier.
 
 export const meta = {
   slug:        'string-split',
@@ -88,7 +93,7 @@ export const method = {
     {
       name: "split('') breaks emoji and other astral characters",
       desc: 'It splits by UTF-16 code unit, so anything outside the Basic Multilingual Plane is torn into two useless surrogate halves. Spread syntax and Array.from iterate by code point and keep them whole.',
-      wrong: { label: 'Broken halves', code: "'\\u{1F600}x'.split('')", output: "['\\ud83d', '\\ude00', 'x']" },
+      wrong: { label: 'Broken halves', code: "'\\u{1F600}x'.split('')", output: `['${"\\"}ud83d', '${"\\"}ude00', 'x']` },
       fix:   { label: 'Spread instead', code: "[...'\\u{1F600}x']", output: "['\\u{1F600}', 'x']" },
     },
     {
