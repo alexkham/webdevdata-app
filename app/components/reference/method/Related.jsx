@@ -7,12 +7,16 @@ export default function Related({ related = [], basePath = '/reference/python/fu
   if (related.length === 0) return null;
   // r.category jumps to a sibling category under the same language
   // (e.g. an operator page linking to a function page).
-  const hrefFor = (r) =>
-    r.category ? `${basePath.replace(/[^/]+$/, r.category)}/${r.slug}` : `${basePath}/${r.slug}`;
+  // r.href (precomputed by the page) wins — stdlib member pages sit one
+  // level deeper, so the sibling-category rewrite below does not apply.
+  const hrefFor = (r) => {
+    if (r.href) return r.href;
+    return r.category ? `${basePath.replace(/[^/]+$/, r.category)}/${r.slug}` : `${basePath}/${r.slug}`;
+  };
   return (
     <div className="related">
       {related.map((r) => (
-        <a className="rel" key={r.slug} href={hrefFor(r)}>
+        <a className="rel" key={hrefFor(r)} href={hrefFor(r)}>
           <div className="rel-name">{r.name}</div>
           <div className="rel-when">{r.when}</div>
         </a>

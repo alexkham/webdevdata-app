@@ -81,6 +81,9 @@ export async function getStaticProps() {
         liveTotal: pythonRollup.liveTotal,
         types:     pythonRollup.types,
         operators: pythonRollup.operators || { total: 0, liveTotal: 0 },
+        exceptions: (pythonRollup.byCategory && pythonRollup.byCategory.exceptions) || { total: 0, liveTotal: 0 },
+        keywords: (pythonRollup.byCategory && pythonRollup.byCategory.keywords) || { total: 0, liveTotal: 0 },
+        stdlib: (pythonRollup.byCategory && pythonRollup.byCategory.stdlib) || { total: 0, liveTotal: 0, modules: 0 },
       },
     },
   };
@@ -164,18 +167,54 @@ export default function PythonReferencePage({ seoData, schemas, rollup, featured
               count="planned"
             />
           )}
-          <CategoryTile
-            name="Errors &amp; exceptions"
-            badge="SOON"
-            blurb="TypeError, ValueError, KeyError, and the full hierarchy."
-            count="planned"
-          />
-          <CategoryTile
-            name="Standard library"
-            badge="LATER"
-            blurb="os, json, datetime, re, and the modules devs actually reach for."
-            count="planned"
-          />
+          {rollup.exceptions.total > 0 ? (
+            <CategoryTile
+              name="Errors &amp; exceptions"
+              badge="LIVE"
+              blurb="TypeError, ValueError, KeyError, and the full hierarchy."
+              count={`${rollup.exceptions.total} ${rollup.exceptions.total === 1 ? 'entry' : 'entries'} →`}
+              href="/reference/python/exceptions"
+            />
+          ) : (
+            <CategoryTile
+              name="Errors &amp; exceptions"
+              badge="SOON"
+              blurb="TypeError, ValueError, KeyError, and the full hierarchy."
+              count="planned"
+            />
+          )}
+          {rollup.keywords.total > 0 ? (
+            <CategoryTile
+              name="Keywords"
+              badge="LIVE"
+              blurb="if, for/else, try/finally, with, yield, match/case — every syntax form."
+              count={`${rollup.keywords.total} ${rollup.keywords.total === 1 ? 'entry' : 'entries'} →`}
+              href="/reference/python/keywords"
+            />
+          ) : (
+            <CategoryTile
+              name="Keywords"
+              badge="SOON"
+              blurb="if, for/else, try/finally, with, yield, match/case — every syntax form."
+              count="planned"
+            />
+          )}
+          {rollup.stdlib.modules > 0 ? (
+            <CategoryTile
+              name="Standard library"
+              badge="LIVE"
+              blurb="os, json, datetime, re, and the modules devs actually reach for."
+              count={`${rollup.stdlib.modules} ${rollup.stdlib.modules === 1 ? 'module' : 'modules'} →`}
+              href="/reference/python/stdlib"
+            />
+          ) : (
+            <CategoryTile
+              name="Standard library"
+              badge="LATER"
+              blurb="os, json, datetime, re, and the modules devs actually reach for."
+              count="planned"
+            />
+          )}
         </div>
 
         {rollup.types.length > 0 && (

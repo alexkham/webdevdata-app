@@ -1101,6 +1101,13 @@ function main() {
           const catDir = path.join(langDir, cat);
           if (!fs.statSync(catDir).isDirectory()) continue;
           total += fs.readdirSync(catDir).filter((f) => f.endsWith('.js')).length;
+          // module folders (stdlib/json/…): hub + member pages
+          for (const sub of fs.readdirSync(catDir)) {
+            const subDir = path.join(catDir, sub);
+            if (fs.statSync(subDir).isDirectory()) {
+              total += fs.readdirSync(subDir).filter((f) => f.endsWith('.js')).length;
+            }
+          }
         }
       }
       return total ? { n: String(total), label: 'Entries' } : null;

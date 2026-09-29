@@ -11,9 +11,14 @@
 // string-split.js for the workaround.
 //
 // Two checks:
-//   1. no U+FFFD replacement character in any prerendered HTML page
+//   1. no U+FFFD replacement character in any prerendered HTML page —
+//      unless the page's own data (its page-data JSON) contains U+FFFD
+//      too, i.e. the content shows the character on purpose (the Python
+//      Unicode exception pages demonstrate errors='replace'). Reported as
+//      "intended" so it stays visible.
 //   2. every string in every page-data JSON file is well-formed Unicode
-//      (no unpaired surrogates reaching the client as props)
+//      (no unpaired surrogates reaching the client as props). The SWC bug
+//      always trips this one, so check 1's allowance cannot hide it.
 
 import fs from 'fs';
 import path from 'path';
@@ -36,11 +41,16 @@ const files = [];
 const problems = [];
 const route = (p) => '/' + path.relative(ROOT, p).split(path.sep).join('/').replace(/\.(html|json)$/, '');
 
+const intended = [];
 for (const p of files) {
   const text = fs.readFileSync(p, 'utf8');
   if (p.endsWith('.html')) {
     const n = (text.match(/�/g) || []).length;
-    if (n) {
+    const dataFile = p.replace(/\.html$/, '.json');
+    const dataHasIt = fs.existsSync(dataFile) && fs.readFileSync(dataFile, 'utf8').includes('�');
+    if (n && dataHasIt) {
+      intended.push(`${route(p)}  ${n} U+FFFD (also in the page's data — shown on purpose)`);
+    } else if (n) {
       const i = text.indexOf('�');
       const ctx = text.slice(Math.max(0, i - 60), i + 20).replace(/<[^>]*>/g, '').replace(/\s+/g, ' ');
       problems.push(`${route(p)}  HTML contains ${n} U+FFFD  …${ctx}…`);
@@ -60,6 +70,10 @@ for (const p of files) {
 
 console.log('\n=== Build-output audit ===');
 console.log(`files scanned: ${files.length} (${files.filter((f) => f.endsWith('.html')).length} html, ${files.filter((f) => f.endsWith('.json')).length} json)`);
+if (intended.length) {
+  console.log(`intended U+FFFD: ${intended.length} page(s)`);
+  intended.forEach((x) => console.log('  ' + x));
+}
 if (problems.length) {
   console.log(`PROBLEMS: ${problems.length}`);
   problems.forEach((x) => console.log('  ' + x));

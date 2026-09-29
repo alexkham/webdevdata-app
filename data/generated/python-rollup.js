@@ -7,7 +7,7 @@
 // functions. byCategory covers every category of this language.
 
 export const pythonRollup = {
-  generatedAt: "2026-09-27T14:20:44.964Z",
+  generatedAt: "2026-09-29T16:53:24.237Z",
   primaryCategory: "functions",
   total: 224,
   liveTotal: 185,
@@ -204,13 +204,26 @@ export const pythonRollup = {
   }
 ],
   byCategory: {
+  "exceptions": {
+    "total": 45,
+    "liveTotal": 41
+  },
   "functions": {
     "total": 224,
     "liveTotal": 185
   },
+  "keywords": {
+    "total": 24,
+    "liveTotal": 24
+  },
   "operators": {
     "total": 32,
     "liveTotal": 27
+  },
+  "stdlib": {
+    "total": 83,
+    "liveTotal": 74,
+    "modules": 5
   }
 },
   operators: {

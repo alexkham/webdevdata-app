@@ -40,9 +40,18 @@ const mods = []; // { language, category, slug, meta, method }
 for (const lang of fs.readdirSync(CONTENT)) {
   const langDir = path.join(CONTENT, lang);
   if (!fs.statSync(langDir).isDirectory()) continue;
-  for (const category of fs.readdirSync(langDir)) {
+  // categories, plus one level of module folders (stdlib/json → 'stdlib/json')
+  const cats = [];
+  for (const c of fs.readdirSync(langDir)) {
+    const d = path.join(langDir, c);
+    if (!fs.statSync(d).isDirectory()) continue;
+    cats.push(c);
+    for (const sub of fs.readdirSync(d)) {
+      if (fs.statSync(path.join(d, sub)).isDirectory()) cats.push(`${c}/${sub}`);
+    }
+  }
+  for (const category of cats) {
     const dir = path.join(langDir, category);
-    if (!fs.statSync(dir).isDirectory()) continue;
     const key = `${lang}/${category}`;
     all[key] = new Set();
     for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.js'))) {
@@ -81,7 +90,19 @@ for (const { language, category, slug, meta, method } of mods) {
     warn(id, `hasLiveDemo mismatch: meta=${meta.hasLiveDemo} method=${method.hasLiveDemo}`);
   }
 
-  if (meta.hasLiveDemo) {
+  if (meta.hasLiveDemo && Array.isArray(method.modes)) {
+    // Snippet demo (exception pages): every mode needs a template with a
+    // placeholder per param, and at least one case.
+    if (method.modes.length === 0) warn(id, 'live but modes[] is empty');
+    for (const m of method.modes) {
+      if (!m.id || !m.label || !m.template) warn(id, `mode '${m.id}' missing id/label/template`);
+      if (!Array.isArray(m.cases) || m.cases.length === 0) warn(id, `mode '${m.id}' has no cases`);
+      for (const p of m.params || []) {
+        if (!String(m.template).includes(`{$${p.name}}`)) warn(id, `mode '${m.id}' param '${p.name}' not used in template`);
+      }
+    }
+    if (!fs.existsSync(path.join(EMUS, language, category, `${slug}.js`))) warn(id, 'live but no emulator file');
+  } else if (meta.hasLiveDemo) {
     if (!Array.isArray(method.demoParams) || method.demoParams.length === 0) warn(id, 'live but no demoParams');
     if (!Array.isArray(method.cases) || method.cases.length === 0) warn(id, 'live but no cases');
     if (!fs.existsSync(path.join(EMUS, language, category, `${slug}.js`))) warn(id, 'live but no emulator file');
@@ -93,7 +114,9 @@ for (const { language, category, slug, meta, method } of mods) {
     const lang = r.language || language;
     const cat = r.category || category;
     const key = `${lang}/${cat}`;
-    if (!all[key] || !all[key].has(r.slug)) {
+    // category 'stdlib' + a module name → that module's hub (stdlib/json/index.js)
+    const isModuleHub = all[`${key}/${r.slug}`] && all[`${key}/${r.slug}`].has('index');
+    if (!isModuleHub && (!all[key] || !all[key].has(r.slug))) {
       warn(id, `related '${r.name}' → ${key}/${r.slug} does not exist`);
     }
   }
@@ -108,6 +131,14 @@ for (const { language, category, slug, meta, method } of mods) {
     warn(id, `no canonical docs host configured for language '${language}' — add one to DOCS_HOST`);
   } else if (!docs || !hostRe.test(docs.href || '')) {
     warn(id, `officialDocs missing or not on the expected host: ${docs && docs.href}`);
+  }
+
+  if (meta.type === 'exception' && (!Array.isArray(method.chain) || method.chain.length === 0)) {
+    warn(id, 'exception page without method.chain');
+  }
+  if (meta.type === 'keyword') {
+    if (!Array.isArray(method.syntax) || method.syntax.length === 0) warn(id, 'keyword page without method.syntax forms');
+    if (!Array.isArray(method.covers) || method.covers.length === 0) warn(id, 'keyword page without method.covers');
   }
 
   // entity leaks in plain-text fields

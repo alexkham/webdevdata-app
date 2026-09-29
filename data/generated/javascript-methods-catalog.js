@@ -5,7 +5,7 @@
 // Flat list for the /reference/javascript/methods explorer.
 
 export const javascriptMethodsCatalog = {
-  generatedAt: "2026-09-27T14:20:44.962Z",
+  generatedAt: "2026-09-29T16:53:24.226Z",
   items: [
   {
     "slug": "array-at",

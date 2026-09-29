@@ -24,6 +24,8 @@ import path from 'path';
 import { pathToFileURL, fileURLToPath } from 'url';
 import { execFileSync } from 'child_process';
 import { pyRepr } from './utils/code-highlight.js';
+import { coerce as coerceSnippet, fillSnippet, errorLine, pyReprExact } from './utils/demo-coerce.js';
+import { runPythonSnippets } from './audit-pysnippets.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CONTENT_DIR = path.join(__dirname, 'content', 'reference', 'python');
@@ -148,14 +150,40 @@ function buildExpression(method, demoParams, args) {
 
 // ── Collect all cases ────────────────────────────────────────
 const checks = []; // { id, category, slug, caseId, expr, args }
-for (const category of fs.readdirSync(CONTENT_DIR)) {
+// Snippet demos (method.modes — exception pages): the shown code is run
+// through CPython as-is and compared with emulator[mode](...args).
+const modeChecks = []; // { id, category, slug, mode, code, args }
+// categories, plus one level of module folders (stdlib/json → 'stdlib/json')
+const CATEGORIES = [];
+for (const c of fs.readdirSync(CONTENT_DIR)) {
+  const d = path.join(CONTENT_DIR, c);
+  if (!fs.statSync(d).isDirectory()) continue;
+  CATEGORIES.push(c);
+  for (const sub of fs.readdirSync(d)) {
+    if (fs.statSync(path.join(d, sub)).isDirectory()) CATEGORIES.push(`${c}/${sub}`);
+  }
+}
+for (const category of CATEGORIES) {
   const dir = path.join(CONTENT_DIR, category);
-  if (!fs.statSync(dir).isDirectory()) continue;
   for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.js'))) {
     const slug = f.replace(/\.js$/, '');
     const mod = await import(pathToFileURL(path.join(dir, f)).href);
     const { meta, method } = mod;
     if (!meta || !meta.hasLiveDemo) continue;
+    if (Array.isArray(method.modes)) {
+      for (const m of method.modes) {
+        const params = m.params || [];
+        for (const c of m.cases || []) {
+          const args = params.map((p) => coerceSnippet(c.values[p.name] !== undefined ? c.values[p.name] : '', p));
+          modeChecks.push({
+            id: `${category}/${slug}#${m.id}/${c.id}`,
+            category, slug, mode: m.id, args,
+            code: fillSnippet(m.template, params, args),
+          });
+        }
+      }
+      continue;
+    }
     const demoParams = method.demoParams || [];
     const cases = method.cases || [];
     if (demoParams.length === 0 || cases.length === 0) {
@@ -226,7 +254,7 @@ function emuResult(fn, args) {
 
 // ── Compare and bucket ───────────────────────────────────────
 const ERR_RE = /^([A-Za-z]+Error|StopIteration|KeyboardInterrupt): ([\s\S]*)$/;
-const buckets = { VALUE: [], ERRTYPE: [], ERROR: [], FLOATREPR: [], QUOTESTYLE: [] };
+const buckets = { VALUE: [], ERRTYPE: [], ERROR: [], FLOATREPR: [], QUOTESTYLE: [], MODE: [] };
 let pass = 0;
 
 // Python set repr order is hash-random — compare set-shaped reprs as
@@ -290,9 +318,32 @@ for (const chk of checks) {
   buckets.VALUE.push(record);
 }
 
+// ── Snippet-demo modes: exact match required ─────────────────
+// The output IS the lesson on these pages (exception messages), so any
+// difference — value, type or message — is a failure (MODE bucket).
+const modeResults = modeChecks.length > 0
+  ? runPythonSnippets(modeChecks.map((m) => ({ id: m.id, code: m.code, mode: 'demo' })))
+  : new Map();
+for (const chk of modeChecks) {
+  const py = modeResults.get(chk.id);
+  const emuObj = await getEmu(chk.category, chk.slug);
+  let emu;
+  if (!emuObj || typeof emuObj[chk.mode] !== 'function') {
+    emu = `<no emulator for mode '${chk.mode}'>`;
+  } else {
+    try {
+      emu = pyReprExact(emuObj[chk.mode](...chk.args));
+    } catch (e) {
+      emu = errorLine(e);
+    }
+  }
+  if (py === emu) { pass += 1; continue; }
+  buckets.MODE.push({ id: chk.id, expr: chk.code.replace(/\n/g, ' ⏎ '), python: py, emulator: emu });
+}
+
 // ── Report ───────────────────────────────────────────────────
 console.log(`\n=== Differential emulator audit (Python vs emulators) ===`);
-console.log(`checks: ${checks.length}   exact pass: ${pass}`);
+console.log(`checks: ${checks.length + modeChecks.length} (${modeChecks.length} snippet-demo)   exact pass: ${pass}`);
 for (const [name, list] of Object.entries(buckets)) {
   console.log(`${name}: ${list.length}`);
 }
@@ -308,6 +359,7 @@ const printBucket = (name, list) => {
 };
 printBucket('VALUE', buckets.VALUE);
 printBucket('ERRTYPE', buckets.ERRTYPE);
+printBucket('MODE', buckets.MODE);
 if (VERBOSE) {
   printBucket('ERROR', buckets.ERROR);
   printBucket('FLOATREPR', buckets.FLOATREPR);
@@ -315,4 +367,4 @@ if (VERBOSE) {
 }
 
 fs.rmSync(TMP_DIR, { recursive: true, force: true });
-process.exitCode = buckets.VALUE.length + buckets.ERRTYPE.length > 0 ? 1 : 0;
+process.exitCode = buckets.VALUE.length + buckets.ERRTYPE.length + buckets.MODE.length > 0 ? 1 : 0;

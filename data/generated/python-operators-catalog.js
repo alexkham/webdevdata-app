@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/operators explorer.
 
 export const pythonOperatorsCatalog = {
-  generatedAt: "2026-09-27T14:20:44.963Z",
+  generatedAt: "2026-09-29T16:53:24.227Z",
   items: [
   {
     "slug": "add",

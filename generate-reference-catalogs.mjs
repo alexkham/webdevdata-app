@@ -116,35 +116,43 @@ function extractMeta(src, file, warnings) {
 // ─────────────────────────────────────────────────────────────
 
 function collectContent(warnings) {
-  const items = []; // { language, category (folder), slug (filename), meta }
+  // { language, category, group, module, slug, meta }
+  //   category — folder path under the language ('functions', or
+  //              'stdlib/json' for a module folder); emulator path + map key
+  //   group    — top-level folder ('stdlib'); what the landing pages count
+  //   module   — module folder name for nested items, else null
+  const items = [];
   if (!fs.existsSync(CONTENT_DIR)) {
     warnings.push(`[warn] content dir not found: ${CONTENT_DIR}`);
     return items;
   }
+  const readDir = (dir, language, category, group, module) => {
+    for (const f of fs.readdirSync(dir)) {
+      if (!f.endsWith('.js')) continue;
+      const rel = `content/reference/${language}/${category}/${f}`;
+      const src = fs.readFileSync(path.join(dir, f), 'utf8');
+      const meta = extractMeta(src, rel, warnings);
+      if (!meta) continue;
+
+      const fileSlug = f.replace(/\.js$/, '');
+      if (meta.slug && meta.slug !== fileSlug) {
+        warnings.push(`[warn] meta.slug "${meta.slug}" != filename "${fileSlug}" in ${rel} — using filename`);
+      }
+      items.push({ language, category, group, module, slug: fileSlug, meta: { ...meta, slug: fileSlug } });
+    }
+  };
   for (const lang of fs.readdirSync(CONTENT_DIR, { withFileTypes: true })) {
     if (!lang.isDirectory()) continue;
     const langDir = path.join(CONTENT_DIR, lang.name);
     for (const cat of fs.readdirSync(langDir, { withFileTypes: true })) {
       if (!cat.isDirectory()) continue;
       const catDir = path.join(langDir, cat.name);
-      for (const f of fs.readdirSync(catDir)) {
-        if (!f.endsWith('.js')) continue;
-        const filePath = path.join(catDir, f);
-        const rel = `content/reference/${lang.name}/${cat.name}/${f}`;
-        const src = fs.readFileSync(filePath, 'utf8');
-        const meta = extractMeta(src, rel, warnings);
-        if (!meta) continue;
-
-        const fileSlug = f.replace(/\.js$/, '');
-        if (meta.slug && meta.slug !== fileSlug) {
-          warnings.push(`[warn] meta.slug "${meta.slug}" != filename "${fileSlug}" in ${rel} — using filename`);
-        }
-        items.push({
-          language: lang.name,
-          category: cat.name,
-          slug: fileSlug,
-          meta: { ...meta, slug: fileSlug },
-        });
+      readDir(catDir, lang.name, cat.name, cat.name, null);
+      // One level of module folders (stdlib/json/…): index.js is the module
+      // hub, every other file a member page.
+      for (const sub of fs.readdirSync(catDir, { withFileTypes: true })) {
+        if (!sub.isDirectory()) continue;
+        readDir(path.join(catDir, sub.name), lang.name, `${cat.name}/${sub.name}`, cat.name, sub.name);
       }
     }
   }
@@ -200,8 +208,11 @@ function emitReferenceCatalog(items) {
   for (const it of items) {
     if (!byLang.has(it.language)) byLang.set(it.language, new Map());
     const byCat = byLang.get(it.language);
-    if (!byCat.has(it.category)) byCat.set(it.category, []);
-    byCat.get(it.category).push(it.meta);
+    // Module folders roll up into their top-level group; their slugs become
+    // module-relative paths so `${category.href}/${slug}` stays a real URL.
+    if (!byCat.has(it.group)) byCat.set(it.group, []);
+    const slug = it.module ? (it.slug === 'index' ? it.module : `${it.module}/${it.slug}`) : it.slug;
+    byCat.get(it.group).push({ ...it.meta, slug });
   }
 
   const languages = [...byLang.entries()].map(([lang, byCat]) => {
@@ -242,10 +253,11 @@ function emitCategoryCatalogs(items) {
   }
 
   for (const [key, metas] of byLangCat.entries()) {
-    const [lang, cat] = key.split('/');
+    const lang = key.split('/')[0];
+    const cat = key.slice(lang.length + 1).replace(/\//g, '-'); // stdlib/json → stdlib-json
     const exportName = catalogExportName(lang, cat);
     const out = `${AUTO_HEADER('generate-reference-catalogs.mjs')}//
-// Flat list for the /reference/${lang}/${cat} explorer.
+// Flat list for the /reference/${lang}/${key.slice(lang.length + 1)} explorer.
 
 export const ${exportName} = {
   generatedAt: ${JSON.stringify(new Date().toISOString())},
@@ -254,24 +266,69 @@ export const ${exportName} = {
 `;
     fs.writeFileSync(path.join(GENERATED_DIR, `${lang}-${cat}-catalog.js`), out);
   }
+  emitModuleCatalogs(items);
   return byLangCat;
 }
 
-// One rollup per language, driven by its PRIMARY category (the first in
-// alphabetical order — `functions` for python, `methods` for javascript).
+// One catalog per group of module folders, e.g.
+//   data/generated/python-stdlib-catalog.js → pythonStdlibCatalog
+// listing each module's hub meta (index.js) with its member counts.
+function emitModuleCatalogs(items) {
+  const byGroup = new Map(); // 'lang/group' → Map(module → items)
+  for (const it of items) {
+    if (!it.module) continue;
+    const key = `${it.language}/${it.group}`;
+    if (!byGroup.has(key)) byGroup.set(key, new Map());
+    const mods = byGroup.get(key);
+    if (!mods.has(it.module)) mods.set(it.module, []);
+    mods.get(it.module).push(it);
+  }
+  for (const [key, mods] of byGroup.entries()) {
+    const [lang, group] = key.split('/');
+    const modules = [...mods.entries()].map(([module, its]) => {
+      const hub = its.find((x) => x.slug === 'index');
+      const members = its.filter((x) => x.slug !== 'index');
+      return {
+        ...(hub ? hub.meta : { name: module, blurb: '' }),
+        slug: module,
+        memberCount: members.length,
+        liveCount: members.filter((x) => x.meta.hasLiveDemo).length,
+      };
+    }).sort((a, b) => a.slug.localeCompare(b.slug));
+    const exportName = catalogExportName(lang, group);
+    const out = `${AUTO_HEADER('generate-reference-catalogs.mjs')}//
+// Modules under /reference/${lang}/${group}: each module hub's meta plus
+// member counts.
+
+export const ${exportName} = {
+  generatedAt: ${JSON.stringify(new Date().toISOString())},
+  modules: ${JSON.stringify(modules, null, 2)}
+};
+`;
+    fs.writeFileSync(path.join(GENERATED_DIR, `${lang}-${group}-catalog.js`), out);
+  }
+}
+
+const PRIMARY_CATEGORY = { python: 'functions', javascript: 'methods' };
+
+// One rollup per language, driven by its PRIMARY category (PRIMARY_CATEGORY,
+// else the first in alphabetical order).
 // `byCategory` generalises the old python-only `operators` key, which is
 // still emitted so the existing python landing page keeps working.
 function emitLanguageRollups(byLangCat) {
   const byLang = new Map();
   for (const [key, metas] of byLangCat.entries()) {
-    const [lang, cat] = key.split('/');
+    const lang = key.split('/')[0];
+    const cat = key.slice(lang.length + 1); // may be 'stdlib/json'
     if (!byLang.has(lang)) byLang.set(lang, new Map());
     byLang.get(lang).set(cat, metas);
   }
 
   for (const [lang, cats] of byLang.entries()) {
     const catNames = [...cats.keys()].sort();
-    const primary = catNames[0];
+    // Explicit primary where alphabetical order would pick the wrong one
+    // ('exceptions' sorts before 'functions').
+    const primary = cats.has(PRIMARY_CATEGORY[lang]) ? PRIMARY_CATEGORY[lang] : catNames[0];
     const metas = cats.get(primary) || [];
 
     const byType = new Map();
@@ -290,10 +347,17 @@ function emitLanguageRollups(byLangCat) {
 
     const featured = metas.filter((m) => m.hasLiveDemo).slice(0, 6);
 
-    // Every category of this language, for landing tiles.
+    // Every category of this language, for landing tiles. Module folders
+    // (stdlib/json, …) roll up into their group: total = every page
+    // (hubs + members), modules = number of module folders.
     const byCategory = {};
     for (const [cat, ms] of cats.entries()) {
-      byCategory[cat] = { total: ms.length, liveTotal: ms.filter((m) => m.hasLiveDemo).length };
+      const group = cat.split('/')[0];
+      const cur = byCategory[group] || { total: 0, liveTotal: 0 };
+      cur.total += ms.length;
+      cur.liveTotal += ms.filter((m) => m.hasLiveDemo).length;
+      if (cat.includes('/')) cur.modules = (cur.modules || 0) + 1;
+      byCategory[group] = cur;
     }
 
     const out = `${AUTO_HEADER('generate-reference-catalogs.mjs')}//
@@ -319,7 +383,7 @@ export const ${rollupExportName(lang)} = {
 
 function emitEmulatorsMap(withEmulator) {
   const ident = ({ language, category, slug }) =>
-    (language + '-' + category + '-' + slug).replace(/-([a-z0-9])/g, (_, c) => c.toUpperCase()) + 'Emu';
+    (language + '-' + category + '-' + slug).replace(/[-/]+([A-Za-z0-9])/g, (_, c) => c.toUpperCase()) + 'Emu';
 
   const imports = withEmulator
     .map((e) => `import ${ident(e)} from './emulators/${e.language}/${e.category}/${e.slug}';`)

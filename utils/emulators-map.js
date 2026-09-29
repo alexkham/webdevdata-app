@@ -146,6 +146,47 @@ import javascriptMethodsStringTolowercaseEmu from './emulators/javascript/method
 import javascriptMethodsStringTouppercaseEmu from './emulators/javascript/methods/string-touppercase';
 import javascriptMethodsStringTrimEmu from './emulators/javascript/methods/string-trim';
 import javascriptMethodsStringWellformedEmu from './emulators/javascript/methods/string-wellformed';
+import pythonExceptionsArithmeticerrorEmu from './emulators/python/exceptions/arithmeticerror';
+import pythonExceptionsAssertionerrorEmu from './emulators/python/exceptions/assertionerror';
+import pythonExceptionsAttributeerrorEmu from './emulators/python/exceptions/attributeerror';
+import pythonExceptionsBaseexceptionEmu from './emulators/python/exceptions/baseexception';
+import pythonExceptionsBuffererrorEmu from './emulators/python/exceptions/buffererror';
+import pythonExceptionsConnectionerrorEmu from './emulators/python/exceptions/connectionerror';
+import pythonExceptionsDeprecationwarningEmu from './emulators/python/exceptions/deprecationwarning';
+import pythonExceptionsEoferrorEmu from './emulators/python/exceptions/eoferror';
+import pythonExceptionsExceptionEmu from './emulators/python/exceptions/exception';
+import pythonExceptionsExceptiongroupEmu from './emulators/python/exceptions/exceptiongroup';
+import pythonExceptionsFileexistserrorEmu from './emulators/python/exceptions/fileexistserror';
+import pythonExceptionsFilenotfounderrorEmu from './emulators/python/exceptions/filenotfounderror';
+import pythonExceptionsGeneratorexitEmu from './emulators/python/exceptions/generatorexit';
+import pythonExceptionsImporterrorEmu from './emulators/python/exceptions/importerror';
+import pythonExceptionsIndentationerrorEmu from './emulators/python/exceptions/indentationerror';
+import pythonExceptionsIndexerrorEmu from './emulators/python/exceptions/indexerror';
+import pythonExceptionsIsadirectoryerrorEmu from './emulators/python/exceptions/isadirectoryerror';
+import pythonExceptionsKeyboardinterruptEmu from './emulators/python/exceptions/keyboardinterrupt';
+import pythonExceptionsKeyerrorEmu from './emulators/python/exceptions/keyerror';
+import pythonExceptionsLookuperrorEmu from './emulators/python/exceptions/lookuperror';
+import pythonExceptionsNameerrorEmu from './emulators/python/exceptions/nameerror';
+import pythonExceptionsNotadirectoryerrorEmu from './emulators/python/exceptions/notadirectoryerror';
+import pythonExceptionsNotimplementederrorEmu from './emulators/python/exceptions/notimplementederror';
+import pythonExceptionsOserrorEmu from './emulators/python/exceptions/oserror';
+import pythonExceptionsOverflowerrorEmu from './emulators/python/exceptions/overflowerror';
+import pythonExceptionsPermissionerrorEmu from './emulators/python/exceptions/permissionerror';
+import pythonExceptionsRecursionerrorEmu from './emulators/python/exceptions/recursionerror';
+import pythonExceptionsReferenceerrorEmu from './emulators/python/exceptions/referenceerror';
+import pythonExceptionsRuntimeerrorEmu from './emulators/python/exceptions/runtimeerror';
+import pythonExceptionsStopiterationEmu from './emulators/python/exceptions/stopiteration';
+import pythonExceptionsSyntaxerrorEmu from './emulators/python/exceptions/syntaxerror';
+import pythonExceptionsSystemexitEmu from './emulators/python/exceptions/systemexit';
+import pythonExceptionsTimeouterrorEmu from './emulators/python/exceptions/timeouterror';
+import pythonExceptionsTypeerrorEmu from './emulators/python/exceptions/typeerror';
+import pythonExceptionsUnboundlocalerrorEmu from './emulators/python/exceptions/unboundlocalerror';
+import pythonExceptionsUnicodedecodeerrorEmu from './emulators/python/exceptions/unicodedecodeerror';
+import pythonExceptionsUnicodeencodeerrorEmu from './emulators/python/exceptions/unicodeencodeerror';
+import pythonExceptionsUnicodeerrorEmu from './emulators/python/exceptions/unicodeerror';
+import pythonExceptionsValueerrorEmu from './emulators/python/exceptions/valueerror';
+import pythonExceptionsWarningEmu from './emulators/python/exceptions/warning';
+import pythonExceptionsZerodivisionerrorEmu from './emulators/python/exceptions/zerodivisionerror';
 import pythonFunctionsAbsEmu from './emulators/python/functions/abs';
 import pythonFunctionsAllEmu from './emulators/python/functions/all';
 import pythonFunctionsAnyEmu from './emulators/python/functions/any';
@@ -331,6 +372,30 @@ import pythonFunctionsTupleEmu from './emulators/python/functions/tuple';
 import pythonFunctionsUpperEmu from './emulators/python/functions/upper';
 import pythonFunctionsZfillEmu from './emulators/python/functions/zfill';
 import pythonFunctionsZipEmu from './emulators/python/functions/zip';
+import pythonKeywordsAssertEmu from './emulators/python/keywords/assert';
+import pythonKeywordsAsyncAwaitEmu from './emulators/python/keywords/async-await';
+import pythonKeywordsBreakEmu from './emulators/python/keywords/break';
+import pythonKeywordsClassEmu from './emulators/python/keywords/class';
+import pythonKeywordsContinueEmu from './emulators/python/keywords/continue';
+import pythonKeywordsDefEmu from './emulators/python/keywords/def';
+import pythonKeywordsDelEmu from './emulators/python/keywords/del';
+import pythonKeywordsForEmu from './emulators/python/keywords/for';
+import pythonKeywordsGlobalEmu from './emulators/python/keywords/global';
+import pythonKeywordsIfEmu from './emulators/python/keywords/if';
+import pythonKeywordsImportEmu from './emulators/python/keywords/import';
+import pythonKeywordsLambdaEmu from './emulators/python/keywords/lambda';
+import pythonKeywordsMatchEmu from './emulators/python/keywords/match';
+import pythonKeywordsNoneEmu from './emulators/python/keywords/none';
+import pythonKeywordsNonlocalEmu from './emulators/python/keywords/nonlocal';
+import pythonKeywordsPassEmu from './emulators/python/keywords/pass';
+import pythonKeywordsRaiseEmu from './emulators/python/keywords/raise';
+import pythonKeywordsReturnEmu from './emulators/python/keywords/return';
+import pythonKeywordsTrueFalseEmu from './emulators/python/keywords/true-false';
+import pythonKeywordsTryEmu from './emulators/python/keywords/try';
+import pythonKeywordsTypeEmu from './emulators/python/keywords/type';
+import pythonKeywordsWhileEmu from './emulators/python/keywords/while';
+import pythonKeywordsWithEmu from './emulators/python/keywords/with';
+import pythonKeywordsYieldEmu from './emulators/python/keywords/yield';
 import pythonOperatorsAddEmu from './emulators/python/operators/add';
 import pythonOperatorsAndEmu from './emulators/python/operators/and';
 import pythonOperatorsBitwiseAndEmu from './emulators/python/operators/bitwise-and';
@@ -358,6 +423,79 @@ import pythonOperatorsRshiftEmu from './emulators/python/operators/rshift';
 import pythonOperatorsSubEmu from './emulators/python/operators/sub';
 import pythonOperatorsTernaryEmu from './emulators/python/operators/ternary';
 import pythonOperatorsTruedivEmu from './emulators/python/operators/truediv';
+import pythonStdlibCollectionsChainmapNew_childEmu from './emulators/python/stdlib/collections/chainmap-new_child';
+import pythonStdlibCollectionsChainmapPopEmu from './emulators/python/stdlib/collections/chainmap-pop';
+import pythonStdlibCollectionsChainmapEmu from './emulators/python/stdlib/collections/chainmap';
+import pythonStdlibCollectionsCounterElementsEmu from './emulators/python/stdlib/collections/counter-elements';
+import pythonStdlibCollectionsCounterMost_commonEmu from './emulators/python/stdlib/collections/counter-most_common';
+import pythonStdlibCollectionsCounterTotalEmu from './emulators/python/stdlib/collections/counter-total';
+import pythonStdlibCollectionsCounterUpdateEmu from './emulators/python/stdlib/collections/counter-update';
+import pythonStdlibCollectionsCounterEmu from './emulators/python/stdlib/collections/counter';
+import pythonStdlibCollectionsDefaultdictEmu from './emulators/python/stdlib/collections/defaultdict';
+import pythonStdlibCollectionsDequeAppendEmu from './emulators/python/stdlib/collections/deque-append';
+import pythonStdlibCollectionsDequeExtendEmu from './emulators/python/stdlib/collections/deque-extend';
+import pythonStdlibCollectionsDequeIndexEmu from './emulators/python/stdlib/collections/deque-index';
+import pythonStdlibCollectionsDequeMaxlenEmu from './emulators/python/stdlib/collections/deque-maxlen';
+import pythonStdlibCollectionsDequeRotateEmu from './emulators/python/stdlib/collections/deque-rotate';
+import pythonStdlibCollectionsDequeEmu from './emulators/python/stdlib/collections/deque';
+import pythonStdlibCollectionsIndexEmu from './emulators/python/stdlib/collections/index';
+import pythonStdlibCollectionsNamedtupleEmu from './emulators/python/stdlib/collections/namedtuple';
+import pythonStdlibCollectionsOrdereddictMethodsEmu from './emulators/python/stdlib/collections/ordereddict-methods';
+import pythonStdlibCollectionsOrdereddictMove_to_endEmu from './emulators/python/stdlib/collections/ordereddict-move_to_end';
+import pythonStdlibCollectionsOrdereddictPopitemEmu from './emulators/python/stdlib/collections/ordereddict-popitem';
+import pythonStdlibCollectionsOrdereddictEmu from './emulators/python/stdlib/collections/ordereddict';
+import pythonStdlibDatetimeDateEmu from './emulators/python/stdlib/datetime/date';
+import pythonStdlibDatetimeDatetimeEmu from './emulators/python/stdlib/datetime/datetime';
+import pythonStdlibDatetimeFromisoformatEmu from './emulators/python/stdlib/datetime/fromisoformat';
+import pythonStdlibDatetimeIndexEmu from './emulators/python/stdlib/datetime/index';
+import pythonStdlibDatetimeStrftimeStrptimeEmu from './emulators/python/stdlib/datetime/strftime-strptime';
+import pythonStdlibDatetimeTimeEmu from './emulators/python/stdlib/datetime/time';
+import pythonStdlibDatetimeTimedeltaTotalSecondsEmu from './emulators/python/stdlib/datetime/timedelta-total-seconds';
+import pythonStdlibDatetimeTimedeltaEmu from './emulators/python/stdlib/datetime/timedelta';
+import pythonStdlibDatetimeTimezoneEmu from './emulators/python/stdlib/datetime/timezone';
+import pythonStdlibJsonDumpEmu from './emulators/python/stdlib/json/dump';
+import pythonStdlibJsonDumpsEmu from './emulators/python/stdlib/json/dumps';
+import pythonStdlibJsonIndexEmu from './emulators/python/stdlib/json/index';
+import pythonStdlibJsonJsondecodeerrorEmu from './emulators/python/stdlib/json/jsondecodeerror';
+import pythonStdlibJsonJsondecoderEmu from './emulators/python/stdlib/json/jsondecoder';
+import pythonStdlibJsonJsonencoderEmu from './emulators/python/stdlib/json/jsonencoder';
+import pythonStdlibJsonLoadEmu from './emulators/python/stdlib/json/load';
+import pythonStdlibJsonLoadsEmu from './emulators/python/stdlib/json/loads';
+import pythonStdlibPathlibAs_posixEmu from './emulators/python/stdlib/pathlib/as_posix';
+import pythonStdlibPathlibExistsEmu from './emulators/python/stdlib/pathlib/exists';
+import pythonStdlibPathlibGlobEmu from './emulators/python/stdlib/pathlib/glob';
+import pythonStdlibPathlibIndexEmu from './emulators/python/stdlib/pathlib/index';
+import pythonStdlibPathlibIs_absoluteEmu from './emulators/python/stdlib/pathlib/is_absolute';
+import pythonStdlibPathlibIterdirEmu from './emulators/python/stdlib/pathlib/iterdir';
+import pythonStdlibPathlibJoinpathEmu from './emulators/python/stdlib/pathlib/joinpath';
+import pythonStdlibPathlibMatchEmu from './emulators/python/stdlib/pathlib/match';
+import pythonStdlibPathlibMkdirEmu from './emulators/python/stdlib/pathlib/mkdir';
+import pythonStdlibPathlibNameEmu from './emulators/python/stdlib/pathlib/name';
+import pythonStdlibPathlibPartsEmu from './emulators/python/stdlib/pathlib/parts';
+import pythonStdlibPathlibPathEmu from './emulators/python/stdlib/pathlib/path';
+import pythonStdlibPathlibPurepathEmu from './emulators/python/stdlib/pathlib/purepath';
+import pythonStdlibPathlibRead_textEmu from './emulators/python/stdlib/pathlib/read_text';
+import pythonStdlibPathlibRelative_toEmu from './emulators/python/stdlib/pathlib/relative_to';
+import pythonStdlibPathlibRenameEmu from './emulators/python/stdlib/pathlib/rename';
+import pythonStdlibPathlibWith_suffixEmu from './emulators/python/stdlib/pathlib/with_suffix';
+import pythonStdlibReCompileEmu from './emulators/python/stdlib/re/compile';
+import pythonStdlibReErrorEmu from './emulators/python/stdlib/re/error';
+import pythonStdlibReEscapeEmu from './emulators/python/stdlib/re/escape';
+import pythonStdlibReFindallEmu from './emulators/python/stdlib/re/findall';
+import pythonStdlibReFinditerEmu from './emulators/python/stdlib/re/finditer';
+import pythonStdlibReFlagsEmu from './emulators/python/stdlib/re/flags';
+import pythonStdlibReFullmatchEmu from './emulators/python/stdlib/re/fullmatch';
+import pythonStdlibReIndexEmu from './emulators/python/stdlib/re/index';
+import pythonStdlibReMatchExpandEmu from './emulators/python/stdlib/re/match-expand';
+import pythonStdlibReMatchGroupEmu from './emulators/python/stdlib/re/match-group';
+import pythonStdlibReMatchGroupsEmu from './emulators/python/stdlib/re/match-groups';
+import pythonStdlibReMatchObjectEmu from './emulators/python/stdlib/re/match-object';
+import pythonStdlibReMatchSpanEmu from './emulators/python/stdlib/re/match-span';
+import pythonStdlibReMatchEmu from './emulators/python/stdlib/re/match';
+import pythonStdlibRePatternObjectEmu from './emulators/python/stdlib/re/pattern-object';
+import pythonStdlibReSearchEmu from './emulators/python/stdlib/re/search';
+import pythonStdlibReSplitEmu from './emulators/python/stdlib/re/split';
+import pythonStdlibReSubEmu from './emulators/python/stdlib/re/sub';
 
 const emulators = {
   'javascript/methods/array-at': javascriptMethodsArrayAtEmu,
@@ -496,6 +634,47 @@ const emulators = {
   'javascript/methods/string-touppercase': javascriptMethodsStringTouppercaseEmu,
   'javascript/methods/string-trim': javascriptMethodsStringTrimEmu,
   'javascript/methods/string-wellformed': javascriptMethodsStringWellformedEmu,
+  'python/exceptions/arithmeticerror': pythonExceptionsArithmeticerrorEmu,
+  'python/exceptions/assertionerror': pythonExceptionsAssertionerrorEmu,
+  'python/exceptions/attributeerror': pythonExceptionsAttributeerrorEmu,
+  'python/exceptions/baseexception': pythonExceptionsBaseexceptionEmu,
+  'python/exceptions/buffererror': pythonExceptionsBuffererrorEmu,
+  'python/exceptions/connectionerror': pythonExceptionsConnectionerrorEmu,
+  'python/exceptions/deprecationwarning': pythonExceptionsDeprecationwarningEmu,
+  'python/exceptions/eoferror': pythonExceptionsEoferrorEmu,
+  'python/exceptions/exception': pythonExceptionsExceptionEmu,
+  'python/exceptions/exceptiongroup': pythonExceptionsExceptiongroupEmu,
+  'python/exceptions/fileexistserror': pythonExceptionsFileexistserrorEmu,
+  'python/exceptions/filenotfounderror': pythonExceptionsFilenotfounderrorEmu,
+  'python/exceptions/generatorexit': pythonExceptionsGeneratorexitEmu,
+  'python/exceptions/importerror': pythonExceptionsImporterrorEmu,
+  'python/exceptions/indentationerror': pythonExceptionsIndentationerrorEmu,
+  'python/exceptions/indexerror': pythonExceptionsIndexerrorEmu,
+  'python/exceptions/isadirectoryerror': pythonExceptionsIsadirectoryerrorEmu,
+  'python/exceptions/keyboardinterrupt': pythonExceptionsKeyboardinterruptEmu,
+  'python/exceptions/keyerror': pythonExceptionsKeyerrorEmu,
+  'python/exceptions/lookuperror': pythonExceptionsLookuperrorEmu,
+  'python/exceptions/nameerror': pythonExceptionsNameerrorEmu,
+  'python/exceptions/notadirectoryerror': pythonExceptionsNotadirectoryerrorEmu,
+  'python/exceptions/notimplementederror': pythonExceptionsNotimplementederrorEmu,
+  'python/exceptions/oserror': pythonExceptionsOserrorEmu,
+  'python/exceptions/overflowerror': pythonExceptionsOverflowerrorEmu,
+  'python/exceptions/permissionerror': pythonExceptionsPermissionerrorEmu,
+  'python/exceptions/recursionerror': pythonExceptionsRecursionerrorEmu,
+  'python/exceptions/referenceerror': pythonExceptionsReferenceerrorEmu,
+  'python/exceptions/runtimeerror': pythonExceptionsRuntimeerrorEmu,
+  'python/exceptions/stopiteration': pythonExceptionsStopiterationEmu,
+  'python/exceptions/syntaxerror': pythonExceptionsSyntaxerrorEmu,
+  'python/exceptions/systemexit': pythonExceptionsSystemexitEmu,
+  'python/exceptions/timeouterror': pythonExceptionsTimeouterrorEmu,
+  'python/exceptions/typeerror': pythonExceptionsTypeerrorEmu,
+  'python/exceptions/unboundlocalerror': pythonExceptionsUnboundlocalerrorEmu,
+  'python/exceptions/unicodedecodeerror': pythonExceptionsUnicodedecodeerrorEmu,
+  'python/exceptions/unicodeencodeerror': pythonExceptionsUnicodeencodeerrorEmu,
+  'python/exceptions/unicodeerror': pythonExceptionsUnicodeerrorEmu,
+  'python/exceptions/valueerror': pythonExceptionsValueerrorEmu,
+  'python/exceptions/warning': pythonExceptionsWarningEmu,
+  'python/exceptions/zerodivisionerror': pythonExceptionsZerodivisionerrorEmu,
   'python/functions/abs': pythonFunctionsAbsEmu,
   'python/functions/all': pythonFunctionsAllEmu,
   'python/functions/any': pythonFunctionsAnyEmu,
@@ -681,6 +860,30 @@ const emulators = {
   'python/functions/upper': pythonFunctionsUpperEmu,
   'python/functions/zfill': pythonFunctionsZfillEmu,
   'python/functions/zip': pythonFunctionsZipEmu,
+  'python/keywords/assert': pythonKeywordsAssertEmu,
+  'python/keywords/async-await': pythonKeywordsAsyncAwaitEmu,
+  'python/keywords/break': pythonKeywordsBreakEmu,
+  'python/keywords/class': pythonKeywordsClassEmu,
+  'python/keywords/continue': pythonKeywordsContinueEmu,
+  'python/keywords/def': pythonKeywordsDefEmu,
+  'python/keywords/del': pythonKeywordsDelEmu,
+  'python/keywords/for': pythonKeywordsForEmu,
+  'python/keywords/global': pythonKeywordsGlobalEmu,
+  'python/keywords/if': pythonKeywordsIfEmu,
+  'python/keywords/import': pythonKeywordsImportEmu,
+  'python/keywords/lambda': pythonKeywordsLambdaEmu,
+  'python/keywords/match': pythonKeywordsMatchEmu,
+  'python/keywords/none': pythonKeywordsNoneEmu,
+  'python/keywords/nonlocal': pythonKeywordsNonlocalEmu,
+  'python/keywords/pass': pythonKeywordsPassEmu,
+  'python/keywords/raise': pythonKeywordsRaiseEmu,
+  'python/keywords/return': pythonKeywordsReturnEmu,
+  'python/keywords/true-false': pythonKeywordsTrueFalseEmu,
+  'python/keywords/try': pythonKeywordsTryEmu,
+  'python/keywords/type': pythonKeywordsTypeEmu,
+  'python/keywords/while': pythonKeywordsWhileEmu,
+  'python/keywords/with': pythonKeywordsWithEmu,
+  'python/keywords/yield': pythonKeywordsYieldEmu,
   'python/operators/add': pythonOperatorsAddEmu,
   'python/operators/and': pythonOperatorsAndEmu,
   'python/operators/bitwise-and': pythonOperatorsBitwiseAndEmu,
@@ -708,6 +911,79 @@ const emulators = {
   'python/operators/sub': pythonOperatorsSubEmu,
   'python/operators/ternary': pythonOperatorsTernaryEmu,
   'python/operators/truediv': pythonOperatorsTruedivEmu,
+  'python/stdlib/collections/chainmap-new_child': pythonStdlibCollectionsChainmapNew_childEmu,
+  'python/stdlib/collections/chainmap-pop': pythonStdlibCollectionsChainmapPopEmu,
+  'python/stdlib/collections/chainmap': pythonStdlibCollectionsChainmapEmu,
+  'python/stdlib/collections/counter-elements': pythonStdlibCollectionsCounterElementsEmu,
+  'python/stdlib/collections/counter-most_common': pythonStdlibCollectionsCounterMost_commonEmu,
+  'python/stdlib/collections/counter-total': pythonStdlibCollectionsCounterTotalEmu,
+  'python/stdlib/collections/counter-update': pythonStdlibCollectionsCounterUpdateEmu,
+  'python/stdlib/collections/counter': pythonStdlibCollectionsCounterEmu,
+  'python/stdlib/collections/defaultdict': pythonStdlibCollectionsDefaultdictEmu,
+  'python/stdlib/collections/deque-append': pythonStdlibCollectionsDequeAppendEmu,
+  'python/stdlib/collections/deque-extend': pythonStdlibCollectionsDequeExtendEmu,
+  'python/stdlib/collections/deque-index': pythonStdlibCollectionsDequeIndexEmu,
+  'python/stdlib/collections/deque-maxlen': pythonStdlibCollectionsDequeMaxlenEmu,
+  'python/stdlib/collections/deque-rotate': pythonStdlibCollectionsDequeRotateEmu,
+  'python/stdlib/collections/deque': pythonStdlibCollectionsDequeEmu,
+  'python/stdlib/collections/index': pythonStdlibCollectionsIndexEmu,
+  'python/stdlib/collections/namedtuple': pythonStdlibCollectionsNamedtupleEmu,
+  'python/stdlib/collections/ordereddict-methods': pythonStdlibCollectionsOrdereddictMethodsEmu,
+  'python/stdlib/collections/ordereddict-move_to_end': pythonStdlibCollectionsOrdereddictMove_to_endEmu,
+  'python/stdlib/collections/ordereddict-popitem': pythonStdlibCollectionsOrdereddictPopitemEmu,
+  'python/stdlib/collections/ordereddict': pythonStdlibCollectionsOrdereddictEmu,
+  'python/stdlib/datetime/date': pythonStdlibDatetimeDateEmu,
+  'python/stdlib/datetime/datetime': pythonStdlibDatetimeDatetimeEmu,
+  'python/stdlib/datetime/fromisoformat': pythonStdlibDatetimeFromisoformatEmu,
+  'python/stdlib/datetime/index': pythonStdlibDatetimeIndexEmu,
+  'python/stdlib/datetime/strftime-strptime': pythonStdlibDatetimeStrftimeStrptimeEmu,
+  'python/stdlib/datetime/time': pythonStdlibDatetimeTimeEmu,
+  'python/stdlib/datetime/timedelta-total-seconds': pythonStdlibDatetimeTimedeltaTotalSecondsEmu,
+  'python/stdlib/datetime/timedelta': pythonStdlibDatetimeTimedeltaEmu,
+  'python/stdlib/datetime/timezone': pythonStdlibDatetimeTimezoneEmu,
+  'python/stdlib/json/dump': pythonStdlibJsonDumpEmu,
+  'python/stdlib/json/dumps': pythonStdlibJsonDumpsEmu,
+  'python/stdlib/json/index': pythonStdlibJsonIndexEmu,
+  'python/stdlib/json/jsondecodeerror': pythonStdlibJsonJsondecodeerrorEmu,
+  'python/stdlib/json/jsondecoder': pythonStdlibJsonJsondecoderEmu,
+  'python/stdlib/json/jsonencoder': pythonStdlibJsonJsonencoderEmu,
+  'python/stdlib/json/load': pythonStdlibJsonLoadEmu,
+  'python/stdlib/json/loads': pythonStdlibJsonLoadsEmu,
+  'python/stdlib/pathlib/as_posix': pythonStdlibPathlibAs_posixEmu,
+  'python/stdlib/pathlib/exists': pythonStdlibPathlibExistsEmu,
+  'python/stdlib/pathlib/glob': pythonStdlibPathlibGlobEmu,
+  'python/stdlib/pathlib/index': pythonStdlibPathlibIndexEmu,
+  'python/stdlib/pathlib/is_absolute': pythonStdlibPathlibIs_absoluteEmu,
+  'python/stdlib/pathlib/iterdir': pythonStdlibPathlibIterdirEmu,
+  'python/stdlib/pathlib/joinpath': pythonStdlibPathlibJoinpathEmu,
+  'python/stdlib/pathlib/match': pythonStdlibPathlibMatchEmu,
+  'python/stdlib/pathlib/mkdir': pythonStdlibPathlibMkdirEmu,
+  'python/stdlib/pathlib/name': pythonStdlibPathlibNameEmu,
+  'python/stdlib/pathlib/parts': pythonStdlibPathlibPartsEmu,
+  'python/stdlib/pathlib/path': pythonStdlibPathlibPathEmu,
+  'python/stdlib/pathlib/purepath': pythonStdlibPathlibPurepathEmu,
+  'python/stdlib/pathlib/read_text': pythonStdlibPathlibRead_textEmu,
+  'python/stdlib/pathlib/relative_to': pythonStdlibPathlibRelative_toEmu,
+  'python/stdlib/pathlib/rename': pythonStdlibPathlibRenameEmu,
+  'python/stdlib/pathlib/with_suffix': pythonStdlibPathlibWith_suffixEmu,
+  'python/stdlib/re/compile': pythonStdlibReCompileEmu,
+  'python/stdlib/re/error': pythonStdlibReErrorEmu,
+  'python/stdlib/re/escape': pythonStdlibReEscapeEmu,
+  'python/stdlib/re/findall': pythonStdlibReFindallEmu,
+  'python/stdlib/re/finditer': pythonStdlibReFinditerEmu,
+  'python/stdlib/re/flags': pythonStdlibReFlagsEmu,
+  'python/stdlib/re/fullmatch': pythonStdlibReFullmatchEmu,
+  'python/stdlib/re/index': pythonStdlibReIndexEmu,
+  'python/stdlib/re/match-expand': pythonStdlibReMatchExpandEmu,
+  'python/stdlib/re/match-group': pythonStdlibReMatchGroupEmu,
+  'python/stdlib/re/match-groups': pythonStdlibReMatchGroupsEmu,
+  'python/stdlib/re/match-object': pythonStdlibReMatchObjectEmu,
+  'python/stdlib/re/match-span': pythonStdlibReMatchSpanEmu,
+  'python/stdlib/re/match': pythonStdlibReMatchEmu,
+  'python/stdlib/re/pattern-object': pythonStdlibRePatternObjectEmu,
+  'python/stdlib/re/search': pythonStdlibReSearchEmu,
+  'python/stdlib/re/split': pythonStdlibReSplitEmu,
+  'python/stdlib/re/sub': pythonStdlibReSubEmu,
 };
 
 export function getEmulator(language, category, slug) {

@@ -7,7 +7,7 @@
 // Contains the COMPLETE page list per pillar — nothing truncated.
 
 export const homeCatalog = {
-  generatedAt: "2026-09-27T14:20:45.036Z",
+  generatedAt: "2026-09-29T15:24:41.489Z",
   pillars: [
   {
     "id": "c-programming",
@@ -95,7 +95,7 @@ export const homeCatalog = {
     "ctaLabel": "Browse Reference",
     "stats": [
       {
-        "n": "5",
+        "n": "8",
         "label": "Pages"
       },
       {
@@ -103,17 +103,17 @@ export const homeCatalog = {
         "label": "Categories"
       },
       {
-        "n": "400",
+        "n": "471",
         "label": "Entries"
       }
     ],
     "breakdown": [
       {
-        "label": "General",
-        "count": 2
+        "label": "Python",
+        "count": 5
       },
       {
-        "label": "Python",
+        "label": "General",
         "count": 2
       },
       {
@@ -137,6 +137,13 @@ export const homeCatalog = {
         "subCategory": null
       },
       {
+        "name": "Python exceptions",
+        "desc": "Every Python built-in exception: what raises it, the exact message, how to handle it — KeyError, TypeError, ValueError, FileNotFoundError and more, with live demos.",
+        "href": "/reference/python/exceptions",
+        "category": "Python",
+        "subCategory": null
+      },
+      {
         "name": "Python functions",
         "desc": "Browse Python built-in functions and type methods: signatures, parameters, examples, pitfalls and live in-browser demos.",
         "href": "/reference/python/functions",
@@ -151,9 +158,23 @@ export const homeCatalog = {
         "subCategory": null
       },
       {
+        "name": "Python keywords",
+        "desc": "Every Python keyword and soft keyword: if/elif/else, for/else, try/except/finally, with, yield, async/await, match/case, global/nonlocal and more — with every syntax form, pitfalls and live demos.",
+        "href": "/reference/python/keywords",
+        "category": "Python",
+        "subCategory": null
+      },
+      {
         "name": "Python operators",
         "desc": "Browse Python operators: arithmetic, comparison, logical, bitwise, membership, identity and the walrus — with examples, pitfalls and live demos.",
         "href": "/reference/python/operators",
+        "category": "Python",
+        "subCategory": null
+      },
+      {
+        "name": "Python standard library",
+        "desc": "Python standard library modules — json and more — with every public function, class and exception documented, exact error messages and live in-browser demos.",
+        "href": "/reference/python/stdlib",
         "category": "Python",
         "subCategory": null
       }
