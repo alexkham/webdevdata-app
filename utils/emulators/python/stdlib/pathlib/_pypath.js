@@ -377,13 +377,17 @@ export class PurePosixPath {
     }
   }
   rename(target) {
+    // os.rename(self, target) gets a str target verbatim (Path.rename in 3.13),
+    // so '' reaches the OS as '' — ENOENT — not as '.'
     const t = target instanceof PurePosixPath ? target : this.withSegments(target);
-    this.fs.rename(this.str, t.str, false);
+    this.fs.rename(this.str, typeof target === 'string' && target === '' ? '' : t.str, false);
     return this.withSegments(target);
   }
   replace(target) {
+    // os.replace(self, target) gets a str target verbatim (Path.replace in 3.13),
+    // so '' reaches the OS as '' — ENOENT — not as '.'
     const t = target instanceof PurePosixPath ? target : this.withSegments(target);
-    this.fs.rename(this.str, t.str, true);
+    this.fs.rename(this.str, typeof target === 'string' && target === '' ? '' : t.str, true);
     return this.withSegments(target);
   }
   size() { return this.fs.stat(this.str).size; }
@@ -696,6 +700,7 @@ export class VFS {
   }
   // os.rename (POSIX: silently replaces a file) / os.replace
   rename(src, dst) {
+    if (dst === '') throw ENOENT(src, dst);
     let rs;
     let rd;
     try { rs = this.resolve(src); } catch (e) { throw retarget(e, src, dst); }

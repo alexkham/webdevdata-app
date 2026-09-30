@@ -10,7 +10,7 @@ import RefHead from '@/app/components/reference/frame/RefHead';
 import ReferenceFrame from '@/app/components/reference/frame/ReferenceFrame';
 import ModuleHero from '@/app/components/reference/module/ModuleHero';
 import { hubSections } from '@/app/components/reference/module/sections';
-import { getEmulator } from '@/utils/emulators-map';
+import { getModuleEmulator } from '@/utils/emulators-maps/python-stdlib-datetime';
 import { moduleHubProps } from '@/utils/stdlib-static';
 
 const MODULE = 'datetime';
@@ -20,7 +20,7 @@ export async function getStaticProps() {
 }
 
 export default function DatetimeModulePage({ seoData, meta, method, groups, siblings, siblingsTitle, schemas }) {
-  const emulator = getEmulator('python', `stdlib/${MODULE}`, 'index');
+  const emulator = getModuleEmulator('index');
   const sections = hubSections(meta, method, emulator, groups);
   const rail = { tryInTool: method.tryInTool || [], officialDocs: method.officialDocs || null };
 

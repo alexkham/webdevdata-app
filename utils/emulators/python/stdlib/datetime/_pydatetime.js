@@ -776,7 +776,7 @@ export function fromutc(tz, dt) {
 }
 export function astimezone(x, tz) {
   if (tz === undefined || tz === null) limit('astimezone() without a tz converts to the local timezone of the machine running Python');
-  if (!isTzinfo(tz)) raise('TypeError', `astimezone() argument 1 must be datetime.tzinfo, not ${typeName(tz)}`);
+  checkTzinfoArg(tz);
   if (x.tz === tz) return x;
   const off = utcoffset(x);
   if (off === null) limit('a naive datetime is taken as local time by astimezone() — depends on the machine running Python');

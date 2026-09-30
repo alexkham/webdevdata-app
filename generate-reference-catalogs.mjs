@@ -381,9 +381,48 @@ export const ${rollupExportName(lang)} = {
   }
 }
 
-function emitEmulatorsMap(withEmulator) {
-  const ident = ({ language, category, slug }) =>
-    (language + '-' + category + '-' + slug).replace(/[-/]+([A-Za-z0-9])/g, (_, c) => c.toUpperCase()) + 'Emu';
+const emuIdent = ({ language, category, slug }) =>
+  (language + '-' + category + '-' + slug).replace(/[-/]+([A-Za-z0-9])/g, (_, c) => c.toUpperCase()) + 'Emu';
+
+// Module folders (stdlib/json, …) get their OWN small map each —
+// utils/emulators-maps/<language>-<group>-<module>.js — imported only by
+// that module's pages. Their emulators include whole engines (regex,
+// datetime, …); keeping them out of the global map keeps every other
+// reference page's bundle as it was.
+function emitModuleEmulatorMaps(withEmulator) {
+  const dir = path.join(__dirname, 'utils', 'emulators-maps');
+  fs.mkdirSync(dir, { recursive: true });
+  const byModule = new Map();
+  for (const e of withEmulator) {
+    if (!e.category.includes('/')) continue;
+    const key = `${e.language}-${e.category.split('/').join('-')}`;
+    if (!byModule.has(key)) byModule.set(key, []);
+    byModule.get(key).push(e);
+  }
+  for (const [key, list] of byModule.entries()) {
+    const imports = list.map((e) => `import ${emuIdent(e)} from '../emulators/${e.language}/${e.category}/${e.slug}';`).join('\n');
+    const entries = list.map((e) => `  '${e.slug}': ${emuIdent(e)},`).join('\n');
+    const out = `${AUTO_HEADER('generate-reference-catalogs.mjs')}//
+// slug → emulator for ${list[0].language}/${list[0].category} only.
+
+${imports}
+
+const emulators = {
+${entries}
+};
+
+export function getModuleEmulator(slug) {
+  return emulators[slug];
+}
+`;
+    fs.writeFileSync(path.join(dir, `${key}.js`), out);
+  }
+}
+
+function emitEmulatorsMap(allWithEmulator) {
+  const ident = emuIdent;
+  // module-folder emulators live in their own per-module maps
+  const withEmulator = allWithEmulator.filter((e) => !e.category.includes('/'));
 
   const imports = withEmulator
     .map((e) => `import ${ident(e)} from './emulators/${e.language}/${e.category}/${e.slug}';`)
@@ -429,6 +468,7 @@ function main() {
   const byLangCat = emitCategoryCatalogs(items);
   emitLanguageRollups(byLangCat);
   emitEmulatorsMap(withEmulator);
+  emitModuleEmulatorMaps(withEmulator);
 
   warnings.forEach((w) => console.warn(`  ${w}`));
   console.log(`\nReference catalogs generated: ${items.length} item(s), ${withEmulator.length} emulator(s) mapped`);

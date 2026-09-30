@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/stdlib/re explorer.
 
 export const pythonStdlibReCatalog = {
-  generatedAt: "2026-09-29T16:53:24.228Z",
+  generatedAt: "2026-09-29T19:34:02.818Z",
   items: [
   {
     "slug": "compile",

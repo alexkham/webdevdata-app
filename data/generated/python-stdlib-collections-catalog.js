@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/stdlib/collections explorer.
 
 export const pythonStdlibCollectionsCatalog = {
-  generatedAt: "2026-09-29T16:53:24.227Z",
+  generatedAt: "2026-09-29T19:34:02.818Z",
   items: [
   {
     "slug": "chainmap-new_child",

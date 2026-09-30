@@ -6,7 +6,7 @@
 // member counts.
 
 export const pythonStdlibCatalog = {
-  generatedAt: "2026-09-29T16:53:24.235Z",
+  generatedAt: "2026-09-29T19:34:02.825Z",
   modules: [
   {
     "slug": "collections",
@@ -31,8 +31,8 @@ export const pythonStdlibCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.3+",
     "searchTerms": "datetime module python date time datetime timedelta timezone tzinfo utc now today strftime strptime isoformat fromisoformat naive aware add days difference between dates",
-    "memberCount": 9,
-    "liveCount": 9
+    "memberCount": 26,
+    "liveCount": 26
   },
   {
     "slug": "json",

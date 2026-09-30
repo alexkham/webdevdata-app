@@ -11,7 +11,7 @@ import ReferenceFrame from '@/app/components/reference/frame/ReferenceFrame';
 import MethodHero from '@/app/components/reference/method/MethodHero';
 import ExceptionHero from '@/app/components/reference/exception/ExceptionHero';
 import { memberSections } from '@/app/components/reference/module/sections';
-import { getEmulator } from '@/utils/emulators-map';
+import { getModuleEmulator } from '@/utils/emulators-maps/python-stdlib-collections';
 import { memberPaths, memberProps } from '@/utils/stdlib-static';
 
 const MODULE = 'collections';
@@ -25,7 +25,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function CollectionsMemberPage({ seoData, meta, method, chain, siblings, siblingsTitle, schemas }) {
-  const emulator = getEmulator('python', `stdlib/${MODULE}`, meta.slug);
+  const emulator = getModuleEmulator(meta.slug);
   const sections = memberSections(meta, method, emulator);
   const rail = { tryInTool: method.tryInTool || [], officialDocs: method.officialDocs || null };
 

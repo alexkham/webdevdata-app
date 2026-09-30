@@ -5,8 +5,52 @@
 // Flat list for the /reference/python/stdlib/datetime explorer.
 
 export const pythonStdlibDatetimeCatalog = {
-  generatedAt: "2026-09-29T16:53:24.227Z",
+  generatedAt: "2026-09-29T19:34:02.818Z",
   items: [
+  {
+    "slug": "astimezone",
+    "name": "datetime.astimezone",
+    "signature": "dt.astimezone(tz=None)",
+    "blurb": "Convert an aware datetime to another time zone: same instant, different wall-clock reading. Without tz it converts to the machine's local zone.",
+    "category": "methods",
+    "type": "method",
+    "hasLiveDemo": true,
+    "version": "Python 3.3+ (tz optional), naive input 3.6+",
+    "searchTerms": "datetime.astimezone astimezone convert timezone python convert utc to local convert between time zones offset conversion local time naive astimezone"
+  },
+  {
+    "slug": "combine",
+    "name": "datetime.combine / date() / time() / timetz()",
+    "signature": "datetime.combine(date, time, tzinfo=time.tzinfo)",
+    "blurb": "Join a date and a time into a datetime (combine), or split a datetime into its date, its time, or its time with tzinfo.",
+    "category": "methods",
+    "type": "method",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+ (tzinfo argument 3.6+)",
+    "searchTerms": "datetime.combine datetime.date datetime.time datetime.timetz combine date and time split datetime get date from datetime get time from datetime python timetz start of day midnight"
+  },
+  {
+    "slug": "ctime",
+    "name": "datetime.ctime",
+    "signature": "dt.ctime()",
+    "blurb": "The fixed C-style text form \"Tue Sep 29 14:30:05 2026\" — English names, space-padded day, no zone.",
+    "category": "methods",
+    "type": "method",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "date.ctime datetime.ctime ctime asctime c style date string python Tue Sep 29 format unix date format"
+  },
+  {
+    "slug": "date-attributes",
+    "name": "date.year / month / day",
+    "signature": "d.year · d.month · d.day",
+    "blurb": "The three read-only integer fields of a date — and of a datetime, which inherits them.",
+    "category": "methods",
+    "type": "attribute",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "date.year date.month date.day year month day attributes python get year from date get month from datetime day of month read only attribute is not writable"
+  },
   {
     "slug": "date",
     "name": "datetime.date",
@@ -41,6 +85,17 @@ export const pythonStdlibDatetimeCatalog = {
     "searchTerms": "fromisoformat isoformat date.fromisoformat datetime.fromisoformat time.fromisoformat date.isoformat datetime.isoformat time.isoformat iso 8601 parse iso string python timespec sep Z suffix utc invalid isoformat string datetime to string json"
   },
   {
+    "slug": "fromtimestamp",
+    "name": "datetime.fromtimestamp / utcfromtimestamp",
+    "signature": "datetime.fromtimestamp(timestamp, tz=None)",
+    "blurb": "Convert a POSIX timestamp (seconds since 1970-01-01 UTC) into a datetime or date. Pass tz for an aware result; utcfromtimestamp is deprecated.",
+    "category": "methods",
+    "type": "method",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+ (utcfromtimestamp deprecated 3.12)",
+    "searchTerms": "fromtimestamp utcfromtimestamp date.fromtimestamp datetime.fromtimestamp datetime.utcfromtimestamp unix timestamp to datetime epoch seconds milliseconds convert timestamp python deprecated timestamp out of range for platform time_t"
+  },
+  {
     "slug": "index",
     "name": "datetime",
     "signature": "import datetime",
@@ -52,6 +107,50 @@ export const pythonStdlibDatetimeCatalog = {
     "searchTerms": "datetime module python date time datetime timedelta timezone tzinfo utc now today strftime strptime isoformat fromisoformat naive aware add days difference between dates"
   },
   {
+    "slug": "isocalendar",
+    "name": "date.isocalendar / fromisocalendar",
+    "signature": "d.isocalendar()",
+    "blurb": "ISO 8601 week dates: isocalendar() gives (year, week, weekday); fromisocalendar(year, week, day) builds the date back.",
+    "category": "methods",
+    "type": "method",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+ (named tuple 3.9+, fromisocalendar 3.8+)",
+    "searchTerms": "date.isocalendar date.fromisocalendar isocalendar fromisocalendar iso week number python week of year iso year IsoCalendarDate week 53 Invalid week Invalid day"
+  },
+  {
+    "slug": "min-max-resolution",
+    "name": "date.min / max / resolution (and friends)",
+    "signature": "date.min · date.max · date.resolution",
+    "blurb": "The smallest value, the largest value and the smallest step of each datetime type: date, datetime, time, timedelta — plus timezone.min and timezone.max.",
+    "category": "methods",
+    "type": "attribute",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+ (timezone 3.2+)",
+    "searchTerms": "date.min date.max date.resolution datetime.min datetime.max datetime.resolution time.min time.max time.resolution timedelta.min timedelta.max timedelta.resolution timezone.min timezone.max min max resolution smallest largest datetime python sentinel microsecond"
+  },
+  {
+    "slug": "minyear-maxyear",
+    "name": "datetime.MINYEAR / MAXYEAR",
+    "signature": "MINYEAR = 1 · MAXYEAR = 9999",
+    "blurb": "The smallest and largest year a date or datetime can hold: 1 and 9999.",
+    "category": "constants",
+    "type": "constant",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "MINYEAR MAXYEAR datetime year range python year 0 year 10000 is out of range date value out of range smallest largest year bc dates"
+  },
+  {
+    "slug": "replace",
+    "name": "datetime.replace",
+    "signature": "dt.replace(year=…, month=…, day=…, hour=…, minute=…, second=…, microsecond=…, tzinfo=…, *, fold=…)",
+    "blurb": "Return a copy with some fields changed — the way to \"set\" the day, truncate to the minute, or attach and remove a tzinfo.",
+    "category": "methods",
+    "type": "method",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+ (fold 3.6+)",
+    "searchTerms": "date.replace datetime.replace time.replace replace change day month year set time to midnight truncate seconds remove tzinfo make naive add tzinfo python copy.replace first day of month"
+  },
+  {
     "slug": "strftime-strptime",
     "name": "datetime.strftime / strptime",
     "signature": "dt.strftime(format)",
@@ -61,6 +160,17 @@ export const pythonStdlibDatetimeCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.3+",
     "searchTerms": "strftime strptime date.strftime time.strftime datetime.strftime datetime.strptime format codes directives %Y %m %d %H %M %S %f %z %Z %a %A %b %B %j %p python date format string parse date string does not match format unconverted data remains remove leading zero %-d %#d"
+  },
+  {
+    "slug": "time-attributes",
+    "name": "datetime.hour / minute / second / microsecond / tzinfo / fold",
+    "signature": "dt.hour · dt.minute · dt.second · dt.microsecond · dt.tzinfo · dt.fold",
+    "blurb": "The read-only time-of-day fields shared by datetime and time: hour, minute, second, microsecond, the tzinfo object and the fold flag.",
+    "category": "methods",
+    "type": "attribute",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+ (fold 3.6+)",
+    "searchTerms": "datetime.hour datetime.minute datetime.second datetime.microsecond datetime.tzinfo datetime.fold time.hour time.minute time.second time.microsecond time.tzinfo time.fold hour minute second microsecond tzinfo fold attribute python get hour from datetime milliseconds pep 495 ambiguous time dst"
   },
   {
     "slug": "time",
@@ -96,6 +206,28 @@ export const pythonStdlibDatetimeCatalog = {
     "searchTerms": "timedelta duration python add days to date subtract dates difference hours minutes weeks timedelta arithmetic divide multiply negative timedelta str format months years"
   },
   {
+    "slug": "timestamp",
+    "name": "datetime.timestamp",
+    "signature": "dt.timestamp()",
+    "blurb": "Seconds since 1970-01-01T00:00:00Z as a float — the POSIX timestamp of an aware datetime (naive values are taken as local time).",
+    "category": "methods",
+    "type": "method",
+    "hasLiveDemo": true,
+    "version": "Python 3.3+",
+    "searchTerms": "datetime.timestamp timestamp unix timestamp epoch seconds datetime to timestamp python milliseconds int timestamp posix naive local time"
+  },
+  {
+    "slug": "timetuple",
+    "name": "datetime.timetuple / utctimetuple",
+    "signature": "dt.timetuple()",
+    "blurb": "Convert to a time.struct_time for the time module: timetuple() keeps the local fields, utctimetuple() converts an aware value to UTC first.",
+    "category": "methods",
+    "type": "method",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "date.timetuple datetime.timetuple datetime.utctimetuple timetuple utctimetuple struct_time time module tm_yday day of year tm_isdst calendar.timegm mktime python"
+  },
+  {
     "slug": "timezone",
     "name": "datetime.timezone",
     "signature": "timezone(offset, name=None)",
@@ -107,6 +239,28 @@ export const pythonStdlibDatetimeCatalog = {
     "searchTerms": "timezone class fixed offset utc offset python timezone timedelta hours convert timezone astimezone tzinfo UTC+05:30 offset must be a timedelta strictly between daylight saving zoneinfo"
   },
   {
+    "slug": "today-now",
+    "name": "date.today / datetime.now / utcnow",
+    "signature": "datetime.now(tz=None)",
+    "blurb": "The current date or date and time: date.today(), datetime.now(tz), and the deprecated naive datetime.utcnow().",
+    "category": "methods",
+    "type": "method",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+ (utcnow deprecated 3.12)",
+    "searchTerms": "date.today datetime.now datetime.utcnow today now utcnow current date current time python get current datetime utc now timezone aware now utcnow deprecated DeprecationWarning datetime.today"
+  },
+  {
+    "slug": "toordinal",
+    "name": "date.toordinal / fromordinal",
+    "signature": "d.toordinal()",
+    "blurb": "Convert a date to its proleptic Gregorian day number (0001-01-01 is day 1) and back.",
+    "category": "methods",
+    "type": "method",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "date.toordinal date.fromordinal toordinal fromordinal ordinal day number proleptic gregorian julian day count date to integer integer to date python ordinal must be >= 1"
+  },
+  {
     "slug": "tzinfo",
     "name": "datetime.tzinfo",
     "signature": "class MyZone(tzinfo): …",
@@ -116,6 +270,39 @@ export const pythonStdlibDatetimeCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.3+",
     "searchTerms": "tzinfo abstract base class subclass tzinfo custom timezone python tzinfo.fromutc timezone.fromutc fromutc utcoffset dst tzname a tzinfo subclass must implement utcoffset NotImplementedError dt.tzinfo is not self"
+  },
+  {
+    "slug": "utc",
+    "name": "datetime.UTC / timezone.utc",
+    "signature": "UTC",
+    "blurb": "The UTC time zone object — one singleton with two names: timezone.utc (3.2+) and the module-level alias UTC (3.11+).",
+    "category": "constants",
+    "type": "constant",
+    "hasLiveDemo": true,
+    "version": "Python 3.2+ (UTC alias 3.11+)",
+    "searchTerms": "UTC timezone.utc datetime.UTC utc timezone python aware utc datetime now utc tzinfo utc singleton Z +00:00"
+  },
+  {
+    "slug": "utcoffset-tzname-dst",
+    "name": "datetime.utcoffset / tzname / dst",
+    "signature": "dt.utcoffset() · dt.tzname() · dt.dst()",
+    "blurb": "Ask an aware value for its UTC offset, its zone name and its daylight-saving component; naive values answer None.",
+    "category": "methods",
+    "type": "method",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "utcoffset tzname dst datetime.utcoffset datetime.tzname datetime.dst time.utcoffset time.tzname time.dst timezone.utcoffset timezone.tzname timezone.dst tzinfo.utcoffset tzinfo.tzname tzinfo.dst get utc offset of datetime timezone name daylight saving python"
+  },
+  {
+    "slug": "weekday",
+    "name": "date.weekday / isoweekday",
+    "signature": "d.weekday()",
+    "blurb": "The day of the week as a number: weekday() gives Monday = 0 … Sunday = 6, isoweekday() gives Monday = 1 … Sunday = 7.",
+    "category": "methods",
+    "type": "method",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "date.weekday date.isoweekday weekday isoweekday day of week python monday 0 sunday 6 is weekend day name get day of week from date"
   }
 ]
 };

@@ -112,7 +112,7 @@ export const method = {
     {
       name: 'Looking for a millisecond attribute',
       desc: 'Only microsecond exists. Divide by 1000 — or format with isoformat(timespec="milliseconds").',
-      wrong: { label: '.millisecond', code: 'from datetime import datetime\ndatetime(2026, 9, 29, 14, 30, 5, 250000).millisecond', output: "AttributeError: 'datetime.datetime' object has no attribute 'millisecond'" },
+      wrong: { label: '.millisecond', code: 'from datetime import datetime\ndatetime(2026, 9, 29, 14, 30, 5, 250000).millisecond', output: "AttributeError: 'datetime.datetime' object has no attribute 'millisecond'. Did you mean: 'microsecond'?" },
       fix:   { label: 'microsecond // 1000', code: 'from datetime import datetime\ndatetime(2026, 9, 29, 14, 30, 5, 250000).microsecond // 1000', output: '250' },
     },
   ],
