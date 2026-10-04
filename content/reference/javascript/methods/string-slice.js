@@ -167,5 +167,4 @@ export const method = {
     meta:  'String.prototype.slice',
   },
 
-  tryInTool: [],
 };

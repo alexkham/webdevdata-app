@@ -130,8 +130,4 @@ export const method = {
     meta:  'binary bitwise operations',
   },
 
-  tryInTool: [
-    { name: 'Base64',         href: '/tools/base64',         meta: 'Byte-level encoding' },
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect numeric data' },
-  ],
 };

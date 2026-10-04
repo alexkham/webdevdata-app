@@ -197,7 +197,4 @@ export const method = {
     meta:  'json.dump',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Check the file you wrote' },
-  ],
 };

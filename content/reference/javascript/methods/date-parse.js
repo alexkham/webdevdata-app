@@ -164,5 +164,4 @@ export const method = {
     meta:  'Date.parse',
   },
 
-  tryInTool: [],
 };

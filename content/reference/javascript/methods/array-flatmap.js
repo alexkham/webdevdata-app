@@ -152,7 +152,4 @@ export const method = {
     meta:  'Array.prototype.flatMap',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect nested array data' },
-  ],
 };

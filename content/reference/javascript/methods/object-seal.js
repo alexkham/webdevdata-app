@@ -160,5 +160,4 @@ export const method = {
     meta:  'Object.seal',
   },
 
-  tryInTool: [],
 };

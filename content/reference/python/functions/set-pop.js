@@ -154,7 +154,4 @@ export const method = {
     meta:  'set.pop',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect set/list data' },
-  ],
 };

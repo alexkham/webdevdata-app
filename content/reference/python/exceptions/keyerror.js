@@ -183,8 +183,4 @@ export const method = {
     meta:  'Built-in exceptions',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'See which keys a payload really has' },
-    { name: 'JSON Tree',      href: '/tools/json-tree',      meta: 'Browse nested keys' },
-  ],
 };

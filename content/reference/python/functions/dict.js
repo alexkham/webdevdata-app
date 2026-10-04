@@ -162,7 +162,4 @@ export const method = {
     meta:  'dict',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect mapping data structures' },
-  ],
 };

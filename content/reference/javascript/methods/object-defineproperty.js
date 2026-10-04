@@ -171,5 +171,4 @@ export const method = {
     meta:  'Object.defineProperty',
   },
 
-  tryInTool: [],
 };

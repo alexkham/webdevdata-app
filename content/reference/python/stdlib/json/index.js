@@ -158,9 +158,4 @@ export const method = {
     meta:  'json — JSON encoder and decoder',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Validate and pretty-print JSON' },
-    { name: 'JSON Tree',      href: '/tools/json-tree',      meta: 'Explore nested structure' },
-    { name: 'YAML ⇄ JSON',    href: '/tools/yaml-json',      meta: 'Convert config formats' },
-  ],
 };

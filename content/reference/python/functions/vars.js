@@ -162,7 +162,4 @@ export const method = {
     meta:  'vars',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect the __dict__' },
-  ],
 };

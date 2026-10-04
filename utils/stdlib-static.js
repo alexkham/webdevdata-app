@@ -8,6 +8,8 @@
 // stdlib/<module>/ with a thin index.jsx (module hub) and [name].jsx
 // (member page) that delegate their data work to these helpers.
 
+const { toolLinksFor } = require('../content/reference/tool-links');
+
 const SITE_URL = 'https://www.webdevdata.net';
 const SITE_NAME = 'WebDevData';
 const ROOT = '/reference/python/stdlib';
@@ -124,7 +126,7 @@ export function memberProps(module, name) {
     props: {
       seoData,
       meta,
-      method: { ...method, related: withHrefs(method.related, module) },
+      method: { ...method, related: withHrefs(method.related, module), tryInTool: toolLinksFor(`python/stdlib/${module}/${meta.slug}`) },
       chain,
       siblings,
       siblingsTitle: `${hub.meta.name} module`,
@@ -167,7 +169,7 @@ export function moduleHubProps(module) {
     props: {
       seoData,
       meta,
-      method: { ...method, related: withHrefs(method.related, module) },
+      method: { ...method, related: withHrefs(method.related, module), tryInTool: toolLinksFor(`python/stdlib/${module}/index`) },
       groups,
       siblings,
       siblingsTitle: `${meta.name} module`,

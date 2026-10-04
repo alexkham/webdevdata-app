@@ -167,5 +167,4 @@ export const method = {
     meta:  'Map.prototype.set',
   },
 
-  tryInTool: [],
 };

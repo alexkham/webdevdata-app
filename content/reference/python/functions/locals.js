@@ -158,7 +158,4 @@ export const method = {
     meta:  'locals',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect namespace data' },
-  ],
 };

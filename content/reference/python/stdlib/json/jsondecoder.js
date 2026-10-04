@@ -204,7 +204,4 @@ export const method = {
     meta:  'json.JSONDecoder',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Validate a single document' },
-  ],
 };

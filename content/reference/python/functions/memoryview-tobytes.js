@@ -152,7 +152,4 @@ export const method = {
     meta:  'memoryview.tobytes',
   },
 
-  tryInTool: [
-    { name: 'Base64 Encoder', href: '/tools/base64', meta: 'Inspect raw byte data' },
-  ],
 };

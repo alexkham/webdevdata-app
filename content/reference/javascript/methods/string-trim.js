@@ -164,5 +164,4 @@ export const method = {
     meta:  'String.prototype.trim',
   },
 
-  tryInTool: [],
 };

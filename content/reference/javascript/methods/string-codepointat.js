@@ -159,5 +159,4 @@ export const method = {
     meta:  'String.prototype.codePointAt',
   },
 
-  tryInTool: [],
 };

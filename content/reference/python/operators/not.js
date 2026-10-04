@@ -126,8 +126,4 @@ export const method = {
     meta:  'boolean operations',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect condition data' },
-    { name: 'Base64',         href: '/tools/base64',         meta: 'Encoding tasks' },
-  ],
 };

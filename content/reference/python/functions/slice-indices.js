@@ -157,5 +157,4 @@ export const method = {
     meta:  'slice.indices',
   },
 
-  tryInTool: [],
 };

@@ -150,8 +150,4 @@ export const method = {
     meta:  'list.index',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect list data' },
-    { name: 'Base64',         href: '/tools/base64',         meta: 'Encoding tasks' },
-  ],
 };

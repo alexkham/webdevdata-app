@@ -168,7 +168,4 @@ export const method = {
     meta:  'Object.prototype.toString',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'The readable alternative to [object Object]' },
-  ],
 };

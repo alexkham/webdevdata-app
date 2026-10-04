@@ -211,7 +211,4 @@ export const method = {
     meta:  'json.JSONDecodeError',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Locate the error in a document' },
-  ],
 };

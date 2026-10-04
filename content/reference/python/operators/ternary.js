@@ -165,5 +165,4 @@ export const method = {
     meta:  'Conditional expressions',
   },
 
-  tryInTool: [],
 };

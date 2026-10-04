@@ -255,8 +255,4 @@ export const method = {
     meta:  'json.dumps',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Pretty-print or minify JSON' },
-    { name: 'JSON Tree',      href: '/tools/json-tree',      meta: 'Browse the structure' },
-  ],
 };

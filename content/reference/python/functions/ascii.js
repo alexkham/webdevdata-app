@@ -153,7 +153,4 @@ export const method = {
     meta:  'ascii',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect string data' },
-  ],
 };

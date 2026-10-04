@@ -167,7 +167,4 @@ export const method = {
     meta:  'dict.fromkeys',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect dict data' },
-  ],
 };

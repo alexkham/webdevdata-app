@@ -389,10 +389,15 @@ const emuIdent = ({ language, category, slug }) =>
 // that module's pages. Their emulators include whole engines (regex,
 // datetime, …); keeping them out of the global map keeps every other
 // reference page's bundle as it was.
-function emitModuleEmulatorMaps(withEmulator) {
+function emitModuleEmulatorMaps(withEmulator, items) {
   const dir = path.join(__dirname, 'utils', 'emulators-maps');
   fs.mkdirSync(dir, { recursive: true });
   const byModule = new Map();
+  // every module folder gets a map, even with no live demos — its pages
+  // import it unconditionally
+  for (const it of items) {
+    if (it.category.includes('/')) byModule.set(`${it.language}-${it.category.split('/').join('-')}`, []);
+  }
   for (const e of withEmulator) {
     if (!e.category.includes('/')) continue;
     const key = `${e.language}-${e.category.split('/').join('-')}`;
@@ -403,7 +408,7 @@ function emitModuleEmulatorMaps(withEmulator) {
     const imports = list.map((e) => `import ${emuIdent(e)} from '../emulators/${e.language}/${e.category}/${e.slug}';`).join('\n');
     const entries = list.map((e) => `  '${e.slug}': ${emuIdent(e)},`).join('\n');
     const out = `${AUTO_HEADER('generate-reference-catalogs.mjs')}//
-// slug → emulator for ${list[0].language}/${list[0].category} only.
+// slug → emulator for ${key} only (empty when the module has no live demos).
 
 ${imports}
 
@@ -468,7 +473,7 @@ function main() {
   const byLangCat = emitCategoryCatalogs(items);
   emitLanguageRollups(byLangCat);
   emitEmulatorsMap(withEmulator);
-  emitModuleEmulatorMaps(withEmulator);
+  emitModuleEmulatorMaps(withEmulator, items);
 
   warnings.forEach((w) => console.warn(`  ${w}`));
   console.log(`\nReference catalogs generated: ${items.length} item(s), ${withEmulator.length} emulator(s) mapped`);

@@ -167,5 +167,4 @@ export const method = {
     meta:  'Set.prototype.values',
   },
 
-  tryInTool: [],
 };

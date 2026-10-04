@@ -151,7 +151,4 @@ export const method = {
     meta:  'list.reverse',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect list data before and after' },
-  ],
 };

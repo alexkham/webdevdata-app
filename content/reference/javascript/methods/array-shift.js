@@ -148,7 +148,4 @@ export const method = {
     meta:  'Array.prototype.shift',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect array data' },
-  ],
 };

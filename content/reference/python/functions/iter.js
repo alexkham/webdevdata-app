@@ -165,7 +165,4 @@ export const method = {
     meta:  'iter',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect iterator output' },
-  ],
 };

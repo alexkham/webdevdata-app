@@ -163,7 +163,4 @@ export const method = {
     meta:  'escape',
   },
 
-  tryInTool: [
-    { name: 'URL Encoder', href: '/tools/url-encoder', meta: 'Encode and decode URLs correctly' },
-  ],
 };

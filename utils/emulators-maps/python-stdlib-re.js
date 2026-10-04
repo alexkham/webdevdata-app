@@ -2,7 +2,7 @@
 // Regenerated on every `npm run dev` and `npm run build`.
 // Do NOT edit by hand — changes here are overwritten.
 //
-// slug → emulator for python/stdlib/re only.
+// slug → emulator for python-stdlib-re only (empty when the module has no live demos).
 
 import pythonStdlibReCompileEmu from '../emulators/python/stdlib/re/compile';
 import pythonStdlibReErrorEmu from '../emulators/python/stdlib/re/error';

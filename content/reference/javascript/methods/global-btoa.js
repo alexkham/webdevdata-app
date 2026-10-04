@@ -167,7 +167,4 @@ export const method = {
     meta:  'btoa',
   },
 
-  tryInTool: [
-    { name: 'Base64 Encoder', href: '/tools/base64', meta: 'Encode and decode base64 interactively' },
-  ],
 };

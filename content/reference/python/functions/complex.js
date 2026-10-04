@@ -173,7 +173,4 @@ export const method = {
     meta:  'complex',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect complex data' },
-  ],
 };

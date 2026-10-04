@@ -256,6 +256,10 @@ export async function getStaticProps() {
     ],
   };
 
+  // Related reference pages — from the shared reference ⇄ tools registry
+  const { referenceLinksFor } = require('@/content/reference/tool-links');
+  referenceData.items.push(...referenceLinksFor('/tools/json-xml'));
+
   const faqQuestions = {
     q1: {
       question: 'How do you convert between JSON and XML when they have different data models?',

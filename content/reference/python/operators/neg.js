@@ -159,5 +159,4 @@ export const method = {
     meta:  'Unary arithmetic operations',
   },
 
-  tryInTool: [],
 };

@@ -164,7 +164,4 @@ export const method = {
     meta:  'str',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Compare str vs JSON representation' },
-  ],
 };

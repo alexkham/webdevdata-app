@@ -159,5 +159,4 @@ export const method = {
     meta:  'Object.prototype.hasOwnProperty',
   },
 
-  tryInTool: [],
 };

@@ -149,8 +149,4 @@ export const method = {
     meta:  'dict.pop',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect dict data' },
-    { name: 'JSON Tree',      href: '/tools/json-tree',      meta: 'Explore nested keys' },
-  ],
 };

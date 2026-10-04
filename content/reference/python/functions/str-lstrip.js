@@ -157,7 +157,4 @@ export const method = {
     meta:  'str.lstrip',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect string data' },
-  ],
 };

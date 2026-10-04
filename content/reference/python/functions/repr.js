@@ -160,7 +160,4 @@ export const method = {
     meta:  'repr',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Compare repr vs JSON representation' },
-  ],
 };

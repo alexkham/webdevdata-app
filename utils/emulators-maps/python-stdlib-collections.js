@@ -2,7 +2,7 @@
 // Regenerated on every `npm run dev` and `npm run build`.
 // Do NOT edit by hand — changes here are overwritten.
 //
-// slug → emulator for python/stdlib/collections only.
+// slug → emulator for python-stdlib-collections only (empty when the module has no live demos).
 
 import pythonStdlibCollectionsChainmapNew_childEmu from '../emulators/python/stdlib/collections/chainmap-new_child';
 import pythonStdlibCollectionsChainmapPopEmu from '../emulators/python/stdlib/collections/chainmap-pop';

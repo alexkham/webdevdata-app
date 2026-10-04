@@ -132,5 +132,4 @@ export const method = {
     meta:  'type.mro',
   },
 
-  tryInTool: [],
 };

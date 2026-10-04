@@ -154,5 +154,4 @@ export const method = {
     meta:  'Promise.reject',
   },
 
-  tryInTool: [],
 };

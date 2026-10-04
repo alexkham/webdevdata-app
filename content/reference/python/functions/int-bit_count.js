@@ -154,7 +154,4 @@ export const method = {
     meta:  'int.bit_count',
   },
 
-  tryInTool: [
-    { name: 'Base64 Encoder', href: '/tools/base64', meta: 'Inspect the bytes behind a value' },
-  ],
 };

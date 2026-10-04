@@ -167,7 +167,4 @@ export const method = {
     meta:  'float',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect numeric data' },
-  ],
 };

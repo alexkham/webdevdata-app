@@ -151,5 +151,4 @@ export const method = {
     meta:  'String.prototype.concat',
   },
 
-  tryInTool: [],
 };

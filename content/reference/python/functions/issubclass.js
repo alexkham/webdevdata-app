@@ -159,7 +159,4 @@ export const method = {
     meta:  'issubclass',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect class data' },
-  ],
 };

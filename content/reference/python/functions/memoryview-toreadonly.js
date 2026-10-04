@@ -127,5 +127,4 @@ export const method = {
     meta:  'memoryview.toreadonly',
   },
 
-  tryInTool: [],
 };

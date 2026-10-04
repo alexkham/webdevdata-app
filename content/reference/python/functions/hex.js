@@ -155,7 +155,4 @@ export const method = {
     meta:  'hex',
   },
 
-  tryInTool: [
-    { name: 'Base64', href: '/tools/base64', meta: 'Adjacent byte-encoding work' },
-  ],
 };

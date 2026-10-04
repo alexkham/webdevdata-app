@@ -166,5 +166,4 @@ export const method = {
     meta:  'setTimeout',
   },
 
-  tryInTool: [],
 };

@@ -172,7 +172,4 @@ export const method = {
     meta:  'Built-in exceptions',
   },
 
-  tryInTool: [
-    { name: 'JSON Tree', href: '/tools/json-tree', meta: 'See which keys and indexes a payload really has' },
-  ],
 };

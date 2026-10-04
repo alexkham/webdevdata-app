@@ -168,7 +168,4 @@ export const method = {
     meta:  'hash',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect data' },
-  ],
 };

@@ -158,5 +158,4 @@ export const method = {
     meta:  'String.prototype.search',
   },
 
-  tryInTool: [],
 };

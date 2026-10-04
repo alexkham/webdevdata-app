@@ -157,5 +157,4 @@ export const method = {
     meta:  'Object.prototype.isPrototypeOf',
   },
 
-  tryInTool: [],
 };

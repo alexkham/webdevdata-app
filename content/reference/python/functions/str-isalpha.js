@@ -169,7 +169,4 @@ export const method = {
     meta:  'str.isalpha',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect string data' },
-  ],
 };

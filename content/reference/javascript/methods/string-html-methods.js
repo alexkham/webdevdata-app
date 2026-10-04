@@ -163,5 +163,4 @@ export const method = {
     meta:  'String HTML wrapper methods',
   },
 
-  tryInTool: [],
 };

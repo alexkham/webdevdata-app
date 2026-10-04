@@ -259,6 +259,10 @@ export async function getStaticProps() {
     ],
   };
 
+  // Related reference pages — from the shared reference ⇄ tools registry
+  const { referenceLinksFor } = require('@/content/reference/tool-links');
+  referenceData.items.push(...referenceLinksFor('/tools/base64'));
+
   const faqQuestions = {
     obj1: {
       question: 'Is Base64 the same as encryption?',

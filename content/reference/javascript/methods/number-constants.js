@@ -172,5 +172,4 @@ export const method = {
     meta:  'Number.MAX_SAFE_INTEGER',
   },
 
-  tryInTool: [],
 };

@@ -160,7 +160,4 @@ export const method = {
     meta:  'bytes.strip',
   },
 
-  tryInTool: [
-    { name: 'Base64 Encoder', href: '/tools/base64', meta: 'Inspect raw byte data' },
-  ],
 };

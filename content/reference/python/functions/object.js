@@ -155,7 +155,4 @@ export const method = {
     meta:  'object',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect object data' },
-  ],
 };

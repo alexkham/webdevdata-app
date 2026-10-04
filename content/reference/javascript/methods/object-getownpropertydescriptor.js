@@ -165,5 +165,4 @@ export const method = {
     meta:  'Object.getOwnPropertyDescriptor',
   },
 
-  tryInTool: [],
 };

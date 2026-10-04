@@ -153,5 +153,4 @@ export const method = {
     meta:  'Map.prototype.size',
   },
 
-  tryInTool: [],
 };

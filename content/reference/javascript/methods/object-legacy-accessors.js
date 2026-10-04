@@ -161,5 +161,4 @@ export const method = {
     meta:  'Object.prototype.__defineGetter__',
   },
 
-  tryInTool: [],
 };

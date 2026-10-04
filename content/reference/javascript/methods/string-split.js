@@ -180,7 +180,4 @@ export const method = {
     meta:  'String.prototype.split',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect the array you get back' },
-  ],
 };

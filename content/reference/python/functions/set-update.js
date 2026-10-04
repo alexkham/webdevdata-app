@@ -166,7 +166,4 @@ export const method = {
     meta:  'set.update',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect set data' },
-  ],
 };

@@ -168,5 +168,4 @@ export const method = {
     meta:  'Number.prototype.toLocaleString',
   },
 
-  tryInTool: [],
 };

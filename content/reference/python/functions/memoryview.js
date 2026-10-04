@@ -164,7 +164,4 @@ export const method = {
     meta:  'memoryview',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect binary data' },
-  ],
 };

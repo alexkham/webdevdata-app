@@ -152,7 +152,4 @@ export const method = {
     meta:  'bytes.removeprefix',
   },
 
-  tryInTool: [
-    { name: 'URL Encoder', href: '/tools/url-encoder', meta: 'Work with URL prefixes' },
-  ],
 };

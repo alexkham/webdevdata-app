@@ -159,7 +159,4 @@ export const method = {
     meta:  'Array.prototype.findLast',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect the records you are searching' },
-  ],
 };

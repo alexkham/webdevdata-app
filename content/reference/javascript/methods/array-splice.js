@@ -163,7 +163,4 @@ export const method = {
     meta:  'Array.prototype.splice',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect array data before splicing' },
-  ],
 };

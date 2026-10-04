@@ -129,5 +129,4 @@ export const method = {
     meta:  'memoryview.release',
   },
 
-  tryInTool: [],
 };

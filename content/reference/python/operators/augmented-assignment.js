@@ -148,5 +148,4 @@ export const method = {
     meta:  'Augmented assignment statements',
   },
 
-  tryInTool: [],
 };

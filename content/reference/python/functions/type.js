@@ -169,7 +169,4 @@ export const method = {
     meta:  'type',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect data of unknown type' },
-  ],
 };

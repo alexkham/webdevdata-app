@@ -144,8 +144,4 @@ export const method = {
     meta:  'len',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect container sizes' },
-    { name: 'Base64',         href: '/tools/base64',         meta: 'Compare text vs byte length' },
-  ],
 };

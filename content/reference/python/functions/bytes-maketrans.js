@@ -132,5 +132,4 @@ export const method = {
     meta:  'bytes.maketrans',
   },
 
-  tryInTool: [],
 };

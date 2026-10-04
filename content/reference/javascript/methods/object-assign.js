@@ -168,7 +168,4 @@ export const method = {
     meta:  'Object.assign',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Compare the objects you are merging' },
-  ],
 };

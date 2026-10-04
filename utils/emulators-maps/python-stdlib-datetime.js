@@ -2,7 +2,7 @@
 // Regenerated on every `npm run dev` and `npm run build`.
 // Do NOT edit by hand — changes here are overwritten.
 //
-// slug → emulator for python/stdlib/datetime only.
+// slug → emulator for python-stdlib-datetime only (empty when the module has no live demos).
 
 import pythonStdlibDatetimeAstimezoneEmu from '../emulators/python/stdlib/datetime/astimezone';
 import pythonStdlibDatetimeCombineEmu from '../emulators/python/stdlib/datetime/combine';

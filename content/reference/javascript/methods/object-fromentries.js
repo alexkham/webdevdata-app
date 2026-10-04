@@ -160,7 +160,4 @@ export const method = {
     meta:  'Object.fromEntries',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect the object you built' },
-  ],
 };

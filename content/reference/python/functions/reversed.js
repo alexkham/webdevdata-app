@@ -162,7 +162,4 @@ export const method = {
     meta:  'reversed',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect the sequence' },
-  ],
 };

@@ -120,8 +120,4 @@ export const method = {
     meta:  'identity comparisons',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect object data' },
-    { name: 'JSON Tree',      href: '/tools/json-tree',      meta: 'Explore structures' },
-  ],
 };

@@ -133,5 +133,4 @@ export const method = {
     meta:  'anext',
   },
 
-  tryInTool: [],
 };

@@ -114,7 +114,11 @@ export async function getStaticProps({ params }) {
     layout: 'sidebar',
   };
 
-  return { props: { seoData, meta, method, siblings, siblingsTitle, schemas, frameOptions } };
+  // "Try in a tool": from the shared reference ⇄ tools registry
+  const { toolLinksFor } = require('@/content/reference/tool-links');
+  const methodWithTools = { ...method, tryInTool: toolLinksFor(`python/operators/${meta.slug}`) };
+
+  return { props: { seoData, meta, method: methodWithTools, siblings, siblingsTitle, schemas, frameOptions } };
 }
 
 export default function OperatorPage({ seoData, meta, method, siblings, siblingsTitle, schemas, frameOptions }) {

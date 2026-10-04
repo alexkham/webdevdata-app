@@ -160,7 +160,4 @@ export const method = {
     meta:  'float.is_integer',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect parsed numeric data' },
-  ],
 };

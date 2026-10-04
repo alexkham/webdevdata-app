@@ -160,7 +160,4 @@ export const method = {
     meta:  'set.symmetric_difference_update',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect set data' },
-  ],
 };

@@ -159,7 +159,4 @@ export const method = {
     meta:  'int.from_bytes',
   },
 
-  tryInTool: [
-    { name: 'Base64 Encoder', href: '/tools/base64', meta: 'Decode transported bytes before reading them' },
-  ],
 };

@@ -159,5 +159,4 @@ export const method = {
     meta:  'Date.prototype.getUTCHours',
   },
 
-  tryInTool: [],
 };

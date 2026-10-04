@@ -173,5 +173,4 @@ export const method = {
     meta:  'String.prototype.replaceAll',
   },
 
-  tryInTool: [],
 };

@@ -151,7 +151,4 @@ export const method = {
     meta:  'int.is_integer',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect numeric data structures' },
-  ],
 };

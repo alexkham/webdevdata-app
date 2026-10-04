@@ -160,7 +160,4 @@ export const method = {
     meta:  'bytes.fromhex',
   },
 
-  tryInTool: [
-    { name: 'Base64 Encoder', href: '/tools/base64', meta: 'Convert between binary encodings' },
-  ],
 };

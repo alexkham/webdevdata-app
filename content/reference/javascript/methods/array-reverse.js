@@ -149,7 +149,4 @@ export const method = {
     meta:  'Array.prototype.reverse',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect array data' },
-  ],
 };

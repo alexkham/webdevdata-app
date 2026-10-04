@@ -159,7 +159,4 @@ export const method = {
     meta:  'Array.prototype.entries',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect array data' },
-  ],
 };

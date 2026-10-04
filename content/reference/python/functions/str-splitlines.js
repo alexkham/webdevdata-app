@@ -163,7 +163,4 @@ export const method = {
     meta:  'str.splitlines',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect line-oriented data' },
-  ],
 };

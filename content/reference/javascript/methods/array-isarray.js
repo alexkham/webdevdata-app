@@ -155,7 +155,4 @@ export const method = {
     meta:  'Array.isArray',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect the shape of parsed data' },
-  ],
 };

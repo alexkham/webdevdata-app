@@ -164,5 +164,4 @@ export const method = {
     meta:  'Set.prototype.difference',
   },
 
-  tryInTool: [],
 };

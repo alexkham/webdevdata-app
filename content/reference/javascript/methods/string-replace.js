@@ -177,5 +177,4 @@ export const method = {
     meta:  'String.prototype.replace',
   },
 
-  tryInTool: [],
 };

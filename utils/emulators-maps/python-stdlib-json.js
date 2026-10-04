@@ -2,7 +2,7 @@
 // Regenerated on every `npm run dev` and `npm run build`.
 // Do NOT edit by hand — changes here are overwritten.
 //
-// slug → emulator for python/stdlib/json only.
+// slug → emulator for python-stdlib-json only (empty when the module has no live demos).
 
 import pythonStdlibJsonDumpEmu from '../emulators/python/stdlib/json/dump';
 import pythonStdlibJsonDumpsEmu from '../emulators/python/stdlib/json/dumps';

@@ -170,7 +170,4 @@ export const method = {
     meta:  'dict.update',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect dict data before and after' },
-  ],
 };

@@ -164,5 +164,4 @@ export const method = {
     meta:  'Number.isNaN',
   },
 
-  tryInTool: [],
 };

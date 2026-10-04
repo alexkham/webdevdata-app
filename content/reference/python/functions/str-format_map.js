@@ -160,7 +160,4 @@ export const method = {
     meta:  'str.format_map',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Shape the mapping before formatting' },
-  ],
 };

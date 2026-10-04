@@ -159,5 +159,4 @@ export const method = {
     meta:  'Set.prototype.intersection',
   },
 
-  tryInTool: [],
 };

@@ -160,7 +160,4 @@ export const method = {
     meta:  'super',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect MRO output' },
-  ],
 };

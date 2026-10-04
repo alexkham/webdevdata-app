@@ -160,5 +160,4 @@ export const method = {
     meta:  'Number.prototype.toExponential',
   },
 
-  tryInTool: [],
 };

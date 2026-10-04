@@ -135,8 +135,4 @@ export const method = {
     meta:  'comparisons',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Compare data structures' },
-    { name: 'Base64',         href: '/tools/base64',         meta: 'Encoding tasks' },
-  ],
 };

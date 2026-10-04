@@ -170,5 +170,4 @@ export const method = {
     meta:  'String.prototype.substring',
   },
 
-  tryInTool: [],
 };

@@ -166,7 +166,4 @@ export const method = {
     meta:  'str.maketrans',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect the resulting table' },
-  ],
 };

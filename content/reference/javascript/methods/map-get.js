@@ -158,5 +158,4 @@ export const method = {
     meta:  'Map.prototype.get',
   },
 
-  tryInTool: [],
 };

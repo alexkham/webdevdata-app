@@ -157,7 +157,4 @@ export const method = {
     meta:  'str.index',
   },
 
-  tryInTool: [
-    { name: 'URL Encoder', href: '/tools/url-encoder', meta: 'Inspect strings before searching them' },
-  ],
 };

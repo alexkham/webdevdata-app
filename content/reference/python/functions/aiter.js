@@ -131,5 +131,4 @@ export const method = {
     meta:  'aiter',
   },
 
-  tryInTool: [],
 };

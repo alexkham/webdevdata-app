@@ -163,7 +163,4 @@ export const method = {
     meta:  'bytes.hex',
   },
 
-  tryInTool: [
-    { name: 'Base64 Encoder', href: '/tools/base64', meta: 'Compare hex and base64 encodings' },
-  ],
 };

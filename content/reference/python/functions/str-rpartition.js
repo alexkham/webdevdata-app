@@ -162,7 +162,4 @@ export const method = {
     meta:  'str.rpartition',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect string data' },
-  ],
 };

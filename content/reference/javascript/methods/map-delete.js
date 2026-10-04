@@ -160,5 +160,4 @@ export const method = {
     meta:  'Map.prototype.delete',
   },
 
-  tryInTool: [],
 };

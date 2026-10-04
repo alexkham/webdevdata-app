@@ -158,7 +158,4 @@ export const method = {
     meta:  'set',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect collections before deduplicating' },
-  ],
 };

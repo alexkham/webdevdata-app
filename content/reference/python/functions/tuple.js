@@ -157,7 +157,4 @@ export const method = {
     meta:  'tuple',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect sequence data structures' },
-  ],
 };

@@ -156,5 +156,4 @@ export const method = {
     meta:  'eval',
   },
 
-  tryInTool: [],
 };

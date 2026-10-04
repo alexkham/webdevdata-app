@@ -163,7 +163,4 @@ export const method = {
     meta:  'filter',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect the filtered output' },
-  ],
 };

@@ -163,7 +163,4 @@ export const method = {
     meta:  'exec',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Use JSON instead of exec for data' },
-  ],
 };

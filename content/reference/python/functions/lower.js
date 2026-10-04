@@ -138,8 +138,4 @@ export const method = {
     meta:  'str.lower',
   },
 
-  tryInTool: [
-    { name: 'URL Encoder', href: '/tools/url-encoder', meta: 'String escaping tasks' },
-    { name: 'Base64',      href: '/tools/base64',      meta: 'Encoding tasks' },
-  ],
 };

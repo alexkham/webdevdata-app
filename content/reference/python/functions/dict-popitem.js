@@ -157,7 +157,4 @@ export const method = {
     meta:  'dict.popitem',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect dict data before and after' },
-  ],
 };

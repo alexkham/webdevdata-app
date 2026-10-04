@@ -168,5 +168,4 @@ export const method = {
     meta:  'String.prototype.normalize',
   },
 
-  tryInTool: [],
 };

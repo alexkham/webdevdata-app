@@ -166,7 +166,4 @@ export const method = {
     meta:  'hasattr',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect object data' },
-  ],
 };

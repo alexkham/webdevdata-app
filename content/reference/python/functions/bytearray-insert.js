@@ -160,7 +160,4 @@ export const method = {
     meta:  'bytearray.insert',
   },
 
-  tryInTool: [
-    { name: 'Base64 Encoder', href: '/tools/base64', meta: 'Inspect raw byte data' },
-  ],
 };

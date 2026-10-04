@@ -154,7 +154,4 @@ export const method = {
     meta:  'float.hex',
   },
 
-  tryInTool: [
-    { name: 'Base64 Encoder', href: '/tools/base64', meta: 'Work with exact binary representations' },
-  ],
 };

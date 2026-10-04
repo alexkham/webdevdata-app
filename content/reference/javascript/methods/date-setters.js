@@ -163,5 +163,4 @@ export const method = {
     meta:  'Date.prototype.setMonth',
   },
 
-  tryInTool: [],
 };

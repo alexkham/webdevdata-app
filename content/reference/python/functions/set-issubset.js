@@ -165,7 +165,4 @@ export const method = {
     meta:  'set.issubset',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect set/list data' },
-  ],
 };

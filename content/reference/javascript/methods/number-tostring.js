@@ -169,5 +169,4 @@ export const method = {
     meta:  'Number.prototype.toString',
   },
 
-  tryInTool: [],
 };

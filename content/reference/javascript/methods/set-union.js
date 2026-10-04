@@ -160,5 +160,4 @@ export const method = {
     meta:  'Set.prototype.union',
   },
 
-  tryInTool: [],
 };

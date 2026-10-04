@@ -161,5 +161,4 @@ export const method = {
     meta:  'String.prototype.includes',
   },
 
-  tryInTool: [],
 };

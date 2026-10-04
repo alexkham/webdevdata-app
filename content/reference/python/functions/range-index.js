@@ -156,5 +156,4 @@ export const method = {
     meta:  'range.index',
   },
 
-  tryInTool: [],
 };

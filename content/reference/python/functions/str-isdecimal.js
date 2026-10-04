@@ -167,7 +167,4 @@ export const method = {
     meta:  'str.isdecimal',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect string data' },
-  ],
 };

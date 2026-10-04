@@ -152,7 +152,4 @@ export const method = {
     meta:  'zip',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect the resulting pairs' },
-  ],
 };

@@ -171,5 +171,4 @@ export const method = {
     meta:  'Date.prototype.toLocaleDateString',
   },
 
-  tryInTool: [],
 };

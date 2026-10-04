@@ -135,5 +135,4 @@ export const method = {
     meta:  'Date.now',
   },
 
-  tryInTool: [],
 };

@@ -153,7 +153,4 @@ export const method = {
     meta:  'Array.prototype.concat',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect the arrays you are merging' },
-  ],
 };

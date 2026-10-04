@@ -2,7 +2,7 @@
 // Regenerated on every `npm run dev` and `npm run build`.
 // Do NOT edit by hand — changes here are overwritten.
 //
-// slug → emulator for python/stdlib/pathlib only.
+// slug → emulator for python-stdlib-pathlib only (empty when the module has no live demos).
 
 import pythonStdlibPathlibAs_posixEmu from '../emulators/python/stdlib/pathlib/as_posix';
 import pythonStdlibPathlibExistsEmu from '../emulators/python/stdlib/pathlib/exists';

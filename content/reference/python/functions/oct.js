@@ -156,7 +156,4 @@ export const method = {
     meta:  'oct',
   },
 
-  tryInTool: [
-    { name: 'Base64', href: '/tools/base64', meta: 'Adjacent byte-encoding work' },
-  ],
 };

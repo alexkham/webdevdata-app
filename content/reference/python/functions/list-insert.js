@@ -165,7 +165,4 @@ export const method = {
     meta:  'list.insert',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect list data before and after' },
-  ],
 };

@@ -158,7 +158,4 @@ export const method = {
     meta:  'set.discard',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect set/list data' },
-  ],
 };

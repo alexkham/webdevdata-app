@@ -164,7 +164,4 @@ export const method = {
     meta:  'str.rfind',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect string data' },
-  ],
 };

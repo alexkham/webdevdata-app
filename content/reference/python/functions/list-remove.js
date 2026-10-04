@@ -150,7 +150,4 @@ export const method = {
     meta:  'list.remove',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect the list before and after' },
-  ],
 };

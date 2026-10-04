@@ -164,7 +164,4 @@ export const method = {
     meta:  'eval',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Parse JSON safely instead' },
-  ],
 };

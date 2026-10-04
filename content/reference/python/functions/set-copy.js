@@ -156,7 +156,4 @@ export const method = {
     meta:  'set.copy',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect set/list data' },
-  ],
 };

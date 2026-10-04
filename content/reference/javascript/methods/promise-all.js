@@ -162,5 +162,4 @@ export const method = {
     meta:  'Promise.all',
   },
 
-  tryInTool: [],
 };

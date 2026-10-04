@@ -161,5 +161,4 @@ export const method = {
     meta:  'Date.prototype.toUTCString',
   },
 
-  tryInTool: [],
 };

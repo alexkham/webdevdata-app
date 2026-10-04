@@ -150,7 +150,4 @@ export const method = {
     meta:  'Numeric types',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect numeric data structures' },
-  ],
 };

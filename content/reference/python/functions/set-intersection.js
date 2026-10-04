@@ -160,7 +160,4 @@ export const method = {
     meta:  'set.intersection',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect set/list data' },
-  ],
 };

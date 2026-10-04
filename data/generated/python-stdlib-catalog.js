@@ -6,8 +6,21 @@
 // member counts.
 
 export const pythonStdlibCatalog = {
-  generatedAt: "2026-09-29T19:34:02.825Z",
+  generatedAt: "2026-10-03T18:14:54.848Z",
   modules: [
+  {
+    "slug": "base64",
+    "name": "base64",
+    "signature": "import base64",
+    "blurb": "Turn bytes into ASCII text and back: Base64 (standard and URL-safe), Base32, Base16, Ascii85, Base85 and Z85.",
+    "category": "data",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 2.4+",
+    "searchTerms": "base64 module python base64 encode decode string b64encode b64decode urlsafe base32 base16 hex ascii85 base85 z85 binascii.Error incorrect padding bytes to text jwt data uri",
+    "memberCount": 8,
+    "liveCount": 8
+  },
   {
     "slug": "collections",
     "name": "collections",
@@ -20,6 +33,19 @@ export const pythonStdlibCatalog = {
     "searchTerms": "collections module python counter deque defaultdict ordereddict namedtuple chainmap userdict userlist userstring container datatypes count frequency queue stack double ended queue grouping default dictionary",
     "memberCount": 21,
     "liveCount": 20
+  },
+  {
+    "slug": "csv",
+    "name": "csv",
+    "signature": "import csv",
+    "blurb": "Read and write comma-separated (and tab-, semicolon- or pipe-separated) files correctly — quoted commas, doubled quotes and line breaks inside fields included.",
+    "category": "data",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "csv module python csv read csv file write csv file reader writer dictreader dictwriter comma separated values tsv tab separated semicolon delimiter quotechar quoting newline blank lines excel sniffer dialect parse csv split comma",
+    "memberCount": 0,
+    "liveCount": 0
   },
   {
     "slug": "datetime",
@@ -35,6 +61,58 @@ export const pythonStdlibCatalog = {
     "liveCount": 26
   },
   {
+    "slug": "functools",
+    "name": "functools",
+    "signature": "import functools",
+    "blurb": "Tools for functions that act on or return other functions: caching (lru_cache, cache, cached_property), partial application, reduce, wraps, total_ordering, singledispatch.",
+    "category": "functional",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 2.5+",
+    "searchTerms": "functools module python higher order functions lru_cache cache cached_property partial partialmethod reduce wraps update_wrapper total_ordering singledispatch singledispatchmethod cmp_to_key memoize decorator",
+    "memberCount": 9,
+    "liveCount": 8
+  },
+  {
+    "slug": "heapq",
+    "name": "heapq",
+    "signature": "import heapq",
+    "blurb": "Priority queues on a plain list: heappush, heappop and heapify keep the smallest item at index 0; nlargest, nsmallest and merge are built on top.",
+    "category": "functional",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "heapq module python heap priority queue min heap max heap binary heap heappush heappop heapify heapreplace heappushpop merge nlargest nsmallest top k smallest largest scheduler dijkstra",
+    "memberCount": 7,
+    "liveCount": 7
+  },
+  {
+    "slug": "html",
+    "name": "html",
+    "signature": "import html",
+    "blurb": "Two functions for putting text into HTML safely and getting it back: escape() turns <, >, & and quotes into character references, unescape() decodes every HTML5 reference.",
+    "category": "text",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 3.2+ (escape), 3.4+ (unescape)",
+    "searchTerms": "html module python html escape unescape html entities character references encode decode html special characters xss sanitize html.entities html.parser amp lt gt quot",
+    "memberCount": 0,
+    "liveCount": 0
+  },
+  {
+    "slug": "itertools",
+    "name": "itertools",
+    "signature": "import itertools",
+    "blurb": "Lazy building blocks for loops: chain, islice, groupby, product, combinations, permutations, accumulate, batched, pairwise and more.",
+    "category": "functional",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "itertools module python iterator tools lazy iteration chain islice groupby product combinations permutations accumulate batched pairwise zip_longest count cycle repeat tee starmap compress takewhile dropwhile filterfalse cartesian product flatten chunk sliding window",
+    "memberCount": 15,
+    "liveCount": 15
+  },
+  {
     "slug": "json",
     "name": "json",
     "signature": "import json",
@@ -46,6 +124,45 @@ export const pythonStdlibCatalog = {
     "searchTerms": "json module python json parse serialize deserialize dumps loads dump load encode decode javascript object notation pretty print",
     "memberCount": 7,
     "liveCount": 7
+  },
+  {
+    "slug": "math",
+    "name": "math",
+    "signature": "import math",
+    "blurb": "Floating-point and integer math: sqrt, log, exp, trigonometry, floor/ceil, exact integer functions (factorial, comb, gcd, isqrt) and accurate sums (fsum).",
+    "category": "numbers",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "All Python versions",
+    "searchTerms": "math module python math sqrt log exp sin cos tan pi floor ceil factorial comb gcd isqrt fsum isclose inf nan math domain error math range error",
+    "memberCount": 24,
+    "liveCount": 24
+  },
+  {
+    "slug": "os",
+    "name": "os",
+    "signature": "import os",
+    "blurb": "The operating-system interface: environment variables, files and folders (listdir, walk, makedirs, remove, stat), processes, file descriptors — plus os.path for path strings.",
+    "category": "system",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "os module python operating system interface environment variables os.environ getenv listdir walk makedirs mkdir remove rename stat getcwd chdir os.path process pid fork exec file descriptor platform",
+    "memberCount": 42,
+    "liveCount": 7
+  },
+  {
+    "slug": "os-path",
+    "name": "os.path",
+    "signature": "import os.path",
+    "blurb": "Path strings without objects: join, split, splitext, basename/dirname, normpath, abspath — plus exists, isfile, isdir and getsize for asking the file system.",
+    "category": "files",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "os.path module python os path join split splitext basename dirname exists isfile isdir abspath normpath relpath getsize posixpath ntpath path manipulation file extension",
+    "memberCount": 16,
+    "liveCount": 12
   },
   {
     "slug": "pathlib",
@@ -61,6 +178,19 @@ export const pythonStdlibCatalog = {
     "liveCount": 16
   },
   {
+    "slug": "random",
+    "name": "random",
+    "signature": "import random",
+    "blurb": "Pseudo-random numbers for simulations, games and sampling: random floats and ints, picks from a sequence, shuffles and statistical distributions — reproducible with a seed, and NOT for security.",
+    "category": "numbers",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "All Python 3 versions",
+    "searchTerms": "random module python random number generator rng mersenne twister seed randint choice shuffle sample choices uniform gauss random float random integer pseudo random reproducible secrets security",
+    "memberCount": 16,
+    "liveCount": 15
+  },
+  {
     "slug": "re",
     "name": "re",
     "signature": "import re",
@@ -72,6 +202,32 @@ export const pythonStdlibCatalog = {
     "searchTerms": "re module python regex regular expression pattern match search findall sub replace split compile raw string backslash groups named groups lookahead lookbehind greedy lazy catastrophic backtracking",
     "memberCount": 17,
     "liveCount": 17
+  },
+  {
+    "slug": "sys",
+    "name": "sys",
+    "signature": "import sys",
+    "blurb": "The running interpreter itself: command-line arguments, exit codes, the import path, standard streams, version checks, recursion and integer-string limits, and the hooks Python calls on errors.",
+    "category": "system",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "All Python versions",
+    "searchTerms": "sys module python sys argv sys exit sys path sys version_info sys stdout sys stderr sys platform recursion limit int max str digits interpreter command line arguments exit code import path modules",
+    "memberCount": 26,
+    "liveCount": 5
+  },
+  {
+    "slug": "uuid",
+    "name": "uuid",
+    "signature": "import uuid",
+    "blurb": "Universally unique identifiers: random IDs with uuid4(), reproducible name-based IDs with uuid3()/uuid5(), and the UUID class that parses, compares and converts them.",
+    "category": "data",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 2.5+",
+    "searchTerms": "uuid module python uuid generate uuid python uuid4 uuid1 uuid3 uuid5 guid unique id random id uuid string parse uuid namespace uuid version rfc 4122 rfc 9562",
+    "memberCount": 5,
+    "liveCount": 5
   }
 ]
 };

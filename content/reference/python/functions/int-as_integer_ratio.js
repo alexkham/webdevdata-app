@@ -151,7 +151,4 @@ export const method = {
     meta:  'int.as_integer_ratio',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect numeric data structures' },
-  ],
 };

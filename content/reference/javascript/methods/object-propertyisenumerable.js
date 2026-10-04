@@ -153,5 +153,4 @@ export const method = {
     meta:  'Object.prototype.propertyIsEnumerable',
   },
 
-  tryInTool: [],
 };

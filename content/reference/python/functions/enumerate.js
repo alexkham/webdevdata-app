@@ -151,7 +151,4 @@ export const method = {
     meta:  'enumerate',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect the resulting pairs' },
-  ],
 };

@@ -163,7 +163,4 @@ export const method = {
     meta:  'delattr',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect object data' },
-  ],
 };

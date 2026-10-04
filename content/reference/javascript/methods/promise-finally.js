@@ -163,5 +163,4 @@ export const method = {
     meta:  'Promise.prototype.finally',
   },
 
-  tryInTool: [],
 };

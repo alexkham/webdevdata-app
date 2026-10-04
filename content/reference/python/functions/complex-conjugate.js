@@ -161,7 +161,4 @@ export const method = {
     meta:  'complex.conjugate',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect numeric data structures' },
-  ],
 };

@@ -161,5 +161,4 @@ export const method = {
     meta:  'Number.isFinite',
   },
 
-  tryInTool: [],
 };

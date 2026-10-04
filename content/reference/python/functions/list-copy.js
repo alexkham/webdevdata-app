@@ -136,8 +136,4 @@ export const method = {
     meta:  'list.copy',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect list data' },
-    { name: 'JSON Tree',      href: '/tools/json-tree',      meta: 'Explore nested data' },
-  ],
 };

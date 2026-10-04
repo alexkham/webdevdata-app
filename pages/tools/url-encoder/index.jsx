@@ -255,6 +255,10 @@ export async function getStaticProps() {
     ],
   };
 
+  // Related reference pages — from the shared reference ⇄ tools registry
+  const { referenceLinksFor } = require('@/content/reference/tool-links');
+  referenceData.items.push(...referenceLinksFor('/tools/url-encoder'));
+
   const faqQuestions = {
     q1: {
       question: 'What is URL encoding?',

@@ -158,7 +158,4 @@ export const method = {
     meta:  'dict.clear',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect dict data' },
-  ],
 };

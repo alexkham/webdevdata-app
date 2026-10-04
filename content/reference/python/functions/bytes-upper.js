@@ -149,7 +149,4 @@ export const method = {
     meta:  'bytes.upper',
   },
 
-  tryInTool: [
-    { name: 'Base64 Encoder', href: '/tools/base64', meta: 'Inspect raw byte data' },
-  ],
 };

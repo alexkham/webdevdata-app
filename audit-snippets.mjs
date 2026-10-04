@@ -114,8 +114,9 @@ for n in dir(builtins):
         out['surface'].append(n)
 # public surface of each documented module: __all__, else public non-module names
 out['modules'] = {}
-for m, classes in data['modules'].items():
-    mod = importlib.import_module(m)
+for m, spec in data['modules'].items():
+    classes = spec['classes']
+    mod = importlib.import_module(spec['name'])
     names = getattr(mod, '__all__', None)
     if names is None:
         names = [n for n in dir(mod) if not n.startswith('_') and not inspect.ismodule(getattr(mod, n))]
@@ -127,6 +128,7 @@ for m, classes in data['modules'].items():
         for part in c.split('.'):
             cls = getattr(cls, part)
         names += [f'{c}.{n}' for n in vars(cls) if not n.startswith('_')]
+    names += [n for n in spec['platformNames'] if n not in names]
     out['modules'][m] = sorted(names)
 json.dump(out, open(sys.argv[2], 'w', encoding='utf-8'))
 `;
@@ -140,7 +142,14 @@ try {
     modules: Object.fromEntries(
       [...new Set(pages.filter((p) => p.rel.startsWith('python/stdlib/')).map((p) => p.rel.split('/')[2]))].map((m) => {
         const hub = pages.find((p) => p.rel === `python/stdlib/${m}` && p.slug === 'index');
-        return [m, (hub && hub.method.coverClasses) || []];
+        // import by the hub's meta.name (folder 'os-path' → module 'os.path');
+        // platformNames: public names that exist only on other platforms
+        // (e.g. Linux-only os functions — the audit runs on Windows)
+        return [m, {
+          name: (hub && hub.meta.name) || m,
+          classes: (hub && hub.method.coverClasses) || [],
+          platformNames: (hub && hub.method.platformNames) || [],
+        }];
       }),
     ),
   }));

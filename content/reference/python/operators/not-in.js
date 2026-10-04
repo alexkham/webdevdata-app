@@ -117,8 +117,4 @@ export const method = {
     meta:  'membership tests',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect container data' },
-    { name: 'JSON Tree',      href: '/tools/json-tree',      meta: 'Explore nested keys' },
-  ],
 };

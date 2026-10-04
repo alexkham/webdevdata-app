@@ -181,7 +181,4 @@ export const method = {
     meta:  'open',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect file contents' },
-  ],
 };

@@ -167,7 +167,4 @@ export const method = {
     meta:  'bool',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect input data' },
-  ],
 };

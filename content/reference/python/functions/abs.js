@@ -138,8 +138,4 @@ export const method = {
     meta:  'abs',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect numeric data' },
-    { name: 'Base64',         href: '/tools/base64',         meta: 'Encoding tasks' },
-  ],
 };

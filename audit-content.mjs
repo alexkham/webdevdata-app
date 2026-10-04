@@ -121,8 +121,9 @@ for (const { language, category, slug, meta, method } of mods) {
     }
   }
 
-  for (const t of method.tryInTool || []) {
-    if (!pageExists(t.href)) warn(id, `tryInTool '${t.name}' → ${t.href} is not a page`);
+  // tool links live ONLY in content/reference/tool-links.js (checked below)
+  if (method.tryInTool !== undefined) {
+    warn(id, 'has its own tryInTool — tool links belong in content/reference/tool-links.js');
   }
 
   const docs = method.officialDocs;
@@ -153,6 +154,26 @@ for (const { language, category, slug, meta, method } of mods) {
       warn(id, `HTML entity leak: ${bit.slice(0, 60)}`);
       break;
     }
+  }
+}
+
+// ── Reference ⇄ tools registry ──────────────────────────────
+// Every link: a real reference page, a real tool page with a registered
+// name, both notes written, no duplicate pair.
+{
+  const reg = await import(pathToFileURL(path.join(CONTENT, 'tool-links.js')).href);
+  const seen = new Set();
+  for (const l of reg.TOOL_LINKS) {
+    const id = `tool-links ${l.tool} ⇄ ${l.page}`;
+    const parts = l.page.split('/');
+    const slug = parts.pop();
+    const key = parts.join('/');
+    if (!all[key] || !all[key].has(slug)) warn(id, 'reference page does not exist');
+    if (!reg.TOOLS[l.tool]) warn(id, 'tool not registered in TOOLS');
+    if (!pageExists(l.tool)) warn(id, 'tool page does not exist');
+    if (!l.toolNote || !l.refNote) warn(id, 'toolNote and refNote are both required');
+    if (seen.has(`${l.tool}|${l.page}`)) warn(id, 'duplicate link');
+    seen.add(`${l.tool}|${l.page}`);
   }
 }
 

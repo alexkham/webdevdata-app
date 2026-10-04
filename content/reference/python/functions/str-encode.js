@@ -171,8 +171,4 @@ export const method = {
     meta:  'str.encode',
   },
 
-  tryInTool: [
-    { name: 'Base64 Encoder',  href: '/tools/base64',         meta: 'Encode bytes to base64' },
-    { name: 'JSON Formatter',  href: '/tools/json-formatter', meta: 'Inspect string / byte data' },
-  ],
 };

@@ -168,7 +168,4 @@ export const method = {
     meta:  'encodeURIComponent',
   },
 
-  tryInTool: [
-    { name: 'URL Encoder', href: '/tools/url-encoder', meta: 'Encode and decode URLs interactively' },
-  ],
 };

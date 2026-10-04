@@ -166,7 +166,4 @@ export const method = {
     meta:  'slice',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect slice results' },
-  ],
 };

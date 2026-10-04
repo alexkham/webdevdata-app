@@ -125,7 +125,11 @@ export async function getStaticProps({ params }) {
     layout: 'sidebar',
   };
 
-  return { props: { seoData, meta, method, chain, siblings, siblingsTitle, schemas, frameOptions } };
+  // "Try in a tool": from the shared reference ⇄ tools registry
+  const { toolLinksFor } = require('@/content/reference/tool-links');
+  const methodWithTools = { ...method, tryInTool: toolLinksFor(`python/exceptions/${meta.slug}`) };
+
+  return { props: { seoData, meta, method: methodWithTools, chain, siblings, siblingsTitle, schemas, frameOptions } };
 }
 
 export default function ExceptionPage({ seoData, meta, method, chain, siblings, siblingsTitle, schemas, frameOptions }) {

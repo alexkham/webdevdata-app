@@ -158,7 +158,4 @@ export const method = {
     meta:  'globals',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect namespace data' },
-  ],
 };

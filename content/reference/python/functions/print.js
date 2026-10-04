@@ -177,7 +177,4 @@ export const method = {
     meta:  'print',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect the printed output' },
-  ],
 };

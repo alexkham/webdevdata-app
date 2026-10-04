@@ -161,5 +161,4 @@ export const method = {
     meta:  'Set.prototype.add',
   },
 
-  tryInTool: [],
 };

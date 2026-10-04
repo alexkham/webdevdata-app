@@ -133,7 +133,4 @@ export const method = {
     meta:  'memoryview.cast',
   },
 
-  tryInTool: [
-    { name: 'Base64 Encoder', href: '/tools/base64', meta: 'Inspect raw byte data' },
-  ],
 };

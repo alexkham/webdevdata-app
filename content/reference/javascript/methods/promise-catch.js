@@ -161,5 +161,4 @@ export const method = {
     meta:  'Promise.prototype.catch',
   },
 
-  tryInTool: [],
 };

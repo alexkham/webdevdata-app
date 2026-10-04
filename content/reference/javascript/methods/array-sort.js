@@ -159,7 +159,4 @@ export const method = {
     meta:  'Array.prototype.sort',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect array data before sorting' },
-  ],
 };

@@ -156,5 +156,4 @@ export const method = {
     meta:  'Promise.resolve',
   },
 
-  tryInTool: [],
 };

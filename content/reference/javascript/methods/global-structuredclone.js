@@ -162,7 +162,4 @@ export const method = {
     meta:  'structuredClone',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect the data you are cloning' },
-  ],
 };

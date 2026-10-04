@@ -167,7 +167,4 @@ export const method = {
     meta:  'bytearray',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect binary data' },
-  ],
 };

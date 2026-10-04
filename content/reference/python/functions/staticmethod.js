@@ -160,7 +160,4 @@ export const method = {
     meta:  'staticmethod',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect utility output' },
-  ],
 };

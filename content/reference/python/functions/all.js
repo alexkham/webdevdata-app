@@ -146,7 +146,4 @@ export const method = {
     meta:  'all',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect the data you are validating' },
-  ],
 };

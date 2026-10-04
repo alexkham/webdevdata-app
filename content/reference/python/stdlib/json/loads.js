@@ -185,8 +185,4 @@ export const method = {
     meta:  'json.loads',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Find the error in a document' },
-    { name: 'JSON Tree',      href: '/tools/json-tree',      meta: 'Browse the parsed structure' },
-  ],
 };

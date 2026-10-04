@@ -160,5 +160,4 @@ export const method = {
     meta:  'String.prototype.repeat',
   },
 
-  tryInTool: [],
 };

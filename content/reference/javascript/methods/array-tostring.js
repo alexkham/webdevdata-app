@@ -175,7 +175,4 @@ export const method = {
     meta:  'Array.prototype.toString',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'The representation that actually round-trips' },
-  ],
 };

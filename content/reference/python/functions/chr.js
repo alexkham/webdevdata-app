@@ -152,7 +152,4 @@ export const method = {
     meta:  'chr',
   },
 
-  tryInTool: [
-    { name: 'Base64', href: '/tools/base64', meta: 'Adjacent character-encoding work' },
-  ],
 };

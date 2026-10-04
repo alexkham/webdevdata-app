@@ -155,7 +155,4 @@ export const method = {
     meta:  'list.clear',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect list data before and after' },
-  ],
 };

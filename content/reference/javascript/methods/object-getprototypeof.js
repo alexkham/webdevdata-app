@@ -166,5 +166,4 @@ export const method = {
     meta:  'Object.getPrototypeOf',
   },
 
-  tryInTool: [],
 };

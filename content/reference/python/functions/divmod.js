@@ -151,7 +151,4 @@ export const method = {
     meta:  'divmod',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect numeric data' },
-  ],
 };

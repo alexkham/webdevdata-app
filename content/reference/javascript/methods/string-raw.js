@@ -139,5 +139,4 @@ export const method = {
     meta:  'String.raw',
   },
 
-  tryInTool: [],
 };

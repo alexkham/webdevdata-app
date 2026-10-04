@@ -170,7 +170,4 @@ export const method = {
     meta:  'callable',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect object data' },
-  ],
 };

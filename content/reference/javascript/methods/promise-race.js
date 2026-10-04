@@ -160,5 +160,4 @@ export const method = {
     meta:  'Promise.race',
   },
 
-  tryInTool: [],
 };

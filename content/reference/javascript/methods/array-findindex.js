@@ -153,7 +153,4 @@ export const method = {
     meta:  'Array.prototype.findIndex',
   },
 
-  tryInTool: [
-    { name: 'JSON Formatter', href: '/tools/json-formatter', meta: 'Inspect the records you are searching' },
-  ],
 };
