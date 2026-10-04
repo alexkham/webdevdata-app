@@ -21,7 +21,7 @@
 import { pyStrRepr } from '../../../../demo-coerce.js';
 import { PyException } from '../../../../py-exceptions.js';
 import {
-  LOWER_RUNS, LOWER_MULTI, TITLE_RUNS, TITLE_MULTI, DECIMAL_ZEROS,
+  LOWER_RUNS, LOWER_MULTI, UPPER_RUNS, UPPER_MULTI, TITLE_RUNS, TITLE_MULTI, DECIMAL_ZEROS,
   DIGIT_RANGES, SPACE_RANGES, LINEBREAK_RANGES, CASED_RANGES, CASE_IGNORABLE_RANGES,
 } from './_unidata.js';
 
@@ -41,6 +41,24 @@ export const CONSTANTS = {
   ascii_letters, ascii_lowercase, ascii_uppercase, digits, hexdigits,
   octdigits, punctuation, printable, whitespace,
 };
+
+// getattr(string, name). The function capwords and the private/dunder
+// names repr with memory addresses or file paths (machine-dependent in
+// CPython too) — shown generically.
+const MODULE_PRIVATE = new Set(['_ChainMap', '__all__', '__builtins__', '__cached__', '__doc__', '__file__',
+  '__loader__', '__package__', '__spec__', '_re', '_sentinel_dict', '_string']);
+const MODULE_DIR = ['Formatter', 'Template', '_ChainMap', '__all__', '__builtins__', '__cached__', '__doc__',
+  '__file__', '__loader__', '__name__', '__package__', '__spec__', '_re', '_sentinel_dict', '_string', 'ascii_letters',
+  'ascii_lowercase', 'ascii_uppercase', 'capwords', 'digits', 'hexdigits', 'octdigits', 'printable', 'punctuation',
+  'whitespace'];
+export function moduleAttr(name) {
+  if (Object.prototype.hasOwnProperty.call(CONSTANTS, name)) return CONSTANTS[name];
+  if (name === 'Formatter' || name === 'Template') return { __pyRaw: `<class 'string.${name}'>` };
+  if (name === 'capwords') return { __pyRaw: '<function capwords at 0x...>' };
+  if (name === '__name__') return 'string';
+  if (MODULE_PRIVATE.has(name)) return { __pyRaw: `<string.${name}>` };
+  return attributeError(`module 'string' has no attribute '${name}'`, MODULE_DIR, name);
+}
 
 // ── character data ───────────────────────────────────────────
 const inRanges = (ranges, cp) => {
@@ -67,6 +85,11 @@ function buildMap(runs, multi) {
 }
 let LOWER = null;
 let TITLE = null;
+let UPPER = null;
+const upperFull = (cp) => {
+  if (!UPPER) UPPER = buildMap(UPPER_RUNS, UPPER_MULTI);
+  return UPPER.get(cp) ?? String.fromCodePoint(cp);
+};
 const lowerFull = (cp) => {
   if (!LOWER) LOWER = buildMap(LOWER_RUNS, LOWER_MULTI);
   return LOWER.get(cp) ?? String.fromCodePoint(cp);
@@ -127,6 +150,24 @@ export function capitalize(s) {
   }
   return out;
 }
+// str.upper() (full case mapping: ß → SS)
+export const upper = (s) => cpsOf(s).map(upperFull).join('');
+
+// str.title(): titlecase after an uncased character, lowercase after a cased one
+export function title(s) {
+  const cps = cpsOf(s);
+  let out = '';
+  let prevCased = false;
+  for (let i = 0; i < cps.length; i++) {
+    const c = cps[i];
+    if (!prevCased) out += titleFull(c);
+    else if (c === 0x3a3) out += finalSigma(cps, i) ? 'ς' : 'σ';
+    else out += lowerFull(c);
+    prevCased = isCased(c);
+  }
+  return out;
+}
+
 function finalSigma(cps, i) {
   let j;
   let c = 0;
@@ -506,16 +547,81 @@ export function fieldNameSplit(name) {
   return [first, rest()];
 }
 
+// ── "Did you mean" (Python/suggestions.c, on UTF-8 bytes) ─────
+// The demo shows the traceback's last line, and for an AttributeError the
+// traceback module appends ". Did you mean: 'x'?" when a close name exists.
+const MOVE_COST = 2;
+const utf8 = (s) => Array.from(new TextEncoder().encode(s));
+function substitutionCost(a, b) {
+  if ((a & 31) !== (b & 31)) return MOVE_COST;
+  if (a === b) return 0;
+  if (a >= 65 && a <= 90) a += 32;
+  if (b >= 65 && b <= 90) b += 32;
+  return a === b ? 1 : MOVE_COST;
+}
+function levenshtein(a, b, maxCost) {
+  while (a.length && b.length && a[0] === b[0]) { a = a.slice(1); b = b.slice(1); }
+  while (a.length && b.length && a[a.length - 1] === b[b.length - 1]) { a = a.slice(0, -1); b = b.slice(0, -1); }
+  if (a.length === 0 || b.length === 0) return (a.length + b.length) * MOVE_COST;
+  if (a.length > 40 || b.length > 40) return maxCost + 1;
+  if (b.length < a.length) [a, b] = [b, a];
+  if ((b.length - a.length) * MOVE_COST > maxCost) return maxCost + 1;
+  const buffer = a.map((_, i) => (i + 1) * MOVE_COST);
+  let result = 0;
+  for (let bi = 0; bi < b.length; bi++) {
+    let distance = (result = bi * MOVE_COST);
+    let minimum = Infinity;
+    for (let i = 0; i < a.length; i++) {
+      const substitute = distance + substitutionCost(b[bi], a[i]);
+      distance = buffer[i];
+      const insertDelete = Math.min(result, distance) + MOVE_COST;
+      result = Math.min(insertDelete, substitute);
+      buffer[i] = result;
+      if (result < minimum) minimum = result;
+    }
+    if (minimum > maxCost) return maxCost + 1;
+  }
+  return result;
+}
+// dir: the object's sorted dir(); names starting with '_' are only
+// candidates when the wrong name itself starts with '_'
+export function suggest(dir, name) {
+  const d = name[0] === '_' ? dir : dir.filter((x) => x[0] !== '_');
+  if (d.length >= 750) return null;
+  const nb = utf8(name);
+  let best = Infinity;
+  let suggestion = null;
+  for (const item of d) {
+    if (item === name) continue;
+    const ib = utf8(item);
+    const maxDistance = Math.min(Math.floor(((nb.length + ib.length + 3) * MOVE_COST) / 6), best - 1);
+    const cur = levenshtein(nb, ib, maxDistance);
+    if (cur > maxDistance) continue;
+    if (suggestion === null || cur < best) { suggestion = item; best = cur; }
+  }
+  return suggestion;
+}
+function attributeError(msg, dir, name) {
+  const s = suggest(dir, name);
+  raise('AttributeError', s === null ? msg : `${msg}. Did you mean: ${pyStrRepr(s)}?`);
+}
+
 // ── Formatter (Lib/string.py) ────────────────────────────────
 // Python-side objects a field can reach from a str value
 class BoundMethod {
   constructor(name) { this.name = name; }
-  toString() { return `<built-in method ${this.name} of str object at 0x...>`; }
+  // maketrans is a staticmethod: bound to the type, not the instance
+  toString() { return `<built-in method ${this.name} of ${this.name === 'maketrans' ? 'type' : 'str'} object at 0x...>`; }
 }
-const STR_METHODS = new Set(('capitalize casefold center count encode endswith expandtabs find format format_map index isalnum ' +
+const STR_DIR = ('__add__ __class__ __contains__ __delattr__ __dir__ __doc__ __eq__ __format__ __ge__ __getattribute__ ' +
+  '__getitem__ __getnewargs__ __getstate__ __gt__ __hash__ __init__ __init_subclass__ __iter__ __le__ __len__ __lt__ ' +
+  '__mod__ __mul__ __ne__ __new__ __reduce__ __reduce_ex__ __repr__ __rmod__ __rmul__ __setattr__ __sizeof__ __str__ ' +
+  '__subclasshook__ capitalize casefold center count encode endswith expandtabs find format format_map index isalnum ' +
   'isalpha isascii isdecimal isdigit isidentifier islower isnumeric isprintable isspace istitle isupper join ljust lower ' +
   'lstrip maketrans partition removeprefix removesuffix replace rfind rindex rjust rpartition rsplit rstrip split ' +
-  'splitlines startswith strip swapcase title translate upper zfill').split(' '));
+  'splitlines startswith strip swapcase title translate upper zfill').split(' ');
+
+const STR_DOC = "str(object='') -> str\nstr(bytes_or_buffer[, encoding[, errors]]) -> str\n\nCreate a new string object from the given object. If encoding or\nerrors is specified, then the object must expose a data buffer\nthat will be decoded using the given encoding and error handler.\nOtherwise, returns the result of object.__str__() (if defined)\nor repr(object).\nencoding defaults to 'utf-8'.\nerrors defaults to 'strict'.";
 
 const typeOf = (v) => (typeof v === 'string' ? 'str' : 'builtin_function_or_method');
 export const pyStr = (v) => (typeof v === 'string' ? v : String(v));
@@ -523,10 +629,12 @@ export const pyRepr = (v) => (typeof v === 'string' ? pyStrRepr(v) : String(v));
 
 function getattr(obj, name) {
   if (typeof obj === 'string') {
-    if (STR_METHODS.has(name)) return new BoundMethod(name);
     if (name === '__class__') return { toString: () => "<class 'str'>" };
+    if (name === '__doc__') return STR_DOC;
+    if (STR_DIR.includes(name)) return new BoundMethod(name);
+    return attributeError(`'str' object has no attribute '${name}'`, STR_DIR, name);
   }
-  raise('AttributeError', `'${typeOf(obj)}' object has no attribute ${pyStrRepr(name)}`);
+  return raise('AttributeError', `'${typeOf(obj)}' object has no attribute '${name}'`);
 }
 function getitem(obj, key) {
   if (typeof obj === 'string') {
@@ -634,3 +742,10 @@ export function isdigitStr(s) {
 
 // repr() of one parse() tuple
 export const parseTuple = ([lit, name, spec, conv]) => ({ __pyTuple: [lit, name, spec, conv] });
+
+// repr() of any value the Formatter emulation can produce, for demo output
+export const pyObjRepr = (v) => {
+  if (typeof v === 'string') return v;
+  if (typeof v === 'bigint') return { __pyRaw: String(v) };
+  return { __pyRaw: String(v) };
+};

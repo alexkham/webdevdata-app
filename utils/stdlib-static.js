@@ -40,7 +40,8 @@ function withHrefs(related, module) {
   return (related || []).map((r) => {
     if (r.href) return r;
     let href;
-    if (!r.category) href = `${ROOT}/${module}/${r.slug}`;
+    if (r.language && r.language !== 'python') href = `/reference/${r.language}/${r.category}/${r.slug}`;
+    else if (!r.category) href = `${ROOT}/${module}/${r.slug}`;
     else if (r.category === 'stdlib') href = `${ROOT}/${r.slug}`;
     else href = `/reference/python/${r.category}/${r.slug}`;
     return { ...r, href };
@@ -58,10 +59,19 @@ const faqSchema = (faq) => ({
   mainEntity: (faq || []).map((q) => ({ '@type': 'Question', name: q.q, acceptedAnswer: { '@type': 'Answer', text: q.a } })),
 });
 
+// A module whose route folder exists before its content (or before its
+// hub) builds no pages instead of failing the whole build.
+const hasHub = (module) => {
+  const fs = require('fs');
+  const path = require('path');
+  return fs.existsSync(path.join(process.cwd(), 'content/reference/python/stdlib', module, 'index.js'));
+};
+
 export function memberPaths(module) {
   const fs = require('fs');
   const path = require('path');
   const dir = path.join(process.cwd(), 'content/reference/python/stdlib', module);
+  if (!fs.existsSync(dir) || !hasHub(module)) return [];
   return fs.readdirSync(dir)
     .filter((f) => f.endsWith('.js') && f !== 'index.js')
     .map((f) => ({ params: { name: f.replace(/\.js$/, '') } }));
@@ -137,6 +147,7 @@ export function memberProps(module, name) {
 }
 
 export function moduleHubProps(module) {
+  if (!hasHub(module)) return { notFound: true };
   const { meta, method } = loadContent(module, 'index');
   const items = moduleCatalog(module).filter((m) => m.slug !== 'index');
   const base = `${ROOT}/${module}`;

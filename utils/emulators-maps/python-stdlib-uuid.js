@@ -7,7 +7,11 @@
 import pythonStdlibUuidFieldsEmu from '../emulators/python/stdlib/uuid/fields';
 import pythonStdlibUuidHexIntBytesEmu from '../emulators/python/stdlib/uuid/hex-int-bytes';
 import pythonStdlibUuidIndexEmu from '../emulators/python/stdlib/uuid/index';
+import pythonStdlibUuidNamespacesEmu from '../emulators/python/stdlib/uuid/namespaces';
+import pythonStdlibUuidSafeuuidEmu from '../emulators/python/stdlib/uuid/safeuuid';
 import pythonStdlibUuidUuidClassEmu from '../emulators/python/stdlib/uuid/uuid-class';
+import pythonStdlibUuidUuid1Emu from '../emulators/python/stdlib/uuid/uuid1';
+import pythonStdlibUuidUuid3Uuid5Emu from '../emulators/python/stdlib/uuid/uuid3-uuid5';
 import pythonStdlibUuidUuid4Emu from '../emulators/python/stdlib/uuid/uuid4';
 import pythonStdlibUuidVersionVariantEmu from '../emulators/python/stdlib/uuid/version-variant';
 
@@ -15,7 +19,11 @@ const emulators = {
   'fields': pythonStdlibUuidFieldsEmu,
   'hex-int-bytes': pythonStdlibUuidHexIntBytesEmu,
   'index': pythonStdlibUuidIndexEmu,
+  'namespaces': pythonStdlibUuidNamespacesEmu,
+  'safeuuid': pythonStdlibUuidSafeuuidEmu,
   'uuid-class': pythonStdlibUuidUuidClassEmu,
+  'uuid1': pythonStdlibUuidUuid1Emu,
+  'uuid3-uuid5': pythonStdlibUuidUuid3Uuid5Emu,
   'uuid4': pythonStdlibUuidUuid4Emu,
   'version-variant': pythonStdlibUuidVersionVariantEmu,
 };

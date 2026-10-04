@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/stdlib/base64 explorer.
 
 export const pythonStdlibBase64Catalog = {
-  generatedAt: "2026-10-03T18:14:54.834Z",
+  generatedAt: "2026-10-04T18:32:15.491Z",
   items: [
   {
     "slug": "a85-b85-z85",
@@ -63,6 +63,17 @@ export const pythonStdlibBase64Catalog = {
     "searchTerms": "b64encode base64.b64encode base64 encode string python base64 encode bytes str to base64 altchars padding a bytes-like object is required not str encode image base64"
   },
   {
+    "slug": "encode-decode",
+    "name": "base64.encode / decode",
+    "signature": "base64.encode(input, output)",
+    "blurb": "Stream Base64 between binary file objects: encode writes 76-character lines, decode reads a line at a time.",
+    "category": "functions",
+    "type": "function",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "encode decode base64.encode base64.decode base64 encode file python decode base64 file binary file objects rb wb io.BytesIO stream large file python -m base64"
+  },
+  {
     "slug": "encodebytes-decodebytes",
     "name": "base64.encodebytes / decodebytes",
     "signature": "base64.encodebytes(s)",
@@ -81,7 +92,7 @@ export const pythonStdlibBase64Catalog = {
     "category": "data",
     "type": "module",
     "hasLiveDemo": true,
-    "version": "Python 2.4+",
+    "version": "Python 3.0+",
     "searchTerms": "base64 module python base64 encode decode string b64encode b64decode urlsafe base32 base16 hex ascii85 base85 z85 binascii.Error incorrect padding bytes to text jwt data uri"
   },
   {

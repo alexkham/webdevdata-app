@@ -6,7 +6,7 @@
 // file under content/reference/.
 
 export const referenceCatalog = {
-  generatedAt: "2026-10-03T18:14:54.826Z",
+  generatedAt: "2026-10-04T18:32:15.486Z",
   languages: [
   {
     "id": "javascript",
@@ -1610,7 +1610,7 @@ export const referenceCatalog = {
   {
     "id": "python",
     "href": "/reference/python",
-    "count": 605,
+    "count": 659,
     "categories": [
       {
         "id": "exceptions",
@@ -5222,8 +5222,8 @@ export const referenceCatalog = {
       {
         "id": "stdlib",
         "href": "/reference/python/stdlib",
-        "count": 280,
-        "liveCount": 209,
+        "count": 334,
+        "liveCount": 260,
         "items": [
           {
             "slug": "base64/a85-b85-z85",
@@ -5281,6 +5281,17 @@ export const referenceCatalog = {
             "searchTerms": "b64encode base64.b64encode base64 encode string python base64 encode bytes str to base64 altchars padding a bytes-like object is required not str encode image base64"
           },
           {
+            "slug": "base64/encode-decode",
+            "name": "base64.encode / decode",
+            "signature": "base64.encode(input, output)",
+            "blurb": "Stream Base64 between binary file objects: encode writes 76-character lines, decode reads a line at a time.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 3.0+",
+            "searchTerms": "encode decode base64.encode base64.decode base64 encode file python decode base64 file binary file objects rb wb io.BytesIO stream large file python -m base64"
+          },
+          {
             "slug": "base64/encodebytes-decodebytes",
             "name": "base64.encodebytes / decodebytes",
             "signature": "base64.encodebytes(s)",
@@ -5299,7 +5310,7 @@ export const referenceCatalog = {
             "category": "data",
             "type": "module",
             "hasLiveDemo": true,
-            "version": "Python 2.4+",
+            "version": "Python 3.0+",
             "searchTerms": "base64 module python base64 encode decode string b64encode b64decode urlsafe base32 base16 hex ascii85 base85 z85 binascii.Error incorrect padding bytes to text jwt data uri"
           },
           {
@@ -5323,6 +5334,61 @@ export const referenceCatalog = {
             "hasLiveDemo": true,
             "version": "Python 2.4+",
             "searchTerms": "urlsafe_b64encode urlsafe_b64decode base64.urlsafe_b64encode base64.urlsafe_b64decode url safe base64 python base64url jwt decode payload without padding filename safe minus underscore rfc 4648 section 5"
+          },
+          {
+            "slug": "bisect/bisect_left",
+            "name": "bisect.bisect_left",
+            "signature": "bisect.bisect_left(a, x, lo=0, hi=len(a), *, key=None)",
+            "blurb": "Binary search: the leftmost position where x could be inserted into the sorted sequence a — the index of the first item >= x.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 2.1+",
+            "searchTerms": "bisect bisect_left binary search lower bound first index greater or equal sorted list find position python bisect.bisect_left lo hi key lo must be non-negative"
+          },
+          {
+            "slug": "bisect/bisect_right",
+            "name": "bisect.bisect_right / bisect",
+            "signature": "bisect.bisect_right(a, x, lo=0, hi=len(a), *, key=None)",
+            "blurb": "Binary search: the position AFTER any items equal to x in a sorted sequence — the index of the first item > x. bisect.bisect is the same function.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 2.1+",
+            "searchTerms": "bisect bisect_right bisect.bisect upper bound first index greater than sorted list binary search python count occurrences buckets ranges histogram grade lookup"
+          },
+          {
+            "slug": "bisect",
+            "name": "bisect",
+            "signature": "import bisect",
+            "blurb": "Binary search on sorted lists: find the insertion point for a value in O(log n), or insert it while keeping the list sorted.",
+            "category": "functional",
+            "type": "module",
+            "hasLiveDemo": true,
+            "version": "Python 2.1+",
+            "searchTerms": "bisect module python binary search sorted list insertion point bisect_left bisect_right insort insort_left insort_right keep list sorted grade lookup ranges buckets lower bound upper bound"
+          },
+          {
+            "slug": "bisect/insort_left",
+            "name": "bisect.insort_left",
+            "signature": "bisect.insort_left(a, x, lo=0, hi=len(a), *, key=None)",
+            "blurb": "Insert x into a sorted list, keeping it sorted — before any items equal to x.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 2.1+",
+            "searchTerms": "bisect insort_left insert into sorted list keep list sorted insert before equal python bisect.insort_left sorted insert"
+          },
+          {
+            "slug": "bisect/insort_right",
+            "name": "bisect.insort_right / insort",
+            "signature": "bisect.insort_right(a, x, lo=0, hi=len(a), *, key=None)",
+            "blurb": "Insert x into a sorted list, keeping it sorted — after any items equal to x. bisect.insort is the same function.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 2.1+",
+            "searchTerms": "bisect insort insort_right bisect.insort insert into sorted list keep sorted python sorted insert key descending list stable insert"
           },
           {
             "slug": "collections/chainmap-new_child",
@@ -5567,6 +5633,138 @@ export const referenceCatalog = {
             "searchTerms": "userdict userlist userstring collections.UserDict collections.UserList collections.UserString subclass dict subclass list custom dict data attribute override __setitem__"
           },
           {
+            "slug": "copy/copy",
+            "name": "copy.copy",
+            "signature": "copy.copy(obj)",
+            "blurb": "Shallow copy: a new object of the same type whose contents are the SAME objects as the original’s.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "All Python versions",
+            "searchTerms": "copy.copy shallow copy python copy object clone list copy dict copy __copy__ copy instance shared nested list cannot pickle"
+          },
+          {
+            "slug": "copy/deepcopy",
+            "name": "copy.deepcopy",
+            "signature": "copy.deepcopy(obj, memo=None)",
+            "blurb": "Deep copy: copies the object and, recursively, everything inside it — nothing mutable is shared with the original.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "All Python versions",
+            "searchTerms": "copy.deepcopy deep copy python nested list dict copy clone recursive copy memo circular reference __deepcopy__ independent copy list of lists cannot pickle"
+          },
+          {
+            "slug": "copy/error",
+            "name": "copy.Error",
+            "signature": "copy.Error",
+            "blurb": "The copy module’s own exception — raised only for objects that offer no way at all to be copied. Most uncopyable objects raise TypeError instead.",
+            "category": "exceptions",
+            "type": "exception",
+            "hasLiveDemo": false,
+            "version": "All Python versions",
+            "searchTerms": "copy.Error copy.error copy module exception un(shallow)copyable object un(deep)copyable object cannot copy object python copy error cannot pickle typeerror"
+          },
+          {
+            "slug": "copy",
+            "name": "copy",
+            "signature": "import copy",
+            "blurb": "Shallow and deep copies of any object — copy.copy, copy.deepcopy — plus copy.replace (3.13) for changing fields of immutable objects.",
+            "category": "data",
+            "type": "module",
+            "hasLiveDemo": true,
+            "version": "All Python versions",
+            "searchTerms": "copy module python shallow copy deep copy deepcopy copy.copy copy.deepcopy copy.replace nested list copy clone object duplicate list of lists __copy__ __deepcopy__ __replace__ memo"
+          },
+          {
+            "slug": "copy/replace",
+            "name": "copy.replace",
+            "signature": "copy.replace(obj, /, **changes)",
+            "blurb": "New in 3.13: a copy of an immutable record with some fields changed — named tuples, dataclasses, datetime objects and anything with __replace__.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 3.13+",
+            "searchTerms": "copy.replace python 3.13 replace field namedtuple _replace dataclasses.replace frozen dataclass immutable update copy with changes __replace__ does not support"
+          },
+          {
+            "slug": "csv/dialect",
+            "name": "csv.Dialect",
+            "signature": "class csv.Dialect",
+            "blurb": "The bundle of format settings — delimiter, quotechar, escapechar, doublequote, skipinitialspace, lineterminator, quoting — that readers and writers follow. Subclass it to name your own format.",
+            "category": "classes",
+            "type": "class",
+            "hasLiveDemo": true,
+            "version": "Python 2.3+",
+            "searchTerms": "csv dialect class python csv.Dialect custom dialect subclass Dialect.delimiter Dialect.quotechar Dialect.escapechar Dialect.doublequote Dialect.skipinitialspace Dialect.lineterminator Dialect.quoting strict fmtparams format parameters bad delimiter value 1-character string"
+          },
+          {
+            "slug": "csv/dictreader",
+            "name": "csv.DictReader",
+            "signature": "csv.DictReader(f, fieldnames=None, restkey=None, restval=None, dialect='excel', *args, **kwds)",
+            "blurb": "Read a CSV file as one dict per row, keyed by the header line (or by fieldnames you supply). Extra fields go under restkey, missing ones get restval.",
+            "category": "classes",
+            "type": "class",
+            "hasLiveDemo": true,
+            "version": "Python 2.3+ (plain dict rows since 3.8)",
+            "searchTerms": "csv dictreader read csv into dict python csv.DictReader fieldnames DictReader.fieldnames header row keys restkey restval None key extra fields missing fields list of dicts column names bom ufeff utf-8-sig"
+          },
+          {
+            "slug": "csv/dictwriter-writeheader",
+            "name": "DictWriter.writeheader",
+            "signature": "DictWriter.writeheader()",
+            "blurb": "Write the field names as the first row of the file — DictWriter never does it on its own.",
+            "category": "methods",
+            "type": "method",
+            "hasLiveDemo": true,
+            "version": "Python 2.7+ (returns the write() result since 3.8)",
+            "searchTerms": "csv dictwriter writeheader write header row column names python DictWriter.writeheader csv header missing first row fieldnames"
+          },
+          {
+            "slug": "csv/dictwriter",
+            "name": "csv.DictWriter",
+            "signature": "csv.DictWriter(f, fieldnames, restval='', extrasaction='raise', dialect='excel', *args, **kwds)",
+            "blurb": "Write dicts as CSV rows, columns in the order of fieldnames. Missing keys get restval; unknown keys raise ValueError unless extrasaction=\"ignore\".",
+            "category": "classes",
+            "type": "class",
+            "hasLiveDemo": true,
+            "version": "Python 2.3+",
+            "searchTerms": "csv dictwriter write dict to csv python csv.DictWriter DictWriter.writerow DictWriter.writerows writerow writerows fieldnames restval extrasaction ignore dict contains fields not in fieldnames list of dicts to csv"
+          },
+          {
+            "slug": "csv/error",
+            "name": "csv.Error",
+            "signature": "csv.Error(*args)",
+            "blurb": "Raised by the csv module for malformed CSV and impossible writes: unexpected end of data, field larger than field limit, need to escape, unknown dialect …",
+            "category": "exceptions",
+            "type": "exception",
+            "hasLiveDemo": true,
+            "version": "Python 2.3+",
+            "searchTerms": "csv error _csv.Error csv.Error exception unexpected end of data field larger than field limit new-line character seen in unquoted field need to escape but no escapechar set unknown dialect could not determine delimiter iterator should return strings not bytes expected after"
+          },
+          {
+            "slug": "csv/excel",
+            "name": "csv.excel",
+            "signature": "class csv.excel · class csv.excel_tab · class csv.unix_dialect",
+            "blurb": "The three built-in dialects: excel (comma, \\r\\n, minimal quoting — the default), excel_tab (tabs) and unix_dialect (\\n line ends, every field quoted). Registered as 'excel', 'excel-tab' and 'unix'.",
+            "category": "classes",
+            "type": "class",
+            "hasLiveDemo": true,
+            "version": "Python 2.3+ (unix_dialect: 3.2+)",
+            "searchTerms": "csv excel dialect excel_tab excel-tab unix_dialect unix dialect tsv tab separated values default dialect \\r\\n line endings quote all python csv.excel csv.excel_tab csv.unix_dialect"
+          },
+          {
+            "slug": "csv/field_size_limit",
+            "name": "csv.field_size_limit",
+            "signature": "csv.field_size_limit([new_limit])",
+            "blurb": "Get or set the largest field the reader accepts (131072 characters by default). Returns the old limit.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 2.5+",
+            "searchTerms": "csv field_size_limit field larger than field limit 131072 csv.Error large field maxsize increase csv field size python csv.field_size_limit sys.maxsize OverflowError"
+          },
+          {
             "slug": "csv",
             "name": "csv",
             "signature": "import csv",
@@ -5576,6 +5774,72 @@ export const referenceCatalog = {
             "hasLiveDemo": true,
             "version": "Python 2.3+",
             "searchTerms": "csv module python csv read csv file write csv file reader writer dictreader dictwriter comma separated values tsv tab separated semicolon delimiter quotechar quoting newline blank lines excel sniffer dialect parse csv split comma"
+          },
+          {
+            "slug": "csv/quoting",
+            "name": "csv.QUOTE_MINIMAL",
+            "signature": "csv.QUOTE_MINIMAL, csv.QUOTE_ALL, csv.QUOTE_NONNUMERIC, csv.QUOTE_NONE, csv.QUOTE_STRINGS, csv.QUOTE_NOTNULL",
+            "blurb": "The six quoting styles: when the writer puts quotes around fields, and how the reader treats unquoted ones (as floats, or empty ones as None).",
+            "category": "constants",
+            "type": "constant",
+            "hasLiveDemo": true,
+            "version": "Python 2.3+ (QUOTE_STRINGS, QUOTE_NOTNULL: 3.12+)",
+            "searchTerms": "csv quoting constants QUOTE_MINIMAL QUOTE_ALL QUOTE_NONNUMERIC QUOTE_NONE QUOTE_STRINGS QUOTE_NOTNULL quote all fields csv quote strings none empty field float conversion python csv quoting"
+          },
+          {
+            "slug": "csv/reader",
+            "name": "csv.reader",
+            "signature": "csv.reader(csvfile, dialect='excel', **fmtparams)",
+            "blurb": "Iterate over CSV lines and get each row as a list of strings — quotes, doubled quotes, escapes and line breaks inside fields handled.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 2.3+",
+            "searchTerms": "csv reader read csv file python csv.reader parse csv rows list of strings line_num dialect delimiter quotechar skipinitialspace strict escapechar newline new-line character seen in unquoted field iterator should return strings not bytes text mode"
+          },
+          {
+            "slug": "csv/register_dialect",
+            "name": "csv.register_dialect",
+            "signature": "csv.register_dialect(name, dialect=None, **fmtparams)",
+            "blurb": "Give a dialect a name so readers and writers can use dialect=\"name\" — with get_dialect, list_dialects and unregister_dialect to look up, list and remove names.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 2.3+",
+            "searchTerms": "csv register_dialect get_dialect list_dialects unregister_dialect dialect registry named dialect python csv.register_dialect csv.get_dialect csv.list_dialects csv.unregister_dialect unknown dialect"
+          },
+          {
+            "slug": "csv/sniffer-has_header",
+            "name": "Sniffer.has_header",
+            "signature": "Sniffer.has_header(sample)",
+            "blurb": "Guess whether the first row of a CSV sample is a header, by comparing it with the types and lengths of the values below it.",
+            "category": "methods",
+            "type": "method",
+            "hasLiveDemo": true,
+            "version": "Python 2.3+",
+            "searchTerms": "csv sniffer has_header detect header row python Sniffer.has_header does csv have header first row column names guess heuristic"
+          },
+          {
+            "slug": "csv/sniffer",
+            "name": "csv.Sniffer",
+            "signature": "csv.Sniffer().sniff(sample, delimiters=None)",
+            "blurb": "Guess the format of a CSV sample — delimiter, quote character, doubled quotes, spaces after delimiters — and get a Dialect class to read the file with.",
+            "category": "classes",
+            "type": "class",
+            "hasLiveDemo": true,
+            "version": "Python 2.3+",
+            "searchTerms": "csv sniffer sniff detect delimiter auto detect csv format python csv.Sniffer Sniffer.sniff guess dialect delimiters could not determine delimiter preferred semicolon tab comma"
+          },
+          {
+            "slug": "csv/writer",
+            "name": "csv.writer",
+            "signature": "csv.writer(csvfile, dialect='excel', **fmtparams)",
+            "blurb": "Write rows (lists of values) as CSV lines — writerow for one row, writerows for many. Quotes and escapes are added only where needed.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 2.3+",
+            "searchTerms": "csv writer write csv file python csv.writer writerow writerows newline='' blank lines windows \\r\\n lineterminator quoting escapechar need to escape but no escapechar set single empty field record must be quoted iterable expected"
           },
           {
             "slug": "datetime/astimezone",
@@ -6073,6 +6337,17 @@ export const referenceCatalog = {
             "searchTerms": "heapq nlargest nsmallest top k largest smallest n biggest values top 10 python heapq.nlargest heapq.nsmallest key top n items"
           },
           {
+            "slug": "html/escape",
+            "name": "html.escape",
+            "signature": "html.escape(s, quote=True)",
+            "blurb": "Replace &, < and > (and, by default, \" and ') with HTML character references so text displays literally instead of being read as markup.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 3.2+",
+            "searchTerms": "html escape python html.escape escape html special characters encode html entities amp lt gt quot x27 quote=False xss prevent html injection attribute value cgi.escape replacement"
+          },
+          {
             "slug": "html",
             "name": "html",
             "signature": "import html",
@@ -6082,6 +6357,17 @@ export const referenceCatalog = {
             "hasLiveDemo": true,
             "version": "Python 3.2+ (escape), 3.4+ (unescape)",
             "searchTerms": "html module python html escape unescape html entities character references encode decode html special characters xss sanitize html.entities html.parser amp lt gt quot"
+          },
+          {
+            "slug": "html/unescape",
+            "name": "html.unescape",
+            "signature": "html.unescape(s)",
+            "blurb": "Decode every named (&copy;), decimal (&#169;) and hex (&#xA9;) character reference in a string, using the HTML5 table and the browser error-recovery rules.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 3.4+",
+            "searchTerms": "html unescape python html.unescape decode html entities convert amp to & html entity to character numeric character reference hex reference html5 named character references nbsp copy without semicolon windows-1252 replacement character html.entities.html5"
           },
           {
             "slug": "itertools/accumulate",
@@ -7943,6 +8229,138 @@ export const referenceCatalog = {
             "searchTerms": "re sub subn python regex replace substitute replacement string backreference \\1 \\g<name> \\g<0> function callable count Pattern.sub Pattern.subn invalid group reference bad escape"
           },
           {
+            "slug": "string/capwords",
+            "name": "string.capwords",
+            "signature": "string.capwords(s, sep=None)",
+            "blurb": "Capitalize every word: split the string, call str.capitalize() on each piece, join the pieces back together.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 3 (all)",
+            "searchTerms": "string capwords python capitalize each word capitalize first letter of every word title case without apostrophe problem capwords vs title they're sep separator"
+          },
+          {
+            "slug": "string/constants",
+            "name": "string.ascii_letters / digits / punctuation …",
+            "signature": "string.ascii_letters · ascii_lowercase · ascii_uppercase · digits · hexdigits · octdigits · punctuation · printable · whitespace",
+            "blurb": "Nine ready-made str constants listing ASCII character classes — letters, digits, hex and octal digits, punctuation, whitespace and everything printable.",
+            "category": "constants",
+            "type": "constant",
+            "hasLiveDemo": true,
+            "version": "Python 3 (all)",
+            "searchTerms": "string constants python string.ascii_letters string.ascii_lowercase string.ascii_uppercase string.digits string.hexdigits string.octdigits string.punctuation string.printable string.whitespace ascii_letters ascii_lowercase ascii_uppercase digits hexdigits octdigits punctuation printable whitespace alphabet list of letters a-z remove punctuation"
+          },
+          {
+            "slug": "string/formatter-check_unused_args",
+            "name": "Formatter.check_unused_args",
+            "signature": "Formatter.check_unused_args(used_args, args, kwargs)",
+            "blurb": "Hook called once at the end of vformat with the set of argument keys the format string actually used — override it to reject unused arguments.",
+            "category": "methods",
+            "type": "method",
+            "hasLiveDemo": true,
+            "version": "Python 2.6+",
+            "searchTerms": "formatter check_unused_args python Formatter.check_unused_args strict format unused arguments extra keyword arguments ignored str.format ignores extra arguments used_args"
+          },
+          {
+            "slug": "string/formatter-convert_field",
+            "name": "Formatter.convert_field / format_field",
+            "signature": "Formatter.convert_field(value, conversion) · Formatter.format_field(value, format_spec)",
+            "blurb": "The last two steps for every field: convert_field applies !r / !s / !a, then format_field applies the :spec by calling the built-in format().",
+            "category": "methods",
+            "type": "method",
+            "hasLiveDemo": true,
+            "version": "Python 2.6+",
+            "searchTerms": "formatter convert_field format_field python Formatter.convert_field Formatter.format_field custom conversion !u !r !s !a unknown conversion specifier format spec custom format string formatter subclass"
+          },
+          {
+            "slug": "string/formatter-get_value",
+            "name": "Formatter.get_value / get_field",
+            "signature": "Formatter.get_value(key, args, kwargs) · Formatter.get_field(field_name, args, kwargs)",
+            "blurb": "The lookup hooks of string.Formatter: get_field resolves a whole field name like \"0[1].y\", get_value fetches its first part from args or kwargs.",
+            "category": "methods",
+            "type": "method",
+            "hasLiveDemo": true,
+            "version": "Python 2.6+",
+            "searchTerms": "formatter get_value get_field python Formatter.get_value Formatter.get_field string.Formatter default value missing key format KeyError dotted field names nested dict format custom lookup"
+          },
+          {
+            "slug": "string/formatter-parse",
+            "name": "Formatter.parse",
+            "signature": "Formatter.parse(format_string)",
+            "blurb": "Split a str.format-style string into (literal_text, field_name, format_spec, conversion) tuples — the way to find out which fields a format string uses.",
+            "category": "methods",
+            "type": "method",
+            "hasLiveDemo": true,
+            "version": "Python 2.6+",
+            "searchTerms": "formatter parse python string.Formatter.parse Formatter.parse get field names from format string list placeholders in format string literal_text field_name format_spec conversion single } encountered in format string"
+          },
+          {
+            "slug": "string/formatter",
+            "name": "string.Formatter",
+            "signature": "string.Formatter()",
+            "blurb": "str.format() as a class: format() and vformat() run the same {field!conversion:spec} syntax, and every step — parsing, lookup, conversion, formatting — is a method you can override.",
+            "category": "classes",
+            "type": "class",
+            "hasLiveDemo": true,
+            "version": "Python 2.6+ (format string positional-only since 3.7)",
+            "searchTerms": "string formatter python string.Formatter custom formatter subclass str.format Formatter.format Formatter.vformat vformat format with dict of values pep 3101 custom format string syntax"
+          },
+          {
+            "slug": "string",
+            "name": "string",
+            "signature": "import string",
+            "blurb": "Character-class constants (ascii_letters, digits, punctuation …), capwords(), $-placeholder Template strings and the customizable Formatter behind str.format.",
+            "category": "text",
+            "type": "module",
+            "hasLiveDemo": true,
+            "version": "Python 3 (all)",
+            "searchTerms": "string module python import string ascii_letters ascii_lowercase ascii_uppercase digits hexdigits octdigits punctuation printable whitespace capwords Template substitute safe_substitute Formatter custom format string constants"
+          },
+          {
+            "slug": "string/template-attributes",
+            "name": "Template.delimiter / idpattern / braceidpattern / flags / pattern",
+            "signature": "class T(Template): delimiter = … · idpattern = … · braceidpattern = … · flags = … · pattern = …",
+            "blurb": "The class attributes a Template subclass overrides to change the syntax: the $ itself, what counts as a name, the flags of the regex — or the whole regex.",
+            "category": "methods",
+            "type": "attribute",
+            "hasLiveDemo": true,
+            "version": "Python 2.4+ (flags 3.2+, braceidpattern 3.7+)",
+            "searchTerms": "template delimiter idpattern braceidpattern flags pattern python Template.delimiter Template.idpattern Template.braceidpattern Template.flags Template.pattern custom delimiter percent sign template subclass dotted placeholder names __init_subclass__"
+          },
+          {
+            "slug": "string/template-get_identifiers",
+            "name": "Template.get_identifiers / is_valid",
+            "signature": "Template.get_identifiers() · Template.is_valid()",
+            "blurb": "Inspect a Template without substituting: the placeholder names it uses, in first-seen order, and whether substitute() could run without a ValueError.",
+            "category": "methods",
+            "type": "method",
+            "hasLiveDemo": true,
+            "version": "Python 3.11+",
+            "searchTerms": "template get_identifiers is_valid python Template.get_identifiers Template.is_valid list placeholders in template validate template string 3.11 find variables in template"
+          },
+          {
+            "slug": "string/template-substitute",
+            "name": "Template.substitute / safe_substitute",
+            "signature": "Template.substitute(mapping={}, /, **kwds) · Template.safe_substitute(mapping={}, /, **kwds)",
+            "blurb": "Fill a Template: substitute raises KeyError for a missing name and ValueError for a stray $, safe_substitute leaves both in the text.",
+            "category": "methods",
+            "type": "method",
+            "hasLiveDemo": true,
+            "version": "Python 2.4+",
+            "searchTerms": "template substitute safe_substitute python Template.substitute Template.safe_substitute keyerror missing placeholder invalid placeholder in string line col valueerror template mapping kwargs leave unknown placeholders"
+          },
+          {
+            "slug": "string/template",
+            "name": "string.Template",
+            "signature": "string.Template(template)",
+            "blurb": "Simple $name substitution for text written by people, not programmers: $name or ${name} placeholders, $$ for a literal dollar, and nothing else — no expressions, no attribute access.",
+            "category": "classes",
+            "type": "class",
+            "hasLiveDemo": true,
+            "version": "Python 2.4+",
+            "searchTerms": "string template python string.Template dollar placeholder $name ${name} template substitution user supplied template safe templating i18n translations template string vs f-string vs format"
+          },
+          {
             "slug": "sys/abiflags",
             "name": "sys.abiflags / getdlopenflags / setdlopenflags / getandroidapilevel",
             "signature": "sys.abiflags: str · sys.getdlopenflags() · sys.setdlopenflags(n) · sys.getandroidapilevel()",
@@ -8240,6 +8658,116 @@ export const referenceCatalog = {
             "searchTerms": "sys.version_info version_info sys.version version sys.hexversion hexversion sys.api_version api_version sys.implementation implementation cache_tag sys.copyright copyright check python version in code python version check major minor micro releaselevel"
           },
           {
+            "slug": "urllib-parse/bytes-results",
+            "name": "urllib.parse.ParseResultBytes",
+            "signature": "urllib.parse.ParseResultBytes(scheme, netloc, path, params, query, fragment)",
+            "blurb": "The bytes twins of ParseResult, SplitResult and DefragResult: what urlparse, urlsplit and urldefrag return for bytes input, with .decode() back to str.",
+            "category": "classes",
+            "type": "class",
+            "hasLiveDemo": true,
+            "version": "Python 3.2+",
+            "searchTerms": "urllib parse ParseResultBytes SplitResultBytes DefragResultBytes ParseResultBytes.geturl SplitResultBytes.geturl DefragResultBytes.geturl python parse url bytes urlparse bytes decode encode ascii codec cannot decode cannot mix str and non-str arguments"
+          },
+          {
+            "slug": "urllib-parse",
+            "name": "urllib.parse",
+            "signature": "import urllib.parse",
+            "blurb": "Split URLs into parts and put them back together, resolve relative links, and percent-encode or decode text and query strings — urlsplit, urljoin, quote, urlencode, parse_qs.",
+            "category": "data",
+            "type": "module",
+            "hasLiveDemo": true,
+            "version": "Python 3.0+",
+            "searchTerms": "urllib.parse module python url parsing urlparse urlsplit urljoin urlencode parse_qs quote unquote percent encoding url encode decode query string hostname port python 3 urlparse module"
+          },
+          {
+            "slug": "urllib-parse/parse_qs",
+            "name": "urllib.parse.parse_qs",
+            "signature": "urllib.parse.parse_qs(qs, keep_blank_values=False, strict_parsing=False, encoding='utf-8', errors='replace', max_num_fields=None, separator='&')",
+            "blurb": "Parse a query string into a dict of lists (parse_qs) or a list of (name, value) pairs (parse_qsl), decoding %XX escapes and + as you go.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 3.0+",
+            "searchTerms": "urllib parse parse_qs parse_qsl python parse query string get query parameters from url dict of lists keep_blank_values strict_parsing max_num_fields separator semicolon bad query field URLSearchParams python equivalent"
+          },
+          {
+            "slug": "urllib-parse/quote",
+            "name": "urllib.parse.quote",
+            "signature": "urllib.parse.quote(string, safe='/', encoding=None, errors=None)",
+            "blurb": "Percent-encode text for a URL: quote writes a space as %20 and keeps / by default; quote_plus writes a space as + for form data; quote_from_bytes takes bytes.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 3.0+",
+            "searchTerms": "urllib parse quote quote_plus quote_from_bytes python url encode percent encoding urlencode string escape url space %20 plus sign safe parameter slash not encoded encodeURIComponent python equivalent unreserved characters"
+          },
+          {
+            "slug": "urllib-parse/unquote",
+            "name": "urllib.parse.unquote",
+            "signature": "urllib.parse.unquote(string, encoding='utf-8', errors='replace')",
+            "blurb": "Decode %XX escapes back into characters. unquote_plus also turns + into a space (form data); unquote_to_bytes returns the raw bytes.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 3.0+",
+            "searchTerms": "urllib parse unquote unquote_plus unquote_to_bytes python url decode percent decoding %20 plus to space decodeURIComponent python equivalent replacement character invalid utf-8 double encoded %25"
+          },
+          {
+            "slug": "urllib-parse/urldefrag",
+            "name": "urllib.parse.urldefrag",
+            "signature": "urllib.parse.urldefrag(url)",
+            "blurb": "Split the #fragment off a URL: returns a DefragResult(url, fragment) whose geturl() puts them back together.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 3.0+",
+            "searchTerms": "urllib parse urldefrag DefragResult DefragResult.geturl python remove fragment from url strip hash anchor #section deduplicate urls crawler"
+          },
+          {
+            "slug": "urllib-parse/urlencode",
+            "name": "urllib.parse.urlencode",
+            "signature": "urllib.parse.urlencode(query, doseq=False, safe='', encoding=None, errors=None, quote_via=quote_plus)",
+            "blurb": "Turn a dict (or a list of pairs) into a query string: every key and value goes through quote_plus and is joined with = and &.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 3.0+",
+            "searchTerms": "urllib parse urlencode python dict to query string build query string url parameters doseq list values quote_via quote %20 instead of plus not a valid non-string sequence or mapping object URLSearchParams python equivalent"
+          },
+          {
+            "slug": "urllib-parse/urljoin",
+            "name": "urllib.parse.urljoin",
+            "signature": "urllib.parse.urljoin(base, url, allow_fragments=True)",
+            "blurb": "Resolve a link against the URL of the page it appears on, like a browser does: relative paths, ../, /absolute paths, //host and full URLs.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 3.0+",
+            "searchTerms": "urllib parse urljoin python join url base url relative url resolve link trailing slash replaces last segment api base url path dropped ../ dot segments rfc 3986 absolute url scheme relative //host new URL(rel, base) python equivalent"
+          },
+          {
+            "slug": "urllib-parse/urlparse",
+            "name": "urllib.parse.urlparse",
+            "signature": "urllib.parse.urlparse(url, scheme='', allow_fragments=True)",
+            "blurb": "Split a URL into six parts — scheme, netloc, path, params, query, fragment — as a ParseResult with hostname, port, username and password attributes; urlunparse puts them back together.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 3.0+",
+            "searchTerms": "urllib parse urlparse urlunparse ParseResult ParseResult.geturl python parse url components scheme netloc path params query fragment hostname port username password get domain from url port out of range 0-65535 invalid ipv6 url _replace geturl"
+          },
+          {
+            "slug": "urllib-parse/urlsplit",
+            "name": "urllib.parse.urlsplit",
+            "signature": "urllib.parse.urlsplit(url, scheme='', allow_fragments=True)",
+            "blurb": "Split a URL into five parts — scheme, netloc, path, query, fragment — as a SplitResult; urlunsplit joins five parts back into a URL.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 3.0+",
+            "searchTerms": "urllib parse urlsplit urlunsplit SplitResult SplitResult.geturl python split url into parts build url from components scheme netloc path query fragment _replace _asdict round trip normalize url empty query dropped"
+          },
+          {
             "slug": "uuid/fields",
             "name": "UUID.fields / time / clock_seq / node",
             "signature": "u.fields · u.time_low · u.time_mid · u.time_hi_version · u.clock_seq_hi_variant · u.clock_seq_low · u.node · u.time · u.clock_seq",
@@ -8249,6 +8777,17 @@ export const referenceCatalog = {
             "hasLiveDemo": true,
             "version": "Python 2.5+",
             "searchTerms": "UUID.fields UUID.time_low UUID.time_mid UUID.time_hi_version UUID.clock_seq_hi_variant UUID.clock_seq_low UUID.node UUID.time UUID.clock_seq uuid fields time low time mid time hi version clock seq node mac address uuid1 timestamp uuid to datetime extract time from uuid1"
+          },
+          {
+            "slug": "uuid/getnode",
+            "name": "uuid.getnode",
+            "signature": "uuid.getnode()",
+            "blurb": "The hardware (MAC) address of this machine as a 48-bit int, or a random 48-bit number with the multicast bit set if none can be found. The default node of uuid1().",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": false,
+            "version": "Python 2.5+",
+            "searchTerms": "uuid.getnode getnode python get mac address python hardware address 48-bit node uuid1 node multicast bit network interface"
           },
           {
             "slug": "uuid/hex-int-bytes",
@@ -8273,6 +8812,39 @@ export const referenceCatalog = {
             "searchTerms": "uuid module python uuid generate uuid python uuid4 uuid1 uuid3 uuid5 guid unique id random id uuid string parse uuid namespace uuid version rfc 4122 rfc 9562"
           },
           {
+            "slug": "uuid/main",
+            "name": "uuid.main",
+            "signature": "python -m uuid [-h] [-u {uuid1,uuid3,uuid4,uuid5}] [-n NAMESPACE] [-N NAME]",
+            "blurb": "The command-line interface: python -m uuid prints a new UUID (uuid4 by default), or a name-based one with -u uuid5 -n @dns -N name.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": false,
+            "version": "Python 3.12+",
+            "searchTerms": "python -m uuid uuid command line generate uuid terminal uuid cli uuid.main uuidgen python uuid5 command line -u uuid5 -n @dns -N name @url @oid @x500"
+          },
+          {
+            "slug": "uuid/namespaces",
+            "name": "uuid.NAMESPACE_DNS / URL / OID / X500",
+            "signature": "uuid.NAMESPACE_DNS · uuid.NAMESPACE_URL · uuid.NAMESPACE_OID · uuid.NAMESPACE_X500",
+            "blurb": "The four predefined namespace UUIDs from RFC 4122 for uuid3() and uuid5(): domain names, URLs, ISO OIDs and X.500 names.",
+            "category": "constants",
+            "type": "constant",
+            "hasLiveDemo": true,
+            "version": "Python 2.5+",
+            "searchTerms": "uuid.NAMESPACE_DNS uuid.NAMESPACE_URL uuid.NAMESPACE_OID uuid.NAMESPACE_X500 NAMESPACE_DNS NAMESPACE_URL NAMESPACE_OID NAMESPACE_X500 uuid namespace 6ba7b810-9dad-11d1-80b4-00c04fd430c8 uuid5 namespace which namespace"
+          },
+          {
+            "slug": "uuid/safeuuid",
+            "name": "uuid.SafeUUID",
+            "signature": "class uuid.SafeUUID(Enum): safe = 0 · unsafe = -1 · unknown = None",
+            "blurb": "An enum saying whether the platform generated a uuid1 in a multiprocessing-safe way: safe, unsafe or unknown. Read it from UUID.is_safe.",
+            "category": "classes",
+            "type": "class",
+            "hasLiveDemo": true,
+            "version": "Python 3.7+",
+            "searchTerms": "uuid.SafeUUID SafeUUID UUID.is_safe is_safe SafeUUID.safe SafeUUID.unsafe SafeUUID.unknown uuid.Enum uuid1 multiprocessing safe uuid_generate_time_safe enum"
+          },
+          {
             "slug": "uuid/uuid-class",
             "name": "uuid.UUID",
             "signature": "uuid.UUID(hex=None, bytes=None, bytes_le=None, fields=None, int=None, version=None, *, is_safe=SafeUUID.unknown)",
@@ -8282,6 +8854,28 @@ export const referenceCatalog = {
             "hasLiveDemo": true,
             "version": "Python 2.5+ (is_safe 3.7+)",
             "searchTerms": "uuid.UUID UUID class python parse uuid string uuid from string uuid from bytes uuid from int validate uuid badly formed hexadecimal UUID string compare uuid sort uuid immutable uuid hash uuid repr uuid.int_ uuid.bytes_ int_ bytes_"
+          },
+          {
+            "slug": "uuid/uuid1",
+            "name": "uuid.uuid1",
+            "signature": "uuid.uuid1(node=None, clock_seq=None)",
+            "blurb": "A UUID from the current time, a clock sequence and the machine's network (MAC) address. Roughly time-ordered, but it reveals where and when it was made.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 2.5+",
+            "searchTerms": "uuid1 python uuid1 time based uuid mac address uuid privacy uuid1 node clock_seq uuid1 vs uuid4 timestamp uuid sortable uuid"
+          },
+          {
+            "slug": "uuid/uuid3-uuid5",
+            "name": "uuid.uuid3 / uuid5",
+            "signature": "uuid.uuid3(namespace, name) · uuid.uuid5(namespace, name)",
+            "blurb": "Deterministic, name-based UUIDs: hash a namespace UUID plus a name with MD5 (uuid3) or SHA-1 (uuid5). The same inputs always give the same UUID.",
+            "category": "functions",
+            "type": "function",
+            "hasLiveDemo": true,
+            "version": "Python 2.5+",
+            "searchTerms": "uuid5 uuid3 python uuid5 python uuid3 deterministic uuid uuid from string name based uuid uuid from name hash uuid namespace uuid sha1 md5 same uuid every time reproducible uuid"
           },
           {
             "slug": "uuid/uuid4",

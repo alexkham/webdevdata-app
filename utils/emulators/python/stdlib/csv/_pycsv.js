@@ -352,7 +352,8 @@ function checkChars(n1, n2, c1, c2) {
 
 // Module state: dialect registry (insertion ordered) + field limit.
 export function newCsv() {
-  const mod = { dialects: new Map(), fieldLimit: 131072 };
+  // fieldLimit: exact (bigint); limitNum: the same as a JS number for comparisons
+  const mod = { dialects: new Map(), fieldLimit: 131072n, limitNum: 131072 };
   registerDialect(mod, 'excel', excel);
   registerDialect(mod, 'excel-tab', excel_tab);
   registerDialect(mod, 'unix', unix_dialect);
@@ -414,14 +415,15 @@ export const listDialects = (mod) => [...mod.dialects.keys()];
 
 // field_size_limit([new_limit]) → old limit (bigint)
 export function fieldSizeLimit(mod, newLimit) {
-  const old = BigInt(mod.fieldLimit);
+  const old = mod.fieldLimit;
   if (newLimit !== undefined) {
     let v;
     if (typeof newLimit === 'bigint') v = newLimit;
     else if (typeof newLimit === 'number' && Number.isInteger(newLimit)) v = BigInt(newLimit);
     else throw pyErr('TypeError', 'limit must be an integer');
     if (v > 9223372036854775807n || v < -9223372036854775808n) throw pyErr('OverflowError', 'Python int too large to convert to C ssize_t');
-    mod.fieldLimit = Number(v);
+    mod.fieldLimit = v;
+    mod.limitNum = Number(v);
   }
   return old;
 }
@@ -467,8 +469,7 @@ export class Reader {
   }
 
   addChar(c) {
-    const limit = this.mod.fieldLimit;
-    if (this.field.length >= limit) throw new CsvError(`field larger than field limit (${limit})`);
+    if (this.field.length >= this.mod.limitNum) throw new CsvError(`field larger than field limit (${this.mod.fieldLimit})`);
     this.field.push(c);
   }
 
@@ -779,7 +780,11 @@ export class DictWriter {
     });
   }
   writerow(rowdict) { return this.writer.writerow(this.dictToList(rowdict)); }
-  writerows(rowdicts) { return this.writer.writerows(rowdicts.map((r) => this.dictToList(r))); }
+  // map() is lazy: earlier rows are written before a bad one raises
+  writerows(rowdicts) {
+    for (const r of rowdicts) this.writer.writerow(this.dictToList(r));
+    return null;
+  }
 }
 
 // ─── Sniffer (Lib/csv.py) ───────────────────────────────────

@@ -398,6 +398,22 @@ function emitModuleEmulatorMaps(withEmulator, items) {
   for (const it of items) {
     if (it.category.includes('/')) byModule.set(`${it.language}-${it.category.split('/').join('-')}`, []);
   }
+  // …and every module ROUTE folder (pages/reference/<lang>/<group>/<module>/),
+  // even before it has content — its pages import the map unconditionally,
+  // so a missing map would fail the whole build.
+  const pagesRoot = path.join(__dirname, 'pages', 'reference');
+  if (fs.existsSync(pagesRoot)) {
+    for (const lang of fs.readdirSync(pagesRoot, { withFileTypes: true })) {
+      if (!lang.isDirectory()) continue;
+      for (const group of fs.readdirSync(path.join(pagesRoot, lang.name), { withFileTypes: true })) {
+        if (!group.isDirectory()) continue;
+        for (const mod of fs.readdirSync(path.join(pagesRoot, lang.name, group.name), { withFileTypes: true })) {
+          const key = `${lang.name}-${group.name}-${mod.name}`;
+          if (mod.isDirectory() && !byModule.has(key)) byModule.set(key, []);
+        }
+      }
+    }
+  }
   for (const e of withEmulator) {
     if (!e.category.includes('/')) continue;
     const key = `${e.language}-${e.category.split('/').join('-')}`;

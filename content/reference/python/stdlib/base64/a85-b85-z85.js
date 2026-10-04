@@ -131,7 +131,7 @@ export const method = {
     {
       name: 'Decoding with the wrong alphabet',
       desc: 'Base85 and Z85 text often decode without error in the other decoder — to different bytes.',
-      wrong: { label: 'b85decode(z85 text)', code: "import base64\nbase64.b85decode(base64.z85encode(b'hi'))", output: "b'\\xf4\\xb9'" },
+      wrong: { label: 'b85decode(z85 text)', code: "import base64\nbase64.b85decode(base64.z85encode(b'hi'))", output: "b'\\xb8]'" },
       fix:   { label: 'z85decode',           code: "import base64\nbase64.z85decode(base64.z85encode(b'hi'))", output: "b'hi'" },
     },
   ],

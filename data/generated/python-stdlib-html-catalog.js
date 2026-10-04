@@ -5,8 +5,19 @@
 // Flat list for the /reference/python/stdlib/html explorer.
 
 export const pythonStdlibHtmlCatalog = {
-  generatedAt: "2026-10-03T18:14:54.835Z",
+  generatedAt: "2026-10-04T18:32:15.492Z",
   items: [
+  {
+    "slug": "escape",
+    "name": "html.escape",
+    "signature": "html.escape(s, quote=True)",
+    "blurb": "Replace &, < and > (and, by default, \" and ') with HTML character references so text displays literally instead of being read as markup.",
+    "category": "functions",
+    "type": "function",
+    "hasLiveDemo": true,
+    "version": "Python 3.2+",
+    "searchTerms": "html escape python html.escape escape html special characters encode html entities amp lt gt quot x27 quote=False xss prevent html injection attribute value cgi.escape replacement"
+  },
   {
     "slug": "index",
     "name": "html",
@@ -17,6 +28,17 @@ export const pythonStdlibHtmlCatalog = {
     "hasLiveDemo": true,
     "version": "Python 3.2+ (escape), 3.4+ (unescape)",
     "searchTerms": "html module python html escape unescape html entities character references encode decode html special characters xss sanitize html.entities html.parser amp lt gt quot"
+  },
+  {
+    "slug": "unescape",
+    "name": "html.unescape",
+    "signature": "html.unescape(s)",
+    "blurb": "Decode every named (&copy;), decimal (&#169;) and hex (&#xA9;) character reference in a string, using the HTML5 table and the browser error-recovery rules.",
+    "category": "functions",
+    "type": "function",
+    "hasLiveDemo": true,
+    "version": "Python 3.4+",
+    "searchTerms": "html unescape python html.unescape decode html entities convert amp to & html entity to character numeric character reference hex reference html5 named character references nbsp copy without semicolon windows-1252 replacement character html.entities.html5"
   }
 ]
 };

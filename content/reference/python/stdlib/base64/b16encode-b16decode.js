@@ -93,8 +93,8 @@ export const method = {
     {
       name: 'Decoding the output of bytes.hex()',
       desc: 'hex() and hexdigest() are lowercase; b16decode wants uppercase by default.',
-      wrong: { label: 'b16decode(hex())', code: "import base64\nbase64.b16decode(b'hi'.hex())",                output: 'binascii.Error: Non-base16 digit found' },
-      fix:   { label: 'casefold=True',    code: "import base64\nbase64.b16decode(b'hi'.hex(), casefold=True)", output: "b'hi'" },
+      wrong: { label: 'b16decode(hex())', code: "import base64\nbase64.b16decode(b'\\xca\\xfe'.hex())",                output: 'binascii.Error: Non-base16 digit found' },
+      fix:   { label: 'casefold=True',    code: "import base64\nbase64.b16decode(b'\\xca\\xfe'.hex(), casefold=True)", output: "b'\\xca\\xfe'" },
     },
     {
       name: 'Spaced hex dumps',

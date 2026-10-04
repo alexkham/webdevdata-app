@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/stdlib/itertools explorer.
 
 export const pythonStdlibItertoolsCatalog = {
-  generatedAt: "2026-10-03T18:14:54.835Z",
+  generatedAt: "2026-10-04T18:32:15.492Z",
   items: [
   {
     "slug": "accumulate",

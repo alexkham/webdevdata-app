@@ -5,8 +5,85 @@
 // Flat list for the /reference/python/stdlib/csv explorer.
 
 export const pythonStdlibCsvCatalog = {
-  generatedAt: "2026-10-03T18:14:54.835Z",
+  generatedAt: "2026-10-04T18:32:15.491Z",
   items: [
+  {
+    "slug": "dialect",
+    "name": "csv.Dialect",
+    "signature": "class csv.Dialect",
+    "blurb": "The bundle of format settings — delimiter, quotechar, escapechar, doublequote, skipinitialspace, lineterminator, quoting — that readers and writers follow. Subclass it to name your own format.",
+    "category": "classes",
+    "type": "class",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "csv dialect class python csv.Dialect custom dialect subclass Dialect.delimiter Dialect.quotechar Dialect.escapechar Dialect.doublequote Dialect.skipinitialspace Dialect.lineterminator Dialect.quoting strict fmtparams format parameters bad delimiter value 1-character string"
+  },
+  {
+    "slug": "dictreader",
+    "name": "csv.DictReader",
+    "signature": "csv.DictReader(f, fieldnames=None, restkey=None, restval=None, dialect='excel', *args, **kwds)",
+    "blurb": "Read a CSV file as one dict per row, keyed by the header line (or by fieldnames you supply). Extra fields go under restkey, missing ones get restval.",
+    "category": "classes",
+    "type": "class",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+ (plain dict rows since 3.8)",
+    "searchTerms": "csv dictreader read csv into dict python csv.DictReader fieldnames DictReader.fieldnames header row keys restkey restval None key extra fields missing fields list of dicts column names bom ufeff utf-8-sig"
+  },
+  {
+    "slug": "dictwriter-writeheader",
+    "name": "DictWriter.writeheader",
+    "signature": "DictWriter.writeheader()",
+    "blurb": "Write the field names as the first row of the file — DictWriter never does it on its own.",
+    "category": "methods",
+    "type": "method",
+    "hasLiveDemo": true,
+    "version": "Python 2.7+ (returns the write() result since 3.8)",
+    "searchTerms": "csv dictwriter writeheader write header row column names python DictWriter.writeheader csv header missing first row fieldnames"
+  },
+  {
+    "slug": "dictwriter",
+    "name": "csv.DictWriter",
+    "signature": "csv.DictWriter(f, fieldnames, restval='', extrasaction='raise', dialect='excel', *args, **kwds)",
+    "blurb": "Write dicts as CSV rows, columns in the order of fieldnames. Missing keys get restval; unknown keys raise ValueError unless extrasaction=\"ignore\".",
+    "category": "classes",
+    "type": "class",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "csv dictwriter write dict to csv python csv.DictWriter DictWriter.writerow DictWriter.writerows writerow writerows fieldnames restval extrasaction ignore dict contains fields not in fieldnames list of dicts to csv"
+  },
+  {
+    "slug": "error",
+    "name": "csv.Error",
+    "signature": "csv.Error(*args)",
+    "blurb": "Raised by the csv module for malformed CSV and impossible writes: unexpected end of data, field larger than field limit, need to escape, unknown dialect …",
+    "category": "exceptions",
+    "type": "exception",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "csv error _csv.Error csv.Error exception unexpected end of data field larger than field limit new-line character seen in unquoted field need to escape but no escapechar set unknown dialect could not determine delimiter iterator should return strings not bytes expected after"
+  },
+  {
+    "slug": "excel",
+    "name": "csv.excel",
+    "signature": "class csv.excel · class csv.excel_tab · class csv.unix_dialect",
+    "blurb": "The three built-in dialects: excel (comma, \\r\\n, minimal quoting — the default), excel_tab (tabs) and unix_dialect (\\n line ends, every field quoted). Registered as 'excel', 'excel-tab' and 'unix'.",
+    "category": "classes",
+    "type": "class",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+ (unix_dialect: 3.2+)",
+    "searchTerms": "csv excel dialect excel_tab excel-tab unix_dialect unix dialect tsv tab separated values default dialect \\r\\n line endings quote all python csv.excel csv.excel_tab csv.unix_dialect"
+  },
+  {
+    "slug": "field_size_limit",
+    "name": "csv.field_size_limit",
+    "signature": "csv.field_size_limit([new_limit])",
+    "blurb": "Get or set the largest field the reader accepts (131072 characters by default). Returns the old limit.",
+    "category": "functions",
+    "type": "function",
+    "hasLiveDemo": true,
+    "version": "Python 2.5+",
+    "searchTerms": "csv field_size_limit field larger than field limit 131072 csv.Error large field maxsize increase csv field size python csv.field_size_limit sys.maxsize OverflowError"
+  },
   {
     "slug": "index",
     "name": "csv",
@@ -17,6 +94,72 @@ export const pythonStdlibCsvCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.3+",
     "searchTerms": "csv module python csv read csv file write csv file reader writer dictreader dictwriter comma separated values tsv tab separated semicolon delimiter quotechar quoting newline blank lines excel sniffer dialect parse csv split comma"
+  },
+  {
+    "slug": "quoting",
+    "name": "csv.QUOTE_MINIMAL",
+    "signature": "csv.QUOTE_MINIMAL, csv.QUOTE_ALL, csv.QUOTE_NONNUMERIC, csv.QUOTE_NONE, csv.QUOTE_STRINGS, csv.QUOTE_NOTNULL",
+    "blurb": "The six quoting styles: when the writer puts quotes around fields, and how the reader treats unquoted ones (as floats, or empty ones as None).",
+    "category": "constants",
+    "type": "constant",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+ (QUOTE_STRINGS, QUOTE_NOTNULL: 3.12+)",
+    "searchTerms": "csv quoting constants QUOTE_MINIMAL QUOTE_ALL QUOTE_NONNUMERIC QUOTE_NONE QUOTE_STRINGS QUOTE_NOTNULL quote all fields csv quote strings none empty field float conversion python csv quoting"
+  },
+  {
+    "slug": "reader",
+    "name": "csv.reader",
+    "signature": "csv.reader(csvfile, dialect='excel', **fmtparams)",
+    "blurb": "Iterate over CSV lines and get each row as a list of strings — quotes, doubled quotes, escapes and line breaks inside fields handled.",
+    "category": "functions",
+    "type": "function",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "csv reader read csv file python csv.reader parse csv rows list of strings line_num dialect delimiter quotechar skipinitialspace strict escapechar newline new-line character seen in unquoted field iterator should return strings not bytes text mode"
+  },
+  {
+    "slug": "register_dialect",
+    "name": "csv.register_dialect",
+    "signature": "csv.register_dialect(name, dialect=None, **fmtparams)",
+    "blurb": "Give a dialect a name so readers and writers can use dialect=\"name\" — with get_dialect, list_dialects and unregister_dialect to look up, list and remove names.",
+    "category": "functions",
+    "type": "function",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "csv register_dialect get_dialect list_dialects unregister_dialect dialect registry named dialect python csv.register_dialect csv.get_dialect csv.list_dialects csv.unregister_dialect unknown dialect"
+  },
+  {
+    "slug": "sniffer-has_header",
+    "name": "Sniffer.has_header",
+    "signature": "Sniffer.has_header(sample)",
+    "blurb": "Guess whether the first row of a CSV sample is a header, by comparing it with the types and lengths of the values below it.",
+    "category": "methods",
+    "type": "method",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "csv sniffer has_header detect header row python Sniffer.has_header does csv have header first row column names guess heuristic"
+  },
+  {
+    "slug": "sniffer",
+    "name": "csv.Sniffer",
+    "signature": "csv.Sniffer().sniff(sample, delimiters=None)",
+    "blurb": "Guess the format of a CSV sample — delimiter, quote character, doubled quotes, spaces after delimiters — and get a Dialect class to read the file with.",
+    "category": "classes",
+    "type": "class",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "csv sniffer sniff detect delimiter auto detect csv format python csv.Sniffer Sniffer.sniff guess dialect delimiters could not determine delimiter preferred semicolon tab comma"
+  },
+  {
+    "slug": "writer",
+    "name": "csv.writer",
+    "signature": "csv.writer(csvfile, dialect='excel', **fmtparams)",
+    "blurb": "Write rows (lists of values) as CSV lines — writerow for one row, writerows for many. Quotes and escapes are added only where needed.",
+    "category": "functions",
+    "type": "function",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "csv writer write csv file python csv.writer writerow writerows newline='' blank lines windows \\r\\n lineterminator quoting escapechar need to escape but no escapechar set single empty field record must be quoted iterable expected"
   }
 ]
 };

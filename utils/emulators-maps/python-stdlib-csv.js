@@ -4,10 +4,36 @@
 //
 // slug → emulator for python-stdlib-csv only (empty when the module has no live demos).
 
+import pythonStdlibCsvDialectEmu from '../emulators/python/stdlib/csv/dialect';
+import pythonStdlibCsvDictreaderEmu from '../emulators/python/stdlib/csv/dictreader';
+import pythonStdlibCsvDictwriterWriteheaderEmu from '../emulators/python/stdlib/csv/dictwriter-writeheader';
+import pythonStdlibCsvDictwriterEmu from '../emulators/python/stdlib/csv/dictwriter';
+import pythonStdlibCsvErrorEmu from '../emulators/python/stdlib/csv/error';
+import pythonStdlibCsvExcelEmu from '../emulators/python/stdlib/csv/excel';
+import pythonStdlibCsvField_size_limitEmu from '../emulators/python/stdlib/csv/field_size_limit';
 import pythonStdlibCsvIndexEmu from '../emulators/python/stdlib/csv/index';
+import pythonStdlibCsvQuotingEmu from '../emulators/python/stdlib/csv/quoting';
+import pythonStdlibCsvReaderEmu from '../emulators/python/stdlib/csv/reader';
+import pythonStdlibCsvRegister_dialectEmu from '../emulators/python/stdlib/csv/register_dialect';
+import pythonStdlibCsvSnifferHas_headerEmu from '../emulators/python/stdlib/csv/sniffer-has_header';
+import pythonStdlibCsvSnifferEmu from '../emulators/python/stdlib/csv/sniffer';
+import pythonStdlibCsvWriterEmu from '../emulators/python/stdlib/csv/writer';
 
 const emulators = {
+  'dialect': pythonStdlibCsvDialectEmu,
+  'dictreader': pythonStdlibCsvDictreaderEmu,
+  'dictwriter-writeheader': pythonStdlibCsvDictwriterWriteheaderEmu,
+  'dictwriter': pythonStdlibCsvDictwriterEmu,
+  'error': pythonStdlibCsvErrorEmu,
+  'excel': pythonStdlibCsvExcelEmu,
+  'field_size_limit': pythonStdlibCsvField_size_limitEmu,
   'index': pythonStdlibCsvIndexEmu,
+  'quoting': pythonStdlibCsvQuotingEmu,
+  'reader': pythonStdlibCsvReaderEmu,
+  'register_dialect': pythonStdlibCsvRegister_dialectEmu,
+  'sniffer-has_header': pythonStdlibCsvSnifferHas_headerEmu,
+  'sniffer': pythonStdlibCsvSnifferEmu,
+  'writer': pythonStdlibCsvWriterEmu,
 };
 
 export function getModuleEmulator(slug) {

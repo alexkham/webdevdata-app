@@ -204,17 +204,71 @@ const heapreplaceMax = (heap, item) => replaceInternal(heap, item, MAX);
 
 // ─── builtins the Python-level code relies on ───────────────
 
-// sorted(iterable, key=key, reverse=reverse): stable; reverse keeps equal
-// items in their original order, exactly like list.sort(reverse=True)
+// CPython 3.13 Objects/listobject.c list.sort for n < 64: one count_run,
+// then binary insertion — the same comparisons in the same order, so even
+// a TypeError for mixed types names the operands like CPython does (same
+// algorithm as the json port's sort_keys sort). Longer lists use a stable
+// merge sort: same result, comparison order may differ.
+function listSort(a, lt) {
+  const n0 = a.length;
+  if (n0 < 2) return a;
+  if (n0 >= 64) {
+    const idx = a.map((x, i) => [x, i]);
+    idx.sort((x, y) => (lt(x[0], y[0]) ? -1 : lt(y[0], x[0]) ? 1 : x[1] - y[1]));
+    idx.forEach(([x], i) => { a[i] = x; });
+    return a;
+  }
+  const rev = (lo, hi) => {
+    for (let i = lo, j = hi - 1; i < j; i++, j--) [a[i], a[j]] = [a[j], a[i]];
+  };
+  let n = 1;
+  for (; n < n0; n++) if (lt(a[n], a[n - 1])) break;
+  if (n < n0) {
+    let done = false;
+    if (n > 1) {
+      if (lt(a[0], a[n - 1])) done = true;
+      else rev(0, n);
+    }
+    if (!done) {
+      n += 1;
+      let neq = 0;
+      const reverseLastNeq = () => {
+        if (neq) { neq += 1; rev(n - neq, n); neq = 0; }
+      };
+      for (; n < n0; n++) {
+        if (lt(a[n], a[n - 1])) reverseLastNeq();
+        else if (lt(a[n - 1], a[n])) break;
+        else neq += 1;
+      }
+      reverseLastNeq();
+      rev(0, n);
+      for (; n < n0; n++) if (lt(a[n], a[n - 1])) break;
+    }
+  }
+  for (let ok = n; ok < n0; ok++) {
+    const pivot = a[ok];
+    let L = 0;
+    let R = ok;
+    do {
+      const M = (L + R) >> 1;
+      if (lt(pivot, a[M])) R = M;
+      else L = M + 1;
+    } while (L < R);
+    for (let M = ok; M > L; M--) a[M] = a[M - 1];
+    a[L] = pivot;
+  }
+  return a;
+}
+
+// sorted(iterable, key=key, reverse=reverse) the way list.sort does it:
+// keys computed first, reverse=True reverses before and after a normal
+// stable sort (so equal items keep their original order)
 export function sorted(items, key = null, reverse = false) {
-  const dec = items.map((v, i) => ({ k: key ? key(v) : v, v, i }));
-  dec.sort((a, b) => {
-    const [x, y] = reverse ? [b, a] : [a, b];
-    if (pyLt(x.k, y.k)) return -1;
-    if (pyLt(y.k, x.k)) return 1;
-    return a.i - b.i;
-  });
-  return dec.map((d) => d.v);
+  const pairs = items.map((v) => ({ k: key ? key(v) : v, v }));
+  if (reverse) pairs.reverse();
+  listSort(pairs, (x, y) => pyLt(x.k, y.k));
+  if (reverse) pairs.reverse();
+  return pairs.map((p) => p.v);
 }
 
 // min()/max() with key: the first extreme item wins ties

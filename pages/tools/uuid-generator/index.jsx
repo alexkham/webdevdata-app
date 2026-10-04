@@ -249,6 +249,10 @@ export async function getStaticProps() {
     ],
   };
 
+  // Related reference pages — from the shared reference ⇄ tools registry
+  const { referenceLinksFor } = require('@/content/reference/tool-links');
+  referenceData.items.push(...referenceLinksFor('/tools/uuid-generator'));
+
   const faqQuestions = {
     q1: {
       question: 'What is the difference between UUID v4 and v7?',

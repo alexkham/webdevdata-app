@@ -129,10 +129,8 @@ export const method = {
     {
       name: 'Quoting text that is already encoded',
       desc: 'quote encodes % like any other character, so an already-encoded value is encoded twice and the server sees the literal text %20.',
-      wrong: { label: 'quote twice',        code: "from urllib.parse import quote
-quote('my%20file.txt')",          output: "'my%2520file.txt'" },
-      fix:   { label: 'decode, then encode', code: "from urllib.parse import quote, unquote
-quote(unquote('my%20file.txt'))", output: "'my%20file.txt'" },
+      wrong: { label: 'quote twice',        code: "from urllib.parse import quote\nquote('my%20file.txt')",          output: "'my%2520file.txt'" },
+      fix:   { label: 'decode, then encode', code: "from urllib.parse import quote, unquote\nquote(unquote('my%20file.txt'))", output: "'my%20file.txt'" },
     },
     {
       name: 'An encoding that cannot hold the text',

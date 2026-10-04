@@ -7,7 +7,7 @@
 // Contains the COMPLETE page list per pillar — nothing truncated.
 
 export const homeCatalog = {
-  generatedAt: "2026-10-03T17:31:18.041Z",
+  generatedAt: "2026-10-04T18:32:15.623Z",
   pillars: [
   {
     "id": "c-programming",
@@ -103,7 +103,7 @@ export const homeCatalog = {
         "label": "Categories"
       },
       {
-        "n": "724",
+        "n": "803",
         "label": "Entries"
       }
     ],

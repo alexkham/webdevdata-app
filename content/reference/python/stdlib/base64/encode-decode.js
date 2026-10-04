@@ -9,7 +9,7 @@ export const meta = {
   category:    'functions',
   type:        'function',
   hasLiveDemo: true,
-  version:     'Python 2.0+',
+  version:     'Python 3.0+',
   searchTerms: 'encode decode base64.encode base64.decode base64 encode file python decode base64 file binary file objects rb wb io.BytesIO stream large file python -m base64',
 };
 
@@ -20,7 +20,7 @@ export const method = {
   returns:   { type: 'None', desc: 'Both write to output and return None.' },
 
   category:    'base64 function',
-  version:     'Python 2.0+',
+  version:     'Python 3.0+',
   hasLiveDemo: true,
 
   subtitle: 'The file-to-file interface behind python -m base64. Both arguments are binary file objects (open(..., "rb") / "wb", or io.BytesIO); nothing is returned.',

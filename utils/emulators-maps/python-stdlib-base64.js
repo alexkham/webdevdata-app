@@ -9,6 +9,7 @@ import pythonStdlibBase64B16encodeB16decodeEmu from '../emulators/python/stdlib/
 import pythonStdlibBase64B32encodeB32decodeEmu from '../emulators/python/stdlib/base64/b32encode-b32decode';
 import pythonStdlibBase64B64decodeEmu from '../emulators/python/stdlib/base64/b64decode';
 import pythonStdlibBase64B64encodeEmu from '../emulators/python/stdlib/base64/b64encode';
+import pythonStdlibBase64EncodeDecodeEmu from '../emulators/python/stdlib/base64/encode-decode';
 import pythonStdlibBase64EncodebytesDecodebytesEmu from '../emulators/python/stdlib/base64/encodebytes-decodebytes';
 import pythonStdlibBase64IndexEmu from '../emulators/python/stdlib/base64/index';
 import pythonStdlibBase64StandardB64Emu from '../emulators/python/stdlib/base64/standard-b64';
@@ -20,6 +21,7 @@ const emulators = {
   'b32encode-b32decode': pythonStdlibBase64B32encodeB32decodeEmu,
   'b64decode': pythonStdlibBase64B64decodeEmu,
   'b64encode': pythonStdlibBase64B64encodeEmu,
+  'encode-decode': pythonStdlibBase64EncodeDecodeEmu,
   'encodebytes-decodebytes': pythonStdlibBase64EncodebytesDecodebytesEmu,
   'index': pythonStdlibBase64IndexEmu,
   'standard-b64': pythonStdlibBase64StandardB64Emu,

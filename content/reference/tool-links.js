@@ -24,6 +24,7 @@ export const TOOLS = {
   '/tools/url-encoder':    'URL Encoder / Decoder',
   '/tools/html-encoder':   'HTML Entity Encoder',
   '/tools/jwt-decoder':    'JWT Decoder',
+  '/tools/uuid-generator': 'UUID Generator',
 };
 
 export const TOOL_LINKS = [
@@ -47,21 +48,39 @@ export const TOOL_LINKS = [
   { tool: '/tools/base64',         page: 'python/functions/bytes-decode',      toolNote: 'Decoded Base64 is bytes — decode to text',     refNote: 'Python: bytes → str' },
   { tool: '/tools/base64',         page: 'python/exceptions/unicodedecodeerror', toolNote: 'Decoded bytes that are not UTF-8 text',     refNote: 'Python: bytes that are not valid text' },
   { tool: '/tools/base64',         page: 'python/functions/bytes-hex',         toolNote: 'Another text form of the same bytes',          refNote: 'Python: bytes as hexadecimal text' },
+  { tool: '/tools/base64',         page: 'python/stdlib/base64/index',         toolNote: 'Encode and decode Base64 text in the browser', refNote: 'Python: the base64 module' },
+  { tool: '/tools/base64',         page: 'python/stdlib/base64/b64encode',     toolNote: 'Check your b64encode output',                  refNote: 'Python: base64.b64encode' },
+  { tool: '/tools/base64',         page: 'python/stdlib/base64/b64decode',     toolNote: 'Decode Base64 and spot padding problems',      refNote: 'Python: base64.b64decode' },
+  { tool: '/tools/base64',         page: 'python/stdlib/base64/urlsafe-b64',   toolNote: 'Standard and URL-safe Base64 side by side',    refNote: 'Python: URL-safe Base64 (- and _)' },
 
   // ── URL encoding ────────────────────────────────────────
   { tool: '/tools/url-encoder',    page: 'javascript/methods/global-encodeuricomponent', toolNote: 'Percent-encode text interactively', refNote: 'JS: encodeURIComponent() / encodeURI()' },
   { tool: '/tools/url-encoder',    page: 'javascript/methods/global-decodeuricomponent', toolNote: 'Decode a percent-encoded string',    refNote: 'JS: decodeURIComponent() / decodeURI()' },
   { tool: '/tools/url-encoder',    page: 'javascript/methods/global-escape',   toolNote: 'The standard encoding to use instead',         refNote: 'JS: legacy escape() / unescape()' },
+  { tool: '/tools/url-encoder',    page: 'python/stdlib/urllib-parse/index',     toolNote: 'Encode and decode URL text interactively',  refNote: 'Python urllib.parse module overview' },
+  { tool: '/tools/url-encoder',    page: 'python/stdlib/urllib-parse/quote',     toolNote: 'Percent-encode text; compare %20 with +',   refNote: 'Python: quote() / quote_plus()' },
+  { tool: '/tools/url-encoder',    page: 'python/stdlib/urllib-parse/unquote',   toolNote: 'Decode a percent-encoded string',           refNote: 'Python: unquote() / unquote_plus()' },
+  { tool: '/tools/url-encoder',    page: 'python/stdlib/urllib-parse/urlencode', toolNote: 'Check how each query value gets encoded',   refNote: 'Python: dict → query string' },
+  { tool: '/tools/url-encoder',    page: 'python/stdlib/urllib-parse/parse_qs',  toolNote: 'Decode the values of a query string',       refNote: 'Python: query string → dict' },
+
+  // ── UUIDs (the tool makes v4 and v7 — so no uuid3/uuid5 link) ──
+  { tool: '/tools/uuid-generator', page: 'python/stdlib/uuid/index',      toolNote: 'Generate UUIDs in the browser',                       refNote: 'Python uuid module overview' },
+  { tool: '/tools/uuid-generator', page: 'python/stdlib/uuid/uuid4',      toolNote: 'Random version 4 UUIDs, the same kind uuid4() makes',  refNote: 'Python: uuid.uuid4()' },
+  { tool: '/tools/uuid-generator', page: 'python/stdlib/uuid/uuid-class', toolNote: 'Paste a generated UUID and parse it with UUID()',     refNote: 'Python: parse and validate a UUID string' },
 
   // ── HTML entities ───────────────────────────────────────
   { tool: '/tools/html-encoder',   page: 'python/exceptions/unicodeencodeerror', toolNote: "Same &#NNN; output as errors='xmlcharrefreplace'", refNote: 'Python: xmlcharrefreplace writes HTML entities' },
   { tool: '/tools/html-encoder',   page: 'python/functions/ord',               toolNote: 'Numeric entities are code points: &#233;',     refNote: 'Python: character → code point' },
   { tool: '/tools/html-encoder',   page: 'python/functions/chr',               toolNote: 'Decode &#NNN; entities to characters',         refNote: 'Python: code point → character' },
+  { tool: '/tools/html-encoder',   page: 'python/stdlib/html/index',           toolNote: 'Encode and decode entities in the browser',     refNote: 'Python html module: escape() and unescape()' },
+  { tool: '/tools/html-encoder',   page: 'python/stdlib/html/escape',          toolNote: 'See which characters become entities',          refNote: 'Python: html.escape(text, quote=True)' },
+  { tool: '/tools/html-encoder',   page: 'python/stdlib/html/unescape',        toolNote: 'Decode named and numeric entities interactively', refNote: 'Python: html.unescape — HTML5 entity rules' },
 
   // ── JWT ─────────────────────────────────────────────────
   { tool: '/tools/jwt-decoder',    page: 'javascript/methods/global-btoa',     toolNote: 'JWT parts are Base64URL — decode one here',    refNote: 'JS: atob() decodes a JWT segment (after -→+, _→/)' },
   { tool: '/tools/jwt-decoder',    page: 'python/stdlib/json/loads',           toolNote: 'A decoded JWT payload is JSON',                refNote: 'Python: parse the decoded payload' },
   { tool: '/tools/jwt-decoder',    page: 'python/stdlib/datetime/fromtimestamp', toolNote: 'Read exp / iat claims (Unix seconds)',      refNote: 'Python: exp / iat seconds → datetime' },
+  { tool: '/tools/jwt-decoder',    page: 'python/stdlib/base64/urlsafe-b64',   toolNote: 'Decode a whole JWT (header, payload, expiry) at once', refNote: 'Python: decode a JWT segment with urlsafe_b64decode' },
 ];
 
 // page id → public URL and display name are resolved by the helpers below

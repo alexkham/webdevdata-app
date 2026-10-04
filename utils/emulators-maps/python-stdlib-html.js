@@ -4,10 +4,14 @@
 //
 // slug → emulator for python-stdlib-html only (empty when the module has no live demos).
 
-
+import pythonStdlibHtmlEscapeEmu from '../emulators/python/stdlib/html/escape';
+import pythonStdlibHtmlIndexEmu from '../emulators/python/stdlib/html/index';
+import pythonStdlibHtmlUnescapeEmu from '../emulators/python/stdlib/html/unescape';
 
 const emulators = {
-
+  'escape': pythonStdlibHtmlEscapeEmu,
+  'index': pythonStdlibHtmlIndexEmu,
+  'unescape': pythonStdlibHtmlUnescapeEmu,
 };
 
 export function getModuleEmulator(slug) {

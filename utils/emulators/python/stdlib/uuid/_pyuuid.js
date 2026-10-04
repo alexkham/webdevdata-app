@@ -346,12 +346,6 @@ export const NAMESPACE_OID = fromStr('6ba7b812-9dad-11d1-80b4-00c04fd430c8');
 export const NAMESPACE_X500 = fromStr('6ba7b814-9dad-11d1-80b4-00c04fd430c8');
 export const NAMESPACES = { NAMESPACE_DNS, NAMESPACE_URL, NAMESPACE_OID, NAMESPACE_X500 };
 
-// getattr(uuid, name) for the names the demos look up
-export function moduleAttr(name) {
-  if (Object.prototype.hasOwnProperty.call(NAMESPACES, name)) return NAMESPACES[name];
-  raise('AttributeError', `module 'uuid' has no attribute ${pyStrRepr(name)}`);
-}
-
 const nameBytes = (name) => (typeof name === 'string' ? utf8(name) : name);
 const concat = (a, b) => { const out = new Uint8Array(a.length + b.length); out.set(a); out.set(b, a.length); return out; };
 

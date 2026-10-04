@@ -6,7 +6,7 @@
 // member counts.
 
 export const pythonStdlibCatalog = {
-  generatedAt: "2026-10-03T18:14:54.848Z",
+  generatedAt: "2026-10-04T18:32:15.508Z",
   modules: [
   {
     "slug": "base64",
@@ -16,10 +16,23 @@ export const pythonStdlibCatalog = {
     "category": "data",
     "type": "module",
     "hasLiveDemo": true,
-    "version": "Python 2.4+",
+    "version": "Python 3.0+",
     "searchTerms": "base64 module python base64 encode decode string b64encode b64decode urlsafe base32 base16 hex ascii85 base85 z85 binascii.Error incorrect padding bytes to text jwt data uri",
-    "memberCount": 8,
-    "liveCount": 8
+    "memberCount": 9,
+    "liveCount": 9
+  },
+  {
+    "slug": "bisect",
+    "name": "bisect",
+    "signature": "import bisect",
+    "blurb": "Binary search on sorted lists: find the insertion point for a value in O(log n), or insert it while keeping the list sorted.",
+    "category": "functional",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 2.1+",
+    "searchTerms": "bisect module python binary search sorted list insertion point bisect_left bisect_right insort insort_left insort_right keep list sorted grade lookup ranges buckets lower bound upper bound",
+    "memberCount": 4,
+    "liveCount": 4
   },
   {
     "slug": "collections",
@@ -35,6 +48,19 @@ export const pythonStdlibCatalog = {
     "liveCount": 20
   },
   {
+    "slug": "copy",
+    "name": "copy",
+    "signature": "import copy",
+    "blurb": "Shallow and deep copies of any object — copy.copy, copy.deepcopy — plus copy.replace (3.13) for changing fields of immutable objects.",
+    "category": "data",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "All Python versions",
+    "searchTerms": "copy module python shallow copy deep copy deepcopy copy.copy copy.deepcopy copy.replace nested list copy clone object duplicate list of lists __copy__ __deepcopy__ __replace__ memo",
+    "memberCount": 4,
+    "liveCount": 3
+  },
+  {
     "slug": "csv",
     "name": "csv",
     "signature": "import csv",
@@ -44,8 +70,8 @@ export const pythonStdlibCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.3+",
     "searchTerms": "csv module python csv read csv file write csv file reader writer dictreader dictwriter comma separated values tsv tab separated semicolon delimiter quotechar quoting newline blank lines excel sniffer dialect parse csv split comma",
-    "memberCount": 0,
-    "liveCount": 0
+    "memberCount": 13,
+    "liveCount": 13
   },
   {
     "slug": "datetime",
@@ -96,8 +122,8 @@ export const pythonStdlibCatalog = {
     "hasLiveDemo": true,
     "version": "Python 3.2+ (escape), 3.4+ (unescape)",
     "searchTerms": "html module python html escape unescape html entities character references encode decode html special characters xss sanitize html.entities html.parser amp lt gt quot",
-    "memberCount": 0,
-    "liveCount": 0
+    "memberCount": 2,
+    "liveCount": 2
   },
   {
     "slug": "itertools",
@@ -204,6 +230,19 @@ export const pythonStdlibCatalog = {
     "liveCount": 17
   },
   {
+    "slug": "string",
+    "name": "string",
+    "signature": "import string",
+    "blurb": "Character-class constants (ascii_letters, digits, punctuation …), capwords(), $-placeholder Template strings and the customizable Formatter behind str.format.",
+    "category": "text",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 3 (all)",
+    "searchTerms": "string module python import string ascii_letters ascii_lowercase ascii_uppercase digits hexdigits octdigits punctuation printable whitespace capwords Template substitute safe_substitute Formatter custom format string constants",
+    "memberCount": 11,
+    "liveCount": 11
+  },
+  {
     "slug": "sys",
     "name": "sys",
     "signature": "import sys",
@@ -217,6 +256,19 @@ export const pythonStdlibCatalog = {
     "liveCount": 5
   },
   {
+    "slug": "urllib-parse",
+    "name": "urllib.parse",
+    "signature": "import urllib.parse",
+    "blurb": "Split URLs into parts and put them back together, resolve relative links, and percent-encode or decode text and query strings — urlsplit, urljoin, quote, urlencode, parse_qs.",
+    "category": "data",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "urllib.parse module python url parsing urlparse urlsplit urljoin urlencode parse_qs quote unquote percent encoding url encode decode query string hostname port python 3 urlparse module",
+    "memberCount": 9,
+    "liveCount": 9
+  },
+  {
     "slug": "uuid",
     "name": "uuid",
     "signature": "import uuid",
@@ -226,8 +278,8 @@ export const pythonStdlibCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.5+",
     "searchTerms": "uuid module python uuid generate uuid python uuid4 uuid1 uuid3 uuid5 guid unique id random id uuid string parse uuid namespace uuid version rfc 4122 rfc 9562",
-    "memberCount": 5,
-    "liveCount": 5
+    "memberCount": 11,
+    "liveCount": 9
   }
 ]
 };

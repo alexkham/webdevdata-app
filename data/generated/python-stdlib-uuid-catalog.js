@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/stdlib/uuid explorer.
 
 export const pythonStdlibUuidCatalog = {
-  generatedAt: "2026-10-03T18:14:54.838Z",
+  generatedAt: "2026-10-04T18:32:15.495Z",
   items: [
   {
     "slug": "fields",
@@ -17,6 +17,17 @@ export const pythonStdlibUuidCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.5+",
     "searchTerms": "UUID.fields UUID.time_low UUID.time_mid UUID.time_hi_version UUID.clock_seq_hi_variant UUID.clock_seq_low UUID.node UUID.time UUID.clock_seq uuid fields time low time mid time hi version clock seq node mac address uuid1 timestamp uuid to datetime extract time from uuid1"
+  },
+  {
+    "slug": "getnode",
+    "name": "uuid.getnode",
+    "signature": "uuid.getnode()",
+    "blurb": "The hardware (MAC) address of this machine as a 48-bit int, or a random 48-bit number with the multicast bit set if none can be found. The default node of uuid1().",
+    "category": "functions",
+    "type": "function",
+    "hasLiveDemo": false,
+    "version": "Python 2.5+",
+    "searchTerms": "uuid.getnode getnode python get mac address python hardware address 48-bit node uuid1 node multicast bit network interface"
   },
   {
     "slug": "hex-int-bytes",
@@ -41,6 +52,39 @@ export const pythonStdlibUuidCatalog = {
     "searchTerms": "uuid module python uuid generate uuid python uuid4 uuid1 uuid3 uuid5 guid unique id random id uuid string parse uuid namespace uuid version rfc 4122 rfc 9562"
   },
   {
+    "slug": "main",
+    "name": "uuid.main",
+    "signature": "python -m uuid [-h] [-u {uuid1,uuid3,uuid4,uuid5}] [-n NAMESPACE] [-N NAME]",
+    "blurb": "The command-line interface: python -m uuid prints a new UUID (uuid4 by default), or a name-based one with -u uuid5 -n @dns -N name.",
+    "category": "functions",
+    "type": "function",
+    "hasLiveDemo": false,
+    "version": "Python 3.12+",
+    "searchTerms": "python -m uuid uuid command line generate uuid terminal uuid cli uuid.main uuidgen python uuid5 command line -u uuid5 -n @dns -N name @url @oid @x500"
+  },
+  {
+    "slug": "namespaces",
+    "name": "uuid.NAMESPACE_DNS / URL / OID / X500",
+    "signature": "uuid.NAMESPACE_DNS · uuid.NAMESPACE_URL · uuid.NAMESPACE_OID · uuid.NAMESPACE_X500",
+    "blurb": "The four predefined namespace UUIDs from RFC 4122 for uuid3() and uuid5(): domain names, URLs, ISO OIDs and X.500 names.",
+    "category": "constants",
+    "type": "constant",
+    "hasLiveDemo": true,
+    "version": "Python 2.5+",
+    "searchTerms": "uuid.NAMESPACE_DNS uuid.NAMESPACE_URL uuid.NAMESPACE_OID uuid.NAMESPACE_X500 NAMESPACE_DNS NAMESPACE_URL NAMESPACE_OID NAMESPACE_X500 uuid namespace 6ba7b810-9dad-11d1-80b4-00c04fd430c8 uuid5 namespace which namespace"
+  },
+  {
+    "slug": "safeuuid",
+    "name": "uuid.SafeUUID",
+    "signature": "class uuid.SafeUUID(Enum): safe = 0 · unsafe = -1 · unknown = None",
+    "blurb": "An enum saying whether the platform generated a uuid1 in a multiprocessing-safe way: safe, unsafe or unknown. Read it from UUID.is_safe.",
+    "category": "classes",
+    "type": "class",
+    "hasLiveDemo": true,
+    "version": "Python 3.7+",
+    "searchTerms": "uuid.SafeUUID SafeUUID UUID.is_safe is_safe SafeUUID.safe SafeUUID.unsafe SafeUUID.unknown uuid.Enum uuid1 multiprocessing safe uuid_generate_time_safe enum"
+  },
+  {
     "slug": "uuid-class",
     "name": "uuid.UUID",
     "signature": "uuid.UUID(hex=None, bytes=None, bytes_le=None, fields=None, int=None, version=None, *, is_safe=SafeUUID.unknown)",
@@ -50,6 +94,28 @@ export const pythonStdlibUuidCatalog = {
     "hasLiveDemo": true,
     "version": "Python 2.5+ (is_safe 3.7+)",
     "searchTerms": "uuid.UUID UUID class python parse uuid string uuid from string uuid from bytes uuid from int validate uuid badly formed hexadecimal UUID string compare uuid sort uuid immutable uuid hash uuid repr uuid.int_ uuid.bytes_ int_ bytes_"
+  },
+  {
+    "slug": "uuid1",
+    "name": "uuid.uuid1",
+    "signature": "uuid.uuid1(node=None, clock_seq=None)",
+    "blurb": "A UUID from the current time, a clock sequence and the machine's network (MAC) address. Roughly time-ordered, but it reveals where and when it was made.",
+    "category": "functions",
+    "type": "function",
+    "hasLiveDemo": true,
+    "version": "Python 2.5+",
+    "searchTerms": "uuid1 python uuid1 time based uuid mac address uuid privacy uuid1 node clock_seq uuid1 vs uuid4 timestamp uuid sortable uuid"
+  },
+  {
+    "slug": "uuid3-uuid5",
+    "name": "uuid.uuid3 / uuid5",
+    "signature": "uuid.uuid3(namespace, name) · uuid.uuid5(namespace, name)",
+    "blurb": "Deterministic, name-based UUIDs: hash a namespace UUID plus a name with MD5 (uuid3) or SHA-1 (uuid5). The same inputs always give the same UUID.",
+    "category": "functions",
+    "type": "function",
+    "hasLiveDemo": true,
+    "version": "Python 2.5+",
+    "searchTerms": "uuid5 uuid3 python uuid5 python uuid3 deterministic uuid uuid from string name based uuid uuid from name hash uuid namespace uuid sha1 md5 same uuid every time reproducible uuid"
   },
   {
     "slug": "uuid4",

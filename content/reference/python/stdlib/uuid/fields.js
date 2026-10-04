@@ -103,7 +103,7 @@ export const method = {
   ],
 
   examples: [
-    { title: 'The six fields',              code: "import uuid\nuuid.UUID('12345678-1234-5678-1234-567812345678').fields", returns: '(305419896, 4660, 22136, 18, 52, 95073701505656)' },
+    { title: 'The six fields',              code: "import uuid\nuuid.UUID('12345678-1234-5678-1234-567812345678').fields", returns: '(305419896, 4660, 22136, 18, 52, 95073701484152)' },
     { title: 'Fields one by one',           code: "import uuid\nu = uuid.UUID('a8098c1a-f86e-11da-bd1a-00112444be1e')\n(u.time_low, u.time_mid, u.time_hi_version, u.clock_seq_hi_variant, u.clock_seq_low)", returns: '(2819197978, 63598, 4570, 189, 26)' },
     { title: 'node is the last group',      code: "import uuid\nhex(uuid.UUID('a8098c1a-f86e-11da-bd1a-00112444be1e').node)", returns: "'0x112444be1e'" },
     { title: 'time: 60-bit timestamp',      code: "import uuid\nhex(uuid.UUID('a8098c1a-f86e-11da-bd1a-00112444be1e').time)", returns: "'0x1daf86ea8098c1a'" },

@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/stdlib/sys explorer.
 
 export const pythonStdlibSysCatalog = {
-  generatedAt: "2026-10-03T18:14:54.838Z",
+  generatedAt: "2026-10-04T18:32:15.494Z",
   items: [
   {
     "slug": "abiflags",

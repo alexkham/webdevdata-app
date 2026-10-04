@@ -8,7 +8,7 @@ export const meta = {
   category:    'data',
   type:        'module',
   hasLiveDemo: true,
-  version:     'Python 2.4+',
+  version:     'Python 3.0+',
   searchTerms: 'base64 module python base64 encode decode string b64encode b64decode urlsafe base32 base16 hex ascii85 base85 z85 binascii.Error incorrect padding bytes to text jwt data uri',
 };
 
@@ -17,7 +17,7 @@ export const method = {
   name: 'base64',
 
   category:    'Data formats',
-  version:     'Python 2.4+',
+  version:     'Python 3.0+',
   hasLiveDemo: true,
 
   subtitle: 'Bytes in, ASCII bytes out — and back. Every encoder takes bytes and returns bytes, so text needs .encode() before and .decode() after. Bad input raises binascii.Error, a ValueError subclass.',
