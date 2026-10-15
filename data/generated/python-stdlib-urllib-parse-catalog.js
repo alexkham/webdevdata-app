@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/stdlib/urllib-parse explorer.
 
 export const pythonStdlibUrllibParseCatalog = {
-  generatedAt: "2026-10-04T18:32:15.495Z",
+  generatedAt: "2026-10-13T19:22:06.316Z",
   items: [
   {
     "slug": "bytes-results",

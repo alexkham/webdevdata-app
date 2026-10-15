@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/stdlib/datetime explorer.
 
 export const pythonStdlibDatetimeCatalog = {
-  generatedAt: "2026-10-04T18:32:15.492Z",
+  generatedAt: "2026-10-13T19:22:06.312Z",
   items: [
   {
     "slug": "astimezone",

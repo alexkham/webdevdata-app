@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/stdlib/os explorer.
 
 export const pythonStdlibOsCatalog = {
-  generatedAt: "2026-10-04T18:32:15.492Z",
+  generatedAt: "2026-10-13T19:22:06.314Z",
   items: [
   {
     "slug": "access",

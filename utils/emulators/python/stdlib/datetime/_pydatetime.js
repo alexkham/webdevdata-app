@@ -1089,12 +1089,18 @@ export function strftime(x, fmt) {
   }
   // time.strftime(newformat, timetuple): a time object uses 1900-01-01
   const tt = isTime ? structTime(1900, 1, 1, x.h, x.mi, x.s, -1).f : timetuple(x).f;
-  if (out.includes('\0')) raise('ValueError', 'embedded null character');
-  // time.strftime retries with a doubling buffer (1024, 2048, ...) and
-  // gives up — returning '' — once it reaches 256 * len(format)
-  const fmtlen = [...out].length;
+  // Since 3.13.1 / 3.12.8 time.strftime formats the text between NULs
+  // separately and copies each NUL through (3.13.0 raised "embedded null
+  // character"). Each piece gets its own buffer rule.
+  return out.split('\0').map((piece) => strftimePiece(piece, tt)).join('\0');
+}
+// One NUL-free piece: time.strftime retries with a doubling buffer
+// (1024, 2048, ...) and gives up — returning '' — once it reaches
+// 256 * len(piece)
+function strftimePiece(piece, tt) {
+  const fmtlen = [...piece].length;
   let res;
-  try { res = cStrftime(out, tt); } catch (e) { if (e === TOO_LONG) return ''; throw e; }
+  try { res = cStrftime(piece, tt); } catch (e) { if (e === TOO_LONG) return ''; throw e; }
   const n = [...res].length;
   for (let size = 1024; ; size += size) {
     if (n > 0 && n < size) return res;
@@ -1191,6 +1197,9 @@ export function cStrftime(fmt, f) {
       add(s);
     };
     const literal = () => cpy(cp.slice(start, i + 1).join(''));
+    // glibc's %b/%h set the '#' case flag BEFORE rejecting the E modifier,
+    // so '%#Eb' is copied through upper-cased ('%#EB')
+    if ((conv === 'b' || conv === 'h') && mod === 'E' && changeCase) { toUpper = true; toLower = false; }
     if (conv === null || !GLIBC_OK[mod].includes(conv)) { literal(); continue; }
     const iso = () => isoYearWeek(Y, yday0, wdaySun);
     switch (conv) {
@@ -1477,7 +1486,11 @@ export function strptimeTuple(data, format) {
         z = zc.join('');
         const hrs = pyInt(zc.slice(1, 3).join(''));
         const mins = pyInt(zc.slice(3, 5).join(''));
-        const secs = zc.slice(5, 7).length ? pyInt(zc.slice(5, 7).join('')) : 0;
+        // int(z[5:7] or 0): for '+HHMM:SS' (no colon after the hours) the
+        // slice is ':S', which int() rejects — the local pyInt would not
+        const secStr = zc.slice(5, 7).join('');
+        if (secStr && !/^\p{Nd}+$/u.test(secStr)) raise('ValueError', `invalid literal for int() with base 10: ${pyStrRepr(secStr)}`);
+        const secs = secStr ? pyInt(secStr) : 0;
         gmtoff = hrs * 3600 + mins * 60 + secs;
         const rem = zc.slice(8).join('');
         gmtoffFraction = pyInt(rem + '0'.repeat(6 - [...rem].length));

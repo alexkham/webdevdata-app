@@ -6,8 +6,21 @@
 // member counts.
 
 export const pythonStdlibCatalog = {
-  generatedAt: "2026-10-04T18:32:15.508Z",
+  generatedAt: "2026-10-13T19:22:06.324Z",
   modules: [
+  {
+    "slug": "argparse",
+    "name": "argparse",
+    "signature": "import argparse",
+    "blurb": "Turn sys.argv into a Namespace of typed values: declare options and positionals once, get parsing, -h help, usage lines and precise error messages for free.",
+    "category": "system",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 3.2+",
+    "searchTerms": "argparse module python command line arguments parse argv ArgumentParser add_argument parse_args namespace options flags positional arguments help message usage cli script sys.argv subcommands subparsers store_true nargs choices type required default argparse tutorial",
+    "memberCount": 22,
+    "liveCount": 22
+  },
   {
     "slug": "base64",
     "name": "base64",
@@ -48,6 +61,19 @@ export const pythonStdlibCatalog = {
     "liveCount": 20
   },
   {
+    "slug": "contextlib",
+    "name": "contextlib",
+    "signature": "import contextlib",
+    "blurb": "Utilities for the with statement: write a context manager as a generator (contextmanager), ignore chosen exceptions (suppress), redirect print output, and manage a variable number of resources (ExitStack).",
+    "category": "functional",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 2.5+",
+    "searchTerms": "contextlib module python context manager with statement contextmanager decorator generator suppress exceptions redirect_stdout capture print ExitStack closing nullcontext chdir asynccontextmanager AsyncExitStack aclosing ContextDecorator AbstractContextManager",
+    "memberCount": 11,
+    "liveCount": 10
+  },
+  {
     "slug": "copy",
     "name": "copy",
     "signature": "import copy",
@@ -74,6 +100,19 @@ export const pythonStdlibCatalog = {
     "liveCount": 13
   },
   {
+    "slug": "dataclasses",
+    "name": "dataclasses",
+    "signature": "import dataclasses",
+    "blurb": "Write a class as a list of typed fields and get __init__, __repr__ and __eq__ generated for you — plus ordering, immutability, slots, asdict and replace on request.",
+    "category": "data",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 3.7+",
+    "searchTerms": "dataclasses module python dataclass decorator field fields asdict astuple replace make_dataclass is_dataclass InitVar KW_ONLY MISSING FrozenInstanceError Field data class record struct frozen immutable order slots post_init default_factory mutable default boilerplate __init__ __repr__ __eq__",
+    "memberCount": 14,
+    "liveCount": 12
+  },
+  {
     "slug": "datetime",
     "name": "datetime",
     "signature": "import datetime",
@@ -87,6 +126,45 @@ export const pythonStdlibCatalog = {
     "liveCount": 26
   },
   {
+    "slug": "decimal",
+    "name": "decimal",
+    "signature": "from decimal import Decimal",
+    "blurb": "Exact decimal arithmetic: Decimal('0.1') + Decimal('0.2') is exactly Decimal('0.3'), rounded the way you choose, to the precision you choose. The standard tool for money.",
+    "category": "numbers",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 2.4+",
+    "searchTerms": "decimal module python decimal Decimal exact decimal arithmetic money currency 0.1 + 0.2 floating point error precision rounding quantize ROUND_HALF_UP localcontext getcontext context prec significant digits banker rounding InvalidOperation float to decimal",
+    "memberCount": 25,
+    "liveCount": 25
+  },
+  {
+    "slug": "enum",
+    "name": "enum",
+    "signature": "import enum",
+    "blurb": "Named constants that are their own type — Enum, IntEnum, StrEnum, Flag and IntFlag, plus auto(), unique and verify.",
+    "category": "data",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 3.4+",
+    "searchTerms": "enum module python enumeration enum class constants Enum IntEnum StrEnum Flag IntFlag ReprEnum auto unique verify member value name lookup by value lookup by name bit flags EnumType EnumMeta",
+    "memberCount": 17,
+    "liveCount": 17
+  },
+  {
+    "slug": "fractions",
+    "name": "fractions",
+    "signature": "from fractions import Fraction",
+    "blurb": "Exact rational numbers: Fraction(1, 3) stays one third through every +, -, * and /. Build them from ints, strings, floats and Decimals.",
+    "category": "numbers",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 2.6+",
+    "searchTerms": "fractions module python fraction rational numbers exact arithmetic numerator denominator 1/3 0.1 + 0.2 limit_denominator from_float from_decimal as_integer_ratio is_integer fraction to float float to fraction",
+    "memberCount": 8,
+    "liveCount": 8
+  },
+  {
     "slug": "functools",
     "name": "functools",
     "signature": "import functools",
@@ -98,6 +176,19 @@ export const pythonStdlibCatalog = {
     "searchTerms": "functools module python higher order functions lru_cache cache cached_property partial partialmethod reduce wraps update_wrapper total_ordering singledispatch singledispatchmethod cmp_to_key memoize decorator",
     "memberCount": 9,
     "liveCount": 8
+  },
+  {
+    "slug": "hashlib",
+    "name": "hashlib",
+    "signature": "import hashlib",
+    "blurb": "Secure hashes and message digests: MD5, SHA-1, SHA-2, SHA-3, SHAKE and BLAKE2 behind one update() / digest() interface, plus pbkdf2_hmac and scrypt for passwords.",
+    "category": "data",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 2.5+",
+    "searchTerms": "hashlib module python hash string sha256 md5 sha1 sha512 sha3 blake2 hexdigest digest checksum file hash python hash password pbkdf2 scrypt hashlib new algorithms_guaranteed strings must be encoded before hashing",
+    "memberCount": 14,
+    "liveCount": 14
   },
   {
     "slug": "heapq",
@@ -152,6 +243,19 @@ export const pythonStdlibCatalog = {
     "liveCount": 7
   },
   {
+    "slug": "logging",
+    "name": "logging",
+    "signature": "import logging",
+    "blurb": "Report what a program is doing at a chosen severity — loggers named by module, handlers that send records to the console or files, formatters that lay them out, and levels that decide what gets through.",
+    "category": "system",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "logging module python logger getlogger basicconfig log levels debug info warning error critical handler formatter streamhandler filehandler log to file log to console print vs logging logging not printing root logger propagate lazy formatting f-string logging.handlers rotatingfilehandler dictconfig",
+    "memberCount": 29,
+    "liveCount": 29
+  },
+  {
     "slug": "math",
     "name": "math",
     "signature": "import math",
@@ -163,6 +267,19 @@ export const pythonStdlibCatalog = {
     "searchTerms": "math module python math sqrt log exp sin cos tan pi floor ceil factorial comb gcd isqrt fsum isclose inf nan math domain error math range error",
     "memberCount": 24,
     "liveCount": 24
+  },
+  {
+    "slug": "operator",
+    "name": "operator",
+    "signature": "import operator",
+    "blurb": "Every Python operator as a plain function — add, lt, getitem, not_ … — plus itemgetter, attrgetter and methodcaller for sort keys and field extraction.",
+    "category": "functional",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "All Python 3 versions (call: 3.11+)",
+    "searchTerms": "operator module python operator functions itemgetter attrgetter methodcaller operator.add operator.mul operator.itemgetter sort list of dicts by key sort by attribute functions as arguments reduce operator.mul lambda alternative dispatch table",
+    "memberCount": 10,
+    "liveCount": 10
   },
   {
     "slug": "os",
@@ -204,6 +321,19 @@ export const pythonStdlibCatalog = {
     "liveCount": 16
   },
   {
+    "slug": "pickle",
+    "name": "pickle",
+    "signature": "import pickle",
+    "blurb": "Save almost any Python object as bytes and load it back exactly — dumps/loads for bytes, dump/load for files. Only unpickle data you trust.",
+    "category": "data",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "All Python versions",
+    "searchTerms": "pickle module python pickle save object to file load object serialize deserialize dumps loads dump load protocol pickle vs json unpickle untrusted data security cache python objects pkl file",
+    "memberCount": 1,
+    "liveCount": 1
+  },
+  {
     "slug": "random",
     "name": "random",
     "signature": "import random",
@@ -230,6 +360,45 @@ export const pythonStdlibCatalog = {
     "liveCount": 17
   },
   {
+    "slug": "secrets",
+    "name": "secrets",
+    "signature": "import secrets",
+    "blurb": "Cryptographically strong randomness for passwords, tokens and keys: token_hex, token_urlsafe, token_bytes, choice, randbelow, randbits — plus compare_digest.",
+    "category": "data",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 3.6+",
+    "searchTerms": "secrets module python generate secure random token password reset token api key generator secrets vs random cryptographically secure random token_hex token_urlsafe token_bytes compare_digest randbelow choice os.urandom csprng",
+    "memberCount": 8,
+    "liveCount": 8
+  },
+  {
+    "slug": "shutil",
+    "name": "shutil",
+    "signature": "import shutil",
+    "blurb": "High-level file operations: copy files and whole folders, move them, delete trees, and build or unpack zip and tar archives.",
+    "category": "files",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "shutil module python copy file copy folder copytree rmtree delete folder move file make_archive zip folder unpack_archive extract which disk_usage high-level file operations",
+    "memberCount": 23,
+    "liveCount": 17
+  },
+  {
+    "slug": "statistics",
+    "name": "statistics",
+    "signature": "import statistics",
+    "blurb": "Averages, spread and relations for plain lists of numbers: mean, median, mode, stdev, variance, quantiles, correlation, linear_regression, NormalDist and kernel density estimates.",
+    "category": "numbers",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 3.4+",
+    "searchTerms": "statistics module python mean median mode standard deviation stdev variance pstdev pvariance quantiles percentile quartile correlation covariance linear regression normal distribution NormalDist kde StatisticsError average without numpy",
+    "memberCount": 24,
+    "liveCount": 24
+  },
+  {
     "slug": "string",
     "name": "string",
     "signature": "import string",
@@ -243,6 +412,19 @@ export const pythonStdlibCatalog = {
     "liveCount": 11
   },
   {
+    "slug": "subprocess",
+    "name": "subprocess",
+    "signature": "import subprocess",
+    "blurb": "Start other programs from Python, feed them input, capture their output and exit code: run() for almost everything, Popen for streaming and pipelines.",
+    "category": "system",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 3 (run() 3.5+)",
+    "searchTerms": "subprocess module python run command execute shell command get output of command capture_output text check returncode popen check_output call check_call getoutput pipe stdout stderr devnull timeout shell=True external program child process exit code",
+    "memberCount": 17,
+    "liveCount": 8
+  },
+  {
     "slug": "sys",
     "name": "sys",
     "signature": "import sys",
@@ -254,6 +436,45 @@ export const pythonStdlibCatalog = {
     "searchTerms": "sys module python sys argv sys exit sys path sys version_info sys stdout sys stderr sys platform recursion limit int max str digits interpreter command line arguments exit code import path modules",
     "memberCount": 26,
     "liveCount": 5
+  },
+  {
+    "slug": "textwrap",
+    "name": "textwrap",
+    "signature": "import textwrap",
+    "blurb": "Plain-text layout: wrap or fill a paragraph to a line width, shorten it to one line with a placeholder, and remove or add indentation with dedent and indent.",
+    "category": "text",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 2.3+",
+    "searchTerms": "textwrap module python wrap text to width fill paragraph word wrap line length shorten truncate text ellipsis dedent remove common indentation triple quoted string indent add prefix to lines TextWrapper max_lines placeholder hanging indent",
+    "memberCount": 7,
+    "liveCount": 7
+  },
+  {
+    "slug": "time",
+    "name": "time",
+    "signature": "import time",
+    "blurb": "Clocks, pauses and C-style time conversions: time(), perf_counter(), sleep(), gmtime/localtime/mktime, strftime/strptime and the struct_time they share.",
+    "category": "dates",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 3 (all versions)",
+    "searchTerms": "time module python time time.time time.sleep perf_counter monotonic process_time unix timestamp epoch seconds gmtime localtime mktime strftime strptime struct_time asctime ctime timezone tzname measure elapsed time benchmark",
+    "memberCount": 14,
+    "liveCount": 10
+  },
+  {
+    "slug": "typing",
+    "name": "typing",
+    "signature": "import typing",
+    "blurb": "The vocabulary of Python type hints — Optional, Union, Literal, TypeVar, Protocol, TypedDict and more. Python stores hints but never checks them; type checkers such as mypy and pyright do.",
+    "category": "data",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 3.5+",
+    "searchTerms": "typing module python type hints type annotations static typing mypy pyright type checker optional union list dict generic typevar protocol typeddict get_type_hints annotations not enforced at runtime",
+    "memberCount": 26,
+    "liveCount": 18
   },
   {
     "slug": "urllib-parse",
@@ -280,6 +501,19 @@ export const pythonStdlibCatalog = {
     "searchTerms": "uuid module python uuid generate uuid python uuid4 uuid1 uuid3 uuid5 guid unique id random id uuid string parse uuid namespace uuid version rfc 4122 rfc 9562",
     "memberCount": 11,
     "liveCount": 9
+  },
+  {
+    "slug": "xml-etree-elementtree",
+    "name": "xml.etree.ElementTree",
+    "signature": "import xml.etree.ElementTree as ET",
+    "blurb": "Parse XML into a tree of Element objects, search it with a small XPath subset, change it, and write it back out — fromstring, parse, find, findall, tostring, indent.",
+    "category": "data",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 2.5+",
+    "searchTerms": "xml.etree.ElementTree elementtree python xml parser parse xml string read xml file ET.fromstring ET.parse findall find xpath tostring write xml pretty print indent namespaces element subelement expat parseerror xml to dict",
+    "memberCount": 26,
+    "liveCount": 24
   }
 ]
 };

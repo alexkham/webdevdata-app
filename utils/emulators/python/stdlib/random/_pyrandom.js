@@ -558,7 +558,7 @@ export function fdiv(a, b) {
 export function fmod(vx, wx) {
   if (wx === 0) raise('ZeroDivisionError', 'float modulo by zero');
   let mod = vx % wx;
-  if (mod) {
+  if (mod !== 0) { // C: NaN is truthy, JS: falsy
     if ((wx < 0) !== (mod < 0)) mod += wx;
   } else {
     mod = wx < 0 ? -0.0 : 0.0;

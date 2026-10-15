@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/stdlib/copy explorer.
 
 export const pythonStdlibCopyCatalog = {
-  generatedAt: "2026-10-04T18:32:15.491Z",
+  generatedAt: "2026-10-13T19:22:06.312Z",
   items: [
   {
     "slug": "copy",

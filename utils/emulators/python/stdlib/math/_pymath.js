@@ -208,7 +208,8 @@ export function pyMod(a, b) {
   const wx = asDouble(b);
   if (wx === 0) raise('ZeroDivisionError', 'float modulo by zero');
   let mod = vx % wx;
-  if (mod) { if ((wx < 0) !== (mod < 0)) mod += wx; } else mod = L.copysign(0.0, wx);
+  // `!== 0`, not `if (mod)`: C treats NaN as true, JS as false
+  if (mod !== 0) { if ((wx < 0) !== (mod < 0)) mod += wx; } else mod = L.copysign(0.0, wx);
   return F(mod);
 }
 
@@ -295,9 +296,10 @@ export function pyFloorDiv(a, b) {
   if (wx === 0) raise('ZeroDivisionError', 'float floor division by zero');
   let mod = vx % wx;
   let div = (vx - mod) / wx;
-  if (mod) { if ((wx < 0) !== (mod < 0)) { mod += wx; div -= 1.0; } }
+  // `!== 0`, not `if (mod)` / `if (div)`: C treats NaN as true, JS as false
+  if (mod !== 0) { if ((wx < 0) !== (mod < 0)) { mod += wx; div -= 1.0; } }
   let fd;
-  if (div) { fd = Math.floor(div); if (div - fd > 0.5) fd += 1.0; } else fd = L.copysign(0.0, vx / wx);
+  if (div !== 0) { fd = Math.floor(div); if (div - fd > 0.5) fd += 1.0; } else fd = L.copysign(0.0, vx / wx);
   return F(fd);
 }
 

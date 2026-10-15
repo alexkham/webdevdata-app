@@ -30,7 +30,8 @@ import { runPythonSnippets } from './audit-pysnippets.mjs';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CONTENT_DIR = path.join(__dirname, 'content', 'reference', 'python');
 const EMU_DIR = path.join(__dirname, 'utils', 'emulators', 'python');
-const TMP_DIR = path.join(__dirname, 'audit-tmp');
+// unique per run — several audits may run in parallel (one per writer)
+const TMP_DIR = fs.mkdtempSync(path.join(__dirname, 'audit-tmp-emu-'));
 const VERBOSE = process.argv.includes('--verbose');
 
 // ── Mirror of MethodDemo.coerce ──────────────────────────────
@@ -238,8 +239,15 @@ const emuCache = new Map();
 async function getEmu(category, slug) {
   const key = `${category}/${slug}`;
   if (!emuCache.has(key)) {
-    const mod = await import(pathToFileURL(path.join(EMU_DIR, category, `${slug}.js`)).href);
-    emuCache.set(key, mod.default);
+    // a live page whose emulator is missing or broken is reported as a
+    // failed check — it must not crash the whole audit for everyone
+    try {
+      const mod = await import(pathToFileURL(path.join(EMU_DIR, category, `${slug}.js`)).href);
+      emuCache.set(key, mod.default);
+    } catch (e) {
+      console.warn(`[warn] cannot load emulator ${key}: ${e.code || e.message}`);
+      emuCache.set(key, null);
+    }
   }
   return emuCache.get(key);
 }

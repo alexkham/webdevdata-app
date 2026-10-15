@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/stdlib/functools explorer.
 
 export const pythonStdlibFunctoolsCatalog = {
-  generatedAt: "2026-10-04T18:32:15.492Z",
+  generatedAt: "2026-10-13T19:22:06.313Z",
   items: [
   {
     "slug": "cached_property",

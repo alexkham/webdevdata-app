@@ -28,14 +28,14 @@ export function floorDiv(a, b) {
   if (wx === 0) raise('ZeroDivisionError', 'float floor division by zero');
   let mod = vx % wx; // C fmod
   let div = (vx - mod) / wx;
-  if (mod) {
+  if (mod !== 0) { // C: NaN is truthy, JS: falsy
     if ((wx < 0) !== (mod < 0)) {
       mod += wx;
       div -= 1.0;
     }
   }
   let floordiv;
-  if (div) {
+  if (div !== 0) { // C: NaN is truthy, JS: falsy
     floordiv = Math.floor(div);
     if (div - floordiv > 0.5) floordiv += 1.0;
   } else {

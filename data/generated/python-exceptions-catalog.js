@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/exceptions explorer.
 
 export const pythonExceptionsCatalog = {
-  generatedAt: "2026-10-04T18:32:15.490Z",
+  generatedAt: "2026-10-13T19:22:06.310Z",
   items: [
   {
     "slug": "arithmeticerror",

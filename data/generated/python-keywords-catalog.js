@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/keywords explorer.
 
 export const pythonKeywordsCatalog = {
-  generatedAt: "2026-10-04T18:32:15.491Z",
+  generatedAt: "2026-10-13T19:22:06.311Z",
   items: [
   {
     "slug": "assert",

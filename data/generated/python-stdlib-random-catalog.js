@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/stdlib/random explorer.
 
 export const pythonStdlibRandomCatalog = {
-  generatedAt: "2026-10-04T18:32:15.494Z",
+  generatedAt: "2026-10-13T19:22:06.314Z",
   items: [
   {
     "slug": "binomialvariate",

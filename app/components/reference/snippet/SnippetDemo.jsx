@@ -50,11 +50,23 @@ export default function SnippetDemo({ modes = [], emulator, explainer }) {
 
   let output;
   let failed = false;
+  // an input the browser emulator deliberately does not reproduce
+  // (EmulatorLimit / DemoLimit / "not emulated: …") is NOT a Python
+  // exception — it gets its own neutral label instead of a traceback look
+  let limited = false;
   try {
     output = pyReprExact(emulator[mode.id](...args));
   } catch (e) {
-    failed = true;
-    output = errorLine(e);
+    const name = e && e.name;
+    const msg = (e && e.message) || '';
+    // ('Emulator stopped' = the re engine's backtracking step cap)
+    if (name === 'EmulatorLimit' || name === 'DemoLimit' || name === 'Emulator stopped' || /^not emulated\b/.test(msg)) {
+      limited = true;
+      output = msg.replace(/^not emulated:\s*/, '') || 'This input is outside what the in-browser demo reproduces.';
+    } else {
+      failed = true;
+      output = errorLine(e);
+    }
   }
 
   const applyCase = (c) => {
@@ -145,8 +157,12 @@ export default function SnippetDemo({ modes = [], emulator, explainer }) {
           <div className="demo-out">
             <div className="demo-panel-lbl">Code</div>
             <CodeBlock code={code} />
-            <div className="demo-panel-lbl out-lbl">{failed ? 'Uncaught exception' : 'Result'}</div>
-            <div className={`out-val ${failed ? 'err' : ''}`}>{output}</div>
+            <div className="demo-panel-lbl out-lbl">
+              {limited ? 'Not reproduced in the browser' : failed ? 'Uncaught exception' : 'Result'}
+            </div>
+            <div className={`out-val ${failed ? 'err' : ''} ${limited ? 'limit' : ''}`}>
+              {output}
+            </div>
           </div>
         </div>
       </div>
@@ -182,6 +198,7 @@ export default function SnippetDemo({ modes = [], emulator, explainer }) {
         .param input:focus { border-color: #1B50EE; box-shadow: 0 0 0 3px rgba(27, 80, 238, 0.12); }
         .out-val { font-family: ui-monospace, Menlo, monospace; font-size: 13.5px; color: #0f172a; padding: 12px 14px; background: #ffffff; border: 1px solid #cfd6e0; border-radius: 4px; white-space: pre-wrap; word-break: break-word; }
         .out-val.err { color: #fca5a5; background: #1e1b2e; border-color: #3f2a3a; }
+        .out-val.limit { font-family: inherit; font-size: 13px; color: #475569; background: #f8fafc; border-style: dashed; }
         .demo-explainer { font-size: 13px; color: #334155; margin-top: 16px; margin-bottom: 0; }
         @media (max-width: 760px) {
           .demo-body { grid-template-columns: 1fr; }

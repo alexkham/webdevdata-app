@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/stdlib/math explorer.
 
 export const pythonStdlibMathCatalog = {
-  generatedAt: "2026-10-04T18:32:15.492Z",
+  generatedAt: "2026-10-13T19:22:06.313Z",
   items: [
   {
     "slug": "comb-perm",

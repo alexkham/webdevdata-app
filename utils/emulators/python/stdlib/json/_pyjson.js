@@ -355,7 +355,7 @@ function guardDepth(state, fn) {
 // json.loads(text) for a str argument
 export function loads(text, { strict = true } = {}) {
   const s = [...text]; // Python indexes by code point
-  if (s[0] === '﻿') throw new JSONDecodeError('Unexpected UTF-8 BOM (decode using utf-8-sig)', s, 0);
+  if (s[0] === String.fromCharCode(0xfeff)) throw new JSONDecodeError('Unexpected UTF-8 BOM (decode using utf-8-sig)', s, 0);
   const state = { kind: 'array' };
   const [obj, end0] = guardDepth(state, () => parseValue(s, skipWs(s, 0), strict, makeScanner(strict), state));
   const end = skipWs(s, end0);

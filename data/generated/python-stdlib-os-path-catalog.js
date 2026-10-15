@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/stdlib/os-path explorer.
 
 export const pythonStdlibOsPathCatalog = {
-  generatedAt: "2026-10-04T18:32:15.493Z",
+  generatedAt: "2026-10-13T19:22:06.314Z",
   items: [
   {
     "slug": "abspath",

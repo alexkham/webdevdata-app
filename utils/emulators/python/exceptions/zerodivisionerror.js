@@ -75,13 +75,13 @@ function floatFloorDiv(vx, wx) {
   if (wx === 0) raise('ZeroDivisionError', 'float floor division by zero');
   let mod = vx % wx; // C fmod
   let div = (vx - mod) / wx;
-  if (mod) {
+  if (mod !== 0) { // C: NaN is truthy, JS: falsy
     if ((wx < 0) !== (mod < 0)) {
       mod += wx;
       div -= 1.0;
     }
   }
-  if (div) {
+  if (div !== 0) { // C: NaN is truthy, JS: falsy
     let floordiv = Math.floor(div);
     if (div - floordiv > 0.5) floordiv += 1.0;
     return floordiv;
@@ -91,7 +91,7 @@ function floatFloorDiv(vx, wx) {
 function floatMod(vx, wx) {
   if (wx === 0) raise('ZeroDivisionError', 'float modulo by zero');
   let mod = vx % wx;
-  if (mod) {
+  if (mod !== 0) { // C: NaN is truthy, JS: falsy
     if ((wx < 0) !== (mod < 0)) mod += wx;
   } else {
     mod = (wx < 0 || Object.is(wx, -0)) ? -0 : 0;

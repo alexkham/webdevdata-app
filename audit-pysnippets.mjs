@@ -25,7 +25,7 @@ import path from 'path';
 import { execFileSync } from 'child_process';
 
 const RUNNER = `
-import ast, contextlib, io, json, os, sys, tempfile, traceback
+import ast, contextlib, io, json, os, sys, tempfile, traceback, types
 
 def last_lines(e):
     # With the traceback attached, so NameError gets its "Did you mean"
@@ -38,10 +38,26 @@ def last_lines(e):
             return '\\n'.join(lines[i:])
     return lines[-1]
 
+def fresh_state():
+    # Every snippet should see what a fresh interpreter would: typing keeps
+    # process-wide caches (typing._cleanups clears them).
+    t = sys.modules.get('typing')
+    if t is not None:
+        for clear in getattr(t, '_cleanups', []):
+            clear()
+    # logging keeps a process-wide logger registry, root handlers and level:
+    # drop it so the snippet's own 'import logging' gets a fresh module, as
+    # in a new interpreter (modules that imported it earlier keep theirs)
+    for name in [m for m in sys.modules if m == 'logging' or m.startswith('logging.')]:
+        del sys.modules[name]
+
 def run(code, mode):
+    fresh_state()
     out = io.StringIO()
     parts = []
-    with tempfile.TemporaryDirectory() as tmp:
+    # ignore_cleanup_errors: on Windows a still-running child process can
+    # keep the directory locked; that must not crash the whole audit run
+    with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp:
         prev = os.getcwd()
         os.chdir(tmp)
         try:
@@ -50,11 +66,20 @@ def run(code, mode):
                 last = None
                 if tree.body and isinstance(tree.body[-1], ast.Expr):
                     last = ast.Expression(tree.body.pop().value)
-                ns = {'__name__': '__main__'}
-                with contextlib.redirect_stdout(out):
-                    exec(compile(tree, '<demo>', 'exec'), ns)
-                    has_val = last is not None
-                    val = eval(compile(last, '<demo>', 'eval'), ns) if has_val else None
+                # a fresh module registered as sys.modules['__main__'], as in a
+                # real script — so pickle, enum.global_enum etc. find the
+                # snippet's own classes, not this runner's globals
+                main = types.ModuleType('__main__')
+                ns = main.__dict__
+                saved_main = sys.modules.get('__main__')
+                sys.modules['__main__'] = main
+                try:
+                    with contextlib.redirect_stdout(out):
+                        exec(compile(tree, '<demo>', 'exec'), ns)
+                        has_val = last is not None
+                        val = eval(compile(last, '<demo>', 'eval'), ns) if has_val else None
+                finally:
+                    sys.modules['__main__'] = saved_main
                 s = out.getvalue().rstrip('\\n')
                 if s: parts.append(s)
                 if has_val and (mode == 'demo' or val is not None):

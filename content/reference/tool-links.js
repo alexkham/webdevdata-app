@@ -81,6 +81,12 @@ export const TOOL_LINKS = [
   { tool: '/tools/jwt-decoder',    page: 'python/stdlib/json/loads',           toolNote: 'A decoded JWT payload is JSON',                refNote: 'Python: parse the decoded payload' },
   { tool: '/tools/jwt-decoder',    page: 'python/stdlib/datetime/fromtimestamp', toolNote: 'Read exp / iat claims (Unix seconds)',      refNote: 'Python: exp / iat seconds → datetime' },
   { tool: '/tools/jwt-decoder',    page: 'python/stdlib/base64/urlsafe-b64',   toolNote: 'Decode a whole JWT (header, payload, expiry) at once', refNote: 'Python: decode a JWT segment with urlsafe_b64decode' },
+  { tool: '/tools/jwt-decoder',    page: 'python/stdlib/time/gmtime',          toolNote: 'exp / iat claims are Unix seconds — read them with gmtime', refNote: 'Python: JWT exp / iat seconds → UTC fields' },
+  // the JWT tool verifies HS256 / HS384 / HS512 signatures with a shared secret
+  { tool: '/tools/jwt-decoder',    page: 'python/stdlib/hashlib/sha256',       toolNote: 'HS256 tokens are signed with HMAC-SHA256: verify one here', refNote: 'Python: SHA-256, the hash inside HS256' },
+  { tool: '/tools/jwt-decoder',    page: 'python/stdlib/hashlib/sha224-sha384-sha512', toolNote: 'HS384 / HS512 tokens use HMAC with SHA-384 / SHA-512', refNote: 'Python: SHA-384 / SHA-512, the hashes inside HS384 / HS512' },
+  { tool: '/tools/jwt-decoder',    page: 'python/stdlib/secrets/compare_digest', toolNote: "Verify an HS256 token's signature with its shared secret", refNote: 'Python: check an HMAC signature in constant time' },
+  { tool: '/tools/base64',         page: 'python/stdlib/secrets/token_urlsafe', toolNote: 'A token_urlsafe token is unpadded Base64url: decode it here', refNote: 'Python: random URL-safe Base64 tokens' },
 ];
 
 // page id → public URL and display name are resolved by the helpers below
