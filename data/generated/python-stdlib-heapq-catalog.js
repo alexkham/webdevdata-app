@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/stdlib/heapq explorer.
 
 export const pythonStdlibHeapqCatalog = {
-  generatedAt: "2026-10-13T19:22:06.313Z",
+  generatedAt: "2026-10-31T11:15:16.243Z",
   items: [
   {
     "slug": "heapify",

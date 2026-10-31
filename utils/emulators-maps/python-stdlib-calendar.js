@@ -4,10 +4,70 @@
 //
 // slug → emulator for python-stdlib-calendar only (empty when the module has no live demos).
 
-
+import pythonStdlibCalendarCalendarClassEmu from '../emulators/python/stdlib/calendar/calendar-class';
+import pythonStdlibCalendarCalendarFirstweekdayEmu from '../emulators/python/stdlib/calendar/calendar-firstweekday';
+import pythonStdlibCalendarCalendarEmu from '../emulators/python/stdlib/calendar/calendar';
+import pythonStdlibCalendarDayEnumEmu from '../emulators/python/stdlib/calendar/day-enum';
+import pythonStdlibCalendarDay_nameEmu from '../emulators/python/stdlib/calendar/day_name';
+import pythonStdlibCalendarHtmlcalendarCssclassesEmu from '../emulators/python/stdlib/calendar/htmlcalendar-cssclasses';
+import pythonStdlibCalendarHtmlcalendarFormatdayEmu from '../emulators/python/stdlib/calendar/htmlcalendar-formatday';
+import pythonStdlibCalendarHtmlcalendarFormatmonthEmu from '../emulators/python/stdlib/calendar/htmlcalendar-formatmonth';
+import pythonStdlibCalendarHtmlcalendarFormatyearEmu from '../emulators/python/stdlib/calendar/htmlcalendar-formatyear';
+import pythonStdlibCalendarHtmlcalendarEmu from '../emulators/python/stdlib/calendar/htmlcalendar';
+import pythonStdlibCalendarIllegalmontherrorEmu from '../emulators/python/stdlib/calendar/illegalmontherror';
+import pythonStdlibCalendarIllegalweekdayerrorEmu from '../emulators/python/stdlib/calendar/illegalweekdayerror';
+import pythonStdlibCalendarIndexEmu from '../emulators/python/stdlib/calendar/index';
+import pythonStdlibCalendarIsleapEmu from '../emulators/python/stdlib/calendar/isleap';
+import pythonStdlibCalendarItermonthdatesEmu from '../emulators/python/stdlib/calendar/itermonthdates';
+import pythonStdlibCalendarLeapdaysEmu from '../emulators/python/stdlib/calendar/leapdays';
+import pythonStdlibCalendarMonthEnumEmu from '../emulators/python/stdlib/calendar/month-enum';
+import pythonStdlibCalendarMonthEmu from '../emulators/python/stdlib/calendar/month';
+import pythonStdlibCalendarMonthcalendarEmu from '../emulators/python/stdlib/calendar/monthcalendar';
+import pythonStdlibCalendarMonthdayscalendarEmu from '../emulators/python/stdlib/calendar/monthdayscalendar';
+import pythonStdlibCalendarMonthrangeEmu from '../emulators/python/stdlib/calendar/monthrange';
+import pythonStdlibCalendarMonth_nameEmu from '../emulators/python/stdlib/calendar/month_name';
+import pythonStdlibCalendarSetfirstweekdayEmu from '../emulators/python/stdlib/calendar/setfirstweekday';
+import pythonStdlibCalendarTextcalendarFormatmonthEmu from '../emulators/python/stdlib/calendar/textcalendar-formatmonth';
+import pythonStdlibCalendarTextcalendarFormatweekEmu from '../emulators/python/stdlib/calendar/textcalendar-formatweek';
+import pythonStdlibCalendarTextcalendarFormatyearEmu from '../emulators/python/stdlib/calendar/textcalendar-formatyear';
+import pythonStdlibCalendarTextcalendarEmu from '../emulators/python/stdlib/calendar/textcalendar';
+import pythonStdlibCalendarTimegmEmu from '../emulators/python/stdlib/calendar/timegm';
+import pythonStdlibCalendarWeekdayEmu from '../emulators/python/stdlib/calendar/weekday';
+import pythonStdlibCalendarWeekheaderEmu from '../emulators/python/stdlib/calendar/weekheader';
+import pythonStdlibCalendarYeardayscalendarEmu from '../emulators/python/stdlib/calendar/yeardayscalendar';
 
 const emulators = {
-
+  'calendar-class': pythonStdlibCalendarCalendarClassEmu,
+  'calendar-firstweekday': pythonStdlibCalendarCalendarFirstweekdayEmu,
+  'calendar': pythonStdlibCalendarCalendarEmu,
+  'day-enum': pythonStdlibCalendarDayEnumEmu,
+  'day_name': pythonStdlibCalendarDay_nameEmu,
+  'htmlcalendar-cssclasses': pythonStdlibCalendarHtmlcalendarCssclassesEmu,
+  'htmlcalendar-formatday': pythonStdlibCalendarHtmlcalendarFormatdayEmu,
+  'htmlcalendar-formatmonth': pythonStdlibCalendarHtmlcalendarFormatmonthEmu,
+  'htmlcalendar-formatyear': pythonStdlibCalendarHtmlcalendarFormatyearEmu,
+  'htmlcalendar': pythonStdlibCalendarHtmlcalendarEmu,
+  'illegalmontherror': pythonStdlibCalendarIllegalmontherrorEmu,
+  'illegalweekdayerror': pythonStdlibCalendarIllegalweekdayerrorEmu,
+  'index': pythonStdlibCalendarIndexEmu,
+  'isleap': pythonStdlibCalendarIsleapEmu,
+  'itermonthdates': pythonStdlibCalendarItermonthdatesEmu,
+  'leapdays': pythonStdlibCalendarLeapdaysEmu,
+  'month-enum': pythonStdlibCalendarMonthEnumEmu,
+  'month': pythonStdlibCalendarMonthEmu,
+  'monthcalendar': pythonStdlibCalendarMonthcalendarEmu,
+  'monthdayscalendar': pythonStdlibCalendarMonthdayscalendarEmu,
+  'monthrange': pythonStdlibCalendarMonthrangeEmu,
+  'month_name': pythonStdlibCalendarMonth_nameEmu,
+  'setfirstweekday': pythonStdlibCalendarSetfirstweekdayEmu,
+  'textcalendar-formatmonth': pythonStdlibCalendarTextcalendarFormatmonthEmu,
+  'textcalendar-formatweek': pythonStdlibCalendarTextcalendarFormatweekEmu,
+  'textcalendar-formatyear': pythonStdlibCalendarTextcalendarFormatyearEmu,
+  'textcalendar': pythonStdlibCalendarTextcalendarEmu,
+  'timegm': pythonStdlibCalendarTimegmEmu,
+  'weekday': pythonStdlibCalendarWeekdayEmu,
+  'weekheader': pythonStdlibCalendarWeekheaderEmu,
+  'yeardayscalendar': pythonStdlibCalendarYeardayscalendarEmu,
 };
 
 export function getModuleEmulator(slug) {

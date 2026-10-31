@@ -126,7 +126,7 @@ export const method = {
     avoid: [
       'You want Elements with events you pull yourself → XMLPullParser or iterparse()',
       'A complete string or file → fromstring() / parse() create the parser for you',
-      'Untrusted input on a server — the docs point to "XML vulnerabilities" and defusedxml',
+      'Untrusted or unauthenticated input — read the "XML security" section of the docs first',
     ],
   },
 
@@ -134,7 +134,7 @@ export const method = {
     cpython:     'The C class from Modules/_elementtree.c; it creates an expat parser with "}" as namespace separator, so tags arrive as {uri}local. With the default TreeBuilder it calls the builder directly; for any other target it looks up start, end, data, comment, pi, start_ns, end_ns, doctype and close once and calls those that exist. start() always gets a dict (empty when there are no attributes)',
     'Entities':  'parser.entity is a dict consulted for entity references expat leaves unresolved — that happens for documents with an external DTD reference. Documents without a DTD only know the five predefined entities; anything else is a ParseError (undefined entity)',
     'Versions':  'Arguments are keyword-only and the html argument was removed in 3.8. flush() is 3.13 (backported to some earlier releases as a security fix). parser.version holds the expat version string, which depends on your Python build',
-    'Security':  'The docs: the module is not secure against maliciously constructed data; external entities are not expanded (an entity reference to one raises ParseError)',
+    'Security':  'The 3.13 docs send anyone parsing untrusted or unauthenticated data to their "XML security" section (Expat by default does not access local files or create network connections; Expat versions lower than 2.7.2 may be vulnerable to entity-expansion and large-token attacks). A reference to an external entity is not loaded: it raises ParseError (undefined entity)',
   },
 
   related: [

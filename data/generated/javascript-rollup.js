@@ -7,7 +7,7 @@
 // methods. byCategory covers every category of this language.
 
 export const javascriptRollup = {
-  generatedAt: "2026-10-13T19:22:06.325Z",
+  generatedAt: "2026-10-31T11:15:16.265Z",
   primaryCategory: "methods",
   total: 144,
   liveTotal: 136,

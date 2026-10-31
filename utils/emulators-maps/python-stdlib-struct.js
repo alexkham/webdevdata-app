@@ -4,10 +4,28 @@
 //
 // slug → emulator for python-stdlib-struct only (empty when the module has no live demos).
 
-
+import pythonStdlibStructCalcsizeEmu from '../emulators/python/stdlib/struct/calcsize';
+import pythonStdlibStructErrorEmu from '../emulators/python/stdlib/struct/error';
+import pythonStdlibStructFormatCharactersEmu from '../emulators/python/stdlib/struct/format-characters';
+import pythonStdlibStructIndexEmu from '../emulators/python/stdlib/struct/index';
+import pythonStdlibStructIter_unpackEmu from '../emulators/python/stdlib/struct/iter_unpack';
+import pythonStdlibStructPackEmu from '../emulators/python/stdlib/struct/pack';
+import pythonStdlibStructPack_intoEmu from '../emulators/python/stdlib/struct/pack_into';
+import pythonStdlibStructStructEmu from '../emulators/python/stdlib/struct/struct';
+import pythonStdlibStructUnpackEmu from '../emulators/python/stdlib/struct/unpack';
+import pythonStdlibStructUnpack_fromEmu from '../emulators/python/stdlib/struct/unpack_from';
 
 const emulators = {
-
+  'calcsize': pythonStdlibStructCalcsizeEmu,
+  'error': pythonStdlibStructErrorEmu,
+  'format-characters': pythonStdlibStructFormatCharactersEmu,
+  'index': pythonStdlibStructIndexEmu,
+  'iter_unpack': pythonStdlibStructIter_unpackEmu,
+  'pack': pythonStdlibStructPackEmu,
+  'pack_into': pythonStdlibStructPack_intoEmu,
+  'struct': pythonStdlibStructStructEmu,
+  'unpack': pythonStdlibStructUnpackEmu,
+  'unpack_from': pythonStdlibStructUnpack_fromEmu,
 };
 
 export function getModuleEmulator(slug) {

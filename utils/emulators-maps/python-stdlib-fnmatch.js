@@ -4,10 +4,18 @@
 //
 // slug → emulator for python-stdlib-fnmatch only (empty when the module has no live demos).
 
-
+import pythonStdlibFnmatchFilterEmu from '../emulators/python/stdlib/fnmatch/filter';
+import pythonStdlibFnmatchFnmatchEmu from '../emulators/python/stdlib/fnmatch/fnmatch';
+import pythonStdlibFnmatchFnmatchcaseEmu from '../emulators/python/stdlib/fnmatch/fnmatchcase';
+import pythonStdlibFnmatchIndexEmu from '../emulators/python/stdlib/fnmatch/index';
+import pythonStdlibFnmatchTranslateEmu from '../emulators/python/stdlib/fnmatch/translate';
 
 const emulators = {
-
+  'filter': pythonStdlibFnmatchFilterEmu,
+  'fnmatch': pythonStdlibFnmatchFnmatchEmu,
+  'fnmatchcase': pythonStdlibFnmatchFnmatchcaseEmu,
+  'index': pythonStdlibFnmatchIndexEmu,
+  'translate': pythonStdlibFnmatchTranslateEmu,
 };
 
 export function getModuleEmulator(slug) {

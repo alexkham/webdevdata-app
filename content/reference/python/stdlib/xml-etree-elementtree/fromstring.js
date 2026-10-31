@@ -144,7 +144,7 @@ export const method = {
     avoid: [
       'Files → ET.parse(path), which reads and parses in one step',
       'Huge documents → ET.iterparse() to process them element by element',
-      'Untrusted input on a server — the docs point to "XML vulnerabilities" and defusedxml',
+      'Untrusted or unauthenticated input — read the "XML security" section of the docs first',
     ],
   },
 

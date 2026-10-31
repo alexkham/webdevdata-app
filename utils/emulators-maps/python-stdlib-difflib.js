@@ -4,10 +4,34 @@
 //
 // slug → emulator for python-stdlib-difflib only (empty when the module has no live demos).
 
-
+import pythonStdlibDifflibContext_diffEmu from '../emulators/python/stdlib/difflib/context_diff';
+import pythonStdlibDifflibDifferEmu from '../emulators/python/stdlib/difflib/differ';
+import pythonStdlibDifflibDiff_bytesEmu from '../emulators/python/stdlib/difflib/diff_bytes';
+import pythonStdlibDifflibGet_close_matchesEmu from '../emulators/python/stdlib/difflib/get_close_matches';
+import pythonStdlibDifflibIndexEmu from '../emulators/python/stdlib/difflib/index';
+import pythonStdlibDifflibIs_line_junkEmu from '../emulators/python/stdlib/difflib/is_line_junk';
+import pythonStdlibDifflibNdiffEmu from '../emulators/python/stdlib/difflib/ndiff';
+import pythonStdlibDifflibRestoreEmu from '../emulators/python/stdlib/difflib/restore';
+import pythonStdlibDifflibSequencematcherGet_matching_blocksEmu from '../emulators/python/stdlib/difflib/sequencematcher-get_matching_blocks';
+import pythonStdlibDifflibSequencematcherGet_opcodesEmu from '../emulators/python/stdlib/difflib/sequencematcher-get_opcodes';
+import pythonStdlibDifflibSequencematcherRatioEmu from '../emulators/python/stdlib/difflib/sequencematcher-ratio';
+import pythonStdlibDifflibSequencematcherEmu from '../emulators/python/stdlib/difflib/sequencematcher';
+import pythonStdlibDifflibUnified_diffEmu from '../emulators/python/stdlib/difflib/unified_diff';
 
 const emulators = {
-
+  'context_diff': pythonStdlibDifflibContext_diffEmu,
+  'differ': pythonStdlibDifflibDifferEmu,
+  'diff_bytes': pythonStdlibDifflibDiff_bytesEmu,
+  'get_close_matches': pythonStdlibDifflibGet_close_matchesEmu,
+  'index': pythonStdlibDifflibIndexEmu,
+  'is_line_junk': pythonStdlibDifflibIs_line_junkEmu,
+  'ndiff': pythonStdlibDifflibNdiffEmu,
+  'restore': pythonStdlibDifflibRestoreEmu,
+  'sequencematcher-get_matching_blocks': pythonStdlibDifflibSequencematcherGet_matching_blocksEmu,
+  'sequencematcher-get_opcodes': pythonStdlibDifflibSequencematcherGet_opcodesEmu,
+  'sequencematcher-ratio': pythonStdlibDifflibSequencematcherRatioEmu,
+  'sequencematcher': pythonStdlibDifflibSequencematcherEmu,
+  'unified_diff': pythonStdlibDifflibUnified_diffEmu,
 };
 
 export function getModuleEmulator(slug) {

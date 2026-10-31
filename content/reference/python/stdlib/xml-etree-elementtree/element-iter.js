@@ -115,7 +115,7 @@ export const method = {
     { title: 'text vs itertext', code: "import xml.etree.ElementTree as ET\np = ET.fromstring('<p>Hello <b>big</b> world</p>')\n(p.text, ''.join(p.itertext()))", returns: "('Hello ', 'Hello big world')" },
     { title: 'Own tail not included', code: "import xml.etree.ElementTree as ET\nlist(ET.fromstring('<a><b>x</b>y</a>').find('b').itertext())", returns: "['x']" },
     { title: 'ElementTree.iter walks from the root', code: "import xml.etree.ElementTree as ET\n[e.tag for e in ET.ElementTree(ET.fromstring('<a><b/></a>')).iter()]", returns: "['a', 'b']" },
-    { title: 'Inserted comments count as text', code: "import xml.etree.ElementTree as ET\nparser = ET.XMLParser(target=ET.TreeBuilder(insert_comments=True))\nlist(ET.fromstring('<a>x<!--note-->y</a>', parser).itertext())", returns: "['x', 'note', 'y']" },
+    { title: 'An inserted comment is a child; the text after it is its tail', code: "import xml.etree.ElementTree as ET\nparser = ET.XMLParser(target=ET.TreeBuilder(insert_comments=True))\nroot = ET.fromstring('<a>x<!--note-->y</a>', parser)\n(len(root), root[0].text, root[0].tail)", returns: "(1, 'note', 'y')" },
   ],
 
   pitfalls: [
@@ -154,7 +154,7 @@ export const method = {
 
   notes: {
     cpython:      'Implemented in C (elementiter_next in Modules/_elementtree.c): an explicit stack of (parent, child index), so deep trees cannot overflow the Python stack',
-    'itertext':   'The C version yields the text of comment and PI elements too when they are in the tree (insert_comments=True); the pure-Python version skips them',
+    'itertext':   'Comment and PI elements in the tree (insert_comments=True): the C version yielded their text up to Python 3.13.13; since 3.13.14 it skips it, as the pure-Python version always did (gh-149571) — so the output of itertext() on such a tree depends on the patch release',
     'Removed API': 'getiterator() was deprecated in 3.2 and removed in 3.9 — use iter()',
   },
 

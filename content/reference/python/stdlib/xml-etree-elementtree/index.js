@@ -30,7 +30,7 @@ export const method = {
     { label: 'Parser',       value: 'Expat via the C accelerator _elementtree — errors are ParseError with the expat message, line and column' },
     { label: 'Searching',    value: 'find / findall / findtext / iterfind with a limited XPath subset; iter() walks every descendant' },
     { label: 'Streaming',    value: 'iterparse() for large files, XMLPullParser for data you feed in pieces, XMLParser with your own target for callbacks' },
-    { label: 'Security',     value: 'The docs: not secure against maliciously constructed data — see "XML vulnerabilities" before parsing untrusted input' },
+    { label: 'Security',     value: 'The docs: if you need to parse untrusted or unauthenticated data, see the "XML security" section first' },
   ],
 
   modes: [
@@ -149,7 +149,7 @@ export const method = {
       'Streaming large files with iterparse() and clearing elements you are done with',
     ],
     avoid: [
-      'Untrusted XML on a server — the docs point to "XML vulnerabilities" and recommend the defusedxml package',
+      'Untrusted or unauthenticated XML, unless you have read the docs\' "XML security" section and checked pyexpat.EXPAT_VERSION',
       'Full XPath 1.0, XSLT or schema validation → lxml (third-party)',
       'HTML from the web — it is not XML → html.parser or a dedicated HTML library',
       'Data you control end to end → json is simpler',
@@ -158,7 +158,7 @@ export const method = {
 
   notes: {
     cpython:     'Lib/xml/etree/ElementTree.py (pure Python) with Element, SubElement, TreeBuilder, XMLParser and ParseError replaced by the C accelerator Modules/_elementtree.c; searching is Lib/xml/etree/ElementPath.py; parsing is expat (pyexpat)',
-    'Security':  'The 3.13 docs: "not secure against maliciously constructed data". Their XML vulnerabilities table lists etree as safe from external entity expansion and DTD retrieval ("doesn\'t expand external entities and raises a ParseError when an entity occurs"), and as vulnerable to billion laughs and quadratic blowup — with the note that Expat 2.4.1 and newer is not vulnerable to those two (check pyexpat.EXPAT_VERSION)',
+    'Security':  'The 3.13 docs send anyone parsing untrusted or unauthenticated data to the "XML security" section of the xml package page. It says Expat by default does not access local files or create network connections, and that Expat versions lower than 2.7.2 may be vulnerable to the "billion laughs", "quadratic blowup" and "large tokens" attacks or to disproportional use of dynamic memory. Python may use its bundled Expat or a system-wide one, so check pyexpat.EXPAT_VERSION',
     'Comments':  'XMLParser skips comments and processing instructions by default; use TreeBuilder(insert_comments=True, insert_pis=True) to keep them',
     'Order':     'Attributes keep the order they were parsed or set in (since 3.8); tostring() writes them in that order',
   },
@@ -185,7 +185,7 @@ export const method = {
     },
     {
       q: 'Is xml.etree.ElementTree safe for untrusted XML?',
-      a: 'The documentation says the module is not secure against maliciously constructed data and points to the "XML vulnerabilities" section and the defusedxml package, which it recommends for server code that parses untrusted data. External entities are not expanded (an entity raises ParseError); billion laughs and quadratic blowup are not a risk with Expat 2.4.1 or newer — check pyexpat.EXPAT_VERSION.',
+      a: 'The documentation tells you to read its "XML security" section if you need to parse untrusted or unauthenticated data. That section says Expat by default does not access local files or create network connections, but that Expat versions lower than 2.7.2 may be vulnerable to the "billion laughs", "quadratic blowup" and "large tokens" attacks or to disproportional use of dynamic memory. Which Expat your Python uses (bundled or system-wide) depends on how it was built, so check pyexpat.EXPAT_VERSION.',
     },
     {
       q: 'Why are my XML comments gone after parsing?',

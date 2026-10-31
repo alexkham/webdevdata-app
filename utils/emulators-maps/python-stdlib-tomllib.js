@@ -4,10 +4,16 @@
 //
 // slug → emulator for python-stdlib-tomllib only (empty when the module has no live demos).
 
-
+import pythonStdlibTomllibIndexEmu from '../emulators/python/stdlib/tomllib/index';
+import pythonStdlibTomllibLoadEmu from '../emulators/python/stdlib/tomllib/load';
+import pythonStdlibTomllibLoadsEmu from '../emulators/python/stdlib/tomllib/loads';
+import pythonStdlibTomllibTomldecodeerrorEmu from '../emulators/python/stdlib/tomllib/tomldecodeerror';
 
 const emulators = {
-
+  'index': pythonStdlibTomllibIndexEmu,
+  'load': pythonStdlibTomllibLoadEmu,
+  'loads': pythonStdlibTomllibLoadsEmu,
+  'tomldecodeerror': pythonStdlibTomllibTomldecodeerrorEmu,
 };
 
 export function getModuleEmulator(slug) {

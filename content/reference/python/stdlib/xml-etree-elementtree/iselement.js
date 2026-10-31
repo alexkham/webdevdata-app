@@ -98,6 +98,10 @@ export const method = {
 
   faq: [
     {
+      q: 'Why is there no live demo on this page?',
+      a: 'iselement() is about what kind of object it receives — an Element, an ElementTree, a comment, a str, an object of your own class with a tag attribute. A demo box can only send text and numbers, so each of those cases has to be written as code; the examples below show them with fixed, verified output.',
+    },
+    {
       q: 'How do I check if an object is an XML element in Python?',
       a: 'ET.iselement(obj) returns True for any object with a tag attribute (elements, comments, PIs, elements of compatible libraries). For the exact class use isinstance(obj, ET.Element).',
     },

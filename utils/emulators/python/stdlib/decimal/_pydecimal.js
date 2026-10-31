@@ -56,6 +56,12 @@ export const MIN_ETINY = -1999999999999999997n;
 const EXP_LIMIT = 1e15;
 const PREC_LIMIT = 100000;
 const DIGIT_LIMIT = 200000;
+// exp / ln / log10 / non-integral ** cost far more than the basic
+// operations (the BigInt series take seconds at a few thousand digits)
+const TRANS_LIMIT = 1000;
+function transLimit(digits) {
+  if (digits > TRANS_LIMIT) demoLimit(`exp/ln/log10/** with ${digits} working digits are beyond what the in-browser demo computes`);
+}
 
 // ── signals and libmpdec condition bits ───────────────────────
 // libmpdec status bits in bit order (MPD_Clamped = 1 … MPD_Underflow);
@@ -988,10 +994,17 @@ function truediv(self, other, ctx) {
     if (rem) {
       if (coeff % 5n === 0n) coeff += 1n;
     } else {
+      // strip trailing zeros down to the ideal exponent — counted on the
+      // digit string and removed with one division (a digit-by-digit loop
+      // is quadratic at high precision)
       const ideal = self.exp - other.exp;
-      while (exp < ideal && coeff % 10n === 0n) {
-        coeff /= 10n;
-        exp += 1;
+      if (exp < ideal && coeff % 10n === 0n) {
+        const s = coeff.toString();
+        let tz = 0;
+        while (tz < s.length - 1 && s[s.length - 1 - tz] === '0') tz += 1;
+        const k = Math.min(tz, ideal - exp);
+        coeff /= p10(k);
+        exp += k;
       }
     }
   }
@@ -1415,6 +1428,7 @@ function qpowInt(base, exp, resultsign, ctx) {
 // _mpd_qpow_real: exp(y * ln(x)) at max(digits(x), prec) + 4 + 19 digits
 function qpowReal(base, exp, ctx) {
   const wp = Math.max(base.int.length, ctx.prec) + 4 + 19;
+  transLimit(wp);
   const w = workCtx({ prec: wp, Emin: -MAXCTX_E, Emax: MAXCTX_E });
   let r = lnDec(base, w);
   r = mul(r, exp, w);
@@ -1692,6 +1706,7 @@ function expDec(self, ctx) {
   else if (self.sign === 0 && adj < -p) ans = dft(0, '1' + zeros(p - 1) + '1', -p);
   else if (self.sign === 1 && adj < -p - 1) ans = dft(0, '9'.repeat(p + 1), -p - 1);
   else {
+    transLimit(Math.max(p, self.int.length));
     let c = BigInt(self.int);
     const e = self.exp;
     if (self.sign === 1) c = -c;
@@ -1714,6 +1729,7 @@ function lnDec(self, ctx) {
   if (isinf(self) === 1) return INF;
   if (cmp(self, ONE) === 0) return ZERO;
   if (self.sign === 1) return ctx._raise('InvalidOperation');
+  transLimit(Math.max(ctx.prec, self.int.length));
   const c = BigInt(self.int);
   const e = self.exp;
   const p = ctx.prec;
@@ -1736,6 +1752,7 @@ function log10Dec(self, ctx) {
   if (self.int[0] === '1' && /^0*$/.test(self.int.slice(1))) {
     ans = intToDec(BigInt(self.exp + self.int.length - 1));
   } else {
+    transLimit(Math.max(ctx.prec, self.int.length));
     const c = BigInt(self.int);
     const e = self.exp;
     const p = ctx.prec;
@@ -2061,6 +2078,7 @@ export function asIntegerRatio(d) {
     n *= p10(d.exp);
     den = 1n;
   } else {
+    if (-d.exp > 4 * DIGIT_LIMIT) demoLimit('numbers with this many digits are too large for the in-browser demo');
     let d5 = -d.exp;
     while (d5 > 0 && n % 5n === 0n) {
       n /= 5n;
@@ -2518,6 +2536,11 @@ export function format(d, specifier) {
     dotplace = leftdigits;
   } else {
     dotplace = (self.exp <= 0 && leftdigits > -6) ? leftdigits : 1;
+  }
+  // positional output of a huge exponent ('f' of 1E+90000000) would be a
+  // string of millions of zeros
+  if (dotplace < -4 * DIGIT_LIMIT || dotplace - self.int.length > 4 * DIGIT_LIMIT) {
+    demoLimit('formatting this many digits is too large for the in-browser demo');
   }
   let intpart;
   let fracpart;

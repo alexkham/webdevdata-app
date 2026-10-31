@@ -4,10 +4,24 @@
 //
 // slug → emulator for python-stdlib-pprint only (empty when the module has no live demos).
 
-
+import pythonStdlibPprintFormatEmu from '../emulators/python/stdlib/pprint/format';
+import pythonStdlibPprintIndexEmu from '../emulators/python/stdlib/pprint/index';
+import pythonStdlibPprintIsreadableIsrecursiveEmu from '../emulators/python/stdlib/pprint/isreadable-isrecursive';
+import pythonStdlibPprintPformatEmu from '../emulators/python/stdlib/pprint/pformat';
+import pythonStdlibPprintPpEmu from '../emulators/python/stdlib/pprint/pp';
+import pythonStdlibPprintPprintEmu from '../emulators/python/stdlib/pprint/pprint';
+import pythonStdlibPprintPrettyprinterEmu from '../emulators/python/stdlib/pprint/prettyprinter';
+import pythonStdlibPprintSafereprEmu from '../emulators/python/stdlib/pprint/saferepr';
 
 const emulators = {
-
+  'format': pythonStdlibPprintFormatEmu,
+  'index': pythonStdlibPprintIndexEmu,
+  'isreadable-isrecursive': pythonStdlibPprintIsreadableIsrecursiveEmu,
+  'pformat': pythonStdlibPprintPformatEmu,
+  'pp': pythonStdlibPprintPpEmu,
+  'pprint': pythonStdlibPprintPprintEmu,
+  'prettyprinter': pythonStdlibPprintPrettyprinterEmu,
+  'saferepr': pythonStdlibPprintSafereprEmu,
 };
 
 export function getModuleEmulator(slug) {

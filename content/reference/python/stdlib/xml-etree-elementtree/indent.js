@@ -137,6 +137,7 @@ export const method = {
     cpython:      'Lib/xml/etree/ElementTree.py: a recursive helper sets elem.text for every element with children and child.tail for each child when they are empty or whitespace-only (not text.strip()), then sets the last child\'s tail to the parent level',
     'Strings':    'Indentation strings are "\\n" + level * space, built once per level and reused',
     'Since':      'Added in Python 3.9',
+    'White space': 'Since Python 3.13.16 only XML white space (space, tab, CR, LF) makes a text "whitespace-only"; earlier releases used str.strip(), so a text such as a lone U+00A0 no-break space was replaced too (gh-156658)',
   },
 
   related: [

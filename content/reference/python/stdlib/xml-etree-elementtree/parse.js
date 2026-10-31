@@ -102,7 +102,7 @@ export const method = {
     { title: 'A binary file object', code: "import io\nimport xml.etree.ElementTree as ET\nET.parse(io.BytesIO(b'<a x=\"1\"/>')).getroot().attrib", returns: "{'x': '1'}" },
     { title: 'ElementTree.parse returns the root', code: "import io\nimport xml.etree.ElementTree as ET\ntree = ET.ElementTree()\nroot = tree.parse(io.StringIO('<a><b/></a>'))\n(root is tree.getroot(), root.tag)", returns: "(True, 'a')" },
     { title: 'Missing file', code: "import xml.etree.ElementTree as ET\nET.parse('missing.xml')", returns: "FileNotFoundError: [Errno 2] No such file or directory: 'missing.xml'" },
-    { title: 'Empty file', code: "import xml.etree.ElementTree as ET\nopen('empty.xml', 'w').close()\nET.parse('empty.xml')", returns: 'xml.etree.ElementTree.ParseError: no element found: line 1, column 0' },
+    { title: 'Empty file', code: "import xml.etree.ElementTree as ET\nopen('empty.xml', 'w', encoding='utf-8').close()\nET.parse('empty.xml')", returns: 'xml.etree.ElementTree.ParseError: no element found: line 1, column 0' },
   ],
 
   pitfalls: [
@@ -113,10 +113,10 @@ export const method = {
       fix:   { label: "ET.parse('latin.xml')", code: "import xml.etree.ElementTree as ET\nwith open('latin.xml', 'wb') as f:\n    f.write('<?xml version=\"1.0\" encoding=\"latin-1\"?><name>José</name>'.encode('latin-1'))\nET.parse('latin.xml').getroot().text", output: "'José'" },
     },
     {
-      name: 'A str in StringIO with a non-UTF-8 declaration',
-      desc: 'The default parser re-encodes the text it reads to UTF-8 and lets expat follow the declaration — decoding it a second time. For text you already hold, use fromstring(), which ignores the declared encoding.',
-      wrong: { label: 'parse(StringIO)', code: "import io\nimport xml.etree.ElementTree as ET\nET.parse(io.StringIO('<?xml version=\"1.0\" encoding=\"latin-1\"?><a>é</a>')).getroot().text", output: "'Ã©'" },
-      fix:   { label: 'fromstring(text)', code: "import xml.etree.ElementTree as ET\nET.fromstring('<?xml version=\"1.0\" encoding=\"latin-1\"?><a>é</a>').text", output: "'é'" },
+      name: 'Treating the result as the root element',
+      desc: 'parse() returns an ElementTree, which has no tag, attributes or text. Ask it for the root first.',
+      wrong: { label: "parse(...).tag", code: "import xml.etree.ElementTree as ET\nwith open('d.xml', 'w', encoding='utf-8') as f:\n    f.write('<a/>')\nET.parse('d.xml').tag", output: "AttributeError: 'ElementTree' object has no attribute 'tag'" },
+      fix:   { label: 'parse(...).getroot().tag', code: "import xml.etree.ElementTree as ET\nwith open('d.xml', 'w', encoding='utf-8') as f:\n    f.write('<a/>')\nET.parse('d.xml').getroot().tag", output: "'a'" },
     },
   ],
 
@@ -128,13 +128,15 @@ export const method = {
     avoid: [
       'XML text already in a variable → fromstring()',
       'Files too big for memory → iterparse()',
-      'Untrusted files on a server — the docs point to "XML vulnerabilities" and defusedxml',
+      'Untrusted or unauthenticated files — read the "XML security" section of the docs first',
     ],
   },
 
   notes: {
     cpython:     'parse() creates ElementTree() and calls its parse(); with the default parser the C XMLParser._parse_whole() reads 64 KiB at a time (str chunks are encoded to UTF-8 bytes) and returns the root',
+    'str sources': 'For a text file or io.StringIO the text is already decoded. Up to Python 3.13.15 the C parser still applied a non-UTF-8 encoding from the XML declaration to it, which produced mojibake; since 3.13.16 the declaration is ignored for str data, as in fromstring() (gh-99064). Binary files and file names are not affected',
     'File names': 'A path is opened with open(source, "rb") and closed afterwards; a file object is left open',
+    'Line ends': 'The "parse(filename)" demo writes data.xml in text mode. On Windows every \\n is written as \\r\\n, which expat still counts as one line break — but a \\r\\n already in the text becomes \\r\\r\\n, two line breaks, so ParseError line numbers can be higher than on Linux. The live demo follows Linux',
     'Errors':    'OSError subclasses (FileNotFoundError, PermissionError) for the file, ParseError for its content',
   },
 
@@ -154,7 +156,7 @@ export const method = {
     },
     {
       q: 'Why does ET.parse("<root>…</root>") fail?',
-      a: 'parse() expects a file name or file object, so it tries to open a file with that name: on Linux and macOS that is FileNotFoundError, on Windows the < and > in the name give OSError: [Errno 22] Invalid argument. Use ET.fromstring() for XML text.',
+      a: 'parse() expects a file name or file object, so it tries to open a file with that name: on Linux that is FileNotFoundError, on Windows the < and > in the name give OSError: [Errno 22] Invalid argument. Use ET.fromstring() for XML text.',
     },
     {
       q: 'Should I open the XML file myself before parse()?',

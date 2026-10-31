@@ -95,7 +95,7 @@ export const method = {
     { title: 'A PI keeps target and data in text', code: "import xml.etree.ElementTree as ET\npi = ET.PI('target', 'some data')\n(pi.tag is ET.PI, pi.text)", returns: "(True, 'target some data')" },
     { title: 'Comment text is not escaped', code: "import xml.etree.ElementTree as ET\nET.tostring(ET.Comment('x & <y>'), encoding='unicode')", returns: "'<!--x & <y>-->'" },
     { title: 'Empty PI data is left out', code: "import xml.etree.ElementTree as ET\n(ET.tostring(ET.PI('t'), encoding='unicode'), ET.tostring(ET.PI('t', ''), encoding='unicode'))", returns: "('<?t?>', '<?t?>')" },
-    { title: 'method="text" includes comment text', code: "import xml.etree.ElementTree as ET\nroot = ET.Element('a')\nroot.append(ET.Comment('x'))\nroot[0].tail = 'after'\nET.tostring(root, method='text', encoding='unicode')", returns: "'xafter'" },
+    { title: 'Comments kept by the parser are written back', code: "import xml.etree.ElementTree as ET\nparser = ET.XMLParser(target=ET.TreeBuilder(insert_comments=True))\nroot = ET.fromstring('<a><!-- keep --><b/></a>', parser)\nET.tostring(root, encoding='unicode')", returns: "'<a><!-- keep --><b /></a>'" },
   ],
 
   pitfalls: [
@@ -134,7 +134,7 @@ export const method = {
   notes: {
     cpython:     'Comment(text) is Element(Comment); text set. ProcessingInstruction(target, text) is Element(ProcessingInstruction) with text = target, plus " " + text when text is given. PI = ProcessingInstruction. The serializer writes "<!--%s-->" % text and "<?%s?>" % text without escaping',
     'Parsing':   'The default parser drops comments and PIs; TreeBuilder(insert_comments=True, insert_pis=True) keeps those inside the root, and iterparse / XMLPullParser report them as "comment" / "pi" events',
-    'Text':      'The C Element\'s itertext() — and so tostring(method="text") — includes the text of comments and PIs; the pure-Python version skips them',
+    'Text':      'The C Element\'s itertext() — and so tostring(method="text") — included the text of comments and PIs up to Python 3.13.13; 3.13.14 changed it to skip them, as the pure-Python version always did (gh-149571)',
   },
 
   related: [

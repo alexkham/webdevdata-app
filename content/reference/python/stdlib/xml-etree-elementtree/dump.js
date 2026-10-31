@@ -89,8 +89,8 @@ export const method = {
   pitfalls: [
     {
       name: 'Passing XML text',
-      desc: 'dump() serializes elements; a str is not one.',
-      wrong: { label: "dump('<a/>')", code: "import xml.etree.ElementTree as ET\nET.dump('<a/>')", output: "AttributeError: 'str' object has no attribute 'iter'" },
+      desc: 'dump() serializes elements; a str is not one. The error depends on the patch release: AttributeError: \'str\' object has no attribute \'iter\' up to Python 3.13.5, TypeError: expected an Element, not str since 3.13.6.',
+      wrong: { label: "dump('<a/>')", code: "import xml.etree.ElementTree as ET\ntry:\n    ET.dump('<a/>')\n    result = 'printed'\nexcept (AttributeError, TypeError):\n    result = 'error: dump() needs an Element or ElementTree'\nresult", output: "'error: dump() needs an Element or ElementTree'" },
       fix:   { label: 'parse first', code: "import xml.etree.ElementTree as ET\nET.dump(ET.fromstring('<a/>'))", output: '<a />' },
     },
     {

@@ -20,7 +20,7 @@ export const method = {
   version:     'All Python 3 versions (call: 3.11+)',
   hasLiveDemo: true,
 
-  subtitle: 'x + y is operator.add(x, y), x[k] is operator.getitem(x, k), not x is operator.not_(x). Useful wherever Python wants a function — sorted(key=…), map, reduce, dispatch tables — and the three getter classes are the fastest way to write sort keys.',
+  subtitle: 'x + y is operator.add(x, y), x[k] is operator.getitem(x, k), not x is operator.not_(x). Useful wherever Python wants a function — sorted(key=…), map, reduce, dispatch tables — and the three getter classes are C-implemented sort keys, usually faster than the equivalent lambda.',
 
   imports: ['import operator', 'from operator import itemgetter, attrgetter, methodcaller'],
   facts: [

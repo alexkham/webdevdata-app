@@ -16,7 +16,7 @@ export const method = {
   slug:      'context',
   name:      'decimal.Context',
   signature: 'decimal.Context(prec=None, rounding=None, Emin=None, Emax=None, capitals=None, clamp=None, flags=None, traps=None)',
-  returns:   { type: 'Context', desc: 'A new, independent context. Unset fields are copied from DefaultContext; flags start cleared.' },
+  returns:   { type: 'Context', desc: 'A new, independent context. Unset fields — the flags included, whose DefaultContext values are normally all clear — are copied from DefaultContext; only capitals defaults to 1 regardless.' },
 
   category:    'decimal class',
   version:     'Python 2.4+',

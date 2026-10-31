@@ -107,7 +107,7 @@ export const method = {
     {
       name: 'Engineering units',
       desc: 'Exponents in multiples of three map onto k, M, G… and m, µ, n.',
-      code: "from decimal import Decimal\nDecimal('4.7E-5').to_eng_string()   # '47E-6'",
+      code: "from decimal import Decimal\nDecimal('4.7E-8').to_eng_string()   # '47E-9'",
     },
   ],
 
@@ -157,7 +157,7 @@ export const method = {
   },
 
   notes: {
-    cpython:      "Decimal.__format__ in the C module formats with libmpdec; a spec libmpdec cannot parse — one with the '#' option, for instance — is handled by the pure-Python Lib/_pydecimal.py code, whose parser is stricter: '.03f' is accepted but '#.03f' is ValueError: invalid format string. Precision rounds with the current context's rounding mode, and a spec without a type behaves like 'g' with all digits",
+    cpython:      "Decimal.__format__ in the C module formats with libmpdec; a spec libmpdec cannot parse — one with the '#' option, for instance — is handled by the pure-Python Lib/_pydecimal.py code, whose parser is stricter: '.03f' is accepted but '#.03f' is ValueError: invalid format string. Precision rounds with the current context's rounding mode, and a spec without a type behaves like 'g' or 'G' — whichever matches the context's capitals — so it writes an exponent with E by default, as str() does",
     'str / repr': "str(d) is the to-scientific-string of the specification: exponent notation when the exponent is positive or the first digit is more than 6 places after the point; repr(d) wraps it as Decimal('…'); both use the current context's capitals",
     'Engineering': 'to_eng_string() makes the exponent a multiple of 3, which may add up to two zeros or move the point (123E+1 → 1.23E+3, 0E-7 → 0.0E-6)',
     'Locale':     "The 'n' type uses the locale's separators (in the default C locale it is like 'g')",
@@ -183,7 +183,7 @@ export const method = {
     },
     {
       q: 'What is engineering notation in decimal?',
-      a: "Exponents restricted to multiples of three: Decimal('123E+1').to_eng_string() is '1.23E+3' and Decimal('4.7E-5') becomes '47E-6'. Use it for SI-prefix display.",
+      a: "Exponents restricted to multiples of three: Decimal('123E+1').to_eng_string() is '1.23E+3' and Decimal('4.7E-8') becomes '47E-9'. Numbers that str() writes without an exponent stay positional: Decimal('4.7E-5').to_eng_string() is '0.000047'. Use it for SI-prefix display.",
     },
     {
       q: 'Why does format(Decimal, "_") raise ValueError?',

@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/stdlib/operator explorer.
 
 export const pythonStdlibOperatorCatalog = {
-  generatedAt: "2026-10-13T19:22:06.314Z",
+  generatedAt: "2026-10-31T11:15:16.247Z",
   items: [
   {
     "slug": "arithmetic",
@@ -33,7 +33,7 @@ export const pythonStdlibOperatorCatalog = {
     "slug": "bitwise",
     "name": "operator.and_ / or_ / xor / invert / lshift / rshift",
     "signature": "operator.and_(a, b) · or_ · xor · lshift · rshift · invert(a) · inv(a)",
-    "blurb": "The bitwise operators & | ^ ~ << >> as functions — on ints, and (for & | ^) on sets, bools and dicts too.",
+    "blurb": "The bitwise operators & | ^ ~ << >> as functions — on ints, and (for & | ^) on sets and bools too; or_ also merges dicts.",
     "category": "functions",
     "type": "function",
     "hasLiveDemo": true,

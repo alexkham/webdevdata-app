@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/stdlib/base64 explorer.
 
 export const pythonStdlibBase64Catalog = {
-  generatedAt: "2026-10-13T19:22:06.312Z",
+  generatedAt: "2026-10-31T11:15:16.238Z",
   items: [
   {
     "slug": "a85-b85-z85",

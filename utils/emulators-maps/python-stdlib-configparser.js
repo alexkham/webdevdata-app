@@ -4,10 +4,32 @@
 //
 // slug → emulator for python-stdlib-configparser only (empty when the module has no live demos).
 
-
+import pythonStdlibConfigparserConfigparserEmu from '../emulators/python/stdlib/configparser/configparser';
+import pythonStdlibConfigparserGetEmu from '../emulators/python/stdlib/configparser/get';
+import pythonStdlibConfigparserIndexEmu from '../emulators/python/stdlib/configparser/index';
+import pythonStdlibConfigparserItemsEmu from '../emulators/python/stdlib/configparser/items';
+import pythonStdlibConfigparserOptionsEmu from '../emulators/python/stdlib/configparser/options';
+import pythonStdlibConfigparserOptionxformEmu from '../emulators/python/stdlib/configparser/optionxform';
+import pythonStdlibConfigparserRawconfigparserEmu from '../emulators/python/stdlib/configparser/rawconfigparser';
+import pythonStdlibConfigparserReadEmu from '../emulators/python/stdlib/configparser/read';
+import pythonStdlibConfigparserSectionproxyEmu from '../emulators/python/stdlib/configparser/sectionproxy';
+import pythonStdlibConfigparserSectionsEmu from '../emulators/python/stdlib/configparser/sections';
+import pythonStdlibConfigparserSetEmu from '../emulators/python/stdlib/configparser/set';
+import pythonStdlibConfigparserWriteEmu from '../emulators/python/stdlib/configparser/write';
 
 const emulators = {
-
+  'configparser': pythonStdlibConfigparserConfigparserEmu,
+  'get': pythonStdlibConfigparserGetEmu,
+  'index': pythonStdlibConfigparserIndexEmu,
+  'items': pythonStdlibConfigparserItemsEmu,
+  'options': pythonStdlibConfigparserOptionsEmu,
+  'optionxform': pythonStdlibConfigparserOptionxformEmu,
+  'rawconfigparser': pythonStdlibConfigparserRawconfigparserEmu,
+  'read': pythonStdlibConfigparserReadEmu,
+  'sectionproxy': pythonStdlibConfigparserSectionproxyEmu,
+  'sections': pythonStdlibConfigparserSectionsEmu,
+  'set': pythonStdlibConfigparserSetEmu,
+  'write': pythonStdlibConfigparserWriteEmu,
 };
 
 export function getModuleEmulator(slug) {

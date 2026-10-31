@@ -36,7 +36,7 @@ export const method = {
   parameters: [
     { name: 'element',              type: 'Element',    required: true,  default: null,        desc: 'The element to serialize, with its children and its tail.' },
     { name: 'encoding',             type: 'str',        required: false, default: "'us-ascii'", desc: '"unicode" returns str. Any other codec returns bytes; characters it cannot encode become &#NNN;. An XML declaration is added unless the encoding is utf-8 or us-ascii (any case).' },
-    { name: 'method',               type: 'str',        required: false, default: "'xml'",     desc: '"xml", "html" (void elements such as br have no end tag; script/style text is not escaped) or "text" (only the text content).' },
+    { name: 'method',               type: 'str',        required: false, default: "'xml'",     desc: '"xml", "html" (void elements such as br have no end tag; script/style text is not escaped — since Python 3.13.14 also xmp, iframe, noembed, noframes and plaintext, and plaintext gets no end tag) or "text" (only the text content).' },
     { name: 'xml_declaration',      type: 'bool | None', required: false, default: 'None',     desc: 'True always writes <?xml version=\'1.0\' encoding=\'…\'?>, False never, None as described for encoding (3.8+).' },
     { name: 'default_namespace',    type: 'str | None', required: false, default: 'None',      desc: 'URI written as xmlns="…" so tags in it need no prefix; any tag without a namespace then raises ValueError (3.8+).' },
     { name: 'short_empty_elements', type: 'bool',       required: false, default: 'True',      desc: 'True writes <a />, False writes <a></a> for elements with no text and no children (3.4+).' },
@@ -149,8 +149,8 @@ export const method = {
     },
     {
       name: 'Passing an ElementTree',
-      desc: 'parse() returns an ElementTree; tostring() wants an Element.',
-      wrong: { label: 'tostring(tree)', code: "import xml.etree.ElementTree as ET\ntree = ET.ElementTree(ET.Element('a'))\nET.tostring(tree)", output: "AttributeError: 'ElementTree' object has no attribute 'tag'" },
+      desc: 'parse() returns an ElementTree; tostring() wants an Element. The error depends on the patch release: AttributeError: \'ElementTree\' object has no attribute \'tag\' up to Python 3.13.5, TypeError: expected an Element, not ElementTree since 3.13.6.',
+      wrong: { label: 'tostring(tree)', code: "import xml.etree.ElementTree as ET\ntree = ET.ElementTree(ET.Element('a'))\ntry:\n    ET.tostring(tree)\n    result = 'serialized'\nexcept (AttributeError, TypeError):\n    result = 'error: tostring() needs an Element'\nresult", output: "'error: tostring() needs an Element'" },
       fix:   { label: 'tostring(tree.getroot())', code: "import xml.etree.ElementTree as ET\ntree = ET.ElementTree(ET.Element('a'))\nET.tostring(tree.getroot())", output: "b'<a />'" },
     },
     {

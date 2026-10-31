@@ -126,7 +126,7 @@ export const method = {
 
   notes: {
     cpython:      "libmpdec's mpd_qcopy_abs, mpd_qcopy_negate, mpd_qcopy_sign: quiet operations — no context rounding, no flags (the docs note that the C version can still raise InvalidOperation if the second operand cannot be converted exactly)",
-    'Arithmetic counterparts': 'abs(x) and -x (Context.abs, Context.minus) round to the context, give +0 for a zero result except under ROUND_FLOOR, and signal on sNaN',
+    'Arithmetic counterparts': 'abs(x) and -x (Context.abs, Context.minus) round to the context and signal on sNaN; a zero result is +0, except that -x gives -0 under ROUND_FLOOR (abs(x) of a zero is always +0)',
   },
 
   related: [
@@ -139,7 +139,7 @@ export const method = {
   faq: [
     {
       q: 'What is the difference between copy_negate() and -x for a Decimal?',
-      a: "-x is arithmetic: it rounds to the context precision, never produces -0 from 0, and signals for sNaN. copy_negate() only flips the sign: Decimal('0').copy_negate() is Decimal('-0') and every digit is kept.",
+      a: "-x is arithmetic: it rounds to the context precision, turns 0 into 0 rather than -0 (except under ROUND_FLOOR), and signals for sNaN. copy_negate() only flips the sign: Decimal('0').copy_negate() is Decimal('-0') and every digit is kept.",
     },
     {
       q: 'How do I copy the sign of one Decimal to another?',

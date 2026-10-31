@@ -170,6 +170,7 @@ export const method = {
   notes: {
     cpython:     'canonicalize() creates XMLParser(target=C14NWriterTarget(out.write, **options)) — writing to an io.StringIO when out is None — and feeds xml_data, or parses from_file. C14NWriterTarget is pure Python: it receives start / data / end / comment / pi / start_ns calls and writes each piece of markup right away (text is collected and written when the next event arrives)',
     'C14N 2.0':  'Attributes sorted by name ({uri}local form); namespace declarations sorted and placed on the first element that needs them; text escaped as &, <, > and CR; attribute values escaped as &, <, " , tab, LF and CR; comments and PIs outside the root are separated by line breaks; the DOCTYPE is not part of the output',
+    'strip_text': 'Since Python 3.13.16 strip_text=True strips only XML white space (space, tab, CR, LF); earlier releases used str.strip(), which also removed characters such as U+00A0 (gh-156658)',
     'Options':   'qname_aware_tags / qname_aware_attrs name elements and attributes whose content is a prefixed name (like xsi:type) so its prefix is rewritten too. Both canonicalize() and C14NWriterTarget are 3.8+',
   },
 

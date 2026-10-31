@@ -138,7 +138,7 @@ export const method = {
   notes: {
     cpython:   'Modules/_operator.c: the C type operator.attrgetter splits dotted names once, at creation, and calls PyObject_GetAttr for each part at call time',
     'Checks':  'Non-string names raise TypeError when the getter is created; missing attributes raise AttributeError when it is called',
-    'Did you mean': "The hint is not part of the exception message (str(e) lacks it): the traceback display adds it, since 3.10. Python 3.13 finds close names that 3.12 does not suggest, so the same typo may show no hint on older versions",
+    'Did you mean': "The hint is not part of the exception message (str(e) lacks it): the traceback display adds it, since 3.10. Code that only logs str(e) never shows the hint",
   },
 
   related: [

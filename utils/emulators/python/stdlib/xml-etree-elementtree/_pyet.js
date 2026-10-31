@@ -14,8 +14,14 @@
 //              expat's. Fuzzed against CPython (see the module report).
 //              Not emulated → EmulatorLimit: DOCTYPE / DTDs (and so
 //              entities other than the five predefined ones), a declared
-//              encoding other than UTF-8, and a document whose first or
-//              second character is NUL (expat's UTF-16 auto-detection).
+//              encoding other than UTF-8 in text read as a file (a str fed
+//              to feed() ignores the declaration), and a document whose
+//              first or second character is NUL (expat's UTF-16
+//              auto-detection).
+//   Versions   Output that later 3.13 patch releases changed is limited, not
+//              guessed: itertext() of comment/PI elements (3.13.14),
+//              method="html" raw-text elements (3.13.14), indent() and
+//              C14N strip_text with non-XML white space (3.13.16).
 //   TreeBuilder / XMLPullParser events — Modules/_elementtree.c semantics
 //              (text and tail joined, comments and PIs dropped unless
 //              insert_comments / insert_pis, events start, end, start-ns,
@@ -1102,7 +1108,19 @@ export class ExpatParser {
   // call parses only once it has at least twice as many unparsed bytes, or
   // when another chunk of the same size would not fit the buffer.
   parse(text, isFinal) {
-    if (this.error) limit('Calling feed() or close() again after a ParseError: expat then reports a shifted position. Not emulated.');
+    if (this.error) {
+      // expat is in its error state: XML_Parse(…, 0, final) sets the
+      // position pointer back to the buffer pointer (where the failed call
+      // started) and errorProcessor returns the same error, so the position
+      // advances to the error pointer a second time (line 1, column 8 →
+      // column 16). A non-empty feed may move the buffer under the stale
+      // error pointer first → not emulated.
+      if (!isFinal || this.tainted) limit('Feeding the parser again after a ParseError is not emulated.');
+      this.posPtr = this.errStart;
+      if (this.errPtr >= this.posPtr) this.advance(this.errPtr);
+      this.error = new ParseError(this.error.code, this.line, this.col);
+      throw this.error;
+    }
     if (this.finished) limit('Feeding a parser after close() is not emulated.');
     const added = text ? codePoints(text, this.fileMode) : [];
     const addedBytes = utf8Length(added, 0, added.length);
@@ -1120,11 +1138,14 @@ export class ExpatParser {
       if (!(haveNow >= 2 * this.partialBefore || this.lastReq > available)) return;
     }
     const start = this.pos;
+    this.bufMark = start; // expat's buffer pointer (*nextPtr) during this call
     try {
       this.run();
     } catch (e) {
       if (!(e instanceof Stop)) throw e;
       if (e.ptr >= this.posPtr) this.advance(e.ptr);
+      this.errStart = this.bufMark;
+      this.errPtr = e.ptr;
       this.error = new ParseError(e.code, this.line, this.col);
       throw this.error;
     }
@@ -1279,7 +1300,9 @@ export class ExpatParser {
       // a str fed to XMLParser.feed() is declared UTF-8 to expat and the
       // declaration is ignored; text read from a file goes in as bytes and
       // expat honours the declaration
-      if (!(this.fileMode ? ['utf-8'] : ['utf-8', 'utf8']).includes(declared.toLowerCase())) {
+      // (expat skips the declared name entirely once a protocol encoding is
+      // set — any well-formed name is accepted for a str)
+      if (this.fileMode && declared.toLowerCase() !== 'utf-8') {
         limit(`A declared encoding other than UTF-8 (encoding="${declared}") is not emulated here.`);
       }
       a = pseudo();
@@ -1587,6 +1610,7 @@ export class ExpatParser {
       switch (tok) {
         case T.CDATA_SECT_CLOSE:
           this.pos = next;
+          this.bufMark = next; // doCdataSection: *nextPtr = next
           this.processor = 'content';
           return true;
         case T.DATA_NEWLINE:
@@ -1778,6 +1802,12 @@ export class Element {
   // included, unlike the pure-Python version), tails of all but this one
   * itertext() {
     const walk = function* walk(e, top) {
+      // 3.13.14 (gh-149571) stopped yielding the text of elements whose tag
+      // is not a str — comments, PIs, QName tags — so that output depends on
+      // the patch release
+      if (e.text && e.tag !== null && typeof e.tag !== 'string') {
+        limit('itertext() of a comment, processing instruction or QName-tagged element changed in Python 3.13.14 (its text is no longer included); the result depends on the 3.13 patch release, so it is not emulated.');
+      }
       if (e.text) yield e.text;
       for (const c of e.children) yield* walk(c, false);
       if (!top && e.tail) yield e.tail;
@@ -2001,6 +2031,13 @@ export class XMLPullParser {
   feed(text) {
     if (this.parser === null) raise('ValueError', 'feed() called after end of stream');
     if (!text) return;
+    if (this.parser.expat.error) {
+      // CPython feeds expat again; whatever that call reports is queued
+      // behind the ParseError still waiting, which read_events() raises first
+      if (!this.queue.some((ev) => ev instanceof Error)) limit('Feeding the parser again after its ParseError was read is not emulated.');
+      this.parser.expat.tainted = true;
+      return;
+    }
     try {
       this.parser.feed(text);
     } catch (e) {
@@ -2553,6 +2590,7 @@ function serializeXml(write, elem, qnames, namespaces, shortEmpty) {
 }
 
 export const HTML_EMPTY = new Set(['area', 'base', 'basefont', 'br', 'col', 'embed', 'frame', 'hr', 'img', 'input', 'isindex', 'link', 'meta', 'param', 'source', 'track', 'wbr']);
+const HTML_RAW_SINCE_3_13_14 = new Set(['xmp', 'iframe', 'noembed', 'noframes']);
 
 function serializeHtml(write, elem, qnames, namespaces) {
   const text = elem.text;
@@ -2576,6 +2614,12 @@ function serializeHtml(write, elem, qnames, namespaces) {
       }
       write('>');
       const ltag = tag.toLowerCase();
+      // 3.13.14 (gh-149489) writes the content of these elements unescaped
+      // and <plaintext> without an end tag: where that changes the output,
+      // it depends on the 3.13 patch release
+      if (ltag === 'plaintext' || (HTML_RAW_SINCE_3_13_14.has(ltag) && text && /[&<>]/.test(text))) {
+        limit(`method="html" output for <${tag}> changed in Python 3.13.14 (raw content${ltag === 'plaintext' ? ', no end tag' : ''}); it depends on the 3.13 patch release, so it is not emulated.`);
+      }
       if (text) {
         if (ltag === 'script' || ltag === 'style') write(text);
         else write(escapeCdata(text));
@@ -2795,11 +2839,21 @@ export function dumpText(elem) {
   return out;
 }
 
-// str.strip() == '' in Python terms
-const WS_ONLY = new RegExp(`^[${WS}]*$`, 'u');
-const isBlank = (s) => WS_ONLY.test(s);
+// str.strip() in Python terms
 const WS_EDGE = new RegExp(`^[${WS}]+|[${WS}]+$`, 'gu');
 export const pyStrip = (s) => s.replace(WS_EDGE, '');
+// 3.13.16 (gh-156658) made indent() and canonicalize(strip_text=True) strip
+// only XML white space (space, tab, CR, LF) instead of every str.isspace()
+// character: where the two differ, the result depends on the patch release
+const XML_WS_EDGE = /^[ \t\r\n]+|[ \t\r\n]+$/g;
+const xmlStrip = (s) => s.replace(XML_WS_EDGE, '');
+const versionSafeStrip = (s, what) => {
+  const a = pyStrip(s);
+  if (a !== xmlStrip(s)) {
+    limit(`${what} treats non-XML white space such as U+00A0 differently since Python 3.13.16; the result depends on the 3.13 patch release, so it is not emulated.`);
+  }
+  return a;
+};
 
 export function indent(tree, space = '  ', level = 0) {
   const root = tree instanceof ElementTree ? tree.getroot() : tree;
@@ -2813,6 +2867,7 @@ export function indent(tree, space = '  ', level = 0) {
   if (level * space.length > 100000) limit('An indentation string longer than 100,000 characters is not emulated here.');
   checkDepth(root, 'indent()');
   const indentations = [`\n${space.repeat(level)}`];
+  const blank = (s) => versionSafeStrip(s, 'indent()') === '';
   const indentChildren = (elem, lvl) => {
     const childLevel = lvl + 1;
     let childIndentation = indentations[childLevel];
@@ -2820,13 +2875,13 @@ export function indent(tree, space = '  ', level = 0) {
       childIndentation = indentations[lvl] + space;
       indentations.push(childIndentation);
     }
-    if (!elem.text || isBlank(elem.text)) elem.text = childIndentation;
+    if (!elem.text || blank(elem.text)) elem.text = childIndentation;
     let child = null;
     for (child of elem.children) {
       if (child.children.length) indentChildren(child, childLevel);
-      if (!child.tail || isBlank(child.tail)) child.tail = childIndentation;
+      if (!child.tail || blank(child.tail)) child.tail = childIndentation;
     }
-    if (isBlank(child.tail)) child.tail = indentations[lvl];
+    if (blank(child.tail)) child.tail = indentations[lvl];
   };
   indentChildren(root, 0);
 }
@@ -2958,7 +3013,7 @@ export class C14NWriterTarget {
   flush() {
     let data = this._data.join('');
     this._data = [];
-    if (this._stripText && !lastOf(this._preserveSpace)) data = pyStrip(data);
+    if (this._stripText && !lastOf(this._preserveSpace)) data = versionSafeStrip(data, 'canonicalize(strip_text=True)');
     if (this._pendingStart !== null) {
       const args = this._pendingStart;
       this._pendingStart = null;

@@ -35,7 +35,7 @@ export const method = {
 
   parameters: [
     { name: 'file',                 type: 'str | path | file object', required: true,  default: null,        desc: 'A file name (opened in text mode with your encoding and errors="xmlcharrefreplace") or an object with write().' },
-    { name: 'encoding',             type: 'str',                      required: false, default: "'us-ascii'", desc: '"unicode" writes str (text streams only); any codec name writes bytes in it, unencodable characters as &#NNN;.' },
+    { name: 'encoding',             type: 'str',                      required: false, default: "'us-ascii'", desc: '"unicode" writes str to a file object (a text stream; with a file name the file is written as UTF-8); any codec name writes bytes in it, unencodable characters as &#NNN;.' },
     { name: 'xml_declaration',      type: 'bool | None',              required: false, default: 'None',      desc: 'True always, False never, None only when the encoding is not utf-8, us-ascii or unicode.' },
     { name: 'default_namespace',    type: 'str | None',               required: false, default: 'None',      desc: 'Namespace written as xmlns="…" instead of a prefix.' },
     { name: 'method',               type: 'str',                      required: false, default: "'xml'",     desc: '"xml", "html" or "text" — as in tostring().' },

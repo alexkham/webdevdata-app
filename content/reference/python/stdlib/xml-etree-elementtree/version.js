@@ -16,7 +16,7 @@ export const method = {
   slug:      'version',
   name:      'xml.etree.ElementTree.VERSION',
   signature: 'xml.etree.ElementTree.VERSION',
-  returns:   { type: 'str', desc: '"1.3.0" in current Python 3 releases.' },
+  returns:   { type: 'str', desc: '"1.3.0" since Python 3.2 (deprecated in 3.15).' },
 
   category:    'xml.etree.ElementTree constant',
   version:     'ElementTree 1.3 since Python 3.2',
@@ -43,8 +43,8 @@ export const method = {
     },
     {
       name: 'Checking the Python version instead',
-      desc: 'For features documented as "Added in version 3.x".',
-      code: "import sys\nHAS_FLUSH = sys.version_info >= (3, 13)",
+      desc: 'For features documented as "Added in version 3.x" — but use hasattr() for flush(), which the docs say was backported to some earlier releases as a security fix.',
+      code: "import sys\nHAS_INDENT = sys.version_info >= (3, 9)",
     },
   ],
 
@@ -83,8 +83,9 @@ export const method = {
 
   notes: {
     cpython:   'VERSION = "1.3.0" at the top of Lib/xml/etree/ElementTree.py (same value in 3.12 and 3.13)',
-    'History': 'What\'s New in Python 3.2 records the update of the bundled ElementTree (and cElementTree) to version 1.3. Later additions — iterparse comment/pi events, canonicalize() (3.8), indent() (3.9), XMLPullParser.flush() (3.13) — kept "1.3.0"',
+    'History': 'What\'s New in Python 3.2 records the update of the bundled ElementTree (and cElementTree) to version 1.3. Later additions — iterparse comment/pi events, canonicalize() (3.8), indent() (3.9), XMLPullParser.flush() (3.13, backported to some earlier releases as a security fix) — kept "1.3.0"',
     'Docs':    'The library reference does not describe VERSION; it is listed in the module\'s __all__',
+    'Deprecation': 'What\'s New in Python 3.15 lists xml.etree.ElementTree among the modules whose VERSION attribute is deprecated, to be removed in Python 3.20 — use sys.version_info instead',
   },
 
   related: [
@@ -94,6 +95,10 @@ export const method = {
   ],
 
   faq: [
+    {
+      q: 'Why is there no live demo on this page?',
+      a: 'VERSION is a fixed string with nothing to vary — it takes no arguments and is "1.3.0" (checked on Python 3.12 and 3.13). The examples below show its value and how to use it, with fixed output.',
+    },
     {
       q: 'Which ElementTree version does Python use?',
       a: 'ET.VERSION is "1.3.0": Python 3.2 updated the bundled library to ElementTree 1.3. Newer features arrived with Python releases without changing this string.',

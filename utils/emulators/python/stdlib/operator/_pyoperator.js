@@ -499,7 +499,9 @@ function intPow(a, b) {
   if (a === 0n || a === 1n) return a;
   if (a === -1n) return b % 2n === 0n ? 1n : -1n;
   const bits = bitLen(a) * Number(b);
-  if (bits > MAX_BITS) return limit('the result has millions of digits — too large for the browser demo');
+  // bits is an upper bound at most twice the real size: the result has
+  // more than 500,000 bits (150,000 digits) whenever this limit fires
+  if (bits > MAX_BITS) return limit('the result is an int with more than 150,000 digits — too large for the browser demo to build');
   return a ** b;
 }
 
@@ -542,7 +544,7 @@ function numBinop(name, a, b) {
     case 'add': return x + y;
     case 'sub': return x - y;
     case 'mul':
-      if (bitLen(x) + bitLen(y) > MAX_BITS) return limit('the result has millions of digits — too large for the browser demo');
+      if (bitLen(x) + bitLen(y) > MAX_BITS) return limit('the result is an int with more than 300,000 digits — too large for the browser demo to build');
       return x * y;
     case 'truediv': return intTrueDiv(x, y);
     case 'floordiv':
@@ -560,7 +562,7 @@ function numBinop(name, a, b) {
     case 'lshift':
       if (y < 0n) raise('ValueError', 'negative shift count');
       if (x === 0n) return 0n;
-      if (y + BigInt(bitLen(x)) > BigInt(MAX_BITS)) return limit('a shift this large needs more memory than the browser demo allows (CPython raises MemoryError or OverflowError)');
+      if (y + BigInt(bitLen(x)) > BigInt(MAX_BITS)) return limit('the shifted int would have more than 300,000 digits — too large for the browser demo to build (CPython builds it while memory allows; larger counts raise MemoryError or OverflowError)');
       return x << y;
     case 'rshift':
       if (y < 0n) raise('ValueError', 'negative shift count');
@@ -1408,7 +1410,10 @@ const TUPLE_ATTRS = ['count', 'index'];
 
 function noAttr(obj, name, candidates, what) {
   const hint = name.startsWith('_') ? null : suggest(candidates, name);
-  raise('AttributeError', `${what} has no attribute ${pyStrRepr(name)}${hint ? `. Did you mean: ${pyStrRepr(hint)}?` : ''}`);
+  // CPython formats the name with '%U' between literal quotes (no repr:
+  // a backslash or newline in the name appears raw), and traceback.py adds
+  // the hint the same way: f". Did you mean: '{suggestion}'?"
+  raise('AttributeError', `${what} has no attribute '${name}'${hint ? `. Did you mean: '${hint}'?` : ''}`);
 }
 
 // getattr(obj, name) for the objects the demos reach. Data attributes are

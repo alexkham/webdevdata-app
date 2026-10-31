@@ -6,7 +6,7 @@
 // member counts.
 
 export const pythonStdlibCatalog = {
-  generatedAt: "2026-10-13T19:22:06.324Z",
+  generatedAt: "2026-10-31T11:15:16.264Z",
   modules: [
   {
     "slug": "argparse",
@@ -48,6 +48,19 @@ export const pythonStdlibCatalog = {
     "liveCount": 4
   },
   {
+    "slug": "calendar",
+    "name": "calendar",
+    "signature": "import calendar",
+    "blurb": "Month and year calendars as text or HTML, plus the calendar arithmetic behind them: leap years, days in a month, the weekday of a date and timegm() for UTC timestamps.",
+    "category": "dates",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 3 (all versions); Day and Month enums 3.12+",
+    "searchTerms": "calendar module python calendar print calendar month calendar year calendar text calendar html calendar isleap leap year leapdays monthrange days in month weekday day of week monthcalendar timegm utc timestamp first day of week sunday monday setfirstweekday month_name day_name python -m calendar",
+    "memberCount": 31,
+    "liveCount": 30
+  },
+  {
     "slug": "collections",
     "name": "collections",
     "signature": "import collections",
@@ -59,6 +72,19 @@ export const pythonStdlibCatalog = {
     "searchTerms": "collections module python counter deque defaultdict ordereddict namedtuple chainmap userdict userlist userstring container datatypes count frequency queue stack double ended queue grouping default dictionary",
     "memberCount": 21,
     "liveCount": 20
+  },
+  {
+    "slug": "configparser",
+    "name": "configparser",
+    "signature": "import configparser",
+    "blurb": "Read and write INI-style configuration files: [sections] of key = value lines, a DEFAULT section, %(name)s interpolation, typed getters and dict-style access.",
+    "category": "data",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "All Python 3 versions (unnamed sections 3.13+)",
+    "searchTerms": "configparser module python ini file read config file configparser.configparser sections options default section interpolation getint getboolean getfloat write ini file read_string read_dict settings.ini config.ini setup.cfg python config file parser",
+    "memberCount": 11,
+    "liveCount": 11
   },
   {
     "slug": "contextlib",
@@ -139,6 +165,19 @@ export const pythonStdlibCatalog = {
     "liveCount": 25
   },
   {
+    "slug": "difflib",
+    "name": "difflib",
+    "signature": "import difflib",
+    "blurb": "Compare sequences and report the differences: unified and context diffs like diff -u, ndiff with ? hint lines, a similarity ratio, close-match suggestions and side-by-side HTML tables.",
+    "category": "text",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 2.1+",
+    "searchTerms": "difflib module python diff two strings compare two files text diff unified diff context diff ndiff similarity ratio fuzzy string matching get_close_matches did you mean SequenceMatcher Differ HtmlDiff patch git diff gestalt pattern matching Ratcliff Obershelp",
+    "memberCount": 13,
+    "liveCount": 12
+  },
+  {
     "slug": "enum",
     "name": "enum",
     "signature": "import enum",
@@ -150,6 +189,19 @@ export const pythonStdlibCatalog = {
     "searchTerms": "enum module python enumeration enum class constants Enum IntEnum StrEnum Flag IntFlag ReprEnum auto unique verify member value name lookup by value lookup by name bit flags EnumType EnumMeta",
     "memberCount": 17,
     "liveCount": 17
+  },
+  {
+    "slug": "fnmatch",
+    "name": "fnmatch",
+    "signature": "import fnmatch",
+    "blurb": "Match file names against shell-style wildcards — *, ?, [seq] and [!seq] — one name at a time (fnmatch, fnmatchcase), a list at once (filter), or turned into a regular expression (translate).",
+    "category": "files",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "All Python versions",
+    "searchTerms": "fnmatch module python wildcard match filename pattern shell style glob pattern star question mark brackets fnmatch fnmatchcase filter translate case insensitive windows match file extension *.txt wildcard to regex",
+    "memberCount": 4,
+    "liveCount": 4
   },
   {
     "slug": "fractions",
@@ -176,6 +228,19 @@ export const pythonStdlibCatalog = {
     "searchTerms": "functools module python higher order functions lru_cache cache cached_property partial partialmethod reduce wraps update_wrapper total_ordering singledispatch singledispatchmethod cmp_to_key memoize decorator",
     "memberCount": 9,
     "liveCount": 8
+  },
+  {
+    "slug": "glob",
+    "name": "glob",
+    "signature": "import glob",
+    "blurb": "Find files and folders whose paths match a shell-style pattern — *.txt, data/*/2024-??.csv, **/*.py with recursive=True — as a list (glob), lazily (iglob), or as a regex (translate).",
+    "category": "files",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "All Python versions",
+    "searchTerms": "glob module python find files by pattern list files matching *.txt wildcard recursive ** subdirectories hidden files include_hidden root_dir iglob escape translate glob.glob sorted order windows backslash",
+    "memberCount": 4,
+    "liveCount": 4
   },
   {
     "slug": "hashlib",
@@ -215,6 +280,19 @@ export const pythonStdlibCatalog = {
     "searchTerms": "html module python html escape unescape html entities character references encode decode html special characters xss sanitize html.entities html.parser amp lt gt quot",
     "memberCount": 2,
     "liveCount": 2
+  },
+  {
+    "slug": "io",
+    "name": "io",
+    "signature": "import io",
+    "blurb": "Streams for text and bytes: StringIO and BytesIO in-memory files, the file classes open() returns, and the base classes every file object follows.",
+    "category": "files",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 3.0+",
+    "searchTerms": "io module python stringio bytesio in-memory file file-like object stream textiowrapper bufferedreader bufferedwriter fileio open seek tell getvalue memory buffer text stream binary stream unsupportedoperation",
+    "memberCount": 25,
+    "liveCount": 12
   },
   {
     "slug": "itertools",
@@ -334,6 +412,19 @@ export const pythonStdlibCatalog = {
     "liveCount": 1
   },
   {
+    "slug": "pprint",
+    "name": "pprint",
+    "signature": "import pprint",
+    "blurb": "Pretty-print nested dicts, lists, tuples and sets: one line when the repr fits, otherwise one item per line with nested items indented — pprint, pformat, pp and PrettyPrinter.",
+    "category": "text",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "All Python versions (pp 3.8+)",
+    "searchTerms": "pprint module python pretty print dict pretty print list pretty print nested dictionary pformat pp PrettyPrinter saferepr isreadable isrecursive width indent depth compact sort_dicts underscore_numbers readable output debug print",
+    "memberCount": 7,
+    "liveCount": 7
+  },
+  {
     "slug": "random",
     "name": "random",
     "signature": "import random",
@@ -373,6 +464,19 @@ export const pythonStdlibCatalog = {
     "liveCount": 8
   },
   {
+    "slug": "shlex",
+    "name": "shlex",
+    "signature": "import shlex",
+    "blurb": "Split command lines the way a POSIX shell does (shlex.split), build them safely (shlex.quote, shlex.join), and tokenize shell-like mini-languages with the shlex lexer class.",
+    "category": "text",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "All Python 3 versions (quote 3.3+, join 3.8+)",
+    "searchTerms": "shlex module python split command line string into arguments respecting quotes shell split shlex.split shlex.quote shlex.join escape shell argument command injection no closing quotation no escaped character lexer tokenizer posix mode punctuation_chars",
+    "memberCount": 9,
+    "liveCount": 9
+  },
+  {
     "slug": "shutil",
     "name": "shutil",
     "signature": "import shutil",
@@ -410,6 +514,19 @@ export const pythonStdlibCatalog = {
     "searchTerms": "string module python import string ascii_letters ascii_lowercase ascii_uppercase digits hexdigits octdigits punctuation printable whitespace capwords Template substitute safe_substitute Formatter custom format string constants",
     "memberCount": 11,
     "liveCount": 11
+  },
+  {
+    "slug": "struct",
+    "name": "struct",
+    "signature": "import struct",
+    "blurb": "Convert between Python numbers and packed binary data — file headers, network packets, C structs — with format strings such as \"<HHI\".",
+    "category": "data",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "All Python versions",
+    "searchTerms": "struct module python struct pack unpack calcsize binary data bytes to int int to bytes little endian big endian network byte order format string c struct binary file header parse binary pack_into unpack_from iter_unpack Struct struct.error",
+    "memberCount": 9,
+    "liveCount": 9
   },
   {
     "slug": "subprocess",
@@ -462,6 +579,19 @@ export const pythonStdlibCatalog = {
     "searchTerms": "time module python time time.time time.sleep perf_counter monotonic process_time unix timestamp epoch seconds gmtime localtime mktime strftime strptime struct_time asctime ctime timezone tzname measure elapsed time benchmark",
     "memberCount": 14,
     "liveCount": 10
+  },
+  {
+    "slug": "tomllib",
+    "name": "tomllib",
+    "signature": "import tomllib",
+    "blurb": "Parse TOML (pyproject.toml, app config files) into a dict of real ints, floats, booleans, lists and datetime objects. Read-only: load, loads and TOMLDecodeError.",
+    "category": "data",
+    "type": "module",
+    "hasLiveDemo": true,
+    "version": "Python 3.11+",
+    "searchTerms": "tomllib module python toml parser read toml file pyproject.toml parse config toml to dict load loads tomldecodeerror tomli tomli-w write toml dump toml python 3.11 rb binary mode toml datetime array of tables",
+    "memberCount": 3,
+    "liveCount": 3
   },
   {
     "slug": "typing",

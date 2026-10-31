@@ -4,10 +4,18 @@
 //
 // slug → emulator for python-stdlib-glob only (empty when the module has no live demos).
 
-
+import pythonStdlibGlobEscapeEmu from '../emulators/python/stdlib/glob/escape';
+import pythonStdlibGlobGlobEmu from '../emulators/python/stdlib/glob/glob';
+import pythonStdlibGlobIglobEmu from '../emulators/python/stdlib/glob/iglob';
+import pythonStdlibGlobIndexEmu from '../emulators/python/stdlib/glob/index';
+import pythonStdlibGlobTranslateEmu from '../emulators/python/stdlib/glob/translate';
 
 const emulators = {
-
+  'escape': pythonStdlibGlobEscapeEmu,
+  'glob': pythonStdlibGlobGlobEmu,
+  'iglob': pythonStdlibGlobIglobEmu,
+  'index': pythonStdlibGlobIndexEmu,
+  'translate': pythonStdlibGlobTranslateEmu,
 };
 
 export function getModuleEmulator(slug) {

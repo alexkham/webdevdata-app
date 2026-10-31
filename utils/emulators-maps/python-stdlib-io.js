@@ -4,10 +4,34 @@
 //
 // slug → emulator for python-stdlib-io only (empty when the module has no live demos).
 
-
+import pythonStdlibIoBytesioEmu from '../emulators/python/stdlib/io/bytesio';
+import pythonStdlibIoCloseClosedEmu from '../emulators/python/stdlib/io/close-closed';
+import pythonStdlibIoGetvalueGetbufferEmu from '../emulators/python/stdlib/io/getvalue-getbuffer';
+import pythonStdlibIoIncrementalnewlinedecoderEmu from '../emulators/python/stdlib/io/incrementalnewlinedecoder';
+import pythonStdlibIoIndexEmu from '../emulators/python/stdlib/io/index';
+import pythonStdlibIoOpenEmu from '../emulators/python/stdlib/io/open';
+import pythonStdlibIoReadReadlineReadlinesEmu from '../emulators/python/stdlib/io/read-readline-readlines';
+import pythonStdlibIoReadableWritableSeekableEmu from '../emulators/python/stdlib/io/readable-writable-seekable';
+import pythonStdlibIoSeekTellTruncateEmu from '../emulators/python/stdlib/io/seek-tell-truncate';
+import pythonStdlibIoStringioEmu from '../emulators/python/stdlib/io/stringio';
+import pythonStdlibIoTextiowrapperEmu from '../emulators/python/stdlib/io/textiowrapper';
+import pythonStdlibIoUnsupportedoperationEmu from '../emulators/python/stdlib/io/unsupportedoperation';
+import pythonStdlibIoWriteWritelinesEmu from '../emulators/python/stdlib/io/write-writelines';
 
 const emulators = {
-
+  'bytesio': pythonStdlibIoBytesioEmu,
+  'close-closed': pythonStdlibIoCloseClosedEmu,
+  'getvalue-getbuffer': pythonStdlibIoGetvalueGetbufferEmu,
+  'incrementalnewlinedecoder': pythonStdlibIoIncrementalnewlinedecoderEmu,
+  'index': pythonStdlibIoIndexEmu,
+  'open': pythonStdlibIoOpenEmu,
+  'read-readline-readlines': pythonStdlibIoReadReadlineReadlinesEmu,
+  'readable-writable-seekable': pythonStdlibIoReadableWritableSeekableEmu,
+  'seek-tell-truncate': pythonStdlibIoSeekTellTruncateEmu,
+  'stringio': pythonStdlibIoStringioEmu,
+  'textiowrapper': pythonStdlibIoTextiowrapperEmu,
+  'unsupportedoperation': pythonStdlibIoUnsupportedoperationEmu,
+  'write-writelines': pythonStdlibIoWriteWritelinesEmu,
 };
 
 export function getModuleEmulator(slug) {

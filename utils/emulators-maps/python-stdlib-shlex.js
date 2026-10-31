@@ -4,10 +4,28 @@
 //
 // slug → emulator for python-stdlib-shlex only (empty when the module has no live demos).
 
-
+import pythonStdlibShlexIndexEmu from '../emulators/python/stdlib/shlex/index';
+import pythonStdlibShlexJoinEmu from '../emulators/python/stdlib/shlex/join';
+import pythonStdlibShlexQuoteEmu from '../emulators/python/stdlib/shlex/quote';
+import pythonStdlibShlexShlexAttributesEmu from '../emulators/python/stdlib/shlex/shlex-attributes';
+import pythonStdlibShlexShlexError_leaderEmu from '../emulators/python/stdlib/shlex/shlex-error_leader';
+import pythonStdlibShlexShlexGet_tokenEmu from '../emulators/python/stdlib/shlex/shlex-get_token';
+import pythonStdlibShlexShlexPunctuation_charsEmu from '../emulators/python/stdlib/shlex/shlex-punctuation_chars';
+import pythonStdlibShlexShlexPush_sourceEmu from '../emulators/python/stdlib/shlex/shlex-push_source';
+import pythonStdlibShlexShlexEmu from '../emulators/python/stdlib/shlex/shlex';
+import pythonStdlibShlexSplitEmu from '../emulators/python/stdlib/shlex/split';
 
 const emulators = {
-
+  'index': pythonStdlibShlexIndexEmu,
+  'join': pythonStdlibShlexJoinEmu,
+  'quote': pythonStdlibShlexQuoteEmu,
+  'shlex-attributes': pythonStdlibShlexShlexAttributesEmu,
+  'shlex-error_leader': pythonStdlibShlexShlexError_leaderEmu,
+  'shlex-get_token': pythonStdlibShlexShlexGet_tokenEmu,
+  'shlex-punctuation_chars': pythonStdlibShlexShlexPunctuation_charsEmu,
+  'shlex-push_source': pythonStdlibShlexShlexPush_sourceEmu,
+  'shlex': pythonStdlibShlexShlexEmu,
+  'split': pythonStdlibShlexSplitEmu,
 };
 
 export function getModuleEmulator(slug) {

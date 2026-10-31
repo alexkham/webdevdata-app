@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/functions explorer.
 
 export const pythonFunctionsCatalog = {
-  generatedAt: "2026-10-13T19:22:06.311Z",
+  generatedAt: "2026-10-31T11:15:16.236Z",
   items: [
   {
     "slug": "abs",

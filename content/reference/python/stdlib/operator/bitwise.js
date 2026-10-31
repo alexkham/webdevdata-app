@@ -4,7 +4,7 @@ export const meta = {
   slug:        'bitwise',
   name:        'operator.and_ / or_ / xor / invert / lshift / rshift',
   signature:   'operator.and_(a, b) · or_ · xor · lshift · rshift · invert(a) · inv(a)',
-  blurb:       'The bitwise operators & | ^ ~ << >> as functions — on ints, and (for & | ^) on sets, bools and dicts too.',
+  blurb:       'The bitwise operators & | ^ ~ << >> as functions — on ints, and (for & | ^) on sets and bools too; or_ also merges dicts.',
   category:    'functions',
   type:        'function',
   hasLiveDemo: true,
@@ -34,7 +34,7 @@ export const method = {
   },
 
   parameters: [
-    { name: 'a', type: 'int | bool | set | dict', required: true, default: null, desc: 'Left operand (the only one for invert / inv). Floats are rejected: bitwise operators need integers.' },
+    { name: 'a', type: 'int | bool | set | dict', required: true, default: null, desc: 'Left operand (the only one for invert / inv). Floats are rejected: bitwise operators need integers. Dicts support only or_ (|).' },
     { name: 'b', type: 'int | bool | set | dict', required: true, default: null, desc: 'Right operand. For lshift / rshift: the shift count, a non-negative int.' },
   ],
 
@@ -157,7 +157,7 @@ export const method = {
     ],
     avoid: [
       'Boolean logic → and / or keywords, all(), any(); or not_ for negation',
-      'Floats — bitwise operators accept only integers (and sets, bools, dicts for & | ^)',
+      'Floats — bitwise operators accept only integers (and sets and bools for & | ^, dicts for |)',
     ],
   },
 

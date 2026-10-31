@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/stdlib/xml-etree-elementtree explorer.
 
 export const pythonStdlibXmlEtreeElementtreeCatalog = {
-  generatedAt: "2026-10-13T19:22:06.316Z",
+  generatedAt: "2026-10-31T11:15:16.252Z",
   items: [
   {
     "slug": "canonicalize",

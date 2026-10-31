@@ -131,7 +131,7 @@ export const method = {
     },
     {
       name: 'Thousands separators in input',
-      desc: 'Decimal() accepts digits, one point, an exponent, surrounding whitespace and underscores between digits — not commas or currency signs.',
+      desc: 'Decimal() accepts digits, one point, an exponent, surrounding whitespace and underscores (the C module simply ignores every _) — not commas or currency signs.',
       wrong: { label: "Decimal('1,234.50')", code: "from decimal import Decimal\nDecimal('1,234.50')", output: "decimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]" },
       fix:   { label: 'remove the commas',    code: "from decimal import Decimal\nDecimal('1,234.50'.replace(',', ''))", output: "Decimal('1234.50')" },
     },
@@ -173,7 +173,7 @@ export const method = {
   faq: [
     {
       q: "What does decimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>] mean?",
-      a: "The string given to Decimal() is not a number — typically it contains a comma, a currency sign, a unit, or is empty. Clean it first (text.replace(',', '')). Surrounding whitespace and underscores between digits are accepted.",
+      a: "The string given to Decimal() is not a number — typically it contains a comma, a currency sign, a unit, or is empty. Clean it first (text.replace(',', '')). Surrounding whitespace and underscores are accepted.",
     },
     {
       q: 'Why does Decimal 0/0 raise InvalidOperation and not DivisionByZero?',

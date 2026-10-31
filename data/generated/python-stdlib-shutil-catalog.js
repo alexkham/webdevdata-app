@@ -5,7 +5,7 @@
 // Flat list for the /reference/python/stdlib/shutil explorer.
 
 export const pythonStdlibShutilCatalog = {
-  generatedAt: "2026-10-13T19:22:06.315Z",
+  generatedAt: "2026-10-31T11:15:16.249Z",
   items: [
   {
     "slug": "chown",
